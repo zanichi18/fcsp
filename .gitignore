@@ -40,3 +40,18 @@ bower.json
 
 # Ignore Byebug command history file.
 .byebug_history
+
+/config/database.yml
+/public/uploads
+config/settings.local.yml
+config/settings/*.local.yml
+config/settings/test.yml
+config/environments/*.local.yml
+
+.DS_Store
+/config/application.yml
+config/application.yml
+.byebug_history
+/public/assets
+/.framgia-ci-reports
+.framgia-ci-result.temp.yml
