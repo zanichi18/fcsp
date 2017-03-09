@@ -10,10 +10,156 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170309063503) do
+ActiveRecord::Schema.define(version: 20170310084946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "education_categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "education_comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
+  end
+
+  create_table "education_course_members", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_education_course_members_on_user_id", using: :btree
+  end
+
+  create_table "education_courses", force: :cascade do |t|
+    t.text     "detail"
+    t.integer  "training_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "education_feedbacks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "content"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "education_groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "education_images", force: :cascade do |t|
+    t.string   "url"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "education_permissions", force: :cascade do |t|
+    t.string   "entry"
+    t.text     "optional"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "education_posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_education_posts_on_user_id", using: :btree
+  end
+
+  create_table "education_project_members", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_education_project_members_on_user_id", using: :btree
+  end
+
+  create_table "education_project_techniques", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "technique_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "education_projects", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.text     "core_features"
+    t.string   "git_repo"
+    t.text     "release_note"
+    t.string   "server_info"
+    t.string   "pm_url"
+    t.boolean  "is_project"
+    t.string   "plat_form"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "education_rates", force: :cascade do |t|
+    t.integer  "rate"
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
+  end
+
+  create_table "education_socials", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_education_socials_on_user_id", using: :btree
+  end
+
+  create_table "education_techniques", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "education_trainings", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "technique_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "education_user_groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.boolean  "is_default_group"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["user_id"], name: "index_education_user_groups_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +178,23 @@ ActiveRecord::Schema.define(version: 20170309063503) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "education_comments", "education_projects", column: "project_id"
+  add_foreign_key "education_comments", "users"
+  add_foreign_key "education_course_members", "education_courses", column: "course_id"
+  add_foreign_key "education_course_members", "users"
+  add_foreign_key "education_courses", "education_trainings", column: "training_id"
+  add_foreign_key "education_feedbacks", "education_projects", column: "project_id"
+  add_foreign_key "education_permissions", "education_groups", column: "group_id"
+  add_foreign_key "education_posts", "education_categories", column: "category_id"
+  add_foreign_key "education_posts", "users"
+  add_foreign_key "education_project_members", "education_projects", column: "project_id"
+  add_foreign_key "education_project_members", "users"
+  add_foreign_key "education_project_techniques", "education_projects", column: "project_id"
+  add_foreign_key "education_project_techniques", "education_techniques", column: "technique_id"
+  add_foreign_key "education_rates", "education_projects", column: "project_id"
+  add_foreign_key "education_rates", "users"
+  add_foreign_key "education_socials", "users"
+  add_foreign_key "education_trainings", "education_techniques", column: "technique_id"
+  add_foreign_key "education_user_groups", "education_groups", column: "group_id"
+  add_foreign_key "education_user_groups", "users"
 end
