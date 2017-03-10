@@ -15,6 +15,61 @@ ActiveRecord::Schema.define(version: 20170310084946) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.string   "address"
+    t.float    "longtitude"
+    t.float    "latitude"
+    t.boolean  "head_office"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["company_id_id"], name: "index_addresses_on_company_id_id", using: :btree
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.integer  "user_id_id"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["company_id_id"], name: "index_articles_on_company_id_id", using: :btree
+    t.index ["title"], name: "index_articles_on_title", using: :btree
+    t.index ["user_id_id"], name: "index_articles_on_user_id_id", using: :btree
+  end
+
+  create_table "benefits", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["company_id_id"], name: "index_benefits_on_company_id_id", using: :btree
+  end
+
+  create_table "candidates", force: :cascade do |t|
+    t.integer  "user_id_id"
+    t.integer  "job_id_id"
+    t.integer  "interested_in"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["job_id_id"], name: "index_candidates_on_job_id_id", using: :btree
+    t.index ["user_id_id"], name: "index_candidates_on_user_id_id", using: :btree
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "website"
+    t.text     "introduction"
+    t.string   "founder"
+    t.integer  "company_size"
+    t.date     "founder_on"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["name"], name: "index_companies_on_name", using: :btree
+    t.index ["website"], name: "index_companies_on_website", using: :btree
+  end
+
   create_table "education_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -159,6 +214,59 @@ ActiveRecord::Schema.define(version: 20170310084946) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_education_user_groups_on_user_id", using: :btree
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.integer  "user_id_id"
+    t.string   "description"
+    t.date     "start_time"
+    t.integer  "role"
+    t.integer  "status"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["company_id_id"], name: "index_employees_on_company_id_id", using: :btree
+    t.index ["user_id_id"], name: "index_employees_on_user_id_id", using: :btree
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.string   "image_url"
+    t.text     "caption"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.string   "title"
+    t.string   "describe"
+    t.integer  "type_of_candidates"
+    t.integer  "who_can_apply"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["company_id_id"], name: "index_jobs_on_company_id_id", using: :btree
+    t.index ["title"], name: "index_jobs_on_title", using: :btree
+  end
+
+  create_table "team_introductions", force: :cascade do |t|
+    t.integer  "team_id_id"
+    t.integer  "team_target_id"
+    t.string   "team_target_type"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["team_id_id"], name: "index_team_introductions_on_team_id_id", using: :btree
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.integer  "company_id_id"
+    t.string   "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["company_id_id"], name: "index_teams_on_company_id_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
