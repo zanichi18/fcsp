@@ -90,6 +90,7 @@ GEM
       execjs
       railties (>= 3.2)
     execjs (2.7.0)
+    ffaker (2.4.0)
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -277,6 +278,7 @@ DEPENDENCIES
   database_cleaner (~> 1.5)
   devise
   eslint-rails
+  ffaker
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks
