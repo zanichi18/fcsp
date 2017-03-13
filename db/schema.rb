@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313042606) do
+ActiveRecord::Schema.define(version: 20170313083645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,8 @@ ActiveRecord::Schema.define(version: 20170313042606) do
     t.string   "imageable_type"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["imageable_id"], name: "index_education_images_on_imageable_id", using: :btree
+    t.index ["imageable_type"], name: "index_education_images_on_imageable_type", using: :btree
   end
 
   create_table "education_permissions", force: :cascade do |t|
@@ -133,6 +135,7 @@ ActiveRecord::Schema.define(version: 20170313042606) do
     t.integer  "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_education_permissions_on_group_id", using: :btree
   end
 
   create_table "education_posts", force: :cascade do |t|
@@ -245,6 +248,8 @@ ActiveRecord::Schema.define(version: 20170313042606) do
     t.text     "caption"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.index ["imageable_id"], name: "index_images_on_imageable_id", using: :btree
+    t.index ["imageable_type"], name: "index_images_on_imageable_type", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -285,6 +290,8 @@ ActiveRecord::Schema.define(version: 20170313042606) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["team_id_id"], name: "index_team_introductions_on_team_id_id", using: :btree
+    t.index ["team_target_id"], name: "index_team_introductions_on_team_target_id", using: :btree
+    t.index ["team_target_type"], name: "index_team_introductions_on_team_target_type", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|

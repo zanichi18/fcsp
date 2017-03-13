@@ -7,7 +7,6 @@ class CreateEducationCourseMembers < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    
     add_foreign_key :education_course_members, :education_courses, column: :course_id
   end
 end

@@ -1,5 +1,7 @@
 module Education
-  def self.table_name_prefix
-    "education_"
+  class << self
+    def table_name_prefix
+      "education_"
+    end
   end
 end
