@@ -21,3 +21,20 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    header:
+      home: "Home"
+      help: "Help"
+      about: "About"
+  pages:
+    home:
+      content: "This is home page"
+      title: "Home"
+    about:
+      content: "This is about page"
+      title: "About"
+    help:
+      content: "This is help page"
+      title: "Help"
+  title: "Framgia code school platform"
+  copy: "Copyright by Framgia"

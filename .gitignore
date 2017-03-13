@@ -56,3 +56,5 @@ config/application.yml
 /public/assets
 /.framgia-ci-reports
 .framgia-ci-result.temp.yml
+.idea/
+app/assets/videos/*
