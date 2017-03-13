@@ -1,3 +1,3 @@
 class Education::Image < ApplicationRecord
-  belongs_to :imageable, class_name: Education::Image.name, polymorphic: true
+  belongs_to :imageable, polymorphic: true, optional: true
 end

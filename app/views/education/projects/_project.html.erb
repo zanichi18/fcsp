@@ -1,0 +1,24 @@
+<% projects.each do |project| %>
+  <div class="load-more-project">
+    <article class="portfolio-item pf-media pf-icons">
+      <div class="portfolio-image">
+        <ul data-liffect="pageRight" class="data-liffect">
+          <% if project.images.any? %>
+            <li><%= link_to image_tag(project.images.first.url,
+              class: "img wth-80"), "#" %></li>
+          <% else %>
+            <li><%= link_to image_tag("2",class: "img wth-100"), "#" %></li>
+          <% end %>
+        </ul>
+        <div class="portfolio-overlay">
+          <div class="portfolio-desc">
+            <h3><%= project.name %></h3>
+            <span><a href="#"><%= t "education.project.detail" %></a></span>
+          </div>
+          <a href="#" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+          <a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+<% end %>
