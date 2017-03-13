@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310084946) do
+ActiveRecord::Schema.define(version: 20170313042606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -229,6 +229,15 @@ ActiveRecord::Schema.define(version: 20170310084946) do
     t.index ["user_id_id"], name: "index_employees_on_user_id_id", using: :btree
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_groups_on_company_id", using: :btree
+  end
+
   create_table "images", force: :cascade do |t|
     t.integer  "imageable_id"
     t.string   "imageable_type"
@@ -250,6 +259,23 @@ ActiveRecord::Schema.define(version: 20170310084946) do
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
+  create_table "permissions", force: :cascade do |t|
+    t.string   "entry"
+    t.text     "optional"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_permissions_on_group_id", using: :btree
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_positions_on_company_id", using: :btree
+  end
+
   create_table "team_introductions", force: :cascade do |t|
     t.integer  "team_id_id"
     t.integer  "team_target_id"
@@ -267,6 +293,18 @@ ActiveRecord::Schema.define(version: 20170310084946) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["company_id_id"], name: "index_teams_on_company_id_id", using: :btree
+  end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "position_id"
+    t.boolean  "is_default_group"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["group_id"], name: "index_user_groups_on_group_id", using: :btree
+    t.index ["position_id"], name: "index_user_groups_on_position_id", using: :btree
+    t.index ["user_id"], name: "index_user_groups_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -305,4 +343,10 @@ ActiveRecord::Schema.define(version: 20170310084946) do
   add_foreign_key "education_trainings", "education_techniques", column: "technique_id"
   add_foreign_key "education_user_groups", "education_groups", column: "group_id"
   add_foreign_key "education_user_groups", "users"
+  add_foreign_key "groups", "companies"
+  add_foreign_key "permissions", "groups"
+  add_foreign_key "positions", "companies"
+  add_foreign_key "user_groups", "groups"
+  add_foreign_key "user_groups", "positions"
+  add_foreign_key "user_groups", "users"
 end
