@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   has_many :articles
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 
   has_many :education_posts, class_name: Education::Post.name
   has_many :education_socials, class_name: Education::Social.name
@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :education_project_members, class_name: Education::ProjectMember.name
   has_many :course_members, class_name: Education::CourseMember.name
   has_many :courses, through: :course_members
-  has_many :education_projects, through: :education_project_members, source: :project
+  has_many :education_projects, through: :education_project_members,
+    source: :project
   has_many :education_user_groups, class_name: Education::UserGroup.name
 end
