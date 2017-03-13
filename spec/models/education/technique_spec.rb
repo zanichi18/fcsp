@@ -10,7 +10,6 @@ RSpec.describe Education::Technique, type: :model do
 
   describe "associations" do
     it{expect(technique).to have_many :project_techniques}
-    it{expect(technique).to have_many :trainings}
     it{expect(technique).to have_many :projects}
     it{expect(technique).to have_one :image}
   end

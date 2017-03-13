@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     root "home#index"
     resources :projects, only: :index
     resources :techniques, only: [:index, :show]
+    resources :trainings, only: :index
   end
 
   namespace :company do

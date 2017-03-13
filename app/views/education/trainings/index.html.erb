@@ -1,0 +1,64 @@
+<% provide :title, t(".title") %>
+
+<section id="page-title">
+  <div class="container clearfix">
+    <h1><%= t ".page_title" %></h1>
+    <ol class="breadcrumb">
+      <li><%= link_to t(".home"), education_root_path %></li>
+      <li class="active"><%= t ".page_title" %></li>
+    </ol>
+  </div>
+</section>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="content-wrap content-wrap-custom">
+        <div id="portfolio" class="portfolio grid-container portfolio-1 clearfix">
+          <% if @trainings.any? %>
+            <% @trainings.each_with_index do |training, index| %>
+            <% if Parity.parity_odd? index %>
+              <article class="portfolio-item pf-illustrations alt clearfix">
+            <% else %>
+              <article class="portfolio-item pf-media pf-icons clearfix">
+            <% end %>
+                <div class="portfolio-image">
+                  <a href="portfolio-single.html">
+                    <img src="../assets/images/portfolio/4/1.jpg">
+                  </a>
+                  <div class="portfolio-overlay">
+                    <%= link_to "#" do %>
+                      <i class="icon-eye"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="portfolio-desc">
+                  <h3>
+                    <%= link_to "#" do %>
+                      <%= training.name %>
+                    <% end %>
+                  </h3>
+                  <p><%= training.description %></p>
+                  <strong><%= t ".techniques" %></strong>
+                  <ul class="iconlist">
+                    <% training.techniques.each do |technique| %>
+                      <li class="display technique-items">
+                        <%= link_to "#" do %>
+                          <i class="icon-ok"></i> <%= technique.name %>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                  <a href="#" class="button button-3d noleftmargin"><%= t ".view_courses" %></a>
+                </div>
+              </article>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="center">
+  <%= paginate @trainings %>
+</div>

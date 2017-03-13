@@ -18,5 +18,6 @@ module Fcsp
     config.i18n.load_path << Rails.root.join(
       "config", "locales", "**", "*.{rb,yml}"
     )
+    config.eager_load_paths << Rails.root.join("lib", "support")
   end
 end

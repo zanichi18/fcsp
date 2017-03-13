@@ -1,0 +1,44 @@
+<div class="section topmargin nobottommargin nobottomborder">
+  <div class="container clearfix">
+    <div class="heading-block center nomargin">
+      <h3><%= t ".our_trainings" %></h3>
+    </div>
+  </div>
+</div>
+<div class="container clearfix">
+  <div id="oc-portfolio" class="owl-carousel portfolio-carousel
+    portfolio-nomargin carousel-widget" data-margin="1" data-pagi="false"
+    data-autoplay="5000" data-items-xxs="1" data-items-xs="2" data-items-sm="3"
+    data-items-lg="4">
+    <% if trainings.any? %>
+      <% trainings.includes(:techniques).each do |training| %>
+        <div class="oc-item">
+          <div class="iportfolio">
+            <div class="portfolio-image">
+              <a href="#">
+                <img src="../assets/images/portfolio/4/1.jpg">
+              </a>
+              <div class="portfolio-overlay">
+                <a href="#" class="right-icon"><i class="icon-eye"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-desc">
+              <h3><a href="#"><%= training.name %></a></h3>
+              <strong><%= t ".techniques" %>: </strong>
+              <% training.techniques.each do |technique| %>
+                <%= link_to "#" do %>
+                  <%= technique.name %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<a href="education/trainings" class="button button-full button-dark center tright">
+  <div class="container clearfix">
+   <strong><%= t ".see_more" %></strong> <i class="icon-caret-right btn-see-more"></i>
+  </div>
+</a>

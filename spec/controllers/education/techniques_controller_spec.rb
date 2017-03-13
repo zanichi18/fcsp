@@ -8,7 +8,9 @@ RSpec.describe Education::TechniquesController, type: :controller do
 
     context "render the show template" do
       it{expect(subject).to respond_with 200}
-      it{expect(subject).to render_with_layout "education/layouts/application"}
+      it do
+        expect(subject).to render_with_layout "education/layouts/application"
+      end
       it{expect(subject).to render_template :index}
     end
 
