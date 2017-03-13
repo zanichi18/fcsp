@@ -1,3 +1,4 @@
+
 en:
   company:
     dashboards:
@@ -45,6 +46,18 @@ en:
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   education:
+    home:
+      our_trainings:
+        techniques: "Techniques"
+        our_trainings: "Our Trainings"
+        see_more: "See more"
+    trainings:
+      index:
+        title: "Education Trainings"
+        home: "Home"
+        page_title: "All Trainings"
+        techniques: "Techniques"
+        view_courses: "View list courses"
     see_more: "See More"
     title: "Framgia Education"
     logo_alt: "Framgia logo"
