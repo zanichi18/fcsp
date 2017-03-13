@@ -26,6 +26,7 @@ gem "devise"
 group :development, :test do
   gem "byebug", platform: :mri
   gem "pry-rails"
+  gem "rack-mini-profiler", require: false
 end
 
 group :development do
