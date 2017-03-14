@@ -51,4 +51,6 @@ en:
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"
+    index:
+      learning_program: "Learning Programs"
   copy: "Copyright by Framgia"

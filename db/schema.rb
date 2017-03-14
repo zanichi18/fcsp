@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314014709) do
+ActiveRecord::Schema.define(version: 20170314073910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,13 @@ ActiveRecord::Schema.define(version: 20170314014709) do
     t.index ["imageable_type"], name: "index_education_images_on_imageable_type", using: :btree
   end
 
+  create_table "education_learning_programs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "education_permissions", force: :cascade do |t|
     t.string   "entry"
     t.text     "optional"
@@ -153,6 +160,14 @@ ActiveRecord::Schema.define(version: 20170314014709) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["user_id"], name: "index_education_posts_on_user_id", using: :btree
+  end
+
+  create_table "education_program_members", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "learning_program_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["user_id"], name: "index_education_program_members_on_user_id", using: :btree
   end
 
   create_table "education_project_members", force: :cascade do |t|
@@ -348,6 +363,8 @@ ActiveRecord::Schema.define(version: 20170314014709) do
   add_foreign_key "education_permissions", "education_groups", column: "group_id"
   add_foreign_key "education_posts", "education_categories", column: "category_id"
   add_foreign_key "education_posts", "users"
+  add_foreign_key "education_program_members", "education_learning_programs", column: "learning_program_id"
+  add_foreign_key "education_program_members", "users"
   add_foreign_key "education_project_members", "education_projects", column: "project_id"
   add_foreign_key "education_project_members", "users"
   add_foreign_key "education_project_techniques", "education_projects", column: "project_id"
