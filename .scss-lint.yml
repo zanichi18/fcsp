@@ -5,3 +5,5 @@ exclude:
 linters:
   ImportantRule:
     enabled: false
+  MergeableSelector:
+    enabled: false
