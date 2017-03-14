@@ -16,45 +16,45 @@ ActiveRecord::Schema.define(version: 20170313083645) do
   enable_extension "plpgsql"
 
   create_table "addresses", force: :cascade do |t|
-    t.integer  "company_id_id"
+    t.integer  "company_id"
     t.string   "address"
     t.float    "longtitude"
     t.float    "latitude"
     t.boolean  "head_office"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["company_id_id"], name: "index_addresses_on_company_id_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_addresses_on_company_id", using: :btree
   end
 
   create_table "articles", force: :cascade do |t|
-    t.integer  "company_id_id"
-    t.integer  "user_id_id"
+    t.integer  "company_id"
+    t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["company_id_id"], name: "index_articles_on_company_id_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_articles_on_company_id", using: :btree
     t.index ["title"], name: "index_articles_on_title", using: :btree
-    t.index ["user_id_id"], name: "index_articles_on_user_id_id", using: :btree
+    t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
   create_table "benefits", force: :cascade do |t|
-    t.integer  "company_id_id"
+    t.integer  "company_id"
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["company_id_id"], name: "index_benefits_on_company_id_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_benefits_on_company_id", using: :btree
   end
 
   create_table "candidates", force: :cascade do |t|
-    t.integer  "user_id_id"
-    t.integer  "job_id_id"
+    t.integer  "user_id"
+    t.integer  "job_id"
     t.integer  "interested_in"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["job_id_id"], name: "index_candidates_on_job_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_candidates_on_user_id_id", using: :btree
+    t.index ["job_id"], name: "index_candidates_on_job_id", using: :btree
+    t.index ["user_id"], name: "index_candidates_on_user_id", using: :btree
   end
 
   create_table "companies", force: :cascade do |t|
@@ -220,16 +220,16 @@ ActiveRecord::Schema.define(version: 20170313083645) do
   end
 
   create_table "employees", force: :cascade do |t|
-    t.integer  "company_id_id"
-    t.integer  "user_id_id"
+    t.integer  "company_id"
+    t.integer  "user_id"
     t.string   "description"
     t.date     "start_time"
     t.integer  "role"
     t.integer  "status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["company_id_id"], name: "index_employees_on_company_id_id", using: :btree
-    t.index ["user_id_id"], name: "index_employees_on_user_id_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["company_id"], name: "index_employees_on_company_id", using: :btree
+    t.index ["user_id"], name: "index_employees_on_user_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -253,14 +253,14 @@ ActiveRecord::Schema.define(version: 20170313083645) do
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.integer  "company_id_id"
+    t.integer  "company_id"
     t.string   "title"
     t.string   "describe"
     t.integer  "type_of_candidates"
     t.integer  "who_can_apply"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.index ["company_id_id"], name: "index_jobs_on_company_id_id", using: :btree
+    t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
@@ -282,24 +282,24 @@ ActiveRecord::Schema.define(version: 20170313083645) do
   end
 
   create_table "team_introductions", force: :cascade do |t|
-    t.integer  "team_id_id"
+    t.integer  "team_id"
     t.integer  "team_target_id"
     t.string   "team_target_type"
     t.string   "title"
     t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["team_id_id"], name: "index_team_introductions_on_team_id_id", using: :btree
+    t.index ["team_id"], name: "index_team_introductions_on_team_id", using: :btree
     t.index ["team_target_id"], name: "index_team_introductions_on_team_target_id", using: :btree
     t.index ["team_target_type"], name: "index_team_introductions_on_team_target_type", using: :btree
   end
 
   create_table "teams", force: :cascade do |t|
-    t.integer  "company_id_id"
+    t.integer  "company_id"
     t.string   "name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["company_id_id"], name: "index_teams_on_company_id_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_teams_on_company_id", using: :btree
   end
 
   create_table "user_groups", force: :cascade do |t|

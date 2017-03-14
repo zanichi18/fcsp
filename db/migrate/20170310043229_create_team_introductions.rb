@@ -1,7 +1,7 @@
 class CreateTeamIntroductions < ActiveRecord::Migration[5.0]
   def change
     create_table :team_introductions do |t|
-      t.references :team_id
+      t.references :team
       t.integer :team_target_id
       t.string :team_target_type
       t.string :title
