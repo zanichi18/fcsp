@@ -8,3 +8,6 @@ IrresponsibleModule:
 
 FeatureEnvy:
   enabled: false
+
+UtilityFunction:
+  enabled: false
