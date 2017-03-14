@@ -1,8 +1,8 @@
 class CreateArticles < ActiveRecord::Migration[5.0]
   def change
     create_table :articles do |t|
-      t.references :company_id, index: true
-      t.references :user_id
+      t.references :company, index: true
+      t.references :user
       t.string :title
       t.text :content
 
