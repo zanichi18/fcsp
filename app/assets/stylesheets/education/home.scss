@@ -1,47 +1,42 @@
-@import '../variables/color';
+@import 'variables/color';
 
 .standard-logo img {
   height: 100px;
   width: 226px;
 }
 
-.header-wrap-custom,
-.logo-custom,
-.list-header-custom {
-  border: none !important;
-}
-
 .slide-custom {
   position: relative;
   z-index: 1;
 
-  h2,
+  cap,
   p {
-    color: $white !important;
+    color: $white;
   }
-}
 
-.slide-custom .bg-slide-custom {
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  opacity: .4;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-
-  img {
+  .bg-slide-custom {
+    bottom: 0;
     height: 100%;
+    left: 0;
+    opacity: .4;
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 100%;
+    z-index: -1;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
 .content-wrap-custom {
-  padding-bottom: 0 !important;
-}
-
-footer {
-  color: $white !important;
+  padding: 80px 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 80px;
+  position: relative;
 }
