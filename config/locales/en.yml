@@ -1,4 +1,3 @@
-
 en:
   company:
     dashboards:
@@ -58,10 +57,18 @@ en:
         page_title: "All Trainings"
         techniques: "Techniques"
         view_courses: "View list courses"
+    related_project: "Related Projects:"
     see_more: "See More"
     title: "Framgia Education"
     logo_alt: "Framgia logo"
     project:
+      project_info: "Project Info:"
+      share: "Share:"
+      server_info: "server info:"
+      plat_form: "platform:"
+      git_repo: "Git repo:"
+      pm_url: " Pm url:"
+      not_found: "Project not found!"
       title: "Project"
       detail: "Detail"
       php: "PHP"

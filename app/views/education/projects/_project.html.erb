@@ -3,20 +3,17 @@
     <article class="portfolio-item pf-media pf-icons">
       <div class="portfolio-image">
         <ul data-liffect="pageRight" class="data-liffect">
-          <% if project.images.any? %>
-            <li><%= link_to image_tag(project.images.first.url,
-              class: "img wth-80"), "#" %></li>
-          <% else %>
-            <li><%= link_to image_tag("2",class: "img wth-100"), "#" %></li>
-          <% end %>
+          <li><%= load_image project %></li>
         </ul>
         <div class="portfolio-overlay">
           <div class="portfolio-desc">
             <h3><%= project.name %></h3>
-            <span><a href="#"><%= t "education.project.detail" %></a></span>
+            <span><%= truncate(project.description, length: Settings.education.project.truncate) %></span>
           </div>
           <a href="#" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-          <a href="#" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+          <%= link_to  education_project_path(project), class: "right-icon" do %>
+            <i class="icon-line-ellipsis"></i>
+          <% end %>
         </div>
       </div>
     </article>

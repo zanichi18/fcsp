@@ -1,0 +1,82 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="col_two_third portfolio-single-image nobottommargin">
+        <li><%= load_image project %></li>
+      </div>
+      <div class="col_one_third portfolio-single-content col_last nobottommargin">
+        <div class="fancy-title title-bottom-border">
+          <h2> <%= t "education.project.project_info" %></h2>
+        </div>
+        <p><%= project.description %></p>
+        <p><%= project.core_features %></p>
+        <p><%= project.release_note %></p>
+        <div class="line"></div>
+        <ul class="portfolio-meta bottommargin">
+          <li><span><i  class="icon-info"></i>
+            <%= t "education.project.server_info" %>
+            </span><%= project.server_info %>
+          </li>
+
+          <li><span><i class="icon-lightbulb">
+            </i><%= t "education.project.plat_form" %>
+            </span><%= project.plat_form %>
+          </li>
+
+          <li><span><i class="icon-link"></i>
+            <%= t "education.project.git_repo"  %>
+            </span><%= link_to project.git_repo, project.git_repo,
+              target: t("education.project.git_repo") %>
+          </li>
+
+          <li><span><i class="icon-link"></i>
+            <%=t "education.project.pm_url"  %></span>
+            <%= link_to project.pm_url, project.pm_url,
+              target: t("education.project.pm_url") %>
+          </li>
+        </ul>
+
+        <div class="si-share clearfix">
+          <span> <%= t "education.project.share" %></span>
+          <div>
+            <a href="#" class="social-icon si-borderless si-facebook">
+              <i class="icon-facebook"></i>
+              <i class="icon-facebook"></i>
+            </a>
+            <a href="#" class="social-icon si-borderless si-twitter">
+              <i class="icon-twitter"></i>
+              <i class="icon-twitter"></i>
+            </a>
+            <a href="#" class="social-icon si-borderless si-pinterest">
+              <i class="icon-pinterest"></i>
+              <i class="icon-pinterest"></i>
+            </a>
+            <a href="#" class="social-icon si-borderless si-gplus">
+              <i class="icon-gplus"></i>
+              <i class="icon-gplus"></i>
+            </a>
+            <a href="#" class="social-icon si-borderless si-rss">
+              <i class="icon-rss"></i>
+              <i class="icon-rss"></i>
+            </a>
+            <a href="#" class="social-icon si-borderless si-email3">
+              <i class="icon-email3"></i>
+              <i class="icon-email3"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+
+      <div class="divider divider-center"><i class="icon-circle"></i></div>
+      <h4><%= t "education.related_project" %></h4>
+      <div id="related-portfolio" class="owl-carousel portfolio-carousel
+        carousel-widget" data-margin="20" data-nav="false"
+        data-autoplay="3000"data-items-xxs="1" data-items-xs="2"
+        data-items-sm="3" data-items-lg="4">
+        <%= render "related_project", relations: relations %>
+      </div>
+    </div>
+  </div>
+</section>
