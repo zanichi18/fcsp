@@ -19,6 +19,12 @@ namespace :db do
           imageable_id: technique.id,
           imageable_type: Education::Technique.name
       end
+
+      puts "create learning program"
+
+      Education::LearningProgram.create! name: "NEW DEV", description: Faker::Lorem.sentence
+      Education::LearningProgram.create! name: "INTERN", description: Faker::Lorem.sentence
+      Education::LearningProgram.create! name: "OPEN EDUCATION", description: Faker::Lorem.sentence
     end
   end
 end

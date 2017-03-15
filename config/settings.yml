@@ -4,5 +4,9 @@ education:
   technique:
     per_page: 6
     truncate: 100
+  index:
+    max_learning_program_desc: 150
+    max_learning_program_name: 20
+    max_learning_program: 3
 home:
   limit: 8
