@@ -14,8 +14,14 @@
             <div><%= t "education.header.home" %></div>
           <% end %>
           </li>
-            <li><%= link_to t("education.header.project"), education_projects_path,
-              method: :get, remote: true %></li>
+          <li class="mega-menu">
+            <%= link_to t("education.header.project"), education_projects_path %>
+          </li>
+          <li class="mega-menu">
+            <%= link_to t("education.header.posts"), education_posts_path %>
+          </li>
+          <li class="mega-menu"><a href="#"><div><%= t "education.header.trainers" %></div></a>
+          </li>
           <li class="mega-menu"><a href="#"><div><%= t "education.header.trainers" %></div></a>
           </li>
           <li class="mega-menu"><a href="#"><div><%= t "education.header.trainees" %></div></a>

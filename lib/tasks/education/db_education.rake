@@ -31,5 +31,16 @@ namespace :db do
 
     puts "Create Education trainings"
     Rake::Task["education:make_trainings"].invoke
+    puts "Create education category"
+    categories = ["Development", "Design", "QA", "Others"]
+    categories.each do |category|
+      Education::Category.create! name: category
+    end
+
+    puts "Create education posts"
+    5.times do
+      Education::Post.create! title: FFaker::Lorem.sentence,
+        content: FFaker::Lorem.paragraph, category_id: 1, user_id: 1
+    end
   end
 end
