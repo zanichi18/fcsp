@@ -12,12 +12,20 @@
 
 .widget {
 	position: relative;
-	margin-top: 50px;
+	margin-top: 20px;
+}
+
+.sidebar-widgets-wrap {
+	border-right: 1px solid #bfbebe;
+}
+
+.sidebar-widgets-inner {
+	padding: 20px;
 }
 
 .sidebar-widgets-wrap .widget {
 	padding-top: 50px;
-	border-top: 1px solid #EEE;
+	border-top: 1px solid #bfbebe;
 }
 
 .widget:first-child { margin-top: 0; }
@@ -132,21 +140,22 @@ body:not(.device-touch) .tagcloud a {
 .widget_pages li a,
 .widget_rss li a,
 .widget_recent_comments li a {
-	background: url("../../images/icons/widget-link.png") left top no-repeat;
 	border: none !important;
 	color: #444;
 	font-size: 14px;
 }
+.widget_links li div { display: inline-block; }
 
 .widget_nav_menu li a:hover,
 .widget_links li a:hover,
+.widget_links li div:hover,
 .widget_meta li a:hover,
 .widget_archive li a:hover,
 .widget_recent_entries li a:hover,
 .widget_categories li a:hover,
 .widget_pages li a:hover,
 .widget_rss li a:hover,
-.widget_recent_comments li a:hover { color: #000; }
+.widget_recent_comments li a:hover { color: #1ABC9C; }
 
 .widget_recent_comments li a {
 	display: inline;

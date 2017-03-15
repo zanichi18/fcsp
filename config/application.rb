@@ -15,6 +15,8 @@ module Fcsp
     config.assets.paths << Rails.root.join("app", "assets", "videos")
 
     config.rack_mini_profiler_environments = %w(development)
-    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
+    config.i18n.load_path << Rails.root.join(
+      "config", "locales", "**", "*.{rb,yml}"
+    )
   end
 end
