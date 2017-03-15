@@ -6,7 +6,7 @@ namespace :db do
     if Rails.env.production?
       puts "Do not running in 'Production' task"
     else
-      %w(db:setup).each do |task|
+      %w(db:setup db:seed education:make_projects).each do |task|
         Rake::Task[task].invoke
       end
 
@@ -22,9 +22,16 @@ namespace :db do
 
       puts "create learning program"
 
-      Education::LearningProgram.create! name: "NEW DEV", description: Faker::Lorem.sentence
-      Education::LearningProgram.create! name: "INTERN", description: Faker::Lorem.sentence
-      Education::LearningProgram.create! name: "OPEN EDUCATION", description: Faker::Lorem.sentence
+      Education::LearningProgram.create!(name: "NEW DEV",
+        description: Faker::Lorem.sentence)
+      Education::LearningProgram.create!(name: "INTERN",
+        description: Faker::Lorem.sentence)
+      Education::LearningProgram.create!(name: "OPEN EDUCATION",
+        description: Faker::Lorem.sentence)
+
+      puts "create About"
+      Education::About.create!(title: "Welcome to Framgia Education",
+        content: "Master your skill. Come with us")
     end
   end
 end
