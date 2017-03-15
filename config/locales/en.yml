@@ -1,5 +1,6 @@
 en:
   layouts:
+    base_title: "FCSP"
     header:
       home: "Home"
       help: "Help"
@@ -17,8 +18,30 @@ en:
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   education:
+    see_more: "See More"
     title: "Framgia Education"
     logo_alt: "Framgia logo"
+    project:
+      title: "Project"
+      detail: "Detail"
+      php: "PHP"
+      android: "Android"
+      ruby: "Ruby"
+      ios: "IOS"
+      other: "Other"
+      name: "+ Project"
+      see_more: "See more"
+      next_page: "Next Page"
+      back_page: "Previous Page"
+      total_project:
+        title: "+ project of education"
+        subtitle: "Total project education of Framgia"
+      platform:
+        title: "4+ platform for education"
+        subtitle: "Ruby, PHP, Android, IOS..."
+      rate_avg:
+        title: "3rate"
+        subtitle: "rate avg"
     header:
       home: "Home"
       project: "Project"
@@ -28,3 +51,4 @@ en:
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"
+  copy: "Copyright by Framgia"

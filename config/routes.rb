@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   namespace :education do
     root "home#index"
+    resources :projects, only: :index
   end
 end

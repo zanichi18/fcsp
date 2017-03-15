@@ -14,6 +14,9 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "pg"
+gem "config"
+gem "bootstrap-kaminari-views"
+gem "kaminari"
 gem "devise"
 gem "jquery-turbolinks"
 gem "bootstrap-sass", "~> 3.3.6"
@@ -30,6 +33,8 @@ group :development, :test do
   gem "byebug", platform: :mri
   gem "pry-rails"
   gem "rack-mini-profiler", require: false
+  gem "factory_girl_rails"
+  gem "rspec-rails", "~> 3.5"
 end
 
 group :development do
@@ -40,7 +45,6 @@ group :development do
 end
 
 group :test do
-  gem "rspec-rails", "~> 3.4"
   gem "rspec-collection_matchers"
   gem "shoulda-matchers", "~> 3.0"
   gem "database_cleaner", "~> 1.5"
@@ -53,6 +57,9 @@ group :test do
   gem "eslint-rails"
   gem "bundler-audit"
   gem "reek"
+  gem "rails-controller-testing"
+  gem "simplecov", require: false
+  gem "rspec-activemodel-mocks"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
