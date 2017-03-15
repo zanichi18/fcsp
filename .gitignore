@@ -58,3 +58,4 @@ config/application.yml
 .framgia-ci-result.temp.yml
 .idea/
 app/assets/videos/*
+/coverage/

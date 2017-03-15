@@ -1,5 +1,8 @@
 education:
   project:
     per_page: 16
+  technique:
+    per_page: 6
+    truncate: 100
 home:
   limit: 8

@@ -1,0 +1,31 @@
+<div class="technique-page-title">
+  <div class="row clearfix">
+    <div class="heading-block center">
+      <h2><%= t "education.technique.index.our_technique" %></h2>
+      <span class="divcenter">
+        <%= t "education.technique.index.introduce" %>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="container clearfix">
+  <div class="row">
+    <div class="col-md-4 col-sm-6 bottommargin technique-scale-width technique-align-right">
+      <%= render partial: "education/techniques/technique",
+        collection: @techniques.in_groups(2)[0],
+        locals: {add_css_fbox_right: "fbox-right"} %>
+    </div>
+
+    <div class="col-md-4 hidden-sm bottommargin center technique-scale-width">
+      <img src="/assets/images/services/iphone7.png" alt="iphone 2">
+    </div>
+    <% if @techniques.in_groups(2)[1].any? %>
+      <div class="col-sm-4 bottommargin technique-scale-width technique-align-left">
+        <%= render partial: "education/techniques/technique",
+          collection: @techniques.in_groups(2)[1],
+          locals: {add_css_fbox_right: ""} %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,9 @@ gem "devise"
 gem "jquery-turbolinks"
 gem "bootstrap-sass", "~> 3.3.6"
 gem "ffaker"
+gem "kaminari"
+gem "therubyracer"
+gem "config"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password
@@ -35,6 +38,7 @@ group :development, :test do
   gem "rack-mini-profiler", require: false
   gem "factory_girl_rails"
   gem "rspec-rails", "~> 3.5"
+  gem "faker"
 end
 
 group :development do
@@ -57,6 +61,7 @@ group :test do
   gem "eslint-rails"
   gem "bundler-audit"
   gem "reek"
+
   gem "rails-controller-testing"
   gem "simplecov", require: false
   gem "rspec-activemodel-mocks"
