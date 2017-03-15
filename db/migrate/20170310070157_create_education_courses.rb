@@ -1,6 +1,7 @@
 class CreateEducationCourses < ActiveRecord::Migration[5.0]
   def change
     create_table :education_courses do |t|
+      t.string :name
       t.text :detail
       t.integer :training_id
       t.datetime :start_date

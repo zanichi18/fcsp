@@ -1,0 +1,33 @@
+<div class="row-course" >
+  <section id="page-title">
+    <div class="container clearfix">
+      <h1><%= t ".courses" %></h1>
+      <span><%= t ".show_all_course" %></span>
+      <ol class="breadcrumb">
+        <li><a href="#"><%= t ".training_program" %></a></li>
+        <li class="active"><a href="#"><%= t ".language_program" %></a></li>
+      </ol>
+    </div>
+  </section>
+  <br />
+  <section id="content">
+  </section>
+  <section id="content">
+    <div class="content-wrap nopadding">
+      <div id="portfolio" class="portfolio grid-container portfolio-3
+        portfolio-full portfolio-nomargin portfolio-notitle clearfix" >
+        <div class="ui link cards" id= "courses">
+          <%= render @courses %>
+        </div>
+      </div>
+      <hr/>
+      <div id="next-project" class="read-more" align="center">
+        <%= link_to_prev_page @courses, t("education.back_page"),
+          class: "button button-rounded button-white button-light button-large" %>
+        <%= link_to_next_page @courses, t("education.next_page"),
+           class: "button button-rounded button-white button-light button-large" %>
+      </div>
+      <br/>
+    </div>
+  </section>
+</div>
