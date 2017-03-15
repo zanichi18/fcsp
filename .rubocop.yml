@@ -14,7 +14,7 @@ AllCops:
   TargetRubyVersion: 2.2
   Excludes:
     - db/schema.rb
-    - lib/tasks/*.rake
+    - lib/tasks/**/*.rake
     - test/**
     - config/initializers/**
     - config/environments/**
