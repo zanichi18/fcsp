@@ -1,10 +1,37 @@
 en:
+  company:
+    dashboards:
+      index:
+        title: "Company"
+      dashboard:
+        menu: "Menu"
+        manager_postings: "Manager Postings"
+        candidates: "Candidates"
+        messages: "Messages"
+        recommendations: "Recommendations"
+        view_mores: "View mores"
+        current_plans: "Current Plans"
+        contact: "Contact Us"
+        trial: "Trial"
+        view_candidates: "Current viewable candidates"
+        mail: "Mail"
+        help: "Help"
+        company_info: "Company Info"
   layouts:
     base_title: "FCSP"
     header:
       home: "Home"
       help: "Help"
       about: "About"
+      dashboard: "Dashboard"
+      jobs: "Jobs"
+      feed: "Feed"
+      tools: "Tools"
+      edit_profile: "Edit Profile"
+      account_info: "Account Info"
+      company_info: "Company Info"
+      setting: "Setting"
+      logout: "Logout"
   pages:
     home:
       content: "This is home page"

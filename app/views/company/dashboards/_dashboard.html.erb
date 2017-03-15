@@ -1,0 +1,51 @@
+<div class="sidebar nobottommargin clearfix">
+  <div class="sidebar-widgets-wrap">
+    <div class="sidebar-widgets-inner">
+
+      <div class="widget widget_links clearfix">
+        <h4><%= t ".menu" %></h4>
+        <ul>
+          <li><div>
+            <i class="icon-tasks"></i>
+            <%= link_to t(".manager_postings"), "#" %>
+          </div></li>
+          <li><div>
+            <i class="icon-group" aria-hidden="true"></i>
+            <%= link_to t(".candidates"), "#" %>
+          </div></li>
+          <li><div>
+            <i class="icon-comments"></i>
+            <%= link_to t(".messages"), "#" %>
+          </div></li>
+          <li><div>
+            <i class="icon-unlock-alt"></i>
+            <%= link_to t(".recommendations"), "#" %>
+          </div></a></li>
+          <li><div>
+            <a role="button" data-toggle="collapse" href="#collapseExample"
+              aria-expanded="false" aria-controls="collapseExample">
+              <%= t ".view_mores" %> <i class="icon-caret-down"></i>
+            </a>
+            <span class="collapse" id="collapseExample">
+              <%= link_to t(".company_info"), "#" %>
+            </span>
+          </div></li>
+        </ul>
+      </div>
+
+      <div class="widget widget_links clearfix">
+        <h4><%= t ".current_plans" %></h4>
+        <h5><%= t ".trial" %></h5>
+        <p><%= t ".view_candidates" %></p>
+      </div>
+
+      <div class="widget widget_links clearfix">
+        <h4><%= t ".contact" %></h4>
+        <ul>
+          <li><%= link_to t(".mail"), "#" %></li>
+          <li><%= link_to t(".help"), "#" %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

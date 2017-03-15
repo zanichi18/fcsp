@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     resources :projects, only: :index
     resources :techniques, only: [:index, :show]
   end
+
+  namespace :company do
+    resources :dashboards, only: [:index]
+  end
 end
