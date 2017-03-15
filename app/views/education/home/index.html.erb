@@ -2,12 +2,14 @@
 <%= render "slider" %>
 
 <section id="content">
-  <div class="content-wrap content-wrap-custom">
-    <%= render "about_us" %>
+  <div class="content-wrap">
+    <%= render "about_us", about: @about %>
     <%= render "learning_programs" %>
     <%= render "programing_languages" %>
     <%= render "our_projects" %>
     <%= render "lastest_courses" %>
+  </div>
+  <div class="content-wrap-custom">
     <%= render "statistics" %>
   </div>
 </section>
