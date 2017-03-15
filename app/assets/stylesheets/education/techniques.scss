@@ -1,0 +1,32 @@
+@import 'variables/color';
+
+.technique-page-title {
+  background-color: $white-gray;
+  border-bottom: 1px solid $white-eee;
+  padding-top: 50px;
+  position: relative;
+}
+
+.technique-backgroud-color .fbox-icon img {
+  background-color: $white;
+}
+
+.technique-scale-width {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.technique-scale-image {
+  min-height: 80px;
+  min-width: 80px;
+}
+
+.technique-align-right .feature-box.fbox-right {
+  padding: 0 100px 0 0;
+  text-align: right;
+}
+
+.technique-align-left .feature-box {
+  padding: 0 0 0 100px;
+  position: relative;
+}
