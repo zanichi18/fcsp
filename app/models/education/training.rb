@@ -3,7 +3,7 @@ class Education::Training < ApplicationRecord
     foreign_key: :training_id
   has_many :images, as: :imageable
   has_many :training_techniques, class_name: Education::TrainingTechnique.name,
-    foreign_key: :training_id
+    foreign_key: :training_id, dependent: :destroy
   has_many :techniques, through: :training_techniques
 
   validates :name, presence: true

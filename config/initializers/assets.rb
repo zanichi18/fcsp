@@ -10,5 +10,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w(admin/admin.css admin/admin.js)
 Rails.application.config.assets
-  .precompile += %w(template education.scss education.js)
-Rails.application.config.assets.precompile += %w(education.css)
+  .precompile += %w(template education.scss education.js education/projects)

@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require_tree ./education
 //= require bootstrap-sprockets
+//= require jquery-ui/autocomplete
+//= require education/feedback_map.js
+//= require education/growl.custom
+//= require js-routes

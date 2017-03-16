@@ -1,7 +1,8 @@
 <div class="feature-box <%= add_css_fbox_right %> topmargin scale-padding" data-animate="fadeIn" data-delay="200">
   <div class="technique-backgroud-color">
     <div class="fbox-icon technique-scale-image">
-      <%= image_tag technique.image.url, class: "technique-icon" %>
+      <%= image_tag image_technique_url(technique.image),
+        class: "technique-icon" %>
     </div>
   </div>
   <h3><%= technique.name %></h3>

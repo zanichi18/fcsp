@@ -16,6 +16,8 @@ education:
     limit: 20
   projects:
     textarea_rows: 8
+    split_array: 4
+    min_array_size: 3
   mess_success: "success"
   mess_notice: "notice"
   feedback_form_rows: 6

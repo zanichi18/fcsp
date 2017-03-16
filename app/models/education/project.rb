@@ -5,7 +5,7 @@ class Education::Project < ApplicationRecord
   has_many :members, class_name: Education::ProjectMember.name,
     foreign_key: :project_id
   has_many :project_techniques, class_name: Education::ProjectTechnique.name,
-    foreign_key: :project_id
+    foreign_key: :project_id, dependent: :destroy
   has_many :feedbacks, class_name: Education::Feedback.name,
     foreign_key: :project_id
   has_many :techniques, through: :project_techniques
@@ -24,5 +24,11 @@ class Education::Project < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
   scope :relation_plat_form, ->plat_name do
     where plat_form: plat_name
+  end
+  scope :search_by_name, ->term do
+    where("LOWER(name) LIKE :term", term: "%#{term.downcase}%")
+  end
+  scope :filter_by_technique, ->technique_name do
+    joins(:techniques).where("education_techniques.name LIKE ?", technique_name)
   end
 end

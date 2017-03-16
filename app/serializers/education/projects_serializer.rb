@@ -1,0 +1,11 @@
+class Education::ProjectsSerializer < ActiveModel::Serializer
+  attributes :id, :name, :description, :plat_form, :image_url
+
+  def image_url
+    if object.images.any?
+      object.images.first.url
+    else
+      ImageUploader.new.default_url
+    end
+  end
+end

@@ -1,3 +1,5 @@
+@import 'variables/color';
+
 .data-liffect li {
   animation: pageRight 600ms ease both;
   animation-play-state: paused;
@@ -23,4 +25,89 @@
 
 .content-wrap-custom {
   padding: 0;
+}
+
+.menu-technique .current-custom a {
+  background-color: $gray;
+}
+
+.project-search input {
+  background: $white;
+  border: 1px solid $gray-ddd;
+  border-radius: 2em;
+  display: initial;
+  font-size: 1em;
+  padding: .5em 1.3em;
+  width: 100%;
+}
+
+.project-search input:focus {
+  border-color: $blue-light;
+}
+
+.project-search .results .ui-widget-content {
+  background: $white;
+  border-color: #gray-ddd;
+  box-shadow: 0 .1em .2em $gray;
+  font-size: .9em;
+  line-height: 1.2;
+  max-height: 20em;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: .5em 0;
+}
+
+.project-search .results .ui-menu-item {
+  border: 0;
+  border-left: 5px solid transparent;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  height: 6.5em;
+  padding: .4em .6em .4em 6.2em;
+  position: relative;
+}
+
+.project-search .results .ui-state-focus {
+  background: $white;
+  border-left-color: $blue;
+  font-weight: 300;
+}
+
+.project-search .ui-menu-item .img {
+  height: 6em;
+  left: .6em;
+  overflow: hidden;
+  position: absolute;
+  top: .4em;
+  width: 5em;
+}
+
+.ui-menu-item .img img {
+  max-width: 100%;
+}
+
+.project-search .ui-menu-item .name {
+  color: $gray-black;
+  display: block;
+}
+
+.project-search .ui-menu-item .description {
+  color: $gray-aaa;
+  display: block;
+  font-size: .8em;
+  letter-spacing: 1px;
+  margin-top: .6em;
+  text-transform: uppercase;
+}
+
+.project-search .ui-menu-item .plat-form {
+  color: $gray-aaa;
+  display: block;
+  font-size: .8em;
+  margin-top: .5em;
+}
+
+.project-search .ui-state-focus .name,
+.project-search .ui-state-focus .description,
+.project-search .ui-state-focus .plat-form {
+  color: $blue;
 }
