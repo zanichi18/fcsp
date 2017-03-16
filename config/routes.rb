@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   namespace :education do
     root "home#index"
-    resources :projects
+    resources :projects do
+      resources :comments
+    end
     resources :trainings
     resources :techniques, only: [:index, :show]
     resources :feedbacks, only: [:new, :create]

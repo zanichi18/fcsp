@@ -22,7 +22,7 @@ module Supports::Education
     end
 
     def courses
-      Education::Course.newest
+      Education::Course.newest.includes(:images)
         .limit Settings.courses.home_limit
     end
   end

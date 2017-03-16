@@ -10,19 +10,19 @@
         <div class="fancy-title title-bottom-border">
           <h2><%= t ".project_info" %></h2>
         </div>
-        <p><%= truncate project.description, 
+        <p><%= truncate project.description,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.description.size, 
+          <%= check_lenght_content project.description.size,
             Settings.education.project.modal_description %>
         </p>
-        <p><%= truncate project.core_features, 
+        <p><%= truncate project.core_features,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.core_features.size, 
+          <%= check_lenght_content project.core_features.size,
             Settings.education.project.modal_core %>
         </p>
-        <p><%= truncate project.release_note, 
+        <p><%= truncate project.release_note,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.release_note.size, 
+          <%= check_lenght_content project.release_note.size,
             Settings.education.project.modal_release %>
         </p>
         <%= render "read_more", project: project %>
@@ -34,7 +34,7 @@
             <%= t ".server_info" %>
             </span><%= project.server_info %>
           </li>
-          
+
           <li><span><i class="icon-lightbulb"></i>
             <%= t ".technique" %></span>
             <% techniques.each do |technique| %>
@@ -49,14 +49,14 @@
 
           <li><span><i class="icon-link"></i>
             <%= t ".git_repo"  %>
-            </span><%= link_to truncate(project.git_repo, 
+            </span><%= link_to truncate(project.git_repo,
               length: Settings.education.project.link_truncate), project.git_repo,
               target: t("education.project.git_repo") %>
           </li>
 
           <li><span><i class="icon-link"></i>
             <%=t ".pm_url"  %></span>
-            <%= link_to truncate(project.pm_url, 
+            <%= link_to truncate(project.pm_url,
               length: Settings.education.project.link_truncate), project.pm_url,
               target: t("education.project.pm_url") %>
           </li>
@@ -83,3 +83,29 @@
     </div>
   </div>
 </section>
+<div class="divider divider-center"><i class="icon-circle"></i></div>
+<div class="col-md-10">
+  <div class="tab-pane" id="comment">
+    <div class="row margin-bottom-50">
+      </br>
+      <% if user_signed_in?%>
+        <div class="comment-errors"></div>
+        <%= render partial: "education/comments/comment_form",
+          locals: {project: @project} %>
+      <% end %>
+    </div>
+    <h3 id="comments-title" class="comments-title"><span class="comment-count">
+      <%= @project.comments.size %></span><%= t "comment.comment_count" %>
+    </h3>
+    <div class="all-comment" id="all-comment">
+      <%= render @show_projects.comments %>
+    </div>
+    <div class="load-more-button">
+      <%= link_to_next_page @show_projects.comments, t("comment.more_comment"),
+        remote: true, id: "load-more",
+        class: "button button-3d button-teal button-small nobottommargin tada animated" %>
+    </div>
+    <br />
+    <hr />
+  </div>
+</div>

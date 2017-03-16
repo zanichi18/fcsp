@@ -127,6 +127,7 @@ en:
       home: "Home"
       project: "Project"
       posts: "Posts"
+      courses: "Courses"
       trainers: "Trainers"
       trainees: "Trainees"
       search: "Type & Hit Enter.."
@@ -167,3 +168,10 @@ en:
       date_month_year_concise: '%d-%m-%y'
   copy: "Copyright by Framgia"
   error: "error"
+  comment:
+    content: "Comment something"
+    person: "Commented by "
+    more_comment: "More comments"
+    comment_count: " Comments"
+    submit_button: "Submit comment"
+    edit_button: "Save"

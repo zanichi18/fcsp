@@ -1,8 +1,7 @@
 class Education::Project < ApplicationRecord
   translates :description, :core_features, :release_note
 
-  has_many :comments, class_name: Education::Comment.name,
-    foreign_key: :project_id
+  has_many :comments, as: :commentable, dependent: :destroy
   has_many :rates, class_name: Education::Rate.name, foreign_key: :project_id
   has_many :members, class_name: Education::ProjectMember.name,
     foreign_key: :project_id
