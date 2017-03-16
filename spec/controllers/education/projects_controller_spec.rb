@@ -37,8 +37,11 @@ RSpec.describe Education::ProjectsController, type: :controller do
       end
 
       it "get a flash error" do
-        expect(flash[:error]).to eq I18n.t("education.project.not_found")
+        expect(flash[:danger]).to eq(
+          I18n.t("education.projects.project_not_found"))
       end
+    end
+  end
 
   describe "GET #new" do
     it "renders the :new template" do
