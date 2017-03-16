@@ -91,6 +91,28 @@ en:
       rate_avg:
         title: "3rate"
         subtitle: "rate avg"
+    projects:
+      project_not_found: "Project Not Found."
+      form:
+        name: "Name"
+        description: "Description"
+        core_features: "Core features"
+        server_info: "Server info"
+        pm_url: "PM URL"
+        plat_form: "Platform"
+        release_note: "Release note"
+        git_repo: "Git repository"
+      new:
+        create_project: "Create project"
+      edit:
+        update_project: "Update project"
+      create:
+        project_created: "Project created!"
+      update:
+        project_updated_successfully: "Project updated successfully!"
+      destroy:
+        project_deleted: "Project deleted"
+        project_delete_fail: "Fail to delete project."
     header:
       home: "Home"
       project: "Project"
@@ -103,3 +125,4 @@ en:
     index:
       learning_program: "Learning Programs"
   copy: "Copyright by Framgia"
+  error: "error"

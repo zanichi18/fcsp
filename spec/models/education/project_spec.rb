@@ -13,6 +13,16 @@ RSpec.describe Education::Project, type: :model do
     it{is_expected.to have_many :images}
   end
 
+  context "validations" do
+    it{is_expected.to validate_presence_of :name}
+    it{is_expected.to validate_presence_of :description}
+    it{is_expected.to validate_presence_of :core_features}
+    it{is_expected.to validate_presence_of :release_note}
+    it{is_expected.to validate_presence_of :plat_form}
+    it{is_expected.to validate_presence_of :pm_url}
+    it{is_expected.to validate_presence_of :server_info}
+  end
+
   describe "get list project" do
     let!(:project1){FactoryGirl.create :project, created_at: Time.now}
     let!(:project2){FactoryGirl.create :project, created_at: Time.now + 1.hour}

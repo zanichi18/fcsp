@@ -14,6 +14,15 @@ class Education::Project < ApplicationRecord
   has_many :users, through: :project_members
   has_many :images, class_name: Education::Image.name, as: :imageable
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :core_features, presence: true
+  validates :release_note, presence: true
+  validates :server_info, presence: true
+  validates :pm_url, presence: true
+  validates :plat_form, presence: true
+  validates :git_repo, presence: true
+
   scope :newest, ->{order created_at: :desc}
   scope :relation_plat_form, ->plat_name do
     where plat_form: plat_name
