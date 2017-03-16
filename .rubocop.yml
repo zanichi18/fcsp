@@ -10,6 +10,11 @@ inherit_from:
 Rails:
   Enabled: true
 
+Style/BlockLength:
+  Exclude:
+    - Rakefile
+    - spec/**/**/*.rb
+
 AllCops:
   TargetRubyVersion: 2.2
   Excludes:
@@ -18,10 +23,9 @@ AllCops:
     - test/**
     - config/initializers/**
     - config/environments/**
-    - test/models/**
     - db/migrate/**
     - spec/controllers/education/**
-
+    - spec/**
 # Indent private/protected/public as deep as method definitions
 Style/AccessModifierIndentation:
   EnforcedStyle: indent

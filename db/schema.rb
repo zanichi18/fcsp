@@ -225,12 +225,18 @@ ActiveRecord::Schema.define(version: 20170314073910) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "education_trainings", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
+  create_table "education_training_techniques", force: :cascade do |t|
+    t.integer  "training_id"
     t.integer  "technique_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "education_trainings", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "education_user_groups", force: :cascade do |t|
@@ -372,7 +378,8 @@ ActiveRecord::Schema.define(version: 20170314073910) do
   add_foreign_key "education_rates", "education_projects", column: "project_id"
   add_foreign_key "education_rates", "users"
   add_foreign_key "education_socials", "users"
-  add_foreign_key "education_trainings", "education_techniques", column: "technique_id"
+  add_foreign_key "education_training_techniques", "education_techniques", column: "technique_id"
+  add_foreign_key "education_training_techniques", "education_trainings", column: "training_id"
   add_foreign_key "education_user_groups", "education_groups", column: "group_id"
   add_foreign_key "education_user_groups", "users"
   add_foreign_key "groups", "companies"
