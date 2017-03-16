@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :trainings, only: :index
   end
 
-  namespace :company do
+  namespace :employer do
     resources :dashboards, only: [:index]
   end
 end

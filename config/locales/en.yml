@@ -1,6 +1,6 @@
 
 en:
-  company:
+  employer:
     dashboards:
       index:
         title: "Company"
@@ -18,21 +18,23 @@ en:
         mail: "Mail"
         help: "Help"
         company_info: "Company Info"
+    layouts:
+      header:
+        dashboard: "Dashboard"
+        jobs: "Jobs"
+        feed: "Feed"
+        tools: "Tools"
+        edit_profile: "Edit Profile"
+        account_info: "Account Info"
+        company_info: "Company Info"
+        setting: "Setting"
+        logout: "Logout"
   layouts:
     base_title: "FCSP"
     header:
       home: "Home"
       help: "Help"
       about: "About"
-      dashboard: "Dashboard"
-      jobs: "Jobs"
-      feed: "Feed"
-      tools: "Tools"
-      edit_profile: "Edit Profile"
-      account_info: "Account Info"
-      company_info: "Company Info"
-      setting: "Setting"
-      logout: "Logout"
   pages:
     home:
       content: "This is home page"
