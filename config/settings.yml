@@ -1,6 +1,7 @@
 education:
   project:
     per_page: 16
+    truncate: 100
   technique:
     per_page: 6
     truncate: 100
@@ -10,6 +11,9 @@ education:
     max_learning_program: 3
   trainings:
     per_page: 5
+  page_404_url: "public/404"
+  related_project:
+    limit: 20
 home:
   limit: 8
 home_trainings_limit: 8

@@ -15,4 +15,7 @@ class Education::Project < ApplicationRecord
   has_many :images, class_name: Education::Image.name, as: :imageable
 
   scope :newest, ->{order created_at: :desc}
+  scope :relation_plat_form, ->plat_name do
+    where plat_form: plat_name
+  end
 end

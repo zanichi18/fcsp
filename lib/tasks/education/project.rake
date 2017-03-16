@@ -4,12 +4,13 @@ namespace :education do
     30.times do
       project_params = {
         name: FFaker::Product.product_name,
-        description: FFaker::Lorem.paragraphs,
-        core_features: FFaker::Lorem.paragraphs,
-        release_note: FFaker::Lorem.paragraphs,
+        description: FFaker::Lorem.sentence,
+        core_features: FFaker::Lorem.sentence,
+        release_note: FFaker::Lorem.sentence,
         git_repo: "https://github.com/example",
         server_info: FFaker::Lorem.sentence,
-        plat_form: FFaker::Lorem.sentence
+        plat_form: "Ruby",
+        pm_url: "https://pm_url.com/example"
       }
 
       Education::Project.create! project_params
