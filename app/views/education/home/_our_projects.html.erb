@@ -9,9 +9,9 @@
   <%= render "education/projects/project", projects: projects %>
 </div>
 <div class="clear"></div>
-<div class="button button-full button-dark center tright">
+<a href="education/projects" class="button button-full button-dark center tright">
   <div class="container clearfix">
-    <%= link_to t("education.see_more"), education_projects_path,
-      method: :get %> <i class="icon-caret-right"></i>
+    <strong><%= t ".see_more" %></strong> 
+    <i class="icon-caret-right btn-see-more"></i>
   </div>
-</div>
+</a>
