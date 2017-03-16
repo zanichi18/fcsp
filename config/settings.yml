@@ -14,6 +14,8 @@ education:
   page_404_url: "public/404"
   related_project:
     limit: 20
+  projects:
+    textarea_rows: 8
 home:
   limit: 8
 home_trainings_limit: 8

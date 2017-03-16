@@ -137,7 +137,7 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
-    libv8 (3.16.14.19-x86_64-linux)
+    libv8 (3.16.14.19)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -266,6 +266,9 @@ GEM
     sexp_processor (4.8.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    simple_form (3.4.0)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     simplecov (0.13.0)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -355,6 +358,7 @@ DEPENDENCIES
   scss_lint
   scss_lint_reporter_checkstyle
   shoulda-matchers (~> 3.0)
+  simple_form
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
