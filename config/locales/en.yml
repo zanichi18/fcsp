@@ -119,6 +119,17 @@ en:
       trainers: "Trainers"
       trainees: "Trainees"
       search: "Type & Hit Enter.."
+      feedback: "Feedback"
+    feedback:
+      title: "Feedback"
+      description: "Get in Touch with Us"
+      message: "message"
+      send_feed_back: "Send Feedback"
+      send_us_an_email: "Send us an Email"
+      feedback_success: "Thanks for your feedback."
+      feedback_error: "Something was wrong, check your feedback form again."
+      success_title: "Success!"
+      failed_title: "Failed!"
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"

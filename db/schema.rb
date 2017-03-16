@@ -114,9 +114,10 @@ ActiveRecord::Schema.define(version: 20170314073910) do
     t.string   "name"
     t.string   "email"
     t.text     "content"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "phone_number"
+    t.string   "subject"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "education_groups", force: :cascade do |t|
@@ -365,7 +366,6 @@ ActiveRecord::Schema.define(version: 20170314073910) do
   add_foreign_key "education_course_members", "education_courses", column: "course_id"
   add_foreign_key "education_course_members", "users"
   add_foreign_key "education_courses", "education_trainings", column: "training_id"
-  add_foreign_key "education_feedbacks", "education_projects", column: "project_id"
   add_foreign_key "education_permissions", "education_groups", column: "group_id"
   add_foreign_key "education_posts", "education_categories", column: "category_id"
   add_foreign_key "education_posts", "users"

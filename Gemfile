@@ -46,6 +46,7 @@ group :development do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "bullet"
+  gem "pry"
 end
 
 group :test do
@@ -61,7 +62,6 @@ group :test do
   gem "eslint-rails"
   gem "bundler-audit"
   gem "reek"
-
   gem "rails-controller-testing"
   gem "simplecov", require: false
   gem "rspec-activemodel-mocks"
