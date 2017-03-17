@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   namespace :employer do
     resources :dashboards, only: [:index]
   end
+
+  namespace :admin do
+    resources :dashboards, only: [:index]
+    root "dashboards#index"
+  end
 end
