@@ -1,5 +1,5 @@
 class Education::TrainingsController < Education::BaseController
-  before_action :load_training, only: :show
+  before_action :load_training, except: [:new, :index, :create]
 
   def index
     @trainings = Education::Training.newest.page(params[:page])
@@ -11,10 +11,49 @@ class Education::TrainingsController < Education::BaseController
       .limit Settings.education.trainings.courses_limit
   end
 
+  def new
+    @training = Education::Training.new
+  end
+
+  def create
+    @training = Education::Training.new training_params
+    if @training.save
+      flash[:success] = t ".training_created"
+      redirect_to education_trainings_path
+    else
+      flash[:danger] = t ".training_create_failed"
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @training.update_attributes training_params
+      flash[:success] = t ".training_updated_successfully"
+      redirect_to @training
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @training.destroy
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
+
   def load_training
     return if @training = Education::Training.find_by(id: params[:id])
-    flash[:danger] = t ".not_found"
+    flash[:error] = t "education.trainings.training_not_found"
     redirect_to education_root_path
+  end
+
+  def training_params
+    params.require(:education_training).permit :name, :description
   end
 end

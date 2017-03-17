@@ -6,5 +6,8 @@ class Education::Training < ApplicationRecord
     foreign_key: :training_id
   has_many :techniques, through: :training_techniques
 
+  validates :name, presence: true
+  validates :description, presence: true
+
   scope :newest, ->{order created_at: :desc}
 end
