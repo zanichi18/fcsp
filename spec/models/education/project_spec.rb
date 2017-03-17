@@ -6,7 +6,6 @@ RSpec.describe Education::Project, type: :model do
     it{is_expected.to have_many :rates}
     it{is_expected.to have_many :members}
     it{is_expected.to have_many :project_techniques}
-    it{is_expected.to have_many :feedbacks}
     it{is_expected.to have_many :techniques}
     it{is_expected.to have_many :project_members}
     it{is_expected.to have_many :users}
