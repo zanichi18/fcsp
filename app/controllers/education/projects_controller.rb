@@ -10,6 +10,7 @@ class Education::ProjectsController < Education::BaseController
   def show
     @relations = Education::Project.relation_plat_form(@project.plat_form)
       .newest.includes(:images).limit Settings.education.related_project.limit
+    @project_members = @project.members.order(:position).includes :user
   end
 
   def new

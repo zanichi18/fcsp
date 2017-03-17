@@ -1,17 +1,8 @@
-<section id="page-title">
-  <div class="container clearfix">
-    <h1><%= @project.name %></h1>
-    <div id="portfolio-navigation">
-      <a href="#"><i class="icon-angle-left"></i></a>
-      <a href="#"><i class="icon-line-grid"></i></a>
-      <a href="#"><i class="icon-angle-right"></i></a>
-    </div>
-  </div>
-</section>
 <section id="content">
   <div class="content-wrap content-wrap-custom">
     <div class="container clearfix">
-      <%= render "detail_project", project: @project, relations: @relations %>
+      <%= render "detail_project", project: @project, relations: @relations,
+        project_members: @project_members %>
     </div>
   </div>
 </section>

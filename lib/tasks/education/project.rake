@@ -13,7 +13,10 @@ namespace :education do
         pm_url: "https://fportfolio.com/users/#{i + 1}"
       }
 
-      Education::Project.create! project_params
+      project = Education::Project.create! project_params
+      10.times do |j|
+        project.members.create(position: rand(0..4), user_id: (j+1))
+      end
     end
   end
 end

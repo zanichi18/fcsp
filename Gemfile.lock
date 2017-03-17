@@ -64,6 +64,10 @@ GEM
       bundler (~> 1.2)
       thor (~> 0.18)
     byebug (9.0.6)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     chart-js-rails (0.1.2)
       railties (> 3.1)
     code_analyzer (0.4.7)
@@ -181,6 +185,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_magick (4.6.1)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     momentjs-rails (2.17.1)
@@ -369,6 +374,7 @@ DEPENDENCIES
   bullet
   bundler-audit
   byebug
+  carrierwave
   coffee-rails (~> 4.2)
   config
   database_cleaner (~> 1.5)
@@ -383,6 +389,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari
   listen (~> 3.0.5)
+  mini_magick
   pg
   pry
   pry-rails
@@ -412,4 +419,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.11.2
+   1.14.6
