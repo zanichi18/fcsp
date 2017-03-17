@@ -11,3 +11,6 @@ FeatureEnvy:
 
 UtilityFunction:
   enabled: false
+
+exclude_paths:
+  - db
