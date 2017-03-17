@@ -31,3 +31,7 @@ education:
 home:
   limit: 8
 home_trainings_limit: 8
+company:
+  country: ["United States", "Japan", "Germany", "Korea"]
+  max_length_name: 50
+default_user_password: {"password": "123456"}

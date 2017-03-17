@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.string   "website"
     t.text     "introduction"
     t.string   "founder"
+    t.string   "country"
     t.integer  "company_size"
     t.date     "founder_on"
     t.datetime "created_at",   null: false
@@ -346,6 +347,8 @@ ActiveRecord::Schema.define(version: 20170317120631) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
+    t.string   "phone"
+    t.integer  "role",                   default: 0
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

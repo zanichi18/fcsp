@@ -5,6 +5,7 @@ class CreateCompanies < ActiveRecord::Migration[5.0]
       t.string :website
       t.text :introduction
       t.string :founder
+      t.string :country
       t.integer :company_size
       t.date :founder_on
 

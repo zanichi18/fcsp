@@ -14,7 +14,7 @@ namespace :education do
       }
 
       project = Education::Project.create! project_params
-      10.times do |j|
+      4.times do |j|
         project.members.create(position: rand(0..4), user_id: (j+1))
       end
     end
