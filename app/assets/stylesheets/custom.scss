@@ -1,18 +1,31 @@
 @import 'variables/color';
 
-.bg-login {
-  background: url('welcome1_blur.png') center center no-repeat;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
+// -----Custom Login----
 
 .pnl-login {
-  background-color: $white-93opacity !important;
+  border-radius: 10px !important;
   max-width: 400px;
+  padding: 30px;
+}
+
+.login-with-custom {
+  margin-bottom: 15px;
+}
+
+.forgot-password {
+  font-size: 12px;
+}
+
+.list-header-custom li a {
+  color: $black-light !important;
+}
+
+.list-header-custom li a:hover {
+  color: $light-sea-green !important;
+}
+
+.video-overlay {
+  background-color: $lighter;
 }
 
 // -----Custom Header for Dashboard----

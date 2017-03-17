@@ -14,6 +14,7 @@
  *= require_tree ./variables
  *= require_tree ./education
  *= require_self
+ *= require custom.scss
  */
 
 @import 'bootstrap-sprockets';
