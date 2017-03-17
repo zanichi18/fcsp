@@ -13,6 +13,17 @@
 <section id="content">
   <div class="content-wrap">
     <div class="container clearfix">
+      <ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
+        <li class="activeFilter"><a href="#" data-filter="*"><%= t "education.project.show_all" %></a></li>
+        <li><a href="#" data-filter=".pf-illustrations"><%= t ".hot" %></a></li>
+      </ul>
+
+      <div id="portfolio-shuffle" class="portfolio-shuffle" data-container="#portfolio">
+        <i class="icon-random"></i>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="container clearfix">
       <div class="content-wrap content-wrap-custom">
         <div id="portfolio" class="portfolio grid-container portfolio-1 clearfix">
           <% if @trainings.any? %>
@@ -22,34 +33,38 @@
             <% else %>
               <article class="portfolio-item pf-media pf-icons clearfix">
             <% end %>
-                <div class="portfolio-image">
-                  <a href="portfolio-single.html">
-                    <img src="../assets/images/portfolio/4/1.jpg">
-                  </a>
-                  <div class="portfolio-overlay">
+                <div class="row">
+                  <div class="portfolio-image">
                     <%= link_to "#" do %>
-                      <i class="icon-eye"></i>
+                      <%= image_tag "images/portfolio/4/1.jpg" %>
+                    <% end %>
+                    <div class="portfolio-overlay">
+                      <%= link_to education_training_path training do %>
+                        <i class="icon-eye"></i>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="portfolio-desc">
+                    <h3>
+                      <%= link_to education_training_path training do %>
+                        <%= training.name %>
+                      <% end %>
+                    </h3>
+                    <p><%= training.description %></p>
+                    <strong><%= t ".techniques" %></strong>
+                    <ul class="iconlist">
+                      <% training.techniques.each do |technique| %>
+                        <li class="display technique-items">
+                          <%= link_to "#" do %>
+                            <i class="icon-ok"></i> <%= technique.name %>
+                          <% end %>
+                        </li>
+                      <% end %>
+                    </ul>
+                    <%= link_to "#", class: "button button-3d noleftmargin" do %>
+                      <%= t ".view_courses" %>
                     <% end %>
                   </div>
-                </div>
-                <div class="portfolio-desc">
-                  <h3>
-                    <%= link_to "#" do %>
-                      <%= training.name %>
-                    <% end %>
-                  </h3>
-                  <p><%= training.description %></p>
-                  <strong><%= t ".techniques" %></strong>
-                  <ul class="iconlist">
-                    <% training.techniques.each do |technique| %>
-                      <li class="display technique-items">
-                        <%= link_to "#" do %>
-                          <i class="icon-ok"></i> <%= technique.name %>
-                        <% end %>
-                      </li>
-                    <% end %>
-                  </ul>
-                  <a href="#" class="button button-3d noleftmargin"><%= t ".view_courses" %></a>
                 </div>
               </article>
             <% end %>

@@ -9,6 +9,9 @@ namespace :db do
       %w(db:setup db:seed education:make_projects).each do |task|
         Rake::Task[task].invoke
       end
+      %w(db:setup db:seed education:make_trainings).each do |task|
+        Rake::Task[task].invoke
+      end
 
       puts "create technique"
 

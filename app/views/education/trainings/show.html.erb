@@ -1,0 +1,109 @@
+<section id="page-title">
+  <div class="container clearfix">
+    <h1><%= @training.name %></h1>
+    <ol class="breadcrumb">
+      <li><%= link_to t(".home"), education_root_path %></li>
+      <li><%= link_to t(".trainings"), education_trainings_path %></li>
+      <li class="active"><%= @training.name %></li>
+    </ol>
+  </div>
+</section>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="col_two_third portfolio-single-image nobottommargin">
+        <%= link_to "#" do %>
+          <%= image_tag "images/portfolio/4/1.jpg" %>
+        <% end %>
+      </div>
+
+      <div class="col_one_third portfolio-single-content col_last nobottommargin">
+        <div class="fancy-title title-bottom-border">
+          <h2><%= t ".training_info" %></h2>
+        </div>
+        <p><%= @training.description %></p>
+        <br>
+        <div class="fancy-title title-bottom-border">
+          <h2><%= t ".techniques" %></h2>
+        </div>
+        <ul class="iconlist">
+          <% @training.techniques.each do |technique| %>
+            <li class="display technique-items">
+              <%= link_to "#" do %>
+                <i class="icon-ok"></i> <%= technique.name %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <br>
+        <%= link_to "#", class: "button button-3d noleftmargin" do %>
+          <%= t ".view_courses" %>
+        <% end %>
+        <br>
+        <br>
+        <div class="si-share clearfix">
+          <span><%= t ".share" %>:</span>
+          <div>
+            <%= link_to "#", class: "social-icon si-borderless si-facebook" do %>
+              <i class="icon-facebook gray-color"></i>
+              <i class="icon-facebook gray-color"></i>
+            <% end %>
+            <%= link_to "#", class: "social-icon si-borderless si-twitter" do %>
+              <i class="icon-twitter gray-color"></i>
+              <i class="icon-twitter gray-color"></i>
+            <% end %>
+            <%= link_to "#", class: "social-icon si-borderless si-pinterest" do %>
+              <i class="icon-pinterest gray-color"></i>
+              <i class="icon-pinterest gray-color"></i>
+            <% end %>
+            <%= link_to "#", class: "social-icon si-borderless si-gplus" do %>
+              <i class="icon-gplus gray-color"></i>
+              <i class="icon-gplus gray-color"></i>
+            <% end %>
+            <%= link_to "#", class: "social-icon si-borderless si-rss" do %>
+              <i class="icon-rss gray-color"></i>
+              <i class="icon-rss gray-color"></i>
+            <% end %>
+            <%= link_to "#", class: "social-icon si-borderless si-email3" do %>
+              <i class="icon-email3 gray-color"></i>
+              <i class="icon-email3 gray-color"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="divider divider-center"><i class="icon-circle"></i></div>
+      <h4><%= t ".new_courses" %>:</h4>
+      <div id="oc-portfolio" class="owl-carousel portfolio-carousel
+        portfolio-nomargin carousel-widget" data-margin="1" data-pagi="false"
+        data-autoplay="5000" data-items-xxs="1" data-items-xs="2" data-items-sm="3"
+        data-items-lg="4">
+        <% if @courses.any? %>
+          <% @courses.each do |course| %>
+            <div class="oc-item">
+              <div class="iportfolio">
+                <div class="portfolio-image">
+                  <%= link_to "#" do %>
+                    <%= image_tag "images/portfolio/4/1.jpg" %>
+                  <% end %>
+                  <div class="portfolio-overlay">
+                    <%= link_to "#", class: "right-icon" do %>
+                      <i class="icon-eye"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class="portfolio-desc">
+                  <h3>
+                    <%= link_to "#" do %>
+                    <% end %>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
