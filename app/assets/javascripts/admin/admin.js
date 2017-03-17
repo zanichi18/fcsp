@@ -10,8 +10,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery.turbolinks
-//= require jquery_ujs
-//= require_tree ./education
-//= require bootstrap-sprockets
+//= require gentelella
+//= require jqvmap/maps/jquery.vmap.world
+//= require jqvmap/maps/jquery.vmap.usa
+//= require ./jquery.vmap.sampledata
+//= require ./gentelella-custom

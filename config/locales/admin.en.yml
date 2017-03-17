@@ -1,0 +1,11 @@
+en:
+  admin:
+    layouts:
+      admin_footer:
+        footer_content: "Framgia Code School Platform by"
+      admin_header:
+        fcsp_dash: "Dashboard"
+        welcome: "Welcome"
+        general: "General Management"
+        companies: "Companies"
+        users: "Users"
