@@ -1,0 +1,6 @@
+//= require_tree ../../../vendor/assets/stylesheets/
+//= require_self
+//= require_tree ./education
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
