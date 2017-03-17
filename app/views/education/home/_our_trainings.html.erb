@@ -23,7 +23,11 @@
               </div>
             </div>
             <div class="portfolio-desc">
-              <h3><a href="#"><%= training.name %></a></h3>
+              <h3>
+                <%= link_to education_training_path training do %>
+                  <%= training.name %>
+                <% end %>
+              </h3>
               <strong><%= t ".techniques" %>: </strong>
               <% training.techniques.each do |technique| %>
                 <%= link_to "#" do %>
@@ -37,8 +41,9 @@
     <% end %>
   </div>
 </div>
-<a href="education/trainings" class="button button-full button-dark center tright">
+<div class="button button-full button-dark center tright">
   <div class="container clearfix">
-   <strong><%= t ".see_more" %></strong> <i class="icon-caret-right btn-see-more"></i>
+    <%= link_to t(".see_more"), education_trainings_path, method: :get %>
+    <i class="icon-caret-right"></i>
   </div>
-</a>
+</div>

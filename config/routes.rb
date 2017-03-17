@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
   get "/pages/*page" => "pages#show"
   root "pages#home"
@@ -8,7 +7,7 @@ Rails.application.routes.draw do
     root "home#index"
     resources :projects
     resources :techniques, only: [:index, :show]
-    resources :trainings, only: :index
+    resources :trainings, only: [:index, :show]
     resources :feedbacks, only: [:new, :create]
   end
 

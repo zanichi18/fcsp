@@ -57,9 +57,6 @@ namespace :db do
 
       puts "Create Education projects"
       Rake::Task["education:make_projects"].invoke
-
-      puts "Create Education trainings"
-      Rake::Task["education:make_trainings"].invoke
     end
   end
 end
