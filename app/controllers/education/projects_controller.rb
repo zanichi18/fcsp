@@ -19,7 +19,9 @@ class Education::ProjectsController < Education::BaseController
     relations = Education::Project.relation_plat_form(@project.plat_form)
       .newest.includes(:images).limit Settings.education.related_project.limit
     project_members = @project.members.order(:position).includes :user
-    @supports = Supports::Education::ShowProject.new(project_members, relations)
+    rand_project = Education::Project.last.id
+    @supports = Supports::Education::ShowProject.new project_members,
+      relations, rand_project
   end
 
   def new
@@ -65,9 +67,12 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def load_project
-    return if @project = Education::Project.find_by(id: params[:id])
-    flash[:danger] = t "education.projects.project_not_found"
-    redirect_to education_root_path
+    if @project = Education::Project.find_by(id: params[:id])
+      @techniques = @project.techniques
+    else
+      flash[:danger] = t "education.projects.project_not_found"
+      redirect_to education_root_path
+    end
   end
 
   def load_projects_by_technique

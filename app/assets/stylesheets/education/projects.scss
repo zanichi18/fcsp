@@ -25,7 +25,17 @@
 }
 
 .content-wrap-custom {
-  padding: 0;
+  padding: 25px;
+}
+
+.modal-content-custom {
+  height: 250px;
+  margin: 20px;
+  overflow-y: auto;
+}
+
+.modal-title-custom {
+  color: $orange;
 }
 
 .menu-technique .current-custom a {

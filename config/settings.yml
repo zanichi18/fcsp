@@ -1,7 +1,13 @@
 education:
+  number_one: 1
   project:
+    modal_description: "#modal_description"
+    modal_core: "#modal_core"
+    modal_release: "#modal_release"
     per_page: 16
     truncate: 100
+    link_truncate: 28
+    content_truncate: 80
   technique:
     per_page: 6
     truncate: 100
