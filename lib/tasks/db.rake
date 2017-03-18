@@ -42,7 +42,7 @@ namespace :db do
       }
 
       users.each do |email, password|
-        User.create(email: email, password: password)
+        User.create(name: FFaker::Name.name, email: email, password: password)
       end
 
       puts "Create groups"
@@ -55,8 +55,8 @@ namespace :db do
           description: description
       end
 
-      puts "Create Education projects"
-      Rake::Task["education:make_projects"].invoke
+      puts "Create Education Database.."
+      Rake::Task["db:education_seeding"].invoke
     end
   end
 end

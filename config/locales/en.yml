@@ -91,10 +91,10 @@ en:
     project:
       project_info: "Project Info:"
       share: "Share:"
-      server_info: "server info:"
-      plat_form: "platform:"
-      git_repo: "Git repo:"
-      pm_url: " Pm url:"
+      server_info: "Server:"
+      plat_form: "Platform:"
+      git_repo: "Git Repo:"
+      pm_url: " PM Url:"
       not_found: "Project not found!"
       title: "Project"
       detail: "Detail"
@@ -118,6 +118,9 @@ en:
         subtitle: "rate avg"
     projects:
       project_not_found: "Project Not Found."
+      detail_project:
+        members: "Members"
+        name: "Name"
       form:
         name: "Name"
         description: "Description"
