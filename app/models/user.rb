@@ -1,10 +1,10 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :articles
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :articles
   has_many :education_posts, class_name: Education::Post.name
   has_many :education_socials, class_name: Education::Social.name
   has_many :education_comments, class_name: Education::Comment.name
@@ -19,4 +19,5 @@ class User < ApplicationRecord
   has_one :education_learning_program, through: :education_program_member
 
   mount_uploader :avatar, AvatarUploader
+  enum role: [:user, :admin]
 end

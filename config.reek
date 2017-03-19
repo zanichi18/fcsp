@@ -14,3 +14,7 @@ UtilityFunction:
 
 exclude_paths:
   - db
+
+'app/controllers':
+  InstanceVariableAssumption:
+    enabled: false

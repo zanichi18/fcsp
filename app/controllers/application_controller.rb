@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
+    redirect_to root_path
+  end
+
   private
 
   def rack_mini_profiler_authorize_request
