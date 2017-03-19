@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   end
 
   create_table "education_courses", force: :cascade do |t|
+    t.string   "name"
     t.text     "detail"
     t.integer  "training_id"
     t.datetime "start_date"
