@@ -34,9 +34,10 @@ en:
       home: "Home"
       help: "Help"
       about: "About"
+      login: "Login"
+      logout: "Logout"
   pages:
     home:
-      content: "This is home page"
       title: "Home"
     about:
       content: "This is about page"
