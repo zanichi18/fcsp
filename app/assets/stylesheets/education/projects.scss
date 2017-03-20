@@ -1,4 +1,5 @@
 @import 'variables/color';
+@import 'variables/size';
 
 .data-liffect li {
   animation: pageRight 600ms ease both;
@@ -110,4 +111,22 @@
 .project-search .ui-state-focus .description,
 .project-search .ui-state-focus .plat-form {
   color: $blue;
+}
+
+.share-custom div {
+  float: left;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.share-custom span {
+  font-size: 15px;
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size-icon-share $size-icon-share !important;
+    height: $size-icon-share !important;
+    width: $size-icon-share !important;
+  }
 }

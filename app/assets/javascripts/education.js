@@ -18,3 +18,4 @@
 //= require education/feedback_map.js
 //= require education/growl.custom
 //= require js-routes
+//= require social-share-button
