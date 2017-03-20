@@ -49,3 +49,4 @@ courses:
   index_limit: 6
 user:
   max_length_name: 50
+max_length_title: 50

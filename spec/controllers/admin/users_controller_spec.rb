@@ -57,7 +57,7 @@ RSpec.describe Admin::UsersController, type: :controller do
     end
 
     it "create with email not unique" do
-      subject = FactoryGirl.create :user, email: "a@gmail.com"
+      FactoryGirl.create :user, email: "a@gmail.com"
       email = "a@gmail.com"
       user_params = FactoryGirl.attributes_for(:user, email: email)
       expect do

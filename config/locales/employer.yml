@@ -1,0 +1,9 @@
+en:
+  employer:
+    jobs:
+      new:
+        submit: "Post"
+        job_recruitment: "Post job recruitment"
+      create:
+        created_job: "Posted job recruitment"
+        create_job_fail: "Fail to post job recruitment"

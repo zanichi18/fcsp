@@ -7,6 +7,7 @@ class Ability
     when "admin"
       can :manage, Company
       can :manage, User
+      can :manage, Job
     else
       can :read, Company
     end

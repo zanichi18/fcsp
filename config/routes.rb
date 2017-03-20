@@ -16,12 +16,15 @@ Rails.application.routes.draw do
 
   namespace :employer do
     resources :dashboards, only: :index
+    resources :companies do
+      resources :jobs, only: :create
+    end
   end
 
   namespace :admin do
     resources :dashboards, only: :index
     root "dashboards#index"
-    resources :companies
+    resources :companies, only: [:new, :create, :show]
     resources :users, only: [:new, :create]
   end
 end
