@@ -151,6 +151,7 @@ en:
     header:
       home: "Home"
       project: "Project"
+      posts: "Posts"
       trainers: "Trainers"
       trainees: "Trainees"
       search: "Type & Hit Enter.."
@@ -178,6 +179,14 @@ en:
         show_all_course: "All studying IT courses at Framgia"
         training_program: "Training program"
         language_program: "Language program"
+    posts:
+      title: "Member's Posts"
+      title_des: "Lastest posts of our Members"
+      read_more: "Read more"
+      date_format: "%d-%m-%Y"
+      create_new: "Create new post"
+      older: "&larr;Older"
+      newer: "Newer &rarr;"
   time:
     formats:
       date_month_year_concise: '%d-%m-%y'

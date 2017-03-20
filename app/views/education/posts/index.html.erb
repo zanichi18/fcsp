@@ -1,0 +1,29 @@
+<%= provide :title, t("education.posts.title") %>
+
+<section id="page-title">
+  <div class="container clearfix">
+    <h1><%= t "education.posts.title" %></h1>
+    <span><%= t "education.posts.title_des" %></span>
+  </div>
+</section>
+
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div id="posts" class="small-thumbs">
+      <%= render @posts %>
+      </div>
+      <ul class="pager nomargin">
+        <li class="previous">
+          <%= link_to_previous_page @posts, raw(t "education.posts.older") %>
+        </li>
+        <li class="next">
+          <%= link_to_next_page @posts, raw(t "education.posts.newer") %>
+        </li>
+      </ul>
+      <div class="center">
+        <%= page_entries_info @posts %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :techniques, only: [:index, :show]
     resources :feedbacks, only: [:new, :create]
     resources :courses, only: [:index, :show]
+    resources :trainings, only: :index
+    resources :posts, only: :index
   end
 
   namespace :employer do
