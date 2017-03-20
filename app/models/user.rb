@@ -20,4 +20,8 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
+
+  validates :name, presence: true,
+    length: {maximum: Settings.user.max_length_name}
+  validates :email, presence: true
 end
