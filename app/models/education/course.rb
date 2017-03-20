@@ -1,4 +1,6 @@
 class Education::Course < ApplicationRecord
+  translates :detail
+
   belongs_to :training, class_name: Education::Training.name
 
   has_many :course_members, class_name: Education::CourseMember.name,

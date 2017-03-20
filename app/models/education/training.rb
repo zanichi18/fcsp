@@ -1,4 +1,6 @@
 class Education::Training < ApplicationRecord
+  translates :description
+
   has_many :courses, class_name: Education::Course.name,
     foreign_key: :training_id
   has_many :images, as: :imageable

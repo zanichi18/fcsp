@@ -1,4 +1,6 @@
 class Education::Post < ApplicationRecord
+  translates :title, :content
+
   belongs_to :category, class_name: Education::Category.name
   belongs_to :user
   has_many :images, class_name: Education::Image.name, as: :imageable
