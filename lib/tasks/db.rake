@@ -54,9 +54,14 @@ namespace :db do
           company_id: company_id,
           description: description
       end
+      puts "Create Education projects"
+      Rake::Task["education:make_projects"].invoke
 
-      puts "Create Education Database.."
-      Rake::Task["db:education_seeding"].invoke
+      puts "Create Education trainings"
+      Rake::Task["education:make_trainings"].invoke
+
+      puts "Create Education informations"
+      Rake::Task["education:education_seeding"].invoke
     end
   end
 end

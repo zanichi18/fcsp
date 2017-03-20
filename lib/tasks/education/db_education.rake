@@ -1,6 +1,4 @@
-require "ffaker"
-
-namespace :db do
+namespace :education do
   desc "Education Seeding data"
   task education_seeding: :environment do
     puts "create technique"
