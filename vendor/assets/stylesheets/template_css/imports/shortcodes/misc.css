@@ -366,7 +366,7 @@ body:not(.device-touch) #gotoTop {
 
 .stretched #gotoTop { bottom: 30px; }
 
-#gotoTop:hover { background-color: #1ABC9C; }
+#gotoTop:hover { background-color: #E67E22; }
 
 
 /* ----------------------------------------------------------------
@@ -450,7 +450,7 @@ body:not(.device-touch) #gotoTop {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background: url("../../../../images/preloader.gif") center center no-repeat #FFF;
+	background: url("../../../../assets/images/preloader.gif") center center no-repeat #FFF;
 }
 
 .preloader2 { background-color: transparent; }

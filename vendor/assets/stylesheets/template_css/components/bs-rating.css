@@ -17,7 +17,7 @@
 		height: 25px;
 		font-size: 0px;
 		color: #fff;
-		background: transparent url('../../images/preloader.gif') top left no-repeat;
+		background: transparent url('assets/images/preloader.gif') top left no-repeat;
 		border: none;
 	}
 
@@ -121,7 +121,7 @@
 
 	.clear-rating-active { cursor: pointer !important; }
 
-	.clear-rating-active:hover { color: #1ABC9C; }
+	.clear-rating-active:hover { color: #E67E22; }
 
 
 	/**

@@ -106,13 +106,13 @@
 
 .dark .fbox-effect .fbox-icon i:after { box-shadow: 0 2px 0 0 #494949; }
 
-.dark .fbox-effect.fbox-dark .fbox-icon i:after { box-shadow: 0 2px 0 0 #1ABC9C; }
+.dark .fbox-effect.fbox-dark .fbox-icon i:after { box-shadow: 0 2px 0 0 #E67E22; }
 
 .dark .fbox-border.fbox-effect .fbox-icon i:hover,
 .dark .fbox-border.fbox-effect:hover .fbox-icon i { box-shadow: 0 1px 0 0 #494949; }
 
 .dark .fbox-border.fbox-effect.fbox-dark .fbox-icon i:hover,
-.dark .fbox-border.fbox-effect.fbox-dark:hover .fbox-icon i { box-shadow: 0 1px 0 0 #1ABC9C; }
+.dark .fbox-border.fbox-effect.fbox-dark:hover .fbox-icon i { box-shadow: 0 1px 0 0 #E67E22; }
 
 .dark .style-msg2 {
 	border-right: 4px solid rgba(0,0,0,0.3);
@@ -206,4 +206,3 @@
 	.dark #primary-menu:not(.not-dark) > .container > ul > li.sub-menu > a { background-image: url("../images/icons/submenu-dark-rtl.png"); }
 
 }
-

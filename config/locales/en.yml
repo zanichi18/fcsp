@@ -55,6 +55,12 @@ en:
         techniques: "Techniques"
         our_trainings: "Our Trainings"
         see_more: "See more"
+      clients_say:
+        heading: "What Clients Say?"
+      our_projects:
+        heading: "Our Projects"
+      our_team:
+        heading: "Meet Our Team"
     trainings:
       training_not_found: "Training Not Found."
       index:

@@ -72,8 +72,8 @@ body:not(.device-touch) .tagcloud a {
 }
 
 .tagcloud a:hover {
-	border-color: #1ABC9C !important;
-	color: #1ABC9C !important;
+	border-color: #E67E22 !important;
+	color: #E67E22 !important;
 }
 
 
@@ -155,7 +155,7 @@ body:not(.device-touch) .tagcloud a {
 .widget_categories li a:hover,
 .widget_pages li a:hover,
 .widget_rss li a:hover,
-.widget_recent_comments li a:hover { color: #1ABC9C; }
+.widget_recent_comments li a:hover { color: #E67E22; }
 
 .widget_recent_comments li a {
 	display: inline;
@@ -340,7 +340,7 @@ body:not(.device-touch) .tagcloud a {
 
 .widget-filter-links li.active-filter span {
 	color: #FFF;
-	background-color: #1ABC9C;
+	background-color: #E67E22;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
@@ -394,7 +394,7 @@ body:not(.device-touch) .tagcloud a {
 
 .nav-tree li:hover > a,
 .nav-tree li.current > a,
-.nav-tree li.active > a { color: #1ABC9C !important; }
+.nav-tree li.active > a { color: #E67E22 !important; }
 
 .nav-tree ul ul { display: none; }
 

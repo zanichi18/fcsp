@@ -17,7 +17,7 @@
 
 .table .danger { color: #a94442; }
 
-.btn-link { color: #1ABC9C; }
+.btn-link { color: #E67E22; }
 
 .btn-link:hover,
 .btn-link:focus { color: #222; }
@@ -58,8 +58,8 @@
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
 	color: #FFF !important;
-	background-color: #1ABC9C !important;
-	border-color: #1ABC9C !important;
+	background-color: #E67E22 !important;
+	border-color: #E67E22 !important;
 }
 
 label.radio,
