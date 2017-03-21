@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = exception.message
     redirect_to root_path

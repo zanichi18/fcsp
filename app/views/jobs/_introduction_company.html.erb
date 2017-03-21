@@ -1,0 +1,23 @@
+<section class="job-show-main-section">
+  <header>
+    <div class="row">
+      <h3 class=" col-md-9"><%= t ".what_we_do" %></h3>
+      <a class="btn btn-default .btn-xs hr-edit col-md-2 edit-team-intro" href="#">
+        <%= t ".edit_posting" %>
+      </a>
+    </div>
+  </header>
+  <div class="section-body">
+    <% if @team_introduction.present? %>
+      <p></p>
+      <p>
+        <%= @team_introduction.title %>
+      </p>
+      <p></p>
+    <% else %>
+      <p></p>
+      <p><%= t ".message_team_introduc_null" %></p>
+      <p></p>
+    <% end %>
+  </div>
+</section>

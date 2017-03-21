@@ -1,0 +1,23 @@
+<% provide :title, t(".title") %>
+<div class="container">
+  <% if @jobs.any? %>
+    <div class="row col-md-10">
+      <table class="table table-striped custab">
+        <thead>
+          <tr>
+            <th><%= t ".table.thead.id" %></th>
+            <th><%= t ".table.thead.title" %></th>
+            <th><%= t ".table.thead.describe" %></th>
+          </tr>
+        </thead>
+        <% @jobs.each_with_index do |job, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= link_to job.title, job_path(job) %></td>
+            <td><%= job.describe %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</div>

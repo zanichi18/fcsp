@@ -1,0 +1,55 @@
+<section class="job-show-main-section">
+  <table class="table table-striped custab wanted-info">
+    <tbody>
+      <tr>
+        <th colspan="2"><%= t ".basic_info_job" %></th>
+      </tr>
+      <tr>
+        <td class="head"><%= t ".look_for" %></td>
+        <td><%= t ".sales" %></td>
+      </tr>
+      <tr>
+        <td class="head"><%= t ".job_type" %></td>
+        <td>
+          <p>
+            <% @job_object.hiring_types.each do |hiring_type| %>
+              <%= hiring_type.name %><%= t ".comma" %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td class="head"><%= t ".posting_feature" %></td>
+        <td>
+          <p>
+            <% if @job_object.company_benefits.present? %>
+              <% @job_object.company_benefits.each do |benefit| %>
+                <%= benefit.name %><%= t ".comma" %>
+              <% end %>
+            <% else %>
+              <%= t ".benefit_null" %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <th colspan="2"><%= t ".company_info" %></th>
+      </tr>
+      <tr>
+        <td class="head"><%= t ".founded" %></td>
+        <td><%= @job_object.company.founder_on %></td>
+      </tr>
+      <tr>
+        <td class="head"><%= t ".industries" %></td>
+        <td><%= t ".indus_info" %></td>
+      </tr>
+      <tr class="request-more-info-row">
+        <th colspan="2">
+          <a class=""><i class="icon-question-sign"></i>
+            <%= t ".learn_more_info" %>
+          </a>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</section>
