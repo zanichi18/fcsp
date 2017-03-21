@@ -1,8 +1,9 @@
 <section id="content">
   <div class="content-wrap content-wrap-custom">
     <div class="container clearfix">
-      <%= render "detail_project", project: @project, relations: @relations,
-        project_members: @project_members %>
+      <%= render "detail_project", project: @project,
+        relations: @supports.relations,
+        project_members: @supports.project_members %>
     </div>
   </div>
 </section>

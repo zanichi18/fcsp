@@ -19,3 +19,4 @@
 //= require education/growl.custom
 //= require js-routes
 //= require social-share-button
+//= require education/projects
