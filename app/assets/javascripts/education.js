@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require jquery-ui/autocomplete
 //= require education/feedback_map.js
@@ -20,3 +21,5 @@
 //= require js-routes
 //= require social-share-button
 //= require education/projects
+//= require cocoon
+//= require education/course.js

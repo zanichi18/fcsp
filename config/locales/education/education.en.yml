@@ -34,3 +34,34 @@ en:
       form:
         description: "Description"
         name: "Name"
+    courses:
+      form:
+        name: "Name"
+        detail: "Detail"
+        training: "Training"
+        start_date: "Start day"
+        end_date: "End day"
+        image: "Images"
+        add_image: "Add a image"
+        save: "Save"
+        reset: "Reset"
+      image_fields:
+        remove: "Remove"
+      new:
+        new: "Create new Course"
+      edit:
+        edit: "Edit Course"
+      course:
+        delete: "Delete"
+        edit: "Edit"
+        delete_confirm: "Are you sure?"
+      create:
+        new_success: "Created new course successfully"
+        new_faild: "Cannot create new course"
+      update:
+        update_success: "Updated course successfully"
+        update_faild: "Cannot update course"
+      destroy:
+        destroy_success: "Deleted course successfully"
+        destroy_faild: "Cannot delete course"
+      not_found: "Course not found"
