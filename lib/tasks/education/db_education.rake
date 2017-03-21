@@ -33,7 +33,7 @@ namespace :education do
       Education::ProjectTechnique.create project_id: project.id,
         technique_id: rand(1..technique)
     end
-    
+
     puts "Create Education trainings"
     Rake::Task["education:make_trainings"].invoke
 
@@ -52,5 +52,10 @@ namespace :education do
     puts "create About"
     Education::About.create!(title: "Welcome to Framgia Education",
       content: "Master your skill. Come with us")
+    puts "Create Education categories"
+    Rake::Task["education:make_categories"].invoke
+
+    puts "Create Education posts"
+    Rake::Task["education:make_posts"].invoke
   end
 end

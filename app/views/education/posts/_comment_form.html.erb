@@ -1,0 +1,21 @@
+<div id="respond" class="clearfix">
+  <h3><%= t ".leave_a" %>
+    <span> <%= t ".comment" %></span>
+  </h3>
+  <form class="clearfix" action="#" method="post" id="commentform">
+    <div class="col_full">
+      <label for="comment"><%= t ".comment" %></label>
+      <textarea name="comment"
+        cols="<%= Settings.education.post.comment_form_cols %>"
+        rows="<%= Settings.education.post.comment_form_rows %>"
+        class="sm-form-control">
+      </textarea>
+    </div>
+    <div class="col_full nobottommargin">
+      <button name="submit" type="submit" id="submit-button"
+        value="Submit" class="button button-3d nomargin">
+        <%= t ".submit_comment" %>
+      </button>
+    </div>
+  </form>
+</div>

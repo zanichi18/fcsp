@@ -17,7 +17,7 @@ function load_more() {
   if(x >= size) {
     $('#more-project').hide();
     $('#next-project').show();
-  } 
+  }
   else {
     $('#next-project').hide();
     $('#more-project').show();
@@ -34,6 +34,3 @@ function load_more() {
     }
   });
 }
-
-
-

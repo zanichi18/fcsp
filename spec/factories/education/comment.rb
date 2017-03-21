@@ -5,4 +5,10 @@ FactoryGirl.define do
     commentable_id{Education::Project.first.id}
     commentable_type{Education::Project.name}
   end
+
+  factory :education_comment_post, class: Education::Comment do
+    association :commentable, factory: :education_post
+    content{FFaker::Lorem.paragraph 1}
+    user
+  end
 end
