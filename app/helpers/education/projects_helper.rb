@@ -11,9 +11,9 @@ module Education::ProjectsHelper
   end
 
   def check_lenght_content size_object, data_target
-    if size_object > Settings.education.project.content_truncate     
-      content_tag :a, href: "#", "data-toggle": "modal", "data-target": data_target, 
-        "data-whatever": "@mdo" do
+    if size_object > Settings.education.project.content_truncate
+      content_tag :a, href: "#", "data-toggle": "modal",
+        "data-target": data_target, "data-whatever": "@mdo" do
         t ".read_more"
       end
     end
