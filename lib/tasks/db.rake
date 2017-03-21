@@ -20,7 +20,7 @@ namespace :db do
       }
 
       companies.each do |name, founder|
-        introduction = FFaker::Lorem.sentence
+        introduction = FFaker::Lorem.paragraph
         website = FFaker::Internet.domain_name
         company_size = 100
         founder_on = FFaker::Time.datetime

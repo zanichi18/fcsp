@@ -1,0 +1,18 @@
+<div class="content-wrap head-wrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <%= image_tag "avatar.jpg",
+          class: "alignleft img-circle img-thumbnail notopmargin nobottommargin ava-company",
+          alt: "Avatar" %>
+        <div class="heading-block noborder">
+          <h3><a><%= @company.name %></a></h3>
+          <span>
+            <a><%= @company.website %></a>
+            <a class="btn btn-warning btn-follow" href=""><%= t ".follow" %></a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

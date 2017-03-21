@@ -1,4 +1,4 @@
-<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+<header id="header" class="full-header">
   <div id="header-wrap" class="header-wrap-custom">
     <div class="container clearfix">
       <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
@@ -6,22 +6,39 @@
         <a href="#" class="standard-logo" data-dark-logo="/assets/logo-framgia.png">
           <img src="/assets/logo-framgia.png" alt="<%= t "education.logo_alt" %>"></a>
       </div>
-
+      <div id="top-account" class="dropdown">
+        <% if user_signed_in? %>
+          <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="icon-user"></i><i class="icon-angle-down"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+            <li><a href="#"><%= t ".profile" %></a></li>
+            <li><a href="#"><%= t ".messages" %> <span class="badge">5</span></a></li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <%= t ".sign_out" %> <i class="icon-signout"></i>
+              <% end %>
+            </li>
+          </ul>
+        <% else %>
+          <a href="#" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+            <%= t ".login" %>
+          </a>
+        <% end %>
+      </div>
       <nav id="primary-menu" class="dark login-modal">
-        <ul class="list-header-custom">
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to t(".logout"), destroy_user_session_path,
-                method: :delete %>
-            </li>
-          <% else %>
-            <li>
-              <a href="#" data-toggle="modal" data-target="#myModal">
-                <%= t ".login" %>
-              </a>
-            </li>
-          <% end %>
+        <ul>
+          <li>
+            <%= link_to root_path do %>
+              <div><%= t(".home") %></div>
+            <% end %>
+          </li>
         </ul>
+        <div id="top-search">
+          <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+          <form action="search.html" method="get">
+            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+          </form>
+        </div>
       </nav>
 
     </div>
@@ -35,4 +52,3 @@
     </div>
   </div>
 </div>
-

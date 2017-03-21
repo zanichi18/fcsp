@@ -28,6 +28,19 @@ en:
         company_info: "Company Info"
         setting: "Setting"
         logout: "Logout"
+  companies:
+    show:
+      info: "Info"
+      news: "News"
+      jobs: "Jobs"
+      members: "Members"
+      stats: "Stats"
+      founder: "Founder"
+      founded: "Founded on"
+      no_of_members: "# of Members"
+      about_us: "About us"
+      social_profiles: "Social Profiles"
+      follow: "Follow"
   layouts:
     base_title: "FCSP"
     header:
