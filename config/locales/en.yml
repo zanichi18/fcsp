@@ -125,6 +125,7 @@ en:
         subtitle: "rate avg"
     projects:
       project_not_found: "Project Not Found."
+      more: "More"
       detail_project:
         members: "Members"
         name: "Name"
@@ -148,6 +149,10 @@ en:
       destroy:
         project_deleted: "Project deleted"
         project_delete_fail: "Fail to delete project."
+      home:
+        title: "Project Title"
+        description: "Project Description"
+        filter: "Filter"
     header:
       home: "Home"
       project: "Project"

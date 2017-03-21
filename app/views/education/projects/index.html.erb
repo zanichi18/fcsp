@@ -1,24 +1,76 @@
 <% provide :title, t("education.project.title") %>
+<section id="page-title">
+  <div class="container clearfix">
+    <h1><%= t "education.projects.home.title" %></h1>
+    <span><%= t "education.projects.home.description" %></span>
+    <ol class="breadcrumb">
+      <li><a href="#"><%= t "education.header.home" %></a></li>
+      <li class="active"><%= t "education.header.project" %></li>
+    </ol>
+  </div>
+
+</section>
+
+<div id="page-menu">
+  <div id="page-menu-wrap">
+    <div class="container clearfix">
+      <div class="col-md-2">
+        <div class="menu-title">
+          <%= t "education.header.project" %>
+          <span> <%= t "education.projects.home.filter" %></span>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="col-md-4 project-search">
+          <input type="text" id="projects-search-txt" class="form-control" placeholder="Enter your search" autofocus>
+        </div>
+        <div class="col-md-8">
+          <nav>
+            <ul>
+              <li class="<%= default_current_path %>">
+                <%= link_to education_projects_path do %>
+                  <div><%= t "education.project.show_all" %></div>
+                <% end %>
+              </li>
+              <% array_technique_show, array_technique_hide = split_array(@techniques) %>
+              <% array_technique_show.each do |technique| %>
+                <li class="<%= current_path?(education_projects_path(technique_name: technique.name)) %>">
+                  <%= link_to education_projects_path(technique_name: technique.name) do %>
+                    <div><%= technique.name %></div>
+                  <% end %>
+                </li>
+              <% end %>
+              <% if array_technique_hide %>
+                <li>
+                  <a href="#">
+                    <%= t "education.projects.more" %>
+                    <i class="icon-angle-down"></i>
+                  </a>
+                  <ul>
+                    <% array_technique_hide.each do |technique| %>
+                      <li class="<%= current_path?(education_projects_path(technique_name: technique.name)) %>">
+                        <%= link_to education_projects_path(technique_name: technique.name) do %>
+                          <div><%= technique.name %></div>
+                        <% end %>
+                      </li>
+                    <% end %>
+                  </ul>
+                </li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="content">
   <div class="content-wrap nobottompadding">
-    <div class="container clearfix">
-      <ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
-        <li class="activeFilter"><a href="#" data-filter="*"><%= t "education.project.show_all" %></a></li>
-        <li><a href="#" data-filter=".pf-icons"><%= t "education.project.ruby" %></a></li>
-        <li><a href="#" data-filter=".pf-illustrations"><%= t "education.project.php" %></a></li>
-        <li><a href="#" data-filter=".pf-uielements"><%= t "education.project.android" %></a></li>
-        <li><a href="#" data-filter=".pf-media"><%= t "education.project.ios" %></a></li>
-        <li><a href="#" data-filter=".pf-graphics"><%= t "education.project.other" %></a></li>
-      </ul>
-
-      <div id="portfolio-shuffle" class="portfolio-shuffle" data-container="#portfolio">
-        <i class="icon-random"></i>
+    <div id="list-portfolio">
+      <div id="portfolio" class="portfolio grid-container portfolio-full portfolio-nomargin clearfix">
+        <%= render @projects %>
       </div>
-      <div class="clear"></div>
-    </div>
-
-    <div id="portfolio" class="portfolio grid-container portfolio-full portfolio-nomargin clearfix">
-      <%= render "project", projects: @projects %>
     </div>
 
     <div id="load-next-posts" class="center">
@@ -90,3 +142,9 @@
     </div>
   </div>
 </section>
+
+<div class="col-md-4 project-search">
+  <div class="results" id="projects-search-results"></div>
+</div>
+
+<%= javascript_include_tag "education/projects" %>

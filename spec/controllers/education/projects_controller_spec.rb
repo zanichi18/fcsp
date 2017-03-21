@@ -2,11 +2,48 @@ require "rails_helper"
 
 RSpec.describe Education::ProjectsController, type: :controller do
   let(:project){FactoryGirl.create(:project)}
+  let(:technique){FactoryGirl.create(:education_technique)}
+  before{FactoryGirl.create(:project_technique, project_id: project.id,
+    technique_id: technique.id)}
+
   describe "GET #index" do
-    it do
-      get :index
-      expect(response).to have_http_status :success
+    before{get :index}
+
+    context "render the show template" do
+      it{expect(subject).to respond_with 200}
+      it do
+        expect(subject).to render_with_layout "education/layouts/application"
+      end
+      it{expect(subject).to render_template :index}
     end
+
+    context "populates an array of projects" do
+      it{expect(assigns(:projects)).to eq [project]}
+    end
+
+    context "get project with filter technique" do
+      it "result at least one object" do
+        get :index, params: {technique_name: technique.name}
+        expect(assigns(:projects)).to eq [project]
+      end 
+
+      it "result is empty" do
+        get :index, params: {technique_name: Faker::Name.first_name}
+        expect(assigns(:projects)).to be_empty
+      end
+    end
+
+    context "search project with name" do
+      it "result at least one object" do
+        get :index, params: {term: project.name}
+        expect(assigns(:projects)).to eq [project]
+      end
+
+      it "result is empty" do
+        get :index, params: {term: Faker::Name.first_name}
+        expect(assigns(:projects)).to be_empty
+      end      
+    end 
   end
 
   describe "GET #show" do

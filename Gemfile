@@ -27,6 +27,9 @@ gem "gentelella-rails"
 gem "carrierwave"
 gem "mini_magick"
 gem "cancancan"
+gem "jquery-ui-rails", "~> 5.0.5"
+gem "active_model_serializers"
+gem "js-routes"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

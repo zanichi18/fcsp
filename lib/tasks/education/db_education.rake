@@ -4,7 +4,7 @@ namespace :education do
     puts "create technique"
 
     6.times do
-      technique = Education::Technique.create! name: "Ruby",
+      technique = Education::Technique.create! name: Faker::Name.last_name,
         description: Faker::Lorem.sentence
       Education::Image.create url: "/assets/education/technique/ruby.png",
         imageable_id: technique.id,
@@ -29,6 +29,7 @@ namespace :education do
 
     puts "Create Education trainings"
     Rake::Task["education:make_trainings"].invoke
+
     puts "Create education category"
     categories = ["Development", "Design", "QA", "Others"]
     categories.each do |category|
@@ -37,8 +38,19 @@ namespace :education do
 
     puts "Create education posts"
     5.times do
-      Education::Post.create! title: FFaker::Lorem.sentence,
-        content: FFaker::Lorem.paragraph, category_id: 1, user_id: 1
+      Education::Post.create! title: Faker::Lorem.sentence,
+        content: Faker::Lorem.paragraph, category_id: 1, user_id: 1
+    end
+
+    puts "create About"
+    Education::About.create!(title: "Welcome to Framgia Education",
+      content: "Master your skill. Come with us")
+
+    puts "create project_technology"
+    technique = Education::Technique.count
+    Education::Project.all.each do |project|
+      Education::ProjectTechnique.create project_id: project.id,
+        technique_id: rand(1..technique)
     end
   end
 end

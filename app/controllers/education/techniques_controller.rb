@@ -2,7 +2,7 @@ class Education::TechniquesController < Education::BaseController
   before_action :load_technique, only: :show
 
   def index
-    @techniques = Education::Technique.page(params[:page])
+    @techniques = Education::Technique.includes(:image).page(params[:page])
       .per Settings.education.technique.per_page
   end
 
