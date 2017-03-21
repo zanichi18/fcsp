@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.string   "website"
     t.text     "introduction"
     t.string   "founder"
+    t.string   "country"
     t.integer  "company_size"
     t.date     "founder_on"
     t.datetime "created_at",   null: false
@@ -102,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   end
 
   create_table "education_courses", force: :cascade do |t|
+    t.string   "name"
     t.text     "detail"
     t.integer  "training_id"
     t.datetime "start_date"
@@ -114,9 +116,10 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.string   "name"
     t.string   "email"
     t.text     "content"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "phone_number"
+    t.string   "subject"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "education_groups", force: :cascade do |t|
@@ -220,8 +223,9 @@ ActiveRecord::Schema.define(version: 20170317120631) do
 
   create_table "education_techniques", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "education_training_techniques", force: :cascade do |t|
@@ -234,9 +238,8 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   create_table "education_trainings", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "technique_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "education_user_groups", force: :cascade do |t|
@@ -345,6 +348,8 @@ ActiveRecord::Schema.define(version: 20170317120631) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
+    t.string   "phone"
+    t.integer  "role",                   default: 0
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -367,7 +372,6 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   add_foreign_key "education_course_members", "education_courses", column: "course_id"
   add_foreign_key "education_course_members", "users"
   add_foreign_key "education_courses", "education_trainings", column: "training_id"
-  add_foreign_key "education_feedbacks", "education_projects", column: "project_id"
   add_foreign_key "education_permissions", "education_groups", column: "group_id"
   add_foreign_key "education_posts", "education_categories", column: "category_id"
   add_foreign_key "education_posts", "users"
@@ -382,7 +386,6 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   add_foreign_key "education_socials", "users"
   add_foreign_key "education_training_techniques", "education_techniques", column: "technique_id"
   add_foreign_key "education_training_techniques", "education_trainings", column: "training_id"
-  add_foreign_key "education_trainings", "education_techniques", column: "technique_id"
   add_foreign_key "education_user_groups", "education_groups", column: "group_id"
   add_foreign_key "education_user_groups", "users"
   add_foreign_key "groups", "companies"

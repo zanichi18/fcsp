@@ -12,9 +12,14 @@ FeatureEnvy:
 UtilityFunction:
   enabled: false
 
+DuplicateMethodCall:
+  enabled: false
+
 exclude_paths:
   - db
 
 'app/controllers':
   InstanceVariableAssumption:
     enabled: false
+  TooManyStatements:
+    max_statements: 10
