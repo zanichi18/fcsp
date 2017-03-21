@@ -11,6 +11,7 @@ education:
     max_learning_program: 3
   trainings:
     per_page: 5
+    limit_string: 200
   page_404_url: "public/404"
   related_project:
     limit: 20

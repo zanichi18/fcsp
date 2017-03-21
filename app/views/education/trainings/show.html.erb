@@ -30,17 +30,12 @@
         <ul class="iconlist">
           <% @training.techniques.each do |technique| %>
             <li class="display technique-items">
-              <%= link_to "#" do %>
+              <%= link_to education_technique_path technique do %>
                 <i class="icon-ok"></i> <%= technique.name %>
               <% end %>
             </li>
           <% end %>
         </ul>
-        <br>
-        <%= link_to "#", class: "button button-3d noleftmargin" do %>
-          <%= t ".view_courses" %>
-        <% end %>
-        <br>
         <br>
         <div class="si-share clearfix">
           <span><%= t ".share" %>:</span>
@@ -74,7 +69,7 @@
       </div>
       <div class="clear"></div>
       <div class="divider divider-center"><i class="icon-circle"></i></div>
-      <h4><%= t ".new_courses" %>:</h4>
+      <h4><b><%= t ".all_courses" %>:</b></h4>
       <div id="oc-portfolio" class="owl-carousel portfolio-carousel
         portfolio-nomargin carousel-widget" data-margin="1" data-pagi="false"
         data-autoplay="5000" data-items-xxs="1" data-items-xs="2" data-items-sm="3"
@@ -96,6 +91,7 @@
                 <div class="portfolio-desc">
                   <h3>
                     <%= link_to "#" do %>
+                      <%= course.name %>
                     <% end %>
                   </h3>
                 </div>

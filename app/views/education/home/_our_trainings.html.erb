@@ -19,7 +19,9 @@
                 <img src="../assets/images/portfolio/4/1.jpg">
               </a>
               <div class="portfolio-overlay">
-                <a href="#" class="right-icon"><i class="icon-eye"></i></a>
+                <%= link_to education_training_path training do %>
+                  <i class="icon-eye"></i>
+                <% end %>
               </div>
             </div>
             <div class="portfolio-desc">
@@ -30,7 +32,7 @@
               </h3>
               <strong><%= t ".techniques" %>: </strong>
               <% training.techniques.each do |technique| %>
-                <%= link_to "#" do %>
+                <%= link_to education_technique_path technique do %>
                   <%= technique.name %>
                 <% end %>
               <% end %>
@@ -41,9 +43,12 @@
     <% end %>
   </div>
 </div>
-<div class="button button-full button-dark center tright">
-  <div class="container clearfix">
-    <%= link_to t(".see_more"), education_trainings_path, method: :get %>
-    <i class="icon-caret-right"></i>
+
+<%= link_to education_trainings_path do %>
+  <div class="button button-full button-dark center tright bottommargin-lg">
+    <div class="container clearfix">
+      <strong><%= t ".see_more" %></strong>
+      <i class="icon-caret-right btn-see-more"></i>
+    </div>
   </div>
-</div>
+<% end %>
