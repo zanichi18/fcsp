@@ -4,7 +4,7 @@ namespace :education do
     30.times do |n|
       training_params = {
         name: "Training #{n}",
-        description: FFaker::Lorem.sentence
+        description: FFaker::Lorem.paragraph
       }
 
       course_params = {
@@ -15,7 +15,10 @@ namespace :education do
         end_date: FFaker::Time.date
       }
 
-      Education::Training.create! training_params
+      training = Education::Training.create! training_params
+      4.times do |n|
+        training.training_techniques.create technique_id: rand(1..4)
+      end
       Education::Course.create! course_params
     end
   end

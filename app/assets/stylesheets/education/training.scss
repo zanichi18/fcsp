@@ -1,7 +1,18 @@
+@import 'variables/color';
+
 .display.technique-items {
   text-align: -webkit-match-parent;
 }
 
 .btn-see-more {
   top: 4px;
+}
+
+.color-orange {
+  border-bottom: 1px solid $orange;
+  color: $orange;
+  display: inline-block;
+  font-family: 'Crete Round', serif;
+  font-style: italic;
+  padding: 0 2px;
 }

@@ -1,0 +1,33 @@
+en:
+  education:
+    trainings:
+      training_not_found: "Training Not Found."
+      index:
+        read_more: "Read more"
+        title: "Education Trainings"
+        home: "Home"
+        page_title: "All Trainings"
+        techniques: "Techniques"
+        view_courses: "View list courses"
+        hot: "Hot"
+      show:
+        not_found: "The training could not be found"
+        home: "Home"
+        trainings: "Trainings"
+        training_info: "Training info"
+        techniques: "Techniques"
+        share: "Share"
+        all_courses: "All Courses"
+        view_courses: "View all courses"
+      new:
+        create_training: "Create"
+      edit:
+        update_project: "Update"
+      update:
+        training_updated_successfully: "Training updated successfully!"
+      create:
+        training_created: "Training created !"
+        training_create_failed: "Create training failed!"
+      form:
+        description: "Description"
+        name: "Name"
