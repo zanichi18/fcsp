@@ -45,6 +45,11 @@ namespace :db do
         User.create(name: FFaker::Name.name, email: email, password: password)
       end
 
+      User.create! name: "Admin",
+        email: "admin@gmail.com",
+        password: "123456",
+        role: 1
+
       puts "Create groups"
       groups = ["Education", "HR", "BO"]
       groups.each do |group|

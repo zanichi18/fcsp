@@ -17,11 +17,21 @@ class User < ApplicationRecord
   has_many :education_user_groups, class_name: Education::UserGroup.name
   has_one :education_program_member, class_name: Education::ProgramMember.name
   has_one :education_learning_program, through: :education_program_member
+  has_many :user_groups, dependent: :destroy
+  has_many :groups, through: :user_groups
 
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
 
+  after_create :create_user_group
+
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
   validates :email, presence: true
+
+  private
+
+  def create_user_group
+    self.user_groups.create
+  end
 end

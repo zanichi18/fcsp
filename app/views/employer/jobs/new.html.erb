@@ -1,0 +1,38 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="x_panel">
+    <div class="x_title">
+      <h2><%= t ".job_recruitment" %></h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+      <br />
+      <%= form_for @job, url: employer_company_jobs_path do |f| %>
+        <div class="col-md-6 form-group">
+          <%= f.label :title, class: "control-label" %>
+          <span class="required">*</span>
+          <%= f.text_field :title, required: true, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <%= f.label :describe, class: "control-label" %>
+          <span class="required">*</span>
+          <%= f.text_field :describe, required: true, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <%= f.label :type_of_candidates, class: "control-label" %>
+          <span class="required">*</span>
+          <%= f.text_field :type_of_candidates, class: "form-control" %>
+        </div>
+
+        <div class="col-md-6 form-group">
+          <%= f.label :who_can_apply, class: "control-label" %>
+          <span class="required">*</span>
+          <%= f.text_field :who_can_apply, class: "form-control" %>
+        </div>
+
+        <%= f.submit t(".submit"), class: "btn btn-success pull-right" %>
+      <% end %>
+    </div>
+  </div>
+</div>
