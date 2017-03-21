@@ -19,5 +19,7 @@ module Fcsp
       "config", "locales", "**", "*.{rb,yml}"
     )
     config.eager_load_paths << Rails.root.join("lib", "support")
+    config.i18n.default_locale = :en
+    config.i18n.available_locales = [:vi, :en, :ja]
   end
 end

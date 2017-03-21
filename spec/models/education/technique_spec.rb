@@ -5,7 +5,6 @@ RSpec.describe Education::Technique, type: :model do
 
   describe "columns" do
     it{expect(technique).to have_db_column(:name).of_type(:string)}
-    it{expect(technique).to have_db_column(:description).of_type(:text)}
   end
 
   describe "associations" do

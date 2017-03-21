@@ -1,4 +1,6 @@
 class Education::LearningProgram < ApplicationRecord
+  translates :description
+
   has_many :members, class_name: Education::ProgramMember.name,
     foreign_key: :learning_program_id
   has_many :users, through: :members
