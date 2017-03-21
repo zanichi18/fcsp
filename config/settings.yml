@@ -50,3 +50,5 @@ courses:
 user:
   max_length_name: 50
 max_length_title: 50
+hiring_type:
+  max_length_name: 50

@@ -60,6 +60,43 @@ namespace :db do
           description: description
       end
 
+      puts "Create jobs"
+      Company.all.each do |company|
+        company_id = company.id
+        title = FFaker::Lorem.sentence
+        describe = FFaker::Lorem.paragraph
+        type_of_candidates = 1
+        who_can_apply = 1
+        Job.create(
+          company_id: company_id,
+          title: title,
+          describe: describe,
+          type_of_candidates: type_of_candidates,
+          who_can_apply: who_can_apply)
+      end
+
+      puts "Create hiring type"
+      (1..6).each do |i|
+        name_hiring_type = "hiring type #{i}"
+        description = FFaker::Lorem.sentence
+        status = 1
+        HiringType.create(
+          name: name_hiring_type,
+          description: description,
+          status: status)
+      end
+
+      puts "Create job hiring type"
+      Job.all.each do |job|
+        HiringType.all.each do |hiring_type|
+          job_id  = job.id
+          hiring_type_id = hiring_type.id
+          JobHiringType.create(
+            job_id:job_id,
+            hiring_type_id: hiring_type_id)
+        end
+      end
+
       puts "Create Education informations"
       Rake::Task["education:education_seeding"].invoke
     end
