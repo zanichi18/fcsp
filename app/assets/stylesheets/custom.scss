@@ -97,3 +97,52 @@
     padding: 5px 10px !important;
   }
 }
+
+.head-wrap {
+  background: url('welcome1.jpg') center center no-repeat;
+  padding: 200px 0 20px;
+}
+
+.heading-block {
+  h3 {
+    -webkit-font-smoothing: antialiased;
+    font-weight: 600;
+    text-shadow: 0 1px 2px $black-60opacity;
+
+    a {
+      color: $white;
+    }
+  }
+
+  span {
+    font-weight: 300;
+
+    a {
+      color: $white;
+      -webkit-font-smoothing: antialiased;
+      text-shadow: 0 1px 2px $black-30opacity;
+    }
+  }
+}
+
+.topmargin-custom {
+  margin-top: 28px;
+
+  h4 {
+    margin-top: 0;
+  }
+}
+
+.content-wrap-custom-sys {
+  margin: 30px 0 80px;
+}
+
+.btn-follow {
+  border-radius: 100px;
+  font-weight: 600;
+  width: 88px;
+}
+
+.ava-company {
+  max-width: 84px !important;
+}
