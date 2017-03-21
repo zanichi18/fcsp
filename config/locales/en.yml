@@ -74,17 +74,40 @@ en:
         heading: "Our Projects"
       our_team:
         heading: "Meet Our Team"
-    related_project: "Related Projects:"
+    trainings:
+      training_not_found: "Training Not Found."
+      index:
+        title: "Education Trainings"
+        home: "Home"
+        page_title: "All Trainings"
+        techniques: "Techniques"
+        view_courses: "View list courses"
+        hot: "Hot"
+      show:
+        not_found: "The training could not be found"
+        home: "Home"
+        trainings: "Trainings"
+        training_info: "Training info"
+        techniques: "Techniques"
+        share: "Share"
+        new_courses: "New Courses"
+        view_courses: "View all courses"
+      new:
+        create_training: "Create"
+      edit:
+        update_project: "Update"
+      update:
+        training_updated_successfully: "Training updated successfully!"
+      create:
+        training_created: "Training created !"
+        training_create_failed: "Create training failed!"
+      form:
+        description: "Description"
+        name: "Name"
     see_more: "See More"
     title: "Framgia Education"
     logo_alt: "Framgia logo"
     project:
-      project_info: "Project Info:"
-      share: "Share:"
-      server_info: "Server:"
-      plat_form: "Platform:"
-      git_repo: "Git Repo:"
-      pm_url: " PM Url:"
       not_found: "Project not found!"
       title: "Project"
       detail: "Detail"
@@ -112,6 +135,20 @@ en:
       detail_project:
         members: "Members"
         name: "Name"
+        related_project: "Related Projects:"
+        read_more: "Read more"
+        technique: "Technique:"
+        project_info: "Project Info:"
+        share: "Share:"
+        server_info: "Server:"
+        plat_form: "Platform:"
+        git_repo: "Git Repo:"
+        pm_url: " PM Url:"
+      read_more:
+        close: "Close"
+        description: "Description"
+        core_features: "Core Features"
+        release_note: "Release Note"
       form:
         name: "Name"
         description: "Description"

@@ -38,7 +38,11 @@ namespace :db do
         "do.ha.long@framgia.com": "longdh",
         "do.van.nam@framgia.com": "namdv",
         "nguyen.ha.phan@framgia.com": "phannh",
-        "luu.thi.thom@framgia.com": "thomlt"
+        "luu.thi.thom@fraamgia.com": "thomlt",
+        "thuy.viet.quoc@fraamgia.com": "thomlt",
+        "tran.anh.vu@fsramgia.com": "thomlt",
+        "le.quang.canh@sframgia.com": "thomlt",
+        "nguyen.ngoc.thinh@framagia.com": "thomlt"
       }
 
       users.each do |email, password|

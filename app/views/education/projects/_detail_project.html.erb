@@ -1,64 +1,79 @@
 <section id="content">
-  <div class="content-wrap">
+  <div class="content-wrap content-wrap-custom">
     <div class="container-fluid clearfix">
       <div class="col_two_third portfolio-single-image nobottommargin">
         <%= load_image project %>
+        <div class="divider divider-center divider-custom"><i class="icon-circle"></i></div>
+        <%= render "list_members", project: project, project_members: project_members %>
       </div>
       <div class="col_one_third portfolio-single-content col_last">
         <div class="fancy-title title-bottom-border">
-          <h2><%= t "education.project.project_info" %></h2>
+          <h2><%= t ".project_info" %></h2>
         </div>
+        <p><%= truncate project.description, 
+          length: Settings.education.project.content_truncate %>
+          <%= check_lenght_content project.description.size, 
+            Settings.education.project.modal_description %>
+        </p>
+        <p><%= truncate project.core_features, 
+          length: Settings.education.project.content_truncate %>
+          <%= check_lenght_content project.core_features.size, 
+            Settings.education.project.modal_core %>
+        </p>
+        <p><%= truncate project.release_note, 
+          length: Settings.education.project.content_truncate %>
+          <%= check_lenght_content project.release_note.size, 
+            Settings.education.project.modal_release %>
+        </p>
+        <%= render "read_more", project: project %>
+        <div class="line"></div>
 
         <ul class="portfolio-meta bottommargin">
-          <li><span><i class="icon-bookmark"></i>
-            <%= t ".name" %>
-            </span><%= project.name %>
-          </li>
 
           <li><span><i class="icon-info-sign"></i>
-            <%= t "education.project.server_info" %>
+            <%= t ".server_info" %>
             </span><%= project.server_info %>
+          </li>
+          
+          <li><span><i class="icon-lightbulb"></i>
+            <%= t ".technique" %></span>
+            <% techniques.each do |technique| %>
+              <%= technique.name %>
+            <% end %>
           </li>
 
           <li><span><i class="icon-lightbulb">
-            </i><%= t "education.project.plat_form" %>
+            </i><%= t ".plat_form" %>
             </span><%= project.plat_form %>
           </li>
 
           <li><span><i class="icon-link"></i>
-            <%= t "education.project.git_repo"  %>
-            </span><%= link_to project.git_repo, project.git_repo,
+            <%= t ".git_repo"  %>
+            </span><%= link_to truncate(project.git_repo, 
+              length: Settings.education.project.link_truncate), project.git_repo,
               target: t("education.project.git_repo") %>
           </li>
 
           <li><span><i class="icon-link"></i>
-            <%=t "education.project.pm_url"  %></span>
-            <%= link_to project.pm_url, project.pm_url,
+            <%=t ".pm_url"  %></span>
+            <%= link_to truncate(project.pm_url, 
+              length: Settings.education.project.link_truncate), project.pm_url,
               target: t("education.project.pm_url") %>
           </li>
         </ul>
 
         <div class="si-share share-custom clearfix">
           <div>
-            <span><%= t "education.project.share" %></span>
+            <span><%= t ".share" %></span>
           </div>
           <div>
             <%= social_share_button_tag project.name %>
           </div>
         </div>
       </div>
-
       <div class="clear"></div>
       <div class="divider divider-center"><i class="icon-circle"></i></div>
-      <h2><%= t ".description" %></h2>
-      <p><%= project.description %></p>
-      <div class="divider divider-center"><i class="icon-circle"></i></div>
-
-      <h2><%= t ".members" %>(<%= project_members.length %>)</h2>
-      <%= render "list_members", project: project, project_members: project_members %>
-
-      <div class="divider divider-center"><i class="icon-circle"></i></div>
-      <h4><%= t "education.related_project" %></h4>
+      <h3><%= t ".related_project" %></h3>
       <div id="related-portfolio" class="owl-carousel portfolio-carousel
         carousel-widget" data-margin="20" data-nav="false"
         data-autoplay="3000" data-items-xxs="1" data-items-xs="2"

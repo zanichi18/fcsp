@@ -4,9 +4,9 @@ namespace :education do
     30.times do |i|
       project_params = {
         name: Faker::Name.name,
-        description: Faker::Lorem.sentence,
-        core_features: Faker::Lorem.sentence,
-        release_note: Faker::Lorem.sentence,
+        description: Faker::Lorem.paragraphs(rand 5..8).join(""),
+        core_features: Faker::Lorem.paragraphs(rand 5..8).join(""),
+        release_note: Faker::Lorem.paragraphs(rand 5..8).join(""),
         git_repo: "https://github.com/example-#{i + 1}",
         server_info: Faker::Lorem.sentence,
         plat_form: "Ruby",
@@ -14,7 +14,7 @@ namespace :education do
       }
 
       project = Education::Project.create! project_params
-      4.times do |j|
+      8.times do |j|
         project.members.create(position: rand(0..4), user_id: (j+1))
       end
     end
