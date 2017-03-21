@@ -108,6 +108,7 @@ en:
       form:
         description: "Description"
         name: "Name"
+    related_project: "Related Projects:"
     see_more: "See More"
     title: "Framgia Education"
     logo_alt: "Framgia logo"

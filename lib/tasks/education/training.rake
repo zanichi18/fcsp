@@ -20,8 +20,12 @@ namespace :education do
       4.times do |n|
         training.training_techniques.create technique_id: rand(1..4)
       end
+
       course = Education::Course.create! course_params
       course.images.create url: "/default.jpg"
+      4.times do |i|
+        course.course_members.create(user_id: (i+1))
+      end
     end
   end
 end

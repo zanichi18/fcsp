@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe CompanyIndustry, type: :model do
   describe "CompanyIndustry validation" do

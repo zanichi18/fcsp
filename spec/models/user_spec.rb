@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
       it{expect have_many(:education_rates)}
       it{expect have_many(:education_project_members)}
       it{expect have_many(:course_members)}
-      it{expect have_many(:courses)}
+      it{expect have_many(:education_courses)}
       it{expect have_many(:education_projects)}
       it{expect have_many(:education_user_groups)}
       it{expect have_one(:education_program_member)}

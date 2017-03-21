@@ -142,3 +142,16 @@ en:
       tag_cloud:
         tag_cloud: "Tag Cloud"
       post_not_found: "Post is not found."
+    users:
+      show:
+        projects: "Projects"
+        posts: "Posts"
+        courses: "Courses"
+        user_not_found: "User not found."
+        page_not_found: "Page not found."
+      right_column:
+        profile: "Profile"
+        settings: "Settings"
+        logout: "Logout"
+        about_me: "About me"
+        social_profiles: "Social profiles"

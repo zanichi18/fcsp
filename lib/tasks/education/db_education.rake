@@ -43,15 +43,6 @@ namespace :education do
       Education::Category.create! name: category
     end
 
-    puts "Create education posts"
-    5.times do
-      Education::Post.create! title: Faker::Lorem.sentence,
-        content: Faker::Lorem.paragraph, category_id: 1, user_id: 1
-    end
-
-    puts "create About"
-    Education::About.create!(title: "Welcome to Framgia Education",
-      content: "Master your skill. Come with us")
     puts "Create Education categories"
     Rake::Task["education:make_categories"].invoke
 
