@@ -1,5 +1,33 @@
 en:
   employer:
+    dashboards:
+      index:
+        title: "Company"
+    layouts:
+      sidebar:
+        menu: "Menu"
+        manager_postings: "Manager Postings"
+        candidates: "Candidates"
+        messages: "Messages"
+        recommendations: "Recommendations"
+        view_mores: "View mores"
+        current_plans: "Current Plans"
+        contact: "Contact Us"
+        trial: "Trial"
+        view_candidates: "Current viewable candidates"
+        mail: "Mail"
+        help: "Help"
+        company_info: "Company Info"
+      header:
+        dashboard: "Dashboard"
+        jobs: "Jobs"
+        feed: "Feed"
+        tools: "Tools"
+        edit_profile: "Edit Profile"
+        account_info: "Account Info"
+        company_info: "Company Info"
+        setting: "Setting"
+        logout: "Logout"
     jobs:
       new:
         submit: "Post"
