@@ -32,6 +32,7 @@ gem "active_model_serializers"
 gem "js-routes"
 gem "globalize", git: "https://github.com/globalize/globalize"
 gem "activemodel-serializers-xml"
+gem "social-share-button", "0.8.4"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password
