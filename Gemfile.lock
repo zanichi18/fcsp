@@ -74,7 +74,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    brakeman (3.5.0)
+    brakeman (3.6.0)
     builder (3.2.3)
     bullet (5.5.1)
       activesupport (>= 3.0.0)
@@ -127,6 +127,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.3)
     docile (1.1.5)
+    dropzonejs-rails (0.7.3)
+      rails (> 3.1)
     equalizer (0.0.11)
     erubis (2.7.0)
     eslint-rails (1.2.1)
@@ -232,6 +234,7 @@ GEM
     pg (0.20.0)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
+    posix-spawn (0.3.13)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -240,6 +243,9 @@ GEM
     pry-rails (0.3.5)
       pry (>= 0.9.10)
     puma (3.8.2)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
     rack (2.0.1)
     rack-mini-profiler (0.10.2)
       rack (>= 1.2.0)
@@ -408,6 +414,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -428,6 +435,7 @@ DEPENDENCIES
   config
   database_cleaner (~> 1.5)
   devise
+  dropzonejs-rails
   eslint-rails
   factory_girl_rails
   faker
@@ -446,6 +454,7 @@ DEPENDENCIES
   pry
   pry-rails
   puma (~> 3.0)
+  pygments.rb (~> 0.6.3)
   rack-mini-profiler
   rails (~> 5.0.2)
   rails-controller-testing

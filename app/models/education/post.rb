@@ -1,5 +1,5 @@
 class Education::Post < ApplicationRecord
-  translates :title, :content
+  translates :title
 
   belongs_to :category, class_name: Education::Category.name
   belongs_to :user

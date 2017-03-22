@@ -58,6 +58,18 @@ vi:
     help:
       content: "This is help page"
       title: "Help"
+  layouts:
+    base_title: "FCSP"
+    header:
+      home: "Home"
+      employer: "Employer"
+      help: "Help"
+      about: "About"
+      login: "Login"
+      logout: "Logout"
+      profile: "Profile"
+      message: "Messages"
+      sign_out: "Sign out"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:
@@ -161,12 +173,14 @@ vi:
       new:
         create_project: "Create project"
       edit:
+        edit_project: "Edit Project"
         update_project: "Update project"
       create:
         project_created: "Project created!"
       update:
         project_updated_successfully: "Project updated successfully!"
       destroy:
+        delete: "Delete"
         project_deleted: "Project deleted"
         project_delete_fail: "Fail to delete project."
       home:
@@ -191,6 +205,72 @@ vi:
       feedback_error: "Something was wrong, check your feedback form again."
       success_title: "Success!"
       failed_title: "Failed!"
+    posts:
+      title: "Member's Posts"
+      title_des: "Lastest posts of our Members"
+      read_more: "Read more"
+      date_format: "%d-%m-%Y"
+      create_new: "Create new post"
+      older: "&larr;Older"
+      newer: "Newer &rarr;"
+      show:
+        follow_us_on_twitter: "Theo dõi chúng tôi trên Twitter"
+        share_this_post: "Chia sẻ bài viết:"
+        posted_by: "Đăng bởi"
+        related_posts: "Bài đăng liên quan:"
+        popular: "Nổi tiếng"
+        recent: "Mới nhất"
+        heading: "Bài đăng"
+        comments: "Bình luận"
+        heading_description: "Tất cả bài viết của chúng tôi"
+        name: "Tên"
+        email: "Email"
+        post_not_found: "Không tìm thấy post"
+      create:
+        post_create_success: "Tạo mới thành công"
+      update:
+        post_not_found: "Không tìm thấy bài đăng"
+        post_update_success: "Cập nhật thành công"
+      destroy:
+        post_not_found: "Không tìm thấy bài đăng"
+        post_delete_fail: "Xóa bài đăng thất bại"
+        post_delete_success: "Xóa bài đăng thành công"
+      share_post:
+        share_this_post: "Chia sẻ bài đăng"
+      posted_by:
+        posted_by: "Đăng bởi"
+      comments:
+        comments: "Bình luận"
+      comment_form:
+        leave_a: "Để Lại"
+        comment: "Bình Luận"
+        submit_comment: "Đăng bình luận"
+      twitter_feed:
+        twitter_feed: "Twitter Feed"
+        follow_us_on_twitter: "Theo dõi chúng tôi trên Twitter"
+      flickr_photo:
+        flickr_photo_stream: "Flickr Photostream"
+      portfolio_coursel:
+        portfolio_coursel: "Portfolio Carousel"
+      tag_cloud:
+        tag_cloud: "Tag Cloud"
+      post_form:
+        publish_now: "Đăng ngay"
+        pick_image: "Chọn hình ảnh"
+        delete: "Xóa"
+      insert_image_modal:
+        dropzone_hint: "Kẻo và thả hoặc nhấp chuột để tải ảnh lên"
+        modal_header: "Thêm hình ảnh"
+        cancel: "Bỏ qua"
+        modal_header: "Thêm hình ảnh"
+      new:
+        heading: "Tạo mới"
+        heading_description: "Make it awesome!"
+      edit:
+        heading: "Chỉnh sửa"
+        heading_description: "Make is awesome!"
+    post:
+      post_not_found: "Không tìm thấy post"
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"
@@ -204,16 +284,15 @@ vi:
         show_all_course: "All studying IT courses at Framgia"
         training_program: "Training program"
         language_program: "Language program"
-    posts:
-      title: "Member's Posts"
-      title_des: "Lastest posts of our Members"
-      read_more: "Read more"
-      date_format: "%d-%m-%Y"
-      create_new: "Create new post"
-      older: "&larr;Older"
-      newer: "Newer &rarr;"
   time:
     formats:
       date_month_year_concise: '%d-%m-%y'
   copy: "Copyright by Framgia"
   error: "error"
+  comment:
+    content: "Comment something"
+    person: "Commented by "
+    more_comment: "More comments"
+    comment_count: " Comments"
+    submit_button: "Submit comment"
+    edit_button: "Save"

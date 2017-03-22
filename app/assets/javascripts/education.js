@@ -25,6 +25,7 @@
 //= require education/course.js
 //= require education/course_member.js
 //= require education/users
+//= require education/posts
 
 $(document).ready(function(){
   var $searchlink = $('#searchtoggl i');
