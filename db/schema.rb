@@ -95,10 +95,11 @@ ActiveRecord::Schema.define(version: 20170321031836) do
 
   create_table "education_comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "project_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
   end
 
@@ -458,7 +459,7 @@ ActiveRecord::Schema.define(version: 20170321031836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "education_comments", "education_projects", column: "project_id"
+  add_foreign_key "education_comments", "education_projects", column: "commentable_id"
   add_foreign_key "education_comments", "users"
   add_foreign_key "education_course_members", "education_courses", column: "course_id"
   add_foreign_key "education_course_members", "users"

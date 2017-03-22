@@ -1,0 +1,3 @@
+$('#all-comment').html('<%= j render @show_projects.comments %>');
+$('#load-more').replaceWith
+  ('<%= j (link_to_next_page(@show_projects.comments, t("comment.more_comment"), remote: true, id: "load-more", class: "button button-3d button-teal button-small nobottommargin tada animated")) %>')

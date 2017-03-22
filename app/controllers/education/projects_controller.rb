@@ -16,12 +16,13 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def show
-    relations = Education::Project.relation_plat_form(@project.plat_form)
-      .newest.includes(:images).limit Settings.education.related_project.limit
-    project_members = @project.members.order(:position).includes :user
-    rand_project = Education::Project.last.id
-    @supports = Supports::Education::ShowProject.new project_members,
-      relations, rand_project
+    comments = @project.comments.newest.includes(:user, :commentable)
+      .page(params[:page]).per Settings.education.comment.per_page
+    @show_projects = Supports::Education::ShowProject.new @project, comments
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new

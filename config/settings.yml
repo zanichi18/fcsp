@@ -43,6 +43,9 @@ education:
     max_length_title: 200
     content_character_display: 255
     per_page: 20
+  comment:
+    per_page: 3
+    max_content_length: 255
 home:
   limit: 8
 home_trainings_limit: 8
@@ -52,7 +55,7 @@ company:
 default_user_password: {"password": "123456"}
 courses:
   home_limit: 4
-  index_limit: 6
+  index_limit: 8
 user:
   max_length_name: 50
 max_length_title: 50
