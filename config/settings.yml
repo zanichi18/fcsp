@@ -75,3 +75,11 @@ user:
 max_length_title: 50
 hiring_type:
   max_length_name: 50
+jobs:
+  per_page: 5
+  image_size: 100%
+  image_url: "/assets/welcome1.jpg"
+  image_company_size: 32x32
+  limit_user_show: 3
+  image_member_size: 70x70
+  image_member_url: "/assets/avatar.jpg"

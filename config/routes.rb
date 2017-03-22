@@ -31,4 +31,6 @@ Rails.application.routes.draw do
     resources :companies, only: [:new, :create, :show]
     resources :users, only: [:new, :create]
   end
+
+  resources :jobs, only: [:index, :show]
 end

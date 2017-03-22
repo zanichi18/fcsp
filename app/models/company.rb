@@ -8,6 +8,7 @@ class Company < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :images, as: :imageable
   has_many :team_introductions, as: :team_target_type
+  has_many :users, through: :employees
 
   ATTRIBUTES = [:name, :website, :introduction, :founder, :country,
     :company_size, :founder_on]

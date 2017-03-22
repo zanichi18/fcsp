@@ -79,6 +79,30 @@ namespace :db do
           who_can_apply: who_can_apply)
       end
 
+      puts "Create employee of company"
+      User.all.each do |user|
+        user_id = user.id
+        company_id = 1
+        description = FFaker::Lorem.sentence
+        Employee.create(
+          user_id: user_id,
+          company_id: company_id,
+          description: description)
+      end
+
+      puts "Create benefit of company"
+      Company.all.each do |company|
+        (1..5).each do |i|
+          company_id = company.id
+          name = "Benefit #{i}"
+          description = FFaker::Lorem.sentence
+          Benefit.create(
+            company_id: company_id,
+            name: name,
+            description: description)
+        end
+      end
+
       puts "Create hiring type"
       (1..6).each do |i|
         name_hiring_type = "hiring type #{i}"

@@ -1,0 +1,47 @@
+<section class="job-show-main-section job-show-section-members">
+  <header>
+    <div class="row">
+      <h4 class="website-company col-md-7 ">
+        <span>
+          <%= @job_object.company.name %>
+          <%= t ".members" %>
+        </span>
+      </h4>
+      <span class="header-btn">
+        <a class="btn btn-info col-md-2 show-all-staffing" href="#">
+          <%= t ".views_all" %>
+          <% if @job_object.members.present? %>
+            <%= @job_object.members.size %>
+          <% end %>
+          <%= t ".views_all_close" %>
+        </a>
+        <a class="btn btn-default .btn-xs hr-edit col-md-2" href="#">
+          <%= t ".edit_posting" %>
+        </a>
+      </span>
+    </div>
+  </header>
+  <div class="job-show-member-wrapper">
+    <% if @job_object.members.present? %>
+      <ul class="members cf">
+        <% @job_object.members
+          .limit(Settings.jobs.limit_user_show).each do |member| %>
+          <li>
+            <a data-ref="staffing">
+              <div class="member-photo">
+                <% if member.avatar.present? %>
+                  <%= link_to image_tag(member.avatar,
+                    size: Settings.jobs.image_member_size), company_path %>
+                <% else %>
+                  <%= link_to image_tag(Settings.jobs.image_member_url,
+                    size: Settings.jobs.image_member_size), company_path %>
+                <% end %>
+              </div>
+              <h5><%= member.name %></h5>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</section>
