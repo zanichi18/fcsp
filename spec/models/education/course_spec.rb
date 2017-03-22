@@ -22,4 +22,11 @@ RSpec.describe Education::Course, type: :model do
       expect(course).to eq [course2, course1]
     end
   end
+
+  it "returns list course follower training" do
+    training = FactoryGirl.create :training
+    course1 = FactoryGirl.create :course, training: training
+    expect(Education::Course.relation_training(training.id))
+      .to include(course1)
+  end
 end

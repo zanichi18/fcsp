@@ -1,0 +1,15 @@
+<% course_members.each do |member| %>
+  <div class="owl-item">
+    <div class="oc-item">
+      <div class="iportfolio">
+        <div class="portfolio-image">
+          <%= image_tag member.user_avatar %>
+        </div>
+        <div class="portfolio-desc">
+          <h5><% member.user_name %></h5>
+          <small><% member.user_email %></small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

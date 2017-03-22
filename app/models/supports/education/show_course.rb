@@ -1,6 +1,6 @@
 module Supports::Education
   class ShowCourse
-    attr_reader :user_ids, :added_users, :users
+    attr_reader :user_ids, :added_users, :users, :course
 
     def initialize params, course
       @params = params
@@ -25,6 +25,19 @@ module Supports::Education
     def users
       User.not_in_course(@course)
         .search(name_or_email_cont: @params[:user_search]).result
+    end
+
+    def course_members
+      @course.course_members.includes :user
+    end
+
+    def relations
+      Education::Course.relation_training(@course.training_id)
+        .newest.includes(:images).limit Settings.courses.other_coures_limit
+    end
+
+    def techniques
+      @course.techniques
     end
   end
 end

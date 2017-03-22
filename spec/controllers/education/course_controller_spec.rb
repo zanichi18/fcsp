@@ -60,6 +60,26 @@ RSpec.describe Education::CoursesController, type: :controller do
     end
   end
 
+  describe "GET #show" do
+    let(:course){FactoryGirl.create :course, name: "Course 1",
+      detail: "Course Old"}
+    before{get :show, params: {id: course}}
+
+    context "load course success" do
+      context "render the show template" do
+        it{expect(subject).to respond_with 200}
+        it do
+          expect(subject).to render_with_layout "education/layouts/application"
+        end
+        it{expect(subject).to render_template :show}
+      end
+
+      context "assigns the requested course to @course" do
+        it{expect(assigns(:course)).to eq course}
+      end
+    end
+  end
+
   describe "PATCH #update" do
     let(:course){FactoryGirl.create :course, name: "Course 1",
       detail: "Course Old"}
@@ -96,7 +116,7 @@ RSpec.describe Education::CoursesController, type: :controller do
       end
     end
   end
-  
+
   describe "DELETE #destroy" do
     let!(:course){FactoryGirl.create :course}
     it "deletes the course" do
