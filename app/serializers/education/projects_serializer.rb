@@ -8,4 +8,8 @@ class Education::ProjectsSerializer < ActiveModel::Serializer
       ImageUploader.new.default_url
     end
   end
+
+  def description
+    object.description.truncate Settings.education.project.content_truncate
+  end
 end
