@@ -1,3 +1,4 @@
+languages: {en: "English", vi: "Tiếng Việt", jp: "日本の"}
 education:
   number_one: 1
   project:

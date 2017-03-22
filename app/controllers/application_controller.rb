@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :rack_mini_profiler_authorize_request
+  before_action :set_locale
 
   include ApplicationHelper
 
@@ -18,5 +19,14 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for _resource
     root_path
+  end
+
+  def set_locale
+    save_session_locale
+    I18n.locale = session[:locale] || I18n.default_locale
+  end
+
+  def save_session_locale
+    session[:locale] = params[:locale] if params[:locale]
   end
 end

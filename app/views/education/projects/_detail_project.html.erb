@@ -12,17 +12,17 @@
         </div>
         <p><%= truncate project.description,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.description.size,
+          <%= check_lenght_content project.description,
             Settings.education.project.modal_description %>
         </p>
         <p><%= truncate project.core_features,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.core_features.size,
+          <%= check_lenght_content project.core_features,
             Settings.education.project.modal_core %>
         </p>
         <p><%= truncate project.release_note,
           length: Settings.education.project.content_truncate %>
-          <%= check_lenght_content project.release_note.size,
+          <%= check_lenght_content project.release_note,
             Settings.education.project.modal_release %>
         </p>
         <%= render "read_more", project: project %>

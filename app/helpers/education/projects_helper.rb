@@ -10,8 +10,9 @@ module Education::ProjectsHelper
     [array_technique_show, array_technique_hide]
   end
 
-  def check_lenght_content size_object, data_target
-    if size_object > Settings.education.project.content_truncate
+  def check_lenght_content object, data_target
+    return unless object
+    if object.size > Settings.education.project.content_truncate
       content_tag :a, href: "#", "data-toggle": "modal",
         "data-target": data_target, "data-whatever": "@mdo" do
         t ".read_more"

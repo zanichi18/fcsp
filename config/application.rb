@@ -18,6 +18,8 @@ module Fcsp
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
     config.eager_load_paths << Rails.root.join("lib", "support")
     config.i18n.default_locale = :en
-    config.i18n.available_locales = [:vi, :en, :ja]
+    config.i18n.available_locales = [:en, :vi, :jp]
+    config.i18n.load_path += Dir[Rails.root.join("config",
+      "locales", "**", "*.{rb,yml}")]
   end
 end
