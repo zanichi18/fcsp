@@ -12,4 +12,9 @@ class Education::Training < ApplicationRecord
   validates :description, presence: true
 
   scope :newest, ->{order created_at: :desc}
+
+  scope :filter_by_technique, ->technique_name do
+    left_outer_joins(:techniques)
+      .where("education_techniques.name LIKE ?", technique_name).uniq
+  end
 end

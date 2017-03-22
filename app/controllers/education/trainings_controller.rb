@@ -2,8 +2,12 @@ class Education::TrainingsController < Education::BaseController
   before_action :load_training, except: [:new, :index, :create]
 
   def index
-    @trainings = Education::Training.newest.page(params[:page])
-      .includes(:techniques).per Settings.education.trainings.per_page
+    param_q = params[:q]
+    param_technique_name = params[:technique_name]
+    param_page = params[:page]
+
+    @training_object = Supports::Education::Training.new param_q,
+      param_technique_name, param_page
   end
 
   def show

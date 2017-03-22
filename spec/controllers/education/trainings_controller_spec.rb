@@ -2,14 +2,36 @@ require "rails_helper"
 
 RSpec.describe Education::TrainingsController, type: :controller do
   let(:training){FactoryGirl.create(:training)}
+  let(:technique){FactoryGirl.create(:education_technique)}
   let(:params_true){FactoryGirl.attributes_for :training, name: "training",
    description: "description"}
   let(:params_fail){FactoryGirl.attributes_for :training, name: nil}
+  before{FactoryGirl.create(:training_technique, training_id: training.id,
+    technique_id: technique.id)}
 
   describe "GET #index" do
     it do
       get :index
       expect(response).to have_http_status :success
+    end
+
+    context "get list training by filter technique" do
+      it "result at least one object" do
+        get :index, params: {technique_name: technique.name}
+        expect(assigns(:training_object).trainings).to eq [training]
+      end 
+
+      it "result is empty" do
+        get :index, params: {technique_name: Faker::Name.first_name}
+        expect(assigns(:training_object).trainings).to be_empty
+      end
+    end
+
+    context "get training by name" do
+      it "result at least one object" do
+        get :index, params: {q: training.name}
+        expect(assigns(:training_object).trainings).to eq [training]
+      end
     end
   end
 

@@ -10,6 +10,9 @@ en:
         techniques: "Techniques"
         view_courses: "View list courses"
         hot: "Hot"
+        search_placeholder: "Search..."
+        show_all: "Show all"
+        more: "More"
       show:
         not_found: "The training could not be found"
         home: "Home"
