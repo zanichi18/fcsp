@@ -25,7 +25,9 @@
           <li class="drop-custom"><%= link_to t(".account_info"), "#" %></li>
           <li class="drop-custom"><%= link_to t(".setting"), "#" %></a></li>
           <li role="separator" class="divider"></li>
-          <li><%= link_to t(".logout"), "#" %></li>
+          <li>
+            <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+          </li>
         </ul>
       </div>
 

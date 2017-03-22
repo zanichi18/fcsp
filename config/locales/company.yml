@@ -1,4 +1,30 @@
 en:
+  companies:
+    show_left_main_content:
+      info: "Info"
+      news: "News"
+      jobs: "Jobs"
+      members: "Members"
+      stats: "Stats"
+      founder: "Founder"
+      founded: "Founded on"
+      no_of_members: "# of Members"
+    show_right_main_content:
+      about_us: "About us"
+      social_profiles: "Social Profiles"
+    show_header:
+      follow: "Follow"
+  layouts:
+    base_title: "FCSP"
+    header:
+      home: "Home"
+      help: "Help"
+      about: "About"
+      login: "Login"
+      logout: "Logout"
+      profile: "Profile"
+      message: "Messages"
+      sign_out: "Sign out"
   admin:
     companies:
       new:

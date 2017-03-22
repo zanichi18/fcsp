@@ -17,8 +17,9 @@ Rails.application.routes.draw do
 
   namespace :employer do
     resources :dashboards, only: :index
+    root "dashboards#index"
     resources :companies do
-      resources :jobs, only: :create
+      resources :jobs, only: [:new, :create]
     end
   end
 
