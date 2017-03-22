@@ -3,34 +3,48 @@ vi:
     trainings:
       index:
         read_more: "Xem thêm"
-  courses:
-    form:
-      name: "Tên"
-      detail: "Chi tiết"
-      training: "Khóa đào tạo"
-      start_date: "Ngày bắt đầu"
-      end_date: "Ngày kết thúc"
-      image: "Hình ảnh"
-      add_image: "Thêm ảnh"
-      save: "Lưu"
-      reset: "Tạo lại"
-    image_fields:
-      remove: "Xóa"
-    new:
-      new: "Tạo khóa học"
-    edit:
-      edit: "Cập nhật khóa học"
-    course:
-      delete: "Xóa"
-      edit: "Sửa"
-      delete_confirm: "Bạn chắc chứ?"
-    create:
-      new_success: "Tạo khóa học mới thành công"
-      new_faild: "Tạo khóa học mới không thành công"
-    update:
-      update_success: "Cập nhật khóa học thành công"
-      update_faild: "Cập nhật khóa học không thành công"
-    destroy:
-      destroy_success: "Xóa khóa học thành công"
-      destroy_faild: "Xóa khóa học không thành công"
-    not_found: "Không tìm thấy khóa học"
+    projects:
+      index:
+        placeholder_search: "Nhập tìm kiếm"
+        home: "Trang chủ"
+        header: "Dự Án"
+        filter: "Bộ Lọc"
+        show_all: "Xem tất cả"
+        more: "Thêm"
+        technique_title: "3+ Công nghệ"
+        technique_subtitle: "HTML, Bootstrap, Angularjs..."
+        platform_title: "4+ Nền tảng "
+        platform_subtitle: "Ruby, PHP, Android, IOS..."
+        total_project_title: "+ Dự án"
+        total_project_subtitle: "Tổng số dự án của chương trình đào tạo tại Framgia"
+    courses:
+      form:
+        name: "Tên"
+        detail: "Chi tiết"
+        training: "Khóa đào tạo"
+        start_date: "Ngày bắt đầu"
+        end_date: "Ngày kết thúc"
+        image: "Hình ảnh"
+        add_image: "Thêm ảnh"
+        save: "Lưu"
+        reset: "Tạo lại"
+      image_fields:
+        remove: "Xóa"
+      new:
+        new: "Tạo khóa học"
+      edit:
+        edit: "Cập nhật khóa học"
+      course:
+        delete: "Xóa"
+        edit: "Sửa"
+        delete_confirm: "Bạn chắc chứ?"
+      create:
+        new_success: "Tạo khóa học mới thành công"
+        new_faild: "Tạo khóa học mới không thành công"
+      update:
+        update_success: "Cập nhật khóa học thành công"
+        update_faild: "Cập nhật khóa học không thành công"
+      destroy:
+        destroy_success: "Xóa khóa học thành công"
+        destroy_faild: "Xóa khóa học không thành công"
+      not_found: "Không tìm thấy khóa học"
