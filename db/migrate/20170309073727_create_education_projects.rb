@@ -10,7 +10,8 @@ class CreateEducationProjects < ActiveRecord::Migration[5.0]
       t.string :pm_url
       t.boolean :is_project
       t.string :plat_form
-
+      t.integer :comments_count, null: false, default: 0
+      
       t.timestamps
     end
 

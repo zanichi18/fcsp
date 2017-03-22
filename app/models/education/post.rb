@@ -3,14 +3,24 @@ class Education::Post < ApplicationRecord
 
   belongs_to :category, class_name: Education::Category.name
   belongs_to :user
-  has_many :images, class_name: Education::Image.name, as: :imageable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :title, presence: true,
-    length: {maximum: Settings.education.posts.max_length_title}
+    length: {maximum: Settings.education.post.title_max_length,
+      minimum: Settings.education.post.title_min_length}
   validates :content, presence: true
+  validates :user_id, presence: true
+  validates :category_id, presence: true
+  validates :content, presence: true,
+    length: {minimum: Settings.education.post.content_min_length}
 
-  delegate :email, to: :user, prefix: true
+  delegate :name, to: :user, prefix: true
+  delegate :avatar, to: :user, prefix: true
   delegate :name, to: :category, prefix: true
 
   scope :created_desc, ->{order created_at: :desc}
+  scope :related_by_category, ->post do
+    where "category_id = #{post.category_id} AND id != #{post.id}"
+  end
+  scope :popular, ->{order comments_count: :desc}
 end

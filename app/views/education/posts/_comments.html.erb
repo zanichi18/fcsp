@@ -1,0 +1,10 @@
+<div id="comments" class="clearfix">
+  <h3 id="comments-title"><span><%= @post.comments_count %></span>
+    <%= t ".comments" %>
+  </h3>
+  <ol class="commentlist clearfix">
+    <%= render partial: "comment_item", locals: {comments: @post.comments} %>
+  </ol>
+  <div class="clear"></div>
+  <%= render "comment_form" %>
+</div>

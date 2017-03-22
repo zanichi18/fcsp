@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:new, :create]
     resources :courses, only: [:index, :show]
     resources :trainings, only: :index
-    resources :posts, only: :index
+    resources :posts, only: [:index, :create, :show]
   end
 
   namespace :employer do

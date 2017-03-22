@@ -22,6 +22,8 @@ education:
   page_404_url: "public/404"
   related_project:
     limit: 20
+  related_post:
+    limit: 4
   projects:
     textarea_rows: 8
     split_array: 4
@@ -47,6 +49,17 @@ education:
   comment:
     per_page: 3
     max_content_length: 255
+  post:
+    comment_form_cols: 58
+    comment_form_rows: 7
+    comment_user_avatar_height: 60
+    comment_user_avatar_width: 60
+    popular_posts_limit: 3
+    newest_post_limit: 3
+    title_max_length: 255
+    title_min_length: 10
+    content_min_length: 10
+    comment_item_avatar_size: "60x60"
 home:
   limit: 8
 home_trainings_limit: 8

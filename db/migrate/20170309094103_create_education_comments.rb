@@ -9,6 +9,7 @@ class CreateEducationComments < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
-    add_foreign_key :education_comments, :education_projects, column: :commentable_id
+    # add_foreign_key :education_comments, :education_projects, column: :commentable_id
+    # add_foreign_key :education_comments, :education_posts, column: :commentable_id
   end
 end
