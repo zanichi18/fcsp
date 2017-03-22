@@ -5,6 +5,8 @@ RSpec.describe Job, type: :model do
     context "association" do
       it{expect belong_to(:company)}
       it{expect have_many(:images)}
+      it{expect have_many(:hiring_types)}
+      it{expect have_many(:job_hiring_types)}
     end
 
     context "column_specifications" do

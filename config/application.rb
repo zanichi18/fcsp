@@ -15,7 +15,9 @@ module Fcsp
     config.assets.paths << Rails.root.join("app", "assets", "videos")
 
     config.rack_mini_profiler_environments = %w(development)
-    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.{rb,yml}"]
+    config.i18n.load_path << Rails.root.join(
+      "config", "locales", "**", "*.{rb,yml}"
+    )
     config.eager_load_paths << Rails.root.join("lib", "support")
     config.i18n.default_locale = :en
     config.i18n.available_locales = [:vi, :en, :ja]

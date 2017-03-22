@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317120631) do
+ActiveRecord::Schema.define(version: 20170321031836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -345,6 +345,14 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.index ["company_id"], name: "index_groups_on_company_id", using: :btree
   end
 
+  create_table "hiring_types", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.integer  "imageable_id"
     t.string   "imageable_type"
@@ -356,6 +364,15 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.index ["imageable_type"], name: "index_images_on_imageable_type", using: :btree
   end
 
+  create_table "job_hiring_types", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "hiring_type_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["hiring_type_id"], name: "index_job_hiring_types_on_hiring_type_id", using: :btree
+    t.index ["job_id"], name: "index_job_hiring_types_on_job_id", using: :btree
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.integer  "company_id"
     t.string   "title"
@@ -364,7 +381,9 @@ ActiveRecord::Schema.define(version: 20170317120631) do
     t.integer  "who_can_apply"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "team_id"
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
+    t.index ["team_id"], name: "index_jobs_on_team_id", using: :btree
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
@@ -461,6 +480,9 @@ ActiveRecord::Schema.define(version: 20170317120631) do
   add_foreign_key "education_user_groups", "education_groups", column: "group_id"
   add_foreign_key "education_user_groups", "users"
   add_foreign_key "groups", "companies"
+  add_foreign_key "job_hiring_types", "hiring_types"
+  add_foreign_key "job_hiring_types", "jobs"
+  add_foreign_key "jobs", "teams"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
   add_foreign_key "user_groups", "groups"
