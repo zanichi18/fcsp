@@ -67,6 +67,10 @@ en:
   flash:
     deleted_success: "deleted successfully!"
   education:
+    layouts:
+      header:
+        log_out: "Logout"
+        log_in: "Login"
     home:
       our_trainings:
         techniques: "Techniques"

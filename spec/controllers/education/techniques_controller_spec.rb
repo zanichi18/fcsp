@@ -1,7 +1,17 @@
 require "rails_helper"
+require "support/controller_helpers"
 
 RSpec.describe Education::TechniquesController, type: :controller do
   let(:technique){FactoryGirl.create(:education_technique)}
+  let!(:user){FactoryGirl.create(:user)}
+  before :each do
+    group = FactoryGirl.create(:education_group)
+    FactoryGirl.create :education_user_group, user: user, group: group
+    FactoryGirl.create :education_permission, group: group,
+      entry: "Education::Technique"
+    allow(controller).to receive(:current_user).and_return user
+    sign_in user
+  end
 
   describe "GET #index" do
     before{get :index}

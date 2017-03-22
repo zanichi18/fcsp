@@ -14,15 +14,10 @@
   </div>
 </section>
 
-<% if current_user %>
-<!-- render if admin -->
+<% if current_user && can_manage?(Education::Project) %>
   <%= render "education/trainers/index_project" %>
   <%= javascript_include_tag "education/project_search" %>
-
 <% else %>
-<!-- if not admin -->
-
-
   <div id="page-menu" class="no-sticky">
     <div id="page-menu-wrap">
       <div class="container clearfix">

@@ -55,6 +55,22 @@
           </li>
         </ul>
 
+        <% if user_signed_in? %>
+          <div id="top-cart" class="dropdown-user">
+            <a><i class="icon-user"></i></a>
+            <div class="dropdown-user-content">
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <span><i class="icon-signout"></i> <%= t ".log_out" %></span>
+              <% end %>
+            </div>
+          </div>
+        <% else %>
+          <div id="top-cart">
+            <%= link_to new_user_session_path do %>
+              <i class="icon-signin"></i>
+            <% end %>
+          </div>
+        <% end %>
         <div id="top-search">
           <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
           <form action="#" method="get">

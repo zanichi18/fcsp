@@ -1,10 +1,20 @@
 require "rails_helper"
+require "support/controller_helpers"
 
 RSpec.describe Education::ProjectsController, type: :controller do
   let(:project){FactoryGirl.create(:project)}
   let(:technique){FactoryGirl.create(:education_technique)}
-  before{FactoryGirl.create(:project_technique, project_id: project.id,
-    technique_id: technique.id)}
+  let!(:user){FactoryGirl.create(:user)}
+  before :each do
+    FactoryGirl.create :project_technique, project_id: project.id,
+      technique_id: technique.id
+    group = FactoryGirl.create(:education_group)
+    FactoryGirl.create :education_user_group, user: user, group: group
+    FactoryGirl.create :education_permission, group: group,
+      entry: "Education::Project"
+    allow(controller).to receive(:current_user).and_return user
+    sign_in user
+  end
 
   describe "GET #index" do
     before{get :index}
@@ -25,7 +35,7 @@ RSpec.describe Education::ProjectsController, type: :controller do
       it "result at least one object" do
         get :index, params: {technique_name: technique.name}
         expect(assigns(:projects)).to eq [project]
-      end 
+      end
 
       it "result is empty" do
         get :index, params: {technique_name: Faker::Name.first_name}
@@ -42,8 +52,8 @@ RSpec.describe Education::ProjectsController, type: :controller do
       it "result is empty" do
         get :index, params: {term: Faker::Name.first_name}
         expect(assigns(:projects)).to be_empty
-      end      
-    end 
+      end
+    end
   end
 
   describe "GET #show" do

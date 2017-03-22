@@ -10,7 +10,7 @@
   </div>
 </section>
 
-<% if current_user %>
+<% if current_user && can_manage?(Education::Training) %>
   <%= render "education/trainers/index_trainings" %>
 <% else %>
   <section id="content">

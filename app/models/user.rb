@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :education_projects, through: :education_project_members,
     source: :project
   has_many :education_user_groups, class_name: Education::UserGroup.name
+  has_many :education_groups, class_name: Education::Group.name,
+    through: :education_user_groups, source: :group
   has_one :education_program_member, class_name: Education::ProgramMember.name
   has_one :education_learning_program, through: :education_program_member
   has_many :user_groups, dependent: :destroy
@@ -30,7 +32,7 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   scope :not_in_course, ->course do
-    where("id NOT IN (?)", course.users.pluck(:user_id))
+    where("id NOT IN (?)", course.users.pluck(:user_id)) if course.users.any?
   end
 
   private

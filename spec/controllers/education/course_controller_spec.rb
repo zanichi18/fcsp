@@ -1,6 +1,17 @@
 require "rails_helper"
+require "support/controller_helpers"
 
 RSpec.describe Education::CoursesController, type: :controller do
+  let!(:user){FactoryGirl.create(:user)}
+  before :each do
+    group = FactoryGirl.create(:education_group)
+    FactoryGirl.create :education_user_group, user: user, group: group
+    FactoryGirl.create :education_permission, group: group,
+      entry: "Education::Course"
+    allow(controller).to receive(:current_user).and_return user
+    sign_in user
+  end
+
   describe "GET #index" do
 
     it do
@@ -96,7 +107,7 @@ RSpec.describe Education::CoursesController, type: :controller do
       end
     end
   end
-  
+
   describe "DELETE #destroy" do
     let!(:course){FactoryGirl.create :course}
     it "deletes the course" do
