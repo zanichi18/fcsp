@@ -50,6 +50,18 @@ en:
     help:
       content: "This is help page"
       title: "Help"
+  layouts:
+    base_title: "FCSP"
+    header:
+      home: "Home"
+      employer: "Employer"
+      help: "Help"
+      about: "About"
+      login: "Login"
+      logout: "Logout"
+      profile: "Profile"
+      message: "Messages"
+      sign_out: "Sign out"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:

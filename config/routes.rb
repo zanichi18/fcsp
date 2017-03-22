@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     resources :dashboards, only: :index
     root "dashboards#index"
     resources :companies do
-      resources :jobs, only: [:new, :create]
+      resources :jobs
     end
   end
 

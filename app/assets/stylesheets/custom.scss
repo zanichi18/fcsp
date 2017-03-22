@@ -237,3 +237,14 @@
 .column-side {
   float: left;
 }
+
+.header {
+  border-bottom: 1px;
+  height: 80px;
+}
+
+.teal {
+  background-color: $light-teal !important;
+  float: right;
+  margin-right: -100px;
+}

@@ -1,0 +1,24 @@
+<% provide :title, t(".job") %>
+<div class="postcontent nobottommargin col_last clearfix">
+  <div class="header">
+    <h2><%= t ".manage_post" %></h2>
+    <div class="collapse navbar-collapse teal">
+      <ul class="nav navbar-nav nobottommargin">
+        <li class="active"><%= link_to t(".all"), "#" %></li>
+        <li class="active"><%= link_to t(".open"), "#" %></li>
+        <li class="active"><%= link_to t(".closed"), "#" %></li>
+        <li class="active"><%= link_to t(".draft"), "#" %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table">
+      <th><%= t ".title" %></th>
+      <th><%= t ".describe" %></th>
+      <th><%= t ".candidates" %></th>
+      <th><%= t ".status" %></th>
+      <th><%= t ".action" %></th>
+      <%= render "job", job: @job %>
+    </table>
+  </div>
+</div>

@@ -27,11 +27,10 @@
       </div>
       <nav id="primary-menu" class="dark login-modal">
         <ul>
-          <li>
-            <%= link_to root_path do %>
-              <div><%= t(".home") %></div>
-            <% end %>
-          </li>
+          <li><%= link_to t(".home"), root_path %></li>
+          <% if current_user.present? && current_user.admin? %>
+            <li><%= link_to t(".employer"), employer_dashboards_path %></li>
+          <% end %>
         </ul>
         <div id="top-search">
           <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>

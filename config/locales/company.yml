@@ -14,17 +14,6 @@ en:
       social_profiles: "Social Profiles"
     show_header:
       follow: "Follow"
-  layouts:
-    base_title: "FCSP"
-    header:
-      home: "Home"
-      help: "Help"
-      about: "About"
-      login: "Login"
-      logout: "Logout"
-      profile: "Profile"
-      message: "Messages"
-      sign_out: "Sign out"
   admin:
     companies:
       new:
