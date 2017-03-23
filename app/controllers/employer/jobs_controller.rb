@@ -1,6 +1,12 @@
 class Employer::JobsController < Employer::BaseController
   load_and_authorize_resource
-  before_action :load_company, only: :create
+  before_action :load_company
+
+  def edit
+  end
+
+  def show
+  end
 
   def create
     @job = @company.jobs.create job_params
@@ -11,6 +17,15 @@ class Employer::JobsController < Employer::BaseController
       flash[:danger] = t ".create_job_fail"
       redirect_to :back
     end
+  end
+
+  def update
+    if @job.update_attributes job_params
+      flash[:success] = t ".job_post_updated"
+    else
+      flash[:danger] = t ".job_post_update_fail"
+    end
+    redirect_to employer_company_job_path(@company)
   end
 
   private

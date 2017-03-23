@@ -1,0 +1,30 @@
+<%= form_for @job, url: url do |f| %>
+  <div class="col-md-6 form-group">
+    <%= f.label :title, class: "control-label" %>
+    <span class="required">*</span>
+    <%= f.text_field :title, required: true, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <%= f.label :describe, class: "control-label" %>
+    <span class="required">*</span>
+    <%= f.text_field :describe, required: true, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <%= f.label :type_of_candidates, class: "control-label" %>
+    <span class="required">*</span>
+    <%= f.text_field :type_of_candidates, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <%= f.label :who_can_apply, class: "control-label" %>
+    <span class="required">*</span>
+    <%= f.text_field :who_can_apply, class: "form-control" %>
+  </div>
+
+  <div class="col-md-6 form-group">
+    <%= f.submit t(".submit"), class: "btn btn-success" %>
+  </div>
+
+<% end %>
