@@ -67,7 +67,9 @@
           <h4><%= t ".related_posts" %></h4>
           <%= render partial: "education/posts/related_post",
             locals: {related_posts: @post_object.related_posts} %>
-          <%= render "comments" %>
+          <div class="abcd">
+          <%= render partial: "comments", locals: {post: @post} %>
+          </div>
         </div>
       </div>
       <div class="sidebar nobottommargin col_last clearfix">
