@@ -165,12 +165,14 @@ en:
       new:
         create_project: "Create project"
       edit:
+        edit_project: "Edit Project"
         update_project: "Update project"
       create:
         project_created: "Project created!"
       update:
         project_updated_successfully: "Project updated successfully!"
       destroy:
+        delete: "Delete"
         project_deleted: "Project deleted"
         project_delete_fail: "Fail to delete project."
       home:

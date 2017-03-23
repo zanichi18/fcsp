@@ -1,0 +1,26 @@
+<header id="header" class="no-sticky">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+      <div id="logo" class="nobottomborder">
+        <%= link_to education_root_path do %>
+          <%= image_tag "logo-framgia.png" %>
+        <% end %>
+      </div>
+      <nav id="primary-menu">
+        <ul>
+          <li>
+            <%= link_to education_projects_path do %>
+              <div><%= t "education.project.title" %></div>
+            <% end %>
+          </li>
+          <li class="current">
+            <%= link_to education_trainings_path do %>
+              <div><%= t "education.trainings.show.trainings" %></div>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
