@@ -79,3 +79,19 @@ vi:
         destroy_success: "Xóa khóa học thành công"
         destroy_faild: "Xóa khóa học không thành công"
       not_found: "Không tìm thấy khóa học"
+      add_course_member_modal:
+        add_member: "Thêm thành viên"
+        manage_member: "Quản lý thành viên"
+        search: "Tìm kiếm người dùng bằng tên hoặc email"
+        choose_all: "Chọn tất cả"
+        add: "Thêm"
+        close: "Đóng"
+      list_added_user:
+        delete: "Xóa"
+        delete_confirm: "Bạn chắc chứ?"
+    course_members:
+      create:
+        add_fail: "Không thể thêm thành viên"
+      delete:
+        delete_fail: "Không thể xóa thành viên"
+      not_found: "Không tìm thấy thành viên khóa học"

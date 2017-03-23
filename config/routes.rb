@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :create, :show] do
       resources :comment_posts, except: [:index, :show]
     end
+    resources :course_members, only: [:create, :destroy]
   end
 
   namespace :employer do

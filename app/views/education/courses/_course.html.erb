@@ -3,6 +3,7 @@
   <%= link_to t(".delete"),
     education_course_path(course), method: :delete,
     data: {confirm: t(".delete_confirm")} %>
+  <%= link_to t(".show"), course %>
   <div class="portfolio-image">
     <% if course.images.any? %>
       <div class="fslider" data-arrows="false" data-animation="fade">

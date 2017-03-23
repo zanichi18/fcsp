@@ -23,6 +23,14 @@ class Education::CoursesController < Education::BaseController
     end
   end
 
+  def show
+    @show_course = Supports::Education::ShowCourse.new params, @course
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def edit
   end
 

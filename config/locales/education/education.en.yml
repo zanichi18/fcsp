@@ -79,6 +79,22 @@ en:
         destroy_success: "Deleted course successfully"
         destroy_faild: "Cannot delete course"
       not_found: "Course not found"
+      add_course_member_modal:
+        add_member: "Add Members"
+        manage_member: "Manage Members"
+        search: "Search User by name or email"
+        choose_all: "Choose all"
+        add: "Add"
+        close: "Close"
+      list_added_users:
+        delete: "Delete"
+        delete_confirm: "Are you sure?"
+    course_members:
+      create:
+        add_fail: "Cannot add member"
+      delete:
+        delete_fail: "Cannot detele member"
+      not_found: "Course member not found"
     posts:
       title: "Member's Posts"
       title_des: "Lastest posts of our Members"

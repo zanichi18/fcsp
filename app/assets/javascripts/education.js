@@ -23,6 +23,7 @@
 //= require education/projects
 //= require cocoon
 //= require education/course.js
+//= require education/course_member.js
 
 $(document).ready(function(){
   var $searchlink = $('#searchtoggl i');
