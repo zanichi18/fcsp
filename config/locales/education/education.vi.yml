@@ -1,8 +1,39 @@
 vi:
   education:
     trainings:
+      training_not_found: "Không tìm thấy khóa đào tạo."
       index:
         read_more: "Xem thêm"
+        title: "Danh sách khóa đào tạo."
+        home: "Home"
+        page_title: "Danh sách khóa đào tạo"
+        techniques: "Các kỹ thuật"
+        view_courses: "Xem danh sách khóa học"
+        hot: "Hot"
+        search_placeholder: "Tìm kiếm ..."
+        show_all: "Xem tất cả"
+        more: "Thêm"
+      show:
+        not_found: "Không tìm thấy khóa đào tạo"
+        home: "Trang chủ"
+        trainings: "Khóa đào tạo"
+        training_info: "Thông tin đào tạo"
+        techniques: "Các kỹ thuật"
+        share: "Chia sẻ"
+        all_courses: "Các khóa học"
+        view_courses: "Xem các khóa học"
+      new:
+        create_training: "Tạo mới"
+      edit:
+        update_project: "Sửa"
+      update:
+        training_updated_successfully: "Chỉnh sửa khóa đào tạo thành công!"
+      create:
+        training_created: "Tạo mới khóa đào tạo thành công!"
+        training_create_failed: "Tạo mới khóa đào tạo thất bại!"
+      form:
+        description: "Mô tả"
+        name: "Tên khóa"
     projects:
       index:
         placeholder_search: "Nhập tìm kiếm"

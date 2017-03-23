@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     resources :feedbacks, only: [:new, :create]
     resources :courses
     resources :trainings, only: :index
-    resources :posts, only: [:index, :create, :show]
+    resources :posts, only: [:index, :create, :show] do
+      resources :comment_posts, except: [:index, :show]
+    end
   end
 
   namespace :employer do

@@ -2,7 +2,7 @@ class Education::PostsController < Education::BaseController
   before_action :load_post, only: :show
 
   def index
-    @posts = Education::Post.created_desc.includes(:images, :user, :category)
+    @posts = Education::Post.created_desc.includes(:user, :category)
       .page(params[:page]).per Settings.education.posts.per_page
   end
 

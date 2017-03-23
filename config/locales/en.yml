@@ -198,46 +198,6 @@ en:
       feedback_error: "Something was wrong, check your feedback form again."
       success_title: "Success!"
       failed_title: "Failed!"
-    posts:
-      title: "Member's Posts"
-      title_des: "Lastest posts of our Members"
-      read_more: "Read more"
-      date_format: "%d-%m-%Y"
-      create_new: "Create new post"
-      older: "&larr;Older"
-      newer: "Newer &rarr;"
-      show:
-        follow_us_on_twitter: "Follow Us on Twitter"
-        share_this_post: "Share this Post:"
-        posted_by: "Posted by"
-        related_posts: "Related Posts:"
-        popular: "Popular"
-        recent: "Recent"
-        heading: "Posts"
-        comments: "Comments"
-        heading_description: "Our Latest News in Masonry Layout"
-        name: "Name"
-        email: "Email"
-      share_post:
-        share_this_post: "Share this post"
-      posted_by:
-        posted_by: "Posted by"
-      comments:
-        comments: "Comments"
-      comment_form:
-        leave_a: "Leave a"
-        comment: "Comment"
-        submit_comment: "Submit Comment"
-      twitter_feed:
-        twitter_feed: "Twitter Feed"
-        follow_us_on_twitter: "Follow Us on Twitter"
-      flickr_photo:
-        flickr_photo_stream: "Flickr Photostream"
-      portfolio_coursel:
-        portfolio_coursel: "Portfolio Carousel"
-      tag_cloud:
-        tag_cloud: "Tag Cloud"
-      post_not_found: "Post is not found."
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"

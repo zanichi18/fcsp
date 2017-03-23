@@ -51,7 +51,7 @@ education:
     max_content_length: 255
   post:
     comment_form_cols: 58
-    comment_form_rows: 7
+    comment_form_rows: 4
     comment_user_avatar_height: 60
     comment_user_avatar_width: 60
     popular_posts_limit: 3
