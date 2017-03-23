@@ -19,4 +19,8 @@ module Education::ProjectsHelper
       end
     end
   end
+
+  def total_project
+    Education::Project.all.size
+  end
 end

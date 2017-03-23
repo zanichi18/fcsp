@@ -1,11 +1,11 @@
-languages: {en: "English", vi: "Tiếng Việt", jp: "日本の"}
+languages: {en: "English", vi: "Tiếng Việt", jp: "日本語"}
 education:
   number_one: 1
   project:
     modal_description: "#modal_description"
     modal_core: "#modal_core"
     modal_release: "#modal_release"
-    per_page: 16
+    per_page: 12
     truncate: 100
     link_truncate: 28
     content_truncate: 80

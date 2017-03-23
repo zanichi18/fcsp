@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function effect() {
   $('ul[data-liffect] li').each(function (i) {
-    $(this).attr('style', 'animation-delay:' + i * 250 + 'ms;');
+    $(this).attr('style', 'animation-delay:' + i * 100 + 'ms;');
     if (i === $('ul[data-liffect] li').size() -1) {
       $('ul[data-liffect]').addClass('play')
   }});
@@ -13,7 +13,7 @@ function effect() {
 
 function load_more() {
   size = $('.load-more-project').length;
-  x = 8;
+  x = 12;
   if(x >= size) {
     $('#more-project').hide();
     $('#next-project').show();

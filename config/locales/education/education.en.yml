@@ -34,6 +34,20 @@ en:
       form:
         description: "Description"
         name: "Name"
+    projects:
+      index:
+        placeholder_search: "Enter your search"
+        home: "Home"
+        header: "Project"
+        filter: "Filter"
+        show_all: "Show all"
+        more: "More"
+        technique_title: "3+ techniques"
+        technique_subtitle: "HTML, Bootstrap, Angularjs..."
+        platform_title: "4+ platform for education"
+        platform_subtitle: "Ruby, PHP, Android, IOS..."
+        total_project_title: "+ project of education"
+        total_project_subtitle: "Total project education of Framgia"
     courses:
       form:
         name: "Name"

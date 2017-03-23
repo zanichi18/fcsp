@@ -24,12 +24,14 @@ app.Projects.prototype = {
 
   _render: function(ul, item) {
     var markup = [
+      '<a href="' + Routes.education_project_path(item.id) + '">',
       '<span class="img">',
         '<img src="' + item.image_url + '" />',
       '</span>',
       '<span class="name">' + item.name + '</span>',
-      '<span class="description">' + item.description + '</span>',
-      '<span class="plat-form">' + item.plat_form + '</span>'
+      '<span class="description">' + text_truncate(item.description, 35) + '</span>',
+      '<span class="plat-form">' + item.plat_form + '</span>',
+      '</a>'
     ];
     return $('<li>')
       .append(markup.join(''))
@@ -42,6 +44,20 @@ app.Projects.prototype = {
   },
 };
 
+text_truncate = function(str, length, ending) {  
+  if (length == null) {
+    length = 100;  
+  }  
+  if (ending == null) {
+    ending = '...';
+  }  
+  if (str.length > length) {
+    return str.substring(0, length - ending.length) + ending;
+  }
+  else {
+    return str;
+  }
+};
 
 $(document).ready(function() {
   $('#projects-search-txt').on('keypress',function(e) {
