@@ -21,6 +21,8 @@ RSpec.describe Company, type: :model do
       it{expect have_many :articles}
       it{expect have_many :images}
       it{expect have_many :team_introductions}
+      it{expect have_many :indutries}
+      it{expect have_many :company_industries}
     end
   end
 

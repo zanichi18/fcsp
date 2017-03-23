@@ -3,7 +3,7 @@ namespace :education do
   task make_posts: :environment do
     10.times do |i|
       post_params = {
-        title: Faker::Lorem.sentence(2),
+        title: Faker::Lorem.sentence(10),
         content: Faker::Lorem.paragraph(100),
         user_id: User.first.id,
         category_id: Education::Category.first.id
