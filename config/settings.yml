@@ -83,3 +83,5 @@ jobs:
   limit_user_show: 3
   image_member_size: 70x70
   image_member_url: "/assets/avatar.jpg"
+industries:
+  max_length_name: 50

@@ -90,6 +90,35 @@ namespace :db do
           description: description)
       end
 
+      puts "Create addresses of company"
+      Company.all.each do |company|
+        company_id = company.id
+        address = FFaker::Address.city
+        head_office = 1
+        Address.create(
+          company_id: company_id,
+          address: address,
+          head_office: head_office)
+      end
+
+      puts "Create industries"
+      (1..5).each do |i|
+        name = "Industry #{i}"
+        Industry.create(
+          name: name)
+      end
+
+      puts "Create company industries"
+      Company.all.each do |company|
+        Industry.all.each do |industry|
+          company_id  = company.id
+          industry_id = industry.id
+          CompanyIndustry.create(
+            company_id: company_id,
+            industry_id: industry_id)
+        end
+      end
+
       puts "Create benefit of company"
       Company.all.each do |company|
         (1..5).each do |i|
