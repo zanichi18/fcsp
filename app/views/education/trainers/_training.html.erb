@@ -1,0 +1,19 @@
+<article class="portfolio-item pf-media pf-icons">
+  <div class="portfolio-image">
+    <a href="portfolio-single.html">
+      <%= load_image training %>
+    </a>
+    <div class="portfolio-overlay">
+      <%= link_to education_training_path(training), class: "left-icon" do %>
+        <i class="icon-eye i-alt"></i>
+      <% end %>
+      <%= link_to education_training_path(training), method: :delete, class: "right-icon" do%>
+        <i class="icon-trash"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="portfolio-desc">
+    <h3><%= link_to training.name, education_training_path(training) %></h3>
+    <span><%= truncate training.description, length: 20 %></span>
+  </div>
+</article>

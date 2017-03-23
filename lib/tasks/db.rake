@@ -49,7 +49,7 @@ namespace :db do
         User.create(name: FFaker::Name.name, email: email, password: password)
       end
 
-      User.create! name: "Admin",
+      User.create! name: "Adminprp",
         email: "admin@gmail.com",
         password: "123456",
         role: 1
