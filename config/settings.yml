@@ -70,6 +70,7 @@ default_user_password: {"password": "123456"}
 courses:
   home_limit: 4
   index_limit: 8
+  max_course_detail: 30
 user:
   max_length_name: 50
 max_length_title: 50

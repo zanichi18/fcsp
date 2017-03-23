@@ -36,6 +36,8 @@ gem "social-share-button", "0.8.4"
 gem "ransack"
 gem "rails-i18n"
 gem "redcarpet"
+gem "cocoon"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

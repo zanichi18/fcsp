@@ -3,3 +3,34 @@ vi:
     trainings:
       index:
         read_more: "Xem thêm"
+  courses:
+    form:
+      name: "Tên"
+      detail: "Chi tiết"
+      training: "Khóa đào tạo"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      image: "Hình ảnh"
+      add_image: "Thêm ảnh"
+      save: "Lưu"
+      reset: "Tạo lại"
+    image_fields:
+      remove: "Xóa"
+    new:
+      new: "Tạo khóa học"
+    edit:
+      edit: "Cập nhật khóa học"
+    course:
+      delete: "Xóa"
+      edit: "Sửa"
+      delete_confirm: "Bạn chắc chứ?"
+    create:
+      new_success: "Tạo khóa học mới thành công"
+      new_faild: "Tạo khóa học mới không thành công"
+    update:
+      update_success: "Cập nhật khóa học thành công"
+      update_faild: "Cập nhật khóa học không thành công"
+    destroy:
+      destroy_success: "Xóa khóa học thành công"
+      destroy_faild: "Xóa khóa học không thành công"
+    not_found: "Không tìm thấy khóa học"

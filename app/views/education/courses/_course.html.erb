@@ -1,4 +1,8 @@
 <article class="portfolio-item pf-graphics pf-illustrations">
+  <%= link_to t(".edit"), edit_education_course_path(course) %>
+  <%= link_to t(".delete"),
+    education_course_path(course), method: :delete,
+    data: {confirm: t(".delete_confirm")} %>
   <div class="portfolio-image">
     <% if course.images.any? %>
       <div class="fslider" data-arrows="false" data-animation="fade">
@@ -29,9 +33,13 @@
       </div>
     <% end %>
   </div>
+
   <div class="portfolio-desc">
     <h3><a href="portfolio-single-gallery.html"></a><%= course.name %></h3>
-    <span><a href="#"><%= course.detail %></a>/<a href="#">
-     </a><%= course.training.name %></span>
+    <span title="<%= course.detail %>">
+      <%= truncate(course.detail,
+        length: Settings.courses.max_course_detail) %>
+      <%= course.training.name %>
+     </span>
   </div>
 </article>

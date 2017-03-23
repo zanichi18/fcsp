@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :trainings
     resources :techniques, only: [:index, :show]
     resources :feedbacks, only: [:new, :create]
-    resources :courses, only: [:index, :show]
+    resources :courses
     resources :trainings, only: :index
     resources :posts, only: [:index, :create, :show]
   end

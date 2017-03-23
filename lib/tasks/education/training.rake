@@ -1,6 +1,7 @@
 namespace :education do
   desc "create trainings & courses for education"
   task make_trainings: :environment do
+
     30.times do |n|
       training_params = {
         name: "Training #{n}",
@@ -19,7 +20,8 @@ namespace :education do
       4.times do |n|
         training.training_techniques.create technique_id: rand(1..4)
       end
-      Education::Course.create! course_params
+      course = Education::Course.create! course_params
+      course.images.create url: "/default.jpg"
     end
   end
 end
