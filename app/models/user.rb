@@ -29,6 +29,10 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.max_length_name}
   validates :email, presence: true
 
+  scope :not_in_course, ->course do
+    where("id NOT IN (?)", course.users.pluck(:user_id))
+  end
+
   private
 
   def create_user_group

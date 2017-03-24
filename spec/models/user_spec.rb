@@ -35,4 +35,17 @@ RSpec.describe User, type: :model do
     end
     it{expect validate_presence_of(:email)}
   end
+
+  describe "scope" do
+    let!(:training){FactoryGirl.create :training}
+    let!(:user1){FactoryGirl.create :user}
+    let!(:user2){FactoryGirl.create :user}
+    let!(:user3){FactoryGirl.create :user}
+    let!(:course){FactoryGirl.create :course, training_id: training.id}
+    it "not_in_course" do
+      course.course_members.create user_id: user1.id
+      users = User.not_in_course(course)
+      expect(users).to eq [user2, user3]
+    end
+  end
 end

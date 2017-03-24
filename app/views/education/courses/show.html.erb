@@ -1,0 +1,5 @@
+<%= link_to t(".add_member"), "#", 
+  class: "btn btn-primary defaut-btn", 
+  data: {toggle: "modal", target: "#course-member-modal"} %>
+
+<%= render "add_course_member_modal", users: @show_course.users, course: @course%>
