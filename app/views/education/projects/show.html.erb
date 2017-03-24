@@ -1,30 +1,36 @@
-<section id="page-title">
-  <div class="container clearfix">
-    <h1><%= @project.name %></h1>
-    <div id="portfolio-navigation">
-      <%= link_to education_project_path(@project.id - Settings.education.number_one),
-        class: "left-icon" do %>
-        <i class="icon-angle-left"></i>
-      <% end %>
-      <%= link_to education_project_path(rand(Settings.education.number_one..@show_projects.rand_project)),
-        class: "right-icon" do %>
-        <i class="icon-line-grid"></i>
-      <% end %>
-      <%= link_to education_project_path(@project.id + Settings.education.number_one),
-        class: "right-icon" do %>
-        <i class="icon-angle-right"></i>
-      <% end %>
-    </div>
-  </div>
-</section>
-<section id="content">
-  <div class="content-wrap content-wrap-custom">
-    <div class="container clearfix">
-      <%= render "detail_project", project: @project,
-        relations: @show_projects.relations, techniques: @techniques,
-        project_members: @show_projects.project_members %>
-    </div>
-  </div>
-</section>
+<% if current_user %>
 
-<!--  <%= render "education/trainers/show_project" %> -->
+  <%= render "education/trainers/show_project" %>
+
+<% else %>
+
+  <section id="page-title">
+    <div class="container clearfix">
+      <h1><%= @project.name %></h1>
+      <div id="portfolio-navigation">
+        <%= link_to education_project_path(@project.id - Settings.education.number_one),
+          class: "left-icon" do %>
+          <i class="icon-angle-left"></i>
+        <% end %>
+        <%= link_to education_project_path(rand(Settings.education.number_one..@show_projects.rand_project)),
+          class: "right-icon" do %>
+          <i class="icon-line-grid"></i>
+        <% end %>
+        <%= link_to education_project_path(@project.id + Settings.education.number_one),
+          class: "right-icon" do %>
+          <i class="icon-angle-right"></i>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <section id="content">
+    <div class="content-wrap content-wrap-custom">
+      <div class="container clearfix">
+        <%= render "detail_project", project: @project,
+          relations: @show_projects.relations, techniques: @techniques,
+          project_members: @show_projects.project_members %>
+      </div>
+    </div>
+  </section>
+
+<% end %>

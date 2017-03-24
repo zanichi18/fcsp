@@ -14,108 +14,117 @@
   </div>
 </section>
 
-<div id="page-menu" class="no-sticky">
-  <div id="page-menu-wrap">
-    <div class="container clearfix">
-      <div class="menu-title">
-        <%= t ".header" %>
-        <span> <%= t ".filter" %></span>
-      </div>
-      <nav>
-        <ul>
-          <li class="project-search">
-            <input type="text" id="projects-search-txt" class="form-control"
-              placeholder= "<%= t ".placeholder_search" %>" autofocus>
-          </li>
-          <li class="<%= default_current_path %>">
-            <%= link_to education_projects_path do %>
-              <div><%= t ".show_all" %></div>
-            <% end %>
-          </li>
-          <% array_technique_show, array_technique_hide = split_array @techniques %>
-          <% array_technique_show.each do |technique| %>
-            <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
-              <%= link_to education_projects_path technique_name: technique.name do %>
-                <div><%= technique.name %></div>
+<% if current_user %>
+<!-- render if admin -->
+  <%= render "education/trainers/index_project" %>
+  <%= javascript_include_tag "education/project_search" %>
+
+<% else %>
+<!-- if not admin -->
+
+
+  <div id="page-menu" class="no-sticky">
+    <div id="page-menu-wrap">
+      <div class="container clearfix">
+        <div class="menu-title">
+          <%= t ".header" %>
+          <span> <%= t ".filter" %></span>
+        </div>
+        <nav>
+          <ul>
+            <li class="project-search">
+              <input type="text" id="projects-search-txt" class="form-control"
+                placeholder= "<%= t ".placeholder_search" %>" autofocus>
+            </li>
+            <li class="<%= default_current_path %>">
+              <%= link_to education_projects_path do %>
+                <div><%= t ".show_all" %></div>
               <% end %>
             </li>
-          <% end %>
-          <% if array_technique_hide %>
-            <li>
-              <a href="#">
-                <%= t ".more" %>
-                <i class="icon-angle-down"></i>
-              </a>
-              <ul>
-                <% array_technique_hide.each do |technique| %>
-                  <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
-                    <%= link_to education_projects_path technique_name: technique.name do %>
-                      <div><%= technique.name %></div>
-                    <% end %>
-                  </li>
+            <% array_technique_show, array_technique_hide = split_array @techniques %>
+            <% array_technique_show.each do |technique| %>
+              <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
+                <%= link_to education_projects_path technique_name: technique.name do %>
+                  <div><%= technique.name %></div>
                 <% end %>
-              </ul>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
-      <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+              </li>
+            <% end %>
+            <% if array_technique_hide %>
+              <li>
+                <a href="#">
+                  <%= t ".more" %>
+                  <i class="icon-angle-down"></i>
+                </a>
+                <ul>
+                  <% array_technique_hide.each do |technique| %>
+                    <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
+                      <%= link_to education_projects_path technique_name: technique.name do %>
+                        <div><%= technique.name %></div>
+                      <% end %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+        <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+      </div>
     </div>
   </div>
-</div>
 
-<section id="content">
-  <div class="content-wrap nobottompadding nobottompadding-custom">
-    <div id="list-portfolio">
-      <div id="portfolio" class="portfolio grid-container portfolio-full portfolio-nomargin clearfix">
-        <%= render @projects %>
+  <section id="content">
+    <div class="content-wrap nobottompadding nobottompadding-custom">
+      <div id="list-portfolio">
+        <div id="portfolio" class="portfolio grid-container portfolio-full portfolio-nomargin clearfix">
+          <%= render @projects %>
+        </div>
+      </div>
+      <div id="next-project" class="read-more" align="center">
+        <%= paginate @projects %>
       </div>
     </div>
-    <div id="next-project" class="read-more" align="center">
-      <%= paginate @projects %>
+  </section>
+  <div class="divider divider-center"><i class="icon-circle"></i></div>
+  <section id="content">
+    <div class="content-wrap custom-wrap">
+      <div class="container clearfix">
+        <div class="col_one_third nobottommargin">
+          <div class="feature-box fbox-center fbox-effect nobottomborder">
+            <div class="fbox-icon">
+              <i class="icon-th i-alt"></i>
+            </div>
+            <h3><%= total_project %><%= t ".total_project_title" %><span class="subtitle"><%= t ".total_project_subtitle" %></span></h3>
+          </div>
+        </div>
+        <div class="col_one_third nobottommargin">
+          <div class="feature-box fbox-center fbox-effect nobottomborder">
+            <div class="fbox-icon">
+              <i class="icon-lightbulb i-alt"></i>
+            </div>
+            <h3><%= t ".platform_title" %><span class="subtitle"><%= t ".platform_subtitle" %></span></h3>
+          </div>
+        </div>
+
+        <div class="col_one_third nobottommargin col_last">
+          <div class="feature-box fbox-center fbox-effect nobottomborder">
+            <div class="fbox-icon">
+              <i class="icon-cogs i-alt"></i>
+            </div>
+            <h3><%= t ".technique_title" %><span class="subtitle"><%= t ".technique_subtitle" %></span></h3>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="container clearfix">
+      </div>
     </div>
+  </section>
+
+  <div class="col-md-4 project-search">
+    <div class="results" id="projects-search-results"></div>
   </div>
-</section>
-<div class="divider divider-center"><i class="icon-circle"></i></div>
-<section id="content">
-  <div class="content-wrap custom-wrap">
-    <div class="container clearfix">
-      <div class="col_one_third nobottommargin">
-        <div class="feature-box fbox-center fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <i class="icon-th i-alt"></i>
-          </div>
-          <h3><%= total_project %><%= t ".total_project_title" %><span class="subtitle"><%= t ".total_project_subtitle" %></span></h3>
-        </div>
-      </div>
-      <div class="col_one_third nobottommargin">
-        <div class="feature-box fbox-center fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <i class="icon-lightbulb i-alt"></i>
-          </div>
-          <h3><%= t ".platform_title" %><span class="subtitle"><%= t ".platform_subtitle" %></span></h3>
-        </div>
-      </div>
 
-      <div class="col_one_third nobottommargin col_last">
-        <div class="feature-box fbox-center fbox-effect nobottomborder">
-          <div class="fbox-icon">
-            <i class="icon-cogs i-alt"></i>
-          </div>
-          <h3><%= t ".technique_title" %><span class="subtitle"><%= t ".technique_subtitle" %></span></h3>
-        </div>
-      </div>
-      <div class="clear"></div>
-    </div>
-    <div class="container clearfix">
-    </div>
-  </div>
-</section>
+<% end %>
 
-<div class="col-md-4 project-search">
-  <div class="results" id="projects-search-results"></div>
-</div>
 
-<%= javascript_include_tag "education/project_search" %>
-
-<!--  <%= render "education/trainers/index_project" %> -->

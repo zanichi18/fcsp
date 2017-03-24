@@ -1,0 +1,54 @@
+<nav id="topnav">
+  <ul>
+    <li class="<%= default_current_path %>">
+      <%= link_to controller: controller_name do %>
+        <div><%= t "education.project.show_all" %></div>
+      <% end %>
+    </li>
+    <% array_technique_show, array_technique_hide = split_array(techniques) %>
+    <% array_technique_show.each do |technique| %>
+      <li class="<%= current_path? technique.name %>">
+        <%= link_to controller: controller_name, technique_name: technique.name do %>
+          <div><%= technique.name %></div>
+        <% end %>
+      </li>
+    <% end %>
+    <% if array_technique_hide %>
+      <li>
+        <a href="#">
+          <%= t "education.projects.more" %>
+          <i class="icon-angle-down"></i>
+        </a>
+        <ul>
+          <% array_technique_hide.each do |technique| %>
+            <li class="<%= current_path? technique.name %>">
+              <%= link_to controller: controller_name, technique_name: technique.name do %>
+                <div><%= technique.name %></div>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+    <li class="hidden-xs">
+      <a href="#" id="searchtoggl">
+        <span class="glyphicon glyphicon-search"></span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="btn btn-success">
+        <%= t "education.projects.new.create_project" %>
+      </a>
+    </li>
+  </ul>
+  <div class="searchbar clearfix">
+    <form id="searchform" method="get" action="#">
+      <button type="submit" class="fa fa-search fa-4x searchsubmit"></button>
+      <input type="search" id="search-input" name="s" class="search-input" placeholder="<%= t "education.keywork"%>" autocomplete="off">
+    </form>
+  </div>
+</nav>
+<div class="project-search">
+  <div class="results" id="projects-search-results"></div>
+</div>
+<div id="page-submenu-trigger"><i class="icon-reorder"></i></div>

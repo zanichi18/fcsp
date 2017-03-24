@@ -8,8 +8,8 @@ module Education::GeneralHelper
     end
   end
 
-  def current_path? path
-    "current" if current_page? path
+  def current_path? technique_name
+    "current" if params[:technique_name] == technique_name
   end
 
   def default_current_path
