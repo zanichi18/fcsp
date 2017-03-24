@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root "pages#home"
   resources :companies, only: :show
   namespace :education do
+    namespace :management do
+      resources :groups, only: :index
+      resources :permissions, only: :create
+    end
     root "home#index"
     resources :projects do
       resources :comments

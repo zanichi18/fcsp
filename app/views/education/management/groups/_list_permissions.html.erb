@@ -1,0 +1,27 @@
+<table class="table table-hover table-bordered">
+  <tr>
+    <th><%= t ".object" %></th>
+    <th><%= t ".create" %></th>
+    <th><%= t ".read" %></th>
+    <th><%= t ".update" %></th>
+    <th><%= t ".destroy" %></th>
+  </tr>
+  <% permissions.each do |permission| %>
+    <tr class="edu-permission-info" data-id="<%= permission.id %>">
+      <td><%= permission.entry %></td>
+      <td><%= check_box_tag :create, permission.optional[:create],
+        permission.optional[:create], id: "create-#{permission.id}" %></td>
+      <td><%= check_box_tag :read, permission.optional[:read],
+        permission.optional[:read], id: "read-#{permission.id}" %></td>
+      <td><%= check_box_tag :update, permission.optional[:update],
+        permission.optional[:update], id: "update-#{permission.id}" %></td>
+      <td><%= check_box_tag :destroy, permission.optional[:destroy],
+        permission.optional[:destroy], id: "destroy-#{permission.id}" %></td>
+    </tr>
+  <% end %>
+</table>
+<div class="edu-update-permission">
+  <%= link_to "#", class: "btn btn-warning" do %>
+    <%= t ".save" %>
+  <% end %>
+</div>

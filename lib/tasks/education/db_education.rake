@@ -44,21 +44,28 @@ namespace :education do
     Rake::Task["education:make_posts"].invoke
 
     puts "Create education group user"
-    groups = ["Trainer", "Trainee"]
+    groups = ["Admin", "Trainer", "Trainee", "Guess"]
     groups.each do |group|
       Education::Group.create name: group
     end
 
     puts "Create education group of user"
-    Education::UserGroup.create user_id: 1, group_id: 1
-    Education::UserGroup.create user_id: 2, group_id: 2
+    admin_edu = User.find_by email: "admin.education@framgia.com"
+    Education::UserGroup.create user_id: 1, group_id: 2
+    Education::UserGroup.create user_id: 2, group_id: 3
+    Education::UserGroup.create user_id: admin_edu.id, group_id: 1
 
     puts "Create education permission"
-    entries = ["Education::Project", "Education::Training", "Education::Course",
-      "Education::Technique", "Education::CourseMember"]
-    entries.each do |entry|
-      Education::Permission.create entry: entry, group_id: 1,
+    all_education_models = EducationModel.get_all
+    all_education_models.each do |model|
+      Education::Permission.create entry: model, group_id: 1,
         optional: {create: true, read: true, update: true, destroy: true}
+    end
+    (2..4).each do |group_id|
+      all_education_models.each do |model|
+        Education::Permission.create entry: model, group_id: group_id,
+          optional: {create: false, read: false, update: false, destroy: false}
+      end
     end
   end
 end
