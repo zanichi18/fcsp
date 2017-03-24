@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-md-10 container">
+    <div class="static-main-body">
+      <%= form_for :company do |f| %>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4">
+            <%= f.label :name %>
+            <abbr class="required"><%= t ".required" %></abbr>
+          </div>
+          <%= f.text_field :name, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset">
+          <div class="col-md-4"><%= f.label :introduction %></div>
+          <%= f.text_area :introduction, class: "form-control text-area" %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4">
+            <%= f.label :website %>
+            <abbr class="required"><%= t ".required" %></abbr>
+          </div>
+          <%= f.text_field :website, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset">
+          <%= f.fields_for :addresses do |ff| %>
+            <div class="field form-group form-inline">
+              <div class="col-md-4"><%= ff.label :address %>
+              </div>
+              <%= ff.text_field :address, value: @address.address,
+              class: "form-control form-control-custom" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4"><%= f.label :founder %>
+          </div>
+          <%= f.text_field :founder, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4"><%= f.label :country %>
+          </div>
+          <%= f.text_field :country, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4"><%= f.label :company_size %>
+          </div>
+          <%= f.number_field :company_size, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4"><%= f.label :founder_on %>
+          </div>
+          <%= f.date_field :founder_on, class: "form-control form-control-custom" %>
+        </div>
+        <div class="fieldset form-group form-inline">
+          <%= f.fields_for :industries do |ff| %>
+            <div class="col-md-4"><%= ff.label :industry %>
+            </div>
+            <%= select_tag :name,
+              options_from_collection_for_select(@industries, "id", "name"),
+              class: "form-control form-control-custom" %>
+          <% end %>
+        </div>
+        <%= render "employer/companies/no_load_data" %>
+        <div class="fieldset form-group form-inline">
+          <div class="col-md-4"><label>article</label>
+          </div>
+          <%= link_to t(".article"), "#", class: "btn btn-primary" %>
+        </div>
+
+        <%= f.submit t(".update_company_info"), class: "btn btn-success pull-right" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

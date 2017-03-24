@@ -1,0 +1,28 @@
+<div class="postcontent nobottommargin col_last clearfix">
+  <h3 class="company-info"><%= t ".company_info" %></h3></br>
+  <div class="tabs tabs-alt tabs-tb clearfix" id="tab-1">
+    <ul class="tab-nav clearfix">
+      <li><a href="#tabs-2"><i class="icon-building norightmargin"></i>
+        <%= t ".edit_company_info" %>
+      </a></li>
+      <li><a href="#tabs-3"><i class="icon-user norightmargin"></i>
+        <%= t ".manage_members" %>
+      </a></li>
+      <li><a href="#tabs-4"><i class="icon-picture norightmargin"></i>
+        <%= t ".manage_images" %>
+      </a></li>
+      <li><a href="#tabs-5"><i class="icon-globe norightmargin"></i>
+        <%= t ".manage_accounts" %>
+      </a></li>
+    </ul>
+    <div class="tab-content clearfix" id="tabs-2">
+      <%= render "employer/companies/edit_company_info" %>
+    </div>
+    <div class="tab-content clearfix" id="tabs-3">
+    </div>
+    <div class="tab-content clearfix" id="tabs-4">
+    </div>
+    <div class="tab-content clearfix" id="tabs-5">
+    </div>
+  </div>
+</div>

@@ -22,10 +22,9 @@ Rails.application.routes.draw do
   end
 
   namespace :employer do
-    resources :dashboards, only: :index
-    root "dashboards#index"
     resources :companies do
       resources :jobs
+      resources :dashboards, only: :index
     end
   end
 
