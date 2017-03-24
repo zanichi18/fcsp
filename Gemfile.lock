@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/globalize/globalize
-  revision: 342a457548ce358f6fe5f7f5fdfeaae61560ccd2
+  revision: 5c0896c3f34bb52e63f7bf3c08324f68238a445c
   specs:
     globalize (5.1.0.beta1)
       activemodel (>= 4.2, < 5.1)
@@ -227,6 +227,8 @@ GEM
       mini_portile2 (~> 2.1.0)
     nprogress-rails (0.2.0.2)
     orm_adapter (0.5.0)
+    paranoia (2.2.1)
+      activerecord (>= 4.0, < 5.1)
     parser (2.4.0.0)
       ast (~> 2.2)
     parsley-rails (2.7.0.0)
@@ -450,6 +452,7 @@ DEPENDENCIES
   kaminari
   listen (~> 3.0.5)
   mini_magick
+  paranoia
   pg
   pry
   pry-rails
