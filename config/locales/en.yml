@@ -199,6 +199,72 @@ en:
       feedback_error: "Something was wrong, check your feedback form again."
       success_title: "Success!"
       failed_title: "Failed!"
+    posts:
+      title: "Member's Posts"
+      title_des: "Lastest posts of our Members"
+      read_more: "Read more"
+      date_format: "%d-%m-%Y"
+      create_new: "Create new post"
+      older: "&larr;Older"
+      newer: "Newer &rarr;"
+      show:
+        follow_us_on_twitter: "Follow Us on Twitter"
+        share_this_post: "Share this Post:"
+        posted_by: "Posted by"
+        related_posts: "Related Posts:"
+        popular: "Popular"
+        recent: "Recent"
+        heading: "Posts"
+        comments: "Comments"
+        heading_description: "Our Latest News in Masonry Layout"
+        name: "Name"
+        email: "Email"
+        post_not_found: "Post is not found."
+      create:
+        post_create_success: "Post is successfully created"
+      update:
+        post_not_found: "Post is not found."
+        post_update_success: "Post is successfully updated"
+      destroy:
+        post_not_found: "Post is not found."
+        post_delete_fail: "Post delete failed"
+        post_delete_success: "Post is successfully deleted"
+      share_post:
+        share_this_post: "Share this post"
+      posted_by:
+        posted_by: "Posted by"
+      comments:
+        comments: "Comments"
+      comment_form:
+        leave_a: "Leave a"
+        comment: "Comment"
+        submit_comment: "Submit Comment"
+      twitter_feed:
+        twitter_feed: "Twitter Feed"
+        follow_us_on_twitter: "Follow Us on Twitter"
+      flickr_photo:
+        flickr_photo_stream: "Flickr Photostream"
+      portfolio_coursel:
+        portfolio_coursel: "Portfolio Carousel"
+      tag_cloud:
+        tag_cloud: "Tag Cloud"
+      post_form:
+        publish_now: "Publish Now"
+        pick_image: "Pick Image"
+        delete: "Delete"
+      insert_image_modal:
+        dropzone_hint: "Drag and drop files here or click to upload"
+        modal_header: "Insert Images"
+        cancel: "Cancel"
+        modal_header: "Insert image"
+      new:
+        heading: "Create a new post"
+        heading_description: "Make it awesome!"
+      edit:
+        heading: "Edit post"
+        heading_description: "Make is awesome!"
+    post:
+      post_not_found: "Post is not found."
     slider:
       welcome: "Welcome to Framgia Education"
       description: "Master your self. Come with us"

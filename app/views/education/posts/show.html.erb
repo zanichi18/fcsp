@@ -43,9 +43,9 @@
               <%= link_to load_cover_photo(@post), "#" %>
             </div>
             <div class="entry-content notopmargin">
-              <p>
+              <div class="post-article markdown">
                 <%= render html: markdown_render(@post.content).html_safe %>
-              </p>
+              </div>
               <%= render "tag_cloud_post" %>
               <div class="clear"></div>
               <%= render "share_post" %>

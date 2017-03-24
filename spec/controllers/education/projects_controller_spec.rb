@@ -25,7 +25,7 @@ RSpec.describe Education::ProjectsController, type: :controller do
       it "result at least one object" do
         get :index, params: {technique_name: technique.name}
         expect(assigns(:projects)).to eq [project]
-      end 
+      end
 
       it "result is empty" do
         get :index, params: {technique_name: Faker::Name.first_name}
@@ -42,8 +42,8 @@ RSpec.describe Education::ProjectsController, type: :controller do
       it "result is empty" do
         get :index, params: {term: Faker::Name.first_name}
         expect(assigns(:projects)).to be_empty
-      end      
-    end 
+      end
+    end
   end
 
   describe "GET #show" do

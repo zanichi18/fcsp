@@ -6,26 +6,3 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'social-share-button';
-@import 'variables/color';
-
-.education-post-content {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.editor-preview-side {
-  z-index: 999;
-}
-
-.sidebar-widgets-wrap {
-  border: 0;
-
-  .widget {
-    color: $dark-gray;
-    margin-top: 50px;
-
-    &:nth-child(1) {
-      margin-top: 0;
-    }
-  }
-}
