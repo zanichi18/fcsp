@@ -1,6 +1,6 @@
 <div class="entry clearfix">
   <div class="entry-image">
-    <%= load_image post %>
+    <%= load_cover_photo post %>
   </div>
   <div class="entry-c">
     <div class="entry-title">
@@ -23,7 +23,7 @@
     </ul>
     <div class="entry-content">
       <p><%= post.content.truncate Settings.education.posts.content_character_display %></p>
-      <%= link_to "#", class: "more-link" do %>
+      <%= link_to education_post_path post, class: "more-link" do %>
         <%= t "education.posts.read_more" %>
       <% end %>
       </a>

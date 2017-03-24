@@ -21,5 +21,9 @@ module Supports::Education
       Education::Post.created_desc
         .limit Settings.education.post.newest_post_limit
     end
+
+    def comments
+      @post.comments.includes(:user).newest
+    end
   end
 end
