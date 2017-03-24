@@ -1,0 +1,4 @@
+<div class="tab-content clearfix" id="tab-courses">
+  <%= render "course", courses: courses %>
+  <%= paginate courses, params: {tab: "tab-courses"} %>
+</div>

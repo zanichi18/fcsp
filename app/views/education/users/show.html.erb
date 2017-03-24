@@ -1,0 +1,49 @@
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="row clearfix">
+        <div class="col-sm-9">
+          <%= image_tag @user.avatar, class: "alignleft
+            img-circle img-thumbnail notopmargin nobottommargin user-avatar" %>
+          <div class="heading-block noborder margin-bottom-50">
+            <h3><%= @user.name %></h3>
+            <span><%= @user.email %></span>
+          </div>
+          <div class="clear"></div>
+          <div class="row clearfix">
+            <div class="col-md-12">
+              <div class="tabs tabs-alt clearfix" id="tabs-profile">
+                <ul class="tab-nav clearfix">
+                  <li>
+                    <a href="#tab-projects">
+                      <i class="icon-folder-open"></i><%= t ".projects" %>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#tab-posts">
+                      <i class="icon-pencil2"></i><%= t ".posts" %>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#tab-courses">
+                      <i class="icon-book"></i><%= t ".courses" %>
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-container">
+                  <%= render "projects",
+                    projects: @show_user_object.education_projects %>
+                  <%= render "posts",
+                    posts: @show_user_object.education_posts %>
+                  <%= render "courses",
+                    courses: @show_user_object.education_courses %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render "right_column" %>
+      </div>
+    </div>
+  </div>
+</section>
