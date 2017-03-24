@@ -1,0 +1,41 @@
+@import 'variables/color';
+
+.static-main-body {
+  .fieldset {
+    padding: 20px;
+
+    .text-area {
+      height: 200px;
+      width: 400px;
+    }
+
+    .required {
+      color: $red;
+    }
+
+    .standard-logo,
+    .file-image {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.custom-fixed {
+  padding-top: 70px;
+}
+
+.company-info {
+  margin-bottom: 0;
+}
+
+.form-control-custom {
+  width: 60% !important;
+}
+
+.pull-right {
+  margin-right: 65px;
+}
+
+.container-custom {
+  margin: 0 20px;
+}

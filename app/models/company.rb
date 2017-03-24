@@ -13,7 +13,10 @@ class Company < ApplicationRecord
   has_many :industries, through: :company_industries
 
   ATTRIBUTES = [:name, :website, :introduction, :founder, :country,
-    :company_size, :founder_on]
+    :company_size, :founder_on, addresses_attributes: [:id, :address,
+    :longtitude, :latitude, :head_office], industries_attributes: [:id, :name]]
+  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :industries
 
   validates :name, presence: true,
     length: {maximum: Settings.company.max_length_name}

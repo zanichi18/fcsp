@@ -41,6 +41,67 @@ en:
       comma: ", "
       benefit_null: "Benefit null"
       indus_info: "IT / Automobiles / Industrial Machinery/ Industrial Supplies"
+  employer:
+    dashboards:
+      index:
+        title: "Company"
+    companies:
+      edit:
+        company_info: "Company Info"
+        edit_company_info: "Edit company info"
+        manage_members: "Manage members"
+        manage_images: "Manage images"
+        manage_accounts: "Manage accounts on social network"
+      edit_company_info:
+        update_company_info: "Update Company"
+        required: "(required)"
+        article: "Add article"
+    layouts:
+      dashboard:
+        menu: "Menu"
+        manager_postings: "Manager Postings"
+        candidates: "Candidates"
+        messages: "Messages"
+        recommendations: "Recommendations"
+        view_mores: "View mores"
+        current_plans: "Current Plans"
+        contact: "Contact Us"
+        trial: "Trial"
+        view_candidates: "Current viewable candidates"
+        mail: "Mail"
+        help: "Help"
+        company_info: "Company Info"
+      header:
+        dashboard: "Dashboard"
+        jobs: "Jobs"
+        feed: "Feed"
+        tools: "Tools"
+        edit_profile: "Edit Profile"
+        account_info: "Account Info"
+        company_info: "Company Info"
+        setting: "Setting"
+        logout: "Logout"
+  companies:
+    show:
+      info: "Info"
+      news: "News"
+      jobs: "Jobs"
+      members: "Members"
+      stats: "Stats"
+      founder: "Founder"
+      founded: "Founded on"
+      no_of_members: "# of Members"
+      about_us: "About us"
+      social_profiles: "Social Profiles"
+      follow: "Follow"
+  layouts:
+    base_title: "FCSP"
+    header:
+      home: "Home"
+      help: "Help"
+      about: "About"
+      login: "Login"
+      logout: "Logout"
   pages:
     home:
       title: "Home"
