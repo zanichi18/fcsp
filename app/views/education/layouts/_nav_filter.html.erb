@@ -7,7 +7,7 @@
     </li>
     <% array_technique_show, array_technique_hide = split_array(techniques) %>
     <% array_technique_show.each do |technique| %>
-      <li class="<%= current_path? technique.name %>">
+      <li class="<%= current_path_trainer? technique %>">
         <%= link_to controller: controller_name, technique_name: technique.name do %>
           <div><%= technique.name %></div>
         <% end %>
@@ -21,7 +21,7 @@
         </a>
         <ul>
           <% array_technique_hide.each do |technique| %>
-            <li class="<%= current_path? technique.name %>">
+            <li class="<%= current_path_trainer? technique %>">
               <%= link_to controller: controller_name, technique_name: technique.name do %>
                 <div><%= technique.name %></div>
               <% end %>
