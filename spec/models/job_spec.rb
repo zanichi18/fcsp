@@ -15,6 +15,7 @@ RSpec.describe Job, type: :model do
       it{expect have_db_column(:type_of_candidates).of_type(:integer)}
       it{expect have_db_column(:who_can_apply).of_type(:integer)}
       it{expect have_db_column(:company_id).of_type(:integer)}
+      it{expect have_db_column(:status).of_type(:integer)}
     end
   end
 
@@ -25,5 +26,7 @@ RSpec.describe Job, type: :model do
         .is_at_most Settings.max_length_title
     end
     it{expect validate_presence_of(:describe)}
+    it{expect validate_presence_of(:type_of_candidates)}
+    it{expect validate_presence_of(:who_can_apply)}
   end
 end

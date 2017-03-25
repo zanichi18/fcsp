@@ -13,3 +13,4 @@ Rails.application.config.assets.precompile += %w(employer.js)
 Rails.application.config.assets
   .precompile += %w(template education.scss education.js
                     education/project_search)
+Rails.application.config.assets.precompile += %w(employer.scss employer.js)

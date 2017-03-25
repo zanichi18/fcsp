@@ -1,6 +1,13 @@
 class Employer::JobsController < Employer::BaseController
   load_and_authorize_resource
   before_action :load_company
+  before_action :load_hiring_types, only: [:new, :create, :edit]
+  before_action :update_status, only: :create
+
+  def new
+    @job = Job.new
+    @job.images.build
+  end
 
   def index
     @jobs = Job.order created_at: :desc
@@ -14,10 +21,10 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def create
-    @job = @company.jobs.create job_params
+    @job = @company.jobs.build job_params
     if @job.save
       flash[:success] = t ".created_job"
-      redirect_to employer_company_jobs_path(@company)
+      redirect_to job_path(@job)
     else
       flash[:danger] = t ".create_job_fail"
       redirect_back fallback_location: :back
@@ -50,5 +57,17 @@ class Employer::JobsController < Employer::BaseController
 
   def restore_job id
     Job.restore(id, recursive: true) if params[:type] == "reopen"
+  end
+
+  def load_hiring_types
+    @hiring_types = HiringType.select :id, :name
+  end
+
+  def update_status
+    if params[:preview]
+      params[:status] = :preview
+    else
+      params[:status] = :community
+    end
   end
 end

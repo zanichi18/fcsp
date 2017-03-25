@@ -6,6 +6,7 @@ class CreateJobs < ActiveRecord::Migration[5.0]
       t.string :describe
       t.integer :type_of_candidates
       t.integer :who_can_apply
+      t.integer :status, default: 0
 
       t.timestamps
     end
