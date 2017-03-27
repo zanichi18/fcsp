@@ -95,3 +95,17 @@ vi:
       delete:
         delete_fail: "Không thể xóa thành viên"
       not_found: "Không tìm thấy thành viên khóa học"
+      index:
+        show_all: "Hiển thị tất cả"
+        techniques: "Công nghệ"
+        courses: "Khóa học"
+        show_all_course: "Tất cả các khóa học tại Framgia"
+        training_program: "chương trình đào tạo"
+        language_program: "Ngôn ngữ lập trình"
+      other_course:
+        other_courses: "Khóa học khác"
+      connection_course:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        photos: "Ảnh"
+        techniques: "Công nghệ"

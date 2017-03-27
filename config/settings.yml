@@ -71,6 +71,9 @@ courses:
   home_limit: 4
   index_limit: 8
   max_course_detail: 30
+  truncate_other_course: 200
+  truncate_detail_course: 500
+  other_coures_limit: 3
 user:
   max_length_name: 50
 max_length_title: 50

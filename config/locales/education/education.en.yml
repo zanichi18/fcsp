@@ -155,3 +155,17 @@ en:
         logout: "Logout"
         about_me: "About me"
         social_profiles: "Social profiles"
+      index:
+        show_all: "Show all"
+        techniques: "Techniques"
+        courses: "courses"
+        show_all_course: "All studying IT courses at Framgia"
+        training_program: "Training program"
+        language_program: "Language program"
+      other_course:
+        other_courses: "Other courses"
+      connection_course:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        photos: "Photos"
+        techniques: "Techniques"

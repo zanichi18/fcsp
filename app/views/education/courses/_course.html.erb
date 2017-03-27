@@ -34,12 +34,11 @@
       </div>
     <% end %>
   </div>
-
   <div class="portfolio-desc">
-    <h3><a href="portfolio-single-gallery.html"></a><%= course.name %></h3>
+    <h3><a href="portfolio-single-gallery.html"><%= link_to course.name, education_course_path(course) %></h3>
     <span title="<%= course.detail %>">
-      <%= truncate(course.detail,
-        length: Settings.courses.max_course_detail) %>
+      <%= truncate course.detail,
+        length: Settings.courses.max_course_detail %>
       <%= course.training.name %>
      </span>
   </div>

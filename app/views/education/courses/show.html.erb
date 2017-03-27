@@ -1,5 +1,22 @@
-<%= link_to t(".add_member"), "#", 
-  class: "btn btn-primary defaut-btn", 
-  data: {toggle: "modal", target: "#course-member-modal"} %>
-
-<%= render "add_course_member_modal", users: @show_course.users, course: @course%>
+<section id="page-title">
+  <section id="content">
+    <div class="col-md-12">
+      <div class="content-wrap">
+        <div class="container clearfix">
+          <div class="fancy-title title-border">
+            <h1><%= @course.name %></h1>
+          </div>
+          <div class="col-md-8">
+            <%= render "detail_course", course: @course %>
+            <div class="clear"></div>
+             <%= render "members_course", course_members: @show_course.course_members %>
+             <%= render "other_course", relations: @show_course.relations %>
+          </div>
+          <div class="col-md-4">
+            <%= render "connection_course", techniques: @show_course.techniques, course: @course, users: @show_course.users %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

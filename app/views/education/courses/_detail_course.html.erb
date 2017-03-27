@@ -1,0 +1,19 @@
+<div class="col_three_fifth bottommargin-lg">
+  <div class="fslider flex-thumb-grid grid-6" data-speed="400"
+    data-arrows="true" data-thumbs="true" data-easing="easeOutQuad">
+    <div class="flexslider">
+      <div class="slider-wrap">
+        <%= render "image", images: course.images, course: course %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col_two_fifth bottommargin-lg col_last">
+  <div class="spost clearfix">
+    <div class="entry-c">
+      <div class="entry-title">
+        <p><%= truncate course.detail, length: Settings.courses.truncate_detail_course %></p>
+      </div>
+    </div>
+  </div>
+</div>
