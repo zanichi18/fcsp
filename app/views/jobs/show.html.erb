@@ -3,8 +3,8 @@
   <div id="job-show-wrapper">
     <%= render "job_title" %>
     <div id="job-show-body">
-      <div class="two-column">
-        <div class="column-main">
+      <div class="row two-column">
+        <div class="col-md-8 column-main">
           <div class="column-main-inner">
             <%= render "members_of_company" %>
             <div class="job-description">
@@ -14,7 +14,17 @@
             </div>
           </div>
         </div>
-        <div class="column-side"></div>
+        <div class="col-md-4 column-side">
+          <div class="apply_job">
+            <% if user_signed_in? %>
+              <% if check_apply_jobs(current_user.id, @job.id) %>
+                <%= render "candidates/unapply_job", candidate: @candidate %>
+              <% else %>
+                <%= render "candidates/apply_job", candidate: @candidate %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

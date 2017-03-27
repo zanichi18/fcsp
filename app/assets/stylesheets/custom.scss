@@ -162,11 +162,20 @@
   border-radius: 10px;
 }
 
-.column-main {
-  border-right: 1px solid $gray-ddd;
-  margin: 0;
-  width: 70%;
+.two-column {
+  .column-main {
+    border-right: 1px solid $gray-ddd;
+    margin: 0;
+    width: 70%;
+  }
 
+  .column-side {
+    margin-top: 10px;
+    width: 30%;
+  }
+}
+
+.column-main {
   .job-description {
     margin-top: 30px;
   }
@@ -232,10 +241,6 @@
     position: relative;
     width: 150px;
   }
-}
-
-.column-side {
-  float: left;
 }
 
 .header {
