@@ -89,11 +89,29 @@ en:
       list_added_users:
         delete: "Delete"
         delete_confirm: "Are you sure?"
-      search_form: 
+      search_form:
         search_all: "All Trainings"
         search: "Search Course"
       index:
         no_courses: "Not found any course"
+    techniques:
+      new:
+        create_technique: "Create technique"
+      create:
+       new_success: "Created new technique successfully"
+       new_faild: "Cannot create new technique"
+      edit:
+        edit_technique: "Edit technique"
+      update:
+        technique_updated_successfully: "Updated technique successfully"
+      destroy:
+        technique_deleted: "Deleted technique successfully"
+        technique_delete_fail: "Cannot delete technique"
+      not_found: "technique not found"
+      edit_button: "Edit"
+      delete_button: "Delete"
+      technique:
+        delete_confirm: "Are your sure?"
     course_members:
       create:
         add_fail: "Cannot add member"

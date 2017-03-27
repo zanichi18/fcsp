@@ -1,8 +1,8 @@
-<div class="feature-box <%= add_css_fbox_right %> topmargin scale-padding" data-animate="fadeIn" data-delay="200">
+<div class="feature-box <%= add_css_fbox_right %> topmargin scale-padding"
+  data-animate="fadeIn" data-delay="200">
   <div class="technique-backgroud-color">
     <div class="fbox-icon technique-scale-image">
-      <%= image_tag image_technique_url(technique.image),
-        class: "technique-icon" %>
+       <%= image_tag technique.image_url %>
     </div>
   </div>
   <h3><%= technique.name %></h3>
@@ -11,4 +11,3 @@
     <i><%= link_to t("education.technique.index.read_more"), "#" %></i>
   </p>
 </div>
-

@@ -61,4 +61,91 @@ RSpec.describe Education::TechniquesController, type: :controller do
       end
     end
   end
+
+  describe "GET #new" do
+    it "renders the :new template" do
+      get :new
+      expect(response).to render_template :new
+    end
+  end
+
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "save new technique to database" do
+        expect{
+          post :create, params:
+            {education_technique: FactoryGirl.attributes_for(:education_technique)}
+        }.to change(Education::Technique, :count).by 1
+      end
+
+      it "redirects to technique detail page" do
+        post :create, params:
+          {education_technique: FactoryGirl.attributes_for(:education_technique)}
+        expect(response).to redirect_to(
+          education_technique_path(assigns[:technique]))
+      end
+    end
+
+    context "with invalid attributes" do
+      it "does not save invalid technique to database" do
+        expect{
+          post :create, params:
+            {education_technique: FactoryGirl.attributes_for(:invalid_technique)}
+        }.not_to change(Education::Technique, :count)
+      end
+      it "re-renders :new template" do
+        post :create, params:
+          {education_technique: FactoryGirl.attributes_for(:invalid_technique)}
+        expect(response).to render_template :new
+      end
+    end
+  end
+
+   describe "PATCH #update" do
+    let(:technique) {FactoryGirl.create :education_technique, name: "Old Name"}
+
+    context "with valid attributes" do
+      it "update technique attributes" do
+        patch :update, params: {id: technique, education_technique:
+          FactoryGirl.attributes_for(:education_technique, name: "New Name")}
+        technique.reload
+        expect(technique.name).to eq "New Name"
+      end
+
+      it "redirects to technique detail page" do
+        patch :update, params: {id: technique, education_technique:
+          FactoryGirl.attributes_for(:education_technique)}
+        expect(response).to redirect_to technique
+      end
+    end
+
+    context "with invalid attributes" do
+      it "does not update invalid technique" do
+        patch :update, params: {id: technique, education_technique:
+          FactoryGirl.attributes_for(:education_technique, name: "")}
+        technique.reload
+        expect(technique.name).not_to eq "New Name"
+      end
+
+      it "re-renders :edit template" do
+        patch :update, params: {id: technique,
+          education_technique: FactoryGirl.attributes_for(:invalid_technique)}
+        expect(response).to render_template :edit
+      end
+    end
+   end
+
+  describe "DELETE #destroy" do
+    let!(:technique) {FactoryGirl.create :education_technique}
+    it "deletes the technique" do
+      expect{
+        delete :destroy, params: {id: technique}
+      }.to change(Education::Technique, :count).by -1
+    end
+
+    it "redirects to education root path" do
+      delete :destroy, params: {id: technique}
+      expect(response).to redirect_to education_techniques_path
+    end
+  end
 end
