@@ -1,0 +1,9 @@
+<div class="col-md-7 col-sm-7 training-search">
+  <%= text_field_tag :course_search, params[:course_search],
+    placeholder: t(".search"), class: "form-control" %> 
+</div>
+<div class="col-md-5 col-sm-5 training-search">
+  <%= select_tag :training_id, 
+    options_for_select(training_select),
+    class: "select form-control", include_blank: t(".search_all") %>
+</div>  

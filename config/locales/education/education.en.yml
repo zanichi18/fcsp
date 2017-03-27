@@ -89,6 +89,11 @@ en:
       list_added_users:
         delete: "Delete"
         delete_confirm: "Are you sure?"
+      search_form: 
+        search_all: "All Trainings"
+        search: "Search Course"
+      index:
+        no_courses: "Not found any course"
     course_members:
       create:
         add_fail: "Cannot add member"

@@ -1,20 +1,17 @@
-<div class="row-course" >
-  <section id="page-title">
+<div class="row-course">
+  <section id="page-title", class="courses_index">
     <div class="container clearfix">
       <h1><%= t ".courses" %></h1>
-      <span><%= t ".show_all_course" %></span>
-      <ol class="breadcrumb">
-        <li><a href="#"><%= t ".training_program" %></a></li>
-        <li class="active"><a href="#"><%= t ".language_program" %></a></li>
-      </ol>
-    </div>
+      <span>
+        <div class="courses-search col-md-6 col-sm-6"><%= t ".show_all_course" %></div>
+        <div class="col-md-offset-2 col-md-4 col-sm-6"><%= render "search_form" %></div>
+      </span> 
+    </div> 
   </section>
   <br />
   <section id="content">
-  </section>
-  <section id="content">
     <div class="content-wrap nopadding">
-      <div id="portfolio" class="portfolio grid-container portfolio-4 clearfix" >
+      <div id="portfolio" class="portfolio portfolio-4 clearfix">
         <%= render @courses %>
       </div>
       <hr/>

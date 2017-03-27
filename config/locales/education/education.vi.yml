@@ -89,6 +89,11 @@ vi:
       list_added_user:
         delete: "Xóa"
         delete_confirm: "Bạn chắc chứ?"
+      search_form: 
+        search_all: "Tất cả"
+        search: "Tìm kiếm khóa học"
+      index:
+        no_courses: "Không tìm thấy khóa học"
     course_members:
       create:
         add_fail: "Không thể thêm thành viên"

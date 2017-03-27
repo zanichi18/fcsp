@@ -1,37 +1,15 @@
 <article class="portfolio-item pf-graphics pf-illustrations">
-  <%= link_to t(".edit"), edit_education_course_path(course) %>
-  <%= link_to t(".delete"),
-    education_course_path(course), method: :delete,
-    data: {confirm: t(".delete_confirm")} %>
-  <%= link_to t(".show"), course %>
   <div class="portfolio-image">
     <% if course.images.any? %>
-      <div class="fslider" data-arrows="false" data-animation="fade">
-        <div class="flexslider">
-          <div class="slider-wrap">
-            <% course.images.each do |image| %>
-              <div class="slide">
-                 <%= link_to image_tag(image.url), "#" %>
-              </div>
-            <% end %>
-          </div>
+      <div class="carousel slide course_image_slide">
+        <div class="carousel-inner" role="listbox">
+          <% course.images.each_with_index do |image, index| %>
+            <div class="<%= index.zero? ? 'item active' : 'item' %>">
+              <%= link_to image_tag(image.url), "#" %>
+            </div>
+          <% end %>
         </div>
-      </div>
-    <% else %>
-      <div class="fslider" data-arrows="false" data-animation="fade">
-        <div class="flexslider">
-          <div class="slider-wrap">
-            <div class="slide"><a href="portfolio-single-gallery.html">
-              <img src="/assets/images/magazine/thumb/1.jpg"></a></div>
-            <div class="slide"><a href="portfolio-single-gallery.html">
-              <img src="/assets/images/magazine/thumb/2.jpg"></a></div>
-            <div class="slide"><a href="portfolio-single-gallery.html">
-              <img src="/assets/images/magazine/thumb/4.jpg"></a></div>
-            <div class="slide"><a href="portfolio-single-gallery.html">
-              <img src="/assets/images/magazine/thumb/3.jpg"></a></div>
-          </div>
-        </div>
-      </div>
+      </div>     
     <% end %>
   </div>
   <div class="portfolio-desc">

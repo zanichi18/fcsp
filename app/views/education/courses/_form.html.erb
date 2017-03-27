@@ -17,9 +17,8 @@
     <div class="form-group">
       <%= f.label t(".training"), class: "col-md-4 control-label" %>
       <div class="col-md-4">
-        <%= f.select :training_id, 
-          options_for_select(Education::Training.all.map{|t| [t.name, t.id]},
-          f.object.training_id), {},
+        <%= f.select :training_id,
+          options_for_select(training_select, f.object.training_id), {},
           {class: "form-control selectpicker", "data-live-search": true} %>
       </div>
     </div>

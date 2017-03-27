@@ -29,4 +29,34 @@ RSpec.describe Education::Course, type: :model do
     expect(Education::Course.relation_training(training.id))
       .to include(course1)
   end
+
+  describe "scope" do
+    let!(:training){FactoryGirl.create :training}
+    let!(:training1){FactoryGirl.create :training}
+    let!(:course1) do
+      FactoryGirl.create :course, name: "Course 1", training_id: training1.id
+    end
+    let!(:course2) do
+      FactoryGirl.create :course, name: "Course 2", training_id: training.id
+    end
+    let!(:course3) do
+      FactoryGirl.create :course, name: "Joo", training_id: training.id
+    end
+
+    it "by_training" do
+      courses = Education::Course.by_training(training)
+      expect(courses).to eq [course2, course3]
+    end
+
+    it "search by name" do
+      courses = Education::Course.search(name_cont: "Cou").result
+      expect(courses).to eq [course1, course2]
+    end
+
+    it "search by name and training" do
+      courses = Education::Course.by_training(training.id)
+        .search(name_cont: "Cou").result
+      expect(courses).to eq [course2]
+    end
+  end
 end
