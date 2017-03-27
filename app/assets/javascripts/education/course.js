@@ -4,6 +4,24 @@ $(document).ready(function() {
     dateFormat: 'dd/mm/yy'
   });
 
+  $('#course_search').on('keyup',function() {
+    var course_search = $(this).val();
+    var training_id = $('#training_id').val();
+    data = {course_search, training_id}
+    $.get($(this).attr('action'),
+      data, null, 'script');
+  });
+
+  $('#training_id').on('change', function(){
+    var course_search = $('#course_search').val();
+    var training_id = $(this).val();
+    data = {course_search, training_id}
+    $.get($(this).attr('action'),
+      data, null, 'script');
+  });
+
+  $('.course_image_slide').carousel();
+
   var onAddFile;
   onAddFile = function(event) {
     var file, thumbContainer, url;

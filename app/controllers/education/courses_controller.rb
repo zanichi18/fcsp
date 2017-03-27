@@ -3,9 +3,14 @@ class Education::CoursesController < Education::BaseController
   load_and_authorize_resource except: [:index, :show]
 
   def index
-    @courses = Education::Course.newest
-      .includes(:images, :training).page(params[:page])
+    @courses = Education::Course.by_training(params[:training_id])
+      .newest.includes(:images, :training)
+      .search(name_cont: params[:course_search]).result.page(params[:page])
       .per Settings.courses.index_limit
+    respond_to do |format|
+      format.html{request.referer}
+      format.js
+    end
   end
 
   def new

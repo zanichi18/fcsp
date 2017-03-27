@@ -55,7 +55,7 @@ namespace :education do
 
     puts "Create education permission"
     entries = ["Education::Project", "Education::Training", "Education::Course",
-      "Education::Technique"]
+      "Education::Technique", "Education::CourseMember"]
     entries.each do |entry|
       Education::Permission.create entry: entry, group_id: 1,
         optional: {create: true, read: true, update: true, destroy: true}
