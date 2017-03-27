@@ -37,16 +37,28 @@ namespace :education do
     puts "Create Education trainings"
     Rake::Task["education:make_trainings"].invoke
 
-    puts "Create education category"
-    categories = ["Development", "Design", "QA", "Others"]
-    categories.each do |category|
-      Education::Category.create! name: category
-    end
-
     puts "Create Education categories"
     Rake::Task["education:make_categories"].invoke
 
     puts "Create Education posts"
     Rake::Task["education:make_posts"].invoke
+
+    puts "Create education group user"
+    groups = ["Trainer", "Trainee"]
+    groups.each do |group|
+      Education::Group.create name: group
+    end
+
+    puts "Create education group of user"
+    Education::UserGroup.create user_id: 1, group_id: 1
+    Education::UserGroup.create user_id: 2, group_id: 2
+
+    puts "Create education permission"
+    entries = ["Education::Project", "Education::Training", "Education::Course",
+      "Education::Technique"]
+    entries.each do |entry|
+      Education::Permission.create entry: entry, group_id: 1,
+        optional: {create: true, read: true, update: true, destroy: true}
+    end
   end
 end

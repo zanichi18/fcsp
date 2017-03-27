@@ -1,5 +1,6 @@
 class Education::TechniquesController < Education::BaseController
   before_action :load_technique, only: :show
+  load_and_authorize_resource except: [:index, :show]
 
   def index
     @techniques = Education::Technique.includes(:image).page(params[:page])

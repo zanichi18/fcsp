@@ -1,5 +1,6 @@
 class Education::CoursesController < Education::BaseController
   before_action :load_course, except: [:index, :new, :create]
+  load_and_authorize_resource except: [:index, :show]
 
   def index
     @courses = Education::Course.newest

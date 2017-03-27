@@ -1,5 +1,6 @@
 class Education::ProjectsController < Education::BaseController
   before_action :load_project, except: [:new, :index, :create]
+  load_and_authorize_resource except: [:index, :show]
 
   def index
     load_project_by_name

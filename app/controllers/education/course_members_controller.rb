@@ -1,6 +1,7 @@
 class Education::CourseMembersController < Education::BaseController
   before_action :load_course
   before_action :load_course_member, only: :destroy
+  load_and_authorize_resource
 
   def create
     if params[:users].present?

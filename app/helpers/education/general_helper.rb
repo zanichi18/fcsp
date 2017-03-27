@@ -19,4 +19,8 @@ module Education::GeneralHelper
   def default_current_path
     "current" unless params[:technique_name] || params[:term]
   end
+
+  def can_manage? object
+    can?(:create, object) || can?(:update, object) || can?(:destroy, object)
+  end
 end

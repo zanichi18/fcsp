@@ -1,4 +1,5 @@
 require "rails_helper"
+require "support/controller_helpers"
 
 RSpec.describe Education::TrainingsController, type: :controller do
   let(:training){FactoryGirl.create(:training)}
@@ -6,8 +7,17 @@ RSpec.describe Education::TrainingsController, type: :controller do
   let(:params_true){FactoryGirl.attributes_for :training, name: "training",
    description: "description"}
   let(:params_fail){FactoryGirl.attributes_for :training, name: nil}
-  before{FactoryGirl.create(:training_technique, training_id: training.id,
-    technique_id: technique.id)}
+  let!(:user){FactoryGirl.create(:user)}
+  before :each do
+    FactoryGirl.create(:training_technique, training_id: training.id,
+      technique_id: technique.id)
+    group = FactoryGirl.create(:education_group)
+    FactoryGirl.create :education_user_group, user: user, group: group
+    FactoryGirl.create :education_permission, group: group,
+      entry: "Education::Training"
+    allow(controller).to receive(:current_user).and_return user
+    sign_in user
+  end
 
   describe "GET #index" do
     it do
@@ -19,7 +29,7 @@ RSpec.describe Education::TrainingsController, type: :controller do
       it "result at least one object" do
         get :index, params: {technique_name: technique.name}
         expect(assigns(:training_object).trainings).to eq [training]
-      end 
+      end
 
       it "result is empty" do
         get :index, params: {technique_name: Faker::Name.first_name}
@@ -41,16 +51,16 @@ RSpec.describe Education::TrainingsController, type: :controller do
       expect(response).to render_template :new
     end
   end
-  
+
   describe "POST #create" do
     it "create training successfully" do
-      post :create, params: {education_training: 
+      post :create, params: {education_training:
         FactoryGirl.attributes_for(:training, name: "abc")}
       expect(flash[:success]).not_to be_empty
     end
 
     it "create training fail" do
-      post :create, params: {education_training: 
+      post :create, params: {education_training:
         FactoryGirl.attributes_for(:training, name: nil)}
       expect(flash[:danger]).not_to be_empty
       expect(response).to render_template :new
