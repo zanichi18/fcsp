@@ -369,7 +369,7 @@ ActiveRecord::Schema.define(version: 20170324024653) do
   create_table "images", force: :cascade do |t|
     t.integer  "imageable_id"
     t.string   "imageable_type"
-    t.string   "image_url"
+    t.string   "picture"
     t.text     "caption"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
@@ -398,8 +398,9 @@ ActiveRecord::Schema.define(version: 20170324024653) do
     t.string   "describe"
     t.integer  "type_of_candidates"
     t.integer  "who_can_apply"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "status",             default: 0
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "team_id"
     t.datetime "deleted_at"
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree

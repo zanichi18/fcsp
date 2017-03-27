@@ -10,7 +10,7 @@
       <h5 class="company-name">
         <span class="company-logo">
           <% if @job_object.company.images.present? %>
-            <%= link_to image_tag(@job.company.images.image_url,
+            <%= link_to image_tag(@job.company.images.picture,
               size: Settings.jobs.image_company_size), company_path %>
           <% else %>
             <%= @job_object.company.name %>
@@ -22,7 +22,7 @@
   <div class="job-show-cover-wrapper">
     <div class="cover-image">
       <% if @job.images.present? %>
-        <%= link_to image_tag(@job.images.image_url,
+        <%= link_to image_tag(@job.images.first.picture,
           size: Settings.jobs.image_size), @job %>
       <% else %>
         <%= link_to image_tag(Settings.jobs.image_url), @job %>
