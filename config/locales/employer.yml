@@ -36,7 +36,7 @@ en:
       create:
         created_job: "Posted job recruitment"
         create_job_fail: "Fail to post job recruitment"
-      show:
+      index:
         job: "Jobs Post"
         manage_post: "Manage Job Postings"
         all: "All"
@@ -53,3 +53,8 @@ en:
         job_post_update_fail: "Failed to update post job"
       edit:
         edit_job: "Edit job"
+      job:
+        close: "Close"
+      draft:
+        reopen: "Reopen"
+

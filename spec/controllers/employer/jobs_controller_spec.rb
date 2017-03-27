@@ -1,16 +1,29 @@
 require "rails_helper"
 
 RSpec.describe Employer::JobsController, type: :controller do
-  describe "POST #create job" do
-    let(:admin){FactoryGirl.create :user, role: 1}
-    let(:company){FactoryGirl.create :company}
+  let(:admin){FactoryGirl.create :user, role: 1}
+  let(:company){FactoryGirl.create :company}
+  let!(:job){FactoryGirl.create :job}
 
-    before :each do
-      allow(controller).to receive(:current_user).and_return(admin)
-      sign_in admin
-      request.env["HTTP_REFERER"] = "sample_path"
+  before :each do
+    allow(controller).to receive(:current_user).and_return admin
+    sign_in admin
+    request.env["HTTP_REFERER"] = "sample_path"
+  end
+
+  describe "GET #index" do
+    it "populates an array of products" do
+      get :index, params: {company_id: company}
+      expect(assigns(:jobs)).to include job
     end
 
+    it "responds successfully with an HTTP 200 status code" do
+      expect(response).to be_success
+      expect(response).to have_http_status 200
+    end
+  end
+
+  describe "POST #create job" do
     it "create successfully" do
       job_params = FactoryGirl.attributes_for :job
       expect do
@@ -46,15 +59,6 @@ RSpec.describe Employer::JobsController, type: :controller do
   end
 
   describe "PUT #update" do
-    let(:admin){FactoryGirl.create :user, role: 1}
-    let(:company){FactoryGirl.create :company}
-    let(:job){FactoryGirl.create :job}
-
-    before :each do
-      allow(controller).to receive(:current_user).and_return(admin)
-      sign_in admin
-    end
-
     it "update successfully" do
       job_params = FactoryGirl.attributes_for :job, title: "something"
       put :update, params: {company_id: company, id: job, job: job_params}
@@ -68,6 +72,20 @@ RSpec.describe Employer::JobsController, type: :controller do
       job_params = FactoryGirl.attributes_for :job, title: title
       put :update, params: {company_id: company, id: job, job: job_params}
       expect(flash[:danger]).to be_present
+    end
+  end
+
+  describe "DELETE #destroy" do
+    context "delete successfully" do
+      before{delete :destroy, params: {company_id: company, id: job}}
+      it{expect{response.to change(Job, :count).by -1}}
+    end
+
+    it "delete fail" do
+      allow_any_instance_of(Job).to receive(:destroy).and_return(false)
+      expect do
+        delete :destroy, params: {company_id: company, id: job}
+      end.not_to change(Job, :count)
     end
   end
 end

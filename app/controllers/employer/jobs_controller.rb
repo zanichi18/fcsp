@@ -2,6 +2,11 @@ class Employer::JobsController < Employer::BaseController
   load_and_authorize_resource
   before_action :load_company
 
+  def index
+    @jobs = Job.order created_at: :desc
+    restore_job params[:id]
+  end
+
   def edit
   end
 
@@ -15,7 +20,7 @@ class Employer::JobsController < Employer::BaseController
       redirect_to employer_company_jobs_path(@company)
     else
       flash[:danger] = t ".create_job_fail"
-      redirect_to :back
+      redirect_back fallback_location: :back
     end
   end
 
@@ -28,6 +33,10 @@ class Employer::JobsController < Employer::BaseController
     redirect_to employer_company_job_path(@company)
   end
 
+  def destroy
+    @job.destroy if params[:type] == "delete"
+  end
+
   private
 
   def job_params
@@ -37,5 +46,9 @@ class Employer::JobsController < Employer::BaseController
   def load_company
     @company = Company.find_by id: params[:company_id]
     not_found unless @company
+  end
+
+  def restore_job id
+    Job.restore(id, recursive: true) if params[:type] == "reopen"
   end
 end

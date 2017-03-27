@@ -1,7 +1,9 @@
 class Job < ApplicationRecord
+  acts_as_paranoid
+
   belongs_to :company
   has_many :images, as: :imageable
-  has_many :job_hiring_types
+  has_many :job_hiring_types, dependent: :destroy
   has_many :hiring_types, through: :job_hiring_types
 
   ATTRIBUTES = [:title, :describe, :type_of_candidates, :who_can_apply,
