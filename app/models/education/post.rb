@@ -29,4 +29,17 @@ class Education::Post < ApplicationRecord
     where "category_id = #{post.category_id} AND id != #{post.id}"
   end
   scope :popular, ->{order comments_count: :desc}
+
+  scope :by_category_id, ->category_id do
+    where category_id: category_id if category_id.present?
+  end
+
+  scope :by_user, ->user_id do
+    where user_id: user_id if user_id.present?
+  end
+
+  scope :by_title, ->title do
+    with_translations(I18n.locale)
+      .where("LOWER(title) LIKE :title", title: "%#{title.downcase}%")
+  end
 end

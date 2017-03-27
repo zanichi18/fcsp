@@ -163,6 +163,9 @@ en:
       header:
         log_out: "Logout"
         log_in: "Login"
+    trainers:
+      index_posts:
+        filter: "Filter"
     home:
       our_trainings:
         techniques: "Techniques"
@@ -316,6 +319,19 @@ en:
       create_new: "Create new post"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      index:
+        posts: "Posts"
+        search_placeholder: "Search"
+        show_all: "Show all"
+        more: "More"
+        placeholder_search: "Search"
+        title_description: "Lastest posts of our Members"
+        title: "Member's posts"
+        filter: "Filter"
+      nav_search:
+        new: "Create new post"
+        show_all: "Show all"
+        keyword: "Search"
       show:
         follow_us_on_twitter: "Follow Us on Twitter"
         share_this_post: "Share this Post:"

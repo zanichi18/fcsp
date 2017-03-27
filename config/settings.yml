@@ -85,7 +85,8 @@ education:
   posts:
     max_length_title: 200
     content_character_display: 255
-    per_page: 20
+    per_page: 10
+    category_split_length: 4
   comment:
     per_page: 3
     max_content_length: 255

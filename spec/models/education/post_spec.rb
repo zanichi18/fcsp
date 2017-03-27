@@ -66,4 +66,44 @@ RSpec.describe Education::Post, type: :model do
       expect(posts).to eq [post2, post1]
     end
   end
+
+  describe "search by category_id" do
+    let!(:category1){FactoryGirl.create :education_category}
+    let!(:category2){FactoryGirl.create :education_category}
+    let!(:post1){FactoryGirl.create :education_post, category: category1}
+    let!(:post2){FactoryGirl.create :education_post, category: category2}
+
+    it "return posts have category" do
+      posts = Education::Post.by_category_id category1.id
+      expect(posts).to eq [post1]
+    end
+  end
+
+  describe "search by title" do
+    let!(:post1) do
+      FactoryGirl.create :education_post,
+        title: "Lorem ipsum dolor sit amet, consectetur adipisicing elit"
+    end
+    let!(:post2){FactoryGirl.create :education_post}
+
+    it "return posts have title like query" do
+      posts = Education::Post.by_title "amet"
+      expect(posts).to include post1
+    end
+  end
+
+  describe "search by user" do
+    let!(:user1){FactoryGirl.create :user}
+    let!(:user2){FactoryGirl.create :user}
+    let!(:post1) do
+      FactoryGirl.create :education_post,
+        user: user1
+    end
+    let!(:post2){FactoryGirl.create :education_post, user: user2}
+
+    it "return posts that belong to user" do
+      posts = Education::Post.by_user user1.id
+      expect(posts).to eq [post1]
+    end
+  end
 end

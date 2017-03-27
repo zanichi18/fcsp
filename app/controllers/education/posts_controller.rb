@@ -5,8 +5,12 @@ class Education::PostsController < Education::BaseController
   before_action :load_post_of_user, only: [:update, :destroy, :edit]
 
   def index
-    @posts = Education::Post.created_desc.includes(:user, :category)
-      .page(params[:page]).per Settings.education.posts.per_page
+    @index_post_object = Supports::Education::IndexPost.new params[:term],
+      params[:page], params[:category], params[:user]
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
