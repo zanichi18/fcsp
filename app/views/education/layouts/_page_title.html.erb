@@ -4,10 +4,9 @@
     <ol class="breadcrumb breadcrumb-custom .flex-center-vertically">
       <% if have_member %>
         <li>
-          <a href="#" class="btn btn-primary" id="<%= btn_object_members %>">
-            <i class="icon-user"></i>
-            <%= t "education.projects.detail_project.members" %>
-          </a>
+          <%= link_to content_tag(:i, t(".member"), class: "icon-user"), "#",
+            class: "btn btn-primary",
+            data: {toggle: "modal", target: "#project-member-modal"} %>
         </li>
       <% end %>
       <li>
@@ -25,3 +24,5 @@
     </ol>
   </div>
 </section>
+<%= render "add_project_member_modal", 
+  users: @show_projects.users, project: @project %>

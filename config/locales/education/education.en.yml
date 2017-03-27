@@ -1,5 +1,8 @@
 en:
   education:
+    layouts:
+      page_title:
+        member: "Member"
     header:
       home: "Home"
       project: "Projects"
@@ -66,6 +69,27 @@ en:
         platform_subtitle: "Ruby, PHP, Android, IOS..."
         total_project_title: "+ project of education"
         total_project_subtitle: "Total project education of Framgia"
+      add_project_member_modal:
+        add_member: "Add Members"
+        manage_member: "Manage Members"
+        search: "Search User by name or email"
+        choose_all: "Choose all"
+        add: "Add"
+        close: "Close"
+      list_added_users:
+        delete: "Delete"
+        delete_confirm: "Are you sure?"
+      list_users:
+        position: "Position"
+      not_found: "Project not found"
+    project_members:
+      destroy:
+        destroy_success: "Deleted project successfully"
+        destroy_faild: "Cannot delete project"
+      load_course:
+        not_found: "Project not found"
+      load_project_member:
+        not_found: "Project member not found"
     courses:
       form:
         name: "Name"

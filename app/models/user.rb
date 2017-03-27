@@ -35,8 +35,8 @@ class User < ApplicationRecord
     length: {maximum: Settings.user.max_length_name}
   validates :email, presence: true
 
-  scope :not_in_course, ->course do
-    where("id NOT IN (?)", course.users.pluck(:user_id)) if course.users.any?
+  scope :not_in_object, ->object do
+    where("id NOT IN (?)", object.users.pluck(:user_id)) if object.users.any?
   end
 
   private

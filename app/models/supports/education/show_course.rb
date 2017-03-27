@@ -23,7 +23,7 @@ module Supports::Education
     end
 
     def users
-      User.not_in_course(@course)
+      User.not_in_object(@course)
         .search(name_or_email_cont: @params[:user_search]).result
     end
 

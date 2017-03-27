@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :course_members, only: [:create, :destroy]
     resources :users, only: :show
     resources :images
+    resources :project_members, only: [:create, :destroy]
   end
 
   namespace :employer do
