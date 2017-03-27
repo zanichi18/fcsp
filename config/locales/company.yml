@@ -12,6 +12,7 @@ en:
     show_right_main_content:
       about_us: "About us"
       social_profiles: "Social Profiles"
+      location: "Location"
     show_header:
       follow: "Follow"
   admin:

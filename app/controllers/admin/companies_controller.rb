@@ -3,6 +3,7 @@ class Admin::CompaniesController < Admin::BaseController
 
   def new
     @company = Company.new
+    @company.addresses.build
   end
 
   def show
