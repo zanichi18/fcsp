@@ -10,4 +10,13 @@ class Education::Technique < ApplicationRecord
 
   has_one :image, as: :imageable, class_name: Education::Image,
     dependent: :destroy
+
+  delegate :url, to: :image, prefix: true
+
+  validates :name, presence: true,
+    length: {maximum: Settings.education.technique.max_name_length}
+
+  scope :newest, ->{order created_at: :desc}
+
+  accepts_nested_attributes_for :image
 end

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :comments
     end
     resources :trainings
-    resources :techniques, only: [:index, :show]
+    resources :techniques
     resources :feedbacks, only: [:new, :create]
     resources :courses
     resources :trainings, only: :index
