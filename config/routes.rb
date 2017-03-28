@@ -42,4 +42,5 @@ Rails.application.routes.draw do
 
   resources :jobs, only: [:index, :show]
   resources :candidates, only: [:create, :destroy]
+  resources :bookmarks, only: [:create, :destroy]
 end
