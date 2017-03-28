@@ -1,29 +1,48 @@
-<div>
-  <div class="above-fixed">
-    <div id="page-menu" class="no-sticky">
-      <div id="page-menu-wrap">
-        <div class="container clearfix">
-          <div class="menu-title">
-            <%= t "education.header.project" %>
-            <span> <%= t "education.projects.home.filter" %></span>
-          </div>
+<div id="page-menu">
+  <div id="page-menu-wrap">
+    <div class="container clearfix">
+      <div class="menu-title">
+        <%= t "education.header.project" %>
+        <span> <%= t "education.projects.home.filter" %></span>
+      </div>
+      <nav>
+        <ul>
           <%= render "education/layouts/nav_filter",
             {controller_name: "education/projects", techniques: @techniques} %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="below-fixed">
-    <div class="content-wrap nobottompadding">
-      <div id="list-portfolio">
-        <div id="portfolio" class="portfolio grid-container clearfix">
-          <%= render partial: "education/trainers/project",
-            collection: @projects %>
-        </div>
-      </div>
+          <li class="project-search">
+            <input type="text" id="projects-search-txt" class="form-control"
+              placeholder= "<%= t ".placeholder_search" %>" autofocus>
+          </li>
+        </ul>
+      </nav>
+      <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
     </div>
   </div>
 </div>
 
-<%= javascript_include_tag "education/project_search" %>
+<div class="content-wrap nobottompadding custom-wrap">
+  <div id="list-portfolio" class="container clearfix">
+    <div id="portfolio" class="portfolio grid-container clearfix">
+      <article class="portfolio-item pf-media pf-icons">
+        <div class="portfolio-image">
+          <%= image_tag "add_project" %> 
+          <div class="portfolio-overlay">
+            <%= link_to new_education_project_path, class: "center-icon" do %>
+              <i class="fa fa-plus-square"></i>
+            <% end %>
+          </div>
+        </div>
+        <div class="portfolio-desc">
+          <h3><%= t ".add_project" %></h3>
+          <span><%= t ".creater" %></span>
+        </div>
+      </article>
+      <%= render partial: "education/trainers/project",
+        collection: @projects %>
+    </div>
+  </div>
+</div>
+
+<div class="project-search">
+  <div class="results" id="projects-search-results"></div>
+</div>

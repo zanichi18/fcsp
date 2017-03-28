@@ -4,13 +4,12 @@ $(document).ready(function () {
   $(function() {
     new app.Projects;
   });
-  $('#page-menu').sticky({topSpacing:0});
 });
 
 var app = window.app = {};
 
 app.Projects = function() {
-  this._input = $('#search-input');
+  this._input = $('#projects-search-txt');
   this._initAutocomplete();
 };
 

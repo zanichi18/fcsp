@@ -17,58 +17,23 @@
     <div id="page-menu">
       <div id="page-menu-wrap">
         <div class="container clearfix">
-          <div class="col-md-2">
-            <div class="menu-title">
-              <%= t ".training" %>
-              <span> <%= t ".filter" %></span>
-            </div>
+          <div class="menu-title">
+            <%= t ".training" %>
+            <span> <%= t ".filter" %></span>
           </div>
-          <div class="col-md-10">
-            <div class="col-md-4 training-search">
-              <%= search_form_for @training_object.search do |f| %>
-                <%= f.text_field :name_cont, placeholder: t(".search_placeholder") %>
-              <% end %>
-            </div>
-            <div class="col-md-8">
-              <nav>
-                <ul>
-                  <li class="<%= default_current_path %>">
-                    <%= link_to education_trainings_path do %>
-                      <div><%= t ".show_all" %></div>
-                    <% end %>
-                  </li>
-                  <% array_technique_show,
-                    array_technique_hide = split_array(@training_object.techniques) %>
-                  <% array_technique_show.each do |technique| %>
-                    <li class="<%= current_path?(education_trainings_path(technique_name: technique.name)) %>">
-                      <%= link_to education_trainings_path(technique_name:
-                        technique.name) do %>
-                        <div><%= technique.name %></div>
-                      <% end %>
-                    </li>
-                  <% end %>
-                  <% if array_technique_hide %>
-                    <li>
-                      <a href="#">
-                        <%= t ".more" %>
-                        <i class="icon-angle-down"></i>
-                      </a>
-                      <ul>
-                        <% array_technique_hide.each do |technique| %>
-                          <li class="<%= current_path?(education_trainings_path(technique_name: technique.name)) %>">
-                            <%= link_to education_trainings_path(technique_name:
-                              technique.name) do %>
-                              <div><%= technique.name %></div>
-                            <% end %>
-                          </li>
-                        <% end %>
-                      </ul>
-                    </li>
-                  <% end %>
-                </ul>
-              </nav>
-            </div>
-          </div>
+          <nav>
+            <ul>
+              <%= render "education/layouts/nav_filter",
+                {controller_name: "education/trainings",
+                techniques: @training_object.techniques} %>
+              <li class="training-search">
+                <%= search_form_for @training_object.search do |f| %>
+                  <%= f.text_field :name_cont, placeholder: t(".search_placeholder") %>
+                <% end %>
+              </li>    
+            </ul>
+          </nav>
+          <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
         </div>
       </div>
     </div>

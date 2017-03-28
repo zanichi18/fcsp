@@ -121,7 +121,7 @@ vi:
     logo_alt: "Framgia logo"
     project:
       not_found: "Project not found!"
-      title: "du an"
+      title: "Dự Án"
       detail: "Detail"
       php: "PHP"
       android: "Android"
