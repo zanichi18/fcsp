@@ -14,6 +14,13 @@
             <div class="col-md-12">
               <div class="tabs tabs-alt clearfix" id="tabs-profile">
                 <ul class="tab-nav clearfix">
+                  <% if current_user %>
+                    <li>
+                      <a href="#tab-activities">
+                        <i class="icon-rss2"></i><%= t ".activities" %>
+                      </a>
+                    </li>
+                  <% end %>
                   <li>
                     <a href="#tab-projects">
                       <i class="icon-folder-open"></i><%= t ".projects" %>
@@ -31,6 +38,8 @@
                   </li>
                 </ul>
                 <div class="tab-container">
+                  <%= render "activities", activities: @activities if
+                    current_user %>
                   <%= render "projects",
                     projects: @show_user_object.education_projects %>
                   <%= render "posts",

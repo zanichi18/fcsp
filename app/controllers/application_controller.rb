@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   include ApplicationHelper
+  include PublicActivity::StoreController
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 

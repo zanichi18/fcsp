@@ -90,3 +90,5 @@ jobs:
   image_member_url: "/assets/avatar.jpg"
 industries:
   max_length_name: 50
+activity:
+  per_page: 10

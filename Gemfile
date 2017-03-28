@@ -41,6 +41,7 @@ gem "pygments.rb", "~> 0.6.3"
 gem "dropzonejs-rails"
 gem "paranoia"
 gem "geocoder"
+gem "public_activity"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

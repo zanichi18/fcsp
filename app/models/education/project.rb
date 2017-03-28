@@ -1,4 +1,7 @@
 class Education::Project < ApplicationRecord
+  include PublicActivity::Model
+  tracked owner: proc{|controller| controller.current_user if controller}
+
   translates :description, :core_features, :release_note
 
   has_many :comments, as: :commentable, dependent: :destroy

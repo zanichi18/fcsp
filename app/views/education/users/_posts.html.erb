@@ -1,4 +1,6 @@
 <div class="tab-content clearfix" id="tab-posts">
   <%= render "post", posts: posts %>
-  <%= paginate posts, remote: true, params: {tab: "tab-posts" } %>
+  <div class="center">
+    <%= paginate posts, remote: true, params: {tab: "tab-posts"} %>
+  </div>
 </div>
