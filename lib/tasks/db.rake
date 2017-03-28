@@ -55,6 +55,45 @@ namespace :db do
         password: "123456",
         role: 1
 
+
+      User.create! name: "user",
+        email: "user@gmail.com",
+        password: "123456"
+
+      puts "Create positions"
+      positions = ["Manager", "Director", "Admin"]
+      positions.each do |position|
+        company_id = 1
+        Position.create! name: position,
+          company_id: company_id
+      end
+
+      puts "Create groups"
+      groups = ["Education", "HR", "BO"]
+      groups.each do |group|
+        company_id = 1
+        description = FFaker::Lorem.sentence
+        Group.create! name: group,
+          company_id: company_id,
+          description: description
+      end
+
+      puts "Create user groups"
+      Position.all.each do |position|
+        Group.all.each do |group|
+          (1..5).each do |i|
+            user_id = i
+            position_id = position.id
+            group_id = group.id
+            is_default_group = true
+            UserGroup.create! user_id: user_id,
+              position_id: position_id,
+              group_id: group_id,
+              is_default_group: is_default_group
+          end
+        end
+      end
+
       puts "Create groups"
       groups = ["Education", "HR", "BO"]
       groups.each do |group|
@@ -72,12 +111,14 @@ namespace :db do
         describe = FFaker::Lorem.paragraph
         type_of_candidates = 1
         who_can_apply = 1
+        status = 1
         Job.create(
           company_id: company_id,
           title: title,
           describe: describe,
           type_of_candidates: type_of_candidates,
-          who_can_apply: who_can_apply)
+          who_can_apply: who_can_apply,
+          status: status)
       end
 
       puts "Create employee of company"

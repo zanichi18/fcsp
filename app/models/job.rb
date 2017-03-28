@@ -30,4 +30,5 @@ class Job < ApplicationRecord
   validates :who_can_apply, presence: true
 
   scope :newest, ->{order created_at: :desc}
+  scope :community, ->{where status: :community}
 end

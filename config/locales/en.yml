@@ -116,6 +116,8 @@ en:
     header:
       home: "Home"
       employer: "Employer"
+      admin: "Admin"
+      messages: "Messages"
       help: "Help"
       about: "About"
       login: "Login"
