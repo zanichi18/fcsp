@@ -25,5 +25,13 @@ module Supports::Education
     def comments
       @post.comments.includes(:user).newest
     end
+
+    def all_tags
+      Tag.select :name
+    end
+
+    def post_tags
+      @post.tag_list
+    end
   end
 end

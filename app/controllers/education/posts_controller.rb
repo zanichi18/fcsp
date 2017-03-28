@@ -59,7 +59,7 @@ class Education::PostsController < Education::BaseController
 
   def post_params
     params.require(:education_post).permit :title, :cover_photo,
-      :content, :category_id
+      :content, :category_id, :tag_list
   end
 
   def load_user_image_object

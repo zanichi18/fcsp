@@ -92,11 +92,19 @@ RSpec.describe Education::PostsController, type: :controller do
     end
 
     context "create valid post" do
+      let(:tag){FactoryGirl.create :tag}
       it "save success" do
         expect do
           xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id)}
         end
         .to change(Education::Post, :count).by 1
+      end
+
+      it "save success and save a new tag" do
+        expect do
+          xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id, tags: tag)}
+        end
+        .to change(Tag, :count).by 1
       end
     end
 
@@ -183,7 +191,6 @@ RSpec.describe Education::PostsController, type: :controller do
   end
 
   describe "PATCH #update" do
-
 
     context "not logged in user" do
       before{patch:update, id: education_post, education_post: params_valid}

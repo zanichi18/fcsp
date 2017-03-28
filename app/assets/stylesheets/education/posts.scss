@@ -139,3 +139,15 @@ code {
 .modal {
   display: none;
 }
+
+.tagit {
+  border: 1px solid $gray-80 !important;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  overflow: inherit;
+}
+
+.publish-now {
+  margin-top: 25px;
+}

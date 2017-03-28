@@ -6,6 +6,7 @@ class CreateEducationPosts < ActiveRecord::Migration[5.0]
       t.integer :category_id
       t.references :user, foreign_key: true
       t.string :cover_photo
+      t.string :tags
       t.integer :comments_count, null: false, default: 0
       t.timestamps
     end

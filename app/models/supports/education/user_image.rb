@@ -13,5 +13,9 @@ module Supports::Education
     def user_education_images
       @user.education_images
     end
+
+    def tags
+      Tag.select :name
+    end
   end
 end
