@@ -2,7 +2,7 @@
   <div id="job-show-title-wrapper">
     <div class="title-icons">
       <span class="icon-job-type sales">
-        <%= t ".sales" %>
+        <%= Job.human_enum_name :type_of_candidates, @job.type_of_candidates %>
       </span>
     </div>
     <hgroup>

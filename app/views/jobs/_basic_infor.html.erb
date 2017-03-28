@@ -6,7 +6,10 @@
       </tr>
       <tr>
         <td class="head"><%= t ".look_for" %></td>
-        <td><%= t ".sales" %></td>
+        <td>
+          <%= Job.human_enum_name :type_of_candidates,
+            @job.type_of_candidates %>
+        </td>
       </tr>
       <tr>
         <td class="head"><%= t ".job_type" %></td>

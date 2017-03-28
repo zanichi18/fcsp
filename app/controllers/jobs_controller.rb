@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @jobs = Job.newest.includes(:images).page(params[:page])
+    @jobs = Job.community.newest.includes(:images).page(params[:page])
       .per Settings.jobs.per_page
   end
 

@@ -88,3 +88,15 @@ en:
     marketing: "Marketing"
     medical: "Medical"
     others: "Others"
+  activerecord:
+    attributes:
+      job:
+        type_of_candidates:
+          engineer: "Engineer / Programmer"
+          creative: "Creative(Designer, Writer, etc..)"
+          director: "Director / Manager"
+          business_admin: "Business admin(Finance, HR etc)"
+          sales: "Sales"
+          marketing: "Marketing"
+          medical: "Medical"
+          others: "Others"

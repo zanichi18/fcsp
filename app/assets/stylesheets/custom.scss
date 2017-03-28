@@ -160,6 +160,11 @@
 .cover-image {
   border: 1px solid $gray-ddd;
   border-radius: 10px;
+
+  a img {
+    height: 400px;
+    width: 100%;
+  }
 }
 
 .column-main {
