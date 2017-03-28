@@ -36,14 +36,15 @@ namespace :db do
       users = {
         "hoang.thi.nhung@framgia.com": "nhunghoang",
         "do.ha.long@framgia.com": "longdh",
-        "do.van.nam@framgia.com": "namdv",
+        "do.van.nam@framgia.com": "dovannam",
         "nguyen.ha.phan@framgia.com": "phannh",
         "luu.thi.thom@fraamgia.com": "thomlt",
         "thuy.viet.quoc@fraamgia.com": "thomlt",
         "tran.anh.vu@fsramgia.com": "thomlt",
         "le.quang.canh@sframgia.com": "thomlt",
         "nguyen.ngoc.thinh@framagia.com": "thomlt",
-        "tran.xuan.nam@framgia.com": "namtx"
+        "tran.xuan.nam@framgia.com": "tranxuannam",
+        "admin.education@framgia.com": "admin.education"
       }
 
       users.each do |email, password|

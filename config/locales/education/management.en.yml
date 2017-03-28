@@ -1,0 +1,19 @@
+en:
+  education:
+    management:
+      groups:
+        index:
+          title: "Groups Management"
+          title_description: "Manage all groups of our Framgia Education"
+        list_permissions:
+          object: "Object"
+          create: "Create"
+          read: "Read"
+          update: "Update"
+          destroy: "Destroy"
+          save: "Save your changes"
+      permissions:
+        create:
+          success: "Update successfully!"
+          fail: "Update failed!"
+          not_found: "Permission not found!"

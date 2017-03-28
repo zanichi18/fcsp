@@ -1,14 +1,14 @@
 <header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
-  <div id="header-wrap">
+  <div id="header-wrap" class="edu-header-wrap-custom">
     <div class="container clearfix">
       <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-      <div id="logo">
-        <a href="#" class="standard-logo" data-dark-logo="/assets/logo_framgia_white.png">
+      <div id="logo" class="edu-logo-custom">
+        <a href="#" class="standard-logo edu-standard-logo-custom" data-dark-logo="/assets/logo_framgia_white.png">
           <img src="/assets/logo-framgia.png" alt="<%= t "education.logo_alt" %>"></a>
       </div>
 
       <nav id="primary-menu" class="dark">
-        <ul>
+        <ul class="edu-menu-custom">
           <li class="current">
           <%= link_to education_root_url do %>
             <div><%= t "education.header.home" %></div>

@@ -64,3 +64,16 @@
 .dropdown-user:hover .dropdown-user-content {
   display: block;
 }
+
+.edu-header-wrap-custom,
+.edu-logo-custom,
+.edu-menu-custom {
+  border: none !important;
+}
+
+.dark {
+  .edu-standard-logo-custom img {
+    height: 60px !important;
+    margin-top: 20px !important;
+  }
+}
