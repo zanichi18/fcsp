@@ -26,10 +26,10 @@ RSpec.describe CandidatesController, type: :controller do
       candidate_params = FactoryGirl.attributes_for(:candidate, job_id: nil)
       expect do
         post :create, params: {
-          candidate: candidate_params}
+          candidate: candidate_params
+        }
       end.to change(Candidate, :count).by 0
       expect(flash[:danger]).to be_present
     end
-
   end
 end
