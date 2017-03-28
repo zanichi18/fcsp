@@ -1,7 +1,33 @@
+@import 'variables/color';
+
 .img-circle.img-thumbnail.user-avatar {
   max-width: 84px;
 }
 
 .heading-block.noborder.margin-bottom-50 {
   margin-bottom: 50px;
+}
+
+.list-group-item.user-show-activity {
+  .icon-plus-sign {
+    color: $weight-blue;
+  }
+
+  .icon-remove {
+    color: $light-red;
+  }
+
+  .icon-edit {
+    color: $light-green;
+  }
+
+  .text-muted {
+    visibility: hidden;
+  }
+
+  &:hover {
+    .text-muted {
+      visibility: visible;
+    }
+  }
 }

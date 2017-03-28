@@ -1,4 +1,7 @@
 class Education::Post < ApplicationRecord
+  include PublicActivity::Model
+  tracked owner: proc{|controller| controller.current_user if controller}
+
   translates :title
 
   belongs_to :category, class_name: Education::Category.name
