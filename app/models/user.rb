@@ -27,6 +27,9 @@ class User < ApplicationRecord
   has_many :candidates, dependent: :destroy
   has_many :jobs, through: :candidates
   has_many :bookmarks, dependent: :destroy
+  has_one :info_user
+
+  delegate :introduce, to: :info_user, prefix: true
 
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]

@@ -1,21 +1,30 @@
-<div class="col-sm-3 clearfix">
+<div class="col-sm-3">
+  <div class="fancy-title title-border">
+    <h4><%= t(".profile").upcase %></h4>
+  </div>
+  <%= image_tag @user.avatar, class: "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
+  <div class="heading-block noborder">
+    <h3><%= @user.name %></h3>
+    <span><%= @user.email %></span>
+  </div>
   <div class="list-group">
-    <%= link_to "", class: "list-group-item" do %>
-      <%= t ".profile" %>
-      <i class="icon-user pull-right"></i>
-    <% end %>
-    <%= link_to "", class: "list-group-item" do %>
-      <%= t ".settings" %>
-      <i class="icon-cog pull-right"></i>
-    <% end %>
-    <%= link_to "", class: "list-group-item" do %>
-      <%= t ".logout" %>
-      <i class="icon-line2-logout pull-right"></i>
-    <% end %>
+    <div class="list-group-item">
+      <%= t ".posts" %>
+      <span class="pull-right"><%= @user.education_posts.size %></span>
+    </div>
+    <div class="list-group-item">
+      <%= t ".projects" %>
+      <span class="pull-right"><%= @user.education_projects.size %></span>
+    </div>
+    <div class="list-group-item">
+      <%= t ".courses" %>
+      <span class="pull-right"><%= @user.education_courses.size %></span>
+    </div>
   </div>
   <div class="fancy-title topmargin title-border">
     <h4><%= t ".about_me" %></h4>
   </div>
+  <p><%= @user.info_user_introduce %></p>
   <div class="fancy-title topmargin title-border">
     <h4><%= t ".social_profiles" %></h4>
   </div>
