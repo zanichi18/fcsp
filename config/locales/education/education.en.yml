@@ -110,6 +110,9 @@ en:
         search: "Search Course"
       index:
         no_courses: "Not found any course"
+      detail_course:
+        start_date: "Start date : "
+        end_date: "End date : "
     techniques:
       new:
         create_technique: "Create technique"
@@ -208,3 +211,6 @@ en:
         twitter: "Twitter"
         photos: "Photos"
         techniques: "Techniques"
+    trainers:
+      show_course:
+        add_member: "Add member"

@@ -5,11 +5,12 @@
         <div class="carousel-inner" role="listbox">
           <% course.images.each_with_index do |image, index| %>
             <div class="<%= index.zero? ? 'item active' : 'item' %>">
-              <%= link_to image_tag(image.url), "#" %>
+              <%= link_to image_tag(image.url),
+                education_course_path(course) %>
             </div>
           <% end %>
         </div>
-      </div>     
+      </div>
     <% end %>
   </div>
   <div class="portfolio-desc">

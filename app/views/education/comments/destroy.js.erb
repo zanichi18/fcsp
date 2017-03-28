@@ -4,6 +4,6 @@
   $('.sm-form-control').val('');
 <% else %>
   $('#comment-<%= @comment.id %>').remove();
-  $('.comment-count').html('<%= @project.comments.size %>')
+  $('.comment-count').html('<%= @project.comments_count %>')
   $('.comment-errors').html("")
 <% end %>

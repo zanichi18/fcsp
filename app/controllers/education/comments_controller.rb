@@ -5,6 +5,7 @@ class Education::CommentsController < Education::BaseController
   def create
     @comment = @project.comments.build comment_params
     if @comment.save
+      @project.reload.comments_count
       respond_to do |format|
         format.js
       end
@@ -13,6 +14,7 @@ class Education::CommentsController < Education::BaseController
 
   def destroy
     if @comment.destroy
+      @project.reload.comments_count
       respond_to do |format|
         format.js
       end
