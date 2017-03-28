@@ -3,7 +3,7 @@ class CreateAddresses < ActiveRecord::Migration[5.0]
     create_table :addresses do |t|
       t.references :company
       t.string :address
-      t.float :longtitude
+      t.float :longitude
       t.float :latitude
       t.boolean :head_office
 

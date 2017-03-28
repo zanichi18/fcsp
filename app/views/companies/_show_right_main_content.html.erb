@@ -3,6 +3,12 @@
 </div>
 <p><%= @company.introduction %></p>
 <div class="fancy-title topmargin-custom title-border">
+  <div class="location-padding">
+    <h4><%= t ".location" %></h4>
+  </div>
+  <div id="map" class="map"></div>
+</div>
+<div class="fancy-title topmargin-custom title-border">
   <h4><%= t ".social_profiles" %></h4>
 </div>
 <a href="#" class="social-icon si-facebook si-small si-rounded si-light" title="Facebook">
@@ -29,3 +35,5 @@
   <i class="icon-twitter"></i>
   <i class="icon-twitter"></i>
 </a>
+
+<%= render "gmap" %>
