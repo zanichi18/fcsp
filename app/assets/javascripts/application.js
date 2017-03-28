@@ -15,3 +15,4 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require company_location
+//= require candidates.js

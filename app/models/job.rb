@@ -5,6 +5,7 @@ class Job < ApplicationRecord
   has_many :images, as: :imageable, dependent: :destroy
   has_many :job_hiring_types, dependent: :destroy
   has_many :hiring_types, through: :job_hiring_types
+  has_many :candidates, dependent: :destroy
 
   enum status: [:preview, :community]
   enum who_can_apply: [:everyone, :friends_of_members,

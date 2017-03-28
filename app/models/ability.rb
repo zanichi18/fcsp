@@ -10,6 +10,7 @@ class Ability
       can :manage, Job
     else
       can :read, Company
+      can :read, Job
     end
 
     user.education_groups.each do |education_group|

@@ -24,6 +24,8 @@ class User < ApplicationRecord
   has_many :images, as: :imageable, dependent: :destroy
   has_many :education_images, class_name: Education::Image.name,
     as: :imageable, dependent: :destroy
+  has_many :candidates, dependent: :destroy
+  has_many :jobs, through: :candidates
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
 

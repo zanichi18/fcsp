@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, only: [:index, :show]
+  resources :candidates, only: [:create, :destroy]
 end
