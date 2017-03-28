@@ -1,35 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-8 col-md-8 col-md-offset-2">
-      <%= simple_form_for project do |f| %>
-        <%= render "shared/error_messages", object: f.object %>
+<div class="row">
+  <div class="col-xs-8 col-md-8 col-md-offset-2">
+    <%= simple_form_for project do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
 
-        <%= f.input :name, label: t(".name"), class: "form-control" %>
+      <%= f.input :name, label: t(".name"), class: "form-control" %>
 
-        <%= f.input :server_info, label: t(".server_info"),
-          class: "form-control" %>
+      <%= f.input :server_info, label: t(".server_info"),
+        class: "form-control" %>
 
-        <%= f.input :pm_url, label: t(".pm_url"), class: "form-control" %>
+      <%= f.input :pm_url, label: t(".pm_url"), class: "form-control" %>
 
-        <%= f.input :plat_form, label: t(".plat_form"),
-          class: "form-control" %>
+      <%= f.input :plat_form, label: t(".plat_form"),
+        class: "form-control" %>
 
-        <%= f.input :git_repo, label: t(".git_repo"), class: "form-control" %>
+      <%= f.input :git_repo, label: t(".git_repo"), class: "form-control" %>
 
-        <%= f.input :description, label: t(".description"),
-          input_html: {rows: Settings.education.projects.textarea_rows,
-            class: "form-control"} %>
+      <%= f.input :description, label: t(".description"),
+        input_html: {rows: Settings.education.projects.textarea_rows,
+          class: "form-control"} %>
 
-        <%= f.input :core_features, label: t(".core_features"),
-          input_html: {rows: Settings.education.projects.textarea_rows,
-            class: "form-control"} %>
+      <%= f.input :core_features, label: t(".core_features"),
+        input_html: {rows: Settings.education.projects.textarea_rows,
+          class: "form-control"} %>
 
-        <%= f.input :release_note, label: t(".release_note"),
-          input_html: {rows: Settings.education.projects.textarea_rows,
-            class: "form-control"} %>
+      <%= f.input :release_note, label: t(".release_note"),
+        input_html: {rows: Settings.education.projects.textarea_rows,
+          class: "form-control"} %>
 
-        <%= f.submit button_text, class: "btn btn-md btn-primary" %>
-      <% end %>
-    </div>
+      <%= f.submit button_text, class: "btn btn-md btn-primary" %>
+    <% end %>
   </div>
 </div>

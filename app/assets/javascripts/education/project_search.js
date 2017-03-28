@@ -1,10 +1,7 @@
-//= require js/plugins/jquery.sticky
-
 $(document).ready(function () {
   $(function() {
     new app.Projects;
   });
-  $('#page-menu').sticky({topSpacing:0});
 });
 
 var app = window.app = {};

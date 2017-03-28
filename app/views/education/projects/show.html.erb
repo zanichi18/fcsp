@@ -1,9 +1,12 @@
-<% if current_user %>
+<% if current_user && can_manage?(Education::Project) %>
+  <%= render "education/layouts/page_title",
+    {have_member: true,
+     btn_object_members: "btn-project-members",
+     btn_object_edit: "btn-project-edit",
+     object: @project} %>
 
-  <%= render "education/trainers/show_project" %>
-
+  <%= render "education/layouts/edit_popup" %>
 <% else %>
-
   <section id="page-title">
     <div class="container clearfix">
       <h1><%= @project.name %></h1>
@@ -23,14 +26,14 @@
       </div>
     </div>
   </section>
-  <section id="content">
-    <div class="content-wrap content-wrap-custom">
-      <div class="container clearfix">
-        <%= render "detail_project", project: @project,
-          relations: @show_projects.relations, techniques: @techniques,
-          project_members: @show_projects.project_members %>
-      </div>
-    </div>
-  </section>
-
 <% end %>
+
+<section id="content">
+  <div class="content-wrap content-wrap-custom">
+    <div class="container clearfix">
+      <%= render "detail_project", project: @project,
+        relations: @show_projects.relations, techniques: @techniques,
+        project_members: @show_projects.project_members %>
+    </div>
+  </div>
+</section>

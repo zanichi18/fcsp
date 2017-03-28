@@ -1,0 +1,27 @@
+<section id="page-title" class="page-title">
+  <div class="container clearfix clearfix-custom">
+    <h1><%= object.name %></h1>
+    <ol class="breadcrumb breadcrumb-custom .flex-center-vertically">
+      <% if have_member %>
+        <li>
+          <a href="#" class="btn btn-primary" id="<%= btn_object_members %>">
+            <i class="icon-user"></i>
+            <%= t "education.projects.detail_project.members" %>
+          </a>
+        </li>
+      <% end %>
+      <li>
+        <a href="javascript:showEditForm(<%= object.id %>)" class="btn btn-warning" id="<%= btn_object_edit %>">
+          <i class="icon-edit"></i>
+          <%= t "education.projects.edit.edit_project" %>
+        </a>
+      </li>
+      <li>
+        <%= link_to object, method: :delete, class: "btn btn-danger" do%>
+          <i class="icon-remove"></i>
+          <%= t "education.projects.destroy.delete" %>
+        <% end %>
+      </li>
+    </ol>
+  </div>
+</section>

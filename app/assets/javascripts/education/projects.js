@@ -1,9 +1,6 @@
-//= require js/plugins/jquery.sticky
-
 $(document).ready(function () {
   effect();
   load_more();
-  $('.page-title').sticky({topSpacing:0});
 });
 
 function effect() {
