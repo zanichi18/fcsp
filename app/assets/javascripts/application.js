@@ -17,3 +17,4 @@
 //= require company_location
 //= require candidates
 //= require bookmark
+//= require team_introduction
