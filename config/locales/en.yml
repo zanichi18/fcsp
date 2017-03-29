@@ -1,14 +1,11 @@
 en:
-  candidates:
-    apply_job:
-      apply_job: "Apply Job"
-    unapply_job:
-      unapply_job: "Cancel Apply Request"
   models:
     jobs:
       show:
         error: "Show job error!"
   jobs:
+    candidate:
+      apply_job: "Job"
     show:
       apply_job: "Apply Job"
     index:

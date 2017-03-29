@@ -15,16 +15,14 @@
           </div>
         </div>
         <div class="col-md-4 column-side">
-          <div class="apply_job">
-            <% if user_signed_in? %>
-              <% if check_apply_jobs(current_user.id, @job.id) %>
-                <%= render "candidates/unapply_job", candidate: @candidate %>
-              <% else %>
-                <%= render "candidates/apply_job", candidate: @candidate %>
-              <% end %>
+          <% if user_signed_in? %>
+            <div class="apply_job">
+              <%= render "candidate", job: @job %>
+            </div>
+            <div class="bookmark">
               <%= render "bookmark", job: @job %>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

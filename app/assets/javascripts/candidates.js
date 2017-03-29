@@ -1,18 +1,40 @@
-$(document).ready(function(){
-  $('.new_candidate').submit(function(e){
-    e.preventDefault();
-    var $form = $(this);
-    $.ajax({
-      dataType: 'html',
-      url: '/candidates',
-      type: 'POST',
-      data: {candidate:
-        {user_id: $('#user_id').val(),
-        job_id: $('#job_id').val()}},
-      success: function(data) {
-        $('.new_candidate').remove();
-        $('.apply_job').append(data);
-      }
-    })
-  })
+$(function() {
+  candidate.initialize();
 });
+
+var candidate = {
+  initialize: function() {
+    candidate.apply_job();
+    candidate.unapply_job();
+  },
+
+  apply_job: function() {
+
+    $('body').on('click', '.apply_job', function() {
+      var self = $(this);
+      var job = $(this).attr('id');
+      $.post('/candidates/', {id: job}, function() {
+        self.removeClass('apply_job btn-primary')
+          .addClass('cancel_apply_job btn-danger');
+      });
+      return false;
+    });
+  },
+
+  unapply_job: function() {
+
+    $('body').on('click', '.cancel_apply_job', function() {
+      var self = $(this);
+      var job = $(this).attr('id');
+      $.ajax({
+        url: '/candidates/' + job,
+        type: 'DELETE',
+        success: function() {
+          self.removeClass('cancel_apply_job btn-danger')
+            .addClass('apply_job btn-primary');
+        }
+      });
+      return false;
+    });
+  }
+}

@@ -8,6 +8,5 @@ class JobsController < ApplicationController
 
   def show
     @job_object = Supports::ShowJob.new @job
-    @candidate = @job.candidates.build
   end
 end
