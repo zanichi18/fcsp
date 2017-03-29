@@ -1,5 +1,8 @@
 en:
   education:
+    javascripts:
+      training_alert: "Are you sure ?"
+      project_alert: "Are you sure ?"
     layouts:
       footer:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
@@ -7,6 +10,7 @@ en:
         privacy_policy: "Privacy Policy"
       page_title:
         member: "Member"
+        delete_object: "Are you sure?"
     header:
       home: "Home"
       project: "Projects"
@@ -21,6 +25,11 @@ en:
         placeholder_search: "Enter your search"
         add_project: "Add new project"
         creater: "Trainer"
+        create_project: "Create"
+      project:
+        delete_object: "Are you sure?"
+      training:
+        delete_object: "Are you sure?"
       index_trainings:
         search_placeholder: "Enter your search"
       show_course:
@@ -112,6 +121,9 @@ en:
       create:
         training_created: "Training created !"
         training_create_failed: "Create training failed!"
+      destroy:
+        training_delete_fail: "Fail to delete training."
+        deleted_success: "Deleted training successfully!"
       form:
         description: "Description"
         name: "Name"
@@ -129,6 +141,9 @@ en:
         platform_subtitle: "Ruby, PHP, Android, IOS..."
         total_project_title: "+ project of education"
         total_project_subtitle: "Total project education of Framgia"
+      destroy:
+        project_delete_fail: "Fail to delete project."
+        deleted_success: "Deleted project successfully!"
       add_project_member_modal:
         add_member: "Add Members"
         manage_member: "Manage Members"

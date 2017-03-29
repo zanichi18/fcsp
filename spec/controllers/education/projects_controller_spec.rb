@@ -169,15 +169,9 @@ RSpec.describe Education::ProjectsController, type: :controller do
 
   describe "DELETE #destroy" do
     let!(:project) {FactoryGirl.create :project}
-    it "deletes the project" do
-      expect{
-        delete :destroy, params: {id: project}
-      }.to change(Education::Project, :count).by -1
-    end
-
-    it "redirects to education root path" do
-      delete :destroy, params: {id: project}
-      expect(response).to redirect_to education_root_path
+    it "responds successfully" do
+      delete :destroy, params: {id: project.id}, xhr: true
+      expect{to change(Education::Project, :count).by(-1)}
     end
   end
 end

@@ -36,13 +36,13 @@
               <%= link_to url_for(locale: session[:locale]), class:"dropdown-toggle dropdown-custom",
                 data: {toggle: "dropdown"} do %>
                 <%= image_tag "flag/#{session[:locale]}.png", class: "icon-language" %>
-                <i class="fa fa-angle-down down-custom"></i>
+                <i class="icon-angle-down"></i>
               <% end %>
             <% else %>
               <%= link_to url_for(locale: :en), class:"dropdown-toggle dropdown-custom",
                 data: {toggle: "dropdown"} do %>
                 <%= image_tag "flag/en.png", class: "icon-language" %>
-                <i class="fa fa-angle-down down-custom"></i>
+                <i class="icon-angle-down"></i>
               <% end %>
             <% end %>
             <ul class="dropdown-menu dropdown-custom dropdown-menu-right choose-language" role="menu">
