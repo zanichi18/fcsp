@@ -16,6 +16,8 @@ vi:
         creater: "Trainer"
       index_trainings:
         search_placeholder: "Nhập tìm kiếm"
+      show_course:
+        add_member: "Thêm thành viên"
     trainings:
       training_not_found: "Không tìm thấy khóa đào tạo."
       index:
@@ -148,6 +150,3 @@ vi:
         twitter: "Twitter"
         photos: "Ảnh"
         techniques: "Công nghệ"
-    trainers:
-      show_course:
-        add_member: "Thêm thành viên"
