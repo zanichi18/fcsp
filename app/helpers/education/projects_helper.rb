@@ -23,4 +23,8 @@ module Education::ProjectsHelper
   def total_project
     Education::Project.all.size
   end
+
+  def project_member_position
+    Education::ProjectMember.positions
+  end
 end

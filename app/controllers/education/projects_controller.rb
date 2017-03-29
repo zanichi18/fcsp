@@ -19,7 +19,8 @@ class Education::ProjectsController < Education::BaseController
   def show
     comments = @project.comments.newest.includes(:user, :commentable)
       .page(params[:page]).per Settings.education.comment.per_page
-    @show_projects = Supports::Education::ShowProject.new @project, comments
+    @show_projects = Supports::Education::ShowProject
+      .new @project, comments, params
     respond_to do |format|
       format.html
       format.js

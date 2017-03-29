@@ -44,7 +44,7 @@ class Education::CourseMembersController < Education::BaseController
   end
 
   def render_js
-    @users = User.not_in_course @course
+    @users = User.not_in_object @course
     respond_to do |format|
       format.js
     end

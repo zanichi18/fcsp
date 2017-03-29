@@ -42,9 +42,15 @@ RSpec.describe User, type: :model do
     let!(:user2){FactoryGirl.create :user}
     let!(:user3){FactoryGirl.create :user}
     let!(:course){FactoryGirl.create :course, training_id: training.id}
+    let!(:project){FactoryGirl.create(:project)}
     it "not_in_course" do
       course.course_members.create user_id: user1.id
-      users = User.not_in_course(course)
+      users = User.not_in_object(course)
+      expect(users).to eq [user2, user3]
+    end
+    it "not_in_project" do
+      project.members.create user_id: user1.id
+      users = User.not_in_object(project)
       expect(users).to eq [user2, user3]
     end
   end

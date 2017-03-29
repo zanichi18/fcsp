@@ -1,5 +1,8 @@
 vi:
   education:
+    layouts:
+      page_title:
+        member: "Thành viên"
     header:
       home: "Trang chủ"
       project: "Dự án"
@@ -66,6 +69,27 @@ vi:
         platform_subtitle: "Ruby, PHP, Android, IOS..."
         total_project_title: "+ Dự án"
         total_project_subtitle: "Tổng số dự án của chương trình đào tạo tại Framgia"
+      add_project_member_modal:
+        add_member: "Thêm thành viên"
+        manage_member: "Quản lý thành viên"
+        search: "Tìm kiếm người dùng bằng tên hoặc email"
+        choose_all: "Chọn tất cả"
+        add: "Thêm"
+        close: "Đóng"
+      list_users:
+        position: "Vai trò"
+      list_added_users:
+        delete: "Xóa"
+        delete_confirm: "Bạn chắc chứ?"
+      not_found: "Không tìm thấy dự án"
+    project_members:
+      destroy:
+        destroy_success: "Xóa thành viên thành công"
+        destroy_faild: "Xóa thành viên không thành công"
+      load_course:
+        not_found: "Không tìm thấy dự án"
+      load_project_member:
+        not_found: "Không tìm thấy thành viên"
     courses:
       form:
         name: "Tên"

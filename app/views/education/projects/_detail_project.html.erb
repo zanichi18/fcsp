@@ -3,8 +3,11 @@
     <div class="container-fluid clearfix">
       <div class="col_two_third portfolio-single-image nobottommargin">
         <%= load_image project %>
-        <div class="divider divider-center divider-custom"><i class="icon-circle"></i></div>
-        <%= render "list_members", project: project, project_members: project_members %>
+        <div class="divider divider-center divider-custom">
+          <i class="icon-circle"></i>
+        </div>
+        <%= render "list_members", 
+          project: project, project_members: project_members %>
       </div>
       <div class="col_one_third portfolio-single-content col_last portfolio-single-content-custom">
         <div class="fancy-title title-bottom-border">

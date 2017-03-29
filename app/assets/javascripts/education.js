@@ -22,8 +22,9 @@
 //= require social-share-button
 //= require education/projects
 //= require cocoon
-//= require education/course.js
-//= require education/course_member.js
+//= require education/course
+//= require education/course_member
+//= require education/project_member
 //= require education/users
 //= require education/posts
 
