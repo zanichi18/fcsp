@@ -8,7 +8,7 @@ education:
     per_page: 12
     truncate: 100
     link_truncate: 28
-    content_truncate: 80
+    content_truncate: 120
   technique:
     per_page: 6
     truncate: 100

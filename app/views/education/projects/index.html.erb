@@ -16,9 +16,8 @@
 
 <% if current_user && can_manage?(Education::Project) %>
   <%= render "education/trainers/index_project" %>
-  <%= javascript_include_tag "education/project_search" %>
 <% else %>
-  <div id="page-menu" class="no-sticky">
+  <div id="page-menu">
     <div id="page-menu-wrap">
       <div class="container clearfix">
         <div class="menu-title">
@@ -27,40 +26,12 @@
         </div>
         <nav>
           <ul>
+            <%= render "education/layouts/nav_filter",
+              {controller_name: "education/projects", techniques: @techniques} %>
             <li class="project-search">
               <input type="text" id="projects-search-txt" class="form-control"
                 placeholder= "<%= t ".placeholder_search" %>" autofocus>
             </li>
-            <li class="<%= default_current_path %>">
-              <%= link_to education_projects_path do %>
-                <div><%= t ".show_all" %></div>
-              <% end %>
-            </li>
-            <% array_technique_show, array_technique_hide = split_array @techniques %>
-            <% array_technique_show.each do |technique| %>
-              <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
-                <%= link_to education_projects_path technique_name: technique.name do %>
-                  <div><%= technique.name %></div>
-                <% end %>
-              </li>
-            <% end %>
-            <% if array_technique_hide %>
-              <li>
-                <a href="#">
-                  <%= t ".more" %>
-                  <i class="icon-angle-down"></i>
-                </a>
-                <ul>
-                  <% array_technique_hide.each do |technique| %>
-                    <li class="<%= current_path?(education_projects_path technique_name: technique.name) %>">
-                      <%= link_to education_projects_path technique_name: technique.name do %>
-                        <div><%= technique.name %></div>
-                      <% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-            <% end %>
           </ul>
         </nav>
         <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
@@ -70,7 +41,7 @@
 
   <section id="content">
     <div class="content-wrap nobottompadding nobottompadding-custom">
-      <div id="list-portfolio">
+      <div id="list-portfolio" class="container clearfix">
         <div id="portfolio" class="portfolio grid-container portfolio-full portfolio-nomargin clearfix">
           <%= render @projects %>
         </div>

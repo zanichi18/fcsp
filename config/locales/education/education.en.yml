@@ -1,5 +1,21 @@
 en:
   education:
+    header:
+      home: "Home"
+      project: "Projects"
+      posts: "Posts"
+      courses: "Courses"
+      trainings: "Trainings"
+      trainees: "Trainees"
+      search: "Type & Hit Enter.."
+      feedback: "Feedback"
+    trainers:
+      index_project:
+        placeholder_search: "Enter your search"
+        add_project: "Add new project"
+        creater: "Trainer"
+      index_trainings:
+        search_placeholder: "Enter your search"
     trainings:
       training_not_found: "Training Not Found."
       index:
