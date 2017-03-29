@@ -1,4 +1,5 @@
 class Education::ProjectsController < Education::BaseController
+  skip_before_action :verify_authenticity_token
   before_action :load_project, except: [:new, :index, :create]
   load_and_authorize_resource except: [:index, :show]
 
@@ -28,14 +29,15 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def new
-    @project = Education::Project.new
+    @new_project = Supports::Education::NewProject.new
   end
 
   def create
     @project = Education::Project.new project_params
     if @project.save
-      flash[:success] = t ".project_created"
-      redirect_to @project
+      respond_to do |format|
+        format.js
+      end
     else
       render :new
     end
@@ -55,7 +57,9 @@ class Education::ProjectsController < Education::BaseController
   def update
     if @project.update_attributes project_params
       flash[:success] = t ".project_updated_successfully"
-      redirect_to @project
+      respond_to do |format|
+        format.js
+      end
     else
       render :edit
     end

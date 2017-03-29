@@ -16,13 +16,17 @@ $(document).ready(function(){
       var user_ids = idItems
       var member_position = position
       data = {user_search, user_ids, member_position}
-      $.get($(this).attr('action'), data, null, 'script');
+      $.get("/education/projects/" + $('#project_id').val(), data, null, 'script');
       return false;
     }
   );
 
+  $('.add_project_member_modal #object-member-modal').on('hidden.bs.modal', function () {
+    window.location.replace("/education/projects/" + $('#project_id').val());
+  })
+
   $('#search_added_members').on('keyup', function() {
-      $.get($(this).attr('action'),
+      $.get("/education/projects/" + $('#project_id').val(),
       $(this).serialize(), null, 'script');
       return false;
     }

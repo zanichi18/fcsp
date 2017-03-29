@@ -10,8 +10,11 @@
       </ul>
       <div class="tab-content ">
         <div class="tab-pane active" id="1">
-          <%= hidden_field_tag :project_id, project.id %>
-          <%= hidden_field_tag :choosen_user, @show_projects.member_position %>
+          <div class="hidden_position">
+          </div>
+          <div id="hidden_project_id">
+            <%= hidden_field_tag :project_id, project.id %>
+          </div>
           <div class="body">
             <div class="panel panel-success">
               <div class="search-user-form">
