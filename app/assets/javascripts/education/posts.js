@@ -3,7 +3,7 @@
 //= require js/tag-it
 
 $(document).ready(function(){
-  if($('#education-post-content').length){
+  if($('#education_post_content').length){
     var simplemde = new SimpleMDE({
       element: document.getElementById('education_post_content'),
       spellChecker: false,
@@ -11,7 +11,6 @@ $(document).ready(function(){
         'bold',
         'italic',
         'strikethrough',
-        'heading',
         'heading-1',
         'heading-2',
         'heading-3',
@@ -41,7 +40,7 @@ $(document).ready(function(){
       ]
     });
   }
-  
+
   if($('#dropzone').length){
     var mediaDropzone = new Dropzone('#dropzone');
     Dropzone.options.mediaDropzone = false;
