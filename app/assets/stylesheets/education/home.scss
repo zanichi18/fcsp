@@ -1,8 +1,10 @@
 @import 'variables/color';
 
 .standard-logo img {
+  display: block;
   height: 100px;
-  width: 226px;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .slide-custom {
@@ -84,4 +86,82 @@
 
 .choose-language a:hover {
   color: $orange;
+}
+
+.introduction-video-bg {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+.introduction-video-custom {
+  background-color: $white-gray;
+  height: 711px;
+}
+
+.introduction-video-url a {
+  position: relative;
+}
+
+.statistics-course {
+  background-color: $dark-blue;
+}
+
+.statistics-trainee {
+  background-color: $blue48;
+}
+
+.statistics-trainer {
+  background-color: $blue56;
+}
+
+.clients-say-custom {
+  padding: 100px 0;
+
+  .clients-say-custom-bg {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .clients-say-title {
+    position: relative;
+  }
+
+  .clients-say-slider {
+    height: 227px;
+  }
+
+  .clients-say-slide {
+    display: block;
+    float: left;
+    margin-right: -100%;
+    opacity: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.video-overlay-custom {
+  background-color: $black-55opacity;
 }
