@@ -16,6 +16,8 @@ en:
         creater: "Trainer"
       index_trainings:
         search_placeholder: "Enter your search"
+      show_course:
+        add_member: "Add member"
     trainings:
       training_not_found: "Training Not Found."
       index:
@@ -211,6 +213,3 @@ en:
         twitter: "Twitter"
         photos: "Photos"
         techniques: "Techniques"
-    trainers:
-      show_course:
-        add_member: "Add member"
