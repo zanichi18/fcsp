@@ -2,8 +2,11 @@
   <div id="copyrights">
     <div class="container clearfix">
       <div class="col_half">
-        Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+        <%= raw t(".copyright") %><br>
+        <div class="copyright-links">
+          <a href="#"><%= t ".tearm_of_use" %></a> /
+          <a href="#"><%= t ".privacy_policy" %></a>
+        </div>
       </div>
       <div class="col_half col_last tright">
         <div class="fright clearfix">
@@ -41,7 +44,11 @@
           </a>
         </div>
         <div class="clear"></div>
-        <i class="icon-envelope2"></i> staff@framgia.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369
+        <i class="icon-envelope2"></i>
+        <%= Settings.education.home_page.framgia_email %>
+        <span class="middot">&middot;</span>
+        <i class="icon-headphones"></i>
+        <%= Settings.education.home_page.framgia_phone %>
       </div>
     </div>
   </div>

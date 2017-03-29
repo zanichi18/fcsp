@@ -1,6 +1,10 @@
 en:
   education:
     layouts:
+      footer:
+        copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
+        tearm_of_use: "Terms of Use"
+        privacy_policy: "Privacy Policy"
       page_title:
         member: "Member"
     header:
@@ -21,6 +25,60 @@ en:
         search_placeholder: "Enter your search"
       show_course:
         add_member: "Add member"
+    home:
+      introduction_video:
+        before_heading: "Easily Understandable & Customizable."
+        heading: "Walkthrough Videos & Demos"
+        description: "Democracy inspire breakthroughs, Rosa Parks; inspiration raise awareness natural resources. Governance impact; transformative donation philanthropy, respect reproductive."
+      statistics:
+        course: "Courses"
+        trainee: "Trainees"
+        trainer: "Trainers"
+      features:
+        responsive_layout: "Responsive Layout"
+        responsive_layout_des: "Powerful Layout with Responsive functionality that can be adapted to any screen size."
+        graphics: "Retina Ready Graphics"
+        graphics_des: "Looks beautiful & ultra-sharp on Retina Displays with Retina Icons, Fonts & Images."
+        performance: "Powerful Performance"
+        performance_des: "Optimized code that are completely customizable and deliver unmatched fast performance."
+        html5_video: "HTML5 Video"
+        html5_video_des: "Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background."
+        parallax_support: "Parallax Support"
+        parallax_support_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
+        endless_possibilities: "Endless Possibilities"
+        endless_possibilities_des: "Complete control on each & every element that provides endless customization possibilities."
+        color_schemes: "Light & Dark Color Schemes"
+        color_schemes_des: "Change your Website's Primary Scheme instantly by simply adding the dark class to the body."
+        layouts: "Boxed & Wide Layouts"
+        layouts_des: "Stretch your Website to the Full Width or make it boxed to surprise your visitors."
+        documentation: "Extensive Documentation"
+        documentation_des: "We have covered each & everything in our Documentation including Videos & Screenshots."
+      need_content:
+        header: "Optimized for Mobile & Touch Enabled Devices."
+        description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"
+        description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
+        learn_more: "Learn more"
+      clients_say:
+        title: "Client's say"
+        client1_say: "Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?"
+        client1_name: "Steve Jobs"
+        client1_company: "Apple Inc."
+        client2_say: "Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias."
+        client2_name: "Collis Ta'eed"
+        client2_company: "Envato Inc."
+        client3_say: "Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!"
+        client3_name: "John Doe"
+        client3_company: "XYZ Inc."
+      our_team:
+        title: "Meet our team"
+        team_member1_name: "John Doe"
+        team_member1_role: "CEO"
+        team_member2_name: "Josh Clark"
+        team_member2_role: "Co-Founder"
+        team_member3_name: "Mary Jane"
+        team_member3_role: "Sales"
+        team_member4_name: "Nix Maxwell"
+        team_member4_role: "Support"
     trainings:
       training_not_found: "Training Not Found."
       index:

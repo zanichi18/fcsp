@@ -4,7 +4,7 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide dark slide-custom">
           <div class="bg-slide-custom">
-            <img src="/assets/welcome1.jpg">
+            <img src="<%= Settings.education.home_page.slide1_img %>">
           </div>
           <div class="container clearfix">
             <div class="slider-caption slider-caption-center">
@@ -27,16 +27,17 @@
             </div>
           </div>
           <div class="video-wrap">
-            <video id="slide-video" poster="/assets/videos/explore.jpg" preload="auto" loop autoplay muted>
-              <source src='/assets/videos/explore.webm' type='video/webm' />
-              <source src='/assets/videos/explore.mp4' type='video/mp4' />
+            <video id="slide-video" preload="auto" loop autoplay muted
+              poster="<%= Settings.education.home_page.slide2_poster %>">
+              <source src="<%= Settings.education.home_page.slide2_video_webm %>" type="video/webm" />
+              <source src="<%= Settings.education.home_page.slide2_video_mp4 %>" type="video/mp4" />
             </video>
-            <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+            <div class="video-overlay video-overlay-custom"></div>
           </div>
         </div>
         <div class="swiper-slide dark slide-custom">
           <div class="bg-slide-custom">
-            <img src="/assets/welcome2.jpg">
+            <img src="<%= Settings.education.home_page.slide3_img %>">
           </div>
           <div class="container clearfix">
             <div class="slider-caption slider-caption-center">

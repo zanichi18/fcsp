@@ -3,6 +3,10 @@ vi:
     layouts:
       page_title:
         member: "Thành viên"
+      footer:
+        copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
+        tearm_of_use: "Điều khoản sử dụng"
+        privacy_policy: "Chính sách bảo mật"
     header:
       home: "Trang chủ"
       project: "Dự án"
@@ -21,6 +25,43 @@ vi:
         search_placeholder: "Nhập tìm kiếm"
       show_course:
         add_member: "Thêm thành viên"
+    home:
+      introduction_video:
+        before_heading: "Dễ Hiểu & Tuỳ chỉnh"
+        heading: "Video hướng dẫn & bản trình diễn"
+        description: "Dân chủ tạo ra những bước đột phá, Rosa Parks; Nguồn cảm hứng nâng cao nhận thức về nguồn tài nguyên thiên nhiên. Tác động của Quản trị; Từ thiện đóng góp từ thiện, tôn trọng sinh sản."
+      statistics:
+        course: "Khóa học"
+        trainee: "Người học"
+        trainer: "Người hướng dẫn"
+      features:
+        responsive_layout: "Đáp ứng giao diện"
+        responsive_layout_des: "Giao diện mạnh mẽ với tính năng đáp ứng có thể được điều chỉnh cho bất kỳ kích thước màn hình nào."
+        graphics: "Đồ họa Retina sẵn sàng"
+        graphics_des: "Có vẻ đẹp và cực kỳ sắc nét trên Retina Hiển thị với Retina Biểu tượng, Phông chữ & Hình ảnh."
+        performance: "Hiệu năng mạnh mẽ"
+        performance_des: "Tối ưu hóa mã được hoàn toàn tùy chỉnh và cung cấp hiệu suất nhanh chưa từng có."
+        html5_video: "HTML5 Video"
+        html5_video_des: "Canvas cung cấp hỗ trợ cho các video HTML5 tự nhiên có thể được thêm vào nền Bối cảnh Chiều rộng đầy đủ."
+        parallax_support: "Hỗ trợ Parallax"
+        parallax_support_des: "Hiển thị nội dung của bạn một cách hấp dẫn sử dụng Phần Parallax có các khu vực tùy chỉnh không giới hạn."
+        endless_possibilities: "Khả năng vô tận"
+        endless_possibilities_des: "Kiểm soát hoàn toàn trên mỗi và mọi yếu tố cung cấp khả năng tùy biến vô tận."
+        color_schemes: "Các Khung Màu Ánh sáng và Đen"
+        color_schemes_des: "Thay đổi sơ đồ sơ cấp của trang web của bạn ngay lập tức bằng cách thêm lớp tối cho cơ thể."
+        layouts: "Boxed & Giao diện rộng"
+        layouts_des: "Mở rộng Website của bạn đến toàn bộ Width hoặc làm cho nó đóng hộp làm ngạc nhiên du khách của bạn."
+        documentation: "Tài liệu mở rộng"
+        documentation_des: "Chúng tôi đã bảo vệ tất cả mọi thứ và trong Tài liệu của chúng tôi bao gồm Video & Ảnh chụp màn hình."
+      need_content:
+        header: "Được tối ưu hóa cho Thiết bị Di động và Được Bật."
+        description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"
+        description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
+        learn_more: "Tìm hiểu thêm"
+      clients_say:
+        title: "Nhận xét từ khách hàng"
+      our_team:
+        title: "Gặp gỡ nhóm của chúng tôi"
     trainings:
       training_not_found: "Không tìm thấy khóa đào tạo."
       index:

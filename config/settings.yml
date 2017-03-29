@@ -1,5 +1,39 @@
 languages: {en: "English", vi: "Tiếng Việt", jp: "日本語"}
 education:
+  home_page:
+    introduction_video_bg_image: "/assets/images/services/main-bg.jpg"
+    introduction_video_link: "https://www.youtube.com/watch?v=eTx-_mhAb8M"
+    introduction_video_link_cover_image: "/assets/images/services/video.jpg"
+    introduction_video_link_play_button: "/assets/images/icons/video-play.png"
+    course_count: 846
+    trainee_count: 21500
+    trainer_count: 408
+    need_content_img: "/assets/images/services/iphone6.png"
+    clients_say_bg: "/assets/images/services/home-testi-bg.jpg"
+    client_img_3: "/assets/images/testimonials/3.jpg"
+    client_img_2: "/assets/images/testimonials/2.jpg"
+    client_img_1: "/assets/images/testimonials/1.jpg"
+    team_member_img_1: "/assets/images/team/3.jpg"
+    team_member_img_2: "/assets/images/team/2.jpg"
+    team_member_img_3: "/assets/images/team/8.jpg"
+    team_member_img_4: "/assets/images/team/4.jpg"
+    client1_logo: "/assets/images/clients/1.png"
+    client2_logo: "/assets/images/clients/2.png"
+    client3_logo: "/assets/images/clients/3.png"
+    client4_logo: "/assets/images/clients/4.png"
+    client5_logo: "/assets/images/clients/5.png"
+    client6_logo: "/assets/images/clients/6.png"
+    client7_logo: "/assets/images/clients/7.png"
+    client8_logo: "/assets/images/clients/8.png"
+    client9_logo: "/assets/images/clients/9.png"
+    client10_logo: "/assets/images/clients/10.png"
+    slide1_img: "/assets/welcome1.jpg"
+    slide2_poster: "/assets/videos/explore.jpg"
+    slide2_video_webm: "/assets/videos/explore.webm"
+    slide2_video_mp4: "/assets/videos/explore.mp4"
+    slide3_img: "/assets/welcome2.jpg"
+    framgia_email: "staff@framgia.com"
+    framgia_phone: "+91-11-6541-6369"
   number_one: 1
   project:
     modal_description: "#modal_description"

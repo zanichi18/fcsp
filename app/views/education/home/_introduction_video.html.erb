@@ -1,20 +1,26 @@
 <div class="row clearfix common-height">
-  <div class="col-md-6 center col-padding" style="background: url('assets/images/services/main-bg.jpg') center center / cover no-repeat; height: 711px;">
+  <div class="col-md-6 center col-padding">
+    <div class="introduction-video-bg">
+      <img src="<%= Settings.education.home_page.introduction_video_bg_image %>">
+    </div>
     <div>&nbsp;</div>
   </div>
-  <div class="col-md-6 center col-padding" style="background-color: rgb(245, 245, 245); height: 711px;">
+  <div class="col-md-6 center col-padding introduction-video-custom">
     <div>
       <div class="heading-block nobottomborder">
-        <span class="before-heading color">Easily Understandable &amp; Customizable.</span>
-        <h3>Walkthrough Videos &amp; Demos</h3>
+        <span class="before-heading color"><%= t ".before_heading" %></span>
+        <h3><%= t ".heading" %></h3>
       </div>
-      <div class="center bottommargin">
-        <a href="http://vimeo.com/101373765" data-lightbox="iframe" style="position: relative;">
-          <img src="assets/images/services/video.jpg" alt="Video">
-          <span class="i-overlay nobg"><img src="assets/images/icons/video-play.png" alt="Play"></span>
+      <div class="center bottommargin introduction-video-url">
+        <a href="<%= Settings.education.home_page.introduction_video_link %>"
+          data-lightbox="iframe">
+          <img src="<%= Settings.education.home_page.introduction_video_link_cover_image %>">
+          <span class="i-overlay nobg">
+            <img src="<%= Settings.education.home_page.introduction_video_link_play_button %>">
+          </span>
         </a>
       </div>
-      <p class="lead nobottommargin">Democracy inspire breakthroughs, Rosa Parks; inspiration raise awareness natural resources. Governance impact; transformative donation philanthropy, respect reproductive.</p>
+      <p class="lead nobottommargin"><%= t ".description" %></p>
     </div>
   </div>
 </div>
