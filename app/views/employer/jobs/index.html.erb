@@ -1,40 +1,77 @@
 <% provide :title, t(".job") %>
-<div class="postcontent nobottommargin col_last clearfix">
-  <div class="header">
-    <h2><%= t ".manage_post" %></h2>
-    <div class="collapse navbar-collapse teal">
-      <ul class="nav navbar-nav nobottommargin">
-        <li class="active"><%= link_to t(".all"), "#" %></li>
-        <li class="active"><%= link_to t(".open"), "#" %></li>
-        <li class="active"><%= link_to t(".closed"), "#" %></li>
-        <li class="active"><%= link_to t(".draft"), "#" %></li>
-      </ul>
+<div class="button-create-job">
+  <%= link_to t(".create_job"), new_employer_company_job_path(@company),
+    class: "btn btn-primary" %>
+</div>
+<div class="container clearfix container-margin">
+  <div class="postcontent nobottommargin col_last clearfix">
+    <h3><%= t ".job_recruitment" %></h3></br>
+    <div class="button-create-job">
+      <%= link_to "Create new job", new_employer_company_job_path(@company),
+        class: "btn btn-primary" %>
     </div>
-  </div>
-  <div class="content">
-    <table class="table">
-      <th><%= t ".title" %></th>
-      <th><%= t ".describe" %></th>
-      <th><%= t ".candidates" %></th>
-      <th><%= t ".status" %></th>
-      <th><%= t ".action" %></th>
-      <%= render @jobs %>
-    </table>
-    <% if @jobs.only_deleted.size > 0 %>
-      <hr>
-      <h2><%= t ".drafts" %></h2>
-      <section>
-        <table class="table">
+    </br>
+    <div class="tabs tabs-alt tabs-tb clearfix" id="tab-1">
+      <ul class="tab-nav clearfix">
+        <li><a href="#tabs-2"><i class="icon-building norightmargin"></i>
+          <%= t ".all" %>
+        </a></li>
+        <li><a href="#tabs-3"><i class="icon-user norightmargin"></i>
+          <%= t ".open" %>
+        </a></li>
+        <li><a href="#tabs-5"><i class="icon-globe norightmargin"></i>
+          <%= t ".closed" %>
+        </a></li>
+         <li><a href="#tabs-6"><i class="icon-globe norightmargin"></i>
+          <%= t ".draft" %>
+        </a></li>
+      </ul>
+      <div class="tab-content clearfix" id="tabs-2">
+        <table class="table table-striped table-bordered">
           <th><%= t ".title" %></th>
           <th><%= t ".describe" %></th>
+          <th><%= t ".who_can_apply" %></th>
           <th><%= t ".candidates" %></th>
           <th><%= t ".status" %></th>
           <th><%= t ".action" %></th>
-          <% @jobs.only_deleted.each do |draft| %>
-            <%= render "draft", job: draft %>
-          <% end %>
-         </table>
-      </section>
-    <% end %>
+          <%= render @jobs %>
+        </table>
+        <div>
+          <%= page_entries_info @jobs %>
+        </div>
+        <div>
+          <%= paginate @jobs %>
+        </div>
+      </div>
+      <div class="tab-content clearfix" id="tabs-3">
+      </div>
+      <div class="tab-content clearfix" id="tabs-4">
+      </div>
+      <div class="tab-content clearfix" id="tabs-5">
+      </div>
+      <div class="tab-content clearfix" id="tabs-6">
+        <% if @jobs.only_deleted.size > 0 %>
+          <section>
+            <table class="table table-striped table-bordered">
+              <th><%= t ".title" %></th>
+              <th><%= t ".describe" %></th>
+              <th><%= t ".who_can_apply" %></th>
+              <th><%= t ".candidates" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t ".action" %></th>
+              <% @jobs.only_deleted.each do |draft| %>
+                <%= render "draft", job: draft %>
+              <% end %>
+            </table>
+            <div>
+              <%= page_entries_info @jobs.only_deleted %>
+            </div>
+            <div>
+              <%= paginate @jobs.only_deleted %>
+            </div>
+          </section>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

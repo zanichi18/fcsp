@@ -1,30 +1,61 @@
-<%= form_for @job, url: url do |f| %>
-  <div class="col-md-6 form-group">
-    <%= f.label :title, class: "control-label" %>
-    <span class="required">*</span>
-    <%= f.text_field :title, required: true, class: "form-control" %>
+<div class="container clearfix container-margin">
+  <div class="postcontent nobottommargin col_last clearfix">
+    <div class="tab-content clearfix">
+      <%= form_for @job, url: url do |f| %>
+        <%= render "info_hiring_type", f: f %>
+        <fieldset class="input required member-important">
+          <table class="table custab">
+            <tr>
+              <h3 class="question-des-job" for="member-important">
+                <%= t ".question_des_job" %>
+              </h3>
+            </tr>
+            <tr>
+              <h5><%= t ".des_job_last" %></h5>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="input required job-title">
+          <table class="table custab">
+            <tr>
+              <td class="col-md-4">
+                <label class="required control-label">
+                  <%= t ".title" %><span class="require">*</span>
+                </label>
+              </td>
+              <td>
+                <%= f.text_field :title, required: true, class: "form-control",
+                  placeholder: t(".placeholder_title") %>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="input required job-des">
+          <table class="table custab">
+            <tr>
+              <td class="col-md-4">
+                <label class="required control-label">
+                  <%= t ".description" %><span class="require">*</span>
+                </label>
+              </td>
+              <td>
+                <%= f.text_area :describe, required: true, class: "form-control",
+                  rows: 5, placeholder: t(".placeholder_des") %>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset class="input required action-create-job">
+          <table class="table custab">
+            <tr>
+              <td class="col-md-3 button-right">
+                 <%= f.submit t(".submit"), class: "btn btn-success" %>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+      <% end %>
+    </div>
   </div>
+</div>
 
-  <div class="col-md-6 form-group">
-    <%= f.label :describe, class: "control-label" %>
-    <span class="required">*</span>
-    <%= f.text_field :describe, required: true, class: "form-control" %>
-  </div>
-
-  <div class="col-md-6 form-group">
-    <%= f.label :type_of_candidates, class: "control-label" %>
-    <span class="required">*</span>
-    <%= f.text_field :type_of_candidates, class: "form-control" %>
-  </div>
-
-  <div class="col-md-6 form-group">
-    <%= f.label :who_can_apply, class: "control-label" %>
-    <span class="required">*</span>
-    <%= f.text_field :who_can_apply, class: "form-control" %>
-  </div>
-
-  <div class="col-md-6 form-group">
-    <%= f.submit t(".submit"), class: "btn btn-success" %>
-  </div>
-
-<% end %>

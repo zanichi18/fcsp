@@ -1,9 +1,18 @@
 <tr id="<%= dom_id(job) %>">
-  <td><%= job.title %></td>
-  <td><%= job.describe %></td>
-  <td><%= job.who_can_apply %></td>
-  <td><%= job.type_of_candidates %></td>
   <td>
-    <%= button_tag t(".close"), id: "#{job.id}", class: "draft btn btn-warning" %>
+    <%= link_to job.title, job_path(job) %>
+  </td>
+  <td><%= job.describe %></td>
+  <td>
+    <%= Job.human_enum_name :who_can_apply, job.who_can_apply %>
+  </td>
+  <td>
+    <%= Job.human_enum_name :type_of_candidates, job.type_of_candidates %>
+  </td>
+  <td>
+    <%= Job.human_enum_name :status, job.status %>
+  </td>
+  <td>
+    <%= button_tag t(".close"), id: "#{job.id}", class: "draft btn btn-warning test" %>
   </td>
 </tr>

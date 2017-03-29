@@ -63,3 +63,20 @@
 .custab .button-right {
   float: right;
 }
+
+.tabs.tabs-alt .tab-nav :first-child {
+  margin-left: 0;
+}
+
+.button-create-job {
+  float: right;
+  width: 200px;
+ }
+
+.button-create-job {
+  margin-right: 0;
+  position: fixed;
+  right: 10%;
+  top: 15%;
+  z-index: 999;
+}

@@ -10,7 +10,8 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def index
-    @jobs = Job.order created_at: :desc
+    @jobs = @company.jobs.newest.page(params[:page])
+      .per Settings.employer.jobs.per_page
     restore_job params[:id]
   end
 
@@ -37,7 +38,7 @@ class Employer::JobsController < Employer::BaseController
     else
       flash[:danger] = t ".job_post_update_fail"
     end
-    redirect_to employer_company_job_path(@company)
+    redirect_to job_path(@job)
   end
 
   def destroy
