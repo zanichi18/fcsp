@@ -35,6 +35,9 @@ en:
         search_placeholder: "Enter your search"
       show_course:
         add_member: "Add member"
+        edit_course: "Edit course"
+        delete_course: "Delete course"
+        confirm_delete: "Are you sure?"
     home:
       introduction_video:
         before_heading: "Easily Understandable & Customizable."
@@ -213,11 +216,12 @@ en:
         search_all: "All Trainings"
         search: "Search Course"
       index:
+        home: "Home"
         no_courses: "Not found any course"
+        page_title: "All Courses"
       detail_course:
         start_date: "Start date : "
         end_date: "End date : "
-      detail_course:
         course_info: "Course info"
       connection_course:
         techniques: "Techniques"

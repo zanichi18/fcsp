@@ -35,7 +35,10 @@ vi:
       index_trainings:
         search_placeholder: "Nhập tìm kiếm"
       show_course:
-        add_member: "Thêm thành viên"
+        add_member: "Thêm khóa học"
+        edit_course: "Sửa khóa học"
+        delete_course: "Xóa khóa học"
+        confirm_delete: "Bạn chắc chứ?"
     home:
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
@@ -197,8 +200,12 @@ vi:
         search_all: "Tất cả"
         search: "Tìm kiếm khóa học"
       index:
+        home: "Trang chủ"
         no_courses: "Không tìm thấy khóa học"
+        page_title: "Danh sách tất cả các khóa học"
       detail_course:
+        start_date: "Ngày bắt đầu : "
+        end_date: "Ngày kết thúc : "
         course_info: "Chi tiết khóa học"
       connection_course:
         techniques: "Công nghệ"

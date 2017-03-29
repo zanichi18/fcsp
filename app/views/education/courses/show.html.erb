@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user && can_manage?(Education::Course) %>
   <%= render "education/shared/page_title",
     {have_member: true,
      btn_object_members: "btn-course-members",

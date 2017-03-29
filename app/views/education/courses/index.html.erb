@@ -1,24 +1,41 @@
-<div class="row-course">
-  <section id="page-title", class="courses_index">
+<section id="page-title">
+  <div class="container clearfix">
+    <h1><%= t ".page_title" %></h1>
+    <ol class="breadcrumb">
+      <li><%= link_to t(".home"), education_root_path %></li>
+      <li class="active"><%= t ".page_title" %></li>
+    </ol>
+  </div>
+</section>
+
+<div id="page-menu">
+  <div id="page-menu-wrap">
     <div class="container clearfix">
-      <h1><%= t ".courses" %></h1>
-      <span>
-        <div class="courses-search col-md-6 col-sm-6"><%= t ".show_all_course" %></div>
-        <div class="col-md-offset-2 col-md-4 col-sm-6"><%= render "search_form" %></div>
-      </span>
-    </div>
-  </section>
-  <br />
-  <section id="content">
-    <div class="content-wrap nopadding", id="tab-courses">
-      <div id="portfolio" class="portfolio portfolio-4 clearfix">
-        <%= render @courses %>
+      <div class="menu-title">
+        <%= t ".course" %>
+        <span> <%= t ".filter" %></span>
       </div>
-      <hr/>
-      <div id="next-project" class="read-more" align="center">
-        <%= paginate @courses, remote: true, params: {tab: "tab-courses"} %>
-      </div>
-      <br/>
+      <nav>
+        <ul>
+          <li class="training-search">
+            <%= render "search_form" %>
+          </li>
+        </ul>
+      </nav>
+      <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
     </div>
-  </section>
+  </div>
 </div>
+
+<section id="content"  class="content-course">
+  <div class="content-wrap nopadding", id="tab-courses">
+    <div id="portfolio" class="portfolio portfolio-4 clearfix course">
+      <%= render @courses %>
+    </div>
+    <hr/>
+    <div id="next-project" class="read-more" align="center">
+      <%= paginate @courses, remote: true, params: {tab: "tab-courses"} %>
+    </div>
+    <br/>
+  </div>
+</section>
