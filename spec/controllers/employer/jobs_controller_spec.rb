@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Employer::JobsController, type: :controller do
   let(:admin){FactoryGirl.create :user, role: 1}
   let(:company){FactoryGirl.create :company}
-  let!(:job){FactoryGirl.create :job}
+  let!(:job){FactoryGirl.create :job, company_id: company.id}
 
   before :each do
     allow(controller).to receive(:current_user).and_return admin
@@ -12,7 +12,7 @@ RSpec.describe Employer::JobsController, type: :controller do
   end
 
   describe "GET #index" do
-    it "populates an array of products" do
+    it "populates an array of jobs" do
       get :index, params: {company_id: company}
       expect(assigns(:jobs)).to include job
     end
@@ -23,11 +23,27 @@ RSpec.describe Employer::JobsController, type: :controller do
     end
   end
 
+  describe "GET #new" do
+    it "renders the :new template" do
+      get :new, params: {company_id: company.id}
+      expect(response).to render_template :new
+    end
+  end
+
   describe "POST #create job" do
-    it "create successfully" do
+    it "create community job successfully" do
       job_params = FactoryGirl.attributes_for :job
       expect do
         post :create, params: {company_id: company, job: job_params}
+      end.to change(Job, :count).by 1
+      expect(flash[:success]).to be_present
+    end
+
+    it "create job only preview" do
+      job_params = FactoryGirl.attributes_for :job
+      expect do
+        post :create, params: {company_id: company, preview: "Preview",
+          job: job_params}
       end.to change(Job, :count).by 1
       expect(flash[:success]).to be_present
     end

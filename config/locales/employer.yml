@@ -31,6 +31,14 @@ en:
     jobs:
       form:
         submit: "Post"
+        question_des_job: "Who is neccesary to your company?"
+        des_job_last: "This is the last section."
+        title: "Title"
+        description: "Description"
+        placeholder_title: "Join us to create a better workplace"
+        placeholder_des: "If you are a cool rocking young engineer and into
+          charities, I want to hear what you think about my new idea.
+          I will buy you a drink!"
       new:
         job_recruitment: "Post job recruitment"
         job: "Create job"
@@ -42,6 +50,7 @@ en:
       index:
         job: "Jobs Post"
         manage_post: "Manage Job Postings"
+        create_job: "Create new job"
         all: "All"
         open: "Open"
         closed: "Closed"
@@ -49,6 +58,7 @@ en:
         title: "Title"
         status: "Status"
         candidates: "Candidates"
+        who_can_apply: "Who can apply"
         describe: "Describe"
         action: "Action"
       update:
@@ -56,6 +66,8 @@ en:
         job_post_update_fail: "Failed to update post job"
       edit:
         edit_job: "Edit job"
+      show:
+        view_job: "View job"
       job:
         close: "Close"
       draft:
@@ -100,3 +112,11 @@ en:
           marketing: "Marketing"
           medical: "Medical"
           others: "Others"
+        who_can_applies:
+          everyone: "Everyone"
+          friends_of_members: "Only friends of members"
+          friends_of_friends_of_member: "Only friends of friends of members"
+        statuses:
+          preview: "Preview"
+          community: "Community"
+
