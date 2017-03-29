@@ -50,11 +50,11 @@
         </div>
       </div>
       <div class="col_two_third portfolio-single-image nobottommargin">
-        <%= render "members_course", course_members: course_members %>
+        <%= render "members_course", course_members: show_course.course_members %>
       </div>
       <div class="col_one_third portfolio-single-content col_last">
-        <%= render "connection_course", techniques: techniques,
-          course: course, users: users %>
+        <%= render "connection_course", techniques: show_course.techniques,
+          course: course, users: show_course.users %>
       </div>
     </div>
   </div>

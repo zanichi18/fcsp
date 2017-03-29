@@ -1,11 +1,13 @@
 vi:
   education:
+<<<<<<< HEAD
     javascripts:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
+    edit_button: "Chỉnh sửa"
     layouts:
       page_title:
-        member: "Thành viên"
+        member: " Thành viên"
         delete_object: "Bạn chắc muốn xóa?"
       footer:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
@@ -95,6 +97,7 @@ vi:
         share: "Chia sẻ"
         all_courses: "Các khóa học"
         view_courses: "Xem các khóa học"
+        edit_training: "Chỉnh sửa khóa học"
       new:
         create_training: "Tạo mới"
       edit:
@@ -140,6 +143,7 @@ vi:
         delete: "Xóa"
         delete_confirm: "Bạn chắc chứ?"
       not_found: "Không tìm thấy dự án"
+      edit_project: "Chỉnh sửa dự án"
     project_members:
       destroy:
         destroy_success: "Xóa thành viên thành công"

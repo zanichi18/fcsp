@@ -1,19 +1,28 @@
 <% if current_user %>
-  <%= render "education/trainers/show_course" %>
+  <%= render "education/shared/page_title",
+    {have_member: true,
+     btn_object_members: "btn-course-members",
+     btn_object_edit: "btn-course-edit",
+     object: @course} %>
+
+  <%= render "education/shared/edit_popup",
+    modal_title: t("education.courses.edit.edit") %>
+  <%= render "add_course_member_modal",
+    users: @show_course.users, course: @course %>
 <% else %>
   <section id="page-title">
     <div class="container clearfix">
       <h1><%= @course.name %></h1>
     </div>
   </section>
-  <section id="content">
-    <div class="content-wrap content-wrap-custom">
-      <div class="container clearfix">
-        <%= render "detail_course", course: @course, course_members: @show_course.course_members,
-          techniques: @show_course.techniques, users: @show_course.users %>
-        <div class="clear"></div>
-        <%= render "other_course", relations: @show_course.relations %>
-      </div>
-    </div>
-  </section>
 <% end %>
+
+<section id="content">
+  <div class="content-wrap content-wrap-custom">
+    <div class="container clearfix">
+      <%= render "detail_course", course: @course, show_course: @show_course %>
+      <div class="clear"></div>
+      <%= render "other_course", relations: @show_course.relations %>
+    </div>
+  </div>
+</section>

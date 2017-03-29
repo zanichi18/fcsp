@@ -4,15 +4,15 @@
     <ol class="breadcrumb breadcrumb-custom .flex-center-vertically">
       <% if have_member %>
         <li>
-          <%= link_to content_tag(:i, t(".member"), class: "icon-user"), "#",
-            class: "btn btn-primary",
-            data: {toggle: "modal", target: "#project-member-modal"} %>
+          <%= link_to content_tag(:i, t("education.layouts.page_title.member"), class: "icon-user"),
+            "#", class: "btn btn-primary",
+            data: {toggle: "modal", target: "#object-member-modal"} %>
         </li>
       <% end %>
       <li>
-        <a href="javascript:showEditForm(<%= object.id %>)" class="btn btn-warning" id="<%= btn_object_edit %>">
+        <a href="#" class="btn btn-warning" id="<%= btn_object_edit %>" data-id="<%= object.id %>">
           <i class="icon-edit"></i>
-          <%= t "education.projects.edit.edit_project" %>
+          <%= t "education.edit_button" %>
         </a>
       </li>
       <li>

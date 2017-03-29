@@ -31,15 +31,26 @@
 //= require i18n.js
 //= require i18n/translations
 
-function showEditForm(id) {
-  $.ajax({
-    url: Routes.edit_education_project_path(id) ,
-    type:'GET',
-    dataType: 'json',
-    complete: function(xhr){
-      var html_text = xhr.responseText;
-      $('#show-edit-form').html(html_text);
-      $('#edit-modal').modal('show');
-    }
+$(document).ready(function(){
+  showEditForm('#btn-project-edit', '/education/projects/');
+  showEditForm('#btn-course-edit', '/education/courses/');
+  showEditForm('#btn-training-edit', '/education/trainings/');
+})
+
+function showEditForm(object, path) {
+  $(object).on('click', function(){
+    var id = $(this).data("id");
+    $.ajax({
+      url: path + id + "/edit" ,
+      type:'GET',
+      dataType: 'json',
+      complete: function(xhr){
+        var html_text = xhr.responseText;
+        $('#show-edit-form').html(html_text);
+        $('#edit-modal').modal('show');
+        $('a.add_fields').data('association-insertion-node', 'table.user-photo-form tbody');
+      }
+    })
   })
 }
+

@@ -38,6 +38,14 @@ class Education::CoursesController < Education::BaseController
   end
 
   def edit
+    respond_to do |format|
+      format.html
+      format.js do
+        render partial: "education/courses/form",
+          locals: {course: @course},
+          layout: false
+      end
+    end
   end
 
   def update

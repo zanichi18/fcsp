@@ -3,13 +3,14 @@ en:
     javascripts:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
+    edit_button: "Edit"
     layouts:
       footer:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
         tearm_of_use: "Terms of Use"
         privacy_policy: "Privacy Policy"
       page_title:
-        member: "Member"
+        member: " Member"
         delete_object: "Are you sure?"
     header:
       home: "Home"
@@ -112,6 +113,7 @@ en:
         share: "Share"
         all_courses: "All Courses"
         view_courses: "View all courses"
+        edit_training: "Edit Training"
       new:
         create_training: "Create"
       edit:
@@ -157,6 +159,7 @@ en:
       list_users:
         position: "Position"
       not_found: "Project not found"
+      edit_project: "Edit Project"
     project_members:
       destroy:
         destroy_success: "Deleted project successfully"
