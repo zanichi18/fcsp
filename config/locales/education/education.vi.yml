@@ -223,3 +223,14 @@ vi:
         twitter: "Twitter"
         photos: "Ảnh"
         techniques: "Công nghệ"
+    management:
+      abouts:
+        edit:
+          title: "Cập nhật thông tin"
+          save: "Lưu thay đổi"
+        update:
+          success: "Cập nhật thành công!"
+          fail: "Cập nhật thất bại!"
+        index:
+          edit_button: "Cập nhật"
+          preview: "Xem trước"

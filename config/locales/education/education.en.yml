@@ -304,3 +304,14 @@ en:
         twitter: "Twitter"
         photos: "Photos"
         techniques: "Techniques"
+    management:
+      abouts:
+        edit:
+          title: "Update infomation"
+          save: "Save your changes"
+        update:
+          success: "Update successfully!"
+          fail: "Update failed!"
+        index:
+          edit_button: "Update"
+          preview: "Preview"
