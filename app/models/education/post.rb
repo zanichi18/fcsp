@@ -3,6 +3,7 @@ class Education::Post < ApplicationRecord
   tracked owner: proc{|controller| controller.current_user if controller}
 
   translates :title
+  acts_as_taggable_on :tags
 
   belongs_to :category, class_name: Education::Category.name
   belongs_to :user

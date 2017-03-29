@@ -1,5 +1,6 @@
 //= require js/simplemde.min
 //= require dropzone
+//= require js/tag-it
 
 $(document).ready(function(){
   if($('#education-post-content').length){
@@ -79,9 +80,26 @@ $(document).ready(function(){
     $('.CodeMirror-wrap').addClass('code-mirror-wrap');
     $('.CodeMirror-fullscreen').addClass('code-mirror-fullscreen');
     $('.CodeMirror-sided').addClass('code-mirror-sided');
-  })
-});
+  });
 
+  var availableTags = $('#tags').html();
+
+  if(availableTags !== undefined){
+    availableTags = JSON.parse(availableTags);
+    $('#education_post_tag_list').tagit({
+      availableTags: availableTags
+    });
+  }
+
+  var post_tags = $('#post-tags').html();
+  if(post_tags !== undefined){
+    $('#education_post_tag_list').tagit('removeAll');
+    var tag_array = JSON.parse(post_tags);
+    tag_array.map(function(tag){
+      $('#education_post_tag_list').tagit('createTag', tag);
+    })
+  }
+});
 
 var appendContent = function(imageUrl){
   $('.mt-1').prepend('<div class=\"col-md-2 col-xs-3 mb-1\">'+
