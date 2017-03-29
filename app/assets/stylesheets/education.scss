@@ -6,3 +6,16 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'social-share-button';
+@import 'variables/color';
+
+.breadcrumb-custom a {
+  color: $white !important;
+}
+
+.breadcrumb-custom {
+  margin: -18px 0 0 !important;
+
+  li + li::before {
+    content: ' ';
+  }
+}

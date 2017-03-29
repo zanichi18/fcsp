@@ -2,41 +2,45 @@
 //= require dropzone
 
 $(document).ready(function(){
-  var simplemde = new SimpleMDE({ element: document.getElementById('education_post_content'),
-    spellChecker: false,
-    toolbar: [
-      'bold',
-      'italic',
-      'strikethrough',
-      'heading',
-      'heading-1',
-      'heading-2',
-      'heading-3',
-      '|',
-      'code',
-      'quote',
-      'unordered-list',
-      'ordered-list',
-      'clean-block',
-      '|',
-      'link',
-      {
-        name: 'image',
-        action: function(){
-          $('#image_insert_dialog').modal('show')
+  if($('#education-post-content').length){
+    var simplemde = new SimpleMDE({
+      element: document.getElementById('education_post_content'),
+      spellChecker: false,
+      toolbar: [
+        'bold',
+        'italic',
+        'strikethrough',
+        'heading',
+        'heading-1',
+        'heading-2',
+        'heading-3',
+        '|',
+        'code',
+        'quote',
+        'unordered-list',
+        'ordered-list',
+        'clean-block',
+        '|',
+        'link',
+        {
+          name: 'image',
+          action: function(){
+            $('#image_insert_dialog').modal('show')
+          },
+          className: 'fa fa-image',
+          title: 'Insert image'
         },
-        className: 'fa fa-image',
-        title: 'Insert image'
-      },
-      'table',
-      'horizontal-rule',
-      '|',
-      'preview',
-      'side-by-side',
-      'fullscreen',
-      'guide',
-    ]
-  });
+        'table',
+        'horizontal-rule',
+        '|',
+        'preview',
+        'side-by-side',
+        'fullscreen',
+        'guide',
+      ]
+    });
+  }
+  
   if($('#dropzone').length){
     var mediaDropzone = new Dropzone('#dropzone');
     Dropzone.options.mediaDropzone = false;

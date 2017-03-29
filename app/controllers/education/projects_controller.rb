@@ -41,6 +41,14 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def edit
+    respond_to do |format|
+      format.html
+      format.js do
+        render partial: "education/projects/form",
+          locals: {project: @project, button_text: t(".update_project")},
+          layout: false
+      end
+    end
   end
 
   def update

@@ -1,5 +1,3 @@
-//= require js/plugins/jquery.sticky
-
 $(document).ready(function () {
   $(function() {
     new app.Projects;
