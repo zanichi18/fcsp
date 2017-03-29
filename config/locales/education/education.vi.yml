@@ -148,3 +148,6 @@ vi:
         twitter: "Twitter"
         photos: "Ảnh"
         techniques: "Công nghệ"
+    trainers:
+      show_course:
+        add_member: "Thêm thành viên"

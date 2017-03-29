@@ -1,22 +1,19 @@
-<section id="page-title">
+<% if current_user %>
+  <%= render "education/trainers/show_course" %>
+<% else %>
+  <section id="page-title">
+    <div class="container clearfix">
+      <h1><%= @course.name %></h1>
+    </div>
+  </section>
   <section id="content">
-    <div class="col-md-12">
-      <div class="content-wrap">
-        <div class="container clearfix">
-          <div class="fancy-title title-border">
-            <h1><%= @course.name %></h1>
-          </div>
-          <div class="col-md-8">
-            <%= render "detail_course", course: @course %>
-            <div class="clear"></div>
-             <%= render "members_course", course_members: @show_course.course_members %>
-             <%= render "other_course", relations: @show_course.relations %>
-          </div>
-          <div class="col-md-4">
-            <%= render "connection_course", techniques: @show_course.techniques, course: @course, users: @show_course.users %>
-          </div>
-        </div>
+    <div class="content-wrap content-wrap-custom">
+      <div class="container clearfix">
+        <%= render "detail_course", course: @course, course_members: @show_course.course_members,
+          techniques: @show_course.techniques, users: @show_course.users %>
+        <div class="clear"></div>
+        <%= render "other_course", relations: @show_course.relations %>
       </div>
     </div>
   </section>
-</section>
+<% end %>

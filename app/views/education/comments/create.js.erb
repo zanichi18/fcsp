@@ -4,6 +4,6 @@
 <% else %>
   $('.all-comment').prepend('<%= j render @comment %>');
   $('.sm-form-control').val('');
-  $('.comment-count').html('<%= @project.comments.size %>')
+  $('.comment-count').html('<%= @project.comments_count %>')
   $('.comment-errors').html("")
 <% end %>

@@ -1,3 +1,5 @@
+@import 'variables/color';
+
 .row-course {
   padding-left: 40px;
   padding-right: 20px;
@@ -27,10 +29,6 @@
   }
 }
 
-.entry-image img {
-  height: 200px !important;
-}
-
 .nobottommargin {
   display: block;
   margin-right: 10px;
@@ -39,4 +37,31 @@
 
 .courses-search {
   padding-left: 0;
+}
+
+.portfolio-image.course {
+  height: 180px;
+}
+
+.slide.course {
+  img {
+    height: 400px;
+  }
+}
+
+.icon-date {
+  color: $orange;
+}
+
+.course-detail {
+  height: 400px;
+}
+
+.description-course {
+  margin-left: 5px;
+}
+
+.share-course {
+  bottom: 0;
+  position: absolute;
 }

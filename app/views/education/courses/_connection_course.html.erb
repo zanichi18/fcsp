@@ -1,60 +1,20 @@
 <div class="sidebar nobottommargin col_last">
   <div class="sidebar-widgets-wrap">
-    <div class="widget clearfix">
-      <div class="col_one_third nobottommargin">
-        <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin">
-          <i class="icon-facebook"></i>
-          <i class="icon-facebook"></i>
-        </a>
-        <small>
-          <strong>
-            <div class="counter counter-inherit">
-              <span data-from="1000" data-to="58742" data-refresh-interval="100"  data-speed="3000" data-comma="true">
-              </span>
-            </div>
-          </strong><%= t ".facebook" %>
-        </small>
-      </div>
-      <div class="col_one_third nobottommargin">
-        <a href="#"
-          class="social-icon si-dark si-colored si-twitter nobottommargin">
-          <i class="icon-twitter"></i>
-          <i class="icon-twitter"></i>
-        </a>
-        <small>
-          <strong><div class="counter counter-inherit"><span data-from="500"
-            data-to="9654" data-refresh-interval="50" data-speed="2500" data-comma="true"></span></div>
-          </strong><%= t ".twitter" %>
-        </small>
-      </div>
-    </div>
-    <div class="widget clearfix">
-      <%= link_to t(".add_member"), "#",
-        class: "btn btn-primary defaut-btn",
-        data: {toggle: "modal", target: "#course-member-modal"} %>
-      <%= render "add_course_member_modal", users: users, course: course %>
-    </div>
-    <div class="widget widget_links clearfix">
+    <div class="widget widget_links clearfix course">
       <h4><%= t ".techniques" %></h4>
       <div class="col_half nobottommargin">
         <ul>
           <% techniques.to_a.slice(0, techniques.length / 2).each do |technology| %>
-            <li><%= technology.name %></li>
+            <li class="label label-warning"><%= technology.name %></li>
           <% end %>
         </ul>
       </div>
       <div class="col_half nobottommargin col_last">
         <ul>
           <% techniques.to_a.slice(techniques.length / 2, techniques.length).each do |technology| %>
-            <li><%= technology.name %></li>
+            <li class="label label-warning"><%= technology.name %></li>
           <% end %>
         </ul>
-      </div>
-    </div>
-    <div class="widget clearfix">
-      <h4><%= t ".photos" %></h4>
-      <div id="flickr-widget" class="flickr-feed masonry-thumbs col-5"
-        data-id="613394@N22" data-count="15" data-type="group" data-lightbox="gallery">
       </div>
     </div>
     <div class="widget clearfix">
