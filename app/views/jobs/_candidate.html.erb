@@ -1,0 +1,5 @@
+<% if check_apply_jobs? current_user.id, job.id %>
+  <%= button_tag t(".job"), id: job.id, class: "btn btn-danger cancel_apply_job" %>
+<% else %>
+  <%= button_tag t(".job"), id: job.id, class: "btn btn-primary apply_job" %>
+<% end %>

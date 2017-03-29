@@ -1,24 +1,17 @@
 class CandidatesController < ApplicationController
-  load_resource
+  before_action :load_job, only: [:create, :destroy]
 
   def create
-    @candidate = Candidate.new candidate_params
-    respond_to do |format|
-      if @candidate.save
-        format.html do
-          render partial: "unapply_job", local: {candidate: @candidate}
-        end
-      else
-        format.html do
-          flash[:danger] = t ".unapply_job"
-        end
-      end
-    end
+    current_user.apply_job @job
+  end
+
+  def destroy
+    current_user.unapply_job @job
   end
 
   private
 
-  def candidate_params
-    params.require(:candidate).permit :job_id, :user_id
+  def load_job
+    @job = Job.find_by id: params[:id]
   end
 end

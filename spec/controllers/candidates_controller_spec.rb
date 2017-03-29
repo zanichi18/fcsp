@@ -1,33 +1,31 @@
 require "rails_helper"
 
 RSpec.describe CandidatesController, type: :controller do
-  let(:user){FactoryGirl.create :user, role: 0}
+  let(:user){FactoryGirl.create :user}
   let!(:job){FactoryGirl.create :job}
+  let!(:candidate){FactoryGirl.create :candidate, user: user, job: job}
 
-  describe "POST #create candidate" do
-    it "create successfully" do
-      candidate_params = FactoryGirl.attributes_for :candidate
-      expect do
-        post :create, params:
-          {candidate: candidate_params}
-      end.to change(Candidate, :count).by 1
+  before :each do
+    sign_in user
+  end
+
+  describe "POST #create" do
+    it "apply job" do
+      post :create, params: {id: job}
+      expect{user.apply_job job}.to change(Candidate, :count).by 1
     end
 
-    it "create unsuccessfully without user_id" do
-      candidate_params = FactoryGirl.attributes_for(:candidate, user_id: nil)
-      expect do
-        post :create, params:
-          {candidate: candidate_params}
-      end.to change(Candidate, :count).by 0
-      expect(flash[:danger]).to be_present
+    it "not bookmark job without job" do
+      candidate_params = FactoryGirl.create :job, id: nil
+      post :create, params: {id: candidate_params}
+      expect{response}.to change(Candidate, :count).by 0
     end
+  end
 
-    it "create unsuccessfully without job_id" do
-      candidate_params = FactoryGirl.attributes_for(:candidate, job_id: nil)
-      expect do
-        post :create, params: {candidate: candidate_params}
-      end.to change(Candidate, :count).by 0
-      expect(flash[:danger]).to be_present
+  describe "DELETE #destroy" do
+    context "delete successfully" do
+      before{delete :destroy, params: {id: job}}
+      it{expect{response.to change(Candidate, :count).by -1}}
     end
   end
 end
