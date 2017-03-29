@@ -285,9 +285,10 @@ en:
         page_not_found: "Page not found."
       right_column:
         profile: "Profile"
-        settings: "Settings"
-        logout: "Logout"
         about_me: "About me"
+        projects: "Projects"
+        posts: "Posts"
+        courses: "Courses"
         social_profiles: "Social profiles"
       index:
         show_all: "Show all"

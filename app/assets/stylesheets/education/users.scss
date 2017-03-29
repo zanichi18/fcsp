@@ -1,7 +1,10 @@
 @import 'variables/color';
 
-.img-circle.img-thumbnail.user-avatar {
+.img-thumbnail.user-avatar {
+  height: 84px;
+  max-height: 84px;
   max-width: 84px;
+  width: 84px;
 }
 
 .heading-block.noborder.margin-bottom-50 {

@@ -48,7 +48,9 @@ namespace :db do
       }
 
       users.each do |email, password|
-        User.create(name: FFaker::Name.name, email: email, password: password)
+        user = User.create(name: FFaker::Name.name, email: email, password:
+          password)
+        InfoUser.create user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
       User.create! name: "Adminprp",

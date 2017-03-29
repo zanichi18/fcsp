@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328095507) do
+ActiveRecord::Schema.define(version: 20170329081130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -409,6 +409,17 @@ ActiveRecord::Schema.define(version: 20170328095507) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "info_users", force: :cascade do |t|
+    t.integer  "relationship_status"
+    t.text     "introduce"
+    t.string   "quote"
+    t.string   "ambition"
+    t.integer  "user_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["user_id"], name: "index_info_users_on_user_id", using: :btree
+  end
+
   create_table "job_hiring_types", force: :cascade do |t|
     t.integer  "job_id"
     t.integer  "hiring_type_id"
@@ -552,6 +563,7 @@ ActiveRecord::Schema.define(version: 20170328095507) do
   add_foreign_key "education_user_groups", "education_groups", column: "group_id"
   add_foreign_key "education_user_groups", "users"
   add_foreign_key "groups", "companies"
+  add_foreign_key "info_users", "users"
   add_foreign_key "job_hiring_types", "hiring_types"
   add_foreign_key "job_hiring_types", "jobs"
   add_foreign_key "jobs", "teams"
