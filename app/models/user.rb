@@ -26,6 +26,8 @@ class User < ApplicationRecord
     as: :imageable, dependent: :destroy
   has_many :candidates, dependent: :destroy
   has_many :jobs, through: :candidates
+  has_many :bookmarks, dependent: :destroy
+
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
 
@@ -37,6 +39,14 @@ class User < ApplicationRecord
 
   scope :not_in_object, ->object do
     where("id NOT IN (?)", object.users.pluck(:user_id)) if object.users.any?
+  end
+
+  def bookmark job
+    bookmarks.create job_id: job.id
+  end
+
+  def unbookmark job
+    bookmarks.find_by(job_id: job.id).destroy
   end
 
   private

@@ -1,0 +1,9 @@
+<% if bookmarked? current_user, job %>
+  <%= button_tag id: job.id, class: "btn btn-danger rm_bookmark" do %>
+    <i class="glyphicon glyphicon-bookmark" aria-hidden="true"></i>
+  <% end %>
+<% else %>
+  <%= button_tag id: job.id, class: "btn btn-default add_bookmark" do %>
+    <i class="glyphicon glyphicon-bookmark" aria-hidden="true"></i>
+  <% end %>
+<% end %>

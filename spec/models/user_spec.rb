@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe "User validation" do
     context "association" do
       it{expect have_many(:articles)}
+      it{expect have_many(:bookmarks)}
       it{expect have_many(:education_posts)}
       it{expect have_many(:education_socials)}
       it{expect have_many(:education_comments)}
