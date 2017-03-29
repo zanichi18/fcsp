@@ -19,3 +19,4 @@
 //= require bookmark
 //= require team_introduction
 //= require flash_message
+//= require common
