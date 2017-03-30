@@ -15,6 +15,6 @@ class Education::Training < ApplicationRecord
 
   scope :filter_by_technique, ->technique_name do
     left_outer_joins(:techniques)
-      .where("education_techniques.name LIKE ?", technique_name).uniq
+      .where("education_techniques.name LIKE ?", technique_name).distinct
   end
 end

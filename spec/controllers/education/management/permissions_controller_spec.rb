@@ -21,8 +21,8 @@ RSpec.describe Education::Management::PermissionsController,
 
     it "return json with success flash if successful update" do
       permission_id = Education::Permission.first.id
-      xhr :post, :create, permissions: "{\"#{permission_id}\":
-        {\"create\":true,\"read\":true,\"update\":true,\"destroy\":false}}",
+      post :create, params: {permissions: "{\"#{permission_id}\":
+        {\"create\":true,\"read\":true,\"update\":true,\"destroy\":false}}"},
         format: :json
       expected =
         {flash: I18n.t("education.management.permissions.create.success"),
@@ -31,8 +31,8 @@ RSpec.describe Education::Management::PermissionsController,
     end
 
     it "return json with flash fail if permission not found" do
-      xhr :post, :create, permissions: "{\"0\":
-        {\"create\":true,\"read\":true,\"update\":true,\"destroy\":false}}",
+      post :create, params: {permissions: "{\"0\":
+        {\"create\":true,\"read\":true,\"update\":true,\"destroy\":false}}"},
         format: :json
       expected =
         {flash: I18n.t("education.management.permissions.create.not_found"),
