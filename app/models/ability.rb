@@ -3,6 +3,8 @@ class Ability
 
   def initialize user
     user ||= User.new
+    # return can :manage, :all if user.admin?
+
     case user.role
     when "admin"
       can :manage, Company
@@ -12,6 +14,10 @@ class Ability
     else
       can :read, Company
       can :read, Job
+    end
+
+    user.employer_groups.each do |group|
+      get_permission_of_group_for_authentication group
     end
 
     user.education_groups.each do |education_group|

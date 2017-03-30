@@ -82,19 +82,14 @@ namespace :db do
       end
 
       puts "Create user groups"
-      Position.all.each do |position|
-        Group.all.each do |group|
-          (1..5).each do |i|
-            user_id = i
-            position_id = position.id
-            group_id = group.id
-            is_default_group = true
-            UserGroup.create! user_id: user_id,
-              position_id: position_id,
-              group_id: group_id,
-              is_default_group: is_default_group
-          end
-        end
+      UserGroup.create! user_id: 12, position_id: 3, group_id: 2,
+        is_default_group: true
+
+      puts "Create company permission"
+      models = ["Company", "Job", "Candidate", "TeamIntroduction"]
+      models.each do |model|
+        Permission.create entry: model, group_id: 2,
+          optional: {create: true, read: true, update: true, destroy: true}
       end
 
       puts "Create groups"

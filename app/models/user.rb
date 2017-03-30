@@ -20,7 +20,8 @@ class User < ApplicationRecord
   has_one :education_program_member, class_name: Education::ProgramMember.name
   has_one :education_learning_program, through: :education_program_member
   has_many :user_groups, dependent: :destroy
-  has_many :groups, through: :user_groups
+  has_many :employer_groups, class_name: Group.name, through: :user_groups,
+    source: :group
   has_many :images, as: :imageable, dependent: :destroy
   has_many :education_images, class_name: Education::Image.name,
     as: :imageable, dependent: :destroy
