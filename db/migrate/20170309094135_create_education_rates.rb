@@ -1,13 +1,12 @@
 class CreateEducationRates < ActiveRecord::Migration[5.0]
   def change
     create_table :education_rates do |t|
-      t.integer :rate
+      t.float :rate, default: 0
       t.references :user, foreign_key: true
-      t.integer :project_id
+      t.integer :rateable_id
+      t.string :rateable_type
 
       t.timestamps
     end
-
-    add_foreign_key :education_rates, :education_projects, column: :project_id
   end
 end

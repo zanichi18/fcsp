@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root "home#index"
     resources :projects do
       resources :comments
+      resources :rates, only: :create
     end
     resources :trainings
     resources :techniques
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     resources :trainings, only: :index
     resources :posts do
       resources :comment_posts, except: [:index, :show]
+      resources :rates, only: :create
     end
     resources :course_members, only: [:create, :destroy]
     resources :users, only: :show

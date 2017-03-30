@@ -48,6 +48,13 @@
               </div>
               <%= render "tag_cloud_post" %>
               <div class="clear"></div>
+                <%= render "education/rates/score", object: @post %>
+              <div class="clear"></div>
+                <%= render partial: "education/rates/rate",
+                  locals: {rateable_id: @post.id,
+                    rateable_type: Education::Post.name,
+                    rate: (@post_object.get_rate(current_user.id) if user_signed_in?)} %>
+              <div class="clear"></div>
               <%= render "share_post" %>
             </div>
           </div>
