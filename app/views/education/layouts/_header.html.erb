@@ -3,8 +3,14 @@
     <div class="container clearfix">
       <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
       <div id="logo" class="edu-logo-custom">
-        <a href="#" class="standard-logo edu-standard-logo-custom" data-dark-logo="/assets/logo_framgia_white.png">
-          <img src="/assets/logo-framgia.png" alt="<%= t "education.logo_alt" %>"></a>
+        <%= link_to education_root_url, class: "standard-logo edu-standard-logo-custom",
+          data: {"dark-logo": "/assets/logo_framgia_white.png"} do %>
+          <img src="/assets/logo-framgia.png" alt="<%= t "education.logo_alt" %>">
+        <% end %>
+        <%= link_to education_root_url, class: "retina-logo edu-retina-logo-custom",
+          data: {"dark-logo": "/assets/logo_framgia_white.png"} do %>
+          <img src="/assets/logo-framgia.png" alt="<%= t "education.logo_alt" %>">
+        <% end %>
       </div>
 
       <nav id="primary-menu" class="dark">
@@ -25,8 +31,6 @@
           </li>
           <li class="mega-menu">
             <%= link_to t("education.header.trainings"), education_trainings_path %>
-          </li>
-          <li class="mega-menu"><a href="#"><div><%= t "education.header.trainees" %></div></a>
           </li>
           <li class="mega-menu">
             <%= link_to t("education.header.feedback"), new_education_feedback_path %>

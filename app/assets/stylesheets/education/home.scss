@@ -1,8 +1,22 @@
 @import 'variables/color';
+@import 'variables/background_image';
 
-.standard-logo img {
-  height: 100px;
-  width: 226px;
+.edu-standard-logo-custom img,
+.edu-retina-logo-custom img {
+  width: 126px;
+}
+
+.edu-header-wrap-custom,
+.edu-logo-custom,
+.edu-menu-custom {
+  border: none !important;
+}
+
+.edu-header-wrap-custom:not(.not-dark) {
+  .edu-standard-logo-custom img {
+    height: 60px !important;
+    margin-top: 20px !important;
+  }
 }
 
 .slide-custom {
@@ -65,19 +79,6 @@
   display: block;
 }
 
-.edu-header-wrap-custom,
-.edu-logo-custom,
-.edu-menu-custom {
-  border: none !important;
-}
-
-.dark {
-  .edu-standard-logo-custom img {
-    height: 60px !important;
-    margin-top: 20px !important;
-  }
-}
-
 .down-custom {
   padding-top: 5px;
 }
@@ -87,18 +88,8 @@
 }
 
 .introduction-video-bg {
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
+  background: image-url($introduction-video-bg) center center no-repeat;
+  background-size: cover;
 }
 
 
@@ -124,22 +115,8 @@
 }
 
 .clients-say-custom {
+  background-image: image-url($clients-say-bg);
   padding: 100px 0;
-
-  .clients-say-custom-bg {
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
 
   .clients-say-title {
     position: relative;

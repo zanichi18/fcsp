@@ -1,6 +1,7 @@
 module Supports::Education
   class Home
-    attr_reader :about, :projects, :learning_programs, :trainings, :courses
+    attr_reader :about, :projects, :learning_programs, :trainings, :courses,
+      :techniques
 
     def about
       Education::About.first
@@ -24,6 +25,11 @@ module Supports::Education
     def courses
       Education::Course.newest.includes(:images)
         .limit Settings.courses.home_limit
+    end
+
+    def techniques
+      Education::Technique.newest.includes(:image)
+        .limit Settings.education.technique.home_limit
     end
   end
 end

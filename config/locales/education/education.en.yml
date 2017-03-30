@@ -12,6 +12,9 @@ en:
       page_title:
         member: " Member"
         delete_object: "Are you sure?"
+      header_management:
+        abouts: "About us"
+        permissions: "Permissions management"
     header:
       home: "Home"
       project: "Projects"
@@ -66,6 +69,9 @@ en:
         layouts_des: "Stretch your Website to the Full Width or make it boxed to surprise your visitors."
         documentation: "Extensive Documentation"
         documentation_des: "We have covered each & everything in our Documentation including Videos & Screenshots."
+      our_techniques:
+        title: "Our techniques"
+        introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
       need_content:
         header: "Optimized for Mobile & Touch Enabled Devices."
         description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"
