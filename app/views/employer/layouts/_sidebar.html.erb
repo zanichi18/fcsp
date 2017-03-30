@@ -8,8 +8,7 @@
           <li>
             <div>
               <i class="icon-tasks"></i>
-              <%= link_to t(".manager_postings"),
-                employer_company_jobs_path(@company) %>
+              <%= link_to t(".manager_postings"), "#" %>
             </div>
           </li>
           <li>
@@ -37,8 +36,7 @@
                 <%= t ".view_mores" %> <i class="icon-caret-down"></i>
               </a>
               <span class="collapse" id="collapseExample">
-                <%= link_to t(".company_info"),
-                  edit_employer_company_path(@company) %>
+                <%= link_to t(".company_info"), "#" %>
               </span>
             </div>
           </li>

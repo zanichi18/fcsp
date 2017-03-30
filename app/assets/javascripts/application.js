@@ -18,3 +18,4 @@
 //= require candidates
 //= require bookmark
 //= require team_introduction
+//= require flash_message

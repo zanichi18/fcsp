@@ -1,9 +1,5 @@
-<% [:success, :info, :warning, :danger].each do |level| %>
-  <% unless flash[level].blank? %>
-    <div id="flash-message" class="alert alert-<%= level %>">
-      <button type="button" class="close" data-dismiss="alert"
-        aria-hidden="true">&times;</button>
-      <%= flash[level].html_safe %>
-    </div>
+<div id="flash-message" class="message">
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "alert alert-#{type} text-center" %>
   <% end %>
-<% end %>
+</div>

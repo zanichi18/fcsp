@@ -19,3 +19,4 @@
 //= require bootstrap-sprockets
 //= require employer/job
 //= require team_introduction
+//= require flash_message

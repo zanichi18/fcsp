@@ -16,3 +16,4 @@
 //= require ./jquery.smartWizard
 //= require ./jquery.vmap.sampledata
 //= require ./gentelella-custom
+//= require flash_message
