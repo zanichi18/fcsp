@@ -63,11 +63,18 @@ class Education::ProjectsController < Education::BaseController
 
   def destroy
     if @project.destroy
-      flash[:success] = t ".project_deleted"
+      @projects = Education::Project.newest
+      respond_to do |format|
+        format.html do
+          redirect_to education_projects_path
+          flash[:success] = t ".deleted_success"
+        end
+        format.json{render json: {flash: t(".deleted_success"), status: 200}}
+      end
     else
-      flash[:warning] = t ".project_delete_fail"
+      flash[:danger] = t ".project_delete_fail"
+      redirect_to education_root_path
     end
-    redirect_to education_root_path
   end
 
   private

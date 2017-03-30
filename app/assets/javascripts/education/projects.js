@@ -34,3 +34,32 @@ function load_more() {
     }
   });
 }
+
+$(document).ready(function() {
+  $('.delete-project').on('click', function() {
+    var id = this.dataset.id;
+    var status_alert = I18n.t('education.javascripts.project_alert');
+    if(confirm(status_alert)) {
+      delete_project(id);
+    }    
+  })
+});
+
+function delete_project(id) {
+  $.ajax({
+    type: "DELETE",
+    url: "/education/projects/" + id,
+    dataType: "json",
+    success: function(data) {
+      if(data['status'] === 200) {
+        $('#project-' + id).remove();
+        $('#wrapper').trigger('resize');
+        $.growl.notice({title: '', message: data['flash']});
+      }
+    },
+    error: function(error_message) {
+      $.growl.error({message: error_message});
+      location.reload();
+    }
+  });
+}

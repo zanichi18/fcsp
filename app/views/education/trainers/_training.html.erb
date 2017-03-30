@@ -1,4 +1,4 @@
-<article class="portfolio-item pf-media pf-icons">
+<article class="portfolio-item pf-media pf-icons" id="training-<%= training.id %>" >
   <div class="portfolio-image">
     <a href="portfolio-single.html">
       <%= load_image training %>
@@ -7,9 +7,9 @@
       <%= link_to education_training_path(training), class: "left-icon" do %>
         <i class="icon-eye i-alt"></i>
       <% end %>
-      <%= link_to education_training_path(training), method: :delete, class: "right-icon" do%>
-        <i class="icon-trash"></i>
-      <% end %>
+      <a href="#", class="right-icon">
+        <i class="icon-trash delete-training" data-id="<%= training.id %>"></i>
+      </a>
     </div>
   </div>
   <div class="portfolio-desc">

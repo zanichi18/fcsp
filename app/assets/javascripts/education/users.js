@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(document).on('click', 'a.page-link', function(e){
+  $(document).on('click', '.custom-paginate a.page-link', function(e){
     e.preventDefault();
 
     var params = $(this).attr('href').split('?')[1];

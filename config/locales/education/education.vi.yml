@@ -1,8 +1,12 @@
 vi:
   education:
+    javascripts:
+      training_alert: "Bạn chắc muốn xóa?"
+      project_alert: "Bạn chắc muốn xóa?"
     layouts:
       page_title:
         member: "Thành viên"
+        delete_object: "Bạn chắc muốn xóa?"
       footer:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
         tearm_of_use: "Điều khoản sử dụng"
@@ -21,6 +25,11 @@ vi:
         placeholder_search: "Nhập tìm kiếm"
         add_project: "Thêm một dự án"
         creater: "Trainer"
+        create_project: "Thêm"
+      project:
+        delete_object: "Bạn chắc muốn xóa?"
+      training:
+        delete_object: "Bạn chắc muốn xóa?"
       index_trainings:
         search_placeholder: "Nhập tìm kiếm"
       show_course:
@@ -95,6 +104,9 @@ vi:
       create:
         training_created: "Tạo mới khóa đào tạo thành công!"
         training_create_failed: "Tạo mới khóa đào tạo thất bại!"
+      destroy:
+        training_delete_fail: "Xóa khóa đào tạo thất bại!"
+        deleted_success: "Xóa khóa đào tạo thành công!"
       form:
         description: "Mô tả"
         name: "Tên khóa"
@@ -112,6 +124,9 @@ vi:
         platform_subtitle: "Ruby, PHP, Android, IOS..."
         total_project_title: "+ Dự án"
         total_project_subtitle: "Tổng số dự án của chương trình đào tạo tại Framgia"
+      destroy:
+        project_delete_fail: "Xóa dự án thất bại."
+        deleted_success: "Xóa dự án thành công!"
       add_project_member_modal:
         add_member: "Thêm thành viên"
         manage_member: "Quản lý thành viên"

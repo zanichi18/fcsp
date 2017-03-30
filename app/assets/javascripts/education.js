@@ -27,6 +27,9 @@
 //= require education/project_member
 //= require education/users
 //= require education/posts
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
 
 function showEditForm(id) {
   $.ajax({

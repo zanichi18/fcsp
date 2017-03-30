@@ -44,9 +44,18 @@ class Education::TrainingsController < Education::BaseController
   end
 
   def destroy
-    @training.destroy
-    respond_to do |format|
-      format.js
+    if @training.destroy
+      @trainings = Education::Training.newest
+      respond_to do |format|
+        format.html do
+          redirect_to education_trainings_path
+          flash[:success] = t ".deleted_success"
+        end
+        format.json{render json: {flash: t(".deleted_success"), status: 200}}
+      end
+    else
+      flash[:danger] = t ".training_delete_fail"
+      redirect_to education_trainings_path
     end
   end
 
