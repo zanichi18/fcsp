@@ -10,13 +10,13 @@
       <nav id="primary-menu">
         <ul>
           <li>
-            <%= link_to education_projects_path do %>
-              <div><%= t "education.project.title" %></div>
+            <%= link_to education_management_abouts_path do %>
+              <div><%= t ".abouts" %></div>
             <% end %>
           </li>
-          <li class="current">
-            <%= link_to education_trainings_path do %>
-              <div><%= t "education.trainings.show.trainings" %></div>
+          <li>
+            <%= link_to education_management_groups_path do %>
+              <div><%= t ".permissions" %></div>
             <% end %>
           </li>
         </ul>

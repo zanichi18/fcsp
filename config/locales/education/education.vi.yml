@@ -12,6 +12,9 @@ vi:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
         tearm_of_use: "Điều khoản sử dụng"
         privacy_policy: "Chính sách bảo mật"
+      header_management:
+        abouts: "Về chúng tôi"
+        permissions: "Quản lý phân quyền"
     header:
       home: "Trang chủ"
       project: "Dự án"
@@ -66,6 +69,9 @@ vi:
         layouts_des: "Mở rộng Website của bạn đến toàn bộ Width hoặc làm cho nó đóng hộp làm ngạc nhiên du khách của bạn."
         documentation: "Tài liệu mở rộng"
         documentation_des: "Chúng tôi đã bảo vệ tất cả mọi thứ và trong Tài liệu của chúng tôi bao gồm Video & Ảnh chụp màn hình."
+      our_techniques:
+        title: "Những công nghệ của chúng tôi"
+        introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
       need_content:
         header: "Được tối ưu hóa cho Thiết bị Di động và Được Bật."
         description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"

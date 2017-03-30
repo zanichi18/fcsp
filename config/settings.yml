@@ -1,7 +1,6 @@
 languages: {en: "English", vi: "Tiếng Việt", jp: "日本語"}
 education:
   home_page:
-    introduction_video_bg_image: "/assets/images/services/main-bg.jpg"
     introduction_video_link: "https://www.youtube.com/watch?v=eTx-_mhAb8M"
     introduction_video_link_cover_image: "/assets/images/services/video.jpg"
     introduction_video_link_play_button: "/assets/images/icons/video-play.png"
@@ -9,7 +8,7 @@ education:
     trainee_count: 21500
     trainer_count: 408
     need_content_img: "/assets/images/services/iphone6.png"
-    clients_say_bg: "/assets/images/services/home-testi-bg.jpg"
+    our_techniques_center_img: "/assets/images/services/iphone7.png"
     client_img_3: "/assets/images/testimonials/3.jpg"
     client_img_2: "/assets/images/testimonials/2.jpg"
     client_img_1: "/assets/images/testimonials/1.jpg"
@@ -48,6 +47,7 @@ education:
     per_page: 6
     truncate: 100
     max_name_length: 100
+    home_limit: 6
   index:
     max_learning_program_desc: 150
     max_learning_program_name: 20

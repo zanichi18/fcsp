@@ -1,3 +1,3 @@
 class Education::Management::BaseController < ApplicationController
-  layout "education/layouts/application_trainer"
+  layout "education/layouts/application_management"
 end
