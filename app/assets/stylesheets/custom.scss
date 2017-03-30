@@ -282,3 +282,11 @@
 .list-team-introduction {
   border-bottom: 1px solid $silver;
 }
+
+.message {
+  margin-left: 50px;
+  padding: 10px;
+  position: fixed;
+  width: 30%;
+  z-index: 1000;
+}

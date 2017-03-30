@@ -2,8 +2,9 @@ class Employer::TeamIntroductionsController < Employer::BaseController
   load_and_authorize_resource
 
   def new
-    Settings.employer.controller.team_introductions
-      .images.number_images.times{@team_introduction.images.build}
+    Settings.team_introductions.images.number_images.times do
+      @team_introduction.images.build
+    end
   end
 
   def create

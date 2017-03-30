@@ -19,10 +19,9 @@ RSpec.describe Employer::TeamIntroductionsController, type: :controller do
 
     it "has 2 image uploaders per form" do
       count = 0
-      Settings.employer.controller.team_introductions
-        .images.number_images.times do
-          team_introduction.images.build
-          count+=1
+      Settings.team_introductions.images.number_images.times do
+        team_introduction.images.build
+        count+=1
       end
       expect(count).to eq 2
     end
