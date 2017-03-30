@@ -1,4 +1,6 @@
 class Education::Rate < ApplicationRecord
   belongs_to :user
-  belongs_to :project, class_name: Education::Project.name
+  belongs_to :rateable, polymorphic: true
+
+  validates :rate, presence: true
 end

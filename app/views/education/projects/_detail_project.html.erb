@@ -31,9 +31,14 @@
           </p>
           <%= render "read_more", project: project %>
         </div>
+        <div class="clearfix">
+          <%= render "education/rates/score", object: project %>
+          <%= render "education/rates/rate", rateable_id: project.id,
+            rateable_type: Education::Project.name, rate: rate %>
+        </div>
         <div class="si-share share-custom clearfix">
           <div>
-            <span><%= t ".share" %></span>
+            <span class="label-share"><%= t ".share" %></span>
           </div>
           <div>
             <%= social_share_button_tag project.name %>

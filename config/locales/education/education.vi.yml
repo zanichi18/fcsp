@@ -265,3 +265,16 @@ vi:
         index:
           edit_button: "Cập nhật"
           preview: "Xem trước"
+    rates:
+      create:
+        create_error: "Đánh giá không thành công"
+      rate:
+        rating: "Đánh giá"
+        your_rating: "Đánh giá của bạn"
+        thanks_title: "Cảm ơn"
+        thanks: "Cảm ơn đánh giá của bạn!"
+      score:
+        rating: "Đánh giá"
+        votes: "(%{count} lượt đánh giá)"
+      load_object:
+        not_found: "Không tìm thấy"

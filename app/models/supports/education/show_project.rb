@@ -51,5 +51,9 @@ module Supports::Education
       end
       user_ids_temp
     end
+
+    def get_rate user_id
+      @project.rates.find_by user_id: user_id
+    end
   end
 end

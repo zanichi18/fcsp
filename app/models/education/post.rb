@@ -8,6 +8,8 @@ class Education::Post < ApplicationRecord
   belongs_to :category, class_name: Education::Category.name
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
+  has_many :rates, class_name: Education::Rate.name, as: :rateable,
+    dependent: :destroy
 
   validates :title, presence: true,
     length: {maximum: Settings.education.post.title_max_length,

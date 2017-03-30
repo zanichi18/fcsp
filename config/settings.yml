@@ -42,7 +42,7 @@ education:
     per_page_trainer: 11
     truncate: 100
     link_truncate: 28
-    content_truncate: 120
+    content_truncate: 75
   technique:
     per_page: 6
     truncate: 100
@@ -96,6 +96,8 @@ education:
     title_min_length: 10
     content_min_length: 10
     comment_item_avatar_size: "60x60"
+  rate:
+    precision: 1
 team_introductions:
   images:
     number_images: 2
