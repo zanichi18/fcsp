@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :management do
       resources :groups, only: :index
       resources :permissions, only: :create
+      resources :abouts, only: [:index, :update]
     end
     root "home#index"
     resources :projects do
