@@ -101,23 +101,16 @@ RSpec.describe Education::ProjectsController, type: :controller do
     context "with valid attributes" do
       it "save new project to database" do
         expect{
-          post :create, params:
+          post :create, xhr: true, params:
             {education_project: FactoryGirl.attributes_for(:project)}
         }.to change(Education::Project, :count).by 1
-      end
-
-      it "redirects to project detail page" do
-        post :create, params:
-          {education_project: FactoryGirl.attributes_for(:project)}
-        expect(response).to redirect_to(
-          education_project_path(assigns[:project]))
       end
     end
 
     context "with invalid attributes" do
       it "does not save invalid project to database" do
         expect{
-          post :create, params:
+          post :create, xhr: true, params:
             {education_project: FactoryGirl.attributes_for(:invalid_project)}
         }.not_to change(Education::Project, :count)
       end
@@ -136,16 +129,10 @@ RSpec.describe Education::ProjectsController, type: :controller do
 
     context "with valid attributes" do
       it "update project attributes" do
-        patch :update, params: {id: project, education_project:
+        patch :update, xhr: true, params: {id: project, education_project:
           FactoryGirl.attributes_for(:project, name: "New Name")}
         project.reload
         expect(project.name).to eq "New Name"
-      end
-
-      it "redirects to project detail page" do
-        patch :update, params: {id: project, education_project:
-          FactoryGirl.attributes_for(:project)}
-        expect(response).to redirect_to project
       end
     end
 

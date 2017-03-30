@@ -7,8 +7,10 @@
 
   <%= render "education/shared/edit_popup",
     modal_title: t("education.courses.edit.edit") %>
-  <%= render "add_course_member_modal",
-    users: @show_course.users, course: @course %>
+  <div class="add_course_member_modal">
+    <%= render "add_course_member_modal",
+      users: @show_course.users, course: @course %>
+  </div>
 <% else %>
   <section id="page-title">
     <div class="container clearfix">

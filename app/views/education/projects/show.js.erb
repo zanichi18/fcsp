@@ -6,10 +6,11 @@ $('#list_find_users').html('<%= j render "education/projects/list_users", users:
 $('#list_members').html('<%= j render "education/projects/list_added_users", users: @show_projects.added_users, project: @project %>');
 
 $('select[name="position"]').hide();
+$('#hidden_position').html('<%= hidden_field_tag :choosen_user, @show_projects.member_position %>');
 
-var position = <%= @show_projects.member_position %>
+var position = <%= @show_projects.member_position %>;
 
-var user_ids = <%= @show_projects.user_ids %>
+var user_ids = <%= @show_projects.user_ids %>;
 for(var i = 0; i < user_ids.length; i++){
   $('#user-add-' + user_ids[i]).prop('checked', true);
 }
