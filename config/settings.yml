@@ -40,6 +40,7 @@ education:
     modal_core: "#modal_core"
     modal_release: "#modal_release"
     per_page: 12
+    per_page_trainer: 11
     truncate: 100
     link_truncate: 28
     content_truncate: 120

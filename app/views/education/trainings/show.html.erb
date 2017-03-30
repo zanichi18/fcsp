@@ -48,33 +48,12 @@
           <% end %>
         </ul>
         <br>
-        <div class="si-share clearfix">
-          <span><%= t ".share" %>:</span>
+        <div class="si-share share-custom clearfix">
           <div>
-            <%= link_to "#", class: "social-icon si-borderless si-facebook" do %>
-              <i class="icon-facebook gray-color"></i>
-              <i class="icon-facebook gray-color"></i>
-            <% end %>
-            <%= link_to "#", class: "social-icon si-borderless si-twitter" do %>
-              <i class="icon-twitter gray-color"></i>
-              <i class="icon-twitter gray-color"></i>
-            <% end %>
-            <%= link_to "#", class: "social-icon si-borderless si-pinterest" do %>
-              <i class="icon-pinterest gray-color"></i>
-              <i class="icon-pinterest gray-color"></i>
-            <% end %>
-            <%= link_to "#", class: "social-icon si-borderless si-gplus" do %>
-              <i class="icon-gplus gray-color"></i>
-              <i class="icon-gplus gray-color"></i>
-            <% end %>
-            <%= link_to "#", class: "social-icon si-borderless si-rss" do %>
-              <i class="icon-rss gray-color"></i>
-              <i class="icon-rss gray-color"></i>
-            <% end %>
-            <%= link_to "#", class: "social-icon si-borderless si-email3" do %>
-              <i class="icon-email3 gray-color"></i>
-              <i class="icon-email3 gray-color"></i>
-            <% end %>
+            <span><%= t ".share" %></span>
+          </div>
+          <div>
+            <%= social_share_button_tag @training.name %>
           </div>
         </div>
       </div>
