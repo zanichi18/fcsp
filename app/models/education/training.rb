@@ -8,6 +8,7 @@ class Education::Training < ApplicationRecord
     foreign_key: :training_id, dependent: :destroy
   has_many :techniques, through: :training_techniques
 
+  accepts_nested_attributes_for :images, allow_destroy: true
   validates :name, presence: true
   validates :description, presence: true
 

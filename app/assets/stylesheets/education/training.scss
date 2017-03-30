@@ -81,3 +81,33 @@
 .margin-training-infor {
   margin-left: 20px;
 }
+
+.nested-fields {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  img {
+    flex-grow: 1;
+    padding-right: 10px;
+  }
+}
+
+.education-training-name {
+  width: 100%;
+}
+
+.education-training-description {
+  width: 100%;
+}
+
+@media only screen and (max-width : 480px) {
+  .nested-fields {
+    img {
+      margin-bottom: 5px;
+    }
+  }
+}

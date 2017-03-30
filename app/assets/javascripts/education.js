@@ -48,9 +48,7 @@ function showEditForm(object, path) {
         var html_text = xhr.responseText;
         $('#show-edit-form').html(html_text);
         $('#edit-modal').modal('show');
-        $('a.add_fields').data('association-insertion-node', 'table.user-photo-form tbody');
       }
     })
   })
 }
-
