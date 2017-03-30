@@ -26,7 +26,7 @@ $(document).ready(function() {
     var file, thumbContainer, url;
     file = event.target.files[0];
     url = URL.createObjectURL(file);
-    thumbContainer = $(this).parent().siblings('td.thumb');
+    thumbContainer = $(this).parent().parent();
     if (thumbContainer.find('img').length === 0) {
       return thumbContainer.append('<img src="' + url + '" />');
     } else {
@@ -40,5 +40,4 @@ $(document).ready(function() {
     return $('input[type=file]', addedPartial).change(onAddFile);
   });
   $('a.add_fields').data('association-insertion-method', 'append');
-  return $('a.add_fields').data('association-insertion-node', 'table.user-photo-form tbody');
 });

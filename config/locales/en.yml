@@ -258,6 +258,7 @@ en:
         plat_form: "Platform"
         release_note: "Release note"
         git_repo: "Git repository"
+        add_image: "add images"
       new:
         create_project: "Create project"
       edit:

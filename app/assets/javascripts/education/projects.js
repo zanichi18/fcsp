@@ -41,7 +41,7 @@ $(document).ready(function() {
     var status_alert = I18n.t('education.javascripts.project_alert');
     if(confirm(status_alert)) {
       delete_project(id);
-    }    
+    }
   })
 });
 
