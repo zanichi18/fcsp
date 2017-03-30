@@ -1,12 +1,13 @@
 <% if current_user && can_manage?(Education::Project) %>
-  <%= render "education/layouts/page_title",
+  <%= render "education/shared/page_title",
     {have_member: true,
      btn_object_members: "btn-project-members",
      btn_object_edit: "btn-project-edit",
      object: @project} %>
 
-  <%= render "education/layouts/edit_popup" %>
-  <%= render "add_project_member_modal",
+  <%= render "education/shared/edit_popup",
+    modal_title: t("education.projects.edit_project") %>
+  <%= render "add_project_member_modal", 
     users: @show_projects.users, project: @project %>
 <% else %>
   <section id="page-title">

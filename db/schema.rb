@@ -433,8 +433,8 @@ ActiveRecord::Schema.define(version: 20170329081130) do
     t.integer  "company_id"
     t.string   "title"
     t.string   "describe"
-    t.integer  "type_of_candidates", default: 0
-    t.integer  "who_can_apply",      default: 0
+    t.integer  "type_of_candidates"
+    t.integer  "who_can_apply"
     t.integer  "status",             default: 0
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -489,12 +489,14 @@ ActiveRecord::Schema.define(version: 20170329081130) do
   end
 
   create_table "team_introductions", force: :cascade do |t|
+    t.integer  "team_id"
     t.integer  "team_target_id"
     t.string   "team_target_type"
     t.string   "title"
     t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["team_id"], name: "index_team_introductions_on_team_id", using: :btree
     t.index ["team_target_id"], name: "index_team_introductions_on_team_target_id", using: :btree
     t.index ["team_target_type"], name: "index_team_introductions_on_team_target_type", using: :btree
   end
