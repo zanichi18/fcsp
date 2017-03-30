@@ -121,10 +121,6 @@ Style/DefWithParentheses:
   Description: "Use def with parentheses when there are arguments."
   Enabled: true
 
-Style/DeprecatedHashMethods:
-  Description: "Checks for use of deprecated Hash methods."
-  Enabled: true
-
 Style/Documentation:
   Description: "Document classes and non-namespace modules."
   Enabled: true
