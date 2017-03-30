@@ -69,24 +69,24 @@ RSpec.describe Education::TrainingsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "responds successfully" do
-      xhr :delete,:destroy, {id: training.id}
+      delete :destroy, params: {id: training.id}, xhr: true
       expect{to change(Education::Training, :count).by(-1)}
     end
   end
 
   describe "PATCH #update" do
     it "update successfully" do
-      patch :update, id: training, education_training: params_true
+      patch :update, params: {id: training, education_training: params_true}
       expect(controller).to set_flash[:success]
     end
 
     it "update fail" do
-      patch :update, id: training, education_training: params_fail
+      patch :update, params: {id: training, education_training: params_fail}
        expect(response).to render_template :edit
     end
 
     it "find training fail" do
-      patch :update, id: 100, training: params_true
+      patch :update, params: {id: 100, training: params_true}
       expect(controller).to set_flash[:error]
       response.should redirect_to education_root_path
     end

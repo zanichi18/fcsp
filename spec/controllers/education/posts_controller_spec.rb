@@ -85,7 +85,7 @@ RSpec.describe Education::PostsController, type: :controller do
 
       it "can not destroy" do
         expect do
-          xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id)}
+          post :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id)}, xhr: true
         end
         .to change(Education::Post, :count).by 0
       end
@@ -95,14 +95,14 @@ RSpec.describe Education::PostsController, type: :controller do
       let(:tag){FactoryGirl.create :tag}
       it "save success" do
         expect do
-          xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id)}
+          post :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id)}, xhr: true
         end
         .to change(Education::Post, :count).by 1
       end
 
       it "save success and save a new tag" do
         expect do
-          xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id, tags: tag)}
+          post :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: category.id, tags: tag)}, xhr: true
         end
         .to change(Tag, :count).by 1
       end
@@ -111,7 +111,7 @@ RSpec.describe Education::PostsController, type: :controller do
     context "create valid post" do
       it "save success" do
         expect do
-          xhr :post, :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: nil)}
+          post :create, params: {education_post: FactoryGirl.attributes_for(:education_post, category_id: nil)}, xhr: true
         end
         .to change(Education::Post, :count).by 0
         expect(response).to render_template :new
@@ -193,7 +193,7 @@ RSpec.describe Education::PostsController, type: :controller do
   describe "PATCH #update" do
 
     context "not logged in user" do
-      before{patch:update, id: education_post, education_post: params_valid}
+      before{ patch :update, params: {id: education_post, education_post: params_valid}}
       before{sign_out user}
 
       it "can not update post" do
@@ -202,7 +202,7 @@ RSpec.describe Education::PostsController, type: :controller do
     end
 
     context "user logged in but post doesn't belong to user" do
-      before{patch:update, id: education_post, education_post: params_valid}
+      before{ patch :update, params: {id: education_post, education_post: params_valid}}
       let!(:education_post){FactoryGirl.create :education_post, user: another_user}
 
       it "can not update post" do
@@ -212,7 +212,7 @@ RSpec.describe Education::PostsController, type: :controller do
 
     context "with valid attributes" do
       let!(:education_post){FactoryGirl.create :education_post, user: user}
-      before{patch:update, id: education_post, education_post: params_valid}
+      before{patch :update, params: {id: education_post, education_post: params_valid}}
 
       it "update project attributes" do
         education_post.reload
@@ -227,7 +227,7 @@ RSpec.describe Education::PostsController, type: :controller do
 
     context "with invalid attributes" do
       let!(:education_post){FactoryGirl.create :education_post, user: user}
-      before{patch:update, id: education_post, education_post: params_invalid}
+      before{patch :update, params: {id: education_post, education_post: params_invalid}}
 
       it "does not update invalid post" do
         education_post.reload

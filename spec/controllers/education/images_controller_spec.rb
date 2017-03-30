@@ -9,7 +9,7 @@ RSpec.describe Education::ImagesController, type: :controller do
     context "create valid image" do
       it "save success" do
         expect do
-          xhr :post, :create, params: {file: education_image.url}
+          post :create, params: {file: education_image.url}, xhr: true
         end
         .to change(Education::Image, :count).by 1
       end
@@ -20,7 +20,7 @@ RSpec.describe Education::ImagesController, type: :controller do
         allow_any_instance_of(Education::Image).to receive(:save)
           .and_return false
         expect do
-          xhr :post, :create, params: {file: education_image.url}
+          post :create, params: {file: education_image.url}, xhr: true
         end
         .to change(Education::Image, :count).by 0
       end
