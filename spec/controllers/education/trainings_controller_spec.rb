@@ -88,7 +88,7 @@ RSpec.describe Education::TrainingsController, type: :controller do
     it "find training fail" do
       patch :update, params: {id: 100, training: params_true}
       expect(controller).to set_flash[:error]
-      response.should redirect_to education_root_path
+      expect(response).to redirect_to education_root_path
     end
   end
 
