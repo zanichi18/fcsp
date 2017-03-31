@@ -40,13 +40,13 @@
       <div class="container clearfix">
         <div class="content-wrap content-wrap-custom">
           <div id="portfolio" class="portfolio grid-container portfolio-1 clearfix">
-            <%= render "trainings", trainings: @training_object.trainings %>
+            <%= render "trainings", trainings: @training_object.trainings_for_guest %>
           </div>
         </div>
       </div>
     </div>
   </section>
   <div class="center">
-    <%= paginate @training_object.trainings %>
+    <%= paginate @training_object.trainings_for_guest %>
   </div>
 <% end %>

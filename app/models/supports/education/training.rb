@@ -17,11 +17,20 @@ module Supports::Education
     end
 
     def trainings
-      trainings = if @param_technique
-                    Education::Training.filter_by_technique @param_technique
+      if @param_technique
+        Education::Training.filter_by_technique @param_technique
       else
         Education::Training.search(name_cont: @param_training).result
+          .includes :images
       end
+    end
+
+    def trainings_for_manager
+      trainings.newest.page(@param_page)
+        .per Settings.education.trainings.per_page
+    end
+
+    def trainings_for_guest
       trainings.newest.includes(:techniques).page(@param_page)
         .per Settings.education.trainings.per_page
     end
