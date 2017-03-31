@@ -296,6 +296,20 @@ vi:
       create_new: "Tạo một bài viết"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      index:
+        no_posts: "Không tìm thấy bài viết"
+        posts: "Bài viết"
+        search_placeholder: "Tìm kiếm"
+        show_all: "Xem tất cả"
+        more: "Xem thêm"
+        placeholder_search: "Tìm kiếm"
+        title_description: "Bài viết mới nhất của các thành viên"
+        title: "Bài viết"
+        filter: "Lọc"
+      nav_search:
+        new: "Tạo bài viết mới"
+        show_all: "Xem tất cả"
+        keyword: "Tìm kiếm"
       show:
         follow_us_on_twitter: "Theo dõi trên Twitter"
         share_this_post: "Chia sẻ bài viết này:"
@@ -364,17 +378,6 @@ vi:
         twitter: "Twitter"
         photos: "Ảnh"
         techniques: "Công nghệ"
-    management:
-      abouts:
-        edit:
-          title: "Cập nhật thông tin"
-          save: "Lưu thay đổi"
-        update:
-          success: "Cập nhật thành công!"
-          fail: "Cập nhật thất bại!"
-        index:
-          edit_button: "Cập nhật"
-          preview: "Xem trước"
     rates:
       create:
         create_error: "Đánh giá không thành công"
@@ -388,3 +391,32 @@ vi:
         votes: "(%{count} lượt đánh giá)"
       load_object:
         not_found: "Không tìm thấy"
+    management:
+      abouts:
+        edit:
+          title: "Cập nhật thông tin"
+          save: "Lưu thay đổi"
+        update:
+          success: "Cập nhật thành công!"
+          fail: "Cập nhật thất bại!"
+        index:
+          edit_button: "Cập nhật"
+          preview: "Xem trước"
+          title: "Giới thiệu Framgia Education"
+          title_description: "Cập nhật thông tin"
+      groups:
+        index:
+          title: "Quản lý phân quyền"
+          title_description: "Quản lý phân quyền của Framgia Education"
+        list_permissions:
+          object: "Đối tượng"
+          create: "Tạo"
+          read: "Xem"
+          update: "Cập nhật"
+          destroy: "Xóa"
+          save: "Lưu thay đổi"
+      permissions:
+        create:
+          success: "Cập nhật thành công!"
+          fail: "Cập nhật thất bại!"
+          not_found: "Không tìm thấy phân quyền!"

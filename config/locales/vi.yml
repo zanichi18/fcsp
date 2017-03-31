@@ -83,6 +83,7 @@ vi:
       trainees: "Trainees"
       search: "Type & Hit Enter.."
       feedback: "Phản hồi"
+      trainings: "Khóa đào tạo"
     home:
       our_trainings:
         techniques: "Công nghệ"
@@ -121,6 +122,8 @@ vi:
       create:
         training_created: "Khóa đào tạo đã được tạo mới !"
         training_create_failed: "Tạo mới khóa đào tạo thất bại !"
+      image_fields:
+        remove: "Xóa"
       form:
         description: "Description"
         name: "Name"

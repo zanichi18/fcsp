@@ -298,6 +298,18 @@ en:
       newer: "Newer &rarr;"
       index:
         no_posts: "No posts found"
+        posts: "Posts"
+        search_placeholder: "Search"
+        show_all: "Show all"
+        more: "More"
+        placeholder_search: "Search"
+        title_description: "Lastest posts of our Members"
+        title: "Member's posts"
+        filter: "Filter"
+      nav_search:
+        new: "Create new post"
+        show_all: "Show all"
+        keyword: "Search"
       show:
         follow_us_on_twitter: "Follow Us on Twitter"
         share_this_post: "Share Post:"
@@ -366,17 +378,6 @@ en:
         twitter: "Twitter"
         photos: "Photos"
         techniques: "Techniques"
-    management:
-      abouts:
-        edit:
-          title: "Update infomation"
-          save: "Save your changes"
-        update:
-          success: "Update successfully!"
-          fail: "Update failed!"
-        index:
-          edit_button: "Update"
-          preview: "Preview"
     rates:
       create:
         create_error: "rate unsuccessful"
@@ -390,3 +391,32 @@ en:
         votes: "(%{count} votes)"
       load_object:
         not_found: "Not found"
+    management:
+      abouts:
+        edit:
+          title: "Update infomation"
+          save: "Save your changes"
+        update:
+          success: "Update successfully!"
+          fail: "Update failed!"
+        index:
+          edit_button: "Update"
+          preview: "Preview"
+          title: "Introduce Framgia Education"
+          title_description: "Update your introduction"
+      groups:
+        index:
+          title: "Groups Permissions"
+          title_description: "Manage permissions of all groups of our Framgia Education"
+        list_permissions:
+          object: "Object"
+          create: "Create"
+          read: "Read"
+          update: "Update"
+          destroy: "Destroy"
+          save: "Save your changes"
+      permissions:
+        create:
+          success: "Update successfully!"
+          fail: "Update failed!"
+          not_found: "Permission not found!"
