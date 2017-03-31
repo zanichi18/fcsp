@@ -33,5 +33,9 @@ module Supports::Education
     def post_tags
       @post.tag_list
     end
+
+    def get_rate user_id
+      @post.rates.find_by user_id: user_id
+    end
   end
 end

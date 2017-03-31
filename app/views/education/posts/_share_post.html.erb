@@ -1,4 +1,8 @@
-<div class="si-share noborder clearfix">
-  <span><%= t ".share_this_post" %></span>
-  <%= social_share_button_tag @post.title %>
+<div class="si-share share-custom clearfix noborder">
+  <div>
+    <span><%= t ".share_this_post" %>:</span>
+  </div>
+  <div>
+    <%= social_share_button_tag @post.title %>
+  </div>
 </div>

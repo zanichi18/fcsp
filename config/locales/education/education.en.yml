@@ -267,7 +267,7 @@ en:
       newer: "Newer &rarr;"
       show:
         follow_us_on_twitter: "Follow Us on Twitter"
-        share_this_post: "Share this Post:"
+        share_this_post: "Share Post:"
         posted_by: "Posted by"
         related_posts: "Related Posts:"
         popular: "Popular"
@@ -278,7 +278,7 @@ en:
         name: "Name"
         email: "Email"
       share_post:
-        share_this_post: "Share this post"
+        share_this_post: "Share post"
       posted_by:
         posted_by: "Posted by"
       comments:
@@ -343,3 +343,16 @@ en:
         index:
           edit_button: "Update"
           preview: "Preview"
+    rates:
+      create:
+        create_error: "rate unsuccessful"
+      rate:
+        rating: "Rating"
+        your_rating: "Your rating"
+        thanks_title: "Thanh you"
+        thanks: "Thank for rating!"
+      score:
+        rating: "Rating"
+        votes: "(%{count} votes)"
+      load_object:
+        not_found: "Not found"

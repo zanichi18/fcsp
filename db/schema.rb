@@ -297,11 +297,12 @@ ActiveRecord::Schema.define(version: 20170329081130) do
   end
 
   create_table "education_rates", force: :cascade do |t|
-    t.integer  "rate"
+    t.float    "rate",          default: 0.0
     t.integer  "user_id"
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
   end
 
@@ -555,7 +556,6 @@ ActiveRecord::Schema.define(version: 20170329081130) do
   add_foreign_key "education_project_members", "users"
   add_foreign_key "education_project_techniques", "education_projects", column: "project_id"
   add_foreign_key "education_project_techniques", "education_techniques", column: "technique_id"
-  add_foreign_key "education_rates", "education_projects", column: "project_id"
   add_foreign_key "education_rates", "users"
   add_foreign_key "education_socials", "users"
   add_foreign_key "education_training_techniques", "education_techniques", column: "technique_id"
