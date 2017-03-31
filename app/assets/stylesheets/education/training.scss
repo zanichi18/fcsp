@@ -82,7 +82,7 @@
   margin-left: 20px;
 }
 
-.nested-fields {
+.nested-fields.trainnings-image-form {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
 }
 
 @media only screen and (max-width : 480px) {
-  .nested-fields {
+  .nested-fields.trainnings-image-form {
     img {
       margin-bottom: 5px;
     }
