@@ -89,3 +89,15 @@
   height: 300px !important;
   overflow: auto !important;
 }
+
+.left-field {
+  padding-left: 0;
+}
+
+.right-field {
+  padding-right: 0;
+}
+
+.ui-datepicker.ui-widget-content {
+  border: 1px solid !important;
+}

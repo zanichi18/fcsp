@@ -203,6 +203,7 @@ en:
         add_image: "Add a image"
         save: "Save"
         reset: "Reset"
+        select_date: "Select Date"
       image_fields:
         remove: "Remove"
       new:
@@ -419,3 +420,6 @@ en:
           success: "Update successfully!"
           fail: "Update failed!"
           not_found: "Permission not found!"
+    time:
+      formats:
+        date_month_year: "%d/%m/%Y"

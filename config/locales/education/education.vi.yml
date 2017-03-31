@@ -203,12 +203,14 @@ vi:
         add_image: "Thêm ảnh"
         save: "Lưu"
         reset: "Tạo lại"
+        select_date: "Chọn ngày"
       image_fields:
         remove: "Xóa"
       new:
         new: "Tạo khóa học"
       edit:
         edit: "Cập nhật khóa học"
+        update_course: "Cập nhật khóa học"
       course:
         delete: "Xóa"
         edit: "Sửa"
@@ -419,3 +421,6 @@ vi:
           success: "Cập nhật thành công!"
           fail: "Cập nhật thất bại!"
           not_found: "Không tìm thấy phân quyền!"
+    time:
+      formats:
+        date_month_year: "%d/%m/%Y"
