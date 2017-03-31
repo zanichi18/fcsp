@@ -29,15 +29,15 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def new
-    @new_project = Supports::Education::NewProject.new
+    @project = Education::Project.new
   end
 
   def create
+    @new_project = Supports::Education::NewProject.new
     @project = Education::Project.new project_params
     if @project.save
-      respond_to do |format|
-        format.js
-      end
+      flash[:success] = t ".project_created"
+      redirect_to @project
     else
       render :new
     end
@@ -57,9 +57,7 @@ class Education::ProjectsController < Education::BaseController
   def update
     if @project.update_attributes project_params
       flash[:success] = t ".project_updated_successfully"
-      respond_to do |format|
-        format.js
-      end
+      redirect_to @project
     else
       render :edit
     end
@@ -85,7 +83,7 @@ class Education::ProjectsController < Education::BaseController
   def project_params
     params.require(:education_project).permit :name, :description,
       :release_note, :core_features, :server_info, :pm_url, :plat_form,
-      :git_repo
+      :git_repo, images_attributes: [:id, :url, :url_cache, :_destroy]
   end
 
   def load_project

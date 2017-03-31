@@ -19,3 +19,17 @@
     content: ' ';
   }
 }
+
+.nested-fields {
+  margin-top: 10px;
+}
+
+.portfolio-overlay.images-container {
+  input {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
