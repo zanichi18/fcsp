@@ -8,7 +8,7 @@
   </div>
 </section>
 
-<div id="page-menu">
+<div id="page-menu" class="page-menu-course">
   <div id="page-menu-wrap">
     <div class="container clearfix">
       <div class="menu-title">
@@ -17,8 +17,10 @@
       </div>
       <nav>
         <ul>
+          <%= render "search_form", {controller_name: "education/courses"} %>
           <li class="training-search">
-            <%= render "search_form" %>
+            <%= text_field_tag :course_search, params[:course_search],
+              placeholder: t(".search"), class: "form-control" %>
           </li>
         </ul>
       </nav>
@@ -33,7 +35,7 @@
       <%= render @courses %>
     </div>
     <hr/>
-    <div id="next-project" class="read-more" align="center">
+    <div class="center custom-paginate">
       <%= paginate @courses, remote: true, params: {tab: "tab-courses"} %>
     </div>
     <br/>

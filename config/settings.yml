@@ -122,6 +122,7 @@ courses:
   truncate_other_course: 200
   truncate_detail_course: 200
   other_coures_limit: 12
+  number_filter: 4
 user:
   max_length_name: 50
 max_length_title: 50
