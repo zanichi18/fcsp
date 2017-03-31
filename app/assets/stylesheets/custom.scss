@@ -291,21 +291,21 @@
   z-index: 1000;
 }
 
-.swal2-styled{
-  min-height: 50px !important;
+.swal2-styled {
   margin-top: 0 !important;
+  min-height: 50px !important;
 }
 
-.swal2-icon.swal2-error .line{
+.swal2-icon.swal2-error .line {
   top: -20px;
 }
 
-.swal2-icon.swal2-success{
-  .line.tip{
+.swal2-icon.swal2-success {
+  .line.tip {
     top: -12px;
   }
 
-  .line.long{
+  .line.long {
     top: -20px;
   }
 }
