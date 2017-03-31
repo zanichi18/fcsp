@@ -3,8 +3,13 @@ vi:
     javascripts:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
-    edit_button: "Chỉnh sửa"
+    shared:
+      page_title:
+        edit_button: "Chỉnh sửa"
     layouts:
+      nav_filter:
+        show_all: "Tất cả"
+        more: "Xem thêm"
       page_title:
         member: " Thành viên"
         delete_object: "Bạn chắc muốn xóa?"
@@ -15,15 +20,15 @@ vi:
       header_management:
         abouts: "Về chúng tôi"
         permissions: "Quản lý phân quyền"
-    header:
-      home: "Trang chủ"
-      project: "Dự án"
-      posts: "Bài viết"
-      courses: "Khóa học"
-      trainings: "Đào tạo"
-      trainees: "Học viên"
-      search: "Type & Hit Enter.."
-      feedback: "Phản hồi"
+      header:
+        home: "Trang chủ"
+        project: "Dự án"
+        posts: "Bài viết"
+        courses: "Khóa học"
+        trainings: "Đào tạo"
+        trainees: "Học viên"
+        search: "Type & Hit Enter.."
+        feedback: "Phản hồi"
     trainers:
       index_project:
         placeholder_search: "Nhập tìm kiếm"
@@ -42,6 +47,8 @@ vi:
         delete_course: "Xóa khóa học"
         confirm_delete: "Bạn chắc chứ?"
     home:
+      our_projects:
+        see_more: "Xem thêm"
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
         heading: "Video hướng dẫn & bản trình diễn"
@@ -79,8 +86,25 @@ vi:
         learn_more: "Tìm hiểu thêm"
       clients_say:
         title: "Nhận xét từ khách hàng"
+        client1_say: "Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?"
+        client1_name: "Steve Jobs"
+        client1_company: "Apple Inc."
+        client2_say: "Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias."
+        client2_name: "Collis Ta'eed"
+        client2_company: "Envato Inc."
+        client3_say: "Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!"
+        client3_name: "John Doe"
+        client3_company: "XYZ Inc."
       our_team:
         title: "Gặp gỡ nhóm của chúng tôi"
+        team_member1_name: "John Doe"
+        team_member1_role: "CEO"
+        team_member2_name: "Josh Clark"
+        team_member2_role: "Co-Founder"
+        team_member3_name: "Mary Jane"
+        team_member3_role: "Sales"
+        team_member4_name: "Nix Maxwell"
+        team_member4_role: "Support"
       lastest_courses:
         last_courses: "Các khóa học cuối"
     trainings:
@@ -108,6 +132,10 @@ vi:
         edit_training: "Chỉnh sửa khóa học"
       new:
         create_training: "Tạo mới"
+        heading: "phần mở đầu"
+        heading_description: "Miêu tả phần mở đầu"
+      new_training:
+        create_new_training: "Tạo mới"
       edit:
         update_project: "Sửa"
       update:
@@ -119,6 +147,7 @@ vi:
         training_delete_fail: "Xóa khóa đào tạo thất bại!"
         deleted_success: "Xóa khóa đào tạo thành công!"
       form:
+        add_image: "Thêm ảnh"
         description: "Mô tả"
         name: "Tên khóa"
     projects:
@@ -208,6 +237,8 @@ vi:
         home: "Trang chủ"
         no_courses: "Không tìm thấy khóa học"
         page_title: "Danh sách tất cả các khóa học"
+        course: "Khóa Học"
+        filter: "Bộ Lọc"
       detail_course:
         start_date: "Ngày bắt đầu : "
         end_date: "Ngày kết thúc : "
@@ -246,6 +277,82 @@ vi:
         courses: "Khóa học"
         show_all_course: "Tất cả các khóa học tại Framgia"
         training_program: "chương trình đào tạo"
+        language_program: "Ngôn ngữ lập trình"
+      other_course:
+        other_courses: "Khóa học khác"
+      connection_course:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        photos: "Ảnh"
+        techniques: "Công nghệ"
+    posts:
+      title: "Bài viết"
+      title_des: "Bài viết mới nhất của các thành viên"
+      read_more: "Xem thêm"
+      date_format: "%d-%m-%Y"
+      create_new: "Tạo một bài viết"
+      older: "&larr;Older"
+      newer: "Newer &rarr;"
+      show:
+        follow_us_on_twitter: "Theo dõi trên Twitter"
+        share_this_post: "Chia sẻ bài viết này:"
+        posted_by: "Được viết bởi"
+        related_posts: "Bài viết liên quan:"
+        popular: "Popular"
+        recent: "Gần đây"
+        heading: "Bài viết"
+        comments: "Bình luận"
+        heading_description: "bài viết mới nhất"
+        name: "Tên"
+        email: "Thư điện tử"
+      share_post:
+        share_this_post: "Chia sẻ bài viết"
+      posted_by:
+        posted_by: "Được viết bởi"
+      comments:
+        comments: "Bình luận"
+        login_to_comment: "Đăng nhập để bình luận"
+      comment_item:
+        delete_confirm: "Bạn có muốn tiếp tục?"
+      comment_form:
+        leave_a: "Để lại một"
+        comment: "Bình luận"
+        submit_comment: "Tạo bình luận"
+        comment_placeholder: "Bình luận nhiều hơn..."
+        submit_button: "Tạo bình luận"
+      edit_comment_form:
+        edit_button: "Lưu"
+      twitter_feed:
+        twitter_feed: "Twitter Feed"
+        follow_us_on_twitter: "Theo dõi trên Twitter"
+      flickr_photo:
+        flickr_photo_stream: "Flickr Photostream"
+      portfolio_coursel:
+        portfolio_coursel: "Portfolio Carousel"
+      tag_cloud:
+        tag_cloud: "Tag Cloud"
+      post_not_found: "Bài viết không tồn tại."
+    users:
+      show:
+        projects: "Dự Án"
+        posts: "Bài Viết"
+        courses: "Khóa Học"
+        user_not_found: "Người dùng không tồn tài."
+        page_not_found: "Trang không tồn tại."
+        activities: "Hoạt động"
+      right_column:
+        profile: "Hồ sơ"
+        about_me: "Về tôi"
+        projects: "Dự Án"
+        posts: "Bài Viết"
+        courses: "Khóa Học"
+        social_profiles: "Hồ sơ xã hội"
+      index:
+        show_all: "Xem tất cả"
+        techniques: "Công nghệ"
+        courses: "Khóa Học"
+        show_all_course: "Tất cả khóa học tại Framgia"
+        training_program: "Chương trình đào tạo"
         language_program: "Ngôn ngữ lập trình"
       other_course:
         other_courses: "Khóa học khác"

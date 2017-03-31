@@ -1,6 +1,6 @@
 <li class="<%= default_current_path %>">
   <%= link_to controller: controller_name do %>
-    <div><%= t "education.project.show_all" %></div>
+    <div><%= t ".show_all" %></div>
   <% end %>
 </li>
 <% array_technique_show, array_technique_hide = split_array(techniques) %>
@@ -14,7 +14,7 @@
 <% if array_technique_hide %>
   <li>
     <a href="#">
-      <%= t "education.projects.more" %>
+      <%= t ".more" %>
       <i class="icon-angle-down"></i>
     </a>
     <ul>

@@ -53,7 +53,7 @@ education:
     max_learning_program_name: 20
     max_learning_program: 3
   trainings:
-    per_page: 8
+    per_page: 11
     limit_string: 200
     description_rows: 5
     img_prev_size: "150x150"
