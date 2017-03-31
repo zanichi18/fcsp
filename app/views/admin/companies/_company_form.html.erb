@@ -19,7 +19,7 @@
 
   <div class="col-md-6 form-group">
     <%= f.label :company_size %>
-    <span class="label-primary box-danger"><%= t ".optional" %></span>
+    <span class="label-danger box-danger"><%= t ".required" %></span>
     <%= f.text_field :company_size, class: "form-control", autocomplete: "off" %>
   </div>
 
@@ -33,7 +33,7 @@
   <div class="col-md-6 form-group">
     <%= f.fields_for :addresses do |builder| %>
       <%= builder.label :address %>
-      <span class="label-primary box-danger"><%= t ".required" %></span>
+      <span class="label-danger box-danger"><%= t ".required" %></span>
       <%= builder.text_field :address, class: "form-control", autocomplete: "off" %>
 
       <%= builder.label :head_office %>

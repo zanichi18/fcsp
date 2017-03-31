@@ -20,18 +20,18 @@ en:
       new:
         company_registration: "Company registration"
       company_form:
-        next: "Finish"
+        next: "Next"
         required: "Required"
         optional: "Optional"
         term: "By signing up you agree to our Enterprise Terms of Service,
           Terms of Use and Policy"
       create:
-        company_created: "Create company successfully!"
+        company_created: "Create company successfully! Please create company introductions"
         company_failed: "Error(s) occur when create company"
     users:
       new:
         employer_registration: "Employer registration"
-        next: "Next"
+        next: "Finish"
         required: "Required"
         optional: "Optional"
       create:

@@ -434,8 +434,8 @@ ActiveRecord::Schema.define(version: 20170329081130) do
     t.integer  "company_id"
     t.string   "title"
     t.string   "describe"
-    t.integer  "type_of_candidates", default: 0
-    t.integer  "who_can_apply",      default: 0
+    t.integer  "type_of_candidates"
+    t.integer  "who_can_apply"
     t.integer  "status",             default: 0
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

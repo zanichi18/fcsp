@@ -78,6 +78,7 @@ en:
         submit: "Submit"
       not_found: "Team Introduction not found"
       success: "Successfully added team introduction"
+      create_confirm: "Are you sure to set up this company introduction?"
     dashboards:
       index:
         title: "Company"
@@ -399,3 +400,8 @@ en:
     comment_count: " Comments"
     submit_button: "Submit comment"
     edit_button: "Save"
+  cant_revert: "This action cannot be reversed"
+  confirm_create: "OK"
+  cancel_create: "Cancel"
+  cancelled: "Cancelled set up this company introduction"
+  safe: "This company introduction is safe"

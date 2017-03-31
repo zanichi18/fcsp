@@ -290,3 +290,22 @@
   width: 30%;
   z-index: 1000;
 }
+
+.swal2-styled{
+  min-height: 50px !important;
+  margin-top: 0 !important;
+}
+
+.swal2-icon.swal2-error .line{
+  top: -20px;
+}
+
+.swal2-icon.swal2-success{
+  .line.tip{
+    top: -12px;
+  }
+
+  .line.long{
+    top: -20px;
+  }
+}
