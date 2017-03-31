@@ -293,6 +293,8 @@ en:
       create_new: "Create new post"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      index:
+        no_posts: "No posts found"
       show:
         follow_us_on_twitter: "Follow Us on Twitter"
         share_this_post: "Share Post:"

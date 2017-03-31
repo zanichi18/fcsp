@@ -1,40 +1,44 @@
-<div class="entry clearfix">
-  <div class="entry-image post-thumb-image">
-    <%= load_cover_photo post %>
-  </div>
-  <div class="entry-c">
-    <div class="entry-title">
-      <h2>
-        <%= link_to education_post_path(post) do %>
-          <%= post.title %>
-        <% end %>
-      </h2>
+<div id="posts" class="small-thumbs">
+  <div class="entry clearfix">
+    <div class="entry-image post-thumb-image">
+      <%= load_cover_photo post %>
     </div>
-    <ul class="entry-meta clearfix">
-      <li><i class="icon-calendar3"></i>
-        <%= l post.created_at, format: :date_month_year_concise %></li>
-      <li>
-        <%= link_to "#" do %>
-          <i class="icon-user"></i> <%= post.user_name %>
+    <div class="entry-c">
+      <div class="entry-title">
+        <h2>
+          <%= link_to education_post_path(post) do %>
+            <%= post.title %>
+          <% end %>
+        </h2>
+      </div>
+      <ul class="entry-meta clearfix">
+        <li><i class="icon-calendar3"></i>
+          <%= l post.created_at, format: :date_month_year_concise %></li>
+        <li>
+          <%= link_to education_posts_path(user: post.user_id) do %>
+            <i class="icon-user"></i> <%= post.user_name %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to education_posts_path(category: post.category_id) do %>
+            <i class="icon-folder-open"></i> <%= post.category_name %>
+          <% end %>
+        </li>
+        <li>
+          <a href="#comments"><i class="icon-comments"></i>
+            <%= post.comments_count %>
+          </a>
+        </li>
+      </ul>
+      <div class="entry-content">
+        <p>
+          <%= post.content.truncate Settings.education.posts.content_character_display %>
+        </p>
+        <%= link_to education_post_path(post), class: "more-link" do %>
+          <%= t "education.posts.read_more" %>
         <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <i class="icon-folder-open"></i> <%= post.category_name %>
-        <% end %>
-      </li>
-      <li>
-        <a href="#comments"><i class="icon-comments"></i>
-          <%= post.comments_count %>
         </a>
-      </li>
-    </ul>
-    <div class="entry-content">
-      <p><%= post.content.truncate Settings.education.posts.content_character_display %></p>
-      <%= link_to education_post_path(post), class: "more-link" do %>
-        <%= t "education.posts.read_more" %>
-      <% end %>
-      </a>
+      </div>
     </div>
   </div>
 </div>
