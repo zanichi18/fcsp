@@ -234,14 +234,13 @@ vi:
         delete: "Xóa"
         delete_confirm: "Bạn chắc chứ?"
       search_form:
-        search_all: "Tất cả"
-        search: "Tìm kiếm khóa học"
       index:
         home: "Trang chủ"
         no_courses: "Không tìm thấy khóa học"
         page_title: "Danh sách tất cả các khóa học"
         course: "Khóa Học"
         filter: "Bộ Lọc"
+        search: "Tìm kiếm khóa học"
       detail_course:
         start_date: "Ngày bắt đầu : "
         end_date: "Ngày kết thúc : "

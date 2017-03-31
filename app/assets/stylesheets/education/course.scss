@@ -78,8 +78,14 @@
 
 .clearfix.course {
   margin-left: 30px;
+  margin-top: 10px;
 }
 
 .content-course {
   width: 100%;
+}
+
+.ul-courses {
+  height: 300px !important;
+  overflow: auto !important;
 }

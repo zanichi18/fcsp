@@ -234,14 +234,13 @@ en:
         delete: "Delete"
         delete_confirm: "Are you sure?"
       search_form:
-        search_all: "All Trainings"
-        search: "Search Course"
       index:
         home: "Home"
         no_courses: "Not found any course"
         page_title: "All Courses"
         course: "Courses"
         filter: "Filter"
+        search: "Search courses"
       detail_course:
         start_date: "Start date : "
         end_date: "End date : "
