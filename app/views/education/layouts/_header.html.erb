@@ -17,23 +17,23 @@
         <ul class="edu-menu-custom">
           <li class="current">
           <%= link_to education_root_url do %>
-            <div><%= t "education.header.home" %></div>
+            <div><%= t ".home" %></div>
           <% end %>
           </li>
           <li class="mega-menu">
-            <%= link_to t("education.header.project"), education_projects_path %>
+            <%= link_to t(".project"), education_projects_path %>
           </li>
           <li class="mega-menu">
-            <%= link_to t("education.header.posts"), education_posts_path %>
+            <%= link_to t(".posts"), education_posts_path %>
           </li>
           <li class="mega-menu">
-            <%= link_to t("education.header.courses"), education_courses_path %>
+            <%= link_to t(".courses"), education_courses_path %>
           </li>
           <li class="mega-menu">
-            <%= link_to t("education.header.trainings"), education_trainings_path %>
+            <%= link_to t(".trainings"), education_trainings_path %>
           </li>
           <li class="mega-menu">
-            <%= link_to t("education.header.feedback"), new_education_feedback_path %>
+            <%= link_to t(".feedback"), new_education_feedback_path %>
           </li>
           <li class="dropdown chosen-language">
             <% if session[:locale].present? %>

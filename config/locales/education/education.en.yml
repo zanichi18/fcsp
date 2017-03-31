@@ -3,8 +3,13 @@ en:
     javascripts:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
-    edit_button: "Edit"
+    shared:
+      page_title:
+        edit_button: "Edit"
     layouts:
+      nav_filter:
+        show_all: "Show all"
+        more: "More"
       footer:
         copyright: "Copyrights &copy; 2014 All Rights Reserved by Canvas Inc."
         tearm_of_use: "Terms of Use"
@@ -15,15 +20,15 @@ en:
       header_management:
         abouts: "About us"
         permissions: "Permissions management"
-    header:
-      home: "Home"
-      project: "Projects"
-      posts: "Posts"
-      courses: "Courses"
-      trainings: "Trainings"
-      trainees: "Trainees"
-      search: "Type & Hit Enter.."
-      feedback: "Feedback"
+      header:
+        home: "Home"
+        project: "Projects"
+        posts: "Posts"
+        courses: "Courses"
+        trainings: "Trainings"
+        trainees: "Trainees"
+        search: "Type & Hit Enter.."
+        feedback: "Feedback"
     trainers:
       index_project:
         placeholder_search: "Enter your search"
@@ -42,6 +47,8 @@ en:
         delete_course: "Delete course"
         confirm_delete: "Are you sure?"
     home:
+      our_projects:
+        see_more: "See more"
       introduction_video:
         before_heading: "Easily Understandable & Customizable."
         heading: "Walkthrough Videos & Demos"
@@ -125,6 +132,10 @@ en:
         edit_training: "Edit Training"
       new:
         create_training: "Create"
+        heading: "heading"
+        heading_description: "heading description"
+      new_training:
+        create_new_training: "Create a new training"
       edit:
         update_project: "Update"
       update:
@@ -136,6 +147,7 @@ en:
         training_delete_fail: "Fail to delete training."
         deleted_success: "Deleted training successfully!"
       form:
+        add_image: "Add image"
         description: "Description"
         name: "Name"
     projects:
@@ -225,6 +237,8 @@ en:
         home: "Home"
         no_courses: "Not found any course"
         page_title: "All Courses"
+        course: "Courses"
+        filter: "Filter"
       detail_course:
         start_date: "Start date : "
         end_date: "End date : "
@@ -257,6 +271,20 @@ en:
       delete:
         delete_fail: "Cannot detele member"
       not_found: "Course member not found"
+      index:
+        show_all: "Show all"
+        techniques: "Techniques"
+        courses: "Courses"
+        show_all_course: "All Courses in Framgia"
+        training_program: "Training program"
+        language_program: "Language program"
+      other_course:
+        other_courses: "other courses"
+      connection_course:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        photos: "Images"
+        techniques: "Techniques"
     posts:
       title: "Member's Posts"
       title_des: "Lastest posts of our Members"
@@ -311,6 +339,7 @@ en:
         courses: "Courses"
         user_not_found: "User not found."
         page_not_found: "Page not found."
+        activities: "Activities"
       right_column:
         profile: "Profile"
         about_me: "About me"
