@@ -4,7 +4,11 @@
   </div>
   <div class="entry-c">
     <div class="entry-title">
-      <h4><%= link_to post.title, education_post_path(post) %></h4>
+      <h4>
+        <%= link_to education_post_path(post) do %>
+          <%= post.title %>
+        <% end %>
+      </h4>
     </div>
     <ul class="entry-meta clearfix">
       <li><i class="icon-calendar3"></i>
