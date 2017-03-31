@@ -11,9 +11,7 @@ class Education::ProjectsController < Education::BaseController
     @techniques = Education::Technique.all
     respond_to do |format|
       format.html
-      format.json do
-        render json: @projects, each_serializer: Education::ProjectsSerializer
-      end
+      format.js
     end
   end
 

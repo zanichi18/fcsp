@@ -10,6 +10,7 @@ $(document).ready(function() {
     $.get($(this).attr('action'),
       data, null, 'script');
   });
+
   var size = $('.training_size').data('size')
   for (var i = size; i >= 0; i--) {
     $('#training_id'+i).on('click', function(){
@@ -20,7 +21,6 @@ $(document).ready(function() {
         data, null, 'script');
     });
   }
-
 
   $('.course_image_slide').carousel();
 
