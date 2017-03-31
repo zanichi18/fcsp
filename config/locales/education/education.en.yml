@@ -119,10 +119,10 @@ en:
         search_placeholder: "Search..."
         show_all: "Show all"
         more: "More"
+        not_found: "Training Not Found."
       trainings:
         techniques: "Techniques"
         view_courses: "View list courses"
-        not_found: "Training Not Found."
       show:
         not_found: "The training could not be found"
         home: "Home"

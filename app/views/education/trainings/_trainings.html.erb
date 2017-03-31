@@ -1,4 +1,4 @@
-<% if trainings.any? %>
+<div id="portfolio" class="portfolio grid-container portfolio-1 clearfix">
   <% trainings.each_with_index do |training, index| %>
   <% if Parity.parity_odd? index %>
     <article class="portfolio-item pf-illustrations alt clearfix">
@@ -48,8 +48,7 @@
       </div>
     </article>
   <% end %>
-<% else %>
-  <div class="text-center">
-    <h1><%= t ".not_found" %></h1>
-  </div>
-<% end %>
+</div>
+<div class="center custom-paginate">
+  <%= paginate trainings, remote: true %>
+</div>
