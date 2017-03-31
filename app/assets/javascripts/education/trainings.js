@@ -5,7 +5,13 @@ $(document).ready(function() {
     if(confirm(status_alert)) {
       delete_training(id);
     }    
-  })
+  });
+
+  $('#training_search').on('keyup',function() {
+    var training_search = $(this).val();
+    data = {training_search}
+    $.get($(this).attr('action'), data, null, 'script');
+  });
 });
 
 function delete_training(id) {
@@ -25,4 +31,4 @@ function delete_training(id) {
       location.reload();
     }
   });
-}
+};

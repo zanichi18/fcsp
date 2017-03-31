@@ -3,12 +3,17 @@ class Education::TrainingsController < Education::BaseController
   load_and_authorize_resource except: [:index, :show]
 
   def index
-    param_q = params[:q]
+    param_training = params[:training_search]
     param_technique_name = params[:technique_name]
     param_page = params[:page]
 
-    @training_object = Supports::Education::Training.new param_q,
+    @training_object = Supports::Education::Training.new param_training,
       param_technique_name, param_page
+
+    respond_to do |format|
+      format.html{request.referer}
+      format.js
+    end
   end
 
   def show
