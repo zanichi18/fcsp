@@ -16,6 +16,9 @@ en:
     show_header:
       follow: "Follow"
   admin:
+    layouts:
+      admin_header:
+        log_out: "Log out"
     companies:
       new:
         company_registration: "Company registration"

@@ -52,8 +52,6 @@ en:
         manage_post: "Manage Job Postings"
         create_job: "Create new job"
         all: "All"
-        open: "Open"
-        closed: "Closed"
         draft: "Draft"
         title: "Title"
         status: "Status"
