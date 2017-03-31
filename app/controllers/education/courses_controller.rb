@@ -42,7 +42,7 @@ class Education::CoursesController < Education::BaseController
       format.html
       format.js do
         render partial: "education/courses/form",
-          locals: {course: @course},
+          locals: {course: @course, button_text: t(".edit")},
           layout: false
       end
     end

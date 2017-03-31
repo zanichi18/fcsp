@@ -32,6 +32,7 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
+//= require jquery-ui/datepicker
 
 $(document).ready(function(){
   showEditForm('#btn-project-edit', '/education/projects/');
@@ -50,6 +51,7 @@ function showEditForm(object, path) {
         var html_text = xhr.responseText;
         $('#show-edit-form').html(html_text);
         $('#edit-modal').modal('show');
+        $('.datetimepicker').datepicker({dateFormat: 'dd/mm/yy'});
       }
     })
   })

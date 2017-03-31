@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('.datetimepicker').datepicker({
-    dateFormat: 'dd/mm/yy'
+    dateFormat: 'dd-mm-yy'
   });
 
   $('#course_search').on('keyup',function() {
