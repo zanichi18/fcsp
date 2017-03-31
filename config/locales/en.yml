@@ -193,13 +193,24 @@ en:
         view_courses: "View all courses"
       new:
         create_training: "Create"
+        add_image: "Add image"
+      new_training:
+        create_new_training: "Create a new training"
       edit:
         update_project: "Update"
+        heading: "Edit training"
+        heading_description: "Make is awesome"
+        add_image: "Add image"
+      new:
+        heading: "Create new training"
+        heading_description: "Make is awesome"
       update:
         training_updated_successfully: "Training updated successfully!"
       create:
         training_created: "Training created !"
         training_create_failed: "Create training failed!"
+      image_fields:
+        remove: "Remove"
       form:
         description: "Description"
         name: "Name"
@@ -285,6 +296,7 @@ en:
       trainees: "Trainees"
       search: "Type & Hit Enter.."
       feedback: "Feedback"
+      trainings: "Trainings"
     feedback:
       title: "Feedback"
       description: "Get in Touch with Us"
