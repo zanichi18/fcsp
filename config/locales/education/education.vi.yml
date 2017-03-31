@@ -114,12 +114,15 @@ vi:
         title: "Danh sách khóa đào tạo."
         home: "Home"
         page_title: "Danh sách khóa đào tạo"
-        techniques: "Các kỹ thuật"
-        view_courses: "Xem danh sách khóa học"
+        filter: "Filter"
         hot: "Hot"
         search_placeholder: "Tìm kiếm ..."
         show_all: "Xem tất cả"
         more: "Thêm"
+      trainings:
+        techniques: "Các kỹ thuật"
+        view_courses: "Xem danh sách khóa học"
+        not_found: "Không tìm thấy khóa đào tạo."
       show:
         not_found: "Không tìm thấy khóa đào tạo"
         home: "Trang chủ"

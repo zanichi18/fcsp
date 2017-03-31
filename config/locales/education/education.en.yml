@@ -114,12 +114,15 @@ en:
         title: "Education Trainings"
         home: "Home"
         page_title: "All Trainings"
-        techniques: "Techniques"
-        view_courses: "View list courses"
+        filter: "Filter"
         hot: "Hot"
         search_placeholder: "Search..."
         show_all: "Show all"
         more: "More"
+      trainings:
+        techniques: "Techniques"
+        view_courses: "View list courses"
+        not_found: "Training Not Found."
       show:
         not_found: "The training could not be found"
         home: "Home"

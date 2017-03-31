@@ -41,7 +41,7 @@ education:
     per_page: 12
     per_page_trainer: 11
     truncate: 100
-    link_truncate: 28
+    link_truncate: 23
     content_truncate: 75
   technique:
     per_page: 6
