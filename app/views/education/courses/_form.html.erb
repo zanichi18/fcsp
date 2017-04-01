@@ -7,13 +7,13 @@
         <div class="col-md-6 left-field">
         <%= f.input :start_date, as: :string, placeholder: t(".select_date"),
           input_html: {class: "datetimepicker",
-          value: localize(f.object.start_date,
+          value: localize(f.object.start_date || Date.today,
           format: t("education.time.formats.date_month_year"))} %>
         </div>
         <div class="col-md-6 right-field">
         <%= f.input :end_date, as: :string, placeholder: t(".select_date"),
           input_html: {class: "datetimepicker",
-          value: localize(f.object.end_date,
+          value: localize(f.object.end_date || Date.today,
           format: t("education.time.formats.date_month_year"))} %>
         </div>
       </div>

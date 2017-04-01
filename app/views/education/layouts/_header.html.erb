@@ -15,26 +15,7 @@
 
       <nav id="primary-menu" class="dark">
         <ul class="edu-menu-custom">
-          <li class="current">
-          <%= link_to education_root_url do %>
-            <div><%= t ".home" %></div>
-          <% end %>
-          </li>
-          <li class="mega-menu">
-            <%= link_to t(".project"), education_projects_path %>
-          </li>
-          <li class="mega-menu">
-            <%= link_to t(".posts"), education_posts_path %>
-          </li>
-          <li class="mega-menu">
-            <%= link_to t(".courses"), education_courses_path %>
-          </li>
-          <li class="mega-menu">
-            <%= link_to t(".trainings"), education_trainings_path %>
-          </li>
-          <li class="mega-menu">
-            <%= link_to t(".feedback"), new_education_feedback_path %>
-          </li>
+          <%= view_object(:home_tabs).html %>
           <li class="dropdown chosen-language">
             <% if session[:locale].present? %>
               <%= link_to url_for(locale: session[:locale]), class:"dropdown-toggle dropdown-custom",
