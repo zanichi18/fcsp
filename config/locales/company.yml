@@ -1,5 +1,17 @@
 en:
   companies:
+    show:
+      info: "Info"
+      news: "News"
+      jobs: "Jobs"
+      members: "Members"
+      stats: "Stats"
+      founder: "Founder"
+      founded: "Founded on"
+      no_of_members: "# of Members"
+      about_us: "About us"
+      social_profiles: "Social Profiles"
+      follow: "Follow"
     show_left_main_content:
       info: "Info"
       news: "News"
@@ -40,4 +52,45 @@ en:
       create:
         user_created: "Create employer successfully"
         create_fail: "Fail to create employer"
-
+  jobs:
+    candidate:
+      apply_job: "Job"
+    show:
+      apply_job: "Apply Job"
+    index:
+      popular_job: "Popular Jobs"
+      title: "List jobs"
+    job_title:
+      sales: "Sales"
+      show:
+        job_type: "Job type"
+        total_views: "Total views"
+    members_of_company:
+      members: "members"
+      views_all: "All members( "
+      views_all_close: ")"
+      edit_posting: "Edit posting"
+    introduction_company:
+      what_we_do: "What we do"
+      message_team_introduc_null: "Team introduction null"
+      edit_posting: "Edit posting"
+    job_description:
+      description: "Description"
+      edit_posting: "Edit posting"
+    basic_infor:
+      sales: "Sales"
+      basic_info_job: "Basic Info"
+      look_for: "Looking for"
+      job_type: "Job Type"
+      posting_feature: "Posting Features"
+      company_info: "Company Info"
+      founded: "Founded"
+      industries: "Industries"
+      learn_more_info: "Learn more about the company"
+      comma: ", "
+      benefit_null: "Benefit null"
+      indus_info: "IT / Automobiles / Industrial Machinery/ Industrial Supplies"
+    job_form:
+      next: "Next"
+    job:
+      read_more: "Read more"

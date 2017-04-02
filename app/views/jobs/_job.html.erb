@@ -1,0 +1,37 @@
+<div class="entry clearfix">
+  <div class="entry-image">
+    <%= link_to job, data:{lightbox: "image"} do %>
+      <%= image_tag job.images.present? ? job.images.first : "default.jpg" %>
+    <% end %>
+  </div>
+  <div class="entry-c">
+    <div class="entry-title">
+      <h2>
+        <%= link_to job.title, job_path(job) %>
+      </h2>
+      <ul class="entry-meta clearfix">
+        <li>
+          <i class="icon-calendar3">
+            <%= I18n.localize job.created_at, format: :long %>
+          </i>
+        </li>
+        <li>
+          <i class="icon-user">
+            <%= link_to job.company_name, company_path(job.company) %>
+          </i>
+        </li>
+        <li>
+          <a href="#"><i class="icon-comments"></i> 13</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-camera-retro"></i></a>
+        </li>
+      </ul>
+      <div class="entry-content">
+        <div class="clearfix"></div>
+        <p><%= job.describe %></p>
+        <%= link_to t(".read_more"), job, class: "more-link" %>
+      </div>
+    </div>
+  </div>
+</div>
