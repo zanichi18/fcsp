@@ -7,19 +7,8 @@ $(document).ready(function() {
     var course_search = $(this).val();
     var training_id = $('#training_id').val();
     var data = {course_search: course_search, training_id: training_id};
-    $.get($(this).attr('action'), data, null, 'script');
+    $.get('/education/courses', data, null, 'script');
   });
-
-  var size = $('.training_size').data('size')
-  for (var i = size; i >= 0; i--) {
-    $('#training_id'+i).on('click', function(){
-      var course_search = $('#course_search').val();
-      var training_id = $(this).data("value");
-      var data = {course_search: course_search, training_id: training_id}
-      $.get($(this).attr('action'),
-        data, null, 'script');
-    });
-  }
 
   $('.course_image_slide').carousel();
 

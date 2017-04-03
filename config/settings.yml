@@ -120,7 +120,7 @@ default_user_password: {"password": "123456"}
 courses:
   modal_detail: "#modal_detail"
   home_limit: 4
-  index_limit: 8
+  index_limit: 12
   course_detail: 20
   max_course_detail: 80
   truncate_other_course: 200

@@ -7,14 +7,14 @@ $(document).ready(function(){
       var user_ids = idItems
       var data = {user_search: user_search, user_ids: user_ids};
 
-      $.get("/education/courses/" + $('#course_id').val(), data, null, 'script');
+      $.get('/education/courses/' + $('#course_id').val(), data, null, 'script');
       return false;
     }
   );
 
   $('.search_added_users').on('keyup', '#search_added_users', 
     function() {
-      $.get("/education/courses/" + $('#course_id').val(),
+      $.get('/education/courses/' + $('#course_id').val(),
       $('#search_added_users').serialize(), null, 'script');
       return false;
     }

@@ -10,8 +10,9 @@
 <% training_select.last(Settings.courses.number_filter)
   .each_with_index do |training, i| %>
   <li>
-    <%= link_to truncate(training.first, length: Settings.education.search_nav.truncate_limit),"#", id: "training_id#{i}"+"",
-      data: {value: training.last} %>
+    <%= link_to truncate(training.first, 
+      length: Settings.education.search_nav.truncate_limit), 
+      controller: controller_name, training_id: training.last %>
   </li>
 <% end %>
 <li>
@@ -23,7 +24,9 @@
     <% training_select.first(training_select.size - Settings.courses
       .number_filter).each_with_index do |training, i| %>
       <li>
-        <%= link_to truncate(training.first, length: Settings.education.search_nav.truncate_limit),"#", id: "training_id#{i+4}"+"", data: {value: training.last} %>
+        <%= link_to truncate(training.first, 
+          length: Settings.education.search_nav.truncate_limit), 
+          controller: controller_name, training_id: training.last %>
       </li>
     <% end %>
   </ul>
