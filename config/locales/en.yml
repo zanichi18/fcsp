@@ -4,8 +4,9 @@ en:
       show:
         error: "Show job error!"
   pages:
-    home:
+    index:
       title: "Home"
+      job_opportunity: "Jobs Opportunity"
     about:
       content: "This is about page"
       title: "About"

@@ -1,0 +1,31 @@
+<% provide :title, t(".title") %>
+<%= render "slider" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="col-lg-5">
+        <div class="heading-block topmargin">
+          <h1><%= t "education.slider.welcome" %></h1>
+        </div>
+        <p class="lead"><%= t "education.slider.description" %></p>
+      </div>
+      <div class="col-lg-7">
+        <div class="ohidden about-edu-custom" data-height-lg="426" data-height-md="567"
+          data-height-sm="470" data-height-xs="287" data-height-xxs="183">
+            <%= image_tag "welcome2.jpg",
+              data: {animate: "fadeInUp", delay: "100"}, alt: "#{t "education.title"}" %>
+        </div>
+      </div>
+    </div>
+    <div class="section nobottommargin text-center">
+      <div class="container clear-bottommargin clearfix">
+        <div class="heading-block center">
+          <h2><%= t ".job_opportunity" %></h2>
+        </div>
+        <% @jobs.last(Settings.home.max_job).each do |job| %>
+          <%= render "job", job: job %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,8 +10,9 @@
 
       <nav id="primary-menu" class="custom-primary-menu">
         <ul class="list-header-custom">
-          <li class="current mega-menu"><%= link_to t(".dashboard"), "#" %></li>
-          <li class="mega-menu"><%= link_to t(".jobs"), "#" %></li>
+          <li class="current mega-menu"><%= link_to t(".dashboard"),
+            employer_company_dashboards_path(@company) %></li>
+          <li class="mega-menu"><%= link_to t(".jobs"), jobs_path %></li>
           <li class="mega-menu"><%= link_to t(".feed"), "#" %></li>
           <li class="mega-menu"><%= link_to t(".tools"), "#" %></li>
         </ul>
