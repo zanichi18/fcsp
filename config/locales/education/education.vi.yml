@@ -3,6 +3,7 @@ vi:
     javascripts:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
+      feedback_alert: "Bạn chắc muốn xóa?"
     shared:
       page_title:
         edit_button: "Chỉnh sửa"
@@ -19,7 +20,8 @@ vi:
         privacy_policy: "Chính sách bảo mật"
       header_management:
         abouts: "Về chúng tôi"
-        permissions: "Quản lý phân quyền"
+        permissions: "phân quyền"
+        feedbacks: "Phản Hồi"
       header:
         home: "Trang chủ"
         project: "Dự án"
@@ -393,6 +395,20 @@ vi:
       load_object:
         not_found: "Không tìm thấy"
     management:
+      feedbacks:
+        index:
+          name: "Họ tên"
+          email: "Thư điện tử"
+          subject: "Chủ đề"
+          content: "Nội dung"
+          phone_number: "Số điện thoại"
+          destroy: "Xóa"
+          title: "Phản hồi"
+          title_description: "Quản lý phản hồi về đào tạo của Framgia"
+        destroy:
+          deleted_success: "Xóa phản hồi thành công!"
+          feedback_delete_fail: "Xóa phản hồi thất bại"
+          feedback_not_found: "Phản hồi không tồn tại"
       abouts:
         edit:
           title: "Cập nhật thông tin"

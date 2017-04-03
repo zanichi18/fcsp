@@ -48,4 +48,20 @@ RSpec.describe Education::Feedback, type: :model do
         .is_at_most Settings.education.feedback.max_content_length
     end
   end
+
+  describe "get list feedback" do
+    let!(:feedback1) do
+      FactoryGirl.create :education_feedback, created_at: Time.now
+    end
+    let!(:feedback2) do
+      FactoryGirl.create :education_feedback, created_at: Time.now + 1.hour
+    end
+    let!(:feedback3) do
+      FactoryGirl.create :education_feedback, created_at: Time.now + 2.hours
+    end
+    feedbacks = Education::Feedback.newest
+    it "returns list order feedback" do
+      expect(feedbacks).to eq [feedback3, feedback2, feedback1]
+    end
+  end
 end
