@@ -6,9 +6,8 @@ $(document).ready(function() {
   $('#course_search').on('keyup',function() {
     var course_search = $(this).val();
     var training_id = $('#training_id').val();
-    data = {course_search, training_id}
-    $.get($(this).attr('action'),
-      data, null, 'script');
+    var data = {course_search: course_search, training_id: training_id};
+    $.get($(this).attr('action'), data, null, 'script');
   });
 
   var size = $('.training_size').data('size')
@@ -16,7 +15,7 @@ $(document).ready(function() {
     $('#training_id'+i).on('click', function(){
       var course_search = $('#course_search').val();
       var training_id = $(this).data("value");
-      data = {course_search, training_id}
+      var data = {course_search: course_search, training_id: training_id}
       $.get($(this).attr('action'),
         data, null, 'script');
     });

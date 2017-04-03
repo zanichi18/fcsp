@@ -5,7 +5,7 @@ $(document).ready(function(){
     function() {
       var user_search = $('#user_search').val();
       var user_ids = idItems
-      data = {user_search, user_ids}
+      var data = {user_search: user_search, user_ids: user_ids};
 
       $.get("/education/courses/" + $('#course_id').val(), data, null, 'script');
       return false;

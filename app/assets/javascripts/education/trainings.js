@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   $('#training_search').on('keyup',function() {
     var training_search = $(this).val();
-    data = {training_search}
+    data = {training_search: training_search}
     $.get($(this).attr('action'), data, null, 'script');
   });
 });

@@ -87,7 +87,7 @@ function delete_project(id) {
 $(document).ready(function() {
   $('#projects-search-txt').on('keyup',function(e) {
     var term = $(this).val();
-    var data = {term}
+    var data = {term: term};
     $.get('projects', data, null, 'script');
   });
 });
