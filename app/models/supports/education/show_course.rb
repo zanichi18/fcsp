@@ -33,7 +33,8 @@ module Supports::Education
 
     def relations
       Education::Course.relation_training(@course.training_id)
-        .newest.includes(:images).limit Settings.courses.other_coures_limit
+        .newest.includes(:images, :translations)
+        .limit Settings.courses.other_coures_limit
     end
 
     def techniques

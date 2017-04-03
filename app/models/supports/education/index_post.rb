@@ -22,7 +22,7 @@ module Supports::Education
       posts = search.result(distinct: true).includes :user, :category
       posts = posts.by_user @param_user if @param_user.present?
       posts = posts.by_category_id @param_category if @param_category.present?
-      posts.created_desc.page(@param_page)
+      posts.created_desc.includes(:translations).page(@param_page)
         .per Settings.education.trainings.per_page
     end
   end

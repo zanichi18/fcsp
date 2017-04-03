@@ -8,12 +8,12 @@ module Supports::Education
     end
 
     def projects
-      Education::Project.newest.includes(:images)
+      Education::Project.newest.includes(:images, :translations)
         .limit Settings.home.limit
     end
 
     def learning_programs
-      Education::LearningProgram
+      Education::LearningProgram.includes(:translations)
         .limit Settings.education.index.max_learning_program
     end
 
@@ -23,12 +23,12 @@ module Supports::Education
     end
 
     def courses
-      Education::Course.newest.includes(:images)
+      Education::Course.newest.includes(:images, :translations)
         .limit Settings.courses.home_limit
     end
 
     def techniques
-      Education::Technique.newest.includes(:image)
+      Education::Technique.newest.includes(:image, :translations)
         .limit Settings.education.technique.home_limit
     end
   end
