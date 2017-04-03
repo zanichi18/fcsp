@@ -15,7 +15,8 @@ $(document).ready(function(){
       var user_search = $(this).val();
       var user_ids = idItems
       var member_position = position
-      data = {user_search, user_ids, member_position}
+      var data = {user_search: user_search, user_ids: user_ids,
+        member_position: member_position}
       $.get("/education/projects/" + $('#project_id').val(), data, null, 'script');
       return false;
     }
@@ -66,7 +67,7 @@ $(document).ready(function(){
     $.ajax({
       type: 'post',
       url: '/education/project_members',
-      data: {users, project_id}
+      data: {users: users, project_id: project_id}
     });
   })
 });
