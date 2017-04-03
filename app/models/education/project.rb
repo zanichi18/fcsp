@@ -36,6 +36,16 @@ class Education::Project < ApplicationRecord
   scope :filter_by_technique, ->technique_name do
     joins(:techniques).where("education_techniques.name LIKE ?", technique_name)
   end
+  scope :next, ->project do
+    where("id > ?", project.id)
+      .order(id: :asc)
+      .limit(1)
+  end
+  scope :previous, ->project do
+    where("id < ?", project.id)
+      .order(id: :desc)
+      .limit(1)
+  end
 
   accepts_nested_attributes_for :images, allow_destroy: true
 end

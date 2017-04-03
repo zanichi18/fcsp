@@ -98,31 +98,25 @@ class Education::ProjectsController < Education::BaseController
     return unless technique_name
     @projects = Education::Project.filter_by_technique(technique_name)
       .includes(:images).page(params[:page])
-      .per pagination_by_permission
+      .per pagination_by_permission(Education::Project,
+        Settings.education.project.per_page,
+        Settings.education.project.per_page_trainer)
   end
 
   def load_project_by_name
     term = params[:term]
     return unless term
     @projects = Education::Project.search_by_name(term).includes(:images)
-      .page(params[:page]).per pagination_by_permission
+      .page(params[:page]).per pagination_by_permission(Education::Project,
+        Settings.education.project.per_page,
+        Settings.education.project.per_page_trainer)
   end
 
   def show_all_project
     return if params[:term] || params[:technique_name]
     @projects = Education::Project.newest.includes(:images)
-      .page(params[:page]).per pagination_by_permission
-  end
-
-  def pagination_by_permission
-    if current_user && manage?(Education::Project)
-      Settings.education.project.per_page_trainer
-    else
-      Settings.education.project.per_page
-    end
-  end
-
-  def manage? object
-    can?(:create, object) || can?(:update, object) || can?(:destroy, object)
+      .page(params[:page]).per pagination_by_permission(Education::Project,
+        Settings.education.project.per_page,
+        Settings.education.project.per_page_trainer)
   end
 end

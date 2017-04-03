@@ -210,6 +210,12 @@ vi:
         remove: "Xóa"
       new:
         new: "Tạo khóa học"
+        heading: "Tạo khóa học mới"
+        heading_description: "Mô tả thêm khóa học mới"
+      new_course:
+        new: "Create a new course"
+        new_description: "Create a new course description"
+        new_title: "Create a new course title"
       edit:
         edit: "Cập nhật khóa học"
         update_course: "Cập nhật khóa học"
@@ -238,6 +244,7 @@ vi:
         delete: "Xóa"
         delete_confirm: "Bạn chắc chứ?"
       search_form:
+        show_all: "Tất cả"
       index:
         home: "Trang chủ"
         no_courses: "Không tìm thấy khóa học"

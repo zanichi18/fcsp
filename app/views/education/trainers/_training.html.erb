@@ -1,6 +1,6 @@
 <article class="portfolio-item portfolio-item-training pf-media pf-icons" id="training-<%= training.id %>" >
   <div class="portfolio-image">
-    <a href="portfolio-single.html">
+    <a href="javascript:;">
       <%= load_image training %>
     </a>
     <div class="portfolio-overlay">
@@ -13,7 +13,8 @@
     </div>
   </div>
   <div class="portfolio-desc">
-    <h3><%= link_to truncate(training.name, length: Settings.education.index_name.truncate_limit), education_training_path(training) %></h3>
-    <span><%= truncate training.description, length: 20 %></span>
+    <h3><%= link_to training.name, education_training_path(training) %></h3>
+    <span><%= truncate training.description,
+      length: Settings.education.trainers.training_description_truncate %></span>
   </div>
 </article>

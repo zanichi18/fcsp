@@ -46,6 +46,18 @@
           <%= render "image_fields", f: image %>
         <% end %>
       </div>
+
+      <%= link_to_add_association f, :images, class: "button button-3d
+        button-rounded button-green" do %>
+        <i class="icon-upload"></i>
+        <%= t ".add_image" %>
+      <% end %>
+
+      <%= button_tag type: :submit, class: "button button-3d button-rounded
+        button-amber" do %>
+        <i class="icon-plus-sign"></i>
+        <%= button_text %>
+      <% end %>
     <% end %>
   </div>
 </div>
