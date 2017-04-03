@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, only: :session
-  get "/pages/*page" => "pages#show"
-  root "pages#home"
+  root "pages#index"
   resources :companies, only: :show
   namespace :education do
     namespace :management do

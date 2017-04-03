@@ -1,0 +1,13 @@
+<div class="col_one_third nobottommargin">
+  <div class="feature-box media-box">
+    <div class="fbox-media">
+      <%= link_to job do %>
+        <%= image_tag job.images.present? ? job.images.first : "default.jpg" %>
+      <% end %>
+    </div>
+    <div class="fbox-desc">
+      <h3><%= link_to job.title, job_path(job) %></h3>
+      <p><%= truncate job.describe, length: Settings.truncate_job_describe %></p>
+    </div>
+  </div>
+</div>
