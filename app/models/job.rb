@@ -18,6 +18,8 @@ class Job < ApplicationRecord
     reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :images
 
+  delegate :name, to: :company, prefix: true
+
   ATTRIBUTES = [:title, :describe, :type_of_candidates, :who_can_apply, :status,
     :company_id, hiring_type_ids: [], images_attributes: [:id,
     :imageable_id, :imageable_type, :picture, :caption]]

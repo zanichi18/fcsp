@@ -1,0 +1,14 @@
+<div class="spost clearfix">
+  <div class="entry-image">
+    <a href="#" class="nobg">
+    <%= image_tag job.images.present? ? job.images.first : "default.jpg" %>
+  </div>
+  <div class="entry-c">
+    <div class="entry-title">
+      <h4><%= link_to job.title %></h4>
+    </div>
+    <ul class="entry-meta">
+      <li><i class="icon-comments-alt"></i> 35 Comments</li>
+    </ul>
+  </div>
+</div>

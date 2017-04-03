@@ -20,3 +20,6 @@
 //= require team_introduction
 //= require flash_message
 //= require common
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
