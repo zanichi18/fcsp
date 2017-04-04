@@ -30,14 +30,24 @@
 </div>
 
 <section id="content"  class="content-course">
-  <div class="content-wrap nopadding", id="tab-courses">
-    <div id="portfolio" class="portfolio portfolio-4 clearfix course">
-      <%= render @courses %>
-    </div>
-    <hr/>
-    <div class="center custom-paginate">
-      <%= paginate @courses, remote: true, params: {tab: "tab-courses"} %>
-    </div>
-    <br/>
+  <div id="tab-courses">
+    <% if @courses.any? %>
+      <div class="content-wrap nobottompadding nobottompadding-custom">
+        <div id="list-portfolio" class="container clearfix">
+          <div id="portfolio" class="portfolio grid-container 
+            portfolio-full portfolio-nomargin clearfix">
+              <%= render @courses %>
+           </div>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="center">
+        <%= paginate @courses %>
+      </div>
+      <br/>
+    <% else %>
+      <div class="text-center"><h3><%= t ".no_courses" %></h3></div>
+    <% end %>
   </div>
 </section>
