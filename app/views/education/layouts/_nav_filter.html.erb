@@ -7,7 +7,7 @@
 <% array_technique_show.each do |technique| %>
   <li class="<%= current_path_trainer? technique %>">
     <%= link_to controller: controller_name, technique_name: technique.name do %>
-      <div><%= technique.name %></div>
+      <div><%= truncate(technique.name, length: Settings.education.search_nav.truncate_limit) %></div>
     <% end %>
   </li>
 <% end %>
@@ -21,7 +21,7 @@
       <% array_technique_hide.each do |technique| %>
         <li class="<%= current_path_trainer? technique %>">
           <%= link_to controller: controller_name, technique_name: technique.name do %>
-            <div><%= technique.name %></div>
+            <div><%= truncate(technique.name, length: Settings.education.search_nav.truncate_limit) %></div>
           <% end %>
         </li>
       <% end %>
