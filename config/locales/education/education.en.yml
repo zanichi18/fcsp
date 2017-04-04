@@ -31,7 +31,14 @@ en:
         trainees: "Trainees"
         search: "Type & Hit Enter.."
         feedback: "Feedback"
+        trainers: "Trainers"
     trainers:
+      trainer:
+        trainer_title: "Trainer"
+      index:
+        home: "Home"
+        trainer_description: "All trainer of education Framgia"
+        trainer_title: "Trainer"
       index_project:
         placeholder_search: "Enter your search"
         add_project: "Add new project"

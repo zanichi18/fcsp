@@ -11,7 +11,7 @@ class HomeTabs < ViewObject
      courses_tab,
      projects_tab,
      posts_tab,
-     feedbacks_tab].compact
+     trainers_tab].compact
   end
 
   def home_tab
@@ -39,9 +39,9 @@ class HomeTabs < ViewObject
       education_trainings_path, :trainings
   end
 
-  def feedbacks_tab
-    build_tab t("education.layouts.header.feedback"),
-      new_education_feedback_path, :feedbacks
+  def trainers_tab
+    build_tab t("education.layouts.header.trainers"),
+      education_trainers_path, :trainers
   end
 
   def build_tab text, path, tab_name

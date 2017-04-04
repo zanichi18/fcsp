@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-6 bottommargin">
+    <div class="team team-list clearfix">
+      <div class="team-image">
+        <%= image_tag trainer.avatar %>
+      </div>
+      <div class="team-desc">
+        <div class="team-title"><h4><%= link_to trainer.name, education_user_path(trainer) %></h4><span><%= t".trainer_title" %></span></div>
+          <div class="team-content">
+            <p><%= trainer.info_user.introduce %></p>
+          </div>
+      </div>
+  </div>
+</div>
