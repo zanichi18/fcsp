@@ -8,9 +8,12 @@
       <%= f.simple_fields_for :images do |image| %>
         <%= render "image_fields", f: image %>
       <% end %>
+      <div class="new-added-images">
+      </div>
       <div class="links">
         <%= link_to_add_association t(".add_image"), f, :images,
-          class: "button button-3d button-small button-rounded button-green" %>
+          class: "button button-3d button-small button-rounded button-green",
+          data: {"association-insertion-node": ".new-added-images"} %>
       </div>
       <%= f.submit button_text,
         class: "button button-3d button-rounded button-amber pull-right" %>

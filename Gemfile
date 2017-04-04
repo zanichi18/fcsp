@@ -46,7 +46,6 @@ gem "acts-as-taggable-on"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "rails-assets-sweetalert2", source: "https://rails-assets.org"
 gem "sweet-alert-confirm"
-gem "paranoia"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

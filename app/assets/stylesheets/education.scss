@@ -53,8 +53,37 @@
   }
 }
 
+.data-liffect {
+  img {
+    height: 250px !important;
+    width: 100% !important;
+  }
+}
+
 @media screen and (max-width: 1024px){
   .shared-title {
     flex-direction: column;
+  }
+
+  .data-liffect {
+    img {
+      height: 200px !important;
+    }
+  }
+}
+
+@media all and (max-width: 800px){
+  .data-liffect {
+    img {
+      height: 150px !important;
+    }
+  }
+}
+
+@media all and (max-width: 600px){
+  .data-liffect {
+    img {
+      height: 100px !important;
+    }
   }
 }
