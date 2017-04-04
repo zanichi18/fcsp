@@ -23,4 +23,8 @@ module Education::GeneralHelper
   def can_manage? object
     can?(:create, object) || can?(:update, object) || can?(:destroy, object)
   end
+
+  def all_technique
+    Education::Technique.all
+  end
 end

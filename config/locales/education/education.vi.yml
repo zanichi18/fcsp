@@ -163,7 +163,10 @@ vi:
         add_image: "Thêm ảnh"
         description: "Mô tả"
         name: "Tên khóa"
+        choose_technique: "Chọn công nghệ"
     projects:
+      form:
+        choose_technique: "Chọn công nghệ"
       index:
         placeholder_search: "Nhập tìm kiếm"
         home: "Trang chủ"

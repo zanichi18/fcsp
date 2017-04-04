@@ -28,6 +28,7 @@ class Education::TrainingsController < Education::BaseController
   def create
     @training = Education::Training.new training_params
     if @training.save
+      technique_service.add
       flash[:success] = t ".training_created"
       redirect_to education_trainings_path
     else
@@ -49,6 +50,7 @@ class Education::TrainingsController < Education::BaseController
 
   def update
     if @training.update_attributes training_params
+      technique_service.update
       flash[:success] = t ".training_updated_successfully"
       redirect_to @training
     else
@@ -83,5 +85,9 @@ class Education::TrainingsController < Education::BaseController
   def training_params
     params.require(:education_training).permit :name, :description,
       images_attributes: [:id, :url, :url_cache, :_destroy]
+  end
+
+  def technique_service
+    Education::TrainingTechniqueService.new @training, params
   end
 end

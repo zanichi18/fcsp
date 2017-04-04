@@ -5,6 +5,11 @@
       <%= f.input :description, as: :text, label: t(".description"),
         class: "form-control",
         input_html: {rows: Settings.education.trainings.description_rows} %>
+      
+      <div class="form-choose-technique">
+        <%= render "education/shared/choose_technique", object: training %>
+      </div>
+
       <%= f.simple_fields_for :images do |image| %>
         <%= render "image_fields", f: image %>
       <% end %>

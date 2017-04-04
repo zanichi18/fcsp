@@ -26,6 +26,12 @@
       <%= f.input :release_note, as: :text, label: t(".release_note"),
         input_html: {rows: Settings.education.projects.textarea_rows,
           class: "form-control"} %>
+
+      <%= f.label t ".choose_technique" %>
+      <div class="form-choose-technique">
+        <%= render "education/shared/choose_technique", object: project %>
+      </div>
+      
       <div>
         <%= f.simple_fields_for :images do |image| %>
           <%= render "image_fields", f: image %>

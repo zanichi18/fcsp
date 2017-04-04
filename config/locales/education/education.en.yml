@@ -163,7 +163,10 @@ en:
         add_image: "Add image"
         description: "Description"
         name: "Name"
+        choose_technique: "Choose techniques"
     projects:
+      form:
+        choose_technique: "Choose techniques"
       index:
         placeholder_search: "Enter your search"
         home: "Home"
