@@ -27,23 +27,25 @@
         input_html: {rows: Settings.education.projects.textarea_rows,
           class: "form-control"} %>
 
-      <div class="portfolio grid-container portfolio-4">
+      <div>
+        <%= link_to_add_association f, :images, class: "button button-3d
+          button-rounded button-aqua" do %>
+          <i class="icon-upload"></i>
+          <%= t ".add_image" %>
+        <% end %>
+
+        <%= button_tag type: :submit, class: "button button-3d button-rounded
+          button-amber" do %>
+          <i class="icon-plus-sign"></i>
+          <%= button_text %>
+        <% end %>
+      </div>
+
+      <div>
         <%= f.simple_fields_for :images do |image| %>
           <%= render "image_fields", f: image %>
         <% end %>
       </div>
-
-      <%= link_to_add_association f, :images, class: "button button-3d
-        button-rounded button-aqua" do %>
-        <i class="icon-upload"></i>
-        <%= t ".add_image" %>
-      <% end %>
-
-      <%= button_tag type: :submit, class: "button button-3d button-rounded
-        button-amber" do %>
-        <i class="icon-plus-sign"></i>
-        <%= button_text %>
-      <% end %>
     <% end %>
   </div>
 </div>
