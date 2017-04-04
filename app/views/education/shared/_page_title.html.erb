@@ -1,7 +1,7 @@
 <section id="page-title" class="page-title">
-  <div class="container clearfix clearfix-custom">
+  <div class="container clearfix clearfix-custom shared-title">
     <h1><%= object.name %></h1>
-    <ol class="breadcrumb breadcrumb-custom .flex-center-vertically">
+    <ul class="flex-center-vertically shared-title-right-buttons">
       <% if have_member %>
         <li>
           <%= link_to content_tag(:i, t("education.layouts.page_title.member"), class: "icon-user"),
@@ -23,5 +23,6 @@
         <% end %>
       </li>
     </ol>
+    </div>
   </div>
 </section>
