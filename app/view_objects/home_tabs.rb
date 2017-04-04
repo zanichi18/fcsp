@@ -7,10 +7,10 @@ class HomeTabs < ViewObject
 
   def tabs
     [home_tab,
+     trainings_tab,
+     courses_tab,
      projects_tab,
      posts_tab,
-     courses_tab,
-     trainings_tab,
      feedbacks_tab].compact
   end
 
