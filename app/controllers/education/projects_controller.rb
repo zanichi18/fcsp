@@ -8,7 +8,7 @@ class Education::ProjectsController < Education::BaseController
     load_projects_by_technique
     show_all_project
 
-    @techniques = Education::Technique.all
+    @techniques = Education::Technique.with_deleted.all
     respond_to do |format|
       format.html
       format.js

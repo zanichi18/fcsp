@@ -5,9 +5,10 @@ class Education::Training < ApplicationRecord
   has_many :courses, class_name: Education::Course.name,
     foreign_key: :training_id
   has_many :images, as: :imageable
-  has_many :training_techniques, class_name: Education::TrainingTechnique.name,
+  has_many :training_techniques, ->{with_deleted},
+    class_name: Education::TrainingTechnique.name,
     foreign_key: :training_id, dependent: :destroy
-  has_many :techniques, through: :training_techniques
+  has_many :techniques, ->{with_deleted}, through: :training_techniques
 
   accepts_nested_attributes_for :images, allow_destroy: true
 

@@ -3,17 +3,19 @@ class Education::Project < ApplicationRecord
   tracked owner: proc{|controller| controller.current_user if controller}
 
   translates :description, :core_features, :release_note
+  acts_as_paranoid
 
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :rates, class_name: Education::Rate.name, as: :rateable,
     dependent: :destroy
   has_many :members, class_name: Education::ProjectMember.name,
     foreign_key: :project_id, dependent: :destroy
-  has_many :project_techniques, class_name: Education::ProjectTechnique.name,
+  has_many :project_techniques, ->{with_deleted},
+    class_name: Education::ProjectTechnique.name,
     foreign_key: :project_id, dependent: :destroy
   has_many :feedbacks, class_name: Education::Feedback.name,
     foreign_key: :project_id
-  has_many :techniques, through: :project_techniques
+  has_many :techniques, ->{with_deleted}, through: :project_techniques
   has_many :users, through: :members
   has_many :images, class_name: Education::Image.name, as: :imageable
 
