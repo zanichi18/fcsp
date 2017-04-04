@@ -10,4 +10,5 @@ class Education::Group < ApplicationRecord
   scope :get_trainers, -> do
     find_by(name: Settings.education.group_trainer_name)
   end
+  scope :filter_by_trainer, ->{find_by name: "Trainer"}
 end

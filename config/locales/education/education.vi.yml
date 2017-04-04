@@ -31,7 +31,14 @@ vi:
         trainees: "Học viên"
         search: "Type & Hit Enter.."
         feedback: "Phản hồi"
+        trainers: "Giảng viên"
     trainers:
+      trainer:
+        trainer_title: "Giảng viên"
+      index:
+        home: "Trang chủ"
+        trainer_description: "Tất cả các người đào tạo tại Framgia"
+        trainer_title: "Người đào tạo"
       index_project:
         placeholder_search: "Nhập tìm kiếm"
         add_project: "Thêm một dự án"

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :comments
       resources :rates, only: :create
     end
+    resources :trainers, only: :index
     resources :trainings
     resources :techniques
     resources :feedbacks, only: [:new, :create]
