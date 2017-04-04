@@ -31,5 +31,9 @@ module Supports::Education
       Education::Technique.newest.includes(:image, :translations)
         .limit Settings.education.technique.home_limit
     end
+
+    def trainers
+      Education::Group.get_trainers.users
+    end
   end
 end
