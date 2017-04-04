@@ -26,35 +26,23 @@
       <%= f.input :release_note, as: :text, label: t(".release_note"),
         input_html: {rows: Settings.education.projects.textarea_rows,
           class: "form-control"} %>
-
-      <div>
-        <%= link_to_add_association f, :images, class: "button button-3d
-          button-rounded button-aqua" do %>
-          <i class="icon-upload"></i>
-          <%= t ".add_image" %>
-        <% end %>
-
-        <%= button_tag type: :submit, class: "button button-3d button-rounded
-          button-amber" do %>
-          <i class="icon-plus-sign"></i>
-          <%= button_text %>
-        <% end %>
-      </div>
-
       <div>
         <%= f.simple_fields_for :images do |image| %>
           <%= render "image_fields", f: image %>
         <% end %>
       </div>
-
-      <%= link_to_add_association f, :images, class: "button button-3d
-        button-rounded button-green" do %>
-        <i class="icon-upload"></i>
-        <%= t ".add_image" %>
-      <% end %>
-
+      <div class="new-added-images">
+      </div>
+      <div class="links links-form-project">
+        <%= link_to_add_association f, :images, class: "button button-3d
+          button-small button-rounded button-green",
+          data: {"association-insertion-node": ".new-added-images"} do %>
+          <i class="icon-upload"></i>
+          <%= t ".add_image" %>
+        <% end %>
+      </div>
       <%= button_tag type: :submit, class: "button button-3d button-rounded
-        button-amber" do %>
+        button-amber pull-right" do %>
         <i class="icon-plus-sign"></i>
         <%= button_text %>
       <% end %>
