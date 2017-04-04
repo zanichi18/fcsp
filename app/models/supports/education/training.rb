@@ -18,10 +18,11 @@ module Supports::Education
 
     def trainings
       if @param_technique
-        Education::Training.filter_by_technique @param_technique
+        Education::Training.filter_by_technique(@param_technique)
+          .includes :translations
       else
         Education::Training.search(name_cont: @param_training).result
-          .includes :images
+          .includes :images, :translations
       end
     end
 

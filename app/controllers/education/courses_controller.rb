@@ -4,7 +4,7 @@ class Education::CoursesController < Education::BaseController
 
   def index
     @courses = Education::Course.by_training(params[:training_id])
-      .newest.includes(:images, :training)
+      .newest.includes(:images, :training, :translations)
       .search(name_cont: params[:course_search]).result.page(params[:page])
       .per Settings.courses.index_limit
     respond_to do |format|

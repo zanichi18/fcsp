@@ -13,12 +13,12 @@ module Supports::Education
     end
 
     def popular_posts
-      Education::Post.popular
+      Education::Post.popular.includes(:translations)
         .limit Settings.education.post.popular_posts_limit
     end
 
     def newest_post
-      Education::Post.created_desc
+      Education::Post.created_desc.includes(:translations)
         .limit Settings.education.post.newest_post_limit
     end
 
