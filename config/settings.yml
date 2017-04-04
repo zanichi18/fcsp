@@ -103,6 +103,10 @@ education:
     comment_item_avatar_size: "60x60"
   rate:
     precision: 1
+  index_name:
+    truncate_limit: 20
+  search_nav:
+    truncate_limit: 15
 team_introductions:
   images:
     number_images: 2

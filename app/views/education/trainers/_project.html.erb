@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="portfolio-desc">
-    <h3><%= link_to project.name, education_project_path(project) %></h3>
+    <h3><%= link_to truncate(project.name, length: Settings.education.index_name.truncate_limit), education_project_path(project) %></h3>
     <span><%= project.plat_form %></span>
   </div>
 </article>
