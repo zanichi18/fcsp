@@ -6,7 +6,8 @@ class Education::CoursesController < Education::BaseController
     @courses = Education::Course.by_training(params[:training_id])
       .newest.includes(:images, :training, :translations)
       .search(name_cont: params[:course_search]).result.page(params[:page])
-      .per Settings.courses.index_limit
+      .per pagination_by_permission(Education::Course,
+        Settings.courses.index_limit, Settings.courses.index_limit_trainer)
     respond_to do |format|
       format.html{request.referer}
       format.js
@@ -15,7 +16,6 @@ class Education::CoursesController < Education::BaseController
 
   def new
     @course = Education::Course.new
-    @course.images.build
   end
 
   def create

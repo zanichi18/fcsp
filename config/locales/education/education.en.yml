@@ -210,6 +210,12 @@ en:
         remove: "Remove"
       new:
         new: "Create new Course"
+        heading: "Create new course"
+        heading_description: "Heading description"
+      new_course:
+        new: "Create a new course"
+        new_description: "Create a new course description"
+        new_title: "Create a new course title"
       edit:
         edit: "Edit Course"
         update_course: "Update Course"
@@ -238,6 +244,7 @@ en:
         delete: "Delete"
         delete_confirm: "Are you sure?"
       search_form:
+        show_all: "Show all"
       index:
         home: "Home"
         no_courses: "Not found any course"

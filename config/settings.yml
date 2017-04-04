@@ -108,6 +108,8 @@ education:
     truncate_limit: 20
   search_nav:
     truncate_limit: 15
+  trainers:
+    training_description_truncate: 20
 team_introductions:
   images:
     number_images: 2
@@ -121,13 +123,16 @@ default_user_password: {"password": "123456"}
 courses:
   modal_detail: "#modal_detail"
   home_limit: 4
-  index_limit: 12
+  index_limit: 8
+  index_limit_trainer: 7
   course_detail: 20
   max_course_detail: 80
   truncate_other_course: 200
   truncate_detail_course: 200
   other_coures_limit: 12
   number_filter: 4
+  detail_rows: 5
+  new_course_image: "/assets/default.jpg"
 user:
   max_length_name: 50
 max_length_title: 50

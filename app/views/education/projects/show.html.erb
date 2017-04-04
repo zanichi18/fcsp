@@ -8,7 +8,7 @@
   <%= render "education/shared/edit_popup",
     modal_title: t("education.projects.edit_project") %>
   <div class="add_project_member_modal">
-    <%= render "add_project_member_modal", 
+    <%= render "add_project_member_modal",
       users: @show_projects.users, project: @project %>
   </div>
 <% else %>
@@ -16,17 +16,21 @@
     <div class="container clearfix">
       <h1><%= @project.name %></h1>
       <div id="portfolio-navigation">
-        <%= link_to education_project_path(@project.id - Settings.education.number_one),
-          class: "left-icon" do %>
-          <i class="icon-angle-left"></i>
+        <% if Education::Project.previous(@project).any? %>
+          <%= link_to education_project_path(Education::Project.previous(@project).first),
+            class: "left-icon" do %>
+            <i class="icon-angle-left"></i>
+          <% end %>
         <% end %>
-        <%= link_to education_project_path(rand(Settings.education.number_one..@show_projects.rand_project)),
+        <%= link_to education_project_path(@show_projects.rand_project_id),
           class: "right-icon" do %>
           <i class="icon-line-grid"></i>
         <% end %>
-        <%= link_to education_project_path(@project.id + Settings.education.number_one),
-          class: "right-icon" do %>
-          <i class="icon-angle-right"></i>
+        <% if Education::Project.next(@project).any? %>
+          <%= link_to education_project_path(Education::Project.next(@project).first),
+            class: "left-icon" do %>
+            <i class="icon-angle-right"></i>
+          <% end %>
         <% end %>
       </div>
     </div>

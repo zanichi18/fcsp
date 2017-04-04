@@ -18,8 +18,8 @@ module Supports::Education
         .newest.includes(:images).limit Settings.education.related_project.limit
     end
 
-    def rand_project
-      Education::Project.last.id
+    def rand_project_id
+      Education::Project.ids.sample
     end
 
     def user_ids

@@ -36,16 +36,16 @@
 }
 
 .shared-title {
-  display: flex;
   align-items: center;
+  display: flex;
 
   h1 {
     flex-grow: 1;
   }
 
   &-right-buttons {
-    list-style: none;
     display: flex;
+    list-style: none;
 
     li {
       margin-left: 20px;
