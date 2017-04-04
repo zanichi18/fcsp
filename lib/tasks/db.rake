@@ -103,8 +103,8 @@ namespace :db do
       end
 
       puts "Create jobs"
-      Company.all.each do |company|
-        company_id = company.id
+      5.times.each do |i|
+        company_id = 1
         title = FFaker::Lorem.sentence
         describe = FFaker::Lorem.paragraph
         type_of_candidates = 1
