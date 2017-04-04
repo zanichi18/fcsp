@@ -184,3 +184,15 @@
 .create-custom {
   padding-top: 5px;
 }
+
+.portfolio-item-project {
+  .carousel {
+    a {
+      width: 90%;
+    }
+  }
+
+  img {
+    height: 250px !important;
+  }
+}

@@ -5,7 +5,13 @@ $(document).ready(function() {
     var currentAttrValue = $(this).attr('href');
     $('.edu-group-tabs ' + currentAttrValue).show().siblings().hide();
     $(this).parent('li').addClass('edu-group-active').siblings().removeClass('edu-group-active');
+    $(currentAttrValue).addClass('active');
+    $(currentAttrValue).siblings('.active').removeClass('active');
     e.preventDefault();
+  });
+
+  $('.permissions-search').on('keyup', function(e) {
+    search_permission();
   });
 
   var data = {};
@@ -41,3 +47,19 @@ $(document).ready(function() {
     e.preventDefault();
   });
 });
+
+function search_permission() {
+  table = $('.edu-group-tab.active').find('table.permission');
+  filter = $('.edu-group-tab.active').find('.permissions-search').val().toUpperCase();
+  tr = $(table).find('tr');
+  for (i = 0; i < tr.length; i++) {
+    td = $(tr[i]).find('td')[0];
+    if (td) {
+      if ($(td).html().toUpperCase().indexOf(filter) > -1) {
+        $(tr[i]).css('display', '');
+      } else {
+        $(tr[i]).css('display', 'none');
+      }
+    }
+  }
+}

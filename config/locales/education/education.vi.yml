@@ -426,6 +426,7 @@ vi:
           title: "Quản lý phân quyền"
           title_description: "Quản lý phân quyền của Framgia Education"
         list_permissions:
+          placeholder_search: "Nhập tìm kiếm"
           object: "Đối tượng"
           create: "Tạo"
           read: "Xem"

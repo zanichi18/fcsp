@@ -61,3 +61,26 @@
 .edu-update-permission {
   float: right;
 }
+
+.group-search input {
+  background: $white url('search.png') no-repeat 9px center;
+  border: 1px solid $gray-ddd;
+  border-radius: 2em;
+  display: initial;
+  float: right;
+  font-size: 1em;
+  height: 30px;
+  margin-bottom: 7px;
+  padding: .5em 1.3em;
+  text-align: center;
+  width: 190px;
+}
+
+.group-search input:focus {
+  border-color: $blue-light;
+  width: 300px;
+}
+
+.group-custom {
+  padding-top: 10px;
+}
