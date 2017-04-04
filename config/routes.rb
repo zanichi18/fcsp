@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :groups, only: :index
       resources :permissions, only: :create
       resources :abouts, only: [:index, :update]
+      resources :feedbacks, only: [:index, :destroy]
     end
     root "home#index"
     resources :projects do

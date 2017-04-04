@@ -38,11 +38,11 @@ namespace :db do
         "do.ha.long@framgia.com": "longdh",
         "do.van.nam@framgia.com": "dovannam",
         "nguyen.ha.phan@framgia.com": "phannh",
-        "luu.thi.thom@fraamgia.com": "thomlt",
-        "thuy.viet.quoc@fraamgia.com": "thomlt",
+        "luu.thi.thom@framgia.com": "thomlt",
+        "thuy.viet.quoc@framgia.com": "thomlt",
         "tran.anh.vu@fsramgia.com": "thomlt",
         "le.quang.canh@sframgia.com": "thomlt",
-        "nguyen.ngoc.thinh@framagia.com": "thomlt",
+        "nguyen.ngoc.thinh@framgia.com": "thomlt",
         "tran.xuan.nam@framgia.com": "tranxuannam",
         "admin.education@framgia.com": "admin.education"
       }

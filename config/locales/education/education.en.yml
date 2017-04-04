@@ -3,6 +3,7 @@ en:
     javascripts:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
+      feedback_alert: "Are you sure ?"
     shared:
       page_title:
         edit_button: "Edit"
@@ -19,7 +20,8 @@ en:
         delete_object: "Are you sure?"
       header_management:
         abouts: "About us"
-        permissions: "Permissions management"
+        permissions: "Permissions"
+        feedbacks: "Feedbacks"
       header:
         home: "Home"
         project: "Projects"
@@ -210,6 +212,7 @@ en:
         new: "Create new Course"
       edit:
         edit: "Edit Course"
+        update_course: "Update Course"
       course:
         delete: "Delete"
         edit: "Edit"
@@ -392,6 +395,20 @@ en:
       load_object:
         not_found: "Not found"
     management:
+      feedbacks:
+        index:
+          name: "Name"
+          email: "Email"
+          subject: "Subject"
+          content: "Content"
+          phone_number: "Phone"
+          destroy: "delete"
+          title: "Feedback"
+          title_description: "Manage feedbacks for education of our Framgia Education"
+        destroy:
+          deleted_success: "Deleted feedback successfully!"
+          feedback_delete_fail: "Delete failed"
+          feedback_not_found: "Feedback not found"
       abouts:
         edit:
           title: "Update infomation"
