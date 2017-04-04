@@ -16,20 +16,22 @@
         controller: controller_name, training_id: training.last %>
     </li>
   <% end %>
-  <li>
-    <a href="#">
-      <%= t "education.projects.more" %>
-      <i class="icon-angle-down"></i>
-    </a>
-    <ul class="ul-courses">
-      <% training_select.first(training_select.size - Settings.courses
-        .number_filter).each_with_index do |training, i| %>
-        <li>
-          <%= link_to truncate(training.first,
-            length: Settings.education.search_nav.truncate_limit),
-            controller: controller_name, training_id: training.last %>
-        </li>
-      <% end %>
-    </ul>
-  </li>
+  <% if check_size_max?%>
+    <li>
+      <a href="#">
+        <%= t "education.projects.more" %>
+        <i class="icon-angle-down"></i>
+      </a>
+      <ul class="ul-courses">
+        <% training_select.first(training_select.size - Settings.courses
+          .number_filter).each_with_index do |training, i| %>
+          <li>
+            <%= link_to truncate(training.first,
+              length: Settings.education.search_nav.truncate_limit),
+              controller: controller_name, training_id: training.last %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
 <% end %>
