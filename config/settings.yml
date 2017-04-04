@@ -106,10 +106,13 @@ education:
     precision: 1
   index_name:
     truncate_limit: 20
+  index_detail:
+    truncate_limit: 100
   search_nav:
     truncate_limit: 15
   trainers:
     training_description_truncate: 20
+  group_trainer_name: "Trainer"
 team_introductions:
   images:
     number_images: 2

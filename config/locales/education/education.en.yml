@@ -107,6 +107,7 @@ en:
         team_member3_role: "Sales"
         team_member4_name: "Nix Maxwell"
         team_member4_role: "Support"
+        team_member_trainer: "Trainer"
       lastest_courses:
         last_courses: "Last courses"
     trainings:

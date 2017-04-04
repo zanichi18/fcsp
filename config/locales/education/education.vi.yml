@@ -107,6 +107,7 @@ vi:
         team_member3_role: "Sales"
         team_member4_name: "Nix Maxwell"
         team_member4_role: "Support"
+        team_member_trainer: "Người hướng dẫn"
       lastest_courses:
         last_courses: "Các khóa học cuối"
     trainings:

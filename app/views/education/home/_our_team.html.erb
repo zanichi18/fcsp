@@ -4,108 +4,40 @@
       <div class="heading-block center">
         <h3><%= t ".title" %></h3>
       </div>
-      <div class="col-md-3 col-sm-6 bottommargin">
-        <div class="team">
-          <div class="team-image">
-            <img src="<%= Settings.education.home_page.team_member_img_1 %>"
-              alt="<%= t ".team_member1_name" %>">
-          </div>
-          <div class="team-desc team-desc-bg">
-            <div class="team-title">
-              <h4><%= t ".team_member1_name" %></h4>
-              <span><%= t ".team_member1_role" %></span>
+      <div class="container clearfix">
+        <div id="oc-portfolio"
+          class="owl-carousel portfolio-carousel
+          portfolio-nomargin carousel-widget"
+          data-margin="1" data-pagi="false"
+          data-autoplay="5000" data-items-xxs="1" data-items-xs="2" data-items-sm="3" data-items-lg="4">
+          <% trainers.each do |trainer| %>
+            <div class="team">
+              <div class="team-image">
+                <%= link_to image_tag(trainer.avatar), education_user_path(trainer) %>
+              </div>
+              <div class="team-desc team-desc-bg">
+                <div class="team-title">
+                  <h4><%= trainer.name %></h4>
+                  <span><%= t ".team_member_trainer" %></span>
+                </div>
+                <a href="#" class="social-icon
+                  inline-block si-small si-light si-rounded si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+                <a href="#" class="social-icon
+                  inline-block si-small si-light si-rounded si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+                <a href="#" class="social-icon
+                  inline-block si-small si-light si-rounded si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+              </div>
             </div>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
-              </a>
-              <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-              <i class="icon-gplus"></i>
-              <i class="icon-gplus"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 bottommargin">
-        <div class="team">
-          <div class="team-image">
-            <img src="<%= Settings.education.home_page.team_member_img_2 %>"
-              alt="<%= t ".team_member2_name" %>">
-          </div>
-          <div class="team-desc team-desc-bg">
-            <div class="team-title">
-              <h4><%= t ".team_member2_name" %></h4>
-              <span><%= t ".team_member2_role" %></span>
-            </div>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-              <i class="icon-gplus"></i>
-              <i class="icon-gplus"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 bottommargin">
-        <div class="team">
-          <div class="team-image">
-            <img src="<%= Settings.education.home_page.team_member_img_3 %>"
-              alt="<%= t ".team_member3_name" %>">
-          </div>
-          <div class="team-desc team-desc-bg">
-            <div class="team-title">
-              <h4><%= t ".team_member3_name" %></h4>
-              <span><%= t ".team_member3_role" %></span>
-            </div>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-              <i class="icon-gplus"></i>
-              <i class="icon-gplus"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 bottommargin">
-        <div class="team">
-          <div class="team-image">
-            <img src="<%= Settings.education.home_page.team_member_img_4 %>"
-              alt="<%= t ".team_member4_name" %>">
-          </div>
-          <div class="team-desc team-desc-bg">
-            <div class="team-title">
-              <h4><%= t ".team_member4_name" %></h4>
-              <span><%= t ".team_member4_role" %></span>
-            </div>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-              <i class="icon-facebook"></i>
-              <i class="icon-facebook"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-              <i class="icon-twitter"></i>
-              <i class="icon-twitter"></i>
-            </a>
-            <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-              <i class="icon-gplus"></i>
-              <i class="icon-gplus"></i>
-            </a>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
