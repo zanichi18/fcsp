@@ -7,7 +7,7 @@
     <% end %>
   </ul>
 
-  <div class="edu-group-tab-content">
+  <div class="edu-group-tab-content group-custom">
     <% groups.each do |group| %>
       <div id="edu-group-tab-<%= group.id %>" class="edu-group-tab table-responsive">
         <%= render "list_permissions", permissions: group.permissions %>

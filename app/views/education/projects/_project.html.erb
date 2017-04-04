@@ -9,8 +9,7 @@
           <h3><%= truncate(project.name, length: Settings.education.index_name.truncate_limit) %></h3>
           <span><%= truncate(project.description, length: Settings.education.project.truncate) %></span>
         </div>
-        <a href="#" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-        <%= link_to education_project_path(project), class: "right-icon" do %>
+        <%= link_to education_project_path(project), class: "center-icon" do %>
           <i class="icon-line-ellipsis"></i>
         <% end %>
       </div>

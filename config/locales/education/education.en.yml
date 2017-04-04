@@ -426,6 +426,7 @@ en:
           title: "Groups Permissions"
           title_description: "Manage permissions of all groups of our Framgia Education"
         list_permissions:
+          placeholder_search: "Enter your search"
           object: "Object"
           create: "Create"
           read: "Read"
