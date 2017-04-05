@@ -5,11 +5,8 @@
         <div class="fslider" data-arrows="false" data-animation="fade">
           <div class="flexslider">
             <div class="slider-wrap">
-              <% course.images.each do |image| %>
-                <div class="slide course">
-                  <%= image_tag image.url %>
-                </div>
-              <% end %>
+              <%= render "education/shared/load_images_slider",
+                object: course %>
             </div>
           </div>
         </div>

@@ -13,8 +13,14 @@
     </div>
   </div>
   <div class="portfolio-desc">
-    <h3><%= link_to training.name, education_training_path(training) %></h3>
-    <span><%= truncate training.description,
-      length: Settings.education.trainers.training_description_truncate %></span>
+    <h3 title="<%= training.name %>">
+      <%= link_to truncate(training.name,
+        length: Settings.education.index_name.truncate_limit),
+        education_training_path(training) %>
+    </h3>
+    <span title="<%= training.description %>">
+      <%= truncate training.description,
+        length: Settings.education.trainers.training_description_truncate %>
+    </span>
   </div>
 </article>
