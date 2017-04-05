@@ -30,3 +30,50 @@
   padding: 0 0 0 100px;
   position: relative;
 }
+
+.technique-thumbs {
+  align-items: center;
+}
+
+.technique-index {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+
+    [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.techique-index .panel-default {
+  height: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px){
+  .technique-panel {
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+}
+
+.img-circle-custom {
+  height: 100px;
+  width: 100px;
+}
+
+.technique-item {
+  position: relative;
+}
+
+.technique-btn-group {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  z-index: 99;
+}

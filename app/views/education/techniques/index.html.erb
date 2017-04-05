@@ -3,25 +3,30 @@
     <div class="heading-block center">
       <h2><%= t "education.technique.index.our_technique" %></h2>
       <span class="divcenter">
-        <%= t "education.technique.index.introduce" %>
+        <% if current_user && can_manage?(Education::Project) %>
+          <a href="javascript:showNewForm()" class="button button-xlarge button-circle button-3d button-amber" >
+            <i class="icon-rocket"></i>
+            <%= t "education.techniques.new.create_technique" %>
+          </a>
+        <% else %>
+          <%= t "education.technique.index.introduce" %>
+        <% end %>
       </span>
     </div>
   </div>
 </div>
 
-<div class="container clearfix">
-  <div class="row">
-    <div class="col-md-4 col-sm-6 bottommargin technique-scale-width technique-align-right">
-      <%= render @techniques.in_groups(2)[0], add_css_fbox_right: "fbox-right" %>
+<div class="content-wrap">
+  <div class="container clearfix technique-index">
+    <div class="row">
+      <%= render @techniques %>
     </div>
-
-    <div class="col-md-4 hidden-sm bottommargin center technique-scale-width">
-      <img src="/assets/images/services/iphone7.png" alt="iphone 2">
-    </div>
-    <% if @techniques.in_groups(2)[1].any? %>
-      <div class="col-sm-4 bottommargin technique-scale-width technique-align-left">
-        <%= render @techniques.in_groups(2)[1], add_css_fbox_right: "" %>
-      </div>
-    <% end %>
   </div>
 </div>
+
+<div class="center">
+  <%= paginate @techniques %>
+</div>
+
+<%= render "education/shared/edit_popup",
+  modal_title: t("education.techniques.edit.edit_technique") %>

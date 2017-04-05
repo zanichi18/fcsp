@@ -29,6 +29,7 @@
 //= require education/posts
 //= require education/rates
 //= require education/trainings
+//= require education/techniques
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
@@ -42,9 +43,9 @@ $(document).ready(function(){
 
 function showEditForm(object, path) {
   $(object).on('click', function(){
-    var id = $(this).data("id");
+    var id = $(this).data('id');
     $.ajax({
-      url: path + id + "/edit" ,
+      url: path + id + '/edit' ,
       type:'GET',
       dataType: 'json',
       complete: function(xhr){

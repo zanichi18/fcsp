@@ -9,7 +9,7 @@ module Supports::Education
     end
 
     def techniques
-      Education::Technique.all
+      Education::Technique.with_deleted.all
     end
 
     def search

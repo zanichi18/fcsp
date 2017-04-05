@@ -1,4 +1,8 @@
 class Education::TrainingTechnique < ApplicationRecord
-  belongs_to :training, class_name: Education::Training.name
-  belongs_to :technique, class_name: Education::Technique.name
+  acts_as_paranoid
+
+  belongs_to :training, ->{with_deleted},
+    class_name: Education::Training.name
+  belongs_to :technique, ->{with_deleted},
+    class_name: Education::Technique.name
 end

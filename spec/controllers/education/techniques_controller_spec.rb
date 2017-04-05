@@ -78,11 +78,10 @@ RSpec.describe Education::TechniquesController, type: :controller do
         }.to change(Education::Technique, :count).by 1
       end
 
-      it "redirects to technique detail page" do
+      it "redirects to technique index page" do
         post :create, params:
           {education_technique: FactoryGirl.attributes_for(:education_technique)}
-        expect(response).to redirect_to(
-          education_technique_path(assigns[:technique]))
+        expect(response).to redirect_to education_techniques_path
       end
     end
 
@@ -112,10 +111,10 @@ RSpec.describe Education::TechniquesController, type: :controller do
         expect(technique.name).to eq "New Name"
       end
 
-      it "redirects to technique detail page" do
+      it "redirects to technique index page" do
         patch :update, params: {id: technique, education_technique:
           FactoryGirl.attributes_for(:education_technique)}
-        expect(response).to redirect_to technique
+        expect(response).to redirect_to education_techniques_path
       end
     end
 

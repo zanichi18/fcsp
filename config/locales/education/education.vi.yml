@@ -286,6 +286,7 @@ vi:
        new_faild: "Không thể tạo mới công nghệ"
       edit:
         edit_technique: "Sửa công nghệ"
+        update_technique: "Cập nhật"
       update:
         technique_updated_successfully: "Cập nhật thành công"
       destroy:

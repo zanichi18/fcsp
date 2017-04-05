@@ -285,7 +285,8 @@ en:
        new_success: "Created new technique successfully"
        new_faild: "Cannot create new technique"
       edit:
-        edit_technique: "Edit technique"
+        edit_technique: "Edit Technique"
+        update_technique: "Update Technique"
       update:
         technique_updated_successfully: "Updated technique successfully"
       destroy:
