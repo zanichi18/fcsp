@@ -17,8 +17,7 @@
 //= require i18n.js
 //= require i18n/translations
 //= require bootstrap-sprockets
-//= require employer/job
+//= require_tree ./employer
 //= require team_introduction
 //= require flash_message
 //= require common
-//= require employer/candidate

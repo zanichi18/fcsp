@@ -425,3 +425,4 @@ en:
   cancel_create: "Cancel"
   cancelled: "Cancelled set up this company introduction"
   safe: "This company introduction is safe"
+  browser_not_support: "This browser does not support FileReader."

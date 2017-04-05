@@ -14,21 +14,21 @@ var team_introduction = {
   view_image: function(className){
     $(className).on('change', function(){
       var id = this.id;
-      if (typeof (FileReader) != "undefined") {
+      if (typeof (FileReader) != 'undefined') {
         var bar = $(this).next();
         var image_holder = bar;
         image_holder.empty();
         var reader = new FileReader();
         reader.onload = function (e) {
-          $("<img />", {
-            "src": e.target.result,
-            "class": "thumb-image"
+          $('<img />', {
+            'src': e.target.result,
+            'class': 'thumb-image'
           }).appendTo(image_holder);
         };
         image_holder.show();
         reader.readAsDataURL($(this)[0].files[0]);
       } else {
-        alert("This browser does not support FileReader.");
+        alert(I18n.t("browser_not_support"));
       }
     });
   },

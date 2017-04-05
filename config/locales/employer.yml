@@ -115,6 +115,51 @@ en:
         everyone: "Everyone can apply"
         friends_om: "Only friends of members"
         of_friends_om: "Only friends of friends of members"
+    companies:
+      edit:
+        company_info: "Company Info"
+        edit_company_info: "Edit company info"
+        manage_members: "Manage members"
+        manage_images: "Manage images"
+        manage_accounts: "Manage accounts on social network"
+      update:
+        company_updated: "Company info updated !"
+        company_update_fail: "Fail to update company info"
+      edit_company_info:
+        update_company_info: "Update Company"
+        required: "(required)"
+        article_btn: "Add article"
+        article: "Article"
+      image:
+        image: "Image"
+      no_load_data:
+        facebook: "Facebook"
+        twitter: "Twitter"
+        logo: "Logo"
+        background: "Background Image"
+        what_we_do: "What We Do"
+        why_we_do: "Why We Do"
+        how_we_do: "How We Do"
+        optional: "(Optional)"
+    team_introductions:
+      form:
+        title: "Title"
+        contents: "Content"
+        images: "Image"
+        submit: "Save"
+      image_fields:
+        caption: "write caption"
+        team_introduction: "Team Introduction"
+      new:
+        team_introduction: "Team Introduction"
+        team_introduction_1: "Team Introduction 1"
+        team_introduction_2: "Team Introduction 2"
+        team_introduction_3: "Team Introduction 3"
+        team_introduction_recruitment: "Team Introduction Recruiment"
+        submit: "Submit"
+      not_found: "Team Introduction not found"
+      success: "Successfully added team introduction"
+      create_confirm: "Are you sure to set up this company introduction?"
   type_of_candidates:
     prompt: "Select type of candidates"
     engineer: "Engineer / Programmer"
@@ -144,61 +189,3 @@ en:
         statuses:
           preview: "Preview"
           community: "Community"
-    companies:
-      edit:
-        company_info: "Company Info"
-        edit_company_info: "Edit company info"
-        manage_members: "Manage members"
-        manage_images: "Manage images"
-        manage_accounts: "Manage accounts on social network"
-      edit_company_info:
-        update_company_info: "Update Company"
-        required: "(required)"
-        article: "Add article"
-    team_introductions:
-      form:
-        title: "Title"
-        contents: "Content"
-        images: "Image"
-        submit: "Save"
-      image_fields:
-        caption: "write caption"
-        team_introduction: "Team Introduction"
-      new:
-        team_introduction: "Team Introduction"
-        team_introduction_1: "Team Introduction 1"
-        team_introduction_2: "Team Introduction 2"
-        team_introduction_3: "Team Introduction 3"
-        team_introduction_recruitment: "Team Introduction Recruiment"
-        submit: "Submit"
-      not_found: "Team Introduction not found"
-      success: "Successfully added team introduction"
-      create_confirm: "Are you sure to set up this company introduction?"
-    dashboards:
-      index:
-        title: "Company"
-      dashboard:
-        menu: "Menu"
-        manager_postings: "Manager Postings"
-        candidates: "Candidates"
-        messages: "Messages"
-        recommendations: "Recommendations"
-        view_mores: "View mores"
-        current_plans: "Current Plans"
-        contact: "Contact Us"
-        trial: "Trial"
-        view_candidates: "Current viewable candidates"
-        mail: "Mail"
-        help: "Help"
-        company_info: "Company Info"
-    layouts:
-      header:
-        dashboard: "Dashboard"
-        jobs: "Jobs"
-        feed: "Feed"
-        tools: "Tools"
-        edit_profile: "Edit Profile"
-        account_info: "Account Info"
-        company_info: "Company Info"
-        setting: "Setting"
-        logout: "Logout"
