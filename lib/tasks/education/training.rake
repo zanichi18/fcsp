@@ -10,7 +10,7 @@ namespace :education do
 
       training = Education::Training.create! training_params
       4.times do |n|
-        training.training_techniques.create technique_id: rand(1..4)
+        training.training_techniques.create technique_id: n + 1
       end
       
       5.times do |i|

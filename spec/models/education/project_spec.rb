@@ -18,6 +18,84 @@ RSpec.describe Education::Project, type: :model do
     it{is_expected.to validate_presence_of :plat_form}
     it{is_expected.to validate_presence_of :pm_url}
     it{is_expected.to validate_presence_of :server_info}
+    it{is_expected.to validate_presence_of :git_repo}
+
+    it do
+      is_expected.to validate_length_of(:name)
+        .is_at_most Settings.education.project.max_name_length
+    end
+
+    it "is invalid without name" do
+      expect(FactoryGirl.build(:project, name: nil)).not_to be_valid
+    end
+    it "is invalid without description" do
+      expect(FactoryGirl.build(:project, description: nil)).not_to be_valid
+    end
+    it "is invalid without core_features" do
+      expect(FactoryGirl.build(:project, core_features: nil)).not_to be_valid
+    end
+    it "is invalid without release_note" do
+      expect(FactoryGirl.build(:project, release_note: nil)).not_to be_valid
+    end
+    it "is invalid without plat_form" do
+      expect(FactoryGirl.build(:project, plat_form: nil)).not_to be_valid
+    end
+    it "is invalid without pm_url" do
+      expect(FactoryGirl.build(:project, pm_url: nil)).not_to be_valid
+    end
+    it "is invalid without server_info" do
+      expect(FactoryGirl.build(:project, server_info: nil)).not_to be_valid
+    end
+    it "is invalid without git_repo" do
+      expect(FactoryGirl.build(:project, git_repo: nil)).not_to be_valid
+    end
+
+    it "is invalid with a long name" do
+      expect(FactoryGirl.build(:project,
+        name: "a" * (Settings.education.project.max_name_length + 1)))
+        .not_to be_valid
+    end
+    it "is invalid with a long server info" do
+      expect(FactoryGirl.build(:project,
+        name: "a" * (Settings.education.project.max_server_info_length + 1)))
+        .not_to be_valid
+    end
+    it "is invalid with a long plat form" do
+      expect(FactoryGirl.build(:project,
+        name: "a" * (Settings.education.project.max_plat_form_length + 1)))
+        .not_to be_valid
+    end
+    it "is invalid with a invalid git repo" do
+      expect(FactoryGirl.build(:project,
+        git_repo: "http://github")).not_to be_valid
+    end
+    it "is invalid with a invalid pm url" do
+      expect(FactoryGirl.build(:project,
+        pm_url: "http://order")).not_to be_valid
+    end
+
+    it "is valid with a valid name" do
+      expect(FactoryGirl.build(:project,
+        name: "a" * Settings.education.project.max_name_length)).to be_valid
+    end
+    it "is valid with a valid plat form" do
+      expect(FactoryGirl.build(:project,
+        plat_form: "a" * Settings.education.project.max_plat_form_length))
+        .to be_valid
+    end
+    it "is valid with a valid server info" do
+      expect(FactoryGirl.build(:project,
+        server_info: "a" * Settings.education.project.max_server_info_length))
+        .to be_valid
+    end
+    it "is valid with a valid git_repo" do
+      expect(FactoryGirl.build(:project,
+        git_repo: "http://github.com")).to be_valid
+    end
+    it "is valid with a valid pm_url" do
+      expect(FactoryGirl.build(:project,
+        pm_url: "http://order.framgia.com")).to be_valid
+    end
   end
 
   describe "get list project" do
