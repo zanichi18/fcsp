@@ -5,9 +5,7 @@ class Education::Management::PermissionsController <
   def create
     permissions_params.each do |id, value|
       permission = find_permission id
-      unless permission
-        return render_json t(".not_found"), 400
-      end
+      return render_json t(".not_found"), 400 unless permission
       if permission.update_attributes optional: value.symbolize_keys
         next
       else

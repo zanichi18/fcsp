@@ -3,14 +3,7 @@
     <div class="heading-block center">
       <h2><%= t "education.technique.index.our_technique" %></h2>
       <span class="divcenter">
-        <% if current_user && can_manage?(Education::Project) %>
-          <a href="javascript:showNewForm()" class="button button-xlarge button-circle button-3d button-amber" >
-            <i class="icon-rocket"></i>
-            <%= t "education.techniques.new.create_technique" %>
-          </a>
-        <% else %>
-          <%= t "education.technique.index.introduce" %>
-        <% end %>
+        <%= t "education.technique.index.introduce" %>
       </span>
     </div>
   </div>
@@ -27,6 +20,3 @@
 <div class="center">
   <%= paginate @techniques %>
 </div>
-
-<%= render "education/shared/edit_popup",
-  modal_title: t("education.techniques.edit.edit_technique") %>

@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.btn-technique-edit').on('click', function(){
     var id = $(this).data("id");
     $.ajax({
-      url: '/education/techniques/' + id + '/edit' ,
+      url: '/education/management/techniques/' + id + '/edit' ,
       type:'GET',
       dataType: 'json',
       complete: function(xhr){
@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 function showNewForm(){
   $.ajax({
-    url: '/education/techniques/new',
+    url: '/education/management/techniques/new',
     type:'GET',
     dataType: 'json',
     complete: function(xhr){
