@@ -112,6 +112,7 @@ education:
     truncate_limit: 15
   trainers:
     training_description_truncate: 20
+    truncate_limit: 160
   group_trainer_name: "Trainer"
   limit_choose_technique_name: 10
 team_introductions:
