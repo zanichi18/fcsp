@@ -1,0 +1,5 @@
+<div class="fieldset form-group form-inline">
+  <div class="col-md-4"><%= f.label :industry %></div>
+  <%= f.collection_select :industry_ids, @industries, :id, :name, {},
+    class: "form-control form-control-custom", multiple: true %>
+</div>

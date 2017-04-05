@@ -1,0 +1,10 @@
+<div class="fieldset">
+  <%= f.fields_for :addresses do |ff| %>
+    <div class="field form-group form-inline">
+      <div class="col-md-4"><%= ff.label :address %>
+      </div>
+      <%= ff.text_field :address, value: @address.address,
+      class: "form-control form-control-custom" %>
+    </div>
+  <% end %>
+</div>

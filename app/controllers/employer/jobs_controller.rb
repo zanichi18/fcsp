@@ -1,6 +1,5 @@
 class Employer::JobsController < Employer::BaseController
   load_and_authorize_resource
-  before_action :load_company
   before_action :load_hiring_types, only: [:new, :create, :edit]
   before_action :update_status, only: :create
 
@@ -56,11 +55,6 @@ class Employer::JobsController < Employer::BaseController
 
   def job_params
     params.require(:job).permit Job::ATTRIBUTES
-  end
-
-  def load_company
-    @company = Company.find_by id: params[:company_id]
-    not_found unless @company
   end
 
   def restore_job id

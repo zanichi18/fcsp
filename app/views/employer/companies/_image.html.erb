@@ -1,12 +1,9 @@
-<div class="fieldset form-group form-inline">
-  <div class="col-md-4">
-    <label>image1</label>
+<%= f.fields_for :images do |builder| %>
+  <div class="fieldset form-group form-inline">
+    <div class="col-md-4">
+      <label><%= t ".image" %></label>
+    </div>
+    <%= builder.file_field :picture, class: "upload_image" %>
+    <div id="preview"></div>
   </div>
-  <input type="file">
-</div>
-<div class="fieldset form-group form-inline">
-  <div class="col-md-4">
-    <label>image2</label>
-  </div>
-  <input type="file">
-</div>
+<% end %>
