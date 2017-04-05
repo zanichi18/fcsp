@@ -24,9 +24,14 @@
   <div class="content-wrap">
     <div class="container clearfix">
       <div class="col_two_third portfolio-single-image nobottommargin">
-        <%= link_to "#" do %>
-          <%= image_tag "images/portfolio/4/1.jpg" %>
-        <% end %>
+        <div class="fslider" data-arrows="false" data-animation="fade">
+          <div class="flexslider">
+            <div class="slider-wrap">
+              <%= render "education/shared/load_images_slider",
+                object: @training %>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="col_one_third portfolio-single-content col_last nobottommargin">

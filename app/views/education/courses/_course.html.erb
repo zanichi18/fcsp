@@ -11,10 +11,16 @@
           <% end %>
         </div>
       </div>
+    <% else %>
+      <%= image_tag ImageUploader.new.default_url %>
     <% end %>
   </div>
   <div class="portfolio-desc">
-    <h3><a href="portfolio-single-gallery.html"><%= link_to truncate(course.name, length: Settings.education.index_name.truncate_limit), education_course_path(course) %></h3>
+    <h3 title="<%= course.name %>">
+      <%= link_to truncate(course.name,
+        length: Settings.education.index_name.truncate_limit),
+        education_course_path(course) %>
+    </h3>
     <span title="<%= course.detail %>">
       <%= truncate course.detail,
         length: Settings.courses.course_detail %>
