@@ -1,14 +1,10 @@
 <section class="job-show-main-section job-description">
   <header>
     <div class="row">
-      <h3 class="col-md-9"><%= t ".description" %></h3>
-      <a class="btn btn-default .btn-xs hr-edit col-md-2 edit-description"
-        href="#">
-        <%= t ".edit_posting" %>
-      </a>
+      <h3 class="title-section col-md-9"><%= t ".description" %></h3>
     </div>
   </header>
   <div class="section-body">
-    <p id="des_job"><%= @job_object.job.describe %></p>
+    <p id="des_job"><%= @job.describe %></p>
   </div>
 </section>

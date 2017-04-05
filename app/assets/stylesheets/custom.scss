@@ -8,10 +8,6 @@
   padding: 30px;
 }
 
-.login-with-custom {
-  margin-bottom: 15px;
-}
-
 .forgot-password {
   font-size: 12px;
 }
@@ -148,9 +144,12 @@
 }
 
 .sales {
-  border: 1px solid $gray-ddd;
-  border-radius: 3px;
+  border: 1px solid $blue;
+  border-radius: 2px;
+  color: $weight-blue;
+  font-size: 13px;
   margin-top: 10px;
+  padding: 2px;
 }
 
 .job-show-cover-wrapper {
@@ -191,8 +190,9 @@
     display: inline-block;
     font-size: 18px;
     font-weight: 600;
+    margin-bottom: 20px;
     margin-right: 30px;
-    margin-top: 30px;
+    margin-top: 15px;
     vertical-align: middle;
   }
 
@@ -214,12 +214,14 @@
     margin-top: 15px;
   }
 
-  .show-all-staffing {
-    margin-top: 15px;
-  }
+  .job-show-main-section {
+    .wanted-info {
+      margin-top: 50px;
+    }
 
-  .job-show-main-section .wanted-info {
-    margin-top: 50px;
+    .section-body {
+      margin-top: 15px;
+    }
   }
 
   .wanted-info th {
@@ -256,11 +258,13 @@
 
 .map {
   height: 300px;
-  width: 300px;
 }
 
 .location-padding {
-  padding-bottom: 20px;
+  border-bottom: 1px solid $gray-ddd;
+  border-top: 1px solid $gray-ddd;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
 .team-introduction-2,
@@ -375,4 +379,44 @@
     margin-right: 8px;
     padding: 0 4px;
   }
+}
+
+.all-jobs-posting {
+  border-top: 1px solid $gray-ddd;
+  width: 100%;
+}
+
+.job-row {
+  float: left;
+  margin-bottom: 15px;
+  width: 25%;
+}
+
+.title-section {
+  color: $orange;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.job-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.margin-section {
+  margin-bottom: 15px;
+}
+
+.person-apply {
+  color: $gray-compa;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.job-posting-title {
+  font-size: 16px;
+  font-weight: 550;
 }

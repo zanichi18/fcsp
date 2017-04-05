@@ -6,14 +6,14 @@
       </span>
     </div>
     <hgroup>
-      <h3 class="job-title"> <%= @job.title %></h3>
+      <h3 class="job-title"><%= @job.title %></h3>
       <h5 class="company-name">
         <span class="company-logo">
           <% if @job_object.company.images.present? %>
-            <%= link_to image_tag(@job.company.images.picture,
+            <%= link_to image_tag(@job.company.images.first.picture,
               size: Settings.jobs.image_company_size), company_path %>
           <% else %>
-            <%= @job_object.company.name %>
+            <%= link_to @job.company_name, company_path(@job.company) %>
           <% end %>
         </span>
       </h5>
@@ -30,13 +30,13 @@
     </div>
     <ul class="job-metas pagination cf">
       <li class="published-date">
-        <span> <i class="icon-time"></i>
+        <span><i class="icon-time"></i>
           <%= @job_object.published_date %>
         </span>
       </li>
       <li class="total-views">
         <span>
-          <i class="icon-eye-open"></i> <%= t ".show.total_views" %>
+          <i class="icon-eye-open"></i><%= t ".show.total_views" %>
         </span>
       </li>
     </ul>

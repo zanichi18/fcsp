@@ -1,5 +1,7 @@
 <% if check_apply_jobs? current_user.id, job.id %>
-  <%= button_tag t(".unapply"), id: job.id, class: "btn btn-danger cancel_apply_job" %>
+  <%= button_tag t(".unapply"), id: job.id,
+    class: "btn btn-danger cancel_apply_job form-control" %>
 <% else %>
-  <%= button_tag t(".apply_job"), id: job.id, class: "btn btn-primary apply_job" %>
+  <%= button_tag t(".apply_job"), id: job.id,
+    class: "btn btn-primary apply_job form-control" %>
 <% end %>

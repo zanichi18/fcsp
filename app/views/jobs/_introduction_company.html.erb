@@ -1,23 +1,41 @@
 <section class="job-show-main-section">
   <header>
     <div class="row">
-      <h3 class=" col-md-9"><%= t ".what_we_do" %></h3>
-      <a class="btn btn-default .btn-xs hr-edit col-md-2 edit-team-intro" href="#">
-        <%= t ".edit_posting" %>
-      </a>
+      <h4 class="title-section col-md-9"><%= t ".what_we_do" %></h4>
     </div>
   </header>
-  <div class="section-body">
-    <% if @team_introduction.present? %>
-      <p></p>
-      <p>
-        <%= @team_introduction.title %>
-      </p>
-      <p></p>
-    <% else %>
-      <p></p>
-      <p><%= t ".message_team_introduc_null" %></p>
-      <p></p>
-    <% end %>
-  </div>
+  <% @job_object.team_introduction.each do |team_introduction| %>
+    <div class="row margin-section">
+      <div class="col col-md-3">
+        <% if team_introduction.images.present? %>
+          <% if team_introduction.images.count == 1 %>
+            <%= image_tag team_introduction.images.first.picture,
+              size: Settings.jobs.image_job_size %>
+          <% else %>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <%= image_tag team_introduction.images.first.picture,
+                    size: Settings.jobs.image_job_size %>
+                </div>
+                <% team_introduction.images.drop(1).each do |image_introduce| %>
+                  <div class="item">
+                    <%= image_tag image_introduce.picture,
+                      size: Settings.jobs.image_job_size %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <%= image_tag Settings.jobs.team_intro_default,
+            size: Settings.jobs.image_job_size %>
+        <% end %>
+      </div>
+      <div class="col col-md-9">
+        <b><%= team_introduction.title %></b>
+        <p><%= team_introduction.content %></p>
+      </div>
+    </div>
+  <% end %>
 </section>

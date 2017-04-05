@@ -1,24 +1,24 @@
 <section class="job-show-main-section job-show-section-members">
   <header>
     <div class="row">
-      <h4 class="website-company col-md-7 ">
-        <span>
-          <%= @job_object.company.name %>
-          <%= t ".members" %>
-        </span>
-      </h4>
-      <span class="header-btn">
-        <a class="btn btn-info col-md-2 show-all-staffing" href="#">
+      <div class="website-company col-md-7">
+        <%= @job.company_name %>
+        <%= t ".members" %>
+        <a class="btn btn-info" href="#">
           <%= t ".views_all" %>
           <% if @job_object.members.present? %>
             <%= @job_object.members.size %>
           <% end %>
           <%= t ".views_all_close" %>
         </a>
-        <a class="btn btn-default .btn-xs hr-edit col-md-2" href="#">
-          <%= t ".edit_posting" %>
-        </a>
-      </span>
+      </div>
+      <% if can? :manage, @job %>
+        <span class="header-btn">
+          <a class="btn btn-default .btn-xs hr-edit col-md-2" href="#">
+            <%= t ".edit_posting" %>
+          </a>
+        </span>
+      <% end %>
     </div>
   </header>
   <div class="job-show-member-wrapper">
@@ -31,10 +31,10 @@
               <div class="member-photo">
                 <% if member.avatar.present? %>
                   <%= link_to image_tag(member.avatar,
-                    size: Settings.jobs.image_member_size), company_path %>
+                    size: Settings.jobs.image_member_size), "#" %>
                 <% else %>
                   <%= link_to image_tag(Settings.jobs.image_member_url,
-                    size: Settings.jobs.image_member_size), company_path %>
+                    size: Settings.jobs.image_member_size), "#" %>
                 <% end %>
               </div>
               <h5><%= member.name %></h5>
