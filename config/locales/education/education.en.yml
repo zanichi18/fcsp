@@ -22,6 +22,7 @@ en:
         abouts: "About us"
         permissions: "Permissions"
         feedbacks: "Feedbacks"
+        learning_programs: "Learning Programs"
       header:
         home: "Home"
         project: "Projects"
@@ -56,29 +57,35 @@ en:
         delete_course: "Delete course"
         confirm_delete: "Are you sure?"
     home:
+      slider:
+        welcome: "Welcome to Framgia Education"
+        description: "Your huge potential + Real-world practice = The win</br>
+                      Stay here with Framgia Education and carry your ability out to the world"
+      learning_programs:
+        header: "Traning Paths"
       our_projects:
         see_more: "See more"
       introduction_video:
         before_heading: "Easily Understandable & Customizable."
-        heading: "Walkthrough Videos & Demos"
-        description: "Democracy inspire breakthroughs, Rosa Parks; inspiration raise awareness natural resources. Governance impact; transformative donation philanthropy, respect reproductive."
+        heading: "Education Videos"
+        description: "Whatever we do, we make it awsome. Whenever you trust us, you take up to the next level."
       statistics:
         course: "Courses"
         trainee: "Trainees"
         trainer: "Trainers"
       features:
-        responsive_layout: "Responsive Layout"
-        responsive_layout_des: "Powerful Layout with Responsive functionality that can be adapted to any screen size."
-        graphics: "Retina Ready Graphics"
-        graphics_des: "Looks beautiful & ultra-sharp on Retina Displays with Retina Icons, Fonts & Images."
-        performance: "Powerful Performance"
-        performance_des: "Optimized code that are completely customizable and deliver unmatched fast performance."
-        html5_video: "HTML5 Video"
-        html5_video_des: "Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background."
-        parallax_support: "Parallax Support"
-        parallax_support_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
-        endless_possibilities: "Endless Possibilities"
-        endless_possibilities_des: "Complete control on each & every element that provides endless customization possibilities."
+        mentoring: "Mentoring"
+        mentoring_des: "Orient trainees to accumulate knowledge in the most effective way. Programing knowledge, methodology as well as skills at work are conveyed to maximize your own performance in tech background."
+        coaching: "Coaching"
+        coaching_des: "We help you to learn, apply the lesson and unlock your potential on your own rather than teaching you. We leave room for you to reflect and shine, but besides our trainers will closely monitor every piece of work you do, give the real time feedback and keep the active interact among team."
+        job_rotation: "Job Rotation"
+        job_rotation_des: "In project phase, trainees are in charge of structuring and implementing the whole project from building up functions, maping database designing user interface to deploying on server. The cross-training is aimed to expose trainees to different experiences and wider variety of skills that will help enhance their performance then."
+        job_instructual_training: "Job instructual Training"
+        job_instructual_training_des: "To gain the hand-on experience, you will work with our trainer on some important tasks which are break down into smaller steps to help you easily understand and complete"
+        understudy: "Understudy"
+        understudy_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
+        apprenticeship: "Apprenticeship"
+        apprenticeship_des: "You will do a real job alongside experienced professionals. Learn from them and apply it all right into the work you do. "
         color_schemes: "Light & Dark Color Schemes"
         color_schemes_des: "Change your Website's Primary Scheme instantly by simply adding the dark class to the body."
         layouts: "Boxed & Wide Layouts"
@@ -89,8 +96,8 @@ en:
         title: "Our techniques"
         introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
       need_content:
-        header: "Optimized for Mobile & Touch Enabled Devices."
-        description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"
+        header: "Real-world, engaging and comprehensive training program."
+        description1: "In here, we will share the same love with technology and also keep in mind the mission to make our society better each day. That’s why each step we do must be realistic, engaging and benefit the company and the community. Programming insight, real projects to do, collaboration with team and work management will absolutely wrap a key package for you to leverage on IT industry."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Learn more"
       clients_say:
@@ -456,6 +463,23 @@ en:
           success: "Update successfully!"
           fail: "Update failed!"
           not_found: "Permission not found!"
+      learning_programs:
+        index:
+          title: "Traning Paths"
+          title_description: "Framgia Education's training paths"
+          name: "Name"
+          description: "Description"
+          setting: "Setting"
+        learning_program:
+          edit: "Edit"
+          delete: "Delete"
+        edit:
+          title: "Update"
+          save: "Save your changes"
+        update:
+          success: "Update successfully"
+          fail: "Update failed"
+          not_found: "Traning path not found"
     time:
       formats:
         date_month_year: "%d/%m/%Y"
