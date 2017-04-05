@@ -43,6 +43,9 @@ education:
     truncate: 100
     link_truncate: 23
     content_truncate: 75
+    max_name_length: 50
+    max_server_info_length: 255
+    max_plat_form_length: 255
   technique:
     per_page: 6
     truncate: 100
@@ -114,7 +117,11 @@ education:
     training_description_truncate: 20
     truncate_limit: 160
   group_trainer_name: "Trainer"
-  limit_choose_technique_name: 10
+  limit_choose_technique_name: 8
+  course:
+    max_name_length: 50
+  training:
+    max_name_length: 50
 team_introductions:
   images:
     number_images: 2

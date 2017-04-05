@@ -11,7 +11,8 @@ class Education::Training < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates :name, presence: true
+  validates :name, presence: true,
+    length: {maximum: Settings.education.training.max_name_length}
   validates :description, presence: true
 
   scope :newest, ->{order created_at: :desc}

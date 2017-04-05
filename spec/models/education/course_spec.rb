@@ -11,6 +11,25 @@ RSpec.describe Education::Course, type: :model do
   context "validations" do
     it{is_expected.to validate_presence_of :name}
     it{is_expected.to validate_presence_of :detail}
+    it do
+      is_expected.to validate_length_of(:name)
+        .is_at_most Settings.education.course.max_name_length
+    end
+
+    it "is valid with a valid name" do
+      expect(FactoryGirl.build(:course,
+        name: "a" * Settings.education.course.max_name_length)).to be_valid
+    end
+
+    it "is invalid without name" do
+      expect(FactoryGirl.build(:course, name: nil)).not_to be_valid
+    end
+
+    it "is invalid with a long name" do
+      expect(FactoryGirl.build(:course,
+        name: "a" * (Settings.education.course.max_name_length + 1)))
+        .not_to be_valid
+    end
   end
 
   describe "show list course" do

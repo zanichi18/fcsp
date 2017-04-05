@@ -14,7 +14,6 @@ class Education::Post < ApplicationRecord
   validates :title, presence: true,
     length: {maximum: Settings.education.post.title_max_length,
       minimum: Settings.education.post.title_min_length}
-  validates :content, presence: true
   validates :user_id, presence: true
   validates :category_id, presence: true
   validates :content, presence: true,

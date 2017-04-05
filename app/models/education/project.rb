@@ -17,14 +17,18 @@ class Education::Project < ApplicationRecord
   has_many :users, through: :members
   has_many :images, class_name: Education::Image.name, as: :imageable
 
-  validates :name, presence: true
+  validates :name, presence: true,
+    length: {maximum: Settings.education.project.max_name_length}
+  validates :server_info, presence: true,
+    length: {maximum: Settings.education.project.max_server_info_length}
+  validates :plat_form, presence: true,
+    length: {maximum: Settings.education.project.max_plat_form_length}
+  validates :pm_url, presence: true, url: true
+  validates :git_repo, presence: true, url: true
+
   validates :description, presence: true
   validates :core_features, presence: true
   validates :release_note, presence: true
-  validates :server_info, presence: true
-  validates :pm_url, presence: true
-  validates :plat_form, presence: true
-  validates :git_repo, presence: true
 
   scope :newest, ->{order created_at: :desc}
   scope :relation_plat_form, ->plat_name do

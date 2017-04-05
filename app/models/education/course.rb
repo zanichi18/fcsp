@@ -12,7 +12,8 @@ class Education::Course < ApplicationRecord
 
   delegate :id, to: :training, prefix: true, allow_nil: true
 
-  validates :name, presence: true
+  validates :name, presence: true,
+    length: {maximum: Settings.education.course.max_name_length}
   validates :detail, presence: true
 
   scope :newest, ->{order created_at: :desc}
