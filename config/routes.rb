@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :permissions, only: :create
       resources :abouts, only: [:index, :update]
       resources :feedbacks, only: [:index, :destroy]
+      resources :learning_programs, only: [:index, :update]
     end
     root "home#index"
     resources :projects do

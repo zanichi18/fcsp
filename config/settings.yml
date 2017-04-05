@@ -1,8 +1,8 @@
 languages: {en: "English", vi: "Tiếng Việt", jp: "日本語"}
 education:
   home_page:
-    introduction_video_link: "https://www.youtube.com/watch?v=eTx-_mhAb8M"
-    introduction_video_link_cover_image: "/assets/images/services/video.jpg"
+    introduction_video_link: "https://www.youtube.com/watch?v=9k-1pLiS8so"
+    introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/mqdefault.jpg"
     introduction_video_link_play_button: "/assets/images/icons/video-play.png"
     course_count: 846
     trainee_count: 21500

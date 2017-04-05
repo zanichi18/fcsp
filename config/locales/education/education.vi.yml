@@ -22,6 +22,7 @@ vi:
         abouts: "Về chúng tôi"
         permissions: "phân quyền"
         feedbacks: "Phản Hồi"
+        learning_programs: "Chương trình đào tạo"
       header:
         home: "Trang chủ"
         project: "Dự án"
@@ -56,29 +57,35 @@ vi:
         delete_course: "Xóa khóa học"
         confirm_delete: "Bạn chắc chứ?"
     home:
+      slider:
+        welcome: "Chào mừng đến với Framgia Education"
+        description: "Tiềm năng lớn của bạn + Thực hành thực tế = Chiến thắng</br>
+                      Ở lại với Framgia Education và mang khả năng của bạn đến với thế giới"
+      learning_programs:
+        header: "Chương trình đào tạo"
       our_projects:
         see_more: "Xem thêm"
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
-        heading: "Video hướng dẫn & bản trình diễn"
-        description: "Dân chủ tạo ra những bước đột phá, Rosa Parks; Nguồn cảm hứng nâng cao nhận thức về nguồn tài nguyên thiên nhiên. Tác động của Quản trị; Từ thiện đóng góp từ thiện, tôn trọng sinh sản."
+        heading: "Education Videos"
+        description: "Dù chúng ta làm gì đi chăng nữa, chúng ta cũng làm nó trở nên lộng lẫy. Bất cứ khi nào bạn tin tưởng chúng tôi, bạn sẽ lên đến cấp độ tiếp theo."
       statistics:
         course: "Khóa học"
         trainee: "Người học"
         trainer: "Người hướng dẫn"
       features:
-        responsive_layout: "Đáp ứng giao diện"
-        responsive_layout_des: "Giao diện mạnh mẽ với tính năng đáp ứng có thể được điều chỉnh cho bất kỳ kích thước màn hình nào."
-        graphics: "Đồ họa Retina sẵn sàng"
-        graphics_des: "Có vẻ đẹp và cực kỳ sắc nét trên Retina Hiển thị với Retina Biểu tượng, Phông chữ & Hình ảnh."
-        performance: "Hiệu năng mạnh mẽ"
-        performance_des: "Tối ưu hóa mã được hoàn toàn tùy chỉnh và cung cấp hiệu suất nhanh chưa từng có."
-        html5_video: "HTML5 Video"
-        html5_video_des: "Canvas cung cấp hỗ trợ cho các video HTML5 tự nhiên có thể được thêm vào nền Bối cảnh Chiều rộng đầy đủ."
-        parallax_support: "Hỗ trợ Parallax"
-        parallax_support_des: "Hiển thị nội dung của bạn một cách hấp dẫn sử dụng Phần Parallax có các khu vực tùy chỉnh không giới hạn."
-        endless_possibilities: "Khả năng vô tận"
-        endless_possibilities_des: "Kiểm soát hoàn toàn trên mỗi và mọi yếu tố cung cấp khả năng tùy biến vô tận."
+        mentoring: "Cố vấn"
+        mentoring_des: "Orient học viên để tích lũy kiến thức một cách hiệu quả nhất. Lập kế hoạch kiến thức, phương pháp cũng như kỹ năng tại nơi làm việc được truyền đạt để tối đa hóa hiệu suất của bạn trong nền công nghệ."
+        coaching: "Huấn luyện"
+        coaching_des: "Chúng tôi giúp bạn học hỏi, áp dụng bài học và mở khóa tiềm năng của bạn một mình thay vì dạy bạn. Chúng tôi để lại chỗ cho bạn để phản ánh và tỏa sáng, nhưng bên cạnh các giảng viên của chúng tôi sẽ giám sát chặt chẽ mọi công việc bạn làm, cung cấp phản hồi thời gian thực và giữ sự tương tác tích cực giữa các nhóm."
+        job_rotation: "Luân chuyển công việc"
+        job_rotation_des: "Trong giai đoạn dự án, học viên chịu trách nhiệm cấu trúc và thực hiện toàn bộ dự án từ việc xây dựng các chức năng, ánh xạ giao diện người dùng thiết kế cơ sở dữ liệu để triển khai trên máy chủ. Việc đào tạo chéo nhằm mục đích để các học viên trải nghiệm những kinh nghiệm khác nhau và nhiều kỹ năng khác nhau sẽ giúp nâng cao hiệu quả của họ sau đó."
+        job_instructual_training: "Đào tạo hướng dẫn việc làm"
+        job_instructual_training_des: "Để có được kinh nghiệm thực tiễn, bạn sẽ làm việc với huấn luyện viên của chúng tôi về một số nhiệm vụ quan trọng được chia thành các bước nhỏ hơn để giúp bạn dễ dàng hiểu và hoàn thành"
+        understudy: "Kiểm tra"
+        understudy_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
+        apprenticeship: "Học việc"
+        apprenticeship_des: "Bạn sẽ làm một công việc thực sự cùng với các chuyên gia giàu kinh nghiệm. Học hỏi từ họ và áp dụng nó ngay vào công việc bạn làm."
         color_schemes: "Các Khung Màu Ánh sáng và Đen"
         color_schemes_des: "Thay đổi sơ đồ sơ cấp của trang web của bạn ngay lập tức bằng cách thêm lớp tối cho cơ thể."
         layouts: "Boxed & Giao diện rộng"
@@ -89,8 +96,8 @@ vi:
         title: "Những công nghệ của chúng tôi"
         introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
       need_content:
-        header: "Được tối ưu hóa cho Thiết bị Di động và Được Bật."
-        description1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero quod consequuntur quibusdam, enim expedita sed quia nesciunt incidunt accusamus necessitatibus modi adipisci officia libero accusantium esse hic, obcaecati, ullam, laboriosam!"
+        header: "Chương trình đào tạo toàn cầu, hấp dẫn và toàn diện."
+        description1: "Ở đây, chúng ta sẽ chia sẻ cùng tình yêu với công nghệ và cũng ghi nhớ sứ mệnh làm cho xã hội của chúng ta ngày càng tốt hơn. Đó là lý do tại sao mỗi bước chúng ta phải làm là thực tế, thu hút và đem lại lợi ích cho công ty và cộng đồng. Lập trình minh sát, các dự án thực sự cần làm, hợp tác với đội ngũ và quản lý công việc sẽ hoàn toàn gói một gói chính cho bạn để thúc đẩy ngành công nghiệp CNTT."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Tìm hiểu thêm"
       clients_say:
@@ -456,6 +463,23 @@ vi:
           success: "Cập nhật thành công!"
           fail: "Cập nhật thất bại!"
           not_found: "Không tìm thấy phân quyền!"
+      learning_programs:
+        index:
+          title: "Chương trình đào tạo"
+          title_description: "Chương trình đào tạo của Framgia Education"
+          name: "Tên"
+          description: "Mô tả"
+          setting: "Thiết lập"
+        learning_program:
+          edit: "Chỉnh sửa"
+          delete: "Xóa"
+        edit:
+          title: "Cập nhật"
+          save: "Lưu thay đổi"
+        update:
+          success: "Cập nhật thành công"
+          fail: "Cập nhật thất bại"
+          not_found: "Không tìm thấy chương trình đào tạo"
     time:
       formats:
         date_month_year: "%d/%m/%Y"

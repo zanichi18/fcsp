@@ -1,7 +1,7 @@
 <div class="section nobottommargin text-center">
   <div class="container clear-bottommargin clearfix">
     <div class="heading-block center">
-      <h2><%= t "education.index.learning_program" %></h2>
+      <h2><%= t ".header" %></h2>
     </div>
     <div class="row topmargin-sm clearfix">
       <% learning_programs.each do |program| %>
@@ -11,10 +11,7 @@
             <span class="before-heading"><%= program.name %></span>
             <h4><%= program.name %></h4>
           </div>
-          <p title="<%= program.description %>">
-            <%= truncate(program.description,
-              length: Settings.education.index.max_learning_program_desc) %>
-          </p>
+          <p><%= program.description %></p>
         </div>
       <% end %>
     </div>

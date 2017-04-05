@@ -96,6 +96,10 @@
 .introduction-video-custom {
   background-color: $white-gray;
   height: 711px;
+
+  img {
+    width: 80%;
+  }
 }
 
 .introduction-video-url a {
