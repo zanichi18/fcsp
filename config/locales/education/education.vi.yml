@@ -23,6 +23,7 @@ vi:
         permissions: "phân quyền"
         feedbacks: "Phản Hồi"
         learning_programs: "Chương trình đào tạo"
+        techniques: "Công nghệ"
       header:
         home: "Trang chủ"
         project: "Dự án"
@@ -289,6 +290,7 @@ vi:
         update_technique: "Cập nhật"
       update:
         technique_updated_successfully: "Cập nhật thành công"
+        update_fail: "Cập nhật thất bại"
       destroy:
         technique_deleted: "Xóa công nghệ thành công"
         technique_delete_fail: "Xóa công nghệ thất bại"

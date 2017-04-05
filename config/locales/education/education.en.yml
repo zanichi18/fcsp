@@ -23,6 +23,7 @@ en:
         permissions: "Permissions"
         feedbacks: "Feedbacks"
         learning_programs: "Learning Programs"
+        techniques: "Techniques"
       header:
         home: "Home"
         project: "Projects"
@@ -289,6 +290,7 @@ en:
         update_technique: "Update Technique"
       update:
         technique_updated_successfully: "Updated technique successfully"
+        update_fail: "Cannot Upload Technique"
       destroy:
         technique_deleted: "Deleted technique successfully"
         technique_delete_fail: "Cannot delete technique"
