@@ -123,3 +123,14 @@
     height: 250px !important;
   }
 }
+
+.choose-technique {
+  min-width: 100px;
+}
+
+.form-choose-technique {
+  max-height: 200px;
+  overflow: auto;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}

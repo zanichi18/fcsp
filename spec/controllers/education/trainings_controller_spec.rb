@@ -4,6 +4,8 @@ require "support/controller_helpers"
 RSpec.describe Education::TrainingsController, type: :controller do
   let(:training){FactoryGirl.create(:training)}
   let(:technique){FactoryGirl.create(:education_technique)}
+  let(:technique1){FactoryGirl.create(:education_technique)}
+  let(:technique2){FactoryGirl.create(:education_technique)}
   let(:params_true){FactoryGirl.attributes_for :training, name: "training",
    description: "description"}
   let(:params_fail){FactoryGirl.attributes_for :training, name: nil}
@@ -55,13 +57,15 @@ RSpec.describe Education::TrainingsController, type: :controller do
   describe "POST #create" do
     it "create training successfully" do
       post :create, params: {education_training:
-        FactoryGirl.attributes_for(:training, name: "abc")}
+        FactoryGirl.attributes_for(:training, name: "abc"),
+        technique_ids: [technique1.id, technique2.id]}
       expect(flash[:success]).not_to be_empty
     end
 
     it "create training fail" do
       post :create, params: {education_training:
-        FactoryGirl.attributes_for(:training, name: nil)}
+        FactoryGirl.attributes_for(:training, name: nil),
+        technique_ids: [technique1.id, technique2.id]}
       expect(flash[:danger]).not_to be_empty
       expect(response).to render_template :new
     end
@@ -76,7 +80,8 @@ RSpec.describe Education::TrainingsController, type: :controller do
 
   describe "PATCH #update" do
     it "update successfully" do
-      patch :update, params: {id: training, education_training: params_true}
+      patch :update, params: {id: training, education_training: params_true,
+        technique_ids: [technique1.id, technique2.id]}
       expect(controller).to set_flash[:success]
     end
 

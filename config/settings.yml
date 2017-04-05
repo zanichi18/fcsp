@@ -113,6 +113,7 @@ education:
   trainers:
     training_description_truncate: 20
   group_trainer_name: "Trainer"
+  limit_choose_technique_name: 10
 team_introductions:
   images:
     number_images: 2

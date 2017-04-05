@@ -31,9 +31,9 @@ class Education::ProjectsController < Education::BaseController
   end
 
   def create
-    @new_project = Supports::Education::NewProject.new
     @project = Education::Project.new project_params
     if @project.save
+      technique_service.add
       flash[:success] = t ".project_created"
       redirect_to @project
     else
@@ -54,6 +54,7 @@ class Education::ProjectsController < Education::BaseController
 
   def update
     if @project.update_attributes project_params
+      technique_service.update
       flash[:success] = t ".project_updated_successfully"
       redirect_to @project
     else
@@ -118,5 +119,9 @@ class Education::ProjectsController < Education::BaseController
       .page(params[:page]).per pagination_by_permission(Education::Project,
         Settings.education.project.per_page,
         Settings.education.project.per_page_trainer)
+  end
+
+  def technique_service
+    Education::ProjectTechniqueService.new @project, params
   end
 end

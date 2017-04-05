@@ -4,6 +4,8 @@ require "support/controller_helpers"
 RSpec.describe Education::ProjectsController, type: :controller do
   let(:project){FactoryGirl.create(:project)}
   let(:technique){FactoryGirl.create(:education_technique)}
+  let(:technique1){FactoryGirl.create(:education_technique)}
+  let(:technique2){FactoryGirl.create(:education_technique)}
   let!(:user){FactoryGirl.create(:user)}
   before :each do
     FactoryGirl.create :project_technique, project_id: project.id,
@@ -102,7 +104,8 @@ RSpec.describe Education::ProjectsController, type: :controller do
       it "save new project to database" do
         expect{
           post :create, xhr: true, params:
-            {education_project: FactoryGirl.attributes_for(:project)}
+            {education_project: FactoryGirl.attributes_for(:project),
+              technique_ids: [technique1.id, technique2.id]}
         }.to change(Education::Project, :count).by 1
       end
     end
@@ -130,7 +133,8 @@ RSpec.describe Education::ProjectsController, type: :controller do
     context "with valid attributes" do
       it "update project attributes" do
         patch :update, xhr: true, params: {id: project, education_project:
-          FactoryGirl.attributes_for(:project, name: "New Name")}
+          FactoryGirl.attributes_for(:project, name: "New Name"),
+          technique_ids: [technique1.id, technique2.id]}
         project.reload
         expect(project.name).to eq "New Name"
       end
