@@ -423,6 +423,33 @@ vi:
       load_object:
         not_found: "Không tìm thấy"
     management:
+      group_users:
+        index:
+          title: "Quản lý nhóm của thành viên"
+          title_description: "Quản lý nhóm của thành viên"
+        destroy:
+          remove_success: "Xóa thành công"
+          group_not_found: "Không tìm thấy nhóm"
+          user_not_found: "Không tìm thấy thành viên"
+          remove_failed: "Xóa thất bại"
+        create:
+          add_success: "Thêm thành viên vào nhóm thành công"
+          group_not_found: "Không tìm thấy nhóm"
+          user_not_found: "Không tìm thấy thành viên"
+          add_failed: "Thêm thành viên vào nhóm thất bại"
+        users:
+          name: "Tên"
+          email: "Thư điện tử"
+          add_user: "Thêm thành viên vào nhóm"
+          remove: "Xóa"
+        add_user_modal:
+          choose_all: "Chọn tất cả"
+          add: "Thêm vào nhóm"
+          close: "Đóng"
+          search: "Tìm kiếm"
+        list_groups:
+          placeholder_search: "Tìm kiếm"
+        at_least_one: "Chọn ít nhất một thành viên"
       feedbacks:
         index:
           name: "Họ tên"
