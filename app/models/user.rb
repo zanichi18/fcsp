@@ -45,6 +45,10 @@ class User < ApplicationRecord
     where("id NOT IN (?)", object.users.pluck(:user_id)) if object.users.any?
   end
 
+  scope :in_object, ->object do
+    where("id IN (?)", object.users.pluck(:user_id))
+  end
+
   def bookmark job
     bookmarks.create job_id: job.id
   end

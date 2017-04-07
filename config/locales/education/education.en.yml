@@ -423,6 +423,33 @@ en:
       load_object:
         not_found: "Not found"
     management:
+      group_users:
+        index:
+          title: "Group user management"
+          title_description: "Group user management and more"
+        destroy:
+          remove_success: "Successfully removed"
+          group_not_found: "Group not found"
+          user_not_found: "User not found"
+          remove_failed: "Remove failed"
+        create:
+          add_success: "Successfully added"
+          group_not_found: "Group not found"
+          user_not_found: "User not found"
+          add_failed: "Add failed"
+        users:
+          name: "Name"
+          email: "Email"
+          add_user: "Add user to group"
+          remove: "Remove"
+        add_user_modal:
+          choose_all: "Choose all"
+          add: "Add to group"
+          close: "Close"
+          search: "Search"
+        list_groups:
+          placeholder_search: "Search"
+        at_least_one: "Please choose at least one user"
       feedbacks:
         index:
           name: "Name"

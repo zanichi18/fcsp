@@ -24,10 +24,4 @@ class Education::Management::PermissionsController <
   def find_permission id
     Education::Permission.find_by id: id
   end
-
-  def render_json message, status_code
-    respond_to do |format|
-      format.json{render json: {flash: message, status: status_code}}
-    end
-  end
 end

@@ -18,7 +18,8 @@ RSpec.describe Education::Management::TechniquesController, type: :controller do
     context "render the show template" do
       it{expect(subject).to respond_with 200}
       it do
-        expect(subject).to render_with_layout "education/layouts/application_management"
+        expect(subject)
+          .to render_with_layout "education/layouts/application_management"
       end
       it{expect(subject).to render_template :index}
     end
@@ -40,13 +41,15 @@ RSpec.describe Education::Management::TechniquesController, type: :controller do
       it "save new technique to database" do
         expect do
           post :create, params:
-            {education_technique: FactoryGirl.attributes_for(:education_technique)}
+            {education_technique: FactoryGirl
+              .attributes_for(:education_technique)}
         end.to change(Education::Technique, :count).by 1
       end
 
       it "redirects to technique index page" do
         post :create, params:
-          {education_technique: FactoryGirl.attributes_for(:education_technique)}
+          {education_technique: FactoryGirl
+            .attributes_for(:education_technique)}
         expect(response).to redirect_to education_management_techniques_path
       end
     end
@@ -55,13 +58,15 @@ RSpec.describe Education::Management::TechniquesController, type: :controller do
       it "does not save invalid technique to database" do
         expect do
           post :create, params:
-            {education_technique: FactoryGirl.attributes_for(:invalid_technique)}
+            {education_technique: FactoryGirl
+              .attributes_for(:invalid_technique)}
         end.not_to change(Education::Technique, :count)
       end
       it "show flash error" do
         post :create, params:
           {education_technique: FactoryGirl.attributes_for(:invalid_technique)}
-        expect(flash[:danger]).to eq I18n.t("education.techniques.create.new_faild")
+        expect(flash[:danger])
+          .to eq I18n.t("education.techniques.create.new_faild")
       end
     end
   end
@@ -95,7 +100,8 @@ RSpec.describe Education::Management::TechniquesController, type: :controller do
       it "show flash error" do
         patch :update, params: {id: technique,
           education_technique: FactoryGirl.attributes_for(:invalid_technique)}
-        expect(flash[:danger]).to eq I18n.t("education.techniques.update.update_fail")
+        expect(flash[:danger])
+          .to eq I18n.t("education.techniques.update.update_fail")
       end
     end
   end
@@ -103,7 +109,8 @@ RSpec.describe Education::Management::TechniquesController, type: :controller do
   describe "DELETE #destroy" do
     let!(:technique){FactoryGirl.create :education_technique}
     it "deletes the technique" do
-      expect{delete :destroy, params: {id: technique}}.to change(Education::Technique, :count).by -1
+      expect{delete :destroy, params: {id: technique}}
+        .to change(Education::Technique, :count).by -1
     end
 
     it "redirects to education root path" do

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       resources :feedbacks, only: [:index, :destroy]
       resources :learning_programs, only: [:index, :update]
       resources :techniques
+      resource :group_users, only: :destroy
+      resources :group_users, only: [:create, :index]
     end
     root "home#index"
     resources :projects do
