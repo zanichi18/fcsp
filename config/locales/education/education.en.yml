@@ -4,6 +4,8 @@ en:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
       feedback_alert: "Are you sure ?"
+      active_alert: "will be actived?"
+      block_alert: "will be blocked?"
     shared:
       page_title:
         edit_button: "Edit"
@@ -510,6 +512,34 @@ en:
           success: "Update successfully"
           fail: "Update failed"
           not_found: "Traning path not found"
+      users:
+        index:
+          title: "Users Management"
+          title_description: "Manage users of Framgia Education"
+        list:
+          name: "Name"
+          email: "Email"
+          status: "Status"
+          group: "Group"
+          action: "Action"
+          show_details: "Show detais"
+        search_form:
+          placeholder: "Enter name or email ..."
+        import:
+          title: "Import users from Excel file"
+          submit: "Import"
+        update:
+          not_found: "User not found"
+          success: "Update successfully"
+          fail: "Update failed"
+        create:
+          success: "Users imported."
     time:
       formats:
         date_month_year: "%d/%m/%Y"
+    user_status:
+      blocked: "Blocked"
+      active: "Active"
+    import_user:
+      unknow_format: "Unknow file type"
+      row_error: "Error in row"

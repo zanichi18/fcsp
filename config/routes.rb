@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :techniques
       resource :group_users, only: :destroy
       resources :group_users, only: [:create, :index]
+      resources :users, only: [:index, :update, :create]
     end
     root "home#index"
     resources :projects do

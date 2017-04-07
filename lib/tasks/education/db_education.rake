@@ -67,6 +67,8 @@ namespace :education do
       Education::Permission.create entry: model, group_id: 1,
         optional: {create: true, read: true, update: true, destroy: true}
     end
+    Education::Permission.create entry: "User", group_id: 1,
+      optional: {create: true, read: true, update: true, destroy: true}
     (2..4).each do |group_id|
       all_education_models.each do |model|
         Education::Permission.create entry: model, group_id: group_id,

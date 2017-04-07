@@ -4,6 +4,8 @@ vi:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
       feedback_alert: "Bạn chắc muốn xóa?"
+      active_alert: "sẽ được kích hoạt?"
+      block_alert: "sẽ bị khóa?"
     shared:
       page_title:
         edit_button: "Chỉnh sửa"
@@ -510,6 +512,34 @@ vi:
           success: "Cập nhật thành công"
           fail: "Cập nhật thất bại"
           not_found: "Không tìm thấy chương trình đào tạo"
+      users:
+        index:
+          title: "Quản lý người dùng"
+          title_description: "Quản lý người dùng của Framgia Education"
+        list:
+          name: "Tên"
+          email: "Email"
+          status: "Trạng thái"
+          group: "Nhóm"
+          action: "Hành động"
+          show_details: "Xem chi tiết"
+        search_form:
+          placeholder: "Nhập tên hoặc email ..."
+        import:
+          title: "Nhập người dùng từ file Excel"
+          submit: "Nhập"
+        update:
+          not_found: "Không tìm thấy người dùng"
+          success: "Cập nhật thành công"
+          fail: "Cập nhật thất bại"
+        create:
+          success: "Đã nhập người dùng thành công."
     time:
       formats:
         date_month_year: "%d/%m/%Y"
+    user_status:
+      blocked: "Khóa"
+      active: "Kích hoạt"
+    import_user:
+      unknow_format: "Tệp không đúng định dạng"
+      row_error: "Lỗi tại dòng"

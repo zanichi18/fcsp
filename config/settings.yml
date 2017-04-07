@@ -1,5 +1,10 @@
 languages: {en: "English", vi: "Tiếng Việt", jp: "日本語"}
 education:
+  management:
+    users:
+      per_page: 20
+      active: "active"
+      blocked: "blocked"
   home_page:
     introduction_video_link: "https://www.youtube.com/watch?v=9k-1pLiS8so"
     introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/mqdefault.jpg"

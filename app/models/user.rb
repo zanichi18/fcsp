@@ -34,12 +34,14 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
+  enum education_status: [:blocked, :active], _prefix: true
 
   after_create :create_user_group
 
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
   validates :email, presence: true
+  validates :education_status, presence: true
 
   scope :not_in_object, ->object do
     where("id NOT IN (?)", object.users.pluck(:user_id)) if object.users.any?
@@ -47,6 +49,43 @@ class User < ApplicationRecord
 
   scope :in_object, ->object do
     where("id IN (?)", object.users.pluck(:user_id))
+  end
+
+  scope :of_education, -> do
+    joins(:education_user_groups).distinct
+  end
+
+  class << self
+    def import file
+      (2..spreadsheet(file).last_row).each do |row|
+        value = Hash[[header_of_file(file),
+          spreadsheet(file).row(row)].transpose]
+        user = find_by(id: value["id"]) || new
+        user.attributes = value.to_hash.slice *value.to_hash.keys
+        unless user.save
+          raise "#{I18n.t('education.import_user.row_error')} #{row}: \
+            #{user.errors.full_messages}"
+        end
+      end
+    end
+
+    def open_spreadsheet file
+      case File.extname file.original_filename
+      when ".csv" then Roo::CSV.new file.path
+      when ".xls" then Roo::Excel.new file.path
+      when ".xlsx" then Roo::Excelx.new file.path
+      else raise "#{I18n.t('education.import_user.unknow_format')}: \
+        #{file.original_filename}"
+      end
+    end
+
+    def spreadsheet file
+      open_spreadsheet file
+    end
+
+    def header_of_file file
+      spreadsheet(file).row 1
+    end
   end
 
   def bookmark job
