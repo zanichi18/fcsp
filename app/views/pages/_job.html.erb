@@ -1,13 +1,39 @@
-<div class="col_one_third nobottommargin">
-  <div class="feature-box media-box">
-    <div class="fbox-media">
+<% @jobs.each do |job| %>
+  <div class="ohidden about-edu-custom" data-height-lg="300" data-height-md="567"
+    data-height-sm="470" data-height-xs="287" data-height-xxs="183">
       <%= link_to job do %>
-        <%= image_tag job.images.present? ? job.images.first : "default.jpg" %>
+        <%= image_tag job.images.present? ? job.images.first : "default.jpg",
+        data: {animate: "fadeInUp", delay: "100"}, alt: "#{t "education.title"}" %>
       <% end %>
-    </div>
-    <div class="fbox-desc">
-      <h3><%= link_to job.title, job_path(job) %></h3>
-      <p><%= truncate job.describe, length: Settings.truncate_job_describe %></p>
-    </div>
   </div>
-</div>
+  <div class="padding-job">
+    <div class="title-icons job-label">
+      <span class="icon-job-type sales">
+        <%= Job.human_enum_name :type_of_candidates, job.type_of_candidates %>
+      </span>
+    </div>
+    <h3><%= link_to job.title, job_path(job) %></h3>
+    <span class="blur">
+      <%= job.describe.truncate_words Settings.truncate_job_describe %>
+    </span>
+    <div class="job-info">
+      <div>
+        <%= image_tag job.company.images.present? ? job.company.images.first : "default.jpg", class: "img-circle ava-company" %>
+      </div>
+      <div class="company-name">
+        <%= link_to job.company_name, company_path(job.company) %>
+      </div>
+      <div class="actions-and-metas">
+        <div class="published-date">
+          <i class="icon-calendar3">
+            <%= I18n.localize job.created_at, format: :long %>
+          </i>
+        </div>
+        <div class="bookmark">
+          <%= render "jobs/bookmark", job: job if user_signed_in? %>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+<% end %>

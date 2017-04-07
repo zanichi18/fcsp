@@ -150,6 +150,7 @@
 .sales {
   border: 1px solid $gray-ddd;
   border-radius: 3px;
+  margin-top: 10px;
 }
 
 .job-show-cover-wrapper {
@@ -253,12 +254,6 @@
   height: 80px;
 }
 
-.teal {
-  background-color: $light-teal !important;
-  float: right;
-  margin-right: -100px;
-}
-
 .map {
   height: 300px;
   width: 300px;
@@ -315,4 +310,69 @@
   border-radius: 4px;
   padding: 5px;
   width: 150px;
+}
+
+.padding-job {
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.blur {
+  opacity: .5;
+}
+
+.display-jobs {
+  margin-left: 10%;
+  width: 80%;
+}
+
+.job-info {
+  align-items: center;
+  display: flex;
+  margin-top: 16px;
+  width: 100%;
+
+  .company-name {
+    flex: 0 1 auto;
+    margin-left: 10px;
+    min-width: 0;
+  }
+
+  .actions-and-metas {
+    flex: 1 0 auto;
+    text-align: right;
+  }
+
+  .published-date {
+    color: $gray-80;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 30px;
+    padding-right: 15px;
+  }
+
+  .bookmark {
+    border-left: 1px solid $gray;
+    float: right;
+    padding-left: 15px;
+  }
+}
+
+.job-label {
+  display: flex;
+
+  .icon-job-type {
+    background-color: transparent;
+    border: 1px solid $pacific-blue;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: $pacific-blue;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 8px;
+    padding: 0 4px;
+  }
 }

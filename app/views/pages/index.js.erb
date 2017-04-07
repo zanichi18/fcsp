@@ -1,0 +1,2 @@
+$('#jobs').html('<%= escape_javascript render "pages/job" %>');
+$('#paginator').html('<%= escape_javascript paginate(@jobs, remote: true).to_s %>');
