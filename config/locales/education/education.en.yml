@@ -208,8 +208,10 @@ en:
       not_found: "Project not found"
       edit_project: "Edit Project"
     project_members:
+      create:
+        success: "Add member successfully!"
       destroy:
-        destroy_success: "Deleted project successfully"
+        success: "Delete member successfully!"
         destroy_faild: "Cannot delete project"
       load_course:
         not_found: "Project not found"
@@ -304,8 +306,10 @@ en:
     course_members:
       create:
         add_fail: "Cannot add member"
-      delete:
+        success: "Add member successfully!"
+      destroy:
         delete_fail: "Cannot detele member"
+        success: "Delete member successfully!"
       not_found: "Course member not found"
       index:
         show_all: "Show all"

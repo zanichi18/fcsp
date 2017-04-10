@@ -40,11 +40,16 @@ $(document).ready(function(){
       $('#project-member-position-'+i).show();
     }
     else{
-      var index = idItems.indexOf($(obj).val());
+      var index = idItems.indexOf(parseInt($(obj).val()));
       $('#project-member-position-'+$(obj).val()).hide();
       idItems.splice(index, 1);
     }
   };
+
+  choose_member_position = function(obj) {
+    i = parseInt($(obj).parent().find('.user-add').val());
+    position[i] = $(obj).val();
+  }
 
   $('.check_all').click( function() {
     $('input[name="users[]"]').prop('checked', this.checked)
@@ -56,18 +61,25 @@ $(document).ready(function(){
     }
   })
 
-  $('.create-member a').on('click', function(){
+  $('#btn-project-member').on('click', function(){
     var users = {}
-    $('input:checkbox[name="users[]"]:checked').each(function(){
-      i = $(this).val();
-      users[i] = $('#project-member-position-'+i).val();
-    });
-    
+    for (i = 0; i < idItems.length; i++){
+      users[idItems[i]] = position[idItems[i]];
+    };
     var project_id = $('#project_id').val();
     $.ajax({
       type: 'post',
       url: '/education/project_members',
-      data: {users: users, project_id: project_id}
+      data: {users: users, project_id: project_id},
+      success: function(data){
+        idItems = [];
+        position = [];
+        users = {};
+      },
+      error: function(error) {
+        $.growl.error({message: error});
+        location.reload();
+      }
     });
   })
 });
