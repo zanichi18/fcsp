@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407025134) do
+ActiveRecord::Schema.define(version: 20170410023046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -440,6 +440,15 @@ ActiveRecord::Schema.define(version: 20170407025134) do
     t.index ["job_id"], name: "index_job_hiring_types_on_job_id", using: :btree
   end
 
+  create_table "job_skills", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "skill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_skills_on_job_id", using: :btree
+    t.index ["skill_id"], name: "index_job_skills_on_skill_id", using: :btree
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.integer  "company_id"
     t.string   "title"
@@ -472,6 +481,23 @@ ActiveRecord::Schema.define(version: 20170407025134) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_positions_on_company_id", using: :btree
+  end
+
+  create_table "skill_users", force: :cascade do |t|
+    t.integer  "skill_id"
+    t.integer  "user_id"
+    t.integer  "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_skill_users_on_skill_id", using: :btree
+    t.index ["user_id"], name: "index_skill_users_on_user_id", using: :btree
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "taggings", force: :cascade do |t|

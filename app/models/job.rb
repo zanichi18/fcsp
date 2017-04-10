@@ -7,6 +7,8 @@ class Job < ApplicationRecord
   has_many :hiring_types, through: :job_hiring_types
   has_many :candidates, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :job_skills, dependent: :destroy
+  has_many :skills, through: :job_skills
 
   enum status: [:preview, :community]
   enum who_can_apply: [:everyone, :friends_of_members,
