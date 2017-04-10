@@ -23,3 +23,5 @@ exclude_paths:
     enabled: false
   TooManyStatements:
     max_statements: 10
+  NilCheck:
+    enabled: false

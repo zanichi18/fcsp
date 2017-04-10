@@ -1,5 +1,9 @@
 @import 'variables/color';
 
+.affix {
+  margin-top: 10px;
+}
+
 .input.required {
   background-color: $white;
   border: solid 1px $gray-border;
@@ -70,14 +74,7 @@
 
 .button-create-job {
   float: right;
-  width: 200px;
- }
-
-.button-create-job {
-  margin-right: 0;
-  position: fixed;
-  right: 10%;
-  top: 15%;
+  margin-bottom: 10px;
   z-index: 999;
 }
 
@@ -105,4 +102,42 @@
 
 .col-interested {
   width: 40%;
+}
+
+.fixed-position {
+  position: fixed;
+}
+
+.select-job {
+  float: right;
+  margin-left: 10px;
+  position: relative;
+}
+
+.button-job {
+  border: 1px solid $gray87;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  margin-left: -5px;
+  padding: 6px 12px;
+  text-align: center;
+
+  &:hover {
+    background-color: $hover-job;
+  }
+}
+
+.active {
+  background-color: $selected-job !important;
+}
+
+.all-job {
+  border-radius: 4px 0 0 4px;
+}
+
+.draff-job {
+  border-radius: 0 4px 4px 0;
 }

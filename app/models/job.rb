@@ -5,12 +5,12 @@ class Job < ApplicationRecord
   has_many :images, as: :imageable, dependent: :destroy
   has_many :job_hiring_types, dependent: :destroy
   has_many :hiring_types, through: :job_hiring_types
-  has_many :candidates, dependent: :destroy
+  has_many :candidates, dependent: :destroy, counter_cache: true
   has_many :bookmarks, dependent: :destroy
   has_many :job_skills, dependent: :destroy
   has_many :skills, through: :job_skills
 
-  enum status: [:preview, :community]
+  enum status: [:draft, :active, :close]
   enum who_can_apply: [:everyone, :friends_of_members,
     :friends_of_friends_of_member]
   enum type_of_candidates: [:engineer, :creative, :director, :business_admin,
@@ -36,5 +36,6 @@ class Job < ApplicationRecord
   validates :who_can_apply, presence: true
 
   scope :newest, ->{order created_at: :desc}
-  scope :community, ->{where status: :community}
+
+  scope :all_job, ->{}
 end

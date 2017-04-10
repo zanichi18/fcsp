@@ -152,7 +152,7 @@ courses:
   new_course_image: "/assets/default.jpg"
 user:
   max_length_name: 50
-max_length_title: 50
+max_length_title: 150
 hiring_type:
   max_length_name: 50
 jobs:
@@ -169,5 +169,7 @@ activity:
   per_page: 10
 employer:
   jobs:
-    per_page: 10
-truncate_job_describe: 20
+    per_page: 6
+truncate_job_describe: 150
+home:
+  max_job: 24

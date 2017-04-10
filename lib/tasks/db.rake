@@ -48,9 +48,9 @@ namespace :db do
       }
 
       users.each do |email, password|
-        user = User.create(name: FFaker::Name.name, email: email, password:
+        user = User.create!(name: FFaker::Name.name, email: email, password:
           password)
-        InfoUser.create user_id: user.id, introduce: Faker::Lorem.paragraph
+        InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
       User.create! name: "Adminprp",
@@ -88,23 +88,31 @@ namespace :db do
       puts "Create company permission"
       models = ["Company", "Job", "Candidate", "TeamIntroduction"]
       models.each do |model|
-        Permission.create entry: model, group_id: 2,
+        Permission.create! entry: model, group_id: 2,
           optional: {create: true, read: true, update: true, destroy: true}
       end
 
       puts "Create jobs"
-      5.times.each do
+      20.times.each do
         title = FFaker::Lorem.sentence
         describe = FFaker::Lorem.paragraph
-        Job.create(
+        Job.create!(
           company_id: 1, title: title, describe: describe,
           type_of_candidates: 1, who_can_apply: 1, status: 1)
+      end
+
+      20.times.each do
+        title = FFaker::Lorem.sentence
+        describe = FFaker::Lorem.paragraph
+        Job.create!(
+          company_id: 1, title: title, describe: describe,
+          type_of_candidates: 1, who_can_apply: 1, status: 2)
       end
 
       puts "Create employee of company"
       User.all.each do |user|
         description = FFaker::Lorem.sentence
-        Employee.create(
+        Employee.create!(
           user_id: user.id,
           company_id: 1,
           description: description)
@@ -114,7 +122,7 @@ namespace :db do
       Company.all.each do |company|
         address = FFaker::Address.city
         head_office = 1
-        Address.create(
+        Address.create!(
           company_id: company.id,
           address: address,
           head_office: head_office)
@@ -123,13 +131,13 @@ namespace :db do
       puts "Create industries"
       (1..5).each do |i|
         name = "Industry #{i}"
-        Industry.create name: name
+        Industry.create! name: name
       end
 
       puts "Create company industries"
       Company.all.each do |company|
         Industry.all.each do |industry|
-          CompanyIndustry.create(
+          CompanyIndustry.create!(
             company_id: company.id,
             industry_id: industry.id)
         end
@@ -140,7 +148,7 @@ namespace :db do
         (1..5).each do |i|
           name = "Benefit #{i}"
           description = FFaker::Lorem.sentence
-          Benefit.create(
+          Benefit.create!(
             company_id: company.id,
             name: name,
             description: description)
@@ -151,7 +159,7 @@ namespace :db do
       (1..6).each do |i|
         name_hiring_type = "hiring type #{i}"
         description = FFaker::Lorem.sentence
-        HiringType.create(
+        HiringType.create!(
           name: name_hiring_type,
           description: description,
           status: 1)
@@ -160,7 +168,7 @@ namespace :db do
       puts "Create job hiring type"
       Job.all.each do |job|
         HiringType.all.each do |hiring_type|
-          JobHiringType.create job_id: job.id, hiring_type_id: hiring_type.id
+          JobHiringType.create! job_id: job.id, hiring_type_id: hiring_type.id
         end
       end
 
@@ -173,7 +181,7 @@ namespace :db do
       puts "Assign skill to user"
       User.all.each do |user|
         Skill.all.each do |skill|
-          SkillUser.create user_id: user.id, skill_id: skill.id
+          SkillUser.create! user_id: user.id, skill_id: skill.id
         end
       end
 

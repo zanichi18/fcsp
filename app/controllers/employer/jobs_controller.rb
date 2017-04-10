@@ -3,18 +3,18 @@ class Employer::JobsController < Employer::BaseController
   before_action :load_hiring_types, only: [:new, :create, :edit]
   before_action :update_status, only: :create
 
-  def new
-    @job = Job.new
-    @job.images.build
-  end
-
   def index
-    @jobs = @company.jobs.newest.page(params[:page])
-      .per Settings.employer.jobs.per_page
-    restore_job params[:id]
-  end
+    params[:select] = "all_job" if params[:select].nil?
+    @jobs = @company.jobs.includes(:candidates).send(params[:select]).newest
+      .page(params[:page]).per Settings.employer.jobs.per_page
 
-  def edit
+    respond_to do |format|
+      if request.xhr?
+        format.html{render partial: "job", locals: {jobs: @jobs}}
+      else
+        format.html
+      end
+    end
   end
 
   def show
@@ -27,6 +27,11 @@ class Employer::JobsController < Employer::BaseController
     end
   end
 
+  def new
+    @job = Job.new
+    @job.images.build
+  end
+
   def create
     @job = @company.jobs.build job_params
     if @job.save
@@ -36,6 +41,9 @@ class Employer::JobsController < Employer::BaseController
       flash[:danger] = t ".create_job_fail"
       redirect_back fallback_location: :back
     end
+  end
+
+  def edit
   end
 
   def update
@@ -66,10 +74,6 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def update_status
-    if params[:preview]
-      params[:status] = :preview
-    else
-      params[:status] = :community
-    end
+    params[:status] = params[:preview] ? :draft : :open
   end
 end
