@@ -16,6 +16,7 @@ var candidate = {
       $.post('/candidates/', {id: job}, function() {
         self.removeClass('apply_job btn-primary')
           .addClass('cancel_apply_job btn-danger');
+        self.text(I18n.t('jobs.candidate.unapply'));
       });
       return false;
     });
@@ -32,6 +33,7 @@ var candidate = {
         success: function() {
           self.removeClass('cancel_apply_job btn-danger')
             .addClass('apply_job btn-primary');
+          self.text(I18n.t('jobs.candidate.apply_job'));
         }
       });
       return false;

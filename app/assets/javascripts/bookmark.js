@@ -15,7 +15,8 @@ var bookmark = {
       var job = $(this).attr('id');
       $.post('/bookmarks/', {id: job}, function() {
         self.removeClass('add_bookmark btn-default')
-          .addClass('rm_bookmark btn-danger');
+          .addClass('rm_bookmark btn-danger')
+        self.prop('title', I18n.t("jobs.bookmark.unbookmark"));
       });
       return false;
     });
@@ -31,7 +32,8 @@ var bookmark = {
         type: 'DELETE',
         success: function() {
           self.removeClass('rm_bookmark btn-danger')
-            .addClass('add_bookmark btn-default');
+            .addClass('add_bookmark btn-default')
+          self.prop('title', I18n.t("jobs.bookmark.bookmark_job"));
         }
       });
       return false;
