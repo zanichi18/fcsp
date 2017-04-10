@@ -22,9 +22,12 @@
         <div class="heading-block center">
           <h2><%= t ".job_opportunity" %></h2>
         </div>
-        <% @jobs.last(Settings.home.max_job).each do |job| %>
-          <%= render "job", job: job %>
-        <% end %>
+        <div id="jobs" class="display-jobs">
+          <%= render "job" %>
+          <div id="paginator">
+            <%= paginate @jobs, remote: true %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

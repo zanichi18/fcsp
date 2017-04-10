@@ -74,7 +74,7 @@ namespace :db do
       puts "Create groups"
       groups = ["Education", "HR", "BO"]
       groups.each do |group|
-        company_id = 1
+        company_id = rand(1..2)
         description = FFaker::Lorem.sentence
         Group.create! name: group,
           company_id: company_id,
@@ -90,16 +90,6 @@ namespace :db do
       models.each do |model|
         Permission.create entry: model, group_id: 2,
           optional: {create: true, read: true, update: true, destroy: true}
-      end
-
-      puts "Create groups"
-      groups = ["Education", "HR", "BO"]
-      groups.each do |group|
-        company_id = 2
-        description = FFaker::Lorem.sentence
-        Group.create! name: group,
-          company_id: company_id,
-          description: description
       end
 
       puts "Create jobs"

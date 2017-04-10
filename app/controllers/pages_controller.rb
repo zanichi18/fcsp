@@ -1,12 +1,6 @@
 class PagesController < ApplicationController
-  before_action :load_job, only: :index
-
   def index
-  end
-
-  private
-
-  def load_job
-    @jobs = Job.select(:id, :title, :describe).includes :images
+    @jobs = Job.newest.includes(:company, :images)
+      .page(params[:page]).per Settings.jobs.per_page
   end
 end

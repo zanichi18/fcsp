@@ -165,6 +165,4 @@ activity:
 employer:
   jobs:
     per_page: 10
-truncate_job_describe: 150
-home:
-  max_job: 24
+truncate_job_describe: 20
