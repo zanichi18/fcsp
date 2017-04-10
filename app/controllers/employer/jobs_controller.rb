@@ -47,12 +47,13 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def update
-    if @job.update_attributes job_params
-      flash[:success] = t ".job_post_updated"
+    @job.update_attributes job_params
+
+    if request.xhr?
+      render json: @job
     else
-      flash[:danger] = t ".job_post_update_fail"
+      redirect_to job_path(@job)
     end
-    redirect_to job_path(@job)
   end
 
   def destroy

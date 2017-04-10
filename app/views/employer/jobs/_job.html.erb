@@ -3,15 +3,19 @@
     <td>
       <%= link_to job.title, job_path(job) %>
     </td>
-    <td>
+    <td class="status">
       <%= Job.human_enum_name :status, job.status %>
     </td>
     <td>
       <%= job.candidates.length %>
       (<%= link_to t(".candidates"), employer_company_candidates_path(job_id: job.id) %>)
     </td>
-    <td>
-      <%= button_tag t(".close"), id: "#{job.id}", class: "draft btn btn-warning test" %>
+    <td class="action">
+      <% if job.active? %>
+        <%= button_tag t(".close"), id: "#{job.id}", class: "close-job btn btn-warning test" %>
+      <% else %>
+        <%= button_tag t(".public"), id: "#{job.id}", class: "public-job btn btn-default test" %>
+      <% end %>
     </td>
     <input type="hidden" id="company-id" value="<%= @company.id %>">
   </tr>

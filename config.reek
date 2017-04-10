@@ -25,3 +25,5 @@ exclude_paths:
     max_statements: 10
   NilCheck:
     enabled: false
+  RepeatedConditional:
+    enabled: false

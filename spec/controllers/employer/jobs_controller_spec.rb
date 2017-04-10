@@ -80,14 +80,6 @@ RSpec.describe Employer::JobsController, type: :controller do
       put :update, params: {company_id: company, id: job, job: job_params}
       job.reload
       expect(job.title).to eq "something"
-      expect(flash[:success]).to be_present
-    end
-
-    it "update fail" do
-      title = FFaker::Lorem.paragraph
-      job_params = FactoryGirl.attributes_for :job, title: title
-      put :update, params: {company_id: company, id: job, job: job_params}
-      expect(flash[:danger]).to be_present
     end
   end
 
