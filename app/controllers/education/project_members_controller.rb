@@ -12,7 +12,7 @@ class Education::ProjectMembersController < Education::BaseController
             .new user_id: id, position: value.to_i
           project_member.save!
         end
-        render_js
+        render_js t ".success"
       end
     else
       redirect_to @project
@@ -21,7 +21,7 @@ class Education::ProjectMembersController < Education::BaseController
 
   def destroy
     if @project_member.destroy
-      render_js
+      render_js t ".success"
     else
       flash[:warning] = t ".delete_fail"
       redirect_to @project
@@ -46,8 +46,9 @@ class Education::ProjectMembersController < Education::BaseController
     end
   end
 
-  def render_js
+  def render_js message
     @users = User.not_in_object @project
+    flash[:success] = message
     respond_to do |format|
       format.js
     end

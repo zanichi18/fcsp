@@ -208,8 +208,10 @@ vi:
       not_found: "Không tìm thấy dự án"
       edit_project: "Chỉnh sửa dự án"
     project_members:
+      create:
+        success: "Thêm thành viên thành công!"
       destroy:
-        destroy_success: "Xóa thành viên thành công"
+        success: "Xóa thành viên thành công!"
         destroy_faild: "Xóa thành viên không thành công"
       load_course:
         not_found: "Không tìm thấy dự án"
@@ -304,8 +306,10 @@ vi:
     course_members:
       create:
         add_fail: "Không thể thêm thành viên"
-      delete:
+        success: "Thêm thành viên thành công!"
+      destroy:
         delete_fail: "Không thể xóa thành viên"
+        success: "Xóa thành viên thành công!"
       not_found: "Không tìm thấy thành viên khóa học"
       index:
         show_all: "Hiển thị tất cả"

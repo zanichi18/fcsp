@@ -19,14 +19,28 @@ $(document).ready(function(){
       return false;
     }
   );
+
+  $('#btn-course-member').on('click', function(){
+    $.ajax({
+      type: 'POST',
+      url: '/education/course_members',
+      data: {users: idItems, course_id: $('#course_id').val()},
+      success: function(data) {
+        idItems = [];
+      },
+      error: function(error) {
+        $.growl.error({message: error});
+        location.reload();
+      }
+    })
+  });
  
   check_user_course = function(obj) { 
     if($(obj).is(':checked')){
       idItems.push(parseInt($(obj).val()));
-
     }
     else{
-      var index = idItems.indexOf($(obj).val());
+      var index = idItems.indexOf(parseInt($(obj).val()));
       idItems.splice(index, 1);
     }
   };

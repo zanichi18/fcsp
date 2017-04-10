@@ -11,14 +11,14 @@ class Education::CourseMembersController < Education::BaseController
           course_member = @course.course_members.new user_id: id
           course_member.save!
         end
-        render_js
+        render_js t ".success"
       end
     end
   end
 
   def destroy
     if @course_member.destroy
-      render_js
+      render_js t ".success"
     else
       flash[:warning] = t ".delete_fail"
       redirect_to @course
@@ -43,8 +43,9 @@ class Education::CourseMembersController < Education::BaseController
     end
   end
 
-  def render_js
+  def render_js message
     @users = User.not_in_object @course
+    flash[:success] = message
     respond_to do |format|
       format.js
     end

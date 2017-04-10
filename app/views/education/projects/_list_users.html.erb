@@ -11,7 +11,8 @@
         options_for_select(project_member_position),
         id: "project-member-position-#{user.id}",
         class: "form-control project-member-position selectpicker",
-        include_blank: t(".position") %>
+        include_blank: t(".position"),
+        onchange: "choose_member_position(this)" %>
     </td>
   </tr>
 <% end %>

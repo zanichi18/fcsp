@@ -10,7 +10,7 @@
       </ul>
       <div class="tab-content ">
         <div class="tab-pane active" id="1">
-          <%= form_tag education_course_members_path, method: :post, remote: true do %>
+          <%= form_tag do %>
             <%= hidden_field_tag :course_id, course.id %>
             <div class="body">
               <div class="panel panel-success">
@@ -43,7 +43,11 @@
               </div>
             </div>
             <div class="footer text-center">
-              <%= submit_tag t(".add"), class: "btn btn-primary defaut-btn" %> 
+              <button type="button" class="btn btn-primary defaut-btn" 
+                id="btn-course-member">
+                <%= t ".add" %>
+              </button>
+              
               <button type="button" class="btn btn-default" data-dismiss="modal">
                 <%= t ".close" %>
               </button>
