@@ -29,6 +29,8 @@ class User < ApplicationRecord
   has_many :jobs, through: :candidates
   has_many :bookmarks, dependent: :destroy
   has_one :info_user
+  has_many :skill_users, dependent: :destroy
+  has_many :skills, through: :skill_users
 
   delegate :introduce, to: :info_user, prefix: true
 

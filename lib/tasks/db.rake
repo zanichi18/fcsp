@@ -93,40 +93,29 @@ namespace :db do
       end
 
       puts "Create jobs"
-      5.times.each do |i|
-        company_id = 1
+      5.times.each do
         title = FFaker::Lorem.sentence
         describe = FFaker::Lorem.paragraph
-        type_of_candidates = 1
-        who_can_apply = 1
-        status = 1
         Job.create(
-          company_id: company_id,
-          title: title,
-          describe: describe,
-          type_of_candidates: type_of_candidates,
-          who_can_apply: who_can_apply,
-          status: status)
+          company_id: 1, title: title, describe: describe,
+          type_of_candidates: 1, who_can_apply: 1, status: 1)
       end
 
       puts "Create employee of company"
       User.all.each do |user|
-        user_id = user.id
-        company_id = 1
         description = FFaker::Lorem.sentence
         Employee.create(
-          user_id: user_id,
-          company_id: company_id,
+          user_id: user.id,
+          company_id: 1,
           description: description)
       end
 
       puts "Create addresses of company"
       Company.all.each do |company|
-        company_id = company.id
         address = FFaker::Address.city
         head_office = 1
         Address.create(
-          company_id: company_id,
+          company_id: company.id,
           address: address,
           head_office: head_office)
       end
@@ -134,29 +123,25 @@ namespace :db do
       puts "Create industries"
       (1..5).each do |i|
         name = "Industry #{i}"
-        Industry.create(
-          name: name)
+        Industry.create name: name
       end
 
       puts "Create company industries"
       Company.all.each do |company|
         Industry.all.each do |industry|
-          company_id  = company.id
-          industry_id = industry.id
           CompanyIndustry.create(
-            company_id: company_id,
-            industry_id: industry_id)
+            company_id: company.id,
+            industry_id: industry.id)
         end
       end
 
       puts "Create benefit of company"
       Company.all.each do |company|
         (1..5).each do |i|
-          company_id = company.id
           name = "Benefit #{i}"
           description = FFaker::Lorem.sentence
           Benefit.create(
-            company_id: company_id,
+            company_id: company.id,
             name: name,
             description: description)
         end
@@ -166,21 +151,29 @@ namespace :db do
       (1..6).each do |i|
         name_hiring_type = "hiring type #{i}"
         description = FFaker::Lorem.sentence
-        status = 1
         HiringType.create(
           name: name_hiring_type,
           description: description,
-          status: status)
+          status: 1)
       end
 
       puts "Create job hiring type"
       Job.all.each do |job|
         HiringType.all.each do |hiring_type|
-          job_id  = job.id
-          hiring_type_id = hiring_type.id
-          JobHiringType.create(
-            job_id:job_id,
-            hiring_type_id: hiring_type_id)
+          JobHiringType.create job_id: job.id, hiring_type_id: hiring_type.id
+        end
+      end
+
+      puts "Create skills"
+      6.times do
+        skill_name = FFaker::Skill.tech_skills
+        Skill.create name: skill_name
+      end
+
+      puts "Assign skill to user"
+      User.all.each do |user|
+        Skill.all.each do |skill|
+          SkillUser.create user_id: user.id, skill_id: skill.id
         end
       end
 
