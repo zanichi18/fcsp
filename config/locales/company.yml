@@ -54,7 +54,11 @@ en:
         create_fail: "Fail to create employer"
   jobs:
     candidate:
-      apply_job: "Job"
+      apply_job: "Apply Job"
+      unapply: "Unapply job"
+    bookmark:
+      unbookmark: "Unbookmark job"
+      bookmark_job: "Bookmark job"
     show:
       apply_job: "Apply Job"
     index:

@@ -177,6 +177,13 @@ namespace :db do
         end
       end
 
+      puts "Create skills are required by jobs"
+      Job.all.each do |job|
+        Skill.all.each do |skill|
+          JobSkill.create job_id: job.id, skill_id: skill.id
+        end
+      end
+
       puts "Create Education informations"
       Rake::Task["education:education_seeding"].invoke
     end
