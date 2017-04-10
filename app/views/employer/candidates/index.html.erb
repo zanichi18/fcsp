@@ -1,11 +1,12 @@
 <% provide :title, t(".title") %>
 <h1 class="text-center"><%= t ".title" %></h1>
-<div class="postcontent nobottommargin col_last clearfix">
+<div class="nobottommargin col_last clearfix">
   <div class="content">
     <div class="col-md-4 form-group">
       <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
       <%= select(:job, :job_id, @company.jobs.collect {|p| [ p.title, p.id ] },
-        {include_blank: t(".all_jobs")}, class: "form-control", id: "select-job") %>
+        {include_blank: t(".all_jobs"), selected: params[:job_id]},
+        class: "form-control", id: "select-job") %>
     </div>
     <div class="candidate-by-job">
     </div>

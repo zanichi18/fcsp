@@ -1,6 +1,8 @@
 $(document).ready(function() {
+  $('body').css('overflow', 'hidden');
   draftjob.initialize();
   showCandidateByjob();
+  activeButton();
 });
 
 function showCandidateByjob() {
@@ -19,6 +21,16 @@ function showCandidateByjob() {
         alert(I18n.t('employer.candidates.not_found'));
       }
     })
+  });
+}
+
+function activeButton() {
+  select = $('.select-job').data('select');
+  $('.button-job').each(function(){
+    link_arr = this.href.replace(/\/$/,'').split('?select=');
+    if(link_arr[1] === select){
+      $(this).addClass('active');
+    }
   });
 }
 

@@ -46,9 +46,6 @@ en:
       benefit_null: "Benefit null"
       indus_info: "IT / Automobiles / Industrial Machinery/ Industrial Supplies"
   employer:
-    dashboards:
-      index:
-        title: "Company"
     companies:
       edit:
         company_info: "Company Info"

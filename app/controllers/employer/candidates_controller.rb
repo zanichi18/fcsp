@@ -2,13 +2,14 @@ class Employer::CandidatesController < Employer::BaseController
   load_resource :company
 
   def index
-    @object = Supports::Candidate.new @company
+    params[:job_id] = @company.jobs.pluck(:id) if (params[:job_id].nil? ||
+      params[:job_id].empty?)
+    @object = Supports::Candidate.new @company, params[:job_id]
     respond_to do |format|
       if request.xhr?
-        params[:job_id] = @company.jobs.pluck(:id) if params[:job_id].empty?
         format.html do
           render partial: "candidate",
-          locals: {candidates: @object.candidates.in_job(params[:job_id])}
+          locals: {candidates: @object.candidates}
         end
       else
         format.html

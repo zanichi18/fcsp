@@ -77,9 +77,11 @@ en:
       index:
         job: "Jobs Post"
         manage_post: "Manage Job Postings"
-        create_job: "Create new job"
+        create_job: "+ Create new job"
         all: "All"
         draft: "Draft"
+        open: "Open"
+        close: "Close"
         title: "Title"
         status: "Status"
         candidates: "Candidates"
@@ -115,6 +117,35 @@ en:
         everyone: "Everyone can apply"
         friends_om: "Only friends of members"
         of_friends_om: "Only friends of friends of members"
+  type_of_candidates:
+    prompt: "Select type of candidates"
+    engineer: "Engineer / Programmer"
+    creative: "Creative(Designer, Writer, etc..)"
+    director: "Director / Manager"
+    business_admin: "Business admin(Finance, HR etc)"
+    sales: "Sales"
+    marketing: "Marketing"
+    medical: "Medical"
+    others: "Others"
+  activerecord:
+    attributes:
+      job:
+        type_of_candidates:
+          engineer: "Engineer / Programmer"
+          creative: "Creative(Designer, Writer, etc..)"
+          director: "Director / Manager"
+          business_admin: "Business admin(Finance, HR etc)"
+          sales: "Sales"
+          marketing: "Marketing"
+          medical: "Medical"
+          others: "Others"
+        who_can_applies:
+          everyone: "Everyone"
+          friends_of_members: "Only friends of members"
+          friends_of_friends_of_member: "Only friends of friends of members"
+        statuses:
+          draft: "Draft"
+          open: "Open"
     companies:
       edit:
         company_info: "Company Info"
@@ -160,32 +191,3 @@ en:
       not_found: "Team Introduction not found"
       success: "Successfully added team introduction"
       create_confirm: "Are you sure to set up this company introduction?"
-  type_of_candidates:
-    prompt: "Select type of candidates"
-    engineer: "Engineer / Programmer"
-    creative: "Creative(Designer, Writer, etc..)"
-    director: "Director / Manager"
-    business_admin: "Business admin(Finance, HR etc)"
-    sales: "Sales"
-    marketing: "Marketing"
-    medical: "Medical"
-    others: "Others"
-  activerecord:
-    attributes:
-      job:
-        type_of_candidates:
-          engineer: "Engineer / Programmer"
-          creative: "Creative(Designer, Writer, etc..)"
-          director: "Director / Manager"
-          business_admin: "Business admin(Finance, HR etc)"
-          sales: "Sales"
-          marketing: "Marketing"
-          medical: "Medical"
-          others: "Others"
-        who_can_applies:
-          everyone: "Everyone"
-          friends_of_members: "Only friends of members"
-          friends_of_friends_of_member: "Only friends of friends of members"
-        statuses:
-          preview: "Preview"
-          community: "Community"
