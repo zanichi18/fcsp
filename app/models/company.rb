@@ -1,4 +1,5 @@
 class Company < ApplicationRecord
+  acts_as_followable
   has_many :jobs, dependent: :destroy
   has_many :candidates, through: :jobs
   has_many :candidate_users, through: :candidates, source: :user

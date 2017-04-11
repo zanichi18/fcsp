@@ -41,6 +41,13 @@ jp:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+  follow_companies:
+    create:
+      follow: "follow company successfully!"
+      not_found: "Company not found!"
+    destroy:
+      unfollow: "Unfollow company successfully!"
+      not_found: "Company not found!"
   layouts:
     base_title: "FCSP"
     header:
