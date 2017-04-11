@@ -161,8 +161,12 @@ jobs:
   image_url: "/assets/welcome1.jpg"
   image_company_size: 32x32
   limit_user_show: 3
+  limit_job_show: 4
+  image_job_size: 200x100
   image_member_size: 70x70
   image_member_url: "/assets/avatar.jpg"
+  posting_job_default: "/assets/posting_job_default.jpg"
+  team_intro_default: "/assets/team_intro.png"
 industries:
   max_length_name: 50
 activity:

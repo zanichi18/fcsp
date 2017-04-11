@@ -22,6 +22,16 @@
         </td>
       </tr>
       <tr>
+        <td class="head"><%= t ".skill_require" %></td>
+        <td>
+          <p>
+            <% @job_object.job_skills.each do |job_skill| %>
+              <%= job_skill.name %><%= t ".comma" %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+      <tr>
         <td class="head"><%= t ".posting_feature" %></td>
         <td>
           <p>
@@ -40,7 +50,7 @@
       </tr>
       <tr>
         <td class="head"><%= t ".founded" %></td>
-        <td><%= @job_object.company.founder_on %></td>
+        <td><%= @job_object.company_founder_on %></td>
       </tr>
       <tr>
         <td class="head"><%= t ".industries" %></td>

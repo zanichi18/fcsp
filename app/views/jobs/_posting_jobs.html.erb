@@ -1,0 +1,17 @@
+<div class="all-jobs-posting">
+  <h3 class="title-section"><%= t ".title" %></h3>
+  <div>
+    <% @job_object.jobs_company.each do |job| %>
+      <div class="job-row text-center">
+        <% if job.images.first.present? %>
+          <%= link_to image_tag(job.images.first.picture,
+            size: Settings.jobs.image_job_size), job_path(job) %>
+        <% else %>
+          <%= link_to image_tag(Settings.jobs.posting_job_default,
+            size: Settings.jobs.image_job_size), job_path(job) %>
+        <% end %>
+        <h4 class="job-posting-title"><%= job.title %></h4>
+      </div>
+    <% end %>
+  </div>
+</div>

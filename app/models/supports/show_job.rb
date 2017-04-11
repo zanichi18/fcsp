@@ -3,7 +3,7 @@ module Supports
     attr_reader :job, :company, :benefits, :members, :team_introduction,
       :hiring_types, :published_date
 
-    delegate :benefits, to: :company, prefix: true
+    delegate :benefits, :founder_on, to: :company, prefix: true
 
     def initialize job
       @job = job
@@ -17,12 +17,28 @@ module Supports
       company.users
     end
 
+    def jobs_company
+      company.jobs.limit(4)
+    end
+
+    def company_address
+      company.addresses
+    end
+
     def team_introduction
-      @job.team_introductions
+      @job.team_introductions.includes :images
+    end
+
+    def count_candidates
+      @job.candidates.count
     end
 
     def hiring_types
       @job.hiring_types
+    end
+
+    def job_skills
+      @job.skills
     end
 
     def published_date

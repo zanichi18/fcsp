@@ -9,6 +9,7 @@ class Job < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :job_skills, dependent: :destroy
   has_many :skills, through: :job_skills
+  has_many :team_introductions, as: :team_target
 
   enum status: [:draft, :active, :close]
   enum who_can_apply: [:everyone, :friends_of_members,

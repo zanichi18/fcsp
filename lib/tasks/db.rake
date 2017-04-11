@@ -109,6 +109,20 @@ namespace :db do
           type_of_candidates: 1, who_can_apply: 1, status: 2)
       end
 
+      puts "Create team introduction"
+      Job.all.each do |job|
+        job_id = job.id
+        content = FFaker::Lorem.paragraph
+        title = FFaker::Lorem.sentence
+        3.times.each do |n|
+          TeamIntroduction.create(
+            team_target_id: job_id,
+            team_target_type: "Job",
+            title: "Team introduction" + (n+1).to_s,
+            content: content)
+        end
+      end
+
       puts "Create employee of company"
       User.all.each do |user|
         description = FFaker::Lorem.sentence
