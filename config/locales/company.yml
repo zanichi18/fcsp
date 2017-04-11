@@ -98,3 +98,5 @@ en:
       next: "Next"
     job:
       read_more: "Read more"
+    recommend_user:
+      show_more: "View more"

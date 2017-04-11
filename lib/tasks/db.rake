@@ -188,7 +188,7 @@ namespace :db do
 
       puts "Create skills"
       6.times do
-        skill_name = FFaker::Skill.tech_skills
+        skill_name = FFaker::Skill.tech_skill
         Skill.create name: skill_name
       end
 
