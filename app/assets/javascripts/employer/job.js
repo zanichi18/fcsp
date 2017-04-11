@@ -36,31 +36,50 @@ function activeButton() {
 
 var draftjob = {
   initialize: function() {
-    $('.draft').click(function() {
+    $('.close-job').click(function() {
       var id = $(this).attr('id');
       draftjob.close_job(id);
     });
 
-    $('.reopen').click(function() {
+    $('.public-job').click(function() {
       var id = $(this).attr('id');
       draftjob.reopen_job(id);
     });
   },
 
   close_job: function(id) {
+    company_id = $('body').data('company');
+    var public_button = '<button name="button" type="submit" id="';
+      public_button += id;
+      public_button += '" class="public-job btn btn-default test">Public</button>';
     $.ajax({
-      url: '/employer/companies/' + id +'/jobs/'+ id,
-      method: 'DELETE',
-      data: {type: 'delete'},
-      success: function(){
-        $('#job_'+ id).fadeOut(300);
+      url: '/employer/companies/' + company_id +'/jobs/'+ id,
+      method: 'PUT',
+      data: {job: {status: 'close'}},
+      success: function(data){
+        status = data.status.substr(0, 1).toUpperCase()+data.status.substr(1);
+        $('#job_'+ id).children('.status').text(status);
+        $('#job_'+ id).children('.action').empty();
+        $('#job_'+ id).children('.action').html(public_button);
       }
     });
   },
 
   reopen_job: function(id) {
-    $.get('/employer/companies/' + id +'/jobs/', {type: 'reopen', id: id}, function() {
-      $('#job_'+ id).fadeOut(300);
+    company_id = $('body').data('company');
+    var close_button = '<button name="button" type="submit" id="';
+      close_button += id
+      close_button += '" class="close-job btn btn-warning test">Close</button>'
+    $.ajax({
+      url: '/employer/companies/' + company_id +'/jobs/'+ id,
+      method: 'PUT',
+      data: {job: {status: 'active'}},
+      success: function(data){
+        status = data.status.substr(0, 1).toUpperCase()+data.status.substr(1);
+        $('#job_'+ id).children('.status').text(status);
+        $('#job_'+ id).children('.action').empty();
+        $('#job_'+ id).children('.action').html(close_button);
+      }
     });
   }
 }
