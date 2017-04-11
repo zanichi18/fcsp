@@ -1,17 +1,15 @@
 <section class="job-show-main-section job-show-section-members">
   <header>
-    <div class="row">
-      <div class="website-company col-md-7">
-        <%= @job.company_name %>
-        <%= t ".members" %>
-        <a class="btn btn-info" href="#">
-          <%= t ".views_all" %>
-          <% if @job_object.members.present? %>
-            <%= @job_object.members.size %>
-          <% end %>
-          <%= t ".views_all_close" %>
-        </a>
-      </div>
+    <div class="website-company">
+      <%= @job.company_name %>
+      <%= t ".members" %>
+      <a class="btn btn-info" href="#">
+        <%= t ".views_all" %>
+        <% if @job_object.members.present? %>
+          <%= @job_object.members.size %>
+        <% end %>
+        <%= t ".views_all_close" %>
+      </a>
       <% if can? :manage, @job %>
         <span class="header-btn">
           <a class="btn btn-default .btn-xs hr-edit col-md-2" href="#">

@@ -16,6 +16,7 @@ RSpec.describe Job, type: :model do
       it{expect have_db_column(:who_can_apply).of_type(:integer)}
       it{expect have_db_column(:company_id).of_type(:integer)}
       it{expect have_db_column(:status).of_type(:integer)}
+      it{expect have_db_column(:profile_requests).of_type(:string)}
     end
   end
 

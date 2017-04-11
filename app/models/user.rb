@@ -33,6 +33,8 @@ class User < ApplicationRecord
   has_one :info_user
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
+  has_many :user_portfolios, dependent: :destroy
+  has_many :user_educations, dependent: :destroy
 
   delegate :introduce, to: :info_user, prefix: true
 
