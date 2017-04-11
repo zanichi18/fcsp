@@ -9,8 +9,10 @@
         <span><%= t ".trainer_title" %></span>
       </div>
       <div class="team-content">
-        <p><%= truncate trainer.info_user_introduce,
-          length: Settings.education.trainers.truncate_limit %></p>
+        <% if trainer.info_user.present? %>
+          <p><%= truncate trainer.info_user_introduce,
+            length: Settings.education.trainers.truncate_limit %></p>
+        <% end %>
       </div>
     </div>
   </div>
