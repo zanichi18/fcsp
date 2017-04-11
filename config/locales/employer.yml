@@ -88,6 +88,7 @@ en:
         who_can_apply: "Who can apply"
         describe: "Describe"
         action: "Action"
+        public: "Public"
       update:
         job_post_updated: "Updated post job recruitment"
         job_post_update_fail: "Failed to update post job"
@@ -146,6 +147,8 @@ en:
         statuses:
           draft: "Draft"
           open: "Open"
+          close: "Close"
+          active: "Open"
     companies:
       edit:
         company_info: "Company Info"
