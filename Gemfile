@@ -49,6 +49,7 @@ gem "sweet-alert-confirm"
 gem "valid_url"
 gem "roo"
 gem "acts_as_follower", github: "tcocca/acts_as_follower"
+gem "has_friendship"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password
