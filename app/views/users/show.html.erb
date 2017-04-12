@@ -1,2 +1,42 @@
-<%= @user.name %>
+<%= render "header", user: @user %>
 <%= render "friend_ship_form" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="row clearfix">
+        <div class="col-sm-9">
+          <div class="row clearfix">
+            <div class="col-md-12">
+              <div class="tabs tabs-alt clearfix" id="tabs-profile">
+                <ul class="tab-nav clearfix">
+                  <% if @user.is_user? current_user %>
+                    <li>
+                      <a href="#tab-new-feed">
+                        <i class="icon-rss2"></i><%= t ".new_feed" %>
+                      </a>
+                    </li>
+                  <% end %>
+                  <li>
+                    <a href="#tab-information">
+                      <i class="icon-info-sign"></i><%= t ".information" %>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#tab-posts">
+                      <i class="icon-pencil2"></i><%= t ".posts" %>
+                    </a>
+                  </li>
+                </ul>
+                <div class="tab-container">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render "social_network" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= javascript_include_tag "users" %>

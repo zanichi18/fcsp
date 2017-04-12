@@ -14,8 +14,8 @@ var friend_ship = {
       var self = $(this);
       var user_id = $('#user_id').val();
       $.ajax({
-        url: '/friend_ships/', 
-        data: {id: user_id}, 
+        url: '/friend_ships/',
+        data: {id: user_id},
         type: 'POST',
         success: function(data) {
           if(data.status === 200) {
@@ -26,7 +26,7 @@ var friend_ship = {
           }
           else {
             $.growl.error({message: data.flash});
-          } 
+          }
         },
         error: function(error) {
           $.growl.error({message: error});
@@ -53,7 +53,7 @@ var friend_ship = {
           }
           else {
             $.growl.error({message: data.flash});
-          } 
+          }
         },
         error: function(error) {
           $.growl.error({message: error});
@@ -80,7 +80,7 @@ var friend_ship = {
           }
           else {
             $.growl.error({message: data.flash});
-          } 
+          }
         },
         error: function(error) {
           $.growl.error({message: error});

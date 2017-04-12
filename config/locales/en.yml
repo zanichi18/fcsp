@@ -492,3 +492,45 @@ en:
       remove_request: "Cancelled request to %{name}"
       unfriend: "Unfriended with %{name}"
       not_found: "User not found"
+    show:
+      new_feed: "New feed"
+      information: "Information"
+      posts: "Posts"
+    header:
+      add_friend: "Add friend"
+      message: "Message"
+      edit_profile: "Edit profile"
+      location: "Location"
+      working_at: "Working at"
+      change_cover: "Change your cover image"
+    social_network:
+      about_me: "About me"
+      social_profiles: "Connect with me"
+    change_avatar:
+      title: "Update avatar"
+      save: "Save"
+      close: "Close"
+      from_album: "Choose from your album"
+    change_cover:
+      title: "Update cover image"
+      save: "Save"
+      close: "Close"
+      from_album: "Choose from your album"
+    album_image:
+      no_image: "No images"
+  user_avatars:
+    create:
+      success: "Change avatar successfully!"
+      fail: "Change avatar failed"
+    update:
+      success: "Change avatar successfully!"
+      fail: "Change avatar failed"
+      not_found: "Image not found"
+  user_covers:
+    create:
+      success: "Change cover image successfully!"
+      fail: "Change cover image failed"
+    update:
+      success: "Change cover image successfully!"
+      fail: "Change cover image failed"
+      not_found: "Image not found"
