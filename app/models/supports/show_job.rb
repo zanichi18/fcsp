@@ -44,5 +44,9 @@ module Supports
     def published_date
       @job.created_at.to_date
     end
+
+    def recommend_user
+      Job.recommend @job
+    end
   end
 end
