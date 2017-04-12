@@ -448,3 +448,6 @@ en:
   kaminari:
     prev: "Previous"
     next: "Next"
+  users:
+    find_user:
+      not_found: "User not found"

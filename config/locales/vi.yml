@@ -310,3 +310,6 @@ vi:
     comment_count: " Bình luận"
     submit_button: "Tạo bình luận"
     edit_button: "Lưu"
+  users:
+    find_user:
+      not_found: "Không tìm thấy người dùng"

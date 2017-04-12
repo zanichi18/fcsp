@@ -55,4 +55,5 @@ Rails.application.routes.draw do
   resources :candidates, only: [:create, :destroy]
   resources :bookmarks, only: [:create, :destroy]
   resources :follow_companies, only: [:create, :destroy]
+  resources :users
 end
