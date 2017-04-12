@@ -453,14 +453,6 @@ vi:
       remove_request: "Hủy yêu cầu"
       request_friend: "Kết bạn"
       unfriend: "Hủy kết bạn"
-  friend_ships:
-    create:
-      request_friend: "Đã gửi yêu cầu đến %{name}"
-      not_found: "Không tìm thấy người dùng"
-    destroy:
-      remove_request: "Đã hủy yêu cầu với %{name}"
-      unfriend: "Đã hủy kết bạn với %{name}"
-      not_found: "Không tìm thấy người dùng"
     show:
       new_feed: "Bảng tin"
       information: "Cá nhân"
@@ -487,6 +479,29 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+  friend_ships:
+    create:
+      request_friend: "Đã gửi yêu cầu đến %{name}"
+      not_found: "Không tìm thấy người dùng"
+    destroy:
+      remove_request: "Đã hủy yêu cầu với %{name}"
+      unfriend: "Đã hủy kết bạn với %{name}"
+      not_found: "Không tìm thấy người dùng"
+    load_user:
+      not_found: "người dùng không tồn tại"
+    update:
+      success: "Xác nhận thành công"
+      failed: "Xác nhận thất bại"
+      reject_success: "hủy kết bạn thành công"
+      reject_failed: "hủy kết bạn thất bại"
+    friend_request:
+      confirm: "Chấp nhận"
+      friend-ship: "Lời mời kết bạn"
+      mutual-friends: "Bạn chung"
+      number_request: "5"
+      reject: "xóa yêu cầu"
+      request_not_found: "Không có lời mời kết bạn"
+      view_all: "Xem tất cả"
   user_avatars:
     create:
       success: "Đã cập nhật ảnh đại diện thành công!"

@@ -190,3 +190,8 @@ user_educations:
   description_max: 1000
 recommend:
   user_limit: 5
+home:
+  max_job: 24
+friend_ship:
+  accept: "accept"
+  decline: "decline"
