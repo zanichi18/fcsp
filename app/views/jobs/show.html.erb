@@ -19,32 +19,36 @@
         <div class="col-md-4 column-side">
           <% if user_signed_in? %>
             <div class="margin-section">
-              <div class="row">
-                <div class="col-md-6">
-                  <%= render "candidate", job: @job %>
+              <% if cannot? :manage, @job %>
+                <div class="row">
+                  <div class="col-md-6">
+                    <%= render "candidate", job: @job %>
+                  </div>
+                  <div class="col-md-4">
+                    <%= render "bookmark", job: @job %>
+                  </div>
                 </div>
-                <div class="col-md-4">
-                  <%= render "bookmark", job: @job %>
-                </div>
-              </div>
+              <% end %>
               <div class="person-apply">
                 <%= t ".currently" %><%= "#{@job_object.count_candidates}" %>
                 <%= t ".person_applied" %>
               </div>
-              <div class="candidate-recommendation">
-                <div class="location-padding">
-                  <h4><%= t ".recommend" %></h4>
-                  <%= render "recommend_user" %>
-                </div>
-              </div>
             </div>
-            <div class="location">
+          <% end %>
+          <div class="location">
+            <div class="location-padding">
+              <h4><%= t ".location" %></h4>
+            </div>
+            <div id="map" class="map">
+            </div>
+            <%= render "companies/gmap" %>
+          </div>
+          <% if can? :manage, @job %>
+            <div class="candidate-recommendation">
               <div class="location-padding">
-                <h4><%= t ".location" %></h4>
+                <h4><%= t ".recommend" %></h4>
+                <%= render "recommend_user" %>
               </div>
-              <div id="map" class="map">
-              </div>
-              <%= render "companies/gmap" %>
             </div>
           <% end %>
         </div>

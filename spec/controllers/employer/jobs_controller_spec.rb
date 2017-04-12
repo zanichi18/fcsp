@@ -57,7 +57,7 @@ RSpec.describe Employer::JobsController, type: :controller do
     end
 
     it "create fail by reaching length limitation" do
-      title = FFaker::Lorem.paragraph
+      title = "a" * 151
       job_params = FactoryGirl.attributes_for :job, title: title
       expect do
         post :create, params: {company_id: company, job: job_params}

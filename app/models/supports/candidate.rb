@@ -10,5 +10,9 @@ module Supports
     def candidates
       @company.candidates.includes(:user, :job).in_job(job_ids)
     end
+
+    def active_jobs
+      @company.jobs.active.newest
+    end
   end
 end
