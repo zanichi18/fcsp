@@ -10,6 +10,10 @@
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
           <div class="widget clearfix">
+            <%= render "search_form" %>
+            <%= render "filter_form" %>
+          </div>
+          <div class="widget clearfix">
             <h3><%= t ".popular_job" %></h3>
             <div id="popular-post-list-sidebar">
               <% @jobs.last(5).each do |popular| %>
@@ -22,3 +26,4 @@
     </div>
   </div>
 </section>
+<%= javascript_include_tag "job" %>
