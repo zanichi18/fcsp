@@ -1,36 +1,28 @@
 <% provide :title, t(".title") %>
 <h1 class="text-center"><%= t ".title" %></h1>
-<div class="nobottommargin col_last clearfix">
-  <div class="content">
-    <div class="col-md-4 form-group">
-      <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
-      <%= select(:job, :job_id, @company.jobs.collect {|p| [ p.title, p.id ] },
-        {include_blank: t(".all_jobs"), selected: params[:job_id]},
-        class: "form-control", id: "select-job") %>
-    </div>
-    <div class="candidate-by-job">
-    </div>
-    <div class="all-jobs">
-      <% if @object.candidates.any? %>
-        <div class="container">
-          <div class="row col-md-10">
-            <table class="table table-striped custab">
-              <thead>
-                <tr>
-                  <th class="col-id"><%= t ".id" %></th>
-                  <th class="col-user"><%= t ".user" %></th>
-                  <th class="col-job"><%= t ".job" %></th>
-                  <th class="col-interested"><%= t ".interested_in" %></th>
-                </tr>
-              </thead>
-              <tbody id="list-candidates">
-                <%= render "candidate", candidates: @object.candidates %>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <input type="hidden" id="company-id" value="<%= @company.id %>">
+<div class="clearfix">
+  <div class="col-md-3 form-group">
+    <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
+    <%= select(:job, :job_id, @object.active_jobs.collect {|p| [ p.title, p.id ] },
+      {include_blank: t(".all_jobs"), selected: params[:job_id]},
+      class: "form-control", id: "select-job") %>
   </div>
+
+  <div class="all-jobs">
+    <table class="table table-striped custab">
+      <thead>
+        <tr>
+          <th class="col-id"><%= t ".id" %></th>
+          <th class="col-user"><%= t ".user" %></th>
+          <th class="col-job"><%= t ".job" %></th>
+          <th class="interested"><%= t ".interested_in" %></th>
+          <th class="process"><%= t ".process" %></th>
+        </tr>
+      </thead>
+      <tbody id="list-candidates">
+        <%= render "candidate", candidates: @object.candidates %>
+      </tbody>
+    </table>
+  </div>
+  <input type="hidden" id="company-id" value="<%= @company.id %>">
 </div>
