@@ -22,6 +22,7 @@ class Job < ApplicationRecord
   accepts_nested_attributes_for :images
 
   delegate :name, to: :company, prefix: true
+  delegate :name, to: :hiring_types, prefix: true
 
   ATTRIBUTES = [:title, :describe, :type_of_candidates, :who_can_apply, :status,
     :company_id, hiring_type_ids: [], images_attributes: [:id,
@@ -37,6 +38,8 @@ class Job < ApplicationRecord
   validates :who_can_apply, presence: true
 
   scope :newest, ->{order created_at: :desc}
-
   scope :all_job, ->{}
+  scope :of_ids, ->ids do
+    where id: ids if ids.present?
+  end
 end

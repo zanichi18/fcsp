@@ -4,6 +4,10 @@ en:
       show:
         error: "Show job error!"
   jobs:
+    job_form:
+      next: "Next"
+    candidate:
+      apply_job: "Job"
     show:
       apply_job: "Apply Job"
       currently: "Currently "
@@ -17,6 +21,8 @@ en:
           title: "Title"
           describe: "Describe"
       title: "List jobs"
+    search_form:
+      search: "Enter your search"
     job_title:
       sales: "Sales"
       show:

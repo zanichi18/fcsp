@@ -93,7 +93,7 @@ namespace :db do
       end
 
       puts "Create jobs"
-      20.times.each do
+      20.times do
         title = FFaker::Lorem.sentence
         describe = FFaker::Lorem.paragraph
         Job.create!(
@@ -101,7 +101,7 @@ namespace :db do
           type_of_candidates: 1, who_can_apply: 1, status: 1)
       end
 
-      20.times.each do
+      20.times do
         title = FFaker::Lorem.sentence
         describe = FFaker::Lorem.paragraph
         Job.create!(
