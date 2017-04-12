@@ -64,6 +64,13 @@ class User < ApplicationRecord
     joins(:education_user_groups).distinct
   end
 
+  scope :recommend, ->job_id do
+    select("users.name, users.avatar, skill_users.skill_id, skill_users.level")
+      .joins(:skills).where("skill_users.skill_id IN (?)",
+        Skill.require_by_job(job_id).pluck(:id))
+      .distinct.order("level desc").limit Settings.recommend.user_limit
+  end
+
   class << self
     def import file
       (2..spreadsheet(file).last_row).each do |row|

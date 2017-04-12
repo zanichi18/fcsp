@@ -188,5 +188,5 @@ user_educations:
   major_max: 255
   description_min: 10
   description_max: 1000
-home:
-  max_job: 24
+recommend:
+  user_limit: 5

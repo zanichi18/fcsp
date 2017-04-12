@@ -46,8 +46,8 @@ module Supports
       @job.created_at.to_date
     end
 
-    def recommend_user
-      Job.recommend @job
+    def recommend
+      User.recommend @job
     end
 
     def qualified_profile?

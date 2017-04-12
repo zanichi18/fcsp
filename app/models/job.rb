@@ -43,8 +43,4 @@ class Job < ApplicationRecord
   scope :of_ids, ->ids do
     where id: ids if ids.present?
   end
-  scope :recommend, ->job_id do
-    User.joins(:skills).where("skill_users.skill_id IN (?)",
-      Skill.require_by_job(job_id).pluck(:id)).distinct
-  end
 end

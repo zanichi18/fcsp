@@ -15,10 +15,10 @@
  *= require_tree ./education
  *= require sweetalert2
  *= require_self
- *= require custom.scss
- *= require company_info.scss
- *= require job.scss
- *= require user.scss
+ *= require custom
+ *= require company_info
+ *= require job
+ *= require user
  */
 
 @import 'social-share-button';
