@@ -41,6 +41,16 @@ vi:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+    follow_form:
+      follow: "Theo dõi"
+      unfollow: "Hủy theo dõi"
+  follow_companies:
+    create:
+      follow: "Theo dõi công ty thành công!"
+      not_found: "Không tìm thấy công ty!"
+    destroy:
+      unfollow: "Hủy theo dõi công ty thành công!"
+      not_found: "Không tìm thấy công ty!"
   layouts:
     base_title: "FCSP"
     header:
