@@ -480,3 +480,15 @@ en:
   users:
     find_user:
       not_found: "User not found"
+    friend_ship_form:
+      remove_request: "Cancel Request"
+      request_friend: "Add Friend"
+      unfriend: "Unfriend"
+  friend_ships:
+    create:
+      request_friend: "Sent a request to %{name}"
+      not_found: "User not found"
+    destroy:
+      remove_request: "Cancelled request to %{name}"
+      unfriend: "Unfriended with %{name}"
+      not_found: "User not found"

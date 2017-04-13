@@ -56,4 +56,5 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [:create, :destroy]
   resources :follow_companies, only: [:create, :destroy]
   resources :users
+  resources :friend_ships, only: [:create, :destroy]
 end
