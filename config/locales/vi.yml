@@ -1,5 +1,117 @@
 vi:
+  jobs:
+    job_form:
+      next: "Next"
+    candidate:
+      apply_job: "Job"
+    show:
+      apply_job: "Apply Job"
+      currently: "Currently "
+      person_applied: " person has applied."
+      location: "Location"
+      recommend: "Recommend"
+      apply_modal_header: "We have notified %{company_name} of your interest."
+      interest_heading: "Please tell us what you are interested in."
+      let_s_work_together: "Let’s work together!"
+      let_s_have_chat: "Let’s have a chat."
+      interest_me: "This opportunity interests me."
+      your_entry_complete: "Your entry is complete!"
+      success_heading: "Let's wait to hear from the person"
+      success_description: "If the person take an interest in you, you will receive an invitation message."
+      apply_success_alt: "Apply success"
+      entry: "Entry"
+      apply_failed_title: "Apply failed"
+      need_update_profile_alt: "You should update your profile before apply this job"
+      should_update_heading: "Employer needs more on your profile"
+      should_update_heading_description: "Update your profile and comeback to us"
+      cancel: "Cancel"
+      edit_profile: "Edit my profile"
+    index:
+      table:
+        thead:
+          id: "Id"
+          title: "Title"
+          describe: "Describe"
+      title: "List jobs"
+    search_form:
+      search: "Enter your search"
+    job_title:
+      sales: "Sales"
+      show:
+        job_type: "Job type"
+        total_views: "Total views"
+    members_of_company:
+      members: "members"
+      views_all: "All members( "
+      views_all_close: ")"
+      edit_posting: "Edit posting"
+    introduction_company:
+      what_we_do: "What we do"
+      message_team_introduc_null: "Team introduction null"
+      edit_posting: "Edit posting"
+    job_description:
+      description: "Description"
+      edit_posting: "Edit posting"
+    basic_infor:
+      sales: "Sales"
+      basic_info_job: "Basic Information"
+      look_for: "Looking for"
+      job_type: "Job type"
+      posting_feature: "Posting features"
+      company_info: "Company information"
+      founded: "Founded"
+      industries: "Industries"
+      learn_more_info: "Learn more about the company"
+      comma: ", "
+      benefit_null: "Benefit null"
+      indus_info: "IT / Automobiles / Industrial Machinery/ Industrial Supplies"
+      skill_require: "Skill require"
+    job_form:
+      next: "Next"
+    posting_jobs:
+      title: "Other jobs posting you may like"
+    popular_job:
+      comments: "35 comments"
+    bookmark:
+      bookmark: "Bookmark"
+      bookmark_job: "Bookmark job"
+      bookmarked: "Bookmarked"
+    candidate:
+      apply_job: "Apply Job"
+      unapply_job: "Unapply Job"
+      currently: "Currently"
+      person_applied: "Person applied"
   employer:
+    companies:
+      edit:
+        company_info: "Company Info"
+        edit_company_info: "Edit company info"
+        manage_members: "Manage members"
+        manage_images: "Manage images"
+        manage_accounts: "Manage accounts on social network"
+      edit_company_info:
+        update_company_info: "Update Company"
+        required: "(required)"
+        article: "Add article"
+    team_introductions:
+      form:
+        title: "Title"
+        contents: "Content"
+        images: "Image"
+        submit: "Save"
+      image_fields:
+        caption: "write caption"
+        team_introduction: "Team Introduction"
+      new:
+        team_introduction: "Team Introduction"
+        team_introduction_1: "Team Introduction 1"
+        team_introduction_2: "Team Introduction 2"
+        team_introduction_3: "Team Introduction 3"
+        team_introduction_recruitment: "Team Introduction Recruiment"
+        submit: "Submit"
+      not_found: "Team Introduction not found"
+      success: "Successfully added team introduction"
+      create_confirm: "Are you sure to set up this company introduction?"
     dashboards:
       index:
         title: "Công ty"
@@ -28,6 +140,8 @@ vi:
         company_info: "Company Info"
         setting: "Setting"
         logout: "Logout"
+    candidates:
+      not_found: "Candidate not found"
   companies:
     show:
       info: "Info"
@@ -62,6 +176,7 @@ vi:
   pages:
     home:
       title: "Home"
+      job_opportunity: "Jobs Opportunity"
     about:
       content: "This is about page"
       title: "About"
@@ -72,7 +187,10 @@ vi:
     base_title: "FCSP"
     header:
       home: "Home"
+      jobs: "Jobs"
       employer: "Employer"
+      admin: "Admin"
+      messages: "Messages"
       help: "Help"
       about: "About"
       login: "Login"
@@ -80,6 +198,10 @@ vi:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+    job_bookmark:
+      bookmark: "Bookmark"
+      bookmarked: "Bookmarked"
+      unbookmark: "Unbookmark"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:
@@ -227,6 +349,19 @@ vi:
       create_new: "Create new post"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      index:
+        posts: "Posts"
+        search_placeholder: "Search"
+        show_all: "Show all"
+        more: "More"
+        placeholder_search: "Search"
+        title_description: "Lastest posts of our Members"
+        title: "Member's posts"
+        filter: "Filter"
+      nav_search:
+        new: "Create new post"
+        show_all: "Show all"
+        keyword: "Search"
       show:
         follow_us_on_twitter: "Theo dõi chúng tôi trên Twitter"
         share_this_post: "Chia sẻ bài viết:"
@@ -301,6 +436,7 @@ vi:
   time:
     formats:
       date_month_year_concise: '%d-%m-%y'
+      time_date_month_year: '%-d %B %Y, %H:%M %p '
   copy: "Copyright by Framgia"
   error: "lỗi"
   comment:

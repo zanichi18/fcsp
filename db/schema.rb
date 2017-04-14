@@ -478,10 +478,11 @@ ActiveRecord::Schema.define(version: 20170412044205) do
     t.integer  "type_of_candidates", default: 0
     t.integer  "who_can_apply",      default: 0
     t.integer  "status",             default: 0
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "team_id"
     t.datetime "deleted_at"
+    t.string   "profile_requests",   default: "[]", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
     t.index ["deleted_at"], name: "index_jobs_on_deleted_at", using: :btree
     t.index ["team_id"], name: "index_jobs_on_team_id", using: :btree
@@ -566,6 +567,17 @@ ActiveRecord::Schema.define(version: 20170412044205) do
     t.index ["company_id"], name: "index_teams_on_company_id", using: :btree
   end
 
+  create_table "user_educations", force: :cascade do |t|
+    t.string   "school"
+    t.string   "major"
+    t.date     "graduation"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_educations_on_user_id", using: :btree
+  end
+
   create_table "user_groups", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "group_id"
@@ -576,6 +588,17 @@ ActiveRecord::Schema.define(version: 20170412044205) do
     t.index ["group_id"], name: "index_user_groups_on_group_id", using: :btree
     t.index ["position_id"], name: "index_user_groups_on_position_id", using: :btree
     t.index ["user_id"], name: "index_user_groups_on_user_id", using: :btree
+  end
+
+  create_table "user_portfolios", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.date     "time"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -628,7 +651,9 @@ ActiveRecord::Schema.define(version: 20170412044205) do
   add_foreign_key "jobs", "teams"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
+  add_foreign_key "user_educations", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "positions"
   add_foreign_key "user_groups", "users"
+  add_foreign_key "user_portfolios", "users"
 end

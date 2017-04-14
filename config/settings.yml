@@ -132,6 +132,7 @@ team_introductions:
     number_images: 2
 home:
   limit: 8
+  max_job: 24
 home_trainings_limit: 8
 company:
   country: ["United States", "Japan", "Germany", "Korea"]
@@ -175,5 +176,15 @@ employer:
   jobs:
     per_page: 6
 truncate_job_describe: 150
-home:
-  max_job: 24
+user_portfolios:
+  title_min: 10
+  title_max: 255
+  description_min: 10
+  description_max: 1000
+user_educations:
+  school_min: 3
+  school_max: 255
+  major_min: 3
+  major_max: 255
+  description_min: 10
+  description_max: 1000

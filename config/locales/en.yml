@@ -14,6 +14,22 @@ en:
       person_applied: " person has applied."
       location: "Location"
       recommend: "Recommend"
+      apply_modal_header: "We have notified %{company_name} of your interest."
+      interest_heading: "Please tell us what you are interested in."
+      let_s_work_together: "Let’s work together!"
+      let_s_have_chat: "Let’s have a chat."
+      interest_me: "This opportunity interests me."
+      your_entry_complete: "Your entry is complete!"
+      success_heading: "Let's wait to hear from the person"
+      success_description: "If the person take an interest in you, you will receive an invitation message."
+      apply_success_alt: "Apply success"
+      entry: "Entry"
+      apply_failed_title: "Apply failed"
+      need_update_profile_alt: "You should update your profile before apply this job"
+      should_update_heading: "Employer needs more on your profile"
+      should_update_heading_description: "Update your profile and comeback to us"
+      cancel: "Cancel"
+      edit_profile: "Edit my profile"
     index:
       table:
         thead:
@@ -60,6 +76,15 @@ en:
       title: "Other jobs posting you may like"
     popular_job:
       comments: "35 comments"
+    bookmark:
+      bookmark: "Bookmark"
+      bookmark_job: "Bookmark job"
+      bookmarked: "Bookmarked"
+    candidate:
+      apply_job: "Apply Job"
+      unapply_job: "Unapply Job"
+      currently: "Currently"
+      person_applied: "Person applied"
   employer:
     companies:
       edit:
@@ -177,6 +202,10 @@ en:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+    job_bookmark:
+      bookmark: "Bookmark"
+      bookmarked: "Bookmarked"
+      unbookmark: "Unbookmark"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:

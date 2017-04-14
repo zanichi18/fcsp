@@ -36,6 +36,7 @@ class Job < ApplicationRecord
   validates :describe, presence: true
   validates :type_of_candidates, presence: true
   validates :who_can_apply, presence: true
+  validates :profile_requests, presence: true
 
   scope :newest, ->{order created_at: :desc}
   scope :all_job, ->{}

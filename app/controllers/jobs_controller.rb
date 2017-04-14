@@ -14,7 +14,13 @@ class JobsController < ApplicationController
   end
 
   def show
-    @job_object = Supports::ShowJob.new @job
-    render json: @job_object.company_address if request.xhr?
+    @job_object = Supports::ShowJob.new @job, current_user
+
+    if request.xhr?
+      render json: {
+        addresses: @job_object.company_address,
+        qualified_profile: @job_object.qualified_profile?
+      }
+    end
   end
 end

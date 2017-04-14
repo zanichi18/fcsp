@@ -1,7 +1,12 @@
 <% if check_apply_jobs? current_user.id, job.id %>
   <%= button_tag t(".unapply"), id: job.id,
-    class: "btn btn-danger cancel_apply_job form-control" %>
+    class: "button button-3d button-large button-rounded button-white button-light cancel_apply_job" %>
 <% else %>
   <%= button_tag t(".apply_job"), id: job.id,
-    class: "btn btn-primary apply_job form-control" %>
+    class: "button button-3d button-large button-rounded button-green apply_job",
+    data: {toggle: "modal", target: "myModal", qualified_profile: @job_object.qualified_profile?} %>
 <% end %>
+<div class="person-apply">
+  <%= t ".currently" %> <%= "#{@job_object.count_candidates}" %>
+  <%= t ".person_applied" %>
+</div>
