@@ -9,8 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20170414014459) do
+ActiveRecord::Schema.define(version: 20170417075835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,12 +206,12 @@ ActiveRecord::Schema.define(version: 20170414014459) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.text     "description"
+    t.text     "name"
     t.index ["education_learning_program_id"], name: "index_8b0cacfb59cf9e0162ebe217e09209051f6e9f59", using: :btree
     t.index ["locale"], name: "index_education_learning_program_translations_on_locale", using: :btree
   end
 
   create_table "education_learning_programs", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
