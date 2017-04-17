@@ -461,3 +461,45 @@ vi:
       remove_request: "Đã hủy yêu cầu với %{name}"
       unfriend: "Đã hủy kết bạn với %{name}"
       not_found: "Không tìm thấy người dùng"
+    show:
+      new_feed: "Bảng tin"
+      information: "Cá nhân"
+      posts: "Bài đăng"
+    header:
+      add_friend: "Thêm bạn"
+      message: "Tin nhắn"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      location: "Vị trí"
+      working_at: "Đang làm việc tại"
+      change_cover: "Thay đổi ảnh bìa"
+    social_network:
+      about_me: "Về tôi"
+      social_profiles: "Kết nối với tôi"
+    change_avatar:
+      title: "Thay đổi ảnh đại diện"
+      save: "Lưu lại"
+      close: "Đóng"
+      from_album: "Chọn từ bộ sưu tập"
+    change_cover:
+      title: "Thay đổi ảnh bìa"
+      save: "Lưu lại"
+      close: "Đóng"
+      from_album: "Chọn từ bộ sưu tập"
+    album_image:
+      no_image: "Không có hình ảnh nào"
+  user_avatars:
+    create:
+      success: "Đã cập nhật ảnh đại diện thành công!"
+      fail: "Cập nhật ảnh đại diện thất bại"
+    update:
+      success: "Đã cập nhật ảnh đại diện thành công!"
+      fail: "Cập nhật ảnh đại diện thất bại"
+      not_found: "Không tìm thấy ảnh"
+  user_covers:
+    create:
+      success: "Đã cập nhật ảnh bìa thành công!"
+      fail: "Cập nhật ảnh bìa thất bại"
+    update:
+      success: "Đã cập nhật ảnh bìa thành công!"
+      fail: "Cập nhật ảnh bìa thất bại"
+      not_found: "Không tìm thấy ảnh"

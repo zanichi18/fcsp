@@ -35,10 +35,13 @@ class User < ApplicationRecord
   has_many :skills, through: :skill_users
   has_many :user_portfolios, dependent: :destroy
   has_many :user_educations, dependent: :destroy
+  has_one :avatar, class_name: Image.name, foreign_key: :id,
+    primary_key: :avatar_id
+  has_one :cover_image, class_name: Image.name, foreign_key: :id,
+    primary_key: :cover_image_id
 
   delegate :introduce, to: :info_user, prefix: true
 
-  mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
   enum education_status: [:blocked, :active], _prefix: true
 
@@ -108,6 +111,10 @@ class User < ApplicationRecord
 
   def unapply_job job
     candidates.find_by(job_id: job.id).destroy if job.present?
+  end
+
+  def is_user? user
+    self == user
   end
 
   private
