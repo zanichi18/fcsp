@@ -449,3 +449,15 @@ vi:
   users:
     find_user:
       not_found: "Không tìm thấy người dùng"
+    friend_ship_form:
+      remove_request: "Hủy yêu cầu"
+      request_friend: "Kết bạn"
+      unfriend: "Hủy kết bạn"
+  friend_ships:
+    create:
+      request_friend: "Đã gửi yêu cầu đến %{name}"
+      not_found: "Không tìm thấy người dùng"
+    destroy:
+      remove_request: "Đã hủy yêu cầu với %{name}"
+      unfriend: "Đã hủy kết bạn với %{name}"
+      not_found: "Không tìm thấy người dùng"

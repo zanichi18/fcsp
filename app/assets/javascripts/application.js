@@ -27,3 +27,4 @@
 //= require education/growl.custom
 //= require_tree ../../../vendor/assets/javascripts/js/components
 //= require social-share-button
+//= require friend_ships
