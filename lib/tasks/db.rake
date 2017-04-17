@@ -175,6 +175,14 @@ namespace :db do
         end
       end
 
+      puts "Create request friends"
+      (5..8).each do |user_id|
+        Friendship.create! friendable_type: User.name, friendable_id: user_id,
+          friend_id: 1, status: 0
+        Friendship.create! friendable_type: User.name, friendable_id: 1,
+          friend_id: user_id, status: 1
+      end
+
       puts "Create Education informations"
       Rake::Task["education:education_seeding"].invoke
     end

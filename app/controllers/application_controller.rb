@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :rack_mini_profiler_authorize_request
   before_action :set_locale
   after_action :store_location
+  before_action :friend_request
 
   include ApplicationHelper
   include PublicActivity::StoreController
@@ -41,5 +42,11 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for _resourse
     session[:previous_url] || root_path
+  end
+
+  def friend_request
+    if !current_user.nil? && user_signed_in?
+      @user_request = current_user.requested_friends
+    end
   end
 end

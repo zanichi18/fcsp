@@ -1,4 +1,5 @@
 class FriendShipsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_user
 
   def create
@@ -16,16 +17,47 @@ class FriendShipsController < ApplicationController
     end
   end
 
+  def update
+    if params[:status] == Settings.friend_ship.accept
+      render_json_accept
+    else
+      render_json_decline
+    end
+  end
+
   private
 
   def load_user
     @user = User.find_by id: params[:id]
-    render_json t(".not_found"), 404 unless @user
+    unless @user
+      flash[:danger] = t ".not_found"
+      redirect_to root_url
+    end
   end
 
   def render_json message, status
     respond_to do |format|
       format.json{render json: {flash: message, status: status}}
+    end
+  end
+
+  def render_json_accept
+    respond_to do |format|
+      if current_user.accept_request @user
+        format.json{render json: {message: t(".success")}}
+      else
+        format.json{render json: {message: t(".failed")}}
+      end
+    end
+  end
+
+  def render_json_decline
+    respond_to do |format|
+      if current_user.decline_request @user
+        format.json{render json: {message: t(".reject_success")}}
+      else
+        format.json{render json: {message: t(".reject_failed")}}
+      end
     end
   end
 end

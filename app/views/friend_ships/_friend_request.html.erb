@@ -1,0 +1,40 @@
+<%= javascript_include_tag "friend-ship" %>
+<div id="top-cart">
+  <a href="#" id="top-cart-trigger"><i class="icon-user"></i>
+    <span><%= t ".number_request" %></span></a>
+  <div class="top-cart-content top-cart-content-custom">
+    <div class="top-cart-title">
+      <h4><%= t ".friend-ship" %></h4>
+    </div>
+    <div class="top-cart-items top-cart-items-custom">
+      <% if @user_request.present? %>
+        <% @user_request.each do |user_request| %>
+          <div class="top-cart-item clearfix" id="friend-ship-<%= user_request.id %>">
+            <div class="top-cart-item-image">
+              <%= link_to image_tag(user_request.avatar), user_path(user_request) %>
+            </div>
+            <div class="top-cart-item-desc">
+              <a href="#"><%= user_request.name %></a>
+              <span class="top-cart-item-price"><%= t ".mutual-friends" %></span>
+              <span class="top-cart-item-quantity">
+                <%= link_to "#", class: "right-icon friend-ship", data: {id: user_request.id} do %>
+                  <i class="button button-3d button-mini button-rounded button-dirtygreen"><%= t ".confirm" %></i>
+                <% end %>
+              </span>
+            </div>
+            <%= link_to "#", class: "right-icon friend-ship-decline", data: {id: user_request.id} do %>
+              <i class="button button-3d button-mini button-rounded button-white button-light button-light-custom">
+                <%= t ".reject" %></i>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= t ".request_not_found" %>
+    <% end %>
+  </div>
+    <div class="top-cart-action clearfix">
+      <span class="fleft top-checkout-price"></span>
+      <button class="button button-3d button-small nomargin fright"><%= t ".view_all" %></button>
+    </div>
+  </div>
+</div>

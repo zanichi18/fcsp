@@ -419,14 +419,6 @@ en:
       remove_request: "Cancel Request"
       request_friend: "Add Friend"
       unfriend: "Unfriend"
-  friend_ships:
-    create:
-      request_friend: "Sent a request to %{name}"
-      not_found: "User not found"
-    destroy:
-      remove_request: "Cancelled request to %{name}"
-      unfriend: "Unfriended with %{name}"
-      not_found: "User not found"
     show:
       new_feed: "New feed"
       information: "Information"
@@ -453,6 +445,29 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+  friend_ships:
+    create:
+      request_friend: "Sent a request to %{name}"
+      not_found: "User not found"
+    destroy:
+      remove_request: "Cancelled request to %{name}"
+      unfriend: "Unfriended with %{name}"
+      not_found: "User not found"
+    load_user:
+      not_found: "user not found"
+    update:
+      success: "confirm successfully"
+      failed: "confirm failed"
+      reject_success: "reject successfully"
+      reject_failed: "reject failed"
+    friend_request:
+      confirm: "Confirm"
+      friend-ship: "Friend Requests"
+      mutual-friends: "Mutual friends"
+      number_request: "5"
+      reject: "delete request"
+      request_not_found: "no new requests"
+      view_all: "View All"
   user_avatars:
     create:
       success: "Change avatar successfully!"
