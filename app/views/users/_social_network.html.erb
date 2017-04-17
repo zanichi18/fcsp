@@ -2,7 +2,9 @@
   <div class="fancy-title topmargin title-border">
     <h4><%= t ".about_me" %></h4>
   </div>
-  <p><%= @user.info_user_introduce %></p>
+  <% if @user.info_user.present? %>
+    <p><%= @user.info_user_introduce %></p>
+  <% end %>
   <div class="fancy-title topmargin title-border">
     <h4><%= t ".social_profiles" %></h4>
   </div>
