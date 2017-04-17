@@ -80,7 +80,7 @@ jp:
       our_projects:
         heading: "Our Projects"
       our_team:
-        heading: "Meet Our Team"
+        heading: "Our team"
     trainings:
       training_not_found: "Training Not Found."
       index:

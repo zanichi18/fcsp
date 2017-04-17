@@ -65,12 +65,12 @@ vi:
         description: "Tiềm năng lớn của bạn + Thực hành thực tế = Chiến thắng</br>
                       Ở lại với Framgia Education và mang khả năng của bạn đến với thế giới"
       learning_programs:
-        header: "Chương trình đào tạo"
+        header: "Phương thức đào tạo"
       our_projects:
         see_more: "Xem thêm"
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
-        heading: "Education Videos"
+        heading: "Tại Framgia Education"
         description: "Bất cứ đều gì chúng tôi làm, phải thật sự mang nhiều ý nghĩa. Bất cứ lúc bạn tin vào chúng tôi, bạn sẽ đạt được tầm cao mới."
       statistics:
         course: "Khóa học"
@@ -96,15 +96,15 @@ vi:
         documentation: "Tài liệu mở rộng"
         documentation_des: "Chúng tôi đã bảo vệ tất cả mọi thứ và trong Tài liệu của chúng tôi bao gồm Video & Ảnh chụp màn hình."
       our_techniques:
-        title: "Những công nghệ của chúng tôi"
-        introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
+        title: "Công nghệ"
+        introduce: "Chúng tôi luôn cập nhật các xu thế công nghệ mới để chắc chắn rằng các sản phẩm mà học viên chúng tôi phát triển nên đều có thể sử dụng trên những thiệt bị hiện đại nhất."
       need_content:
         header: "Chương trình đào tạo thực tiễn và toàn diện."
-        description1: "Chúng tôi cùng nhau chia sẻ niềm đang mê công nghệ và sứ mệnh tạo ra nhiều giá tốt đẹp cho cộng thồng thông qua công nghệ. Đó là lý do tại mỗi việc chúng tôi làm, mỗi bước chung tôi đi phải thật sự thiết thực, tạo ra các giá trị mang tính ứng dụng cao. Kiến thức lập trình, dự án thực tế, sự phối hợp với đồng đội và khả năng quản lý, tất cả tạo nên một bộ kỹ năng thiết yếu giúp lập trình viên gây dựng năng lực cạnh tranh trong ngành CNTT ngày nay."
+        description1: "Chúng ta được biết sản phẩm công nghệ thực thụ được sử dụng rộng rãi trên thị trường chỉ có thể được tạo ra bởi các công ty IT lớn hay những nhóm phát triển phần mềm nhiều năm kinh nghiệm. Riêng Framgia Education, chúng tôi tin rằng bất kỳ những ai có đam mê cũng với một hướng đi và phương pháp tiếp cận hiệu quả đều có thể làm ra các những phần mềm có tính ứng dụng cao, mang lại nhiều giá trị cho cộng đồng. Vì thế, giảng dạy và học tập nhất định phải đáp ứng được thực tiễn, các sản phẩm công nghệ của Framgia Education không chỉ giúp học viên hiểu hơn về kiến thức mà hơn hết còn phải đạt được yêu cầu về tính ứng dụng trên thị trường. Tất cả điều đó sẽ rèn luyện các lập trình viên có được một tầm nhìn bao quát và một bộ các kỹ năng để họ nâng cao năng lực cạnh tranh của chính mình trên thị trường nhân sự CNTT Việt Nam đang rất sôi động hiện nay."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Tìm hiểu thêm"
       clients_say:
-        title: "Nhận xét từ khách hàng"
+        title: "Ghi nhận từ khách hàng"
         client1_say: "Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?"
         client1_name: "Steve Jobs"
         client1_company: "Apple Inc."
@@ -115,7 +115,7 @@ vi:
         client3_name: "John Doe"
         client3_company: "XYZ Inc."
       our_team:
-        title: "Gặp gỡ nhóm của chúng tôi"
+        title: "Team chúng tôi"
         team_member1_name: "John Doe"
         team_member1_role: "CEO"
         team_member2_name: "Josh Clark"
@@ -126,7 +126,7 @@ vi:
         team_member4_role: "Support"
         team_member_trainer: "Người hướng dẫn"
       lastest_courses:
-        last_courses: "Các khóa học cuối"
+        last_courses: "Các khóa học sắp tới"
     trainings:
       training_not_found: "Không tìm thấy khóa đào tạo."
       index:
