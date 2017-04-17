@@ -163,6 +163,7 @@ jobs:
   image_member_url: "/assets/avatar.jpg"
   posting_job_default: "/assets/posting_job_default.jpg"
   team_intro_default: "/assets/team_intro.png"
+  max_length_title: 20
 industries:
   max_length_name: 50
 activity:
