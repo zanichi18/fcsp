@@ -26,8 +26,7 @@
                 </div>
               <% end %>
               <div class="person-apply">
-                <%= t ".currently" %><%= "#{@job_object.count_candidates}" %>
-                <%= t ".person_applied" %>
+                <%= t ".person_applied", candidate: @job_object.count_candidates %>
               </div>
             </div>
           <% end %>
@@ -43,7 +42,7 @@
             <div class="candidate-recommendation">
               <div class="location-padding">
                 <h4><%= t ".recommend" %></h4>
-                <%= render "recommend_user" %>
+                <%= @job_object.recommend.size > 0 ? (render "recommend_user") : t(".no_result") %>
               </div>
             </div>
           <% end %>

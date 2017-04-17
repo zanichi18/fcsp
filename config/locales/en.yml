@@ -7,11 +7,11 @@ en:
     job_form:
       next: "Next"
     candidate:
-      apply_job: "Job"
+      apply_job: "Apply Job"
+      unapply: "Unapply job"
     show:
       apply_job: "Apply Job"
-      currently: "Currently "
-      person_applied: " person has applied."
+      person_applied: "Currently %{candidate} person has applied."
       location: "Location"
       recommend: "Recommend"
       apply_modal_header: "We have notified %{company_name} of your interest."
@@ -30,12 +30,9 @@ en:
       should_update_heading_description: "Update your profile and comeback to us"
       cancel: "Cancel"
       edit_profile: "Edit my profile"
+      no_result: "No one matches these skills"
     index:
-      table:
-        thead:
-          id: "Id"
-          title: "Title"
-          describe: "Describe"
+      popular_job: "Popular Jobs"
       title: "List jobs"
     search_form:
       search: "Enter your search"
@@ -46,8 +43,7 @@ en:
         total_views: "Total views"
     members_of_company:
       members: "members"
-      views_all: "All members( "
-      views_all_close: ")"
+      views_all: "All members"
       edit_posting: "Edit posting"
     introduction_company:
       what_we_do: "What we do"
@@ -85,67 +81,10 @@ en:
       unapply_job: "Unapply Job"
       currently: "Currently"
       person_applied: "Person applied"
-  employer:
-    companies:
-      edit:
-        company_info: "Company Info"
-        edit_company_info: "Edit company info"
-        manage_members: "Manage members"
-        manage_images: "Manage images"
-        manage_accounts: "Manage accounts on social network"
-      edit_company_info:
-        update_company_info: "Update Company"
-        required: "(required)"
-        article: "Add article"
-    team_introductions:
-      form:
-        title: "Title"
-        contents: "Content"
-        images: "Image"
-        submit: "Save"
-      image_fields:
-        caption: "write caption"
-        team_introduction: "Team Introduction"
-      new:
-        team_introduction: "Team Introduction"
-        team_introduction_1: "Team Introduction 1"
-        team_introduction_2: "Team Introduction 2"
-        team_introduction_3: "Team Introduction 3"
-        team_introduction_recruitment: "Team Introduction Recruiment"
-        submit: "Submit"
-      not_found: "Team Introduction not found"
-      success: "Successfully added team introduction"
-      create_confirm: "Are you sure to set up this company introduction?"
-    dashboards:
-      index:
-        title: "Company"
-      dashboard:
-        menu: "Menu"
-        manager_postings: "Manager Postings"
-        candidates: "Candidates"
-        messages: "Messages"
-        recommendations: "Recommendations"
-        view_mores: "View mores"
-        current_plans: "Current Plans"
-        contact: "Contact Us"
-        trial: "Trial"
-        view_candidates: "Current viewable candidates"
-        mail: "Mail"
-        help: "Help"
-        company_info: "Company Info"
-    layouts:
-      header:
-        dashboard: "Dashboard"
-        jobs: "Jobs"
-        feed: "Feed"
-        tools: "Tools"
-        edit_profile: "Edit Profile"
-        account_info: "Account Info"
-        company_info: "Company Info"
-        setting: "Setting"
-        logout: "Logout"
-    candidates:
-      not_found: "Candidate not found"
+    job:
+      read_more: "Read more"
+    recommend_user:
+      show_more: "View more"
   companies:
     show:
       info: "Info"
