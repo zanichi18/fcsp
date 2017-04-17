@@ -221,14 +221,14 @@ en:
     home:
       our_trainings:
         techniques: "Techniques"
-        our_trainings: "Our Trainings"
+        our_trainings: "Training programs"
         see_more: "See more"
       clients_say:
         heading: "What Clients Say?"
       our_projects:
-        heading: "Our Projects"
+        heading: "Projects"
       our_team:
-        heading: "Meet Our Team"
+        heading: "Our team"
     trainings:
       training_not_found: "Training Not Found."
       index:

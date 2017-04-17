@@ -219,12 +219,12 @@ vi:
     home:
       our_trainings:
         techniques: "Công nghệ"
-        our_trainings: "Đào tạo của chúng tôi"
+        our_trainings: "Chương trình đào tạo"
         see_more: "Xem thêm"
       clients_say:
         heading: "Khách hàng nói gì?"
       our_projects:
-        heading: "Dự án của chúng tôi"
+        heading: "Các dự án"
       our_team:
         heading: "Gặp đội của chúng tôi"
     trainings:
