@@ -1,11 +1,11 @@
 module UsersHelper
-  def load_user_avatar user, class_custom
+  def load_user_avatar user, class_custom = nil
     if user.avatar.present?
       image_tag user.avatar.picture, alt: user.name.to_s,
-        class: "img-thumbnail #{class_custom}"
+        class: class_custom.to_s
     else
       image_tag "avatar.jpg", alt: user.name.to_s,
-        class: "img-thumbnail #{class_custom}"
+        class: class_custom.to_s
     end
   end
 

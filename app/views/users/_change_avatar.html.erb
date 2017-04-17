@@ -8,7 +8,7 @@
 
       <div class="modal-body">
         <div class="upload-user-avatar">
-          <%= load_user_avatar user, "img-avatar-upload img-upload" %>
+          <%= load_user_avatar user, "img-thumbnail img-avatar-upload img-upload" %>
         </div>
         <%= form_tag user_avatars_path, id: "form-create-avatar", multipart: true do %>
           <div class="row">

@@ -16,13 +16,13 @@
       <div class="user clearfix">
         <div class="user-avatar">
           <% if user.is_user? current_user %>
-            <%= load_user_avatar user, "img-avatar my-img-avatar" %>
+            <%= load_user_avatar user, "img-thumbnail img-avatar my-img-avatar" %>
             <div class="ico-upload-avatar">
               <h3 class="glyphicon glyphicon-camera" data-toggle="modal"
                 data-target="#changeAvatarModal"></h3>
             </div>
           <% else %>
-            <%= load_user_avatar user, "img-avatar" %>
+            <%= load_user_avatar user, "img-thumbnail img-avatar" %>
           <% end %>
         </div>
         <h2><%= user.name %></h2>

@@ -1,5 +1,6 @@
 class Education::BaseController < ApplicationController
   layout "education/layouts/application"
+  before_action :user_blocked?
 
   private
 
@@ -13,5 +14,13 @@ class Education::BaseController < ApplicationController
 
   def manage? object
     can?(:create, object) || can?(:update, object) || can?(:destroy, object)
+  end
+
+  def user_blocked?
+    if current_user.present? && current_user.education_status_blocked?
+      sign_out current_user
+      flash[:danger] = t "education.base.user_blocked"
+      redirect_to root_path
+    end
   end
 end

@@ -211,10 +211,6 @@ en:
   flash:
     deleted_success: "deleted successfully!"
   education:
-    layouts:
-      header:
-        log_out: "Logout"
-        log_in: "Login"
     trainers:
       index_posts:
         filter: "Filter"
