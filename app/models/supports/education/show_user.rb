@@ -14,7 +14,7 @@ module Supports::Education
 
     def education_projects
       pagination user.education_projects.order(created_at: :desc)
-        .includes :images
+        .includes :images, :translations
     end
 
     def education_posts

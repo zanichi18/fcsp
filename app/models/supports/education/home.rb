@@ -33,7 +33,7 @@ module Supports::Education
     end
 
     def trainers
-      Education::Group.get_trainers.users.by_active
+      Education::Group.get_trainers.users.by_active.includes :avatar
     end
   end
 end
