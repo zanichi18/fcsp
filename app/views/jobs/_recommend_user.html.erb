@@ -1,8 +1,7 @@
 <% @job_object.recommend_user.each do |user| %>
   <div class="spost clearfix">
     <div class="entry-image">
-      <%= image_tag user.avatar.present? ? user.avatar.url : "default.jpg",
-        class: "img-circle" %>
+      <%= load_user_avatar user, "img-circle" %>
     </div>
     <div class="entry-user">
       <div class="entry-title">

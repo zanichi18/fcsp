@@ -46,9 +46,16 @@
           <div id="top-cart" class="dropdown-user">
             <a><i class="icon-user"></i></a>
             <div class="dropdown-user-content">
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <span><i class="icon-signout"></i> <%= t ".log_out" %></span>
-              <% end %>
+              <div class="edu-dropdown-user-detail">
+                <%= link_to education_user_path(current_user) do %>
+                  <span><i class="icon-user"></i>&nbsp;<%= t ".profile" %></span>
+                <% end %>
+              </div>
+              <div class="edu-dropdown-user-detail">
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <span><i class="icon-signout"></i>&nbsp;<%= t ".log_out" %></span>
+                <% end %>
+              </div>
             </div>
           </div>
         <% else %>

@@ -11,7 +11,7 @@
     <!-- menu profile quick info -->
     <div class="profile clearfix">
       <div class="profile_pic">
-        <%= image_tag current_user.avatar.url, class: "img-circle profile_img" %>
+        <%= load_user_avatar current_user, "img-circle profile_img" %>
       </div>
       <div class="profile_info">
         <span><%= t ".welcome" %>,</span>
@@ -74,7 +74,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <%= image_tag current_user.avatar.url %> John Doe
+            <%= load_user_avatar current_user %> John Doe
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">

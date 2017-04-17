@@ -1,5 +1,7 @@
 en:
   education:
+    base:
+      user_blocked: "You are blocked in this site."
     javascripts:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
@@ -36,6 +38,9 @@ en:
         search: "Type & Hit Enter.."
         feedback: "Feedback"
         trainers: "Trainers"
+        profile: "Profile"
+        log_out: "Logout"
+        log_in: "Login"
     trainers:
       trainer:
         trainer_title: "Trainer"

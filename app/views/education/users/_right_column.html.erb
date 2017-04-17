@@ -2,7 +2,7 @@
   <div class="fancy-title title-border">
     <h4><%= t(".profile").upcase %></h4>
   </div>
-  <%= image_tag @user.avatar, class: "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
+  <%= load_user_avatar @user, "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
   <div class="heading-block noborder">
     <h3><%= @user.name %></h3>
     <span><%= @user.email %></span>

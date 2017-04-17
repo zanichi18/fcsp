@@ -1,5 +1,7 @@
 vi:
   education:
+    base:
+      user_blocked: "Tài khoản của bạn đã bị khóa."
     javascripts:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
@@ -36,6 +38,9 @@ vi:
         search: "Type & Hit Enter.."
         feedback: "Phản hồi"
         trainers: "Giảng viên"
+        profile: "Trang cá nhân"
+        log_out: "Đăng xuất"
+        log_in: "Đăng nhập"
     trainers:
       trainer:
         trainer_title: "Giảng viên"

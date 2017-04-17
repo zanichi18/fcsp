@@ -13,7 +13,9 @@
           <% trainers.each do |trainer| %>
             <div class="team">
               <div class="team-image">
-                <%= link_to image_tag(trainer.avatar), education_user_path(trainer) %>
+                <%= link_to education_user_path trainer do %>
+                  <%= load_user_avatar trainer %>
+                <% end %>
               </div>
               <div class="team-desc team-desc-bg">
                 <div class="team-title">
