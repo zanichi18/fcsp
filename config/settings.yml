@@ -191,3 +191,5 @@ home:
 friend_ship:
   accept: "accept"
   decline: "decline"
+mailer:
+  sent_mail: "fcsp.info@gmail.com"

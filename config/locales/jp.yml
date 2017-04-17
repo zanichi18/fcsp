@@ -239,3 +239,8 @@ jp:
       remove_request: "Cancelled request to %{name}"
       unfriend: "Unfriended with %{name}"
       not_found: "User not found"
+  friend_request_mailer:
+    friend_request:
+      subject: "You have a friend request from %{name}"
+      hi: "Hi %{name},"
+      end: "This email is sent automatically from FCSP, Please do not reply!"

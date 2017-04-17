@@ -518,3 +518,8 @@ vi:
       success: "Đã cập nhật ảnh bìa thành công!"
       fail: "Cập nhật ảnh bìa thất bại"
       not_found: "Không tìm thấy ảnh"
+  friend_request_mailer:
+    friend_request:
+      subject: "Bạn có một yêu cầu kết bạn từ %{name}"
+      hi: "Chào %{name},"
+      end: "Email này được gửi tự động từ FCSP, vui lòng đừng trả lời!"
