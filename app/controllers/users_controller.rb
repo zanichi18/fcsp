@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: :show
-
+  before_action :authenticate_user!
+  before_action :find_user, only: [:show, :edit]
   def show
+  end
+
+  def edit
+    @user.build_info_user if @user.info_user.nil?
+    @info_user = @user.info_user
   end
 
   private

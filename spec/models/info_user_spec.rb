@@ -8,5 +8,9 @@ RSpec.describe InfoUser, type: :model do
       it{expect have_db_column(:ambition).of_type(:string)}
       it{expect have_db_column(:relationship_status).of_type(:integer)}
     end
+
+    context "associations" do
+      it{is_expected.to belong_to :user}
+    end
   end
 end

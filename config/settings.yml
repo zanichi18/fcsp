@@ -194,3 +194,6 @@ friend_ship:
   decline: "decline"
 mailer:
   sent_mail: "fcsp.info@gmail.com"
+info_users:
+  introduction_form_rows: 7
+  max_length_introduce: 2000
