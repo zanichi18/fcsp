@@ -75,6 +75,6 @@ class Education::Management::TechniquesController <
 
   def technique_params
     params.require(:education_technique)
-      .permit :name, :description, image_attributes: :url
+      .permit :name, :description, image_attributes: [:id, :url]
   end
 end
