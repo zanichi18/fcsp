@@ -19,10 +19,13 @@ var friend_ship = {
         type: 'POST',
         success: function(data) {
           if(data.status === 200) {
-            $.growl.notice({message: data.flash});
-            self.removeClass('request-friend btn-success')
-              .addClass('remove-request btn-warning');
-            self.text(I18n.t('users.friend_ship_form.remove_request'));
+            $.growl.notice({title: I18n.t('users.friend_ship_form.request_friend')
+              ,message: data.flash});
+            self.removeClass('request-friend')
+              .addClass('remove-request');
+            self.empty();
+            self.append('<span class="glyphicon glyphicon-remove"></span>'
+              + I18n.t('users.friend_ship_form.remove_request')) 
           }
           else {
             $.growl.error({message: data.flash});
@@ -40,16 +43,18 @@ var friend_ship = {
     $('body').on('click', '.remove-request', function() {
       var self = $(this);
       var user_id = $('#user_id').val();
-      var is_unfriend = $('#is_unfriend').val();
       $.ajax({
         url: '/friend_ships/' + user_id,
         type: 'DELETE',
         success: function(data) {
           if(data.status === 200) {
-            $.growl.warning({message: data.flash});
-            self.removeClass('remove-request btn-warning')
-              .addClass('request-friend btn-success');
-            self.text(I18n.t('users.friend_ship_form.request_friend'));
+            $.growl.warning({title: I18n.t('users.friend_ship_form.remove_request')
+              ,message: data.flash});
+            self.removeClass('remove-request')
+              .addClass('request-friend');
+            self.empty();
+            self.append('<span class="glyphicon glyphicon-plus"></span>'
+              + I18n.t('users.friend_ship_form.request_friend'));
           }
           else {
             $.growl.error({message: data.flash});
@@ -73,10 +78,13 @@ var friend_ship = {
         type: 'DELETE',
         success: function(data) {
           if(data.status === 200) {
-            $.growl.error({message: data.flash});
-            self.removeClass('unfriend btn-danger')
-              .addClass('request-friend btn-success');
-            self.text(I18n.t('users.friend_ship_form.request_friend'));
+            $.growl.error({title: I18n.t('users.friend_ship_form.unfriend')
+              ,message: data.flash});
+            self.removeClass('unfriend')
+              .addClass('request-friend');
+            self.empty();
+            self.append('<span class="glyphicon glyphicon-plus"></span>'
+              + I18n.t('users.friend_ship_form.request_friend'));
           }
           else {
             $.growl.error({message: data.flash});

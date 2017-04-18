@@ -228,9 +228,9 @@ jp:
     find_user:
       not_found: "User not found"
     friend_ship_form:
-      remove_request: "Cancel Request"
-      request_friend: "Add Friend"
-      unfriend: "Unfriend"
+      remove_request: " Cancel Request"
+      request_friend: " Add Friend"
+      unfriend: " Unfriend"
   friend_ships:
     create:
       request_friend: "Sent a request to %{name}"
