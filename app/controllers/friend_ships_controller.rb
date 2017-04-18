@@ -4,6 +4,7 @@ class FriendShipsController < ApplicationController
 
   def create
     current_user.friend_request @user
+    current_user.send_email_request_friend @user
     render_json t(".request_friend", name: @user.name), 200
   end
 

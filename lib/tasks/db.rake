@@ -37,7 +37,9 @@ namespace :db do
         "le.quang.canh@sframgia.com": "thomlt",
         "nguyen.ngoc.thinh@framgia.com": "thomlt",
         "tran.xuan.nam@framgia.com": "tranxuannam",
-        "admin.education@framgia.com": "admin.education"
+        "admin.education@framgia.com": "admin.education",
+        "user@gmail.com": "123456",
+        "ttkt1994@gmail.com": "123456"
       }
 
       users.each do |email, password|
@@ -46,12 +48,11 @@ namespace :db do
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
-      User.create! name: "Adminprp",
+      user = User.create! name: "Adminprp",
         email: "admin@gmail.com",
         password: "123456",
         role: 1
-
-      User.create! name: "user", email: "user@gmail.com", password: "123456"
+        InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
 
       puts "Create positions"
       positions = ["Manager", "Director", "Admin"]

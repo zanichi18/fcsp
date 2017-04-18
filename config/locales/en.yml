@@ -484,3 +484,8 @@ en:
       success: "Change cover image successfully!"
       fail: "Change cover image failed"
       not_found: "Image not found"
+  friend_request_mailer:
+    friend_request:
+      subject: "You have a friend request from %{name}"
+      hi: "Hi %{name},"
+      end: "This email is sent automatically from FCSP, Please do not reply!"
