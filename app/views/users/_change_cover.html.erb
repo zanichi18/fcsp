@@ -8,7 +8,7 @@
 
       <div class="modal-body">
         <div class="upload-user-cover">
-          <%= load_user_cover user, "img-cover-upload img-upload" %>
+          <%= load_user_cover user, class: "img-cover-upload img-upload" %>
         </div>
         <%= form_tag user_covers_path, id: "form-create-cover", multipart: true do %>
           <div class="row">

@@ -33,8 +33,10 @@
                 <div class="tab-container">
                   <%= render "projects",
                     projects: @show_user_object.education_projects %>
-                  <%= render "posts",
-                    posts: @show_user_object.education_posts %>
+                  <div class="user-posts">
+                    <%= render "posts",
+                      posts: @show_user_object.education_posts %>
+                  </div>
                   <%= render "courses",
                     courses: @show_user_object.education_courses %>
                   <%= render "activities", activities: @activities if

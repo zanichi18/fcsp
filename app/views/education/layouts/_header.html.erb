@@ -52,6 +52,11 @@
                 <% end %>
               </div>
               <div class="edu-dropdown-user-detail">
+                <%= link_to new_education_post_path do %>
+                  <span><i class="icon-edit" aria-hidden="true"></i>&nbsp;<%= t ".create_new_post" %></span>
+                <% end %>
+              </div>
+              <div class="edu-dropdown-user-detail">
                 <%= link_to destroy_user_session_path, method: :delete do %>
                   <span><i class="icon-signout"></i>&nbsp;<%= t ".log_out" %></span>
                 <% end %>

@@ -173,6 +173,7 @@ vi:
       about: "About"
       login: "Login"
       logout: "Logout"
+      create_new_post: "Tạo bài viết mới"
   pages:
     home:
       title: "Home"

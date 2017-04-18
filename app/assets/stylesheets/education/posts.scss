@@ -95,6 +95,10 @@
   &:hover {
     color: $black !important;
   }
+
+  &-delete-custom {
+    color: $red !important;
+  }
 }
 
 blockquote {

@@ -50,7 +50,11 @@ class Education::PostsController < Education::BaseController
     else
       flash[:danger] = t ".post_delete_fail"
     end
-    redirect_to education_posts_path
+    @index_post_object = Supports::Education::IndexPost.new params[:term],
+      params[:page], params[:category], params[:user]
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -71,7 +75,7 @@ class Education::PostsController < Education::BaseController
   end
 
   def load_post_of_user
-    @post = current_user.education_posts.find_by id: params[:id]
-    not_found unless @post
+    @post = Education::Post.find_by id: params[:id]
+    not_found unless (can? :manage, @post) || (@post.user == current_user)
   end
 end

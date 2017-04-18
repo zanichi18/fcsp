@@ -35,9 +35,13 @@
           <%= post.content.truncate Settings.education.posts.content_character_display %>
         </p>
         <%= link_to education_post_path(post), class: "more-link" do %>
-          <%= t "education.posts.read_more" %>
+          <%= t ".read_more" %>
         <% end %>
-        </a>
+        <% if is_belong_to_user? post, current_user %>
+          <%= link_to t(".delete"), education_post_path(post), method: :delete,
+            remote: true, data: {confirm: t(".confirm_delete")},
+            class: "more-link more-link-delete-custom" %>
+        <% end %>
       </div>
     </div>
   </div>

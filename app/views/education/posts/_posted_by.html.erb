@@ -8,8 +8,7 @@
   </div>
   <div class="panel-body">
     <div class="author-image">
-      <%= image_tag @post.user_avatar.url, alt: @post.user_name,
-        class: "img-circle" %>
+      <%= load_user_avatar @post.user, class: "img-circle" %>
     </div>
   </div>
 </div>

@@ -28,6 +28,7 @@ en:
         feedbacks: "Feedbacks"
         learning_programs: "Learning Programs"
         techniques: "Techniques"
+        group_users: "Group Users"
       header:
         home: "Home"
         project: "Projects"
@@ -41,6 +42,7 @@ en:
         profile: "Profile"
         log_out: "Logout"
         log_in: "Login"
+        create_new_post: "Create new post"
     trainers:
       trainer:
         trainer_title: "Trainer"
@@ -338,6 +340,10 @@ en:
       create_new: "Create new post"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      post:
+        read_more: "Read more"
+        delete_confirm: "Are you sure?"
+        delete: "Delete"
       index:
         no_posts: "No posts found"
         posts: "Posts"
@@ -420,6 +426,10 @@ en:
         twitter: "Twitter"
         photos: "Photos"
         techniques: "Techniques"
+      post:
+        delete: "Delete"
+        delete_confirm: "Are you sure?"
+        edit: "Edit"
     rates:
       create:
         create_error: "rate unsuccessful"

@@ -34,3 +34,13 @@
     }
   }
 }
+
+.user-posts-title {
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.more-link-delete-custom {
+  color: $red;
+}

@@ -127,7 +127,7 @@ RSpec.describe Education::PostsController, type: :controller do
 
       it "delete fail" do
         expect{
-          delete :destroy, params: {id: education_post}
+          delete :destroy, params: {id: education_post}, format: :js
         }.to change(Education::Post, :count).by 0
       end
     end
@@ -137,7 +137,7 @@ RSpec.describe Education::PostsController, type: :controller do
 
       it "delete_fail" do
         expect{
-          delete :destroy, params: {id: education_post}
+          delete :destroy, params: {id: education_post}, format: :js
         }.to change(Education::Post, :count).by 0
       end
     end
@@ -147,13 +147,8 @@ RSpec.describe Education::PostsController, type: :controller do
 
       it "delete success" do
         expect{
-          delete :destroy, params: {id: education_post}
+          delete :destroy, params: {id: education_post}, format: :js
         }.to change(Education::Post, :count).by -1
-      end
-
-      it "redirects to education posts path" do
-        delete :destroy, params: {id: education_post}
-        expect(response).to redirect_to education_posts_path
       end
     end
 
@@ -163,7 +158,7 @@ RSpec.describe Education::PostsController, type: :controller do
       it "set flash" do
         allow_any_instance_of(Education::Post).to receive(:destroy)
           .and_return(false)
-        delete :destroy, params: {id: education_post}
+        delete :destroy, params: {id: education_post}, format: :js
         expect(flash[:danger])
           .to eq I18n.t "education.posts.destroy.post_delete_fail"
       end
