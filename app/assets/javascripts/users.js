@@ -41,6 +41,16 @@ $(document).ready(function(){
   $('#changeCoverModal').on('click', '.btn-update-cover', function(){
     $('#form-update-cover').submit();
   });
+
+  $("#edit-introduction").click(function(e){
+    $('#introduction-text').hide();
+    $('#introduction-form').show();
+  });
+
+  $("#cancel-btn").click(function(e){
+    $('#introduction-text').show();
+    $('#introduction-form').hide();
+  });
 });
 
 function read_url(input) {

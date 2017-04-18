@@ -40,6 +40,8 @@ class User < ApplicationRecord
   has_one :cover_image, class_name: Image.name, foreign_key: :id,
     primary_key: :cover_image_id
 
+  accepts_nested_attributes_for :info_user
+
   delegate :introduce, to: :info_user, prefix: true
 
   enum role: [:user, :admin]

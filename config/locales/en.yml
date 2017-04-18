@@ -445,6 +445,15 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+    introduction:
+      introduction: "Introduction"
+      edit: "Edit"
+      friends: "Friends"
+      friends_of_friends: "Friends of Friends"
+      public: "Public"
+    introduction_form:
+      update_button: "Update"
+      cancel_button: "Cancel"
   friend_ships:
     create:
       request_friend: "Sent a request to %{name}"

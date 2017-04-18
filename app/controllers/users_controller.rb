@@ -1,7 +1,21 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: :show
+  before_action :authenticate_user!
+  before_action :find_user, only: [:show, :edit, :update]
 
   def show
+  end
+
+  def edit
+    @user.build_info_user if @user.info_user.nil?
+  end
+
+  def update
+    if @user.update params.require(:user)
+        .permit info_user_attributes: [:introduce]
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   private

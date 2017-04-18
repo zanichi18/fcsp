@@ -1,0 +1,18 @@
+<%= render "header", user: @user %>
+<%= render "friend_ship_form" %>
+<section id="content">
+  <div class="content-wrap">
+    <div class="container clearfix">
+      <div class="row clearfix">
+        <div class="col-sm-9">
+          <div class="row clearfix">
+            <%= render "introduction" %>
+          </div>
+        </div>
+        <%= render "social_network" %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= javascript_include_tag "users" %>

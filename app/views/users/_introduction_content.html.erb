@@ -1,0 +1,6 @@
+<div id="introduction-text">
+  <%= @user.info_user.introduce if @user.info_user.present? %>
+</div>
+<div id="introduction-form" hidden="true">
+  <%= render "introduction_form" %>
+</div>

@@ -479,6 +479,15 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+    introduction:
+      introduction: "Giới thiệu"
+      edit: "Sửa"
+      friends: "Bạn bè"
+      friends_of_friends: "Bạn của bạn bè"
+      public: "Công khai"
+    introduction_form:
+      update_button: "Cập nhật"
+      cannot_button: "Hủy bỏ"
   friend_ships:
     create:
       request_friend: "Đã gửi yêu cầu đến %{name}"

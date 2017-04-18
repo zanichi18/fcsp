@@ -1,0 +1,16 @@
+<div class="introduction-form" class="clearfix">
+  <%= simple_form_for @user, remote: true, class: "clearfix" do |f| %>
+    <%= f.fields_for :info_user do |info_user_field| %>
+      <% info_user_field.text_area :introduce,
+        class: "introduce-txta sm-form-control",
+        rows: Settings.users.introduction_form_rows %>
+    <% end %>
+    <br/>
+    <div class="introduction-form-button">
+      <%= f.submit t(".update_button"), class: "btn btn-primary" %>
+      <span class="btn btn-default" id="cancel-btn">
+        <%= t ".cancel_button" %>
+      </span>
+    </div>
+  <% end %>
+</div>
