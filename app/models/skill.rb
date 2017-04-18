@@ -6,4 +6,8 @@ class Skill < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true,
     length: {maximum: Settings.max_length_title}
+
+  scope :require_by_job, ->job_id do
+    joins(:jobs).where("job_skills.job_id = ?", job_id)
+  end
 end

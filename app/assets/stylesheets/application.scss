@@ -15,9 +15,13 @@
  *= require_tree ./education
  *= require sweetalert2
  *= require_self
- *= require custom.scss
- *= require company_info.scss
+ *= require custom
+ *= require company_info
+ *= require job
+ *= require user
+ *= require friend_ships
  */
 
+@import 'social-share-button';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

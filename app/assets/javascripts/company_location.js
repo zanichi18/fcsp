@@ -10,8 +10,9 @@ var getLocation = {
   fetch_data: function() {
     var url_path = window.location.pathname;
     $.get(url_path, function(data) {
-      var latitude = data[0].latitude;
-      var longitude = data[0].longitude;
+      const addresses = data['addresses']
+      const latitude = addresses[0].latitude;
+      const longitude = addresses[0].longitude;
 
       getLocation.draw_map(latitude, longitude);
     }, 'json');

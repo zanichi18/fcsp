@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe PagesController, type: :controller do
-  let(:job){FactoryGirl.create :job}
+  let!(:job){FactoryGirl.create :job}
   describe "GET #index" do
     it "populates an array of jobs" do
       get :index

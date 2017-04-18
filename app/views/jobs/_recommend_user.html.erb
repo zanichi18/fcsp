@@ -1,0 +1,15 @@
+<% @job_object.recommend.each do |user| %>
+  <div class="spost clearfix">
+    <div class="entry-image">
+      <%= load_user_avatar user, "img-circle" %>
+    </div>
+    <div class="entry-user">
+      <div class="entry-title">
+        <h4><%= link_to user.name, "#" %></h4>
+      </div>
+    </div>
+  </div>
+<% end %>
+<div id="show_more" class="more-link">
+  <%= t ".show_more" %>
+</div>

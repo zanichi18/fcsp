@@ -1,5 +1,7 @@
 vi:
   education:
+    base:
+      user_blocked: "Tài khoản của bạn đã bị khóa."
     javascripts:
       training_alert: "Bạn chắc muốn xóa?"
       project_alert: "Bạn chắc muốn xóa?"
@@ -36,6 +38,9 @@ vi:
         search: "Type & Hit Enter.."
         feedback: "Phản hồi"
         trainers: "Giảng viên"
+        profile: "Trang cá nhân"
+        log_out: "Đăng xuất"
+        log_in: "Đăng nhập"
     trainers:
       trainer:
         trainer_title: "Giảng viên"
@@ -65,30 +70,30 @@ vi:
         description: "Tiềm năng lớn của bạn + Thực hành thực tế = Chiến thắng</br>
                       Ở lại với Framgia Education và mang khả năng của bạn đến với thế giới"
       learning_programs:
-        header: "Chương trình đào tạo"
+        header: "Phương thức đào tạo"
       our_projects:
         see_more: "Xem thêm"
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
-        heading: "Education Videos"
-        description: "Dù chúng ta làm gì đi chăng nữa, chúng ta cũng làm nó trở nên lộng lẫy. Bất cứ khi nào bạn tin tưởng chúng tôi, bạn sẽ lên đến cấp độ tiếp theo."
+        heading: "Tại Framgia Education"
+        description: "Bất cứ đều gì chúng tôi làm, phải thật sự mang nhiều ý nghĩa. Bất cứ lúc bạn tin vào chúng tôi, bạn sẽ đạt được tầm cao mới."
       statistics:
         course: "Khóa học"
         trainee: "Người học"
         trainer: "Người hướng dẫn"
       features:
         mentoring: "Cố vấn"
-        mentoring_des: "Orient học viên để tích lũy kiến thức một cách hiệu quả nhất. Lập kế hoạch kiến thức, phương pháp cũng như kỹ năng tại nơi làm việc được truyền đạt để tối đa hóa hiệu suất của bạn trong nền công nghệ."
+        mentoring_des: "Dựa trên kinh nghiệm làm việc thực tế, chúng tôi hướng dẫn các học viên xây dựng kỹ năng chuyên môn cho mình thông qua kiến thức đan xen với thực hành. Ngôn ngữ lập trình, phương pháp quản lý dự án và kỹ năng nơi làm việc sẽ được trang bị đậy đủ nhằm nâng cao hiểu quả công việc."
         coaching: "Huấn luyện"
-        coaching_des: "Chúng tôi giúp bạn học hỏi, áp dụng bài học và mở khóa tiềm năng của bạn một mình thay vì dạy bạn. Chúng tôi để lại chỗ cho bạn để phản ánh và tỏa sáng, nhưng bên cạnh các giảng viên của chúng tôi sẽ giám sát chặt chẽ mọi công việc bạn làm, cung cấp phản hồi thời gian thực và giữ sự tương tác tích cực giữa các nhóm."
-        job_rotation: "Luân chuyển công việc"
-        job_rotation_des: "Trong giai đoạn dự án, học viên chịu trách nhiệm cấu trúc và thực hiện toàn bộ dự án từ việc xây dựng các chức năng, ánh xạ giao diện người dùng thiết kế cơ sở dữ liệu để triển khai trên máy chủ. Việc đào tạo chéo nhằm mục đích để các học viên trải nghiệm những kinh nghiệm khác nhau và nhiều kỹ năng khác nhau sẽ giúp nâng cao hiệu quả của họ sau đó."
-        job_instructual_training: "Đào tạo hướng dẫn việc làm"
-        job_instructual_training_des: "Để có được kinh nghiệm thực tiễn, bạn sẽ làm việc với huấn luyện viên của chúng tôi về một số nhiệm vụ quan trọng được chia thành các bước nhỏ hơn để giúp bạn dễ dàng hiểu và hoàn thành"
-        understudy: "Kiểm tra"
-        understudy_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
-        apprenticeship: "Học việc"
-        apprenticeship_des: "Bạn sẽ làm một công việc thực sự cùng với các chuyên gia giàu kinh nghiệm. Học hỏi từ họ và áp dụng nó ngay vào công việc bạn làm."
+        coaching_des: "Phương pháp của chúng tôi là huấn luyện học viên học và cùng họ khám phá khả năng của mình hơn là chỉ dạy và truyền đạt kiến thức từ một phía. Chúng tôi sẽ đi cùng học viên trong suốt quá trình đào tạo, xem xét từng dòng code và đưa ra các phản hồi kịp thời để thảo luận, thống nhất và đi đến một kết quả tốt nhất."
+        job_rotation: "Luân phiên công việc"
+        job_rotation_des: "Học viên sẽ được tiếp cận và thực hiện hầu như tất cả các khâu để phát triển một dự án phần mềm, từ việc thiết kế database, xây dựng các chức năng, thiết kế giao diện và deploy lên server... Sự đa dạng về kinh nghiệm và kiến thức sẽ giúp họ trở thành một nhân sự cạnh tranh trong ngành."
+        job_instructual_training: "Đào tạo hướng nghiệp"
+        job_instructual_training_des: "Để có được kinh nghiệm thực tiễn, học viên sẽ được tham gia thực hiện dự án với các lập trình viên giàu kinh nghiệm. Các nhiệm vụ quan trọng sẽ được chia nhỏ nhằm giúp những thành viên mới dễ dàng tiếp cận, học hỏi và hoàn thành một cách hiệu quả."
+        understudy: "Đảm nhận vai trò"
+        understudy_des: "Trong một thời gian ngắn, học viên sẽ đảm nhận một vài vai trò quan trọng trong team để được học hỏi và trải nghiệm những công việc khi cũng đồng đội phát triển một dự án phần mềm. Để phối hợp được hiệu quả, các kỹ năng như phản ứng trước các vấn đề, quản lý thời gian, giao tiếp chyên nghiệp,... đều được yêu cầu từ phía học viên."
+        apprenticeship: "Tập sự"
+        apprenticeship_des: "Học viên sẽ làm một công việc thực sự cùng với các chuyên gia giàu kinh nghiệm. Học hỏi từ họ và áp dụng ngay vào công việc."
         color_schemes: "Các Khung Màu Ánh sáng và Đen"
         color_schemes_des: "Thay đổi sơ đồ sơ cấp của trang web của bạn ngay lập tức bằng cách thêm lớp tối cho cơ thể."
         layouts: "Boxed & Giao diện rộng"
@@ -96,15 +101,15 @@ vi:
         documentation: "Tài liệu mở rộng"
         documentation_des: "Chúng tôi đã bảo vệ tất cả mọi thứ và trong Tài liệu của chúng tôi bao gồm Video & Ảnh chụp màn hình."
       our_techniques:
-        title: "Những công nghệ của chúng tôi"
-        introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
+        title: "Công nghệ"
+        introduce: "Chúng tôi luôn cập nhật các xu thế công nghệ mới để chắc chắn rằng các sản phẩm mà học viên chúng tôi phát triển nên đều có thể sử dụng trên những thiệt bị hiện đại nhất."
       need_content:
-        header: "Chương trình đào tạo toàn cầu, hấp dẫn và toàn diện."
-        description1: "Ở đây, chúng ta sẽ chia sẻ cùng tình yêu với công nghệ và cũng ghi nhớ sứ mệnh làm cho xã hội của chúng ta ngày càng tốt hơn. Đó là lý do tại sao mỗi bước chúng ta phải làm là thực tế, thu hút và đem lại lợi ích cho công ty và cộng đồng. Lập trình minh sát, các dự án thực sự cần làm, hợp tác với đội ngũ và quản lý công việc sẽ hoàn toàn gói một gói chính cho bạn để thúc đẩy ngành công nghiệp CNTT."
+        header: "Chương trình đào tạo thực tiễn và toàn diện."
+        description1: "Chúng ta được biết sản phẩm công nghệ thực thụ được sử dụng rộng rãi trên thị trường chỉ có thể được tạo ra bởi các công ty IT lớn hay những nhóm phát triển phần mềm nhiều năm kinh nghiệm. Riêng Framgia Education, chúng tôi tin rằng bất kỳ những ai có đam mê cũng với một hướng đi và phương pháp tiếp cận hiệu quả đều có thể làm ra các những phần mềm có tính ứng dụng cao, mang lại nhiều giá trị cho cộng đồng. Vì thế, giảng dạy và học tập nhất định phải đáp ứng được thực tiễn, các sản phẩm công nghệ của Framgia Education không chỉ giúp học viên hiểu hơn về kiến thức mà hơn hết còn phải đạt được yêu cầu về tính ứng dụng trên thị trường. Tất cả điều đó sẽ rèn luyện các lập trình viên có được một tầm nhìn bao quát và một bộ các kỹ năng để họ nâng cao năng lực cạnh tranh của chính mình trên thị trường nhân sự CNTT Việt Nam đang rất sôi động hiện nay."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Tìm hiểu thêm"
       clients_say:
-        title: "Nhận xét từ khách hàng"
+        title: "Cảm nhận từ khách hàng"
         client1_say: "Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?"
         client1_name: "Steve Jobs"
         client1_company: "Apple Inc."
@@ -115,7 +120,7 @@ vi:
         client3_name: "John Doe"
         client3_company: "XYZ Inc."
       our_team:
-        title: "Gặp gỡ nhóm của chúng tôi"
+        title: "Team chúng tôi"
         team_member1_name: "John Doe"
         team_member1_role: "CEO"
         team_member2_name: "Josh Clark"
@@ -126,7 +131,7 @@ vi:
         team_member4_role: "Support"
         team_member_trainer: "Người hướng dẫn"
       lastest_courses:
-        last_courses: "Các khóa học cuối"
+        last_courses: "Các khóa học sắp tới"
     trainings:
       training_not_found: "Không tìm thấy khóa đào tạo."
       index:

@@ -38,6 +38,7 @@ en:
         job: "Job"
         interested_in: "Interested in"
         show: "Show"
+        process: "Process"
       candidate_by_select_job:
         user: "User"
         id: "ID"

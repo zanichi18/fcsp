@@ -4,7 +4,7 @@
     <%= render "job_title" %>
     <div id="job-show-body">
       <div class="row two-column">
-        <div class="col-md-8 column-main">
+        <aside class="col-md-8 column-main">
           <div class="column-main-inner">
             <%= render "members_of_company" %>
             <div class="job-description">
@@ -15,40 +15,149 @@
               <%= render "basic_infor" %>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 column-side">
+        </aside>
+        <aside class="col-md-4 column-side">
           <% if user_signed_in? %>
             <div class="margin-section">
-              <div class="row">
-                <div class="col-md-6">
+              <% if cannot? :manage, @job %>
+                <div class="apply-bookmark-section">
                   <%= render "candidate", job: @job %>
-                </div>
-                <div class="col-md-4">
                   <%= render "bookmark", job: @job %>
                 </div>
-              </div>
+              <% end %>
               <div class="person-apply">
-                <%= t ".currently" %><%= "#{@job_object.count_candidates}" %>
-                <%= t ".person_applied" %>
+                <%= t ".person_applied", candidate: @job_object.count_candidates %>
               </div>
-              <div class="candidate-recommendation">
-                <div class="location-padding">
-                  <h4><%= t ".recommend" %></h4>
-                </div>
-              </div>
-            </div>
-            <div class="location">
-              <div class="location-padding">
-                <h4><%= t ".location" %></h4>
-              </div>
-              <div id="map" class="map">
-              </div>
-              <%= render "companies/gmap" %>
             </div>
           <% end %>
-        </div>
+          <div class="location">
+            <div class="location-padding">
+              <h4><%= t ".location" %></h4>
+            </div>
+            <div id="map" class="map">
+            </div>
+            <%= render "companies/gmap" %>
+          </div>
+          <% if can? :manage, @job %>
+            <div class="candidate-recommendation">
+              <div class="location-padding">
+                <h4><%= t ".recommend" %></h4>
+                <%= @job_object.recommend.size > 0 ? (render "recommend_user") : t(".no_result") %>
+              </div>
+            </div>
+          <% end %>
+        </aside>
       </div>
     </div>
     <%= render "posting_jobs" %>
+  </div>
+</div>
+<div class="apply-modal">
+  <div class="modal fade" id="apply_job_modal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"
+            aria-hidden="true">&times;
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            <%= t ".apply_modal_header", company_name: @job.company_name %>
+          </h4>
+        </div>
+        <div class="modal-body">
+          <p><%= t ".interest_heading" %></p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optradio">
+              <%= t ".let_s_work_together" %>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optradio" checked="true">
+              <%= t ".let_s_have_chat" %>
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optradio"><%= t ".interest_me" %>
+            </label>
+          </div>
+          <div class="navigation-modal">
+            <button id="btn-apply-job-entry" type="button" name="button"
+              class="button button-3d button-large button-rounded button-green"
+              job="<%= @job.id %>">
+              <%= t ".entry" %>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="apply-success-modal">
+  <div class="modal fade" id="apply_job_success_modal" tabindex="-1"
+    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"
+            aria-hidden="true">&times;
+          </button>
+          <h4 class="modal-title"><%= t ".your_entry_complete" %></h4>
+        </div>
+        <div class="modal-body">
+          <div class="icon-container">
+            <%= image_tag asset_path("apply_success.png"),
+              alt: t(".apply_success_alt") %>
+          </div>
+          <div class="text-container">
+
+            <h3><%= t ".success_heading" %></h3>
+            <p><%= t ".success_description" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="apply-failed-modal">
+  <div class="modal fade" id="apply_job_failed_modal" tabindex="-1"
+    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"
+            aria-hidden="true">&times;
+          </button>
+          <h4 class="modal-title"><%= t ".apply_failed_title" %></h4>
+        </div>
+        <div class="modal-body">
+          <div class="apply-failed-body">
+            <div class="icon-container">
+              <%= image_tag asset_path("need_update_profile.png"),
+                alt: t(".need_update_profile_alt") %>
+            </div>
+            <div class="text-container">
+
+              <h3><%= t ".should_update_heading" %></h3>
+              <p><%= t ".should_update_heading_description" %></p>
+            </div>
+          </div>
+          <div class="navigation-modal">
+            <button id="btn_edit_profile" type="button" name="button"
+              class="button button-large button-border button-rounded button-green"
+              data-dismiss="modal">
+              <%= t ".cancel" %>
+            </button>
+            <%= link_to t(".edit_profile"), "javascript:;",
+              class: "button button-3d button-large button-rounded button-green" %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

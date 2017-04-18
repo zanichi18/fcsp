@@ -1,5 +1,7 @@
 en:
   education:
+    base:
+      user_blocked: "You are blocked in this site."
     javascripts:
       training_alert: "Are you sure ?"
       project_alert: "Are you sure ?"
@@ -36,6 +38,9 @@ en:
         search: "Type & Hit Enter.."
         feedback: "Feedback"
         trainers: "Trainers"
+        profile: "Profile"
+        log_out: "Logout"
+        log_in: "Login"
     trainers:
       trainer:
         trainer_title: "Trainer"
@@ -70,7 +75,7 @@ en:
         see_more: "See more"
       introduction_video:
         before_heading: "Easily Understandable & Customizable."
-        heading: "Education Videos"
+        heading: "Here we are!"
         description: "Whatever we do, we make it awsome. Whenever you trust us, you take up to the next level."
       statistics:
         course: "Courses"
@@ -78,17 +83,17 @@ en:
         trainer: "Trainers"
       features:
         mentoring: "Mentoring"
-        mentoring_des: "Orient trainees to accumulate knowledge in the most effective way. Programing knowledge, methodology as well as skills at work are conveyed to maximize your own performance in tech background."
+        mentoring_des: "Orient trainees to accumulate knowledge in the most effective way. Programming knowledge, methodology as well as skills at work are conveyed to maximize your own performance in IT industry"
         coaching: "Coaching"
-        coaching_des: "We help you to learn, apply the lesson and unlock your potential on your own rather than teaching you. We leave room for you to reflect and shine, but besides our trainers will closely monitor every piece of work you do, give the real time feedback and keep the active interact among team."
+        coaching_des: "We help trainees to learn, apply lessons and unlock their potential on their own rather than teaching them. Moreover, our trainers will closely monitor every piece of work them have done, give the real time feedback and keep the active interact among team."
         job_rotation: "Job Rotation"
-        job_rotation_des: "In project phase, trainees are in charge of structuring and implementing the whole project from building up functions, maping database designing user interface to deploying on server. The cross-training is aimed to expose trainees to different experiences and wider variety of skills that will help enhance their performance then."
+        job_rotation_des: "In project phase, trainees are in charge of structuring and implementing the whole project from building up functions, mapping database designing user interface to deploying on server. The cross-training is aimed to expose trainees to different experiences and wider variety of skills that will help enhance their performance then."
         job_instructual_training: "Job instructual Training"
-        job_instructual_training_des: "To gain the hand-on experience, you will work with our trainer on some important tasks which are break down into smaller steps to help you easily understand and complete"
+        job_instructual_training_des: "To gain the hands-on experience, trainees work with our trainer on some important tasks which are broken down into smaller steps to help them easily understand and complete"
         understudy: "Understudy"
-        understudy_des: "Display your Content attractively using Parallax Sections that have unlimited customizable areas."
+        understudy_des: "In a short period of time, our trainees will access to the full responsibility of important roles in team. Quick responses to bottlenecks, time management, effective communication, etc are all required to successfully carry out projects."
         apprenticeship: "Apprenticeship"
-        apprenticeship_des: "You will do a real job alongside experienced professionals. Learn from them and apply it all right into the work you do. "
+        apprenticeship_des: "Our trainees will do a real job alongside experienced professionals. Learn from them and apply it all right into their work. "
         color_schemes: "Light & Dark Color Schemes"
         color_schemes_des: "Change your Website's Primary Scheme instantly by simply adding the dark class to the body."
         layouts: "Boxed & Wide Layouts"
@@ -96,15 +101,15 @@ en:
         documentation: "Extensive Documentation"
         documentation_des: "We have covered each & everything in our Documentation including Videos & Screenshots."
       our_techniques:
-        title: "Our techniques"
-        introduce: "Philanthropy convener livelihoods, initiative end hunger gender rights local. John Lennon storytelling; advocate, altruism impact catalyst."
+        title: "Technology"
+        introduce: "We always stay up-to-date with almost the current languages and platforms, and therefore what our trainees develop will surely suit the full spectrum of devices around the world."
       need_content:
-        header: "Real-world, engaging and comprehensive training program."
-        description1: "In here, we will share the same love with technology and also keep in mind the mission to make our society better each day. That’s why each step we do must be realistic, engaging and benefit the company and the community. Programming insight, real projects to do, collaboration with team and work management will absolutely wrap a key package for you to leverage on IT industry."
+        header: "Real-world and comprehensive training program"
+        description1: "Most of the successful technology products which have been widely used on market were created by well-known IT companies or long-year experience developers. But here at Framgia Education, we belive more than that. Anybody with passion, clear direction as well as an effective approach can build up the software that can be applied in many aspects of society. Thus, coaching and learning must be meet the reality and all the product made by Framgia Education not only help trainees gain the deep insight of high tech but also live up to society demand. As the result, trainees will be equipped with comprehensive vision and key skill set to reinforce their competence on the dynamic IT market nowadays."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Learn more"
       clients_say:
-        title: "Client's say"
+        title: "Testimonials"
         client1_say: "Similique fugit repellendus expedita excepturi iure perferendis provident quia eaque. Repellendus, vero numquam?"
         client1_name: "Steve Jobs"
         client1_company: "Apple Inc."
@@ -115,7 +120,7 @@ en:
         client3_name: "John Doe"
         client3_company: "XYZ Inc."
       our_team:
-        title: "Meet our team"
+        title: "Our team"
         team_member1_name: "John Doe"
         team_member1_role: "CEO"
         team_member2_name: "Josh Clark"
@@ -126,7 +131,7 @@ en:
         team_member4_role: "Support"
         team_member_trainer: "Trainer"
       lastest_courses:
-        last_courses: "Last courses"
+        last_courses: "Upcoming courses"
     trainings:
       training_not_found: "Training Not Found."
       index:

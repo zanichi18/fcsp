@@ -12,7 +12,7 @@ education:
     course_count: 846
     trainee_count: 21500
     trainer_count: 408
-    need_content_img: "/assets/images/services/iphone6.png"
+    need_content_img: "/assets/images/services/apl.png"
     our_techniques_center_img: "/assets/images/services/iphone7.png"
     client_img_3: "/assets/images/testimonials/3.jpg"
     client_img_2: "/assets/images/testimonials/2.jpg"
@@ -21,16 +21,12 @@ education:
     team_member_img_2: "/assets/images/team/2.jpg"
     team_member_img_3: "/assets/images/team/8.jpg"
     team_member_img_4: "/assets/images/team/4.jpg"
-    client1_logo: "/assets/images/clients/1.png"
-    client2_logo: "/assets/images/clients/2.png"
-    client3_logo: "/assets/images/clients/3.png"
-    client4_logo: "/assets/images/clients/4.png"
-    client5_logo: "/assets/images/clients/5.png"
-    client6_logo: "/assets/images/clients/6.png"
-    client7_logo: "/assets/images/clients/7.png"
-    client8_logo: "/assets/images/clients/8.png"
-    client9_logo: "/assets/images/clients/9.png"
-    client10_logo: "/assets/images/clients/10.png"
+    client1_logo: "/assets/our_client/bkhn.png"
+    client2_logo: "/assets/our_client/dhkhtnhn.jpg"
+    client3_logo: "/assets/our_client/dhda.png"
+    client4_logo: "/assets/our_client/dhbkdn.jpg"
+    client5_logo: "/assets/our_client/pnv.png"
+    client6_logo: "/assets/our_client/cdcnhue.png"
     slide1_img: "/assets/welcome1.jpg"
     slide2_poster: "/assets/videos/explore.jpg"
     slide2_video_webm: "/assets/videos/explore.webm"
@@ -57,8 +53,8 @@ education:
     max_name_length: 100
     home_limit: 6
   index:
-    max_learning_program_desc: 150
-    max_learning_program_name: 20
+    max_learning_program_desc: 1000
+    max_learning_program_name: 150
     max_learning_program: 3
   trainings:
     per_page: 11
@@ -132,6 +128,7 @@ team_introductions:
     number_images: 2
 home:
   limit: 8
+  max_job: 24
 home_trainings_limit: 8
 company:
   country: ["United States", "Japan", "Germany", "Korea"]
@@ -175,5 +172,22 @@ employer:
   jobs:
     per_page: 6
 truncate_job_describe: 150
+user_portfolios:
+  title_min: 10
+  title_max: 255
+  description_min: 10
+  description_max: 1000
+user_educations:
+  school_min: 3
+  school_max: 255
+  major_min: 3
+  major_max: 255
+  description_min: 10
+  description_max: 1000
+recommend:
+  user_limit: 5
 home:
   max_job: 24
+friend_ship:
+  accept: "accept"
+  decline: "decline"

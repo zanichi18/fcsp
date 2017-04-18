@@ -20,16 +20,9 @@ namespace :db do
       }
 
       companies.each do |name, founder|
-        introduction = FFaker::Lorem.paragraph
-        website = FFaker::Internet.domain_name
-        company_size = 100
-        founder_on = FFaker::Time.datetime
-        Company.create(name: name,
-          introduction: introduction,
-          website: website,
-          founder: founder,
-          company_size: company_size,
-          founder_on: founder_on)
+        Company.create! name: name, introduction: FFaker::Lorem.paragraph,
+          website: FFaker::Internet.domain_name, founder: founder,
+          company_size: 100, founder_on: FFaker::Time.datetime
       end
 
       puts "Create users"
@@ -48,8 +41,8 @@ namespace :db do
       }
 
       users.each do |email, password|
-        user = User.create!(name: FFaker::Name.name, email: email, password:
-          password)
+        user = User.create! name: FFaker::Name.name, email: email, password:
+          password
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
@@ -58,27 +51,19 @@ namespace :db do
         password: "123456",
         role: 1
 
-
-      User.create! name: "user",
-        email: "user@gmail.com",
-        password: "123456"
+      User.create! name: "user", email: "user@gmail.com", password: "123456"
 
       puts "Create positions"
       positions = ["Manager", "Director", "Admin"]
       positions.each do |position|
-        company_id = 1
-        Position.create! name: position,
-          company_id: company_id
+        Position.create! name: position, company_id: 1
       end
 
       puts "Create groups"
       groups = ["Education", "HR", "BO"]
       groups.each do |group|
-        company_id = rand(1..2)
-        description = FFaker::Lorem.sentence
-        Group.create! name: group,
-          company_id: company_id,
-          description: description
+        Group.create! name: group, company_id: rand(1..2),
+          description: FFaker::Lorem.sentence
       end
 
       puts "Create user groups"
@@ -93,117 +78,109 @@ namespace :db do
       end
 
       puts "Create jobs"
-      20.times.each do
-        title = FFaker::Lorem.sentence
-        describe = FFaker::Lorem.paragraph
-        Job.create!(
-          company_id: 1, title: title, describe: describe,
-          type_of_candidates: 1, who_can_apply: 1, status: 1)
-      end
-
-      20.times.each do
-        title = FFaker::Lorem.sentence
-        describe = FFaker::Lorem.paragraph
-        Job.create!(
-          company_id: 1, title: title, describe: describe,
-          type_of_candidates: 1, who_can_apply: 1, status: 2)
+      2.times do |i|
+        20.times do
+          title = FFaker::Lorem.sentence
+          describe = FFaker::Lorem.paragraph
+          Job.create! company_id: 1, title: title, describe: describe,
+            type_of_candidates: 1, who_can_apply: 1, status: i
+        end
       end
 
       puts "Create team introduction"
       Job.all.each do |job|
-        job_id = job.id
-        content = FFaker::Lorem.paragraph
-        title = FFaker::Lorem.sentence
         3.times.each do |n|
-          TeamIntroduction.create(
-            team_target_id: job_id,
+          TeamIntroduction.create! team_target_id: job.id,
             team_target_type: "Job",
-            title: "Team introduction" + (n+1).to_s,
-            content: content)
+            title: "Team introduction #{n+1}",
+            content: FFaker::Lorem.paragraph
         end
       end
 
       puts "Create employee of company"
       User.all.each do |user|
-        description = FFaker::Lorem.sentence
-        Employee.create!(
-          user_id: user.id,
-          company_id: 1,
-          description: description)
+        Employee.create! user_id: user.id, company_id: 1,
+          description: FFaker::Lorem.sentence
       end
 
       puts "Create addresses of company"
       Company.all.each do |company|
-        address = FFaker::Address.city
-        head_office = 1
-        Address.create!(
-          company_id: company.id,
-          address: address,
-          head_office: head_office)
+        Address.create! company_id: company.id,
+          address: FFaker::Address.city,
+          head_office: 1
       end
 
       puts "Create industries"
-      (1..5).each do |i|
+      5.times do |i|
         name = "Industry #{i}"
         Industry.create! name: name
       end
 
       puts "Create company industries"
       Company.all.each do |company|
-        Industry.all.each do |industry|
-          CompanyIndustry.create!(
-            company_id: company.id,
-            industry_id: industry.id)
+        industries = Industry.order("Random()").limit(2).pluck(:id)
+        industries.each do |industry|
+          CompanyIndustry.create! company_id: company.id,
+            industry_id: industry
         end
       end
 
       puts "Create benefit of company"
+      benefits = ["Free snacks / lunch", "Students welcome",
+        "Come visit with friends", "Weekend commitment only",
+        "Foreign nationalities welcome", "Talk on Skype"]
       Company.all.each do |company|
-        (1..5).each do |i|
-          name = "Benefit #{i}"
-          description = FFaker::Lorem.sentence
-          Benefit.create!(
-            company_id: company.id,
-            name: name,
-            description: description)
+        benefits.sample(2).each do |benefit|
+          Benefit.create! company_id: company.id, name: benefit,
+            description: FFaker::Lorem.sentence
         end
       end
 
-      puts "Create hiring type"
-      (1..6).each do |i|
-        name_hiring_type = "hiring type #{i}"
-        description = FFaker::Lorem.sentence
-        HiringType.create!(
-          name: name_hiring_type,
-          description: description,
-          status: 1)
+      puts "Create hiring types"
+      hiring_types = ["Entry Career Level", "Internship",
+        "Experienced Career Level", "Part Time / Contract Work"]
+      hiring_types.each do |hiring_type|
+        HiringType.create! name: hiring_type,
+          description: FFaker::Lorem.sentence,
+          status: 1
       end
 
       puts "Create job hiring type"
       Job.all.each do |job|
-        HiringType.all.each do |hiring_type|
-          JobHiringType.create! job_id: job.id, hiring_type_id: hiring_type.id
+        hiring_types = HiringType.order("Random()").limit(2).pluck(:id)
+        hiring_types.each do |hiring_type|
+          JobHiringType.create! job_id: job.id, hiring_type_id: hiring_type
         end
       end
 
       puts "Create skills"
       6.times do
-        skill_name = FFaker::Skill.tech_skills
-        Skill.create name: skill_name
+        Skill.create name: FFaker::Skill.tech_skill
       end
 
       puts "Assign skill to user"
       User.all.each do |user|
-        Skill.all.each do |skill|
-          SkillUser.create! user_id: user.id, skill_id: skill.id
+        skills = Skill.order("Random()").limit(2).pluck(:id)
+        skills.each do |skill|
+          SkillUser.create! user_id: user.id, skill_id: skill,
+          level: rand(1..6)
         end
       end
 
       puts "Create skills are required by jobs"
       Job.all.each do |job|
-        Skill.all.each do |skill|
-          JobSkill.create job_id: job.id, skill_id: skill.id
+        skills = Skill.order("Random()").limit(4).pluck(:id)
+        skills.each do |skill|
+          JobSkill.create! job_id: job.id, skill_id: skill
         end
+      end
+
+      puts "Create request friends"
+      (5..8).each do |user_id|
+        Friendship.create! friendable_type: User.name, friendable_id: user_id,
+          friend_id: 1, status: 0
+        Friendship.create! friendable_type: User.name, friendable_id: 1,
+          friend_id: user_id, status: 1
       end
 
       puts "Create Education informations"

@@ -1,5 +1,117 @@
 vi:
+  jobs:
+    job_form:
+      next: "Next"
+    candidate:
+      apply_job: "Job"
+    show:
+      apply_job: "Apply Job"
+      currently: "Currently "
+      person_applied: " person has applied."
+      location: "Location"
+      recommend: "Recommend"
+      apply_modal_header: "We have notified %{company_name} of your interest."
+      interest_heading: "Please tell us what you are interested in."
+      let_s_work_together: "Let’s work together!"
+      let_s_have_chat: "Let’s have a chat."
+      interest_me: "This opportunity interests me."
+      your_entry_complete: "Your entry is complete!"
+      success_heading: "Let's wait to hear from the person"
+      success_description: "If the person take an interest in you, you will receive an invitation message."
+      apply_success_alt: "Apply success"
+      entry: "Entry"
+      apply_failed_title: "Apply failed"
+      need_update_profile_alt: "You should update your profile before apply this job"
+      should_update_heading: "Employer needs more on your profile"
+      should_update_heading_description: "Update your profile and comeback to us"
+      cancel: "Cancel"
+      edit_profile: "Edit my profile"
+    index:
+      table:
+        thead:
+          id: "Id"
+          title: "Title"
+          describe: "Describe"
+      title: "List jobs"
+    search_form:
+      search: "Enter your search"
+    job_title:
+      sales: "Sales"
+      show:
+        job_type: "Job type"
+        total_views: "Total views"
+    members_of_company:
+      members: "members"
+      views_all: "All members( "
+      views_all_close: ")"
+      edit_posting: "Edit posting"
+    introduction_company:
+      what_we_do: "What we do"
+      message_team_introduc_null: "Team introduction null"
+      edit_posting: "Edit posting"
+    job_description:
+      description: "Description"
+      edit_posting: "Edit posting"
+    basic_infor:
+      sales: "Sales"
+      basic_info_job: "Basic Information"
+      look_for: "Looking for"
+      job_type: "Job type"
+      posting_feature: "Posting features"
+      company_info: "Company information"
+      founded: "Founded"
+      industries: "Industries"
+      learn_more_info: "Learn more about the company"
+      comma: ", "
+      benefit_null: "Benefit null"
+      indus_info: "IT / Automobiles / Industrial Machinery/ Industrial Supplies"
+      skill_require: "Skill require"
+    job_form:
+      next: "Next"
+    posting_jobs:
+      title: "Other jobs posting you may like"
+    popular_job:
+      comments: "35 comments"
+    bookmark:
+      bookmark: "Bookmark"
+      bookmark_job: "Bookmark job"
+      bookmarked: "Bookmarked"
+    candidate:
+      apply_job: "Apply Job"
+      unapply_job: "Unapply Job"
+      currently: "Currently"
+      person_applied: "Person applied"
   employer:
+    companies:
+      edit:
+        company_info: "Company Info"
+        edit_company_info: "Edit company info"
+        manage_members: "Manage members"
+        manage_images: "Manage images"
+        manage_accounts: "Manage accounts on social network"
+      edit_company_info:
+        update_company_info: "Update Company"
+        required: "(required)"
+        article: "Add article"
+    team_introductions:
+      form:
+        title: "Title"
+        contents: "Content"
+        images: "Image"
+        submit: "Save"
+      image_fields:
+        caption: "write caption"
+        team_introduction: "Team Introduction"
+      new:
+        team_introduction: "Team Introduction"
+        team_introduction_1: "Team Introduction 1"
+        team_introduction_2: "Team Introduction 2"
+        team_introduction_3: "Team Introduction 3"
+        team_introduction_recruitment: "Team Introduction Recruiment"
+        submit: "Submit"
+      not_found: "Team Introduction not found"
+      success: "Successfully added team introduction"
+      create_confirm: "Are you sure to set up this company introduction?"
     dashboards:
       index:
         title: "Công ty"
@@ -28,6 +140,8 @@ vi:
         company_info: "Company Info"
         setting: "Setting"
         logout: "Logout"
+    candidates:
+      not_found: "Candidate not found"
   companies:
     show:
       info: "Info"
@@ -41,6 +155,16 @@ vi:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+    follow_form:
+      follow: "Theo dõi"
+      unfollow: "Hủy theo dõi"
+  follow_companies:
+    create:
+      follow: "Theo dõi công ty thành công!"
+      not_found: "Không tìm thấy công ty!"
+    destroy:
+      unfollow: "Hủy theo dõi công ty thành công!"
+      not_found: "Không tìm thấy công ty!"
   layouts:
     base_title: "FCSP"
     header:
@@ -52,6 +176,7 @@ vi:
   pages:
     home:
       title: "Home"
+      job_opportunity: "Jobs Opportunity"
     about:
       content: "This is about page"
       title: "About"
@@ -62,7 +187,10 @@ vi:
     base_title: "FCSP"
     header:
       home: "Home"
+      jobs: "Jobs"
       employer: "Employer"
+      admin: "Admin"
+      messages: "Messages"
       help: "Help"
       about: "About"
       login: "Login"
@@ -70,6 +198,10 @@ vi:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+    job_bookmark:
+      bookmark: "Bookmark"
+      bookmarked: "Bookmarked"
+      unbookmark: "Unbookmark"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:
@@ -87,12 +219,12 @@ vi:
     home:
       our_trainings:
         techniques: "Công nghệ"
-        our_trainings: "Đào tạo của chúng tôi"
+        our_trainings: "Chương trình đào tạo"
         see_more: "Xem thêm"
       clients_say:
         heading: "Khách hàng nói gì?"
       our_projects:
-        heading: "Dự án của chúng tôi"
+        heading: "Các dự án"
       our_team:
         heading: "Gặp đội của chúng tôi"
     trainings:
@@ -217,6 +349,19 @@ vi:
       create_new: "Create new post"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      index:
+        posts: "Posts"
+        search_placeholder: "Search"
+        show_all: "Show all"
+        more: "More"
+        placeholder_search: "Search"
+        title_description: "Lastest posts of our Members"
+        title: "Member's posts"
+        filter: "Filter"
+      nav_search:
+        new: "Create new post"
+        show_all: "Show all"
+        keyword: "Search"
       show:
         follow_us_on_twitter: "Theo dõi chúng tôi trên Twitter"
         share_this_post: "Chia sẻ bài viết:"
@@ -291,6 +436,7 @@ vi:
   time:
     formats:
       date_month_year_concise: '%d-%m-%y'
+      time_date_month_year: '%-d %B %Y, %H:%M %p '
   copy: "Copyright by Framgia"
   error: "lỗi"
   comment:
@@ -300,3 +446,75 @@ vi:
     comment_count: " Bình luận"
     submit_button: "Tạo bình luận"
     edit_button: "Lưu"
+  users:
+    find_user:
+      not_found: "Không tìm thấy người dùng"
+    friend_ship_form:
+      remove_request: "Hủy yêu cầu"
+      request_friend: "Kết bạn"
+      unfriend: "Hủy kết bạn"
+    show:
+      new_feed: "Bảng tin"
+      information: "Cá nhân"
+      posts: "Bài đăng"
+    header:
+      add_friend: "Thêm bạn"
+      message: "Tin nhắn"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      location: "Vị trí"
+      working_at: "Đang làm việc tại"
+      change_cover: "Thay đổi ảnh bìa"
+    social_network:
+      about_me: "Về tôi"
+      social_profiles: "Kết nối với tôi"
+    change_avatar:
+      title: "Thay đổi ảnh đại diện"
+      save: "Lưu lại"
+      close: "Đóng"
+      from_album: "Chọn từ bộ sưu tập"
+    change_cover:
+      title: "Thay đổi ảnh bìa"
+      save: "Lưu lại"
+      close: "Đóng"
+      from_album: "Chọn từ bộ sưu tập"
+    album_image:
+      no_image: "Không có hình ảnh nào"
+  friend_ships:
+    create:
+      request_friend: "Đã gửi yêu cầu đến %{name}"
+      not_found: "Không tìm thấy người dùng"
+    destroy:
+      remove_request: "Đã hủy yêu cầu với %{name}"
+      unfriend: "Đã hủy kết bạn với %{name}"
+      not_found: "Không tìm thấy người dùng"
+    load_user:
+      not_found: "người dùng không tồn tại"
+    update:
+      success: "Xác nhận thành công"
+      failed: "Xác nhận thất bại"
+      reject_success: "hủy kết bạn thành công"
+      reject_failed: "hủy kết bạn thất bại"
+    friend_request:
+      confirm: "Chấp nhận"
+      friend-ship: "Lời mời kết bạn"
+      mutual-friends: "Bạn chung"
+      number_request: "5"
+      reject: "xóa yêu cầu"
+      request_not_found: "Không có lời mời kết bạn"
+      view_all: "Xem tất cả"
+  user_avatars:
+    create:
+      success: "Đã cập nhật ảnh đại diện thành công!"
+      fail: "Cập nhật ảnh đại diện thất bại"
+    update:
+      success: "Đã cập nhật ảnh đại diện thành công!"
+      fail: "Cập nhật ảnh đại diện thất bại"
+      not_found: "Không tìm thấy ảnh"
+  user_covers:
+    create:
+      success: "Đã cập nhật ảnh bìa thành công!"
+      fail: "Cập nhật ảnh bìa thất bại"
+    update:
+      success: "Đã cập nhật ảnh bìa thành công!"
+      fail: "Cập nhật ảnh bìa thất bại"
+      not_found: "Không tìm thấy ảnh"

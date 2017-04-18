@@ -4,19 +4,38 @@ en:
       show:
         error: "Show job error!"
   jobs:
+    job_form:
+      next: "Next"
+    candidate:
+      apply_job: "Apply Job"
+      unapply: "Unapply job"
     show:
       apply_job: "Apply Job"
-      currently: "Currently "
-      person_applied: " person has applied."
+      person_applied: "Currently %{candidate} person has applied."
       location: "Location"
       recommend: "Recommend"
+      apply_modal_header: "We have notified %{company_name} of your interest."
+      interest_heading: "Please tell us what you are interested in."
+      let_s_work_together: "Let’s work together!"
+      let_s_have_chat: "Let’s have a chat."
+      interest_me: "This opportunity interests me."
+      your_entry_complete: "Your entry is complete!"
+      success_heading: "Let's wait to hear from the person"
+      success_description: "If the person take an interest in you, you will receive an invitation message."
+      apply_success_alt: "Apply success"
+      entry: "Entry"
+      apply_failed_title: "Apply failed"
+      need_update_profile_alt: "You should update your profile before apply this job"
+      should_update_heading: "Employer needs more on your profile"
+      should_update_heading_description: "Update your profile and comeback to us"
+      cancel: "Cancel"
+      edit_profile: "Edit my profile"
+      no_result: "No one matches these skills"
     index:
-      table:
-        thead:
-          id: "Id"
-          title: "Title"
-          describe: "Describe"
+      popular_job: "Popular Jobs"
       title: "List jobs"
+    search_form:
+      search: "Enter your search"
     job_title:
       sales: "Sales"
       show:
@@ -24,8 +43,7 @@ en:
         total_views: "Total views"
     members_of_company:
       members: "members"
-      views_all: "All members( "
-      views_all_close: ")"
+      views_all: "All members"
       edit_posting: "Edit posting"
     introduction_company:
       what_we_do: "What we do"
@@ -54,67 +72,19 @@ en:
       title: "Other jobs posting you may like"
     popular_job:
       comments: "35 comments"
-  employer:
-    companies:
-      edit:
-        company_info: "Company Info"
-        edit_company_info: "Edit company info"
-        manage_members: "Manage members"
-        manage_images: "Manage images"
-        manage_accounts: "Manage accounts on social network"
-      edit_company_info:
-        update_company_info: "Update Company"
-        required: "(required)"
-        article: "Add article"
-    team_introductions:
-      form:
-        title: "Title"
-        contents: "Content"
-        images: "Image"
-        submit: "Save"
-      image_fields:
-        caption: "write caption"
-        team_introduction: "Team Introduction"
-      new:
-        team_introduction: "Team Introduction"
-        team_introduction_1: "Team Introduction 1"
-        team_introduction_2: "Team Introduction 2"
-        team_introduction_3: "Team Introduction 3"
-        team_introduction_recruitment: "Team Introduction Recruiment"
-        submit: "Submit"
-      not_found: "Team Introduction not found"
-      success: "Successfully added team introduction"
-      create_confirm: "Are you sure to set up this company introduction?"
-    dashboards:
-      index:
-        title: "Company"
-      dashboard:
-        menu: "Menu"
-        manager_postings: "Manager Postings"
-        candidates: "Candidates"
-        messages: "Messages"
-        recommendations: "Recommendations"
-        view_mores: "View mores"
-        current_plans: "Current Plans"
-        contact: "Contact Us"
-        trial: "Trial"
-        view_candidates: "Current viewable candidates"
-        mail: "Mail"
-        help: "Help"
-        company_info: "Company Info"
-    layouts:
-      header:
-        dashboard: "Dashboard"
-        jobs: "Jobs"
-        feed: "Feed"
-        tools: "Tools"
-        edit_profile: "Edit Profile"
-        account_info: "Account Info"
-        company_info: "Company Info"
-        setting: "Setting"
-        logout: "Logout"
-    candidates:
-      not_found: "Candidate not found"
+    bookmark:
+      bookmark: "Bookmark"
+      bookmark_job: "Bookmark job"
+      bookmarked: "Bookmarked"
+    candidate:
+      apply_job: "Apply Job"
+      unapply_job: "Unapply Job"
+      currently: "Currently"
+      person_applied: "Person applied"
+    job:
+      read_more: "Read more"
+    recommend_user:
+      show_more: "View more"
   companies:
     show:
       info: "Info"
@@ -128,6 +98,16 @@ en:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+    follow_form:
+      follow: "Follow"
+      unfollow: "Unfollow"
+  follow_companies:
+    create:
+      follow: "follow company successfully!"
+      not_found: "Company not found!"
+    destroy:
+      unfollow: "Unfollow company successfully!"
+      not_found: "Company not found!"
   layouts:
     base_title: "FCSP"
     header:
@@ -161,29 +141,29 @@ en:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+    job_bookmark:
+      bookmark: "Bookmark"
+      bookmarked: "Bookmarked"
+      unbookmark: "Unbookmark"
   title: "Framgia code school platform"
   copy: "Copyright by Framgia"
   flash:
     deleted_success: "deleted successfully!"
   education:
-    layouts:
-      header:
-        log_out: "Logout"
-        log_in: "Login"
     trainers:
       index_posts:
         filter: "Filter"
     home:
       our_trainings:
         techniques: "Techniques"
-        our_trainings: "Our Trainings"
+        our_trainings: "Training programs"
         see_more: "See more"
       clients_say:
         heading: "What Clients Say?"
       our_projects:
-        heading: "Our Projects"
+        heading: "Projects"
       our_team:
-        heading: "Meet Our Team"
+        heading: "Our team"
     trainings:
       training_not_found: "Training Not Found."
       index:
@@ -432,3 +412,75 @@ en:
   kaminari:
     prev: "Previous"
     next: "Next"
+  users:
+    find_user:
+      not_found: "User not found"
+    friend_ship_form:
+      remove_request: "Cancel Request"
+      request_friend: "Add Friend"
+      unfriend: "Unfriend"
+    show:
+      new_feed: "New feed"
+      information: "Information"
+      posts: "Posts"
+    header:
+      add_friend: "Add friend"
+      message: "Message"
+      edit_profile: "Edit profile"
+      location: "Location"
+      working_at: "Working at"
+      change_cover: "Change your cover image"
+    social_network:
+      about_me: "About me"
+      social_profiles: "Connect with me"
+    change_avatar:
+      title: "Update avatar"
+      save: "Save"
+      close: "Close"
+      from_album: "Choose from your album"
+    change_cover:
+      title: "Update cover image"
+      save: "Save"
+      close: "Close"
+      from_album: "Choose from your album"
+    album_image:
+      no_image: "No images"
+  friend_ships:
+    create:
+      request_friend: "Sent a request to %{name}"
+      not_found: "User not found"
+    destroy:
+      remove_request: "Cancelled request to %{name}"
+      unfriend: "Unfriended with %{name}"
+      not_found: "User not found"
+    load_user:
+      not_found: "user not found"
+    update:
+      success: "confirm successfully"
+      failed: "confirm failed"
+      reject_success: "reject successfully"
+      reject_failed: "reject failed"
+    friend_request:
+      confirm: "Confirm"
+      friend-ship: "Friend Requests"
+      mutual-friends: "Mutual friends"
+      number_request: "5"
+      reject: "delete request"
+      request_not_found: "no new requests"
+      view_all: "View All"
+  user_avatars:
+    create:
+      success: "Change avatar successfully!"
+      fail: "Change avatar failed"
+    update:
+      success: "Change avatar successfully!"
+      fail: "Change avatar failed"
+      not_found: "Image not found"
+  user_covers:
+    create:
+      success: "Change cover image successfully!"
+      fail: "Change cover image failed"
+    update:
+      success: "Change cover image successfully!"
+      fail: "Change cover image failed"
+      not_found: "Image not found"

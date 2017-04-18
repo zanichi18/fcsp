@@ -16,10 +16,9 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require jquery-ui/autocomplete
-//= require education/feedback_map.js
+//= require education/feedback_map
 //= require education/growl.custom
 //= require js-routes
-//= require social-share-button
 //= require education/projects
 //= require cocoon
 //= require education/course

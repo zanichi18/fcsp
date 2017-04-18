@@ -6,10 +6,7 @@
         <%= t ".members" %>
         <a class="btn btn-info" href="#">
           <%= t ".views_all" %>
-          <% if @job_object.members.present? %>
-            <%= @job_object.members.size %>
-          <% end %>
-          <%= t ".views_all_close" %>
+           ( <%= @job_object.members.size if @job_object.members.present? %> )
         </a>
       </div>
       <% if can? :manage, @job %>

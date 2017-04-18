@@ -1,5 +1,5 @@
 class Education::LearningProgram < ApplicationRecord
-  translates :description
+  translates :description, :name
 
   has_many :members, class_name: Education::ProgramMember.name,
     foreign_key: :learning_program_id

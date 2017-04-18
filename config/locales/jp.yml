@@ -41,6 +41,13 @@ jp:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+  follow_companies:
+    create:
+      follow: "follow company successfully!"
+      not_found: "Company not found!"
+    destroy:
+      unfollow: "Unfollow company successfully!"
+      not_found: "Company not found!"
   layouts:
     base_title: "FCSP"
     header:
@@ -73,7 +80,7 @@ jp:
       our_projects:
         heading: "Our Projects"
       our_team:
-        heading: "Meet Our Team"
+        heading: "Our team"
     trainings:
       training_not_found: "Training Not Found."
       index:
@@ -217,3 +224,18 @@ jp:
       date_month_year_concise: '%d-%m-%y'
   copy: "Copyright by Framgia"
   error: "error"
+  users:
+    find_user:
+      not_found: "User not found"
+    friend_ship_form:
+      remove_request: "Cancel Request"
+      request_friend: "Add Friend"
+      unfriend: "Unfriend"
+  friend_ships:
+    create:
+      request_friend: "Sent a request to %{name}"
+      not_found: "User not found"
+    destroy:
+      remove_request: "Cancelled request to %{name}"
+      unfriend: "Unfriended with %{name}"
+      not_found: "User not found"

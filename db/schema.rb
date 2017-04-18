@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170410023046) do
+ActiveRecord::Schema.define(version: 20170417075835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,12 +207,12 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.text     "description"
+    t.text     "name"
     t.index ["education_learning_program_id"], name: "index_8b0cacfb59cf9e0162ebe217e09209051f6e9f59", using: :btree
     t.index ["locale"], name: "index_education_learning_program_translations_on_locale", using: :btree
   end
 
   create_table "education_learning_programs", force: :cascade do |t|
-    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -386,6 +386,28 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.index ["user_id"], name: "index_employees_on_user_id", using: :btree
   end
 
+  create_table "follows", force: :cascade do |t|
+    t.string   "followable_type",                 null: false
+    t.integer  "followable_id",                   null: false
+    t.string   "follower_type",                   null: false
+    t.integer  "follower_id",                     null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["followable_id", "followable_type"], name: "fk_followables", using: :btree
+    t.index ["follower_id", "follower_type"], name: "fk_follows", using: :btree
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.string   "friendable_type"
+    t.integer  "friendable_id"
+    t.integer  "friend_id"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "blocker_id"
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string   "name"
     t.integer  "company_id"
@@ -456,10 +478,11 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.integer  "type_of_candidates", default: 0
     t.integer  "who_can_apply",      default: 0
     t.integer  "status",             default: 0
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "team_id"
     t.datetime "deleted_at"
+    t.string   "profile_requests",   default: "[]", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id", using: :btree
     t.index ["deleted_at"], name: "index_jobs_on_deleted_at", using: :btree
     t.index ["team_id"], name: "index_jobs_on_team_id", using: :btree
@@ -544,6 +567,17 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.index ["company_id"], name: "index_teams_on_company_id", using: :btree
   end
 
+  create_table "user_educations", force: :cascade do |t|
+    t.string   "school"
+    t.string   "major"
+    t.date     "graduation"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_educations_on_user_id", using: :btree
+  end
+
   create_table "user_groups", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "group_id"
@@ -554,6 +588,17 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.index ["group_id"], name: "index_user_groups_on_group_id", using: :btree
     t.index ["position_id"], name: "index_user_groups_on_position_id", using: :btree
     t.index ["user_id"], name: "index_user_groups_on_user_id", using: :btree
+  end
+
+  create_table "user_portfolios", force: :cascade do |t|
+    t.string   "url"
+    t.string   "title"
+    t.text     "description"
+    t.date     "time"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -572,8 +617,9 @@ ActiveRecord::Schema.define(version: 20170410023046) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "avatar"
     t.integer  "education_status",       default: 1
+    t.integer  "cover_image_id"
+    t.integer  "avatar_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -606,7 +652,9 @@ ActiveRecord::Schema.define(version: 20170410023046) do
   add_foreign_key "jobs", "teams"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
+  add_foreign_key "user_educations", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "positions"
   add_foreign_key "user_groups", "users"
+  add_foreign_key "user_portfolios", "users"
 end

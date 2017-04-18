@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  acts_as_follower
+  has_friendship
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
@@ -31,10 +33,15 @@ class User < ApplicationRecord
   has_one :info_user
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
+  has_many :user_portfolios, dependent: :destroy
+  has_many :user_educations, dependent: :destroy
+  has_one :avatar, class_name: Image.name, foreign_key: :id,
+    primary_key: :avatar_id
+  has_one :cover_image, class_name: Image.name, foreign_key: :id,
+    primary_key: :cover_image_id
 
   delegate :introduce, to: :info_user, prefix: true
 
-  mount_uploader :avatar, AvatarUploader
   enum role: [:user, :admin]
   enum education_status: [:blocked, :active], _prefix: true
 
@@ -55,6 +62,13 @@ class User < ApplicationRecord
 
   scope :of_education, -> do
     joins(:education_user_groups).distinct
+  end
+
+  scope :recommend, ->job_id do
+    select("users.name, users.avatar, skill_users.skill_id, skill_users.level")
+      .joins(:skills).where("skill_users.skill_id IN (?)",
+        Skill.require_by_job(job_id).pluck(:id))
+      .distinct.order("level desc").limit Settings.recommend.user_limit
   end
 
   class << self
@@ -104,6 +118,10 @@ class User < ApplicationRecord
 
   def unapply_job job
     candidates.find_by(job_id: job.id).destroy if job.present?
+  end
+
+  def is_user? user
+    self == user
   end
 
   private

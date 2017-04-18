@@ -36,12 +36,12 @@ function activeButton() {
 
 var draftjob = {
   initialize: function() {
-    $('.close-job').click(function() {
+    $('body').on('click', '.close-job', function() {
       var id = $(this).attr('id');
       draftjob.close_job(id);
     });
 
-    $('.public-job').click(function() {
+    $('body').on('click', '.public-job', function() {
       var id = $(this).attr('id');
       draftjob.reopen_job(id);
     });
@@ -51,7 +51,7 @@ var draftjob = {
     company_id = $('body').data('company');
     var public_button = '<button name="button" type="submit" id="';
       public_button += id;
-      public_button += '" class="public-job btn btn-default test">Public</button>';
+      public_button += '" class="public-job btn btn-default">Public</button>';
     $.ajax({
       url: '/employer/companies/' + company_id +'/jobs/'+ id,
       method: 'PUT',
@@ -69,7 +69,7 @@ var draftjob = {
     company_id = $('body').data('company');
     var close_button = '<button name="button" type="submit" id="';
       close_button += id
-      close_button += '" class="close-job btn btn-warning test">Close</button>'
+      close_button += '" class="close-job btn btn-warning">Close</button>'
     $.ajax({
       url: '/employer/companies/' + company_id +'/jobs/'+ id,
       method: 'PUT',
