@@ -67,3 +67,6 @@ config/environments/*.local.yml
 
 .rake_tasks~
 
+
+# Ignore application configuration
+/config/application.yml

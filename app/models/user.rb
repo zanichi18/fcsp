@@ -124,6 +124,10 @@ class User < ApplicationRecord
     self == user
   end
 
+  def send_email_request_friend user
+    FriendRequestMailer.friend_request(self, user).deliver_later
+  end
+
   private
 
   def create_user_group
