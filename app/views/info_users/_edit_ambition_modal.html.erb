@@ -1,19 +1,19 @@
-<div id="edit-introduction-modal" class="modal fade course-member" role="dialog">
+<div id="edit-ambition-modal" class="modal fade course-member" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content modal-content-info-user"> 
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t ".edit_introduction" %></h4>
+        <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
       </div>
       <%= simple_form_for @info_user, remote: :true do |f| %>
         <div class="modal-body">
-          <%= f.text_area :introduce, placeholder: t(".introduce_placeholder"), 
+          <%= f.text_area :ambition, placeholder: t(".ambition_placeholder"), 
             class: "sm-form-control modal-txta",
-            rows: Settings.info_users.introduction_form_rows %>
+            rows: Settings.info_users.ambition_form_rows %>
         </div>
         <div class="modal-footer modal-footer-info-user">
           <%= f.submit t(".update_button"), class:"btn btn-primary",
-            id: "btn-edit-introduce" %>
+            id: "btn-edit-ambition" %>
           <%= button_tag t(".cancel_button"), class:"btn btn-default",
              data: {dismiss:"modal"} %>
         </div>

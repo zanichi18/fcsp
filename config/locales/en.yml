@@ -449,6 +449,28 @@ en:
       introduce_placeholder: "Introduce yourself..."
     find_info_user:
       infor_user_not_found: "Infomation of user not found"
+    ambition:
+      ambition: "My ambition"
+      edit: "Edit"
+      friends: "Friends"
+      friends_of_friends: "Friends of Friends"
+      public: "Public"
+    edit_ambition_modal:
+      update_button: "Update"
+      cancel_button: "Cancel"
+      edit_ambition: "Edit my ambition"
+      ambition_placeholder: "My ambition..."
+    quote:
+      quote: "Quote"
+      edit: "Edit"
+      friends: "Friends"
+      friends_of_friends: "Friends of Friends"
+      public: "Public"
+    edit_quote_modal:
+      update_button: "Update"
+      cancel_button: "Cancel"
+      edit_quote: "Edit my quote"
+      quote_placeholder: "My quote..."
   friend_ships:
     create:
       request_friend: "Sent a request to %{name}"
