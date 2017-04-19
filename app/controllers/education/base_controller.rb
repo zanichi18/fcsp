@@ -13,7 +13,7 @@ class Education::BaseController < ApplicationController
   end
 
   def manage? object
-    can?(:create, object) || can?(:update, object) || can?(:destroy, object)
+    can?(:create, object) && can?(:update, object) && can?(:destroy, object)
   end
 
   def user_blocked?

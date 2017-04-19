@@ -368,6 +368,8 @@ vi:
         heading_description: "bài viết mới nhất"
         name: "Tên"
         email: "Thư điện tử"
+        delete: "Xóa bài viết"
+        edit: "Chỉnh sửa bài viết"
       share_post:
         share_this_post: "Chia sẻ bài viết"
       posted_by:
