@@ -9,9 +9,9 @@ education:
     introduction_video_link: "https://www.youtube.com/watch?v=9k-1pLiS8so"
     introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/mqdefault.jpg"
     introduction_video_link_play_button: "/assets/images/icons/video-play.png"
-    course_count: 846
-    trainee_count: 21500
-    trainer_count: 408
+    course_count: 356
+    trainee_count: 608
+    trainer_count: 24
     need_content_img: "/assets/images/services/apl.png"
     our_techniques_center_img: "/assets/images/services/iphone7.png"
     client_img_3: "/assets/images/testimonials/3.jpg"
@@ -126,9 +126,6 @@ education:
 team_introductions:
   images:
     number_images: 2
-home:
-  limit: 8
-  max_job: 24
 home_trainings_limit: 8
 company:
   country: ["United States", "Japan", "Germany", "Korea"]
@@ -187,6 +184,7 @@ user_educations:
 recommend:
   user_limit: 5
 home:
+  limit: 8
   max_job: 24
 friend_ship:
   accept: "accept"
