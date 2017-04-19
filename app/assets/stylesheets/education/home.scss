@@ -1,22 +1,22 @@
 @import 'variables/color';
 @import 'variables/background_image';
 
+.edu-standard-logo-custom,
+.edu-retina-logo-custom {
+  width: 126px;
+}
+
 .edu-standard-logo-custom img,
 .edu-retina-logo-custom img {
-  width: 126px;
+  height: 100%;
+  object-fit: scale-down;
+  width: 100%;
 }
 
 .edu-header-wrap-custom,
 .edu-logo-custom,
 .edu-menu-custom {
   border: none !important;
-}
-
-.edu-header-wrap-custom:not(.not-dark) {
-  .edu-standard-logo-custom img {
-    height: 60px !important;
-    margin-top: 20px !important;
-  }
 }
 
 .slide-custom {
@@ -156,12 +156,16 @@
   width: 284.25px;
 }
 
-.oc-item img {
-  height: 105px;
-  width: 140px;
-}
-
-
 .mg-left-2 {
   margin-left: 2%;
+}
+
+.our-client-custom {
+  height: 105px;
+}
+
+.our-client-custom img {
+  height: 100%;
+  object-fit: scale-down;
+  width: 100%;
 }
