@@ -19,5 +19,13 @@ RSpec.describe Education::UsersController, type: :controller do
         it{expect(assigns :user).to eq user}
       end
     end
+
+    context "load blocked user" do
+      let(:user){FactoryGirl.create :user, education_status: 0}
+      before do
+        get :show, params: {id: user}
+      end
+      it{expect(response).to redirect_to root_path}
+    end
   end
 end
