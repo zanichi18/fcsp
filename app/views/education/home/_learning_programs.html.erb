@@ -4,9 +4,9 @@
       <h2><%= t ".header" %></h2>
     </div>
     <div class="row topmargin-sm clearfix">
-      <% learning_programs.each do |program| %>
+      <% learning_programs.each_with_index do |program, index| %>
         <div class="col-md-4 col-sm-4 bottommargin">
-          <i class="i-plain color i-large icon-line2-screen-desktop inline-block"></i>
+          <i class="i-plain color i-large <%= learning_icon(index) %> inline-block"></i>
           <div class="heading-block nobottomborder">
             <h4><%= program.name %></h4>
           </div>
