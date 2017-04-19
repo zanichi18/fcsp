@@ -30,6 +30,7 @@ vi:
         techniques: "Công nghệ"
       header:
         home: "Trang chủ"
+        portfolio: "Danh mục"
         project: "Dự án"
         posts: "Bài viết"
         courses: "Khóa học"
@@ -38,6 +39,7 @@ vi:
         search: "Type & Hit Enter.."
         feedback: "Phản hồi"
         trainers: "Giảng viên"
+        tools: "Công cụ"
         profile: "Trang cá nhân"
         log_out: "Đăng xuất"
         log_in: "Đăng nhập"

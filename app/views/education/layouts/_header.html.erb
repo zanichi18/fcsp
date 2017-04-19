@@ -15,7 +15,26 @@
 
       <nav id="primary-menu" class="dark">
         <ul class="edu-menu-custom">
-          <%= view_object(:home_tabs).html %>
+          <li><%= link_to t(".home"), education_root_url %></li>
+          <li>
+            <%= link_to "#" do %>
+              <%= t ".portfolio" %>
+              <i class="icon-angle-down"></i>
+            <% end %>
+            <ul>
+              <li><%= link_to t(".trainings"), education_trainings_path %></li>
+              <li><%= link_to t(".courses"), education_courses_path %></li>
+              <li><%= link_to t(".posts"), education_posts_path %></li>
+              <li><%= link_to t(".project"), education_projects_path %></li>
+              <li><%= link_to t(".trainers"), education_trainers_path %></li>
+            </ul>
+          </li>
+          <%#= view_object(:home_tabs).html %>
+          <li>
+            <%= link_to "http://education.framgia.vn/tools", target: "_blank" do %>
+              <%= t ".tools" %>
+            <% end %>
+          </li>
           <li class="dropdown chosen-language">
             <% if session[:locale].present? %>
               <%= link_to url_for(locale: session[:locale]), class:"dropdown-toggle dropdown-custom",

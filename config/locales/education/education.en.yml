@@ -31,6 +31,7 @@ en:
         group_users: "Group Users"
       header:
         home: "Home"
+        portfolio: "Portfolio"
         project: "Projects"
         posts: "Posts"
         courses: "Courses"
@@ -39,6 +40,7 @@ en:
         search: "Type & Hit Enter.."
         feedback: "Feedback"
         trainers: "Trainers"
+        tools: "More tools"
         profile: "Profile"
         log_out: "Logout"
         log_in: "Login"
