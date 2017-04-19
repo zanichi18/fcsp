@@ -13,6 +13,7 @@ class Company < ApplicationRecord
   has_many :company_industries, dependent: :destroy
   has_many :industries, through: :company_industries
   has_many :team_introductions, as: :team_target
+  has_many :groups
 
   ATTRIBUTES = [:name, :website, :introduction, :founder, :country,
     :company_size, :founder_on, addresses_attributes: [:id, :address,

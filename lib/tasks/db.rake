@@ -27,23 +27,24 @@ namespace :db do
 
       puts "Create users"
       users = {
-        "hoang.thi.nhung@framgia.com": "nhunghoang",
-        "do.ha.long@framgia.com": "longdh",
-        "do.van.nam@framgia.com": "dovannam",
-        "nguyen.ha.phan@framgia.com": "phannh",
-        "luu.thi.thom@framgia.com": "thomlt",
-        "thuy.viet.quoc@framgia.com": "thomlt",
-        "tran.anh.vu@fsramgia.com": "thomlt",
-        "le.quang.canh@sframgia.com": "thomlt",
-        "nguyen.ngoc.thinh@framgia.com": "thomlt",
-        "tran.xuan.nam@framgia.com": "tranxuannam",
-        "user@gmail.com": "123456",
-        "ttkt1994@gmail.com": "123456"
+        "hoang.thi.nhung@framgia.com": "Hoang Thi Nhung",
+        "do.ha.long@framgia.com": "Do Ha Long",
+        "do.van.nam@framgia.com": "Do Van Nam",
+        "nguyen.ha.phan@framgia.com": "Nguyen Ha Phan",
+        "luu.thi.thom@framgia.com": "Luu Thi Thom",
+        "thuy.viet.quoc@framgia.com": "Thuy Viet Quoc",
+        "tran.anh.vu@fsramgia.com": "Tran Anh Vu",
+        "le.quang.canh@sframgia.com": "Le Quang Anh",
+        "nguyen.ngoc.thinh@framgia.com": "Nguyen Ngoc Thinh",
+        "tran.xuan.nam@framgia.com": "Tran Xuan Nam",
+        "admin.education@framgia.com": "admin.education",
+        "user@gmail.com": "User",
+        "ttkt1994@gmail.com": "User"
       }
 
-      users.each do |email, password|
-        user = User.create! name: FFaker::Name.name, email: email, password:
-          password, education_status: rand(0..1)
+      users.each do |email, name|
+        user = User.create! name: name, email: email, password:
+          123456, education_status: rand(0..1)
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
@@ -58,38 +59,21 @@ namespace :db do
         password: "admin.education"
       InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
 
-      puts "Create positions"
-      positions = ["Manager", "Director", "Admin"]
-      positions.each do |position|
-        Position.create! name: position, company_id: 1
-      end
-
-      puts "Create groups"
-      groups = ["Education", "HR", "BO"]
-      groups.each do |group|
-        Group.create! name: group, company_id: rand(1..2),
-          description: FFaker::Lorem.sentence
-      end
-
-      puts "Create user groups"
-      UserGroup.create! user_id: 12, position_id: 3, group_id: 2,
-        is_default_group: true
-
-      puts "Create company permission"
-      models = ["Company", "Job", "Candidate", "TeamIntroduction"]
-      models.each do |model|
-        Permission.create! entry: model, group_id: 2,
-          optional: {create: true, read: true, update: true, destroy: true}
-      end
-
       puts "Create jobs"
       2.times do |i|
         20.times do
           title = FFaker::Lorem.sentence
           describe = FFaker::Lorem.paragraph
-          Job.create! company_id: 1, title: title, describe: describe,
+          Job.create! company_id: rand(1..2), title: title, describe: describe,
             type_of_candidates: 1, who_can_apply: 1, status: i
         end
+      end
+
+      puts "Create Candidate"
+      job_id = rand(1..20)
+      user_id = rand(2..10)
+      10.times.each do |candidate|
+        Candidate.create! user_id: user_id, job_id: job_id
       end
 
       puts "Create team introduction"
@@ -190,6 +174,9 @@ namespace :db do
 
       puts "Create Education informations"
       Rake::Task["education:education_seeding"].invoke
+
+      puts "Create Employer"
+      Rake::Task["db:employer"].invoke
     end
   end
 end

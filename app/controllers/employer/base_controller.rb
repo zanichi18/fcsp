@@ -6,6 +6,6 @@ class Employer::BaseController < ApplicationController
   private
 
   def require_employer
-    authorize! :manage, @company
+    authorize! :update, @company
   end
 end

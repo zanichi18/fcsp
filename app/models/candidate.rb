@@ -8,5 +8,5 @@ class Candidate < ApplicationRecord
   delegate :title, to: :job, prefix: true
   delegate :email, to: :user, prefix: true
 
-  scope :in_job, ->job_id{where job_id: job_id}
+  scope :in_jobs, ->job_ids{where job_id: job_ids}
 end
