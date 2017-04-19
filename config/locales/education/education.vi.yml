@@ -111,10 +111,10 @@ vi:
       clients_say:
         title: "Cảm nhận từ khách hàng"
         client1_say: "Chúng tôi không thể không hài lòng hơn với Framgia Education. Một chương trình đào tạo giàu kiến thức nhưng rất thực tế. Một dịch vụ training chuyên nghiệp và đốc đáo."
-        client1_name: "Steve Jobs"
+        client1_name: "Teamlab"
         client1_company: "- Tech company -"
         client2_say: "Cám ơn Framgia Education! Sinh viên của chúng tôi đã có những trải nghiệm tuyệt vời tại Framgia Education. Giờ đây với những kỹ năng và kiến thức có được từ đó, các em cảm thấy vững vàng hơn rất nhiều khi bước vào môi trường làm việc thực tế trong ngành CNTT. "
-        client2_name: "Collis Ta'eed"
+        client2_name: "Đại học bách khoa hà nội"
         client2_company: "- University -"
         client3_say: "Khóa học thật sự rất tuyệt. Em nhận thấy các kiến thức và kỹ năng được học đều rất thiết thực và giúp em tiến bộ lên từng ngày. Giờ em đã là lập trình viên tại đúng công ty mà mình từng mơ ước. Em cảm thấy tự tin khi áp dụng những điều học được tại Framgia Education để phát triển xa hơn với sự nghiệp của mình."
         client3_name: "Doan"
