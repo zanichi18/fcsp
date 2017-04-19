@@ -18,12 +18,12 @@ module Supports::Education
     end
 
     def added_users
-      @course.users.search(name_or_email_cont:
+      @course.users.by_active.search(name_or_email_cont:
         @params[:search_added_users]).result
     end
 
     def users
-      User.not_in_object(@course)
+      User.by_active.not_in_object(@course)
         .search(name_or_email_cont: @params[:user_search]).result
     end
 

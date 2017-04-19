@@ -75,7 +75,7 @@
                   </thead>
                   <tbody id="list_added_users">
                     <%= render "list_added_users", 
-                      users: course.users, course: course %>
+                      users: course.users.by_active, course: course %>
                   </tbody>
                 </table> 
               </div>

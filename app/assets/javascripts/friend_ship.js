@@ -4,6 +4,10 @@ $(document).ready(function() {
     update_friend('accept', id);
   });
 
+  $('.request-waiting').on('click', function() {
+    $.growl.notice({message: I18n.t('users.friend_ship_form.request_waiting')});
+  });
+
   $('.friend-ship-decline').on('click', function() {
     var id = this.dataset.id;
     update_friend('decline', id);

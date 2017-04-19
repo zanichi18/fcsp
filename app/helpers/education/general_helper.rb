@@ -29,7 +29,8 @@ module Education::GeneralHelper
   end
 
   def learning_icon index
-    icon_array = ["icon-line2-screen-desktop", "icon-line2-energy", "icon-line2-equalizer"]
+    icon_array = ["icon-line2-screen-desktop", "icon-line2-energy",
+      "icon-line2-equalizer"]
     icon_array[index]
   end
 end
