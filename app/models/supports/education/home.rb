@@ -18,7 +18,7 @@ module Supports::Education
     end
 
     def trainings
-      Education::Training.newest.includes(:techniques)
+      Education::Training.newest.includes(:techniques, :images)
         .limit Settings.home_trainings_limit
     end
 
@@ -33,7 +33,7 @@ module Supports::Education
     end
 
     def trainers
-      Education::Group.get_trainers.users
+      Education::Group.get_trainers.users.includes(:avatar)
     end
   end
 end
