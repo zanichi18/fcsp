@@ -7,16 +7,16 @@ education:
       blocked: "blocked"
   home_page:
     introduction_video_link: "https://www.youtube.com/watch?v=9k-1pLiS8so"
-    introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/mqdefault.jpg"
-    introduction_video_link_play_button: "/assets/images/icons/video-play.png"
+    introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/maxresdefault.jpg"
+    introduction_video_link_play_button: "/assets/images/icons/youtube.png"
     course_count: 356
     trainee_count: 608
     trainer_count: 24
     need_content_img: "/assets/images/services/apl.png"
     our_techniques_center_img: "/assets/images/services/iphone7.png"
-    client_img_3: "/assets/images/testimonials/3.jpg"
-    client_img_2: "/assets/images/testimonials/2.jpg"
-    client_img_1: "/assets/images/testimonials/1.jpg"
+    client_img_3: "/assets/images/testimonials/logo_top_teamlab.png"
+    client_img_2: "/assets/images/testimonials/Hanoi_University.png"
+    client_img_1: "/assets/images/testimonials/doan.jpg"
     team_member_img_1: "/assets/images/team/3.jpg"
     team_member_img_2: "/assets/images/team/2.jpg"
     team_member_img_3: "/assets/images/team/8.jpg"
