@@ -47,6 +47,14 @@
                 <%= render html: markdown_render(@post.content).html_safe %>
               </div>
               <%= render "tag_cloud_post" %>
+              <% if is_belong_to_user? @post, current_user %>
+                <div class="edit-delete-buttons">
+                  <%= link_to t(".edit"), edit_education_post_path(@post),
+                    class: "button button-3d button-rounded button-amber" %>
+                  <%= link_to t(".delete"), education_post_path(@post), method: :delete,
+                    class: "button button-3d button-border button-rounded button-amber" %>
+                </div>
+              <% end %>
               <div class="clear"></div>
                 <%= render "education/rates/score", object: @post %>
               <div class="clear"></div>

@@ -370,6 +370,8 @@ en:
         heading_description: "Our Latest News in Masonry Layout"
         name: "Name"
         email: "Email"
+        delete: "Delete"
+        edit: "Edit"
       share_post:
         share_this_post: "Share post"
       posted_by:
