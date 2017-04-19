@@ -33,12 +33,12 @@ module Supports::Education
     end
 
     def added_users
-      @project.users.search(name_or_email_cont:
+      @project.users.by_active.search(name_or_email_cont:
         @params[:search_added_members]).result
     end
 
     def users
-      User.not_in_object(@project)
+      User.by_active.not_in_object(@project)
         .search(name_or_email_cont: @params[:user_search]).result
     end
 

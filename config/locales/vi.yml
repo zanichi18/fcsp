@@ -451,13 +451,17 @@ vi:
     find_user:
       not_found: "Không tìm thấy người dùng"
     friend_ship_form:
-      remove_request: "Hủy yêu cầu"
-      request_friend: "Kết bạn"
-      unfriend: "Hủy kết bạn"
+      remove_request: " Hủy yêu cầu"
+      request_friend: " Kết bạn"
+      unfriend: " Hủy kết bạn"
+      waiting: " Đang đợi..."
+      request_waiting: "Đã gửi yêu cầu đến bạn!"
     show:
       new_feed: "Bảng tin"
       information: "Cá nhân"
       posts: "Bài đăng"
+      blocked: "Người dùng này đã bị khóa!"
+      not_found: "Không tìm thấy người dùng"
     header:
       add_friend: "Thêm bạn"
       message: "Tin nhắn"

@@ -417,13 +417,17 @@ en:
     find_user:
       not_found: "User not found"
     friend_ship_form:
-      remove_request: "Cancel Request"
-      request_friend: "Add Friend"
-      unfriend: "Unfriend"
+      remove_request: " Cancel Request"
+      request_friend: " Add Friend"
+      unfriend: " Unfriend"
+      waiting: " Waiting..."
+      request_waiting: "Sent request to you!"
     show:
       new_feed: "New feed"
       information: "Information"
       posts: "Posts"
+      not_found: "User not found"
+      blocked: "This user is blocked!"
     header:
       add_friend: "Add friend"
       message: "Message"

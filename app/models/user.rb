@@ -71,6 +71,8 @@ class User < ApplicationRecord
       .distinct.order("level desc").limit Settings.recommend.user_limit
   end
 
+  scope :by_active, ->{where education_status: :active}
+
   class << self
     def import file
       (2..spreadsheet(file).last_row).each do |row|

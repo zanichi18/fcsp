@@ -37,14 +37,13 @@ namespace :db do
         "le.quang.canh@sframgia.com": "thomlt",
         "nguyen.ngoc.thinh@framgia.com": "thomlt",
         "tran.xuan.nam@framgia.com": "tranxuannam",
-        "admin.education@framgia.com": "admin.education",
         "user@gmail.com": "123456",
         "ttkt1994@gmail.com": "123456"
       }
 
       users.each do |email, password|
         user = User.create! name: FFaker::Name.name, email: email, password:
-          password
+          password, education_status: rand(0..1)
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
 
@@ -52,7 +51,12 @@ namespace :db do
         email: "admin@gmail.com",
         password: "123456",
         role: 1
-        InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
+      InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
+
+      user = User.create! name: "Admin Education",
+        email: "admin.education@framgia.com",
+        password: "admin.education"
+      InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
 
       puts "Create positions"
       positions = ["Manager", "Director", "Admin"]
