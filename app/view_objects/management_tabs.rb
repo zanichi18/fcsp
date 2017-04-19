@@ -6,7 +6,8 @@ class ManagementTabs < Tabs
      about_tab,
      learning_program_tab,
      feedback_tab,
-     technique_tab].compact
+     technique_tab,
+     group_user_tab].compact
   end
 
   def about_tab
@@ -32,5 +33,10 @@ class ManagementTabs < Tabs
   def technique_tab
     build_tab t("education.layouts.header_management.techniques"),
       education_management_techniques_path, :techniques
+  end
+
+  def group_user_tab
+    build_tab t("education.layouts.header_management.group_users"),
+      education_management_group_users_path, :group_users
   end
 end

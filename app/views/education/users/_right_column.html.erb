@@ -2,7 +2,8 @@
   <div class="fancy-title title-border">
     <h4><%= t(".profile").upcase %></h4>
   </div>
-  <%= load_user_avatar @user, "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
+  <%= load_user_avatar @user,
+    class: "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
   <div class="heading-block noborder">
     <h3><%= @user.name %></h3>
     <span><%= @user.email %></span>
@@ -10,7 +11,9 @@
   <div class="list-group">
     <div class="list-group-item">
       <%= t ".posts" %>
-      <span class="pull-right"><%= @user.education_posts.size %></span>
+      <span id="user-posts-size" class="pull-right">
+        <%= @user.education_posts.size %>
+      </span>
     </div>
     <div class="list-group-item">
       <%= t ".projects" %>

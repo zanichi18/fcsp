@@ -39,4 +39,8 @@ module Education::PostsHelper
       image_tag "default", alt: post.title
     end
   end
+
+  def is_belong_to_user? post, user
+    (can_manage? post) || (post.user == user)
+  end
 end

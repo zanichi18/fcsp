@@ -4,7 +4,7 @@
       <div class="comment-meta">
         <div class="comment-author vcard">
           <span class="comment-avatar clearfix">
-            <%= image_tag comment.user_avatar.url, alt: comment.user_name,
+            <%= load_user_avatar comment.user,
               class: "avatar avatar-60 photo avatar-default",
               size: Settings.education.post.comment_item_avatar_size %>
           </span>

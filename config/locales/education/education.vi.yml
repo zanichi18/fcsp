@@ -338,6 +338,10 @@ vi:
       create_new: "Tạo một bài viết"
       older: "&larr;Older"
       newer: "Newer &rarr;"
+      post:
+        read_more: "Xem thêm"
+        delete_confirm: "Bạn có chắc chắn xóa bài post không?"
+        delete: "Xóa"
       index:
         no_posts: "Không tìm thấy bài viết"
         posts: "Bài viết"

@@ -8,8 +8,8 @@
           </div>
         </div>
         <div class="col-sm-8">
-          <div class="entry-title">
-            <h3><%= post.title %></h3>
+          <div class="entry-title user-posts-title">
+            <h3><%= link_to post.title, education_post_path(post) %></h3>
           </div>
           <ul class="entry-meta clearfix">
             <li>
@@ -27,6 +27,12 @@
                 length: Settings.education.posts.content_character_display %>
             </p>
           </div>
+          <% if is_belong_to_user? post, current_user %>
+            <%= link_to t(".edit"), edit_education_post_path(post), class: "more-link" %>
+            <%= link_to t(".delete"), education_post_path(post),
+              method: :delete, remote: true, data: {confirm: t(".delete_confirm")},
+              class: "more-link more-link-delete-custom" %>
+          <% end %>
         </div>
       </div>
     </div>
