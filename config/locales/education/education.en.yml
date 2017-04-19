@@ -407,6 +407,7 @@ en:
         user_not_found: "User not found."
         page_not_found: "Page not found."
         activities: "Activities"
+        blocked: "This user is blocked!"
       right_column:
         profile: "Profile"
         about_me: "About me"

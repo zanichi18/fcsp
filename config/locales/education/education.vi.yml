@@ -405,6 +405,7 @@ vi:
         user_not_found: "Người dùng không tồn tài."
         page_not_found: "Trang không tồn tại."
         activities: "Hoạt động"
+        blocked: "Người dùng này đã bị khóa!"
       right_column:
         profile: "Hồ sơ"
         about_me: "Về tôi"
