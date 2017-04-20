@@ -61,6 +61,7 @@ en:
         submit: "Post"
         question_des_job: "Who is neccesary to your company?"
         des_job_last: "This is the last section."
+      job_detail:
         title: "Title"
         description: "Description"
         placeholder_title: "Join us to create a better workplace"

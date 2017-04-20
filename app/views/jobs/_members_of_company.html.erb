@@ -26,13 +26,7 @@
           <li>
             <a data-ref="staffing">
               <div class="member-photo">
-                <% if member.avatar.present? %>
-                  <%= link_to image_tag(member.avatar,
-                    size: Settings.jobs.image_member_size), "#" %>
-                <% else %>
-                  <%= link_to image_tag(Settings.jobs.image_member_url,
-                    size: Settings.jobs.image_member_size), "#" %>
-                <% end %>
+                <%= link_to load_user_avatar(member), size: Settings.jobs.image_member_size %>
               </div>
               <h5><%= member.name %></h5>
             </a>
