@@ -1,8 +1,10 @@
 <div class="col-sm-3">
   <div class="fancy-title">
     <h4><%= t(".profile").upcase %></h4>
-    <%= link_to user_path(current_user) do %>
-      <span><i class="icon-edit icon-amber"></i></span>
+    <% if current_user && current_user == @user %>
+      <%= link_to user_path(current_user) do %>
+        <span><i class="icon-edit icon-amber"></i></span>
+      <% end %>
     <% end %>
   </div>
   <%= load_user_avatar @user,
