@@ -453,7 +453,6 @@ en:
       confirm: "Confirm"
       friend-ship: "Friend Requests"
       mutual-friends: "Mutual friends"
-      number_request: "5"
       reject: "delete request"
       request_not_found: "no new requests"
       view_all: "View All"

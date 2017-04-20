@@ -54,11 +54,6 @@ namespace :db do
         role: 1
       InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
 
-      user = User.create! name: "Admin Education",
-        email: "admin.education@framgia.com",
-        password: "admin.education"
-      InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
-
       puts "Create jobs"
       2.times do |i|
         20.times do
