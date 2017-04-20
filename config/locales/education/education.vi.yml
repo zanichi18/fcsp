@@ -20,7 +20,7 @@ vi:
         delete_object: "Bạn chắc muốn xóa?"
       footer:
         tools: "Công cụ khác"
-        copyright: "&copy; 2017 By Framgia - Human Development Division - Education Section - All rights reserved."
+        copyright: "&copy; 2017 Framgia Human Development Div Education Section - All rights reserved."
         tearm_of_use: "Điều khoản sử dụng"
         privacy_policy: "Chính sách bảo mật"
       header_management:
