@@ -21,7 +21,7 @@ namespace :education do
       description: Faker::Lorem.sentence)
 
     puts "create About"
-    Education::About.create!(title: "Welcome to Framgia Education",
+    Education::About.create!(title: "Welcome to Framgia Awesome Academy",
       content: "Master your skill. Come with us")
 
     puts "Create Education projects"

@@ -192,7 +192,7 @@ en:
         name: "Name"
     related_project: "Related Projects:"
     see_more: "See More"
-    title: "Framgia Education"
+    title: "Framgia Awesome Academy"
     logo_alt: "Framgia logo"
     project:
       not_found: "Project not found!"
@@ -363,7 +363,7 @@ en:
     post:
       post_not_found: "Post is not found."
     slider:
-      welcome: "Welcome to Framgia Education"
+      welcome: "Welcome to Framgia Awesome Academy"
       description: "Master your self. Come with us"
     index:
       learning_program: "Learning Programs"
