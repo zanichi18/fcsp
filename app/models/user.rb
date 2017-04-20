@@ -39,6 +39,11 @@ class User < ApplicationRecord
     primary_key: :avatar_id
   has_one :cover_image, class_name: Image.name, foreign_key: :id,
     primary_key: :cover_image_id
+  has_one :user_group, ->{where is_default_group: true},
+    class_name: UserGroup.name
+  has_one :group, class_name: Group.name, through: :user_group, source: :group
+  has_one :company, through: :user_group, source: :company,
+    class_name: Company.name
 
   delegate :introduce, to: :info_user, prefix: true
 

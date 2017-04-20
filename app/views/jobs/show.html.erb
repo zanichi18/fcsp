@@ -19,7 +19,7 @@
         <aside class="col-md-4 column-side">
           <% if user_signed_in? %>
             <div class="margin-section">
-              <% if cannot? :manage, @job %>
+              <% if cannot? :update, @job.company %>
                 <div class="apply-bookmark-section">
                   <%= render "candidate", job: @job %>
                   <%= render "bookmark", job: @job %>
@@ -38,7 +38,7 @@
             </div>
             <%= render "companies/gmap" %>
           </div>
-          <% if can? :manage, @job %>
+          <% if can? :manage, @job.company %>
             <div class="candidate-recommendation">
               <div class="location-padding">
                 <h4><%= t ".recommend" %></h4>
