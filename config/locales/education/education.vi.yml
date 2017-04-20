@@ -19,6 +19,7 @@ vi:
         member: " Thành viên"
         delete_object: "Bạn chắc muốn xóa?"
       footer:
+        tools: "Công cụ khác"
         copyright: "&copy; 2017 By Framgia - Human Development Division - Education Section - All rights reserved."
         tearm_of_use: "Điều khoản sử dụng"
         privacy_policy: "Chính sách bảo mật"
@@ -39,7 +40,6 @@ vi:
         search: "Type & Hit Enter.."
         feedback: "Phản hồi"
         trainers: "Giảng viên"
-        tools: "Công cụ"
         profile: "Trang cá nhân"
         log_out: "Đăng xuất"
         log_in: "Đăng nhập"

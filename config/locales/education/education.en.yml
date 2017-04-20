@@ -16,6 +16,7 @@ en:
         show_all: "Show all"
         more: "More"
       footer:
+        tools: "More tools"
         copyright: "&copy; 2017 By Framgia - Human Development Division - Education Section - All rights reserved."
         tearm_of_use: "Terms of Use"
         privacy_policy: "Privacy Policy"
@@ -40,7 +41,6 @@ en:
         search: "Type & Hit Enter.."
         feedback: "Feedback"
         trainers: "Trainers"
-        tools: "More tools"
         profile: "Profile"
         log_out: "Logout"
         log_in: "Login"
