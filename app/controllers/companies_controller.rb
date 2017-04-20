@@ -2,6 +2,6 @@ class CompaniesController < ApplicationController
   load_resource
 
   def show
-    render json: @company.addresses if request.xhr?
+    render json: {addresses: @company.addresses} if request.xhr?
   end
 end

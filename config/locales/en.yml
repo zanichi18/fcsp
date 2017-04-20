@@ -85,22 +85,6 @@ en:
       read_more: "Read more"
     recommend_user:
       show_more: "View more"
-  companies:
-    show:
-      info: "Info"
-      news: "News"
-      jobs: "Jobs"
-      members: "Members"
-      stats: "Stats"
-      founder: "Founder"
-      founded: "Founded on"
-      no_of_members: "# of Members"
-      about_us: "About us"
-      social_profiles: "Social Profiles"
-      follow: "Follow"
-    follow_form:
-      follow: "Follow"
-      unfollow: "Unfollow"
   follow_companies:
     create:
       follow: "follow company successfully!"

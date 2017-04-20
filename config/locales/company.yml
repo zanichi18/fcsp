@@ -12,6 +12,9 @@ en:
       about_us: "About us"
       social_profiles: "Social Profiles"
       follow: "Follow"
+    follow_form:
+      follow: "Follow"
+      unfollow: "Unfollow"
     show_left_main_content:
       info: "Info"
       news: "News"
@@ -30,7 +33,14 @@ en:
   admin:
     layouts:
       admin_header:
+        fcsp_dash: "Dashboard"
+        welcome: "Welcome"
+        general: "General Management"
+        companies: "Companies"
+        users: "Users"
         log_out: "Log out"
+      admin_footer:
+        footer_content: "Framgia Code School Platform by"
     companies:
       new:
         company_registration: "Company registration"
