@@ -1,6 +1,9 @@
 <div class="col-sm-3">
-  <div class="fancy-title title-border">
+  <div class="fancy-title">
     <h4><%= t(".profile").upcase %></h4>
+    <%= link_to user_path(current_user) do %>
+      <span><i class="icon-edit icon-amber"></i></span>
+    <% end %>
   </div>
   <%= load_user_avatar @user,
     class: "alignleft img-thumbnail notopmargin nobottommargin user-avatar" %>
