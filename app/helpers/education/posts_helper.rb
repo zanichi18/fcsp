@@ -3,13 +3,15 @@ require "redcarpet"
 module Education::PostsHelper
   include ActsAsTaggableOn::TagsHelper
 
-  class HTMLwithPygments < Redcarpet::Render::HTML
+  class CodeRayify < Redcarpet::Render::HTML
     def block_code code, language
-      Pygments.highlight(code, lexer: language)
+      language ||= "ruby"
+      CodeRay.scan(code, language).div
     end
   end
+
   def markdown_render content
-    renderer = HTMLwithPygments.new hard_wrap: true, filter_html: true,
+    renderer = CodeRayify.new hard_wrap: true, filter_html: true,
       tables: true
     options = {
       autolink: true,

@@ -256,7 +256,6 @@ GEM
     pg (0.20.0)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
-    posix-spawn (0.3.13)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -271,9 +270,6 @@ GEM
       railties (>= 3.0.0)
     public_suffix (2.0.5)
     puma (3.8.2)
-    pygments.rb (0.6.3)
-      posix-spawn (~> 0.3.6)
-      yajl-ruby (~> 1.2.0)
     rack (2.0.1)
     rack-mini-profiler (0.10.2)
       rack (>= 1.2.0)
@@ -454,7 +450,6 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    yajl-ruby (1.2.1)
 
 PLATFORMS
   ruby
@@ -473,6 +468,7 @@ DEPENDENCIES
   cancancan
   carrierwave
   cocoon
+  coderay
   coffee-rails (~> 4.2)
   config
   database_cleaner (~> 1.5)
@@ -502,7 +498,6 @@ DEPENDENCIES
   pry-rails
   public_activity
   puma (~> 3.0)
-  pygments.rb (~> 0.6.3)
   rack-mini-profiler
   rails (~> 5.0.2)
   rails-assets-sweetalert2!
