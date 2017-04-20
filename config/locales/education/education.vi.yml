@@ -8,6 +8,7 @@ vi:
       feedback_alert: "Bạn chắc muốn xóa?"
       active_alert: "sẽ được kích hoạt?"
       block_alert: "sẽ bị khóa?"
+      detete_category: "Bạn chắc muốn xóa?"
     shared:
       page_title:
         edit_button: "Chỉnh sửa"
@@ -29,6 +30,8 @@ vi:
         feedbacks: "Phản Hồi"
         learning_programs: "Chương trình đào tạo"
         techniques: "Công nghệ"
+        users: "Người dùng"
+        categories: "Chủ đề"
       header:
         home: "Trang chủ"
         portfolio: "Danh mục"
@@ -43,6 +46,8 @@ vi:
         profile: "Trang cá nhân"
         log_out: "Đăng xuất"
         log_in: "Đăng nhập"
+        create_new_post: "Tạo bài viết"
+        management: "Quản lý"
     trainers:
       trainer:
         trainer_title: "Giảng viên"
@@ -112,14 +117,14 @@ vi:
         learn_more: "Tìm hiểu thêm"
       clients_say:
         title: "Cảm nhận từ khách hàng"
-        client1_say: "Chúng tôi không thể không hài lòng hơn với Framgia Awesome Academy. Một chương trình đào tạo giàu kiến thức nhưng rất thực tế. Một dịch vụ training chuyên nghiệp và đốc đáo."
-        client1_name: "Teamlab"
+        client1_say: "Chúng tôi không thể hài lòng hơn với Framgia Awesome Academy. Một chương trình đào tạo giàu kiến thức nhưng rất thực tế. Một dịch vụ training chuyên nghiệp và đốc đáo."
+        client1_name: "- Teamlab -"
         client1_company: "- Tech company -"
         client2_say: "Cám ơn Framgia Awesome Academy! Sinh viên của chúng tôi đã có những trải nghiệm tuyệt vời tại Framgia Awesome Academy. Giờ đây với những kỹ năng và kiến thức có được từ đó, các em cảm thấy vững vàng hơn rất nhiều khi bước vào môi trường làm việc thực tế trong ngành CNTT. "
-        client2_name: "Đại học bách khoa hà nội"
+        client2_name: "- Đại học bách khoa hà nội -"
         client2_company: "- University -"
         client3_say: "Khóa học thật sự rất tuyệt. Em nhận thấy các kiến thức và kỹ năng được học đều rất thiết thực và giúp em tiến bộ lên từng ngày. Giờ em đã là lập trình viên tại đúng công ty mà mình từng mơ ước. Em cảm thấy tự tin khi áp dụng những điều học được tại Framgia Awesome Academy để phát triển xa hơn với sự nghiệp của mình."
-        client3_name: "Doan"
+        client3_name: "- Doan -"
         client3_company: "- Graduated trainee -"
       our_team:
         title: "Team chúng tôi"
@@ -552,6 +557,35 @@ vi:
           fail: "Cập nhật thất bại"
         create:
           success: "Đã nhập người dùng thành công."
+      categories:
+        index:
+          title: "Quản lý chủ đề bài viết"
+          title_description: "Quản lý tất cả chủ đề bài viết của Framgia Education"
+          add: "Thêm mới một chủ đề"
+        list:
+          name: "Tên chủ đề"
+          setting: "Thiết lập"
+        category:
+          edit: "Chỉnh sửa"
+          delete: "Xóa"
+        search_form:
+          placeholder: "Nhập chủ đề ...."
+        new_category:
+          title: "Thêm mới một chủ đề"
+          close: "Đóng"
+          save: "Lưu lại"
+          name: "Tên chủ đề"
+        create:
+          success: "Tạo mới thành công!"
+          fail: "Tạo mới thất bại!"
+        update:
+          not_found: "Không tìm thấy chủ đề!"
+          success: "Cập nhật thành công!"
+          fail: "Cập nhật thất bại!"
+        destroy:
+          not_found: "Không tìm thấy chủ đề!"
+          success: "Xóa thành công!"
+          fail: "Xóa không thành công!"
     time:
       formats:
         date_month_year: "%d/%m/%Y"

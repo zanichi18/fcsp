@@ -46,6 +46,14 @@
           <div id="top-cart" class="dropdown-user">
             <a><i class="icon-user"></i></a>
             <div class="dropdown-user-content">
+              <% if is_management? %>
+                <div class="edu-dropdown-user-detail">
+                  <%= link_to education_management_root_path do %>
+                    <span><i class="icon-cog"></i>&nbsp;<%= t ".management" %></span>
+                  <% end %>
+                </div>
+                <hr>
+              <% end %>
               <div class="edu-dropdown-user-detail">
                 <%= link_to education_user_path(current_user) do %>
                   <span><i class="icon-user"></i>&nbsp;<%= t ".profile" %></span>
