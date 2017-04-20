@@ -119,6 +119,9 @@ en:
         everyone: "Everyone can apply"
         friends_om: "Only friends of members"
         of_friends_om: "Only friends of friends of members"
+    companies:
+      edit_company_info:
+        update_company_info: "Update"
   type_of_candidates:
     prompt: "Select type of candidates"
     engineer: "Engineer / Programmer"

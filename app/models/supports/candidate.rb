@@ -8,7 +8,7 @@ module Supports
     end
 
     def candidates
-      @company.candidates.includes(:user, :job).in_job(job_ids)
+      @company.candidates.includes(:user, :job).in_jobs(job_ids)
     end
 
     def active_jobs
