@@ -67,4 +67,5 @@ Rails.application.routes.draw do
   resources :user_portfolios, except: [:index, :show]
   resources :awards, except: [:index, :show]
   resources :user_works
+  resources :user_educations
 end

@@ -38,6 +38,7 @@ class User < ApplicationRecord
   has_many :user_educations, dependent: :destroy
   has_many :user_works, dependent: :destroy
   has_many :organizations, through: :user_works
+  has_many :schools, through: :user_educations, source: :school
   has_one :avatar, class_name: Image.name, foreign_key: :id,
     primary_key: :avatar_id
   has_one :cover_image, class_name: Image.name, foreign_key: :id,

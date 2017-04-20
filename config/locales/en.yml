@@ -374,6 +374,9 @@ en:
     formats:
       date_month_year_concise: '%d-%m-%y'
       time_date_month_year: '%-d %B %Y, %H:%M %p '
+  date:
+    formats:
+      education_user: "%B %Y"
   copy: "Copyright by Framgia"
   error: "error"
   comment:
@@ -456,6 +459,9 @@ en:
       user_work: "Work"
     org_search:
       people: "%{num} others"
+    user_education:
+      education: "Education"
+      add: "Add"
   user_works:
     create:
       create_success: "Add work successfully!"
@@ -601,3 +607,34 @@ en:
     update:
       success: "Update award successfully"
       failed: "Update award Failed"
+  user_educations:
+    form_user_education:
+      title: "Update your education"
+      close: "Close"
+      update: "Update"
+      school: "School"
+      major: "Major"
+      graduation: "Graduation"
+      description: "Description"
+    result:
+      no_result: "No result for"
+      studied: "others studied here."
+    create:
+      success: "Updated successfully!"
+      fail: "Updated failed!"
+      school_not_found: "School not found"
+    user_education:
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
+    edit:
+      not_found: "Education not found"
+    update:
+      not_found: "Education not found"
+      success: "Updated successfully!"
+      fail: "Updated failed!"
+      school_not_found: "School not found"
+    destroy:
+      not_found: "Education not found"
+      success: "Deleted successfully!"
+      fail: "Deleted failed!"

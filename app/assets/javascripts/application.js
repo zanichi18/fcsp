@@ -32,4 +32,4 @@
 //= require user_portfolios
 //= require cocoon
 //= require awards
-//= require search_box.js
+//= require searchbox

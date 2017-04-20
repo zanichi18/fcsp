@@ -1,0 +1,54 @@
+<div class="modal fade" id="formUserEducationModal" role="dialog">
+  <div class="modal-dialog">
+    <%= form_for user_education, remote: true do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= t ".title" %></h4>
+        </div>
+
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :school, t(".school") %>
+            <div class="dropdown form-group">
+              <%= f.text_field :school, value: user_education.school_name,
+                class: "form-control dropdown-toggle",
+                "data-toggle": "dropdown", "aria-hidden": :true,
+                autocomplete: :off, required: true, id: "school-search" %>
+              <ul class="dropdown-menu form-control dropdown-result-school">
+                <div id="result-school-search"></div>
+              </ul>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :major, t(".major") %>
+            <%= f.text_field :major, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :graduation, t(".graduation") %>
+            <%  if user_education.graduation %>
+              <%= f.text_field :graduation,
+                value: l(user_education.graduation, format: :education_user),
+                class: "form-control graduation-datepicker" %>
+            <% else %>
+              <%= f.text_field :graduation, class: "form-control graduation-datepicker" %>
+            <% end %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description, t(".description") %>
+            <%= f.text_area :description, rows: "5", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <%= f.submit t(".update"), class: "btn btn-primary create-user-education" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag "user_education_form" %>

@@ -211,3 +211,5 @@ form_portfolio:
   size_image: "120x120"
 user_works:
   org_avatar: "/assets/org_avatar.png"
+school:
+  per_search: 10

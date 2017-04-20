@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="education-info">
+    <p class="education-school">
+      <span class="education-school-name"><%= user_education.school_name %></span>
+      <span class="education-graducation">
+        <%= l user_education.graduation, format: :education_user if user_education.graduation  %>
+      </span>
+      <% if user_education.user.is_user? current_user %>
+        <span class="edit-education">
+          <span>
+            <%= link_to edit_user_education_path(user_education), remote: true do %>
+              <span class="icon-pencil"></span> <%= t ".edit" %>
+            <% end %>
+          </span>
+          <span>&nbsp</span>
+          <span>
+            <%= link_to user_education_path(user_education), remote: true,
+              method: :delete, data: {confirm: t(".sure")} do %>
+              <span class="icon-trash"></span> <%= t ".delete" %>
+            <% end %>
+          </span>
+        </span>
+      <% end %>
+    </p>
+    <p class="education-major"><%= user_education.major %></p>
+  </div>
+</div>
+
+<%= javascript_include_tag "user_education" %>

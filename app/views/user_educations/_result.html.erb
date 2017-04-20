@@ -1,0 +1,17 @@
+<% if schools.blank? %>
+  <li>
+    <%= "#{t ".no_result"} #{params[:search]}" %>
+  </li>
+<% else %>
+  <div class="scrollable-menu">
+    <% schools.each do |school| %>
+      <li class="school-info-result">
+        <p class="school-name"><%= school.name %></p>
+        <p class="school-student-count">
+          <%= school.student_count %> <%= t ".studied" %></p>
+      </li>
+    <% end %>
+  </div>
+<% end %>
+
+<%= javascript_include_tag "user_education_search_result" %>
