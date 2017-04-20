@@ -38,7 +38,7 @@ Rails.application.routes.draw do
 
   namespace :employer do
     resources :companies do
-      resources :jobs
+      resources :jobs, except: [:show]
       resources :dashboards, only: :index
       resources :team_introductions, only: [:create, :new]
       resources :candidates, only: :index

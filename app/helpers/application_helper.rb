@@ -21,8 +21,4 @@ module ApplicationHelper
     end
     class_name.constantize.new(self)
   end
-
-  def default_company user
-    user.user_groups.default.company
-  end
 end
