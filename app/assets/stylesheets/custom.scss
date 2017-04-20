@@ -96,7 +96,12 @@
 
 .head-wrap {
   background: url('welcome1.jpg') center center no-repeat;
+  height: 380px;
   padding: 200px 0 20px;
+}
+
+.brief-info {
+  margin-top: 50px;
 }
 
 .heading-block {
@@ -141,6 +146,7 @@
 
 .ava-company {
   max-width: 84px !important;
+  width: 8%;
 }
 
 .sales {

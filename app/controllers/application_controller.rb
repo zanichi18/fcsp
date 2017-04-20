@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
 
   def friend_request
     if !current_user.nil? && user_signed_in?
-      @user_request = current_user.requested_friends
+      @user_request = current_user.requested_friends.includes :avatar
     end
   end
 end

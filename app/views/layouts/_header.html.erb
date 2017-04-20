@@ -34,7 +34,9 @@
             <%= render "friend_ships/friend_request" %>
           <% end %>
           <% if current_user.present? && current_user.user_groups.default.present? %>
-            <li><%= link_to t(".admin"), admin_dashboards_path %></li>
+            <li>
+              <%= link_to t(".admin"), admin_dashboards_path if current_user.admin? %>
+            </li>
             <li>
               <%= link_to t(".employer"), employer_company_dashboards_path(default_company current_user) %>
             </li>
