@@ -68,16 +68,16 @@ vi:
         confirm_delete: "Bạn chắc chứ?"
     home:
       slider:
-        welcome: "Chào mừng đến với Framgia Education"
+        welcome: "Chào mừng đến với Framgia Awesome Academy"
         description: "Tiềm năng lớn của bạn + Thực hành thực tế = Chiến thắng</br>
-                      Ở lại với Framgia Education và mang khả năng của bạn đến với thế giới"
+                      Ở lại với Framgia Awesome Academy và mang khả năng của bạn đến với thế giới"
       learning_programs:
         header: "Phương thức đào tạo"
       our_projects:
         see_more: "Xem thêm"
       introduction_video:
         before_heading: "Dễ Hiểu & Tuỳ chỉnh"
-        heading: "Tại Framgia Education"
+        heading: "Tại Framgia Awesome Academy"
         description: "Bất cứ đều gì chúng tôi làm, phải thật sự mang nhiều ý nghĩa. Bất cứ lúc bạn tin vào chúng tôi, bạn sẽ đạt được tầm cao mới."
       statistics:
         course: "Khóa học"
@@ -107,18 +107,18 @@ vi:
         introduce: "Chúng tôi luôn cập nhật các xu thế công nghệ mới để chắc chắn rằng các sản phẩm mà học viên chúng tôi phát triển nên đều có thể sử dụng trên những thiệt bị hiện đại nhất."
       need_content:
         header: "Chương trình đào tạo thực tiễn và toàn diện."
-        description1: "Chúng ta được biết sản phẩm công nghệ thực thụ được sử dụng rộng rãi trên thị trường chỉ có thể được tạo ra bởi các công ty IT lớn hay những nhóm phát triển phần mềm nhiều năm kinh nghiệm. Riêng Framgia Education, chúng tôi tin rằng bất kỳ những ai có đam mê cũng với một hướng đi và phương pháp tiếp cận hiệu quả đều có thể làm ra các những phần mềm có tính ứng dụng cao, mang lại nhiều giá trị cho cộng đồng. Vì thế, giảng dạy và học tập nhất định phải đáp ứng được thực tiễn, các sản phẩm công nghệ của Framgia Education không chỉ giúp học viên hiểu hơn về kiến thức mà hơn hết còn phải đạt được yêu cầu về tính ứng dụng trên thị trường. Tất cả điều đó sẽ rèn luyện các lập trình viên có được một tầm nhìn bao quát và một bộ các kỹ năng để họ nâng cao năng lực cạnh tranh của chính mình trên thị trường nhân sự CNTT Việt Nam đang rất sôi động hiện nay."
+        description1: "Chúng ta được biết sản phẩm công nghệ thực thụ được sử dụng rộng rãi trên thị trường chỉ có thể được tạo ra bởi các công ty IT lớn hay những nhóm phát triển phần mềm nhiều năm kinh nghiệm. Riêng Framgia Awesome Academy, chúng tôi tin rằng bất kỳ những ai có đam mê cũng với một hướng đi và phương pháp tiếp cận hiệu quả đều có thể làm ra các những phần mềm có tính ứng dụng cao, mang lại nhiều giá trị cho cộng đồng. Vì thế, giảng dạy và học tập nhất định phải đáp ứng được thực tiễn, các sản phẩm công nghệ của Framgia Awesome Academy không chỉ giúp học viên hiểu hơn về kiến thức mà hơn hết còn phải đạt được yêu cầu về tính ứng dụng trên thị trường. Tất cả điều đó sẽ rèn luyện các lập trình viên có được một tầm nhìn bao quát và một bộ các kỹ năng để họ nâng cao năng lực cạnh tranh của chính mình trên thị trường nhân sự CNTT Việt Nam đang rất sôi động hiện nay."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Tìm hiểu thêm"
       clients_say:
         title: "Cảm nhận từ khách hàng"
-        client1_say: "Chúng tôi không thể không hài lòng hơn với Framgia Education. Một chương trình đào tạo giàu kiến thức nhưng rất thực tế. Một dịch vụ training chuyên nghiệp và đốc đáo."
+        client1_say: "Chúng tôi không thể không hài lòng hơn với Framgia Awesome Academy. Một chương trình đào tạo giàu kiến thức nhưng rất thực tế. Một dịch vụ training chuyên nghiệp và đốc đáo."
         client1_name: "Teamlab"
         client1_company: "- Tech company -"
-        client2_say: "Cám ơn Framgia Education! Sinh viên của chúng tôi đã có những trải nghiệm tuyệt vời tại Framgia Education. Giờ đây với những kỹ năng và kiến thức có được từ đó, các em cảm thấy vững vàng hơn rất nhiều khi bước vào môi trường làm việc thực tế trong ngành CNTT. "
+        client2_say: "Cám ơn Framgia Awesome Academy! Sinh viên của chúng tôi đã có những trải nghiệm tuyệt vời tại Framgia Awesome Academy. Giờ đây với những kỹ năng và kiến thức có được từ đó, các em cảm thấy vững vàng hơn rất nhiều khi bước vào môi trường làm việc thực tế trong ngành CNTT. "
         client2_name: "Đại học bách khoa hà nội"
         client2_company: "- University -"
-        client3_say: "Khóa học thật sự rất tuyệt. Em nhận thấy các kiến thức và kỹ năng được học đều rất thiết thực và giúp em tiến bộ lên từng ngày. Giờ em đã là lập trình viên tại đúng công ty mà mình từng mơ ước. Em cảm thấy tự tin khi áp dụng những điều học được tại Framgia Education để phát triển xa hơn với sự nghiệp của mình."
+        client3_say: "Khóa học thật sự rất tuyệt. Em nhận thấy các kiến thức và kỹ năng được học đều rất thiết thực và giúp em tiến bộ lên từng ngày. Giờ em đã là lập trình viên tại đúng công ty mà mình từng mơ ước. Em cảm thấy tự tin khi áp dụng những điều học được tại Framgia Awesome Academy để phát triển xa hơn với sự nghiệp của mình."
         client3_name: "Doan"
         client3_company: "- Graduated trainee -"
       our_team:
@@ -494,12 +494,12 @@ vi:
         index:
           edit_button: "Cập nhật"
           preview: "Xem trước"
-          title: "Giới thiệu Framgia Education"
+          title: "Giới thiệu Framgia Awesome Academy"
           title_description: "Cập nhật thông tin"
       groups:
         index:
           title: "Quản lý phân quyền"
-          title_description: "Quản lý phân quyền của Framgia Education"
+          title_description: "Quản lý phân quyền của Framgia Awesome Academy"
         list_permissions:
           placeholder_search: "Nhập tìm kiếm"
           object: "Đối tượng"
@@ -516,7 +516,7 @@ vi:
       learning_programs:
         index:
           title: "Chương trình đào tạo"
-          title_description: "Chương trình đào tạo của Framgia Education"
+          title_description: "Chương trình đào tạo của Framgia Awesome Academy"
           name: "Tên"
           description: "Mô tả"
           setting: "Thiết lập"
@@ -533,7 +533,7 @@ vi:
       users:
         index:
           title: "Quản lý người dùng"
-          title_description: "Quản lý người dùng của Framgia Education"
+          title_description: "Quản lý người dùng của Framgia Awesome Academy"
         list:
           name: "Tên"
           email: "Email"

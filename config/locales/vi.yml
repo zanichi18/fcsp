@@ -261,7 +261,7 @@ vi:
         description: "Description"
         name: "Name"
     see_more: "Xem thêm"
-    title: "Framgia Education"
+    title: "Framgia Awesome Academy"
     logo_alt: "Framgia logo"
     project:
       not_found: "Project not found!"
@@ -422,7 +422,7 @@ vi:
     post:
       post_not_found: "Không tìm thấy post"
     slider:
-      welcome: "Welcome to Framgia Education"
+      welcome: "Welcome to Framgia Awesome Academy"
       description: "Master your self. Come with us"
     index:
       learning_program: "Learning Programs"

@@ -70,9 +70,9 @@ en:
         confirm_delete: "Are you sure?"
     home:
       slider:
-        welcome: "Welcome to Framgia Education"
+        welcome: "Welcome to Framgia Awesome Academy"
         description: "Your huge potential + Real-world practice = The win</br>
-                      Stay here with Framgia Education and carry your ability out to the world"
+                      Stay here with Framgia Awesome Academy and carry your ability out to the world"
       learning_programs:
         header: "Traning Paths"
       our_projects:
@@ -109,18 +109,18 @@ en:
         introduce: "We always stay up-to-date with almost the current languages and platforms, and therefore what our trainees develop will surely suit the full spectrum of devices around the world."
       need_content:
         header: "Real-world and comprehensive training program"
-        description1: "Most of the successful technology products which have been widely used on market were created by well-known IT companies or long-year experience developers. But here at Framgia Education, we belive more than that. Anybody with passion, clear direction as well as an effective approach can build up the software that can be applied in many aspects of society. Thus, coaching and learning must be meet the reality and all the product made by Framgia Education not only help trainees gain the deep insight of high tech but also live up to society demand. As the result, trainees will be equipped with comprehensive vision and key skill set to reinforce their competence on the dynamic IT market nowadays."
+        description1: "Most of the successful technology products which have been widely used on market were created by well-known IT companies or long-year experience developers. But here at Framgia Awesome Academy, we belive more than that. Anybody with passion, clear direction as well as an effective approach can build up the software that can be applied in many aspects of society. Thus, coaching and learning must be meet the reality and all the product made by Framgia Awesome Academy not only help trainees gain the deep insight of high tech but also live up to society demand. As the result, trainees will be equipped with comprehensive vision and key skill set to reinforce their competence on the dynamic IT market nowadays."
         description2: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vero, animi suscipit id facere officia. Aspernatur, quo, quos nisi dolorum aperiam fugiat deserunt velit rerum laudantium cum magnam."
         learn_more: "Learn more"
       clients_say:
         title: "Testimonials"
-        client1_say: "We can’t be even more satisfactory withFramgia Education. An informative program but also very down -to- earth. A professional training service, but also unique."
+        client1_say: "We can’t be even more satisfactory withFramgia Awesome Academy. An informative program but also very down -to- earth. A professional training service, but also unique."
         client1_name: "Teamlab"
         client1_company: "- Tech company -"
-        client2_say: "Thanks to Framgia Education! Our students have had so many wonderful experiences in there. From now on, with all those insights, they found empowered to enter the real working environment at high-tech companies."
+        client2_say: "Thanks to Framgia Awesome Academy! Our students have had so many wonderful experiences in there. From now on, with all those insights, they found empowered to enter the real working environment at high-tech companies."
         client2_name: "Hanoi University of Science and Technology"
         client2_company: "- University - "
-        client3_say: "It was really excellent. All the knowledge and skills I learned were practical and keep me making progress every day. I am now a software engineer for the company I did dream of. I fell confident to apply all the lessons learned form Framgia Education to boldly go forward on my career."
+        client3_say: "It was really excellent. All the knowledge and skills I learned were practical and keep me making progress every day. I am now a software engineer for the company I did dream of. I fell confident to apply all the lessons learned form Framgia Awesome Academy to boldly go forward on my career."
         client3_name: "Doan"
         client3_company: "- Graduated trainee -"
       our_team:
@@ -485,7 +485,7 @@ en:
           phone_number: "Phone"
           destroy: "delete"
           title: "Feedback"
-          title_description: "Manage feedbacks for education of our Framgia Education"
+          title_description: "Manage feedbacks for education of our Framgia Awesome Academy"
         destroy:
           deleted_success: "Deleted feedback successfully!"
           feedback_delete_fail: "Delete failed"
@@ -500,12 +500,12 @@ en:
         index:
           edit_button: "Update"
           preview: "Preview"
-          title: "Introduce Framgia Education"
+          title: "Introduce Framgia Awesome Academy"
           title_description: "Update your introduction"
       groups:
         index:
           title: "Groups Permissions"
-          title_description: "Manage permissions of all groups of our Framgia Education"
+          title_description: "Manage permissions of all groups of our Framgia Awesome Academy"
         list_permissions:
           placeholder_search: "Enter your search"
           object: "Object"
@@ -522,7 +522,7 @@ en:
       learning_programs:
         index:
           title: "Traning Paths"
-          title_description: "Framgia Education's training paths"
+          title_description: "Framgia Awesome Academy's training paths"
           name: "Name"
           description: "Description"
           setting: "Setting"
@@ -539,7 +539,7 @@ en:
       users:
         index:
           title: "Users Management"
-          title_description: "Manage users of Framgia Education"
+          title_description: "Manage users of Framgia Awesome Academy"
         list:
           name: "Name"
           email: "Email"
