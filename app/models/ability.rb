@@ -25,18 +25,6 @@ class Ability
     user.education_groups.each do |education_group|
       get_permission_of_group_for_authentication education_group
     end
-
-    # return unless user.company
-    # # can :manage, Company, id: user.company.id
-    # user.group.permissions.each do |permission|
-    #   permission.optional.each do |action, accessable|
-    #     if accessable
-    #       can action, permission.entry.constantize, company: {id: user.company.id}
-    #     else
-    #       cannot action, permission.entry.constantize
-    #     end
-    #   end
-    # end
   end
 
   private
@@ -56,10 +44,4 @@ class Ability
       end
     end
   end
-
-  # def get_permission_of_company group
-  #   group.permissions.each do |permission|
-
-  #   end
-  # end
 end
