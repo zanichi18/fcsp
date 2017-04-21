@@ -21,7 +21,7 @@
         </li>
         <li>
           <%= link_to education_posts_path(category: post.category_id) do %>
-            <i class="icon-folder-open"></i> <%= post.category_name %>
+            <i class="icon-folder-open"></i> <%= post.category.name %>
           <% end %>
         </li>
         <li>

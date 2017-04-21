@@ -3,9 +3,10 @@ class Education::Post < ApplicationRecord
   tracked owner: proc{|controller| controller.current_user if controller}
 
   translates :title
+  acts_as_paranoid
   acts_as_taggable_on :tags
 
-  belongs_to :category, class_name: Education::Category.name
+  belongs_to :category, ->{with_deleted}, class_name: Education::Category.name
   belongs_to :user
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :rates, class_name: Education::Rate.name, as: :rateable,
@@ -21,7 +22,6 @@ class Education::Post < ApplicationRecord
 
   delegate :name, to: :user, prefix: true
   delegate :avatar, to: :user, prefix: true
-  delegate :name, to: :category, prefix: true
 
   scope :created_desc, ->{order created_at: :desc}
   scope :related_by_category, ->post do
