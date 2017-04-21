@@ -8,11 +8,11 @@ $(document).ready(function(){
   $('#list_education_categories').on('click', '.edit-edu-category', function(){
     var category_id = this.dataset.id;
     var category_name = $('#edu-category-name-' + category_id).text();
-    $('#edu-category-name-' + category_id).html(`
-      <input value="${category_name}" class="form-control input_education_category_name"
-      required="required" data-id="${category_id}" data-name="${category_name}"
-      type="text" name="education_category[name]">
-    `);
+    $('#edu-category-name-' + category_id).html(
+      '<input value="'+category_name+'" class="form-control input_education_category_name"' +
+      'required="required" data-id="'+category_id+'" data-name="'+category_name+'"'+
+      'type="text" name="education_category[name]">'
+    );
   });
 
   $('#list_education_categories').on('keyup', '.input_education_category_name' ,function(e){
@@ -63,8 +63,9 @@ $(document).ready(function(){
           }
         },
         error: function(error) {
+          console.log(error);
           $.growl.error({title: '', message: error});
-          location.reload();
+          // location.reload();
         }
       });
     }
