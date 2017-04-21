@@ -4,4 +4,6 @@ class Education::Category < ApplicationRecord
 
   validates :name, presence: true,
     length: {maximum: Settings.education.category.max_length_title}
+
+  scope :newest, ->{order created_at: :desc}
 end

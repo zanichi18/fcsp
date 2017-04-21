@@ -5,6 +5,8 @@ education:
       per_page: 20
       active: "active"
       blocked: "blocked"
+    categories:
+      per_page: 10
   home_page:
     introduction_video_link: "https://www.youtube.com/watch?v=9k-1pLiS8so"
     introduction_video_link_cover_image: "http://img.youtube.com/vi/9k-1pLiS8so/maxresdefault.jpg"

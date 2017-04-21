@@ -140,8 +140,9 @@ code {
   overflow-y: auto;
 }
 
-.modal {
+.image-insert-modal {
   display: none;
+  z-index: 10000;
 }
 
 .tagit {
@@ -277,4 +278,10 @@ code {
 
 .ui-icon-close {
   display: none !important;
+}
+
+.post-article.markdown {
+  ul {
+    -webkit-padding-start: 40px;
+  }
 }

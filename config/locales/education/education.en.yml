@@ -8,6 +8,7 @@ en:
       feedback_alert: "Are you sure ?"
       active_alert: "will be actived?"
       block_alert: "will be blocked?"
+      detete_category: "Are you sure?"
     shared:
       page_title:
         edit_button: "Edit"
@@ -30,6 +31,8 @@ en:
         learning_programs: "Learning Programs"
         techniques: "Techniques"
         group_users: "Group Users"
+        users: "Users"
+        categories: "Categories"
       header:
         home: "Home"
         portfolio: "Portfolio"
@@ -45,6 +48,7 @@ en:
         log_out: "Logout"
         log_in: "Login"
         create_new_post: "Create new post"
+        management: "Management"
     trainers:
       trainer:
         trainer_title: "Trainer"
@@ -114,14 +118,14 @@ en:
         learn_more: "Learn more"
       clients_say:
         title: "Testimonials"
-        client1_say: "We can’t be even more satisfactory withFramgia Awesome Academy. An informative program but also very down -to- earth. A professional training service, but also unique."
-        client1_name: "Teamlab"
+        client1_say: "We weren't even more satisfied with Framgia Awesome Academy. An informative program but also very down -to- earth. A professional training service, but also unique."
+        client1_name: "- Teamlab -"
         client1_company: "- Tech company -"
         client2_say: "Thanks to Framgia Awesome Academy! Our students have had so many wonderful experiences in there. From now on, with all those insights, they found empowered to enter the real working environment at high-tech companies."
-        client2_name: "Hanoi University of Science and Technology"
+        client2_name: "- Hanoi University of Science and Technology -"
         client2_company: "- University - "
         client3_say: "It was really excellent. All the knowledge and skills I learned were practical and keep me making progress every day. I am now a software engineer for the company I did dream of. I fell confident to apply all the lessons learned form Framgia Awesome Academy to boldly go forward on my career."
-        client3_name: "Doan"
+        client3_name: "- Doan -"
         client3_company: "- Graduated trainee -"
       our_team:
         title: "Our team"
@@ -558,6 +562,35 @@ en:
           fail: "Update failed"
         create:
           success: "Users imported."
+      categories:
+        index:
+          title: "Categories Management"
+          title_description: "Manage all categories of Framgia Education"
+          add: "Add new category"
+        list:
+          name: "Name"
+          setting: "Setting"
+        category:
+          edit: "Edit"
+          delete: "Delete"
+        search_form:
+          placeholder: "Enter category ...."
+        new_category:
+          title: "Add new category"
+          close: "Close"
+          save: "Save"
+          name: "Name"
+        create:
+          success: "Created successfully!"
+          fail: "Created failed!"
+        update:
+          not_found: "Category not found!"
+          success: "Updated successfully!"
+          fail: "Updated failed!"
+        destroy:
+          not_found: "Category not found!"
+          success: "Deleted successfully!"
+          fail: "Deteted failed!"
     time:
       formats:
         date_month_year: "%d/%m/%Y"

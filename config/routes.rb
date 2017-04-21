@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resource :group_users, only: :destroy
       resources :group_users, only: [:create, :index]
       resources :users, only: [:index, :update, :create]
+      resources :categories, except: [:show, :new, :edit]
       root "users#index"
     end
     root "home#index"

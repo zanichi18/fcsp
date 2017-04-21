@@ -33,4 +33,11 @@ module Education::GeneralHelper
       "icon-line2-equalizer"]
     icon_array[index]
   end
+
+  def is_management?
+    EducationModel.get_all.each do |object|
+      return false unless can_manage? object.constantize
+    end
+    true
+  end
 end
