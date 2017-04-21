@@ -38,7 +38,7 @@
               </h3>
               <strong><%= t ".techniques" %>: </strong>
               <% training.techniques.each do |technique| %>
-                <%= link_to education_technique_path technique do %>
+                <%= link_to "#" do %>
                   <%= truncate(technique.name, length: Settings.education.index_name.truncate_limit) %>
                 <% end %>
               <% end %>
