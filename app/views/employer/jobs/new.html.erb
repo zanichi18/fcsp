@@ -14,7 +14,8 @@
         </a></li>
       </ul>
       <div class="tab-content clearfix" id="tabs-2">
-        <%= form_for @job, url: employer_company_jobs_path do |f| %>
+        <%= form_for @job, url: employer_company_jobs_path,
+          html: {class: "job-form"} do |f| %>
           <%= render "info_hiring_type", f: f %>
           <%= render "info_main", f: f %>
         <% end %>

@@ -1,7 +1,7 @@
 <div class="container clearfix container-margin">
-  <div class="postcontent nobottommargin col_last clearfix">
+  <div class="nobottommargin col_last clearfix">
     <div class="tab-content clearfix">
-      <%= form_for @job, url: url do |f| %>
+      <%= form_for @job, url: url, html:{class: "job-form"} do |f| %>
         <%= render "info_hiring_type", f: f %>
         <fieldset class="input required member-important">
           <table class="table custab">
@@ -15,36 +15,7 @@
             </tr>
           </table>
         </fieldset>
-        <fieldset class="input required job-title">
-          <table class="table custab">
-            <tr>
-              <td class="col-md-4">
-                <label class="required control-label">
-                  <%= t ".title" %><span class="require">*</span>
-                </label>
-              </td>
-              <td>
-                <%= f.text_field :title, required: true, class: "form-control",
-                  placeholder: t(".placeholder_title") %>
-              </td>
-            </tr>
-          </table>
-        </fieldset>
-        <fieldset class="input required job-des">
-          <table class="table custab">
-            <tr>
-              <td class="col-md-4">
-                <label class="required control-label">
-                  <%= t ".description" %><span class="require">*</span>
-                </label>
-              </td>
-              <td>
-                <%= f.text_area :describe, required: true, class: "form-control",
-                  rows: 5, placeholder: t(".placeholder_des") %>
-              </td>
-            </tr>
-          </table>
-        </fieldset>
+        <%= render "job_detail", f: f %>
         <fieldset class="input required action-create-job">
           <table class="table custab">
             <tr>
