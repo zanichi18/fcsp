@@ -1,4 +1,5 @@
 require "redcarpet"
+require "redcarpet/render_strip"
 
 module Education::PostsHelper
   include ActsAsTaggableOn::TagsHelper
@@ -27,7 +28,12 @@ module Education::PostsHelper
       emoji: true
     }
 
-    Redcarpet::Markdown.new(renderer, options).render(content)
+    Redcarpet::Markdown.new(renderer, options).render content
+  end
+
+  def markdown_truncate content
+    markdown = Redcarpet::Markdown.new Redcarpet::Render::StripDown
+    markdown.render content
   end
 
   def category_select

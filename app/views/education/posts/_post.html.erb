@@ -32,7 +32,8 @@
       </ul>
       <div class="entry-content">
         <p>
-          <%= post.content.truncate Settings.education.posts.content_character_display %>
+          <%= markdown_truncate post.content
+            .truncate(Settings.education.posts.content_character_display) %>
         </p>
         <%= link_to education_post_path(post), class: "more-link" do %>
           <%= t ".read_more" %>
