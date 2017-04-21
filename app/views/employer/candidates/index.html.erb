@@ -4,7 +4,7 @@
   <div class="col-md-3 form-group">
     <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
     <%= select(:job, :job_id, @object.active_jobs.collect {|p| [ p.title, p.id ] },
-      {include_blank: t(".all_jobs"), selected: params[:job_id]},
+      {include_blank: t(".all_jobs"), selected: params[:select]},
       class: "form-control", id: "select-job") %>
   </div>
 

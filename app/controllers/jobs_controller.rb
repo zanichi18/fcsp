@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  load_and_authorize_resource through: :company
+  load_and_authorize_resource
 
   def index
     @jobs = Job.active.includes(:images, :company)

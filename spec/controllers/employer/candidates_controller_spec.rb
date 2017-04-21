@@ -26,19 +26,19 @@ RSpec.describe Employer::CandidatesController, type: :controller do
     end
 
     it "get candidates of a job successfully" do
-      get :index, params: {company_id: company.id, job_id: job.id}, xhr: true
+      get :index, params: {company_id: company.id, select: job.id}, xhr: true
       expect(response).to be_success
       expect(response).to have_http_status 200
     end
 
-    it "get all candidates of company successfully when job_id is empty" do
-      get :index, params: {company_id: company.id, job_id: ""}, xhr: true
+    it "get all candidates of company successfully when params select is empty" do
+      get :index, params: {company_id: company.id, select: ""}, xhr: true
       expect(response).to be_success
       expect(response).to have_http_status 200
     end
 
     it "render template successfully when using xhr request" do
-      get :index, params: {company_id: company.id, job_id: job.id}, xhr: true
+      get :index, params: {company_id: company.id, select: job.id}, xhr: true
       expect(response).to render_template("employer/candidates/_candidate")
     end
   end

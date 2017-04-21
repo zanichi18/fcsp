@@ -12,7 +12,7 @@ function candidatesByJob() {
       dataType: 'html',
       url: '/employer/companies/' + company_id + '/candidates',
       method: 'get',
-      data: {job_id: job_id},
+      data: {select: job_id},
       success: function(data) {
         $('#list-candidates').empty();
         $('#list-candidates').append(data);
