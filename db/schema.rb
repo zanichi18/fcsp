@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417075835) do
+ActiveRecord::Schema.define(version: 20170421044233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,8 @@ ActiveRecord::Schema.define(version: 20170417075835) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_education_categories_on_deleted_at", using: :btree
   end
 
   create_table "education_comments", force: :cascade do |t|
@@ -245,6 +247,8 @@ ActiveRecord::Schema.define(version: 20170417075835) do
     t.integer  "comments_count", default: 0, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_education_posts_on_deleted_at", using: :btree
     t.index ["user_id"], name: "index_education_posts_on_user_id", using: :btree
   end
 

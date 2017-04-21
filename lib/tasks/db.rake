@@ -37,7 +37,6 @@ namespace :db do
         "le.quang.canh@sframgia.com": "Le Quang Anh",
         "nguyen.ngoc.thinh@framgia.com": "Nguyen Ngoc Thinh",
         "tran.xuan.nam@framgia.com": "Tran Xuan Nam",
-        "admin.education@framgia.com": "admin.education",
         "user@gmail.com": "User",
         "ttkt1994@gmail.com": "User"
       }
@@ -47,6 +46,12 @@ namespace :db do
           123456, education_status: rand(0..1)
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph
       end
+
+      edu_admin = User.create! name: "Education admin",
+        password: "123456",
+        education_status: 1,
+        email: "admin.education@framgia.com"
+      InfoUser.create! user_id: edu_admin.id, introduce: Faker::Lorem.paragraph
 
       user = User.create! name: "Adminprp",
         email: "admin@gmail.com",

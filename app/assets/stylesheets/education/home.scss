@@ -180,8 +180,8 @@
 }
 
 .custom-our-training {
-  padding-top: 0 !important;
   margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 .custom-lastest-course {
@@ -192,6 +192,6 @@
   margin-top: 50px;
 }
 
-.testi-meta:before {
+.testi-meta::before {
   content: none;
 }
