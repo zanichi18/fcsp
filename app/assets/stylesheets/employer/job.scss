@@ -113,14 +113,14 @@
 }
 
 .job-title {
-  color: #000;
+  color: $black;
   font-weight: bold;
 }
 
 .sales {
-  border: 1px solid #08c;
+  border: 1px solid $blue;
   border-radius: 2px;
-  color: #1e8bc3;
+  color: $weight-blue;
   font-size: 13px;
   margin-top: 10px;
   padding: 2px;
