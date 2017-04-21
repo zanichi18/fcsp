@@ -170,6 +170,7 @@ activity:
 employer:
   jobs:
     per_page: 6
+    thumb_image_size: "100x50"
 truncate_job_describe: 150
 user_portfolios:
   title_min: 10

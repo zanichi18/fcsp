@@ -19,10 +19,11 @@
 
   <table class="table table-striped custab">
     <thead>
-      <th width="30%"><%= t ".title" %></th>
-      <th width="15%"><%= t ".status" %></th>
-      <th width="15%"><%= t ".candidates" %></th>
-      <th width="10%"><%= t ".action" %></th>
+      <th width="40%"><%= t ".title" %></th>
+      <th width="10%" class="text-center"><%= t ".status" %></th>
+      <th width="10%" class="text-center"><%= t ".candidates" %></th>
+      <th width="10%" class="text-center"><%= t ".messages" %> </th>
+      <th width="10%" class="text-center"><%= t ".action" %></th>
     </thead>
     <tbody class="jobs-list">
       <%= render "job", jobs: @jobs %>
