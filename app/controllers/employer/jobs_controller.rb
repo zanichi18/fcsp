@@ -5,7 +5,8 @@ class Employer::JobsController < Employer::BaseController
 
   def index
     params[:select] = "all_job" if params[:select].nil?
-    @jobs = @company.jobs.includes(:candidates).send(params[:select]).newest
+    @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
+      .send(params[:select]).newest
       .page(params[:page]).per Settings.employer.jobs.per_page
 
     respond_to do |format|

@@ -91,6 +91,7 @@ en:
         describe: "Describe"
         action: "Action"
         public: "Public"
+        messages: "Messages"
       update:
         job_post_updated: "Updated post job recruitment"
         job_post_update_fail: "Failed to update post job"
@@ -100,6 +101,9 @@ en:
         view_job: "View job"
       job:
         close: "Close"
+        show_posting: "Show posting"
+        edit_posting: "Edit posting"
+        bookmark: "Bookmark (%{count})"
       draft:
         reopen: "Reopen"
       info_main:

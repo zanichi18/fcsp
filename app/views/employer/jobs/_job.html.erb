@@ -1,16 +1,40 @@
 <% jobs.each do |job| %>
   <tr id="<%= dom_id(job) %>">
     <td>
-      <%= link_to job.title, edit_employer_company_job_path(@company.id, job.id) %>
+      <div class="job-thumb-image">
+        <% if job.images.present? %>
+          <%= image_tag(job.images.first.picture,
+            size: Settings.employer.jobs.thumb_image_size) %>
+        <% else %>
+          <%= image_tag(Settings.jobs.image_url, size: Settings.employer.jobs.thumb_image_size)%>
+        <% end %>
+      </div>
+      <div class="job-title-content">
+        <%= link_to job.title, edit_employer_company_job_path(@company.id, job.id), class: "job-title" %>
+        <span class="icon-job-type sales">
+          <%= Job.human_enum_name :type_of_candidates, job.type_of_candidates %>
+        </span>
+        <div>
+          <%= link_to t(".show_posting"), job_path(job) %> |
+          <%= link_to t(".edit_posting"), edit_employer_company_job_path(@company.id, job.id) %>
+        </div>
+      </div>
     </td>
-    <td class="status">
+    <td class="status text-center">
       <%= Job.human_enum_name :status, job.status %>
     </td>
-    <td>
-      <%= job.candidates.length %>
-      (<%= link_to t(".candidates"), employer_company_candidates_path(select: job.id) %>)
+    <td class="text-center">
+      <%= link_to job.candidates.length, employer_company_candidates_path(select: job.id) %>
+      <div class="bookmark">
+        <%= link_to t(".bookmark", count: job.bookmarks.length), "#" %>
+      </div>
     </td>
-    <td class="action">
+    <td class="text-center">
+      <%= button_tag(type: "button", class: "btn btn-default") do %>
+        <i class="icon-chat"></i>
+      <% end %>
+    </td>
+    <td class="action text-center">
       <% if job.active? %>
         <%= button_tag t(".close"), id: "#{job.id}", class: "close-job btn btn-warning test" %>
       <% else %>
