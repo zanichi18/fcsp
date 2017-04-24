@@ -2,7 +2,7 @@
   <div class="col-md-10 container">
     <div class="static-main-body">
       <%= form_for [:employer, @company] do |f| %>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4">
             <%= f.label :name %>
             <abbr class="required"><%= t ".required" %></abbr>
@@ -13,7 +13,7 @@
           <div class="col-md-4"><%= f.label :introduction %></div>
           <%= f.text_area :introduction, class: "form-control text-area" %>
         </div>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4">
             <%= f.label :website %>
             <abbr class="required"><%= t ".required" %></abbr>
@@ -21,25 +21,25 @@
           <%= f.text_field :website, class: "form-control form-control-custom" %>
         </div>
         <%= render "address_fields", f: f %>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4"><%= f.label :founder %></div>
           <%= f.text_field :founder, class: "form-control form-control-custom" %>
         </div>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4"><%= f.label :country %></div>
           <%= f.text_field :country, class: "form-control form-control-custom" %>
         </div>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4"><%= f.label :company_size %></div>
           <%= f.number_field :company_size, class: "form-control form-control-custom" %>
         </div>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4"><%= f.label :founder_on %></div>
           <%= f.date_field :founder_on, class: "form-control form-control-custom" %>
         </div>
         <%= render "industry_fields", f: f %>
         <%= render "no_load_data", f: f %>
-        <div class="fieldset form-group form-inline">
+        <div class="fieldset form-group">
           <div class="col-md-4"><label><%= t ".article" %></label></div>
           <%= link_to t(".article_btn"), "#", class: "btn btn-primary" %>
         </div>

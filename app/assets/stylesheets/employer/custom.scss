@@ -109,7 +109,7 @@
   width: 65%;
 }
 
-.job-form .collection-wrapper {
+.collection-wrapper {
   margin-left: 24px;
 
   ul,
@@ -122,4 +122,12 @@
 
 .selection {
   float: left;
+}
+
+.thumb-image {
+  border: 1px solid $gray-ddd;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 5px;
+  width: 150px;
 }
