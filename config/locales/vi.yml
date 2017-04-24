@@ -165,15 +165,6 @@ vi:
     destroy:
       unfollow: "Hủy theo dõi công ty thành công!"
       not_found: "Không tìm thấy công ty!"
-  layouts:
-    base_title: "FCSP"
-    header:
-      home: "Home"
-      help: "Help"
-      about: "About"
-      login: "Login"
-      logout: "Logout"
-      create_new_post: "Tạo bài viết mới"
   pages:
     home:
       title: "Home"
@@ -185,6 +176,9 @@ vi:
       content: "This is help page"
       title: "Help"
   layouts:
+    message:
+      success_title: "Thành công"
+      failed_title: "Thất bại"
     base_title: "FCSP"
     header:
       home: "Home"
@@ -199,6 +193,7 @@ vi:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+      create_new_post: "Tạo bài viết mới"
     job_bookmark:
       bookmark: "Bookmark"
       bookmarked: "Bookmarked"
@@ -485,6 +480,37 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+  user_portfolios:
+    edit:
+      update: "cập nhật"
+    new:
+      update: "cập nhật"
+    destroy:
+      deleted_success: "Xóa thành công"
+      portfolio_delete_fail: "Xóa thất bại"
+    create:
+      portfolio_created: "Tạo thành công"
+      portfolio_create_failed: "Tạo thất bại"
+    update:
+      portfolio_updated: "cập nhật thành công"
+      portfolio_update_failed: "cập nhật thất bại"
+    load_portfolio:
+      not_found: "Không tồn tại!"
+    form_portfolio:
+      add_image: "Thêm ảnh"
+      title: "Tiêu đề"
+      description: "Miêu tả"
+      made: "Ngày tạo"
+      image: "Ảnh"
+      url: "địa chỉ liên kết"
+      update: "Cập nhật"
+      close: "Đóng"
+      portfolio_header: "Danh mục"
+    show_portfolio:
+      portfolio_not_found: "Không có danh mục nào"
+    user_portfolio:
+      user_portfolio: "Danh mục"
+      add: "Cập nhật"
   info_users:
     introduction:
       introduction: "Giới thiệu"
@@ -565,3 +591,5 @@ vi:
       subject: "Bạn có một yêu cầu kết bạn từ %{name}"
       hi: "Chào %{name},"
       end: "Email này được gửi tự động từ FCSP, vui lòng đừng trả lời!"
+  javascripts:
+    user_portfolio_alert: "Bạn chắc muốn xoá?"

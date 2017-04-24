@@ -1,0 +1,46 @@
+@import 'variables/color';
+
+.portfolio {
+  float: right;
+  text-transform: capitalize !important;
+}
+
+.title-portfolio {
+  font-size: 20px !important;
+  font-weight: bold;
+  line-height: 22px !important;
+}
+
+.show-portfolio {
+  padding-top: 50px;
+}
+
+.content-portfolio {
+  padding-left: 20px;
+}
+
+.portfolio-padding {
+  padding-top: 20px;
+}
+
+.details-portfolio {
+  color: $gray-9;
+}
+
+.button-modal {
+  float: right;
+  padding-top: 5px;
+}
+
+.links-form-project {
+  display: inline-table;
+  width: 100%;
+}
+
+.portfolio-image {
+  height: 80px !important;
+}
+
+.input-file {
+  display: none !important;
+}

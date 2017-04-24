@@ -1,0 +1,41 @@
+<% if portfolios.blank? %>
+  <p><%= t ".portfolio_not_found" %></p>
+<% else %>
+  <div>
+    <% portfolios.each do |portfolio| %>
+      <div class="col-md-12 portfolio-padding" id="portfolio-<%= portfolio.id %>">
+        <div class="col-md-6">
+          <% if portfolio.images.present? %>
+            <%=  image_tag portfolio.images.first.picture,
+              size: Settings.user_portfolio.size_image %>
+          <% else %>
+            <%= image_tag "portfolio", size: Settings.user_portfolio.size_image %>
+          <% end %>
+        </div>
+        <div class="col-md-6 hover-content">
+          <span class="content-portfolio">
+            <div>
+              <%= truncate portfolio.title, length: Settings.user_portfolio.limit_title %>
+              <span class="hover-button">
+                <% if @user.is_user? current_user %>
+                  <%= link_to "#", class: "left-icon" do %>
+                    <i class="icon-trash delete-portfolio" data-id="<%= portfolio.id %>"></i>
+                  <% end %>
+                  <%= link_to edit_user_portfolio_path(portfolio), remote: true, class: "left-icon" do %>
+                    <i class="icon-edit"></i>
+                  <% end %>
+                <% end %>
+              </span>
+            </div>
+            <div class="details-portfolio">
+              <%= portfolio.time %>
+            </div>
+            <div class="details-portfolio">
+              <%= truncate portfolio.description, length: Settings.user_portfolio.limit_description %>
+            </div>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
