@@ -47,7 +47,7 @@ module Supports
     end
 
     def recommend
-      User.recommend @job
+      User.recommend(@job).includes(:avatar)
     end
 
     def qualified_profile?

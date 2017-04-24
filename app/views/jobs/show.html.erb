@@ -38,7 +38,7 @@
             </div>
             <%= render "companies/gmap" %>
           </div>
-          <% if can? :manage, @job.company %>
+          <% if can? :update, @job.company %>
             <div class="candidate-recommendation">
               <div class="location-padding">
                 <h4><%= t ".recommend" %></h4>
