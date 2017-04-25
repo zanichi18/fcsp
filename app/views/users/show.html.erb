@@ -13,6 +13,11 @@
                       <i class="icon-rss2"></i><%= t ".new_feed" %>
                     </a>
                   </li>
+                  <li>
+                    <a href="#tab-suggest-job">
+                      <i class="icon-lightbulb"></i><%= t ".job_suggest" %>
+                    </a>
+                  </li>
                 <% end %>
                 <li>
                   <a href="#tab-information">
@@ -26,6 +31,23 @@
                 </li>
               </ul>
               <div class="tab-container">
+                <% if @user.is_user? current_user %>
+                  <div class="tab-content clearfix" id="tab-suggest-job">
+                    <div id="job-show-wrapper">
+                      <div id="job-show-body">
+                        <div class="row two-column">
+                          <aside class="col-md-12 column-main">
+                            <div class="column-main-inner">
+                              <%= render "job_accordance", job: @job_skill %>
+                            </div>
+                          </aside>
+                          <aside class="col-md-0 column-side">
+                          </aside>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
           </div>

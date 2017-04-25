@@ -14,7 +14,9 @@
         <% @user_request.each do |user_request| %>
           <div class="top-cart-item clearfix" id="friend-ship-<%= user_request.id %>">
             <div class="top-cart-item-image">
-              <%= link_to load_user_avatar(user_request), user_path(user_request) %>
+              <% if user_request.avatar.present? %>
+                <%= link_to load_user_avatar user_request, user_path(user_request) %>
+              <% end %>
             </div>
             <div class="top-cart-item-desc">
               <a href="#"><%= user_request.name %></a>

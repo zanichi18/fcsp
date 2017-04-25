@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user, only: [:show, :edit]
   def show
+    @job_active = Job.active.includes :images, :skills, :job_skills
+    @job_skill = ArrayJob.get_job @job_active, @user
   end
 
   def edit

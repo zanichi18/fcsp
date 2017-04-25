@@ -462,6 +462,7 @@ vi:
       posts: "Bài đăng"
       blocked: "Người dùng này đã bị khóa!"
       not_found: "Không tìm thấy người dùng"
+      job_suggest: "Gợi ý công việc"
     header:
       add_friend: "Thêm bạn"
       message: "Tin nhắn"
