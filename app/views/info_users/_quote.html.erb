@@ -1,16 +1,16 @@
 <div class="row">
   <div class="edit-profile-title">
-    <h2><%= t ".introduction" %></h2>
+    <h2><%= t ".quote" %></h2>
   </div>
   <div class="edit-profile-button">
     <div class="btn-group">
-      <button id="edit-introduction"
+      <button id="edit-quote"
          class="btn btn-default btn-sm tip btn-responsive"
-         data-toggle="modal" data-target="#edit-introduction-modal">
+         data-toggle="modal" data-target="#edit-quote-modal">
         <span class="icon-pencil2"></span>
         <%= t ".edit" %>
       </button>
-        <%= render "info_users/edit_introduction_modal" %>
+        <%= render "info_users/edit_quote_modal" %>
       <button type="button"
         class="btn btn-default btn-sm tip btn-responsive dropdown-toggle"
         data-toggle="dropdown" aria-expanded="true">
@@ -38,5 +38,5 @@
 </div>
 <br>
 <div class="info-user-height">
-  <%= render "info_users/introduction_content" %>
+  <%= render "info_users/quote_content" %>
 </div>

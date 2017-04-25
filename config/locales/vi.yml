@@ -499,6 +499,28 @@ vi:
       introduce_placeholder: "Giới thiệu bản thân..."
     find_info_user:
       infor_user_not_found: "Không tìm thấy thông tin của người dùng"
+    ambition:
+      ambition: "Tham vọng"
+      edit: "Sửa"
+      friends: "Bạn bè"
+      friends_of_friends: "Bạn của bạn bè"
+      public: "Công khai"
+    edit_ambition_modal:
+      update_button: "Cập nhật"
+      cannot_button: "Hủy bỏ"
+      edit_ambition: "Chỉnh sửa tham vọng"
+      ambition_placeholder: "Tham vọng của tôi..."
+    quote:
+      quote: "Trích dẫn"
+      edit: "Sửa"
+      friends: "Bạn bè"
+      friends_of_friends: "Bạn của bạn bè"
+      public: "Công khai"
+    edit_quote_modal:
+      update_button: "Cập nhật"
+      cannot_button: "Hủy bỏ"
+      edit_quote: "Chỉnh sửa trích dẫn"
+      quote_placeholder: "Trích dẫn của tôi..."
   friend_ships:
     create:
       request_friend: "Đã gửi yêu cầu đến %{name}"

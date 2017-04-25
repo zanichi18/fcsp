@@ -13,7 +13,7 @@ class InfoUsersController < ApplicationController
   private
 
   def info_user_params
-    params.require(:info_user).permit :introduce, :ambition
+    params.require(:info_user).permit :introduce, :ambition, :quote
   end
 
   def find_info_user
