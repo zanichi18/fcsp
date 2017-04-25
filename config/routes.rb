@@ -63,4 +63,5 @@ Rails.application.routes.draw do
   resources :user_covers, only: :create
   resource :user_covers, only: :update
   resources :friend_ships, only: [:create, :destroy, :update]
+  resources :info_users, only: :update
 end

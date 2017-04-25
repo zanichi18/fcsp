@@ -434,6 +434,20 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+  info_users:
+    introduction:
+      introduction: "Introduction"
+      edit: "Edit"
+      friends: "Friends"
+      friends_of_friends: "Friends of Friends"
+      public: "Public"
+    edit_introduction_modal:
+      update_button: "Update"
+      cancel_button: "Cancel"
+      edit_introduction: "Edit introduction"
+      introduce_placeholder: "Introduce yourself..."
+    find_info_user:
+      infor_user_not_found: "Infomation of user not found"
   friend_ships:
     create:
       request_friend: "Sent a request to %{name}"

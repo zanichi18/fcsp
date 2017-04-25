@@ -484,6 +484,20 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+  info_users:
+    introduction:
+      introduction: "Giới thiệu"
+      edit: "Sửa"
+      friends: "Bạn bè"
+      friends_of_friends: "Bạn của bạn bè"
+      public: "Công khai"
+    edit_introduction_modal:
+      update_button: "Cập nhật"
+      cannot_button: "Hủy bỏ"
+      edit_introduction: "Chỉnh sửa giới thiệu"
+      introduce_placeholder: "Giới thiệu bản thân..."
+    find_info_user:
+      infor_user_not_found: "Không tìm thấy thông tin của người dùng"
   friend_ships:
     create:
       request_friend: "Đã gửi yêu cầu đến %{name}"

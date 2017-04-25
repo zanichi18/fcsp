@@ -45,6 +45,8 @@ class User < ApplicationRecord
   has_one :company, through: :user_group, source: :company,
     class_name: Company.name
 
+  accepts_nested_attributes_for :info_user
+
   delegate :introduce, to: :info_user, prefix: true
 
   enum role: [:user, :admin]
