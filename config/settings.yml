@@ -202,3 +202,10 @@ info_users:
   quote_form_rows: 2
   max_length_ambition: 255
   max_length_quote: 255
+user_portfolio:
+  textarea_rows: 4
+  size_image: "340x200"
+  limit_title: 30
+  limit_description: 120
+form_portfolio:
+  size_image: "120x120"

@@ -92,15 +92,6 @@ en:
     destroy:
       unfollow: "Unfollow company successfully!"
       not_found: "Company not found!"
-  layouts:
-    base_title: "FCSP"
-    header:
-      home: "Home"
-      help: "Help"
-      about: "About"
-      login: "Login"
-      logout: "Logout"
-      create_new_post: "Create new post"
   pages:
     index:
       title: "Home"
@@ -112,6 +103,9 @@ en:
       content: "This is help page"
       title: "Help"
   layouts:
+    message:
+      success_title: "Success"
+      failed_title: "Fail"
     base_title: "FCSP"
     header:
       home: "Home"
@@ -126,6 +120,7 @@ en:
       profile: "Profile"
       message: "Messages"
       sign_out: "Sign out"
+      create_new_post: "Create new post"
     job_bookmark:
       bookmark: "Bookmark"
       bookmarked: "Bookmarked"
@@ -435,6 +430,37 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+  user_portfolios:
+    edit:
+      update: "Update"
+    new:
+      update: "Update"
+    destroy:
+      deleted_success: "Delete portfolio successfully"
+      portfolio_delete_fail: "Delete portfolio failed"
+    create:
+      portfolio_created: "Created portfolio successfully"
+      portfolio_create_failed: "Create portfolio failed"
+    update:
+      portfolio_updated: "Updated portfolio successfully"
+      portfolio_update_failed: "Update portfolio failed"
+    load_portfolio:
+      not_found: "Not found!"
+    form_portfolio:
+      add_image: "Add image"
+      title: "Title"
+      description: "Description"
+      made: "Made"
+      image: "Image"
+      url: "Url"
+      update: "Update"
+      close: "Cancel"
+      portfolio_header: "Portfolios"
+    show_portfolio:
+      portfolio_not_found: "no portfolio"
+    user_portfolio:
+      user_portfolio: "Portfolio"
+      add: "Add"
   info_users:
     introduction:
       introduction: "Introduction"
@@ -514,3 +540,5 @@ en:
       subject: "You have a friend request from %{name}"
       hi: "Hi %{name},"
       end: "This email is sent automatically from FCSP, Please do not reply!"
+  javascripts:
+    user_portfolio_alert: "Are you sure?"

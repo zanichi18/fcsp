@@ -3,6 +3,7 @@ require "rails_helper"
 RSpec.describe UserPortfolio, type: :model do
   context "associations" do
     it{is_expected.to belong_to :user}
+    it{is_expected.to have_many :images}
   end
 
   context "validations" do

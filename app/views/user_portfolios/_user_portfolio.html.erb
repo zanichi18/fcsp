@@ -1,0 +1,14 @@
+<span class="title-portfolio">
+  <%= t ".user_portfolio" %>
+</span>
+<% if @user.is_user? current_user %>
+  <%= link_to new_user_portfolio_path, remote: true,
+    class: "button button-3d button-mini button-rounded button-white button-light portfolio"  do %>
+    <i class="icon-plus-sign"></i>
+    <%= t ".add" %>
+  <% end %>
+<% end %>
+<div class="show-portfolio">
+  <%= render "user_portfolios/show_portfolio", portfolios: @user_object.portfolios %>
+</div>
+<div class="portfolio-modal"></div>
