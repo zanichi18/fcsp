@@ -1,0 +1,33 @@
+@import 'variables/color';
+
+.award {
+  float: right;
+  text-transform: capitalize !important;
+}
+
+.title-award {
+  font-size: 20px !important;
+  font-weight: bold;
+  line-height: 22px !important;
+}
+
+.show-award {
+  padding-top: 20px;
+}
+
+.content-award {
+  padding-left: 20px;
+}
+
+.award-padding {
+  padding-bottom: 20px;
+}
+
+.details-award {
+  color: $gray-9;
+  float: right;
+}
+
+.button-modal-award {
+  float: right;
+}

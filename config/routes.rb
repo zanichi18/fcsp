@@ -65,4 +65,5 @@ Rails.application.routes.draw do
   resources :friend_ships, only: [:create, :destroy, :update]
   resources :info_users, only: :update
   resources :user_portfolios, except: [:index, :show]
+  resources :awards, except: [:index, :show]
 end

@@ -1,0 +1,16 @@
+<div class="award-header">
+  <span class="title-award">
+    <%= t ".user_award" %>
+  </span>
+   <% if @user.is_user? current_user %>
+    <%= link_to new_award_path, remote: true,
+      class: "button button-3d button-mini button-rounded button-white button-light award"  do %>
+      <i class="icon-plus-sign"></i>
+      <%= t ".add" %>
+    <% end %>
+  <% end %>
+</div>
+<div class="show-award">
+   <%= render "awards/show_award",awards: @user_object.awards %>
+ </div>
+<div class="award-modal"></div>

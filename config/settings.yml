@@ -174,9 +174,9 @@ employer:
     thumb_image_size: "100x50"
 truncate_job_describe: 150
 user_portfolios:
-  title_min: 10
+  title_min: 1
   title_max: 255
-  description_min: 10
+  description_min: 1
   description_max: 1000
 user_educations:
   school_min: 3

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426044801) do
+ActiveRecord::Schema.define(version: 20170426062508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20170426044801) do
     t.index ["company_id"], name: "index_articles_on_company_id", using: :btree
     t.index ["title"], name: "index_articles_on_title", using: :btree
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
+  end
+
+  create_table "awards", force: :cascade do |t|
+    t.string   "name"
+    t.date     "time"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_awards_on_user_id", using: :btree
   end
 
   create_table "benefits", force: :cascade do |t|
@@ -629,6 +638,7 @@ ActiveRecord::Schema.define(version: 20170426044801) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "awards", "users"
   add_foreign_key "company_industries", "companies"
   add_foreign_key "company_industries", "industries"
   add_foreign_key "education_comments", "users"
