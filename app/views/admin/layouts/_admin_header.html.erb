@@ -15,7 +15,7 @@
       </div>
       <div class="profile_info">
         <span><%= t ".welcome" %>,</span>
-        <h2>John Doe</h2>
+        <h2><%= current_user.name %></h2>
       </div>
     </div>
     <!-- /menu profile quick info -->
@@ -74,7 +74,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <%= load_user_avatar current_user %> current_user.name
+            <%= load_user_avatar current_user %> <%= current_user.name %>
             <span class=" fa fa-angle-down"></span>
           </a>
           <ul class="dropdown-menu dropdown-usermenu pull-right">

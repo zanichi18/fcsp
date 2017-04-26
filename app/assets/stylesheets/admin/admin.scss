@@ -15,7 +15,7 @@
  *= require_tree .
  */
 @import 'gentelella';
-@import 'gentelella-custom';
+@import '../gentelella/gentelella-custom';
 
 .box-danger {
   color: #fff;
