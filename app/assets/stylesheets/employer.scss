@@ -1,4 +1,3 @@
-//= require_tree ../../../vendor/assets/stylesheets/
 //= require_tree ./variables
 //= require_tree ./employer
 //= require sweetalert2
@@ -7,9 +6,10 @@
 
 @import 'gentelella';
 @import 'gentelella/gentelella-custom';
+@import 'variables/color';
 
 .box-danger {
-  color: #fff;
+  color: $white;
   font-size: 10px;
   padding: 5px;
 }

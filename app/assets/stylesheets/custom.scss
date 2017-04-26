@@ -363,20 +363,20 @@
 .job-posting-may-like {
   display: flex;
   justify-content: flex-start;
+}
 
-  .job-row {
-    a {
-      color: $black;
-      
-      &:hover {
-        color: $blue-link-hover;
-      }
-    }
+.job-row {
+  a {
+    color: $black;
 
-    img {
-      height: auto;
-      width: 100%;
+    &:hover {
+      color: $blue-link-hover;
     }
+  }
+
+  img {
+    height: auto;
+    width: 100%;
   }
 }
 

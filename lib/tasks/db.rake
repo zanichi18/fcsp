@@ -70,9 +70,9 @@ namespace :db do
       end
 
       puts "Create Candidate"
-      job_id = rand(1..20)
-      user_id = rand(2..10)
       10.times.each do |candidate|
+        job_id = rand(1..20)
+        user_id = rand(2..10)
         Candidate.create! user_id: user_id, job_id: job_id
       end
 
