@@ -21,3 +21,7 @@
 //= require team_introduction
 //= require flash_message
 //= require common
+//= require gentelella
+//= require jqvmap/maps/jquery.vmap.world
+//= require jqvmap/maps/jquery.vmap.usa
+//= require_tree ./gentelella

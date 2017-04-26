@@ -28,6 +28,14 @@ en:
         company_info: "Company Info"
         setting: "Setting"
         logout: "Logout"
+      employer_header:
+        welcome: "Welcome"
+        home: "Home"
+        manage_posting: "Manage Postings"
+        candidates: "Candidates"
+        messages: "Messages"
+        recommendations: "Recommendations"
+        view_more: "View more"
     candidates:
       index:
         all_jobs: "All jobs"
