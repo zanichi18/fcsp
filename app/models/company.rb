@@ -15,6 +15,8 @@ class Company < ApplicationRecord
   has_many :team_introductions, as: :team_target
   has_many :groups
 
+  after_create :create_organization
+
   ATTRIBUTES = [:name, :website, :introduction, :founder, :country,
     :company_size, :founder_on, addresses_attributes: [:id, :address,
     :longtitude, :latitude, :head_office], industry_ids: [],
@@ -28,4 +30,9 @@ class Company < ApplicationRecord
     length: {maximum: Settings.company.max_length_name}
   validates :website, presence: true
   validates :company_size, numericality: {greater_than: 0}
+
+  def create_organization
+    org = Organization.find_or_create_by name: self.name
+    org.update_attributes org_type: :real if org.present?
+  end
 end

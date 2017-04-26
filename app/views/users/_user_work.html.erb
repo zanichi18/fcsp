@@ -1,0 +1,34 @@
+<% user.user_works.includes(:organization).each do |work| %>
+  <% if work.organization.present? %>
+    <div>
+      <strong><%= work.organization.name %></strong>
+      <span class="work-action">
+        <% if user.is_user? current_user %>
+          <%= link_to edit_user_work_path(work),
+            remote: true, class: "left-icon" do %>
+            <i class="icon-edit"></i>
+          <% end %>
+          <%= link_to user_work_path(work.id), method: :delete,
+            remote: true, class: "left-icon" do %>
+            <i class="icon-trash"></i>
+          <% end %>
+        <% end %>
+      </span>
+    </div>
+    <div class="work-info">
+      <%= work.position %>
+      <%= t ".split" %>
+      <%= t(".all_status.#{work.status}") %>
+      <span class="work-time">
+        <% if work.start_time.present? %>
+          <%= l work.start_time, format: :long %>
+        <% end %>
+        <%= t ".split" %>
+        <% if work.end_time.present? %>
+          <%= l work.end_time,  format: :long %>
+        <% end %>
+      </span>
+    </div>
+    <li class="divider work-divider"></li>
+  <% end %>
+<% end %>

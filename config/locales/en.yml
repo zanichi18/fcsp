@@ -430,6 +430,42 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+    user_work_form:
+      all_status:
+        full_time: "Full time"
+        part_time: "Part time"
+        internship: "Internship"
+      header: "Update Work"
+      company: "Company"
+      position: "Position"
+      start_time: "Start time"
+      end_time: "End time"
+      status: "Status"
+      description: "Description"
+      update: "Update"
+      close: "Close"
+    user_work:
+      all_status:
+        full_time: "Full time"
+        part_time: "Part time"
+        internship: "Internship"
+      split: " - "
+      to: "to"
+    work:
+      add: " Add"
+      user_work: "Work"
+    org_search:
+      people: "%{num} others"
+  user_works:
+    create:
+      create_success: "Add work successfully!"
+      create_faild: "Add work faild!"
+    update:
+      update_success: "Update work successfully!"
+      update_faild: "Update work faild!"
+    destroy:
+      destroy_success: "Delete work successfully!"
+      destroy_faild: "Delete work faild!"
   user_portfolios:
     edit:
       update: "Update"

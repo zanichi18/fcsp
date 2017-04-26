@@ -503,6 +503,14 @@ ActiveRecord::Schema.define(version: 20170426062508) do
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
+  create_table "organizations", force: :cascade do |t|
+    t.integer  "org_type",   default: 1
+    t.string   "name"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["name"], name: "index_organizations_on_name", using: :btree
+  end
+
   create_table "permissions", force: :cascade do |t|
     t.string   "entry"
     t.text     "optional"
@@ -615,6 +623,20 @@ ActiveRecord::Schema.define(version: 20170426062508) do
     t.index ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
   end
 
+  create_table "user_works", force: :cascade do |t|
+    t.string   "position"
+    t.text     "description"
+    t.integer  "status"
+    t.date     "start_time"
+    t.date     "end_time"
+    t.integer  "user_id"
+    t.integer  "organization_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id"], name: "index_user_works_on_organization_id", using: :btree
+    t.index ["user_id"], name: "index_user_works_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "phone"
@@ -672,4 +694,6 @@ ActiveRecord::Schema.define(version: 20170426062508) do
   add_foreign_key "user_groups", "positions"
   add_foreign_key "user_groups", "users"
   add_foreign_key "user_portfolios", "users"
+  add_foreign_key "user_works", "organizations"
+  add_foreign_key "user_works", "users"
 end

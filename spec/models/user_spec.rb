@@ -17,6 +17,8 @@ RSpec.describe User, type: :model do
       it{expect have_one(:education_program_member)}
       it{expect have_one(:education_learning_program)}
       it{expect have_one(:info_user)}
+      it{expect have_many(:user_works)}
+      it{expect have_many(:organizations)}
     end
 
     context "column_specifications" do
