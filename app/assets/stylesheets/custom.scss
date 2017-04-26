@@ -311,7 +311,6 @@
 .job-row {
   float: left;
   margin-bottom: 15px;
-  width: 25%;
 }
 
 .title-section {
@@ -366,7 +365,13 @@
   justify-content: flex-start;
 
   .job-row {
-    margin-right: 35px;
+    a {
+      color: $black;
+      
+      &:hover {
+        color: $blue-link-hover;
+      }
+    }
 
     img {
       height: auto;

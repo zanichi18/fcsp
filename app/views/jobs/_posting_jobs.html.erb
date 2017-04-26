@@ -1,17 +1,21 @@
 <div class="all-jobs-posting">
   <h3 class="title-section"><%= t ".title" %></h3>
   <div class="job-posting-may-like">
-    <% @job_object.jobs_company.each do |job| %>
-      <div class="job-row">
-        <% if job.images.first.present? %>
-          <%= link_to image_tag(job.images.first.picture,
-            size: Settings.jobs.image_job_size), job_path(job) %>
-        <% else %>
-          <%= link_to image_tag(Settings.jobs.posting_job_default,
-            size: Settings.jobs.image_job_size), job_path(job) %>
-        <% end %>
-        <p class="job-posting-title"><%= job.title %></p>
+    <div class="container">
+      <div class="row">
+        <% @job_object.jobs_company.each do |job| %>
+          <div class="job-row col-md-3 col-sm-6 col-xm-12">
+            <% if job.images.first.present? %>
+              <%= link_to image_tag(job.images.first.picture,
+                size: Settings.jobs.image_job_size), job_path(job) %>
+            <% else %>
+              <%= link_to image_tag(Settings.jobs.posting_job_default,
+                size: Settings.jobs.image_job_size), job_path(job) %>
+            <% end %>
+            <p class="job-posting-title"><%= link_to job.title, job_path(job) %></p>
+          </div>
+        <% end %>  
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
