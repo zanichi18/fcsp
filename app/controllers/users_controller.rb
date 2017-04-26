@@ -4,9 +4,6 @@ class UsersController < ApplicationController
   def show
     @job_active = Job.active.includes :images, :skills, :job_skills
     @job_skill = ArrayJob.get_job @job_active, @user
-  end
-
-  def edit
     @user.build_info_user if @user.info_user.nil?
     @info_user = @user.info_user
   end
