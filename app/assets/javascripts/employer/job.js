@@ -29,7 +29,7 @@ function activeButton() {
   $('.button-job').each(function(){
     link_arr = this.href.replace(/\/$/,'').split('?select=');
     if(link_arr[1] === select){
-      $(this).addClass('active');
+      $(this).addClass('active-selection');
     }
   });
 }
