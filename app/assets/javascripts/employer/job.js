@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $('body').css('overflow', 'hidden');
   draftjob.initialize();
   showCandidateByjob();
   activeButton();
