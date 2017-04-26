@@ -1,0 +1,28 @@
+<% if awards.blank? %>
+  <p><%= t ".award_not_found" %></p>
+<% else %>
+  <div>
+    <% awards.each do |award| %>
+      <div class="col-md-12 award-padding award-hover" id="award-<%= award.id %>">
+        <div class="col-md-6">
+          <%= award.name %>
+            <span class="hover-button-award">
+              <% if current_user %>
+                <%= link_to "#", class: "left-icon" do %>
+                  <i class="icon-trash delete-award" data-id="<%= award.id %>"></i>
+                <% end %>
+                <%= link_to edit_award_path(award), remote: true, class: "left-icon" do %>
+                  <i class="icon-edit"></i>
+                <% end %>
+              <% end %>
+            </span>
+          </div>
+        <div class="col-md-6 hover-content">
+          <div class="details-award">
+            <%= award.time %>
+          </div>
+        </div>
+     </div>
+    <% end %>
+  </div>
+<% end %>

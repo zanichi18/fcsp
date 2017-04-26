@@ -593,3 +593,26 @@ vi:
       end: "Email này được gửi tự động từ FCSP, vui lòng đừng trả lời!"
   javascripts:
     user_portfolio_alert: "Bạn chắc muốn xoá?"
+    user_award_alert: "Bạn chắc muốn xoá?"
+  awards:
+    show_award:
+      award_not_found: "Không có giải thưởng nào"
+    user_award:
+      user_award: "Giải thưởng(s)"
+      add: "Cập Nhật"
+    form_award:
+      title: "Tên giải thưởng"
+      made: "Năm nhận giải"
+      close: "Đóng"
+      award_header: "giải thưởng"
+    new:
+      update: "Cập Nhật"
+    destroy:
+      deleted_success: "Xóa giải thưởng thành công"
+      award_delete_fail: "Xóa giải thưởng thất bại"
+    create:
+      success: "Tạo giải thưởng thành công"
+      failed: "Tạo giải thưởng thất bại"
+    update:
+      success: "Cập Nhật giải thưởng thành công"
+      failed: "Cập Nhật giải thưởng thất bại"

@@ -542,3 +542,26 @@ en:
       end: "This email is sent automatically from FCSP, Please do not reply!"
   javascripts:
     user_portfolio_alert: "Are you sure?"
+    user_award_alert: "Are you sure?"
+  awards:
+    show_award:
+      award_not_found: "Award not found"
+    user_award:
+      user_award: "Award(s)"
+      add: "Add"
+    form_award:
+      title: "Title"
+      made: "Award year"
+      close: "Cancel"
+      award_header: "Award"
+    new:
+      update: "Update"
+    destroy:
+      deleted_success: "Deleted award successfully"
+      award_delete_fail: "Deleted award fail"
+    create:
+      success: "Create award successfully"
+      failed: "create award Failed"
+    update:
+      success: "Update award successfully"
+      failed: "Update award Failed"

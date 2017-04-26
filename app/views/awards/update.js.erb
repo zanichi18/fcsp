@@ -1,0 +1,7 @@
+$('.show-award').html('<%= j render "show_award", awards: current_user.awards %>');
+$('#award').modal('hide');
+<% if @status == 200 %>
+  $.growl.notice({message: '<%= @message %>'});
+<% else %>
+  $.growl.error({message: '<%= @message %>'});
+<% end %>
