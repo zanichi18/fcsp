@@ -1,0 +1,5 @@
+<%= render @company_jobs %>
+<div id="load-more">
+  <button type="button" class="btn btn-info"><%= t ".see_more" %></button>
+  <%= paginate @company_jobs %>
+</div>

@@ -14,6 +14,7 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require company
 //= require company_location
 //= require candidates
 //= require bookmark

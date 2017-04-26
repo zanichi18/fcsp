@@ -83,6 +83,7 @@ en:
       person_applied: "Person applied"
     job:
       read_more: "Read more"
+      type_of_candidates: "Type of candidates: "
     recommend_user:
       show_more: "View more"
   follow_companies:

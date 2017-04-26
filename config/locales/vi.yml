@@ -81,6 +81,9 @@ vi:
       unapply_job: "Unapply Job"
       currently: "Currently"
       person_applied: "Person applied"
+    job:
+      read_more: "Read more"
+      type_of_candidates: "Type of candidates: "
   employer:
     companies:
       edit:
