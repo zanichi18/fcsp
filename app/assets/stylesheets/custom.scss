@@ -75,8 +75,6 @@
 }
 
 .ava-company {
-  max-width: 84px !important;
-  width: 8%;
 }
 
 .sales {
@@ -465,4 +463,13 @@
 
 .tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
   background: $orange;
+}
+
+@media screen and (max-width: 727px) {
+  .logo-custom {
+    img {
+      width: 100px;
+      height: 60px;
+    }
+  }
 }
