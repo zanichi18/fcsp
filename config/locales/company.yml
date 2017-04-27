@@ -30,6 +30,8 @@ en:
       location: "Location"
     show_header:
       follow: "Follow"
+    company_jobs:
+      see_more: "See more"
   admin:
     layouts:
       admin_header:

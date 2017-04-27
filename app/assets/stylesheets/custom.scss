@@ -311,6 +311,7 @@
 .job-row {
   float: left;
   margin-bottom: 15px;
+  width: 25%;
 }
 
 .title-section {
@@ -363,20 +364,14 @@
 .job-posting-may-like {
   display: flex;
   justify-content: flex-start;
-}
 
-.job-row {
-  a {
-    color: $black;
+  .job-row {
+    margin-right: 35px;
 
-    &:hover {
-      color: $blue-link-hover;
+    img {
+      height: auto;
+      width: 100%;
     }
-  }
-
-  img {
-    height: auto;
-    width: 100%;
   }
 }
 
@@ -462,9 +457,12 @@
   }
 }
 
-
 @media all and (max-width: 991px) {
   .column-main {
     border-right: 0 !important;
   }
+}
+
+.tabs.tabs-alt ul.tab-nav li.ui-tabs-active a {
+  background: $orange;
 }

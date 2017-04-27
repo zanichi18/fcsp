@@ -132,6 +132,7 @@ home_trainings_limit: 8
 company:
   country: ["United States", "Japan", "Germany", "Korea"]
   max_length_name: 50
+  per_page: 5
 default_user_password: {"password": "123456"}
 courses:
   modal_detail: "#modal_detail"
@@ -164,6 +165,7 @@ jobs:
   posting_job_default: "/assets/posting_job_default.jpg"
   team_intro_default: "/assets/team_intro.png"
   max_length_title: 20
+  words_count: 10
 industries:
   max_length_name: 50
 activity:
