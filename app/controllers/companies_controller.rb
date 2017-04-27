@@ -6,7 +6,7 @@ class CompaniesController < ApplicationController
       .page(params[:page]).per Settings.company.per_page
     render json: {
       content: render_to_string(partial: "company_jobs"),
-      addresses: @company.addresses,
-      } if request.xhr?
+      addresses: @company.addresses
+    } if request.xhr?
   end
 end

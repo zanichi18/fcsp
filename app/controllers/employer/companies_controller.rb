@@ -8,11 +8,19 @@ class Employer::CompaniesController < Employer::BaseController
 
   def update
     if @company.update_attributes company_params
-      flash[:success] = t ".company_updated"
+      msg = t ".company_updated"
+      type = :success
     else
-      flash[:danger] = t ".company_update_fail"
+      msg = t(".company_update_fail")
+      type = :danger
     end
-    redirect_to edit_employer_company_path(@company)
+
+    render json: {
+      flash: {
+        type: type,
+        msg: msg
+      }
+    }
   end
 
   private

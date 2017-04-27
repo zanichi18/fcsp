@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   after_action :store_location
   before_action :friend_request
+  after_action :flash_to_headers
 
   include ApplicationHelper
   include PublicActivity::StoreController
@@ -48,5 +49,9 @@ class ApplicationController < ActionController::Base
     if !current_user.nil? && user_signed_in?
       @user_request = current_user.requested_friends.includes :avatar
     end
+  end
+
+  def flash_to_headers
+    flash.discard if request.xhr?
   end
 end
