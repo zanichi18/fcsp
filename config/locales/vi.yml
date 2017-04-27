@@ -433,6 +433,9 @@ vi:
     formats:
       date_month_year_concise: '%d-%m-%y'
       time_date_month_year: '%-d %B %Y, %H:%M %p '
+  date:
+    formats:
+      education_user: "%B %Y"
   copy: "Copyright by Framgia"
   error: "lỗi"
   comment:
@@ -505,6 +508,9 @@ vi:
       user_work: "Công việc"
     org_search:
       people: "%{num} người khác"
+    user_education:
+      education: "Học vấn"
+      add: "Thêm"
   user_works:
     create:
       create_success: "Thêm công việc thành công!"
@@ -651,3 +657,34 @@ vi:
     update:
       success: "Cập Nhật giải thưởng thành công"
       failed: "Cập Nhật giải thưởng thất bại"
+  user_educations:
+    form_user_education:
+      title: "Cập nhật học vấn của bạn"
+      close: "Đóng"
+      update: "Cập nhật"
+      school: "Trường"
+      major: "Ngành"
+      graduation: "Ngày tốt nghiệp"
+      description: "Thông tin thêm"
+    result:
+      no_result: "Không tìm thấy kết quả cho"
+      studied: "người đã học tại đây."
+    create:
+      success: "Cập nhật thành công!"
+      fail: "Cập nhật thất bại!"
+      school_not_found: "Không tìm thấy trường học"
+    user_education:
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
+      sure: "Bạn chắc chắn muốn xóa?"
+    edit:
+      not_found: "Không tìm thấy học vấn này"
+    update:
+      not_found: "Không tìm thấy học vấn này"
+      success: "Cập nhật thành công!"
+      fail: "Cập nhật thất bại!"
+      school_not_found: "Không tìm thấy trường học"
+    destroy:
+      not_found: "Không tìm thấy học vấn này"
+      success: "Xóa thành công!"
+      fail: "Xóa thất bại!"

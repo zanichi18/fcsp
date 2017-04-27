@@ -13,4 +13,5 @@ Rails.application.config.assets.precompile += %w(admin/admin.css admin/admin.js
   education.js employer.scss employer.js education/trainings.js
   education/projects.js education/posts_search.js education/management/feedbacks
   education/management/group_users education/management/users job users friend_ship
-  education/management/categories org_search)
+  education/management/categories org_search user_education user_education_form
+  user_education_search_result)

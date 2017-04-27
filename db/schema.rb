@@ -528,6 +528,12 @@ ActiveRecord::Schema.define(version: 20170426062508) do
     t.index ["company_id"], name: "index_positions_on_company_id", using: :btree
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "skill_users", force: :cascade do |t|
     t.integer  "skill_id"
     t.integer  "user_id"
@@ -590,13 +596,14 @@ ActiveRecord::Schema.define(version: 20170426062508) do
   end
 
   create_table "user_educations", force: :cascade do |t|
-    t.string   "school"
     t.string   "major"
     t.date     "graduation"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "school_id"
+    t.index ["school_id"], name: "index_user_educations_on_school_id", using: :btree
     t.index ["user_id"], name: "index_user_educations_on_user_id", using: :btree
   end
 
@@ -689,6 +696,7 @@ ActiveRecord::Schema.define(version: 20170426062508) do
   add_foreign_key "jobs", "teams"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
+  add_foreign_key "user_educations", "schools"
   add_foreign_key "user_educations", "users"
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "positions"

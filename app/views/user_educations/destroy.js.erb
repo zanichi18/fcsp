@@ -1,0 +1,8 @@
+<% if @flash.status == 200 %>
+  $.growl.notice({message: '<%= @flash.message %>'});
+  $('.list-user-education').html(`<%= j render partial: "user_educations/user_education",
+    collection: current_user.user_educations.includes(:school).sort_by_graduation %>`);
+<% else %>
+  $.growl.error({message: '<%= @flash.message %>'});
+<% end %>
+$('#formUserEducationModal').modal('hide');

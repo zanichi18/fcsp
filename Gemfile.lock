@@ -414,7 +414,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     stateful_enum (0.4.0)
-    sweet-alert-confirm (0.4.1)
+    sweet-alert2-rails (0.1.0)
     switchery-rails (0.8.1.1)
       railties (>= 3.2, < 6.0)
     therubyracer (0.12.3)
@@ -525,7 +525,7 @@ DEPENDENCIES
   social-share-button (= 0.8.4)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sweet-alert-confirm
+  sweet-alert2-rails
   therubyracer
   turbolinks (~> 5)
   tzinfo-data
