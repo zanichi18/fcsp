@@ -1,0 +1,10 @@
+<div class="show-user-work">
+  <strong class="user-work-title"><%= t ".user_work" %></strong>
+  <% if @user.is_user? current_user %>
+    <%= link_to content_tag(:span, t(".add"), class: "icon-plus-sign"),
+      new_user_work_path, remote: true,
+      class: "btn btn-default btn-sm tip btn-responsive add-work" %>
+  <% end %>
+</div>
+<div class="user-work-modal"></div>
+<div class="user-work"><%= render "user_work", user: @user %></div>

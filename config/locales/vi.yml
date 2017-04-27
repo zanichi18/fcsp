@@ -480,6 +480,41 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+    user_work_form:
+      all_status:
+        full_time: "Toàn thời gian"
+        part_time: "Bán thời gian"
+        internship: "Thực tập sinh"
+      header: "Cập nhật công việc"
+      company: "Công ty"
+      position: "Vị trí"
+      start_time: "Thời gian bắt đầu"
+      end_time: "Thời gian kết thúc"
+      status: "Tình trạng"
+      description: "Mô tả"
+      update: "Cập nhật"
+      close: "Đóng"
+    user_work:
+      all_status:
+        full_time: "Toàn thời gian"
+        part_time: "Bán thời gian"
+        internship: "Thực tập sinh"
+      split: " - "
+    work:
+      add: " Thêm"
+      user_work: "Công việc"
+    org_search:
+      people: "%{num} người khác"
+  user_works:
+    create:
+      create_success: "Thêm công việc thành công!"
+      create_faild: "Thêm công việc không thành công!"
+    update:
+      update_success: "Cập nhật công việc thành công!"
+      update_faild: "Cập nhật công việc không thành công!"
+    destroy:
+      destroy_success: "Xóa công việc thành công!"
+      destroy_faild: "Xóa công việc không thành công!"
   user_portfolios:
     edit:
       update: "cập nhật"

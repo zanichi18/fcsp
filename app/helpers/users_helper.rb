@@ -19,4 +19,17 @@ module UsersHelper
         class: options[:class].to_s, size: options[:size]
     end
   end
+
+  def org_logo org
+    company = Company.find_by name: org.name
+    if company.present? && company.images.first.present?
+      @company.images.first
+    else
+      Settings.user_works.org_avatar
+    end
+  end
+
+  def work_status_select
+    UserWork.statuses.keys.map{|status| [t(".all_status.#{status}"), status]}
+  end
 end

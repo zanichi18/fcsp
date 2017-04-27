@@ -1,0 +1,16 @@
+<% if @orgs.present? %>
+  <% @orgs.each do |org| %>
+    <div class="org-search col-md-12" data-name="<%= org.name %>">
+      <div class="col-md-2 col-sm-2">
+        <%= image_tag org_logo(org), class: "img-org"%>
+      </div>
+      <div class="col-md-10 col-sm-10">
+        <%= org.name %>
+        <div><%= t(".people", num: org.users.size) %></div>
+      </div>
+      <li class="divider"></li>
+    </div>
+  <% end %>
+<% end %>
+
+<%= javascript_include_tag "org_search" %>
