@@ -1,9 +1,57 @@
-<% candidates.each_with_index do |candidate, index| %>
-  <tr>
-    <td><%= index + 1 %></td>
-    <td><%= candidate.user_email %></td>
-    <td><%= candidate.job_title %></td>
-    <td><%= candidate.interested_in %></td>
-    <td></td>
+<% if candidates.empty? %>
+  <tr class="show-filter-result">
+    <td colspan="5">
+      <b><%= t ".total" %>: 0 <%= t ".rows" %></b>
+    </td>
   </tr>
 <% end %>
+
+<% candidates.each_with_index do |candidate, index| %>
+  <tr data-status="pagado">
+    <td class="col-check">
+      <div class="ckbox">
+        <input type="checkbox" id="checkbox<%= candidate.user.id %>">
+        <label for="checkbox<%= candidate.user.id %>"></label>
+      </div>
+    </td>
+
+    <td class="col-avatar">
+      <% if candidate.avatar.nil? %>
+        <%= image_tag "avatar.jpg", size: 48,class:"media-photo" %>
+      <% else %>
+        <%= image_tag candidate.avatar.picture, size: 48,class:"media-photo" %>
+      <% end %>
+
+    </td>
+    <td class="col-username">
+      <span class="title"><b><%= candidate.user.name %></b>
+        <span class="pull-right job">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+      </span>
+      <p class="summary"><%= candidate.user_email %></p>
+    </td>
+    <td class="col-interested">
+      <span class="media-meta pull-left">
+        <b>
+          <%= Candidate.human_enum_name :interested_in,
+            candidate.interested_in %>
+        </b>
+      </span>
+    </td>
+    <td class="col-process">
+      <span class="media-meta pull-left process">
+        <b class="btn btn-<%= candidate.process %> btn-xs">
+          <%= Candidate.human_enum_name :process,
+            candidate.process %>
+        </b>
+      </span>
+    </td>
+  </tr>
+  <% if index == candidates.count - 1%>
+    <tr class="show-filter-result">
+      <td colspan="5">
+        <b><%= t ".total" %>: <%= candidates.count %> <%= t ".rows" %></b>
+      </td>
+    </tr>
+  <% end %>
+<% end %>
+

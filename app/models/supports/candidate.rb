@@ -8,11 +8,16 @@ module Supports
     end
 
     def candidates
-      @company.candidates.includes(:user, :job).in_jobs(job_ids)
+      @company.candidates.includes(:user, :avatar, :job).in_jobs(job_ids)
     end
 
     def active_jobs
       @company.jobs.active.newest
+    end
+
+    def filter_candidates list_filter, sort_by, type
+      @company.candidates.includes(:user, :avatar, :job).in_jobs(job_ids)
+        .filter(list_filter, sort_by, type)
     end
   end
 end
