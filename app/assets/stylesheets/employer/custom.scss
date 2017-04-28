@@ -126,6 +126,10 @@
   width: 150px;
 }
 
-.nav-md .container.body .col-md-3.left_col {
-  position: fixed !important;
+.side-menu {
+  li {
+    &:hover {
+      background-color: $pickled-bluewood;
+    }
+  }
 }
