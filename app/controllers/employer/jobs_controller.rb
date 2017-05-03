@@ -26,8 +26,11 @@ class Employer::JobsController < Employer::BaseController
   def create
     @job = @company.jobs.build job_params
     if @job.save
-      flash[:success] = t ".created_job"
-      redirect_to job_path(@job)
+      render json: {
+        html_job: render_to_string(partial: "new_job",
+          locals: {job: @job}, 
+          layout: false)
+      }, status: :created
     else
       flash[:danger] = t ".create_job_fail"
       redirect_back fallback_location: :back

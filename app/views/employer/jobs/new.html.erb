@@ -1,31 +1,54 @@
-<div class="container clearfix container-margin">
-  <div class="nobottommargin col_last clearfix">
-    <h3><%= t ".job_recruitment" %></h3></br>
-    <div class="tabs tabs-alt tabs-tb clearfix" id="tab-1">
-      <ul class="tab-nav clearfix">
-        <li><a href="#tabs-2"><i class="icon-building norightmargin"></i>
-          <%= t ".job" %>
-        </a></li>
-        <li><a href="#tabs-3"><i class="icon-user norightmargin"></i>
-          <%= t ".members" %>
-        </a></li>
-        <li><a href="#tabs-5"><i class="icon-globe norightmargin"></i>
-          <%= t ".create_team_story" %>
-        </a></li>
-      </ul>
-      <div class="tab-content clearfix" id="tabs-2">
-        <%= form_for @job, url: employer_company_jobs_path,
-          html: {class: "job-form"} do |f| %>
+<div class="dashboard_graph">
+  <div id="wizard" class="form_wizard wizard_horizontal">
+    <ul class="wizard_steps">
+      <li>
+        <a id = "a_step1" href="#step-1">
+          <span class="step_no"><%= t ".step_no_1" %></span>
+          <span class="step_descr"><%= t ".step_1" %><br />
+            <small><%= t ".job" %></small>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a id = "a_step2" href="#step-2">
+          <span class="step_no"><%= t ".step_no_2" %></span>
+          <span class="step_descr"><%= t ".step_2" %><br />
+            <small><%= t ".members" %></small>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a id = "a_step3" href="#step-3">
+          <span class="step_no"><%= t ".step_no_3" %></span>
+          <span class="step_descr"><%= t ".step_3" %><br />
+            <small><%= t ".create_team_story" %></small>
+          </span>
+        </a>
+      </li>  
+    </ul>
+    <div id="step-1">
+      <div class="form_ajax">
+        <%= form_for(@job, remote: true, url: employer_company_jobs_path,
+          authenticity_token: true, multipart: true, html: {class: "form-horizontal form-label-left"}) do |f| %>
           <%= render "info_hiring_type", f: f %>
-          <%= render "info_main", f: f %>
-        <% end %>
+        <% end %>  
       </div>
-      <div class="tab-content clearfix" id="tabs-3">
-      </div>
-      <div class="tab-content clearfix" id="tabs-4">
-      </div>
-      <div class="tab-content clearfix" id="tabs-5">
-      </div>
+    </div>
+    <div id="step-2">
+      <h2 class="StepTitle">Step 2 Content</h2>
+        <div class="step-2-content"></div>
+        <div class="container">
+          <hr>
+          <div class="col-md-3">
+            <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right">Previous</a>
+          </div>
+          <div class="col-md-3 col-md-offset-6">
+            <%= submit_tag "Save and Continue",class: "buttonNext btn btn-success text-right" %>
+          </div>
+        </div>
+    </div>
+    <div id="step-3">
+      <h2 class="StepTitle">Step 3 Content</h2>
     </div>
   </div>
 </div>

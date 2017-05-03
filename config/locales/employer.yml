@@ -78,9 +78,16 @@ en:
           charities, I want to hear what you think about my new idea.
           I will buy you a drink!"
       new:
+        success: "Create success"
         job_recruitment: "Post job recruitment"
         job: "Create job"
         members: "Add members"
+        step_no_1: "1"
+        step_no_2: "2"
+        step_no_3: "3"
+        step_1: "Step 1"
+        step_2: "Step 2"
+        step_3: "Step 3"
         create_team_story: "Create team story"
       create:
         created_job: "Posted job recruitment"
@@ -127,12 +134,18 @@ en:
         community: "Community"
         preview: "Preview"
       info_hiring_type:
+        image: "Image"
+        caption: "Caption"
         looking_for: "Looking for"
         hiring_type: "Hiring type"
         who_can_apply: "Who can apply"
         everyone: "Everyone can apply"
         friends_om: "Only friends of members"
         of_friends_om: "Only friends of friends of members"
+        placeholder_title: "Join us to create a better workplace"
+        placeholder_des: "If you are a cool rocking young engineer and into
+          charities, I want to hear what you think about my new idea.
+          I will buy you a drink!"
     companies:
       edit:
         company_info: "Company Info"
