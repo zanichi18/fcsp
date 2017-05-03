@@ -34,3 +34,4 @@
 //= require cocoon
 //= require awards
 //= require searchbox
+//= require employer/create_job
