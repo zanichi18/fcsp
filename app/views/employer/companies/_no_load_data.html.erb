@@ -1,35 +1,45 @@
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".facebook" %></label>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".facebook" %>
     <abbr class="optional"><%= t ".optional" %></abbr>
+  </label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <input type="text" name="facebook" class="form-control col-md-7 col-xs-12">
   </div>
-  <input type="text" name="facebook" class="form-control form-control-custom">
 </div>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".twitter" %></label>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".twitter" %>
     <abbr class="optional"><%= t ".optional" %></abbr>
+  </label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <input type="text" name="twitter" class="form-control col-md-7 col-xs-12">
   </div>
-  <input type="text" name="twitter" class="form-control form-control-custom">
 </div>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".logo" %></label></div>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".logo" %></label>
   <%= render "logo" %>
 </div>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".background" %></label></div>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".background" %></label>
   <%= render "logo" %>
 </div>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".what_we_do" %></label></div>
-  <textarea class="form-control text-area"></textarea>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".what_we_do" %></label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <textarea class="form-control col-md-7 col-xs-12"></textarea>
+  </div>
 </div>
 <%= render "image", f: f %>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".why_we_do" %></label></div>
-  <textarea class="form-control text-area"></textarea>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".why_we_do" %></label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <textarea class="form-control col-md-7 col-xs-12"></textarea>
+  </div>
 </div>
 <%= render "image", f: f %>
-<div class="fieldset form-group">
-  <div class="col-md-4"><label><%= t ".how_we_do" %></label></div>
-  <textarea class="form-control text-area"></textarea>
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12"><%= t ".how_we_do" %></label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <textarea class="form-control col-md-7 col-xs-12"></textarea>
+  </div>
 </div>
 <%= render "image", f: f %>

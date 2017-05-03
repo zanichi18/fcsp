@@ -11,9 +11,11 @@
       </div>
       <div class="job-title-content">
         <%= link_to job.title, edit_employer_company_job_path(@company.id, job.id), class: "job-title" %>
-        <span class="icon-job-type sales">
-          <%= Job.human_enum_name :type_of_candidates, job.type_of_candidates %>
-        </span>
+        <div class="hidden-xs">
+          <span class="icon-job-type sales">
+            <%= Job.human_enum_name :type_of_candidates, job.type_of_candidates %>
+          </span>
+        </div>
         <div>
           <%= link_to t(".show_posting"), job_path(job) %> |
           <%= link_to t(".edit_posting"), edit_employer_company_job_path(@company.id, job.id) %>

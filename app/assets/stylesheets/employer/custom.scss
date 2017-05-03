@@ -133,3 +133,25 @@
     }
   }
 }
+
+.upload-image {
+  padding-left: 10px;
+  padding-top: 9px;
+}
+
+.static-main-body {
+  .form-horizontal .control-label {
+    padding-top: 0;
+    text-align: left;
+  }
+}
+
+#wizard {
+  .stepContainer {
+    overflow: hidden;
+  }
+
+  .actionBar {
+    text-align: left;
+  }
+}

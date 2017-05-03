@@ -1791,8 +1791,8 @@ if (typeof NProgress != 'undefined') {
         transitionEffect: 'slide'
       });
 
-      $('.buttonNext').addClass('btn btn-success');
-      $('.buttonPrevious').addClass('btn btn-primary');
+      $('.buttonNext').addClass('btn btn-success fa');
+      $('.buttonPrevious').addClass('btn btn-primary fa fa-arrow-circle-left');
       $('.buttonFinish').addClass('btn btn-default');
 
     };

@@ -153,14 +153,16 @@ en:
         manage_members: "Manage members"
         manage_images: "Manage images"
         manage_accounts: "Manage accounts on social network"
+        next: "Save and Continue"
+        previous: "Previous"
       update:
         company_updated: "Company info updated !"
         company_update_fail: "Fail to update company info"
       edit_company_info:
         update_company_info: "Update Company"
         required: "(required)"
-        article_btn: "Add article"
-        article: "Article"
+        name: "Name"
+        website: "Website"
       image:
         image: "Image"
       no_load_data:

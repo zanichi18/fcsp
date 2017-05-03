@@ -131,8 +131,10 @@
   padding: 10px;
 }
 
-.actionBar {
-  display: none;
+.dashboard_graph {
+  .actionBar {
+    display: none;
+  }
 }
 
 .form-horizontal {
