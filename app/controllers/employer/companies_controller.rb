@@ -8,17 +8,16 @@ class Employer::CompaniesController < Employer::BaseController
 
   def update
     if @company.update_attributes company_params
-      msg = t ".company_updated"
+      flash[:success] = t ".company_updated"
       type = :success
     else
-      msg = t(".company_update_fail")
+      flash[:danger] = t ".company_update_fail"
       type = :danger
     end
 
     render json: {
       flash: {
-        type: type,
-        msg: msg
+       type: type
       }
     }
   end

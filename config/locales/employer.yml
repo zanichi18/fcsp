@@ -89,6 +89,8 @@ en:
         step_2: "Step 2"
         step_3: "Step 3"
         create_team_story: "Create team story"
+        save_continue: "Save and Continue"
+        previous: "Previous"
       create:
         created_job: "Posted job recruitment"
         create_job_fail: "Fail to post job recruitment"
@@ -112,7 +114,17 @@ en:
         job_post_updated: "Updated post job recruitment"
         job_post_update_fail: "Failed to update post job"
       edit:
-        edit_job: "Edit job"
+        job: "Edit job"
+        members: "Edit members"
+        edit_team_story: "Edit team story"
+        step_no_1: "1"
+        step_no_2: "2"
+        step_no_3: "3"
+        step_1: "Step 1"
+        step_2: "Step 2"
+        step_3: "Step 3"
+        save_continue: "Save and Continue"
+        previous: "Previous"
       show:
         view_job: "View job"
       job:
@@ -146,6 +158,8 @@ en:
         placeholder_des: "If you are a cool rocking young engineer and into
           charities, I want to hear what you think about my new idea.
           I will buy you a drink!"
+        save_continue: "Save and Continue"
+        previous: "Previous"
     companies:
       edit:
         company_info: "Company Info"
