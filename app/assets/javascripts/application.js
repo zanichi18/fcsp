@@ -31,6 +31,7 @@
 //= require friend_ships
 //= require friend_ship
 //= require user_portfolios
+//= require user_job
 //= require cocoon
 //= require awards
 //= require searchbox

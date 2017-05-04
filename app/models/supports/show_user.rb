@@ -7,7 +7,7 @@ module Supports
     end
 
     def job_active
-      Job.active.includes :images, :skills, :job_skills
+      Job.active.includes :company, :images, :skills, :job_skills
     end
 
     def job_skill

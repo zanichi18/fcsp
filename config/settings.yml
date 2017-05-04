@@ -149,6 +149,7 @@ courses:
   new_course_image: "/assets/default.jpg"
 user:
   max_length_name: 50
+  per_page: 5
 max_length_title: 150
 hiring_type:
   max_length_name: 50

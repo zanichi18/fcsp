@@ -5,6 +5,14 @@ class UsersController < ApplicationController
     @user.build_info_user if @user.info_user.nil?
     @info_user = @user.info_user
     @user_object = Supports::ShowUser.new @user
+    @user_jobs = Kaminari.paginate_array(@user_object.job_skill)
+      .page(params[:page]).per Settings.user.per_page
+    if request.xhr?
+      render json: {
+        content: render_to_string(partial: "job_accordance",
+          locals: {jobs: @user_jobs})
+      }
+    end
   end
 
   def new
