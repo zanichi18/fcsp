@@ -24,31 +24,28 @@
             <small><%= t ".create_team_story" %></small>
           </span>
         </a>
-      </li>  
+      </li>
     </ul>
     <div id="step-1">
+      <h2 class="StepTitle"><%= t ".job" %></h2>
       <div class="form_ajax">
-        <%= form_for(@job, remote: true, url: employer_company_jobs_path,
-          authenticity_token: true, multipart: true, html: {class: "form-horizontal form-label-left"}) do |f| %>
-          <%= render "info_hiring_type", f: f %>
-        <% end %>  
+        <%= render "info_hiring_type", url: employer_company_jobs_path %>
       </div>
     </div>
     <div id="step-2">
-      <h2 class="StepTitle">Step 2 Content</h2>
-        <div class="step-2-content"></div>
-        <div class="container">
-          <hr>
-          <div class="col-md-3">
-            <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right">Previous</a>
-          </div>
-          <div class="col-md-3 col-md-offset-6">
-            <%= submit_tag "Save and Continue",class: "buttonNext btn btn-success text-right" %>
-          </div>
+      <h2 class="StepTitle"><%= t ".members" %></h2>
+      <div class="step-2-content"></div>
+      <div class="container">
+        <div class="col-md-3">
+          <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right"><%= t ".previous" %></a>
+        </div>
+        <div class="col-md-3 col-md-offset-6">
+          <%= submit_tag t(".save_continue"), class: "buttonNext btn btn-success text-right" %>
+        </div>
         </div>
     </div>
     <div id="step-3">
-      <h2 class="StepTitle">Step 3 Content</h2>
+      <h2 class="StepTitle"><%= t ".create_team_story" %></h2>
     </div>
   </div>
 </div>

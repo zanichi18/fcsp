@@ -26,10 +26,10 @@ class Employer::JobsController < Employer::BaseController
   def create
     @job = @company.jobs.build job_params
     if @job.save
+      flash[:success] = t ".created_job"
       render json: {
         html_job: render_to_string(partial: "new_job",
-          locals: {job: @job}, 
-          layout: false)
+          layout: false),
       }, status: :created
     else
       flash[:danger] = t ".create_job_fail"
@@ -41,12 +41,19 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def update
-    @job.update_attributes job_params
-
-    if request.xhr?
-      render json: @job
+    if @job.update_attributes job_params
+      flash[:success] = t ".job_post_updated"
+      if request.xhr?
+        render json: {
+          html_job: render_to_string(partial: "new_job",
+            layout: false)
+        }
+      else
+        redirect_to job_path(@job)
+      end
     else
-      redirect_to job_path(@job)
+      flash[:danger] = t ".job_post_update_fail"
+      redirect_back fallback_location: :back
     end
   end
 

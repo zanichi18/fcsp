@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  fade_flash();
-
   $('#wizard').smartWizard({
     includeFinishButton: false,
     labelNext: I18n.t('employer.companies.edit.next'),
@@ -26,31 +24,16 @@ $(document).ready(function() {
       cache: false,
       contentType: false,
       processData: false,
-      data: formdata ? formdata : form.serialize(),
+      data: formdata,
       success: function(data){
-        var msg = data.flash.msg;
         var type = data.flash.type;
         if (type === 'danger') {
           $('#wizard').smartWizard('goBackward');
         }
-        show_ajax_message(msg, type);
       },
       error: function() {
         $('#wizard').smartWizard('goBackward');
       }
     });
   }
-
-  function fade_flash() {
-    $('#flash-message').show();
-    setTimeout(function() {
-      $('#flash-message').hide();
-    }, 4000);
-  };
-
-  function show_ajax_message(msg, type) {
-    $('#flash-message').html('<div class="alert alert-' + type + ' text-center">'
-      + msg + '</div>');
-    fade_flash();
-  };
 });
