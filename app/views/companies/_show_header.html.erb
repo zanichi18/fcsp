@@ -1,11 +1,36 @@
-<div class="content-wrap head-wrap">
+<div class="">
   <div class="container brief-info">
     <div class="row">
       <div class="col-md-12">
-        <%= hidden_field_tag :company_id, @company.id %>
-        <%= image_tag @company.images.first.present? ? @company.images.first : "avatar.jpg",
-          class: "alignleft img-circle img-thumbnail nobottommargin ava-company",
-          alt: @company.name %>
+        <div class="user-profile fix-avata-company clearfix">
+          <div class="cover-image">
+            <% if can? :update, @company %>
+              <%= load_companies_cover @company, class: "img-cover company-cover my-img-cover", alt: @company.name %>
+                <div class="ico-upload-cover" data-toggle="modal" data-target="#changeCoverModal">
+                  <h3 class="glyphicon glyphicon-camera"></h3>
+                  <p><%= t ".change_cover" %></p>
+                </div>
+            <% else %>
+              <%= load_companies_cover @company, 
+                class: "img-cover company-cover", alt: @company.name %> 
+            <% end %>
+          </div>
+          <div class="user clearfix">
+            <div class="user-avatar">
+              <%= hidden_field_tag :company_id, @company.id %>  
+              <% if can? :update, @company %>
+                <%= load_companies_avatar @company,
+                  class: "img-thumbnail img-avatar my-img-avatar", alt: @company.name %>
+                <div class="ico-upload-avatar">
+                  <h3 class="glyphicon glyphicon-camera" data-toggle="modal" data-target="#changeAvatarModal"></h3>
+                </div>   
+              <% else %>
+                <%= load_companies_avatar @company,
+                  class: "img-thumbnail img-avatar", alt: @company.name %>   
+              <% end %>
+            </div>
+          </div>
+        </div>
         <div class="heading-block noborder">
           <h3><a><%= @company.name %></a></h3>
           <span>
@@ -19,3 +44,5 @@
     </div>
   </div>
 </div>
+<%= render "modal_change_avatar_company", company: @company %>
+<%= render "modal_change_cover_company", company: @company %>

@@ -1,5 +1,13 @@
 en:
   companies:
+    avatar:
+      success: "Success"
+      danger: "Danger"
+      not_found: "Not Found"
+    cover:
+      success: "Success"
+      danger: "Danger"
+      not_found: "Not Found"
     show:
       info: "Info"
       news: "News"
@@ -30,6 +38,13 @@ en:
       location: "Location"
     show_header:
       follow: "Follow"
+      change_cover: "Change your cover image"
+    modal_change_avatar_company:
+      update_avatar: "Update avatar image"
+      save: "Save"
+    modal_change_cover_company:
+      update_cover: "Update cover image"
+      save: "Save"
     company_jobs:
       see_more: "See more"
   admin:

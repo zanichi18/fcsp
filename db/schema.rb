@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426062508) do
+ActiveRecord::Schema.define(version: 20170505014513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,8 +100,10 @@ ActiveRecord::Schema.define(version: 20170426062508) do
     t.string   "country"
     t.integer  "company_size"
     t.date     "founder_on"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "avatar_id"
+    t.integer  "cover_image_id"
     t.index ["name"], name: "index_companies_on_name", using: :btree
     t.index ["website"], name: "index_companies_on_website", using: :btree
   end
