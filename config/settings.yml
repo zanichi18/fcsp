@@ -133,6 +133,8 @@ company:
   country: ["United States", "Japan", "Germany", "Korea"]
   max_length_name: 50
   per_page: 5
+  cover_default: "welcome1.jpg"
+  avatar_default: "avatar.jpg"
 default_user_password: {"password": "123456"}
 courses:
   modal_detail: "#modal_detail"

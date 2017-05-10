@@ -36,3 +36,4 @@
 //= require awards
 //= require searchbox
 //= require employer/create_job
+//= require change_avatar_company

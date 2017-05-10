@@ -14,7 +14,11 @@ class Company < ApplicationRecord
   has_many :industries, through: :company_industries
   has_many :team_introductions, as: :team_target
   has_many :groups
-
+  has_one :avatar, class_name: Image.name, foreign_key: :id,
+    primary_key: :avatar_id
+  has_one :cover_image, class_name: Image.name, foreign_key: :id,
+    primary_key: :cover_image_id
+    
   after_create :create_organization
 
   ATTRIBUTES = [:name, :website, :introduction, :founder, :country,
