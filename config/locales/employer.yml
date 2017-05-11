@@ -38,10 +38,37 @@ en:
         view_more: "View more"
         new_posting: "New Postings"
     candidates:
+      filter_name:
+        sortaz: "Sort by A → Z"
+        sortza: "Sort by Z → A"
+        sortvalue: "Sort follow value..."
+        checkall: "Check All"
+        delete: "Delete"
+        ok: "OK"
+        cancel: "Cancel"
+      filter_interested:
+        sortaz: "Sort by A → Z"
+        sortza: "Sort by Z → A"
+        sortvalue: "Sort follow value..."
+        checkall: "Check All"
+        delete: "Delete"
+        ok: "OK"
+        cancel: "Cancel"
+      filter_process:
+        sortaz: "Sort by A → Z"
+        sortza: "Sort by Z → A"
+        sortvalue: "Sort follow value..."
+        checkall: "Check All"
+        delete: "Delete"
+        ok: "OK"
+        cancel: "Cancel"
       index:
         all_jobs: "All jobs"
         title: "Candidates"
         filter_candidate: "Filter candidate by select job"
+        name: "Name"
+        interested: "Interested in"
+        process: "Process"
         user: "User"
         id: "ID"
         job: "Job"
@@ -54,6 +81,9 @@ en:
         job: "Job"
         email: "Email"
         interested_in: "Interested in"
+      candidate:
+        total: "Total"
+        rows: "rows"
     jobs:
       candidate_by_job:
         user: "User"
@@ -219,6 +249,17 @@ en:
     others: "Others"
   activerecord:
     attributes:
+      candidate:
+        interested_ins:
+          work_together: "Let's work together"
+          have_a_chat: "Let's have a chat"
+          opportunity: "This opportunity interests me"
+        processes:
+          apply: "Apply"
+          wait_test: "Wait Test"
+          fail_test: "Fail Test"
+          pass_test: "Pass Test"
+          joined: "Joined"
       job:
         type_of_candidates:
           engineer: "Engineer / Programmer"

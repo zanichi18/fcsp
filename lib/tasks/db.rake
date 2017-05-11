@@ -73,7 +73,10 @@ namespace :db do
       10.times.each do |candidate|
         job_id = rand(1..20)
         user_id = rand(2..10)
-        Candidate.create! user_id: user_id, job_id: job_id
+        interested_in = [:have_a_chat, :work_together, :opportunity].shuffle.first
+        process = [:apply, :fail_test, :joined , :pass_test, :wait_test].shuffle.first
+        Candidate.create! user_id: user_id, job_id: job_id,
+          interested_in: interested_in, process: process
       end
 
       puts "Create team introduction"

@@ -1,0 +1,63 @@
+<div class="btn-group btn-filter">
+  <button type="button" class="btn btn-default dropdown-toggle button-show-filter"
+    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-filter" aria-hidden="true"></i>
+  </button>
+  <div class="dropdown-menu filter" data-filter="interested_in">
+    <ul>
+      <li>
+        <button class="button-sort sortAlpha" data-sort-by="ASC">
+          <%= t ".sortaz" %>
+        </button>
+      </li>
+      <li>
+        <button class="button-sort sortAlpha" data-sort-by="DESC">
+          <%= t ".sortza" %>
+        </button>
+      </li>
+      <hr />
+      <li>
+        <button data-toggle="collapse" data-target="#demo2"
+          class="button-sort button-show-value">
+          <%= t ".sortvalue" %>
+        </button>
+        <div id="demo2" class="collapse in value-sort">
+          <div class="link">
+            <a class="checkall"><%= t ".checkall" %></a>
+            - <a  class="delete"><%= t ".delete" %></a>
+          </div>
+          <div id="imaginary_container">
+            <div class="input-group stylish-input-group">
+              <input type="text" class="form-control search-user-filter"
+                placeholder="Search" >
+              <span class="input-group-addon">
+                <button type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div class="list-item-value">
+            <% Candidate.interested_ins.each do |key, type| %>
+              <div class="checkbox">
+                <input id="checkbox-interest-<%= type %>" type="checkbox"
+                  class="styled checkboxitem" data-list-id="<%= type %>" checked >
+                <label for="checkbox-interest-<%= type %>">
+                  <%= Candidate.human_enum_name :interested_in, key %>
+                </label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <li class="button-direct">
+        <button type="button" class="btn btn-primary btn-ok">
+          <%= t ".ok" %>
+        </button>
+        <button type="button" class="btn btn-default btn-cancel">
+          <%= t ".cancel" %>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

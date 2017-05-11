@@ -1,28 +1,60 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/4cd1f4eb50.js"></script>
 <% provide :title, t(".title") %>
-<h1 class="text-center"><%= t ".title" %></h1>
+<h1 class="text-left"><%= t ".title" %></h1>
 <div class="clearfix">
-  <div class="col-md-3 form-group">
-    <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
-    <%= select(:job, :job_id, @object.active_jobs.collect {|p| [ p.title, p.id ] },
-      {include_blank: t(".all_jobs"), selected: params[:select]},
-      class: "form-control", id: "select-job") %>
+  <div class="x_content">
+    <div class="row form-group">
+      <p class="candidate-select-box"><%= t ".filter_candidate" %></p>
+      <div class="col-md-6">
+        <%= select(:job, :job_id, @object.active_jobs.collect {|p| [ p.title, p.id ] },
+          {include_blank: t(".all_jobs"), selected: params[:select]},
+          class: "form-control select-job") %>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" id="company-id" value="<%= @company.id %>">
   </div>
 
-  <div class="all-jobs">
-    <table class="table table-striped custab">
-      <thead>
-        <tr>
-          <th class="col-id"><%= t ".id" %></th>
-          <th class="col-user"><%= t ".user" %></th>
-          <th class="col-user"><%= t ".job" %></th>
-          <th class="interested"><%= t ".interested_in" %></th>
-          <th class="process"><%= t ".process" %></th>
-        </tr>
-      </thead>
-      <tbody id="list-candidates">
-        <%= render "candidate", candidates: @object.candidates %>
-      </tbody>
-    </table>
+  <div class="container table-candidates">
+    <div class="row">
+      <section class="content">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="table-container">
+                <table class="table">
+                  <thead>
+                    <tr class="headings">
+                      <th class="col-checkbox">
+                        <div class="ckbox">
+                          <input type="checkbox" id="checkbox0">
+                          <label for="checkbox0"></label>
+                        </div>
+                      </th>
+                      <th class="col-avatar"></th>
+                      <th class="column-title col-username">
+                        <%= render "filter_name" %>
+                        <%= t ".name" %>
+                      </th>
+                      <th class="column-title col-interested">
+                        <%= render "filter_interested" %>
+                        <%= t ".interested" %>
+                      </th>
+                      <th class="column-title col-process">
+                        <%= render "filter_process" %>
+                        <%= t ".process" %>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="list-candidates" class="show-list-candidates">
+                    <%= render "candidate", candidates: @object.candidates %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
-  <input type="hidden" id="company-id" value="<%= @company.id %>">
-</div>

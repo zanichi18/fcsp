@@ -19,8 +19,7 @@
     width: 240px;
   }
 
-  h3,
-    h5 {
+  h3, h5 {
     text-align: center;
   }
 
@@ -62,12 +61,32 @@
   font-style: italic;
 }
 
+.all-jobs {
+  i {
+    cursor: pointer;
+    display: block;
+    float: right;
+    height: 10px;
+    margin-right: 15px;
+    margin-top: 2px;
+    width: 10px;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+}
+
 .col-id {
-  width: 10%;
+  width: 7%;
 }
 
 .col-user {
   width: 25%;
+}
+
+.col-job {
+  width: 35%;
 }
 
 .col-interested {
@@ -138,10 +157,10 @@
 }
 
 .form-horizontal {
-  .form-group{
+  .form-group {
     .control-label {
-      text-align: left;
       padding-left: 124px;
+      text-align: left;
     }
   }
 }
@@ -150,8 +169,8 @@
   .form-horizontal {
     .form-group {
       .control-label {
-        text-align: right;
         padding-left: 0;
+        text-align: right;
       }
     }
   }
@@ -161,8 +180,8 @@
   .form-horizontal {
     .form-group {
       .control-label {
-        text-align: left;
         padding-left: 0;
+        text-align: left;
       }
     }
   }
@@ -171,8 +190,8 @@
 .form-horizontal {
   .form-group {
     ul {
-     margin: 0;
-     padding: 0;
+      margin: 0;
+      padding: 0;
     }
   }
 }
