@@ -30,6 +30,7 @@
 //= require social-share-button
 //= require friend_ships
 //= require friend_ship
+//= require share_job
 //= require user_portfolios
 //= require user_job
 //= require cocoon

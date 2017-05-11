@@ -10,6 +10,8 @@ class Job < ApplicationRecord
   has_many :job_skills, dependent: :destroy
   has_many :skills, through: :job_skills
   has_many :team_introductions, as: :team_target
+  has_many :shares, class_name: ShareJob.name, dependent: :destroy
+  has_many :sharers, through: :shares, source: :user
 
   enum status: [:active, :close, :draft]
   enum who_can_apply: [:everyone, :friends_of_members,

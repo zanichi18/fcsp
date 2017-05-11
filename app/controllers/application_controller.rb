@@ -1,10 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :rack_mini_profiler_authorize_request
-  before_action :set_locale
-  after_action :store_location
-  before_action :friend_request
-  after_action :flash_to_headers
+  before_action :rack_mini_profiler_authorize_request, :set_locale,
+    :friend_request, :shared_jobs
+  after_action :store_location, :flash_to_headers
 
   include ApplicationHelper
   include PublicActivity::StoreController
@@ -49,6 +47,10 @@ class ApplicationController < ActionController::Base
     if !current_user.nil? && user_signed_in?
       @user_request = current_user.requested_friends.includes :avatar
     end
+  end
+
+  def shared_jobs
+    @shared_job_ids = current_user.shares.pluck :job_id if user_signed_in?
   end
 
   def flash_to_headers

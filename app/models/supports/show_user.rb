@@ -1,9 +1,10 @@
 module Supports
   class ShowUser
-    attr_reader :job_active, :job_skill, :portfolios, :awards
+    attr_reader :job_active, :job_skill, :portfolios, :awards, :shared_job_ids
 
-    def initialize user
+    def initialize user, current_user
       @user = user
+      @current_user = current_user
     end
 
     def job_active
@@ -20,6 +21,14 @@ module Supports
 
     def awards
       @user.awards.order created_at: :DESC
+    end
+
+    def shared_job_ids
+      @current_user.friends.pluck(:id) << @current_user.id
+    end
+
+    def shared_jobs
+      ShareJob.shared_jobs(shared_job_ids).includes(:job, user: :avatar)
     end
   end
 end
