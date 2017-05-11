@@ -88,7 +88,7 @@ group :test do
   gem "scss_lint_reporter_checkstyle", require: false
   gem "rails_best_practices"
   gem "brakeman", require: false
-  gem "eslint-rails"
+  gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails"
   gem "bundler-audit"
   gem "reek"
   gem "rails-controller-testing"
