@@ -17,24 +17,53 @@
   </div>
   </br>
 
-  <table class="table table-striped custab">
-    <thead>
-      <th width="40%"><%= t ".title" %></th>
-      <th width="10%" class="text-center"><%= t ".status" %></th>
-      <th width="10%" class="text-center"><%= t ".candidates" %></th>
-      <th width="10%" class="text-center"><%= t ".messages" %> </th>
-      <th width="10%" class="text-center"><%= t ".action" %></th>
-    </thead>
-    <tbody class="jobs-list">
-      <%= render "job", jobs: @jobs %>
-    </tbody>
-  </table>
-
-  <div>
-    <%= page_entries_info @jobs %>
+  <div class="container">
+    <div class="row">
+      <section class="content">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="table-container">
+                <table class="table table-striped custab">
+                  <thead>
+                    <tr class="headings">
+                      <th class="col-checkbox">
+                        <div class="ckbox">
+                          <input type="checkbox" id="checkbox0">
+                          <label for="checkbox0"></label>
+                        </div>
+                      </th>
+                      <th class="job-title">
+                        <%= t ".title" %>
+                      </th>
+                      <th class="job-status">
+                        <%= render "filter_status" %>
+                        <%= t ".status" %>
+                      </th>
+                      <th class="job-candidates">
+                        <%= t ".candidates" %>
+                      </th>
+                      <th class="job-messages">
+                        <%= t ".messages" %>
+                      </th>
+                      <th class="job-action">
+                        <%= t ".action" %>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="jobs-list">
+                    <%= render "job", jobs: @jobs %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
-  <div>
-    <%= paginate @jobs %>
+  <div class="pagination-job">
+    <%= render "paginate" %>
   </div>
 
   <input type="hidden" id="company-id" value="<%= @company.id %>">

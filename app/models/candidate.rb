@@ -5,7 +5,7 @@ class Candidate < ApplicationRecord
   has_one :avatar, through: :user, class_name: Image.name
 
   enum interested_in: [:have_a_chat, :work_together, :opportunity]
-  enum process: [:apply, :fail_test, :joined , :pass_test, :wait_test]
+  enum process: [:apply, :fail_test, :joined, :pass_test, :wait_test]
 
   validates :user_id, presence: true
   validates :job_id, presence: true

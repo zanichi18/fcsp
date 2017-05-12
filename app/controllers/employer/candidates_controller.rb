@@ -17,13 +17,13 @@ class Employer::CandidatesController < Employer::BaseController
       @candidates = @object.candidates
     end
 
-    respond_to do |format|
-      if request.xhr?
-        format.html do
-          render partial: "candidate",
-          locals: {candidates: @candidates}
-        end
-      else
+    if request.xhr?
+      render json: {
+        html_job: render_to_string(partial: "candidate",
+          locals: {candidates: @candidates},layout: false)
+      }
+    else
+      respond_to do |format|
         format.html
       end
     end

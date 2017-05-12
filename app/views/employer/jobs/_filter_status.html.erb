@@ -3,8 +3,7 @@
     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <i class="fa fa-filter" aria-hidden="true"></i>
   </button>
-  <div class="dropdown-menu filter" data-filter="users.id"
-    data-model="candidate">
+  <div class="dropdown-menu filter" data-filter="status" data-model="job">
     <ul>
       <li>
         <button class="button-sort sortAlpha" data-sort-by="ASC">
@@ -18,11 +17,11 @@
       </li>
       <hr />
       <li>
-        <button data-toggle="collapse" data-target="#demo"
+        <button data-toggle="collapse" data-target="#demo2"
           class="button-sort button-show-value">
           <%= t "employer.sortvalue" %>
         </button>
-        <div id="demo" class="collapse in value-sort">
+        <div id="demo2" class="collapse in value-sort">
           <div class="link">
             <a class="checkall"><%= t "employer.checkall" %></a>
             - <a  class="delete"><%= t "employer.delete" %></a>
@@ -39,14 +38,14 @@
             </div>
           </div>
           <div class="list-item-value">
-            <% @object.candidates.each_with_index do |candidate, index| %>
+            <% Job.statuses.each do |key, type| %>
               <div class="checkbox">
-                <input id="checkbox-name-<%= index + 1 %>"
-                  data-list-id="<%= candidate.user.id %>" type="checkbox"
-                  class="styled checkboxitem list-user-filter" checked>
-                <label for="checkbox-name-<%= index + 1 %>" class="label-user-name">
-                  <%= candidate.user.name %>
+                <input id="checkbox-status-<%= type %>" type="checkbox"
+                  class="styled checkboxitem" data-list-id="<%= type %>" checked >
+                <label for="checkbox-status-<%= type %>" class="label-user-name">
+                  <%= Job.human_enum_name :status, key %>
                 </label>
+                <br>
               </div>
             <% end %>
           </div>

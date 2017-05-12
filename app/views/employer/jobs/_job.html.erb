@@ -1,5 +1,11 @@
 <% jobs.each do |job| %>
   <tr id="<%= dom_id(job) %>">
+    <td class="col-check">
+      <div class="ckbox">
+        <input type="checkbox" id="checkbox-job-<%= dom_id(job) %>">
+        <label for="checkbox-job-<%= dom_id(job) %>"></label>
+      </div>
+    </td>
     <td>
       <div class="job-thumb-image">
         <% if job.images.present? %>
@@ -22,25 +28,25 @@
         </div>
       </div>
     </td>
-    <td class="status text-center">
-      <%= Job.human_enum_name :status, job.status %>
+    <td class="status">
+      <b><%= Job.human_enum_name :status, job.status %></b>
     </td>
-    <td class="text-center">
+    <td>
       <%= link_to job.candidates.length, employer_company_candidates_path(select: job.id) %>
       <div class="bookmark">
         <%= link_to t(".bookmark", count: job.bookmarks.length), "#" %>
       </div>
     </td>
-    <td class="text-center">
+    <td>
       <%= button_tag(type: "button", class: "btn btn-default") do %>
         <i class="fa fa-comments-o"></i>
       <% end %>
     </td>
-    <td class="action text-center">
+    <td class="action">
       <% if job.active? %>
-        <%= button_tag t(".close"), id: "#{job.id}", class: "close-job btn btn-warning test" %>
+        <%= button_tag t(".close"), id: "#{job.id}", class: "close-job btn btn-warning btn-xs test" %>
       <% else %>
-        <%= button_tag t(".public"), id: "#{job.id}", class: "public-job btn btn-default test" %>
+        <%= button_tag t(".public"), id: "#{job.id}", class: "public-job btn btn-success btn-xs test" %>
       <% end %>
     </td>
     <input type="hidden" id="company-id" value="<%= @company.id %>">
