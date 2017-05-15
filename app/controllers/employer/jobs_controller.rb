@@ -4,15 +4,29 @@ class Employer::JobsController < Employer::BaseController
   before_action :update_status, only: :create
 
   def index
-    params[:select] = "all_job" if params[:select].nil?
-    @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
-      .send(params[:select]).newest
-      .page(params[:page]).per Settings.employer.jobs.per_page
 
-    respond_to do |format|
-      if request.xhr?
-        format.html{render partial: "job", locals: {jobs: @jobs}}
-      else
+    if params[:type]
+      listarr = params[:array_id]
+      if listarr.class == String
+        listarr = listarr.split(",").map(&:to_i)
+      end
+      sort_by = params[:sort].nil? ? "ASC" : params[:sort]
+      @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
+        .filter(listarr, sort_by, params[:type]).page(params[:page])
+        .per Settings.employer.jobs.per_page
+    else
+      @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
+        .page(params[:page]).per Settings.employer.jobs.per_page
+    end
+
+    if request.xhr?
+      render json: {
+        html_job: render_to_string(partial: "job", locals: {jobs: @jobs},
+          layout: false),
+        pagination_job: render_to_string(partial: "paginate", layout: false)
+      }
+    else
+      respond_to do |format|
         format.html
       end
     end
@@ -29,7 +43,7 @@ class Employer::JobsController < Employer::BaseController
       flash[:success] = t ".created_job"
       render json: {
         html_job: render_to_string(partial: "new_job",
-          layout: false),
+          layout: false)
       }, status: :created
     else
       flash[:danger] = t ".create_job_fail"
@@ -46,7 +60,8 @@ class Employer::JobsController < Employer::BaseController
       if request.xhr?
         render json: {
           html_job: render_to_string(partial: "new_job",
-            layout: false)
+            layout: false),
+          status: Job.human_enum_name(:status, @job.status)
         }
       else
         redirect_to job_path(@job)

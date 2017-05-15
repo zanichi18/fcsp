@@ -11,7 +11,7 @@ class Job < ApplicationRecord
   has_many :skills, through: :job_skills
   has_many :team_introductions, as: :team_target
 
-  enum status: [:draft, :active, :close]
+  enum status: [:active, :close, :draft]
   enum who_can_apply: [:everyone, :friends_of_members,
     :friends_of_friends_of_member]
   enum type_of_candidates: [:engineer, :creative, :director, :business_admin,
@@ -43,4 +43,8 @@ class Job < ApplicationRecord
   scope :of_ids, ->ids do
     where id: ids if ids.present?
   end
+
+  scope :filter, ->(list_filter, sort_by, type) {
+    where("#{type} IN (?)", list_filter).order "#{type} #{sort_by}"
+  }
 end

@@ -1,5 +1,12 @@
 en:
   employer:
+    sortaz: "Sort by A → Z"
+    sortza: "Sort by Z → A"
+    sortvalue: "Sort follow value..."
+    checkall: "Check All"
+    delete: "Delete"
+    ok: "OK"
+    cancel: "Cancel"
     dashboards:
       index:
         title: "Company"
@@ -38,30 +45,6 @@ en:
         view_more: "View more"
         new_posting: "New Postings"
     candidates:
-      filter_name:
-        sortaz: "Sort by A → Z"
-        sortza: "Sort by Z → A"
-        sortvalue: "Sort follow value..."
-        checkall: "Check All"
-        delete: "Delete"
-        ok: "OK"
-        cancel: "Cancel"
-      filter_interested:
-        sortaz: "Sort by A → Z"
-        sortza: "Sort by Z → A"
-        sortvalue: "Sort follow value..."
-        checkall: "Check All"
-        delete: "Delete"
-        ok: "OK"
-        cancel: "Cancel"
-      filter_process:
-        sortaz: "Sort by A → Z"
-        sortza: "Sort by Z → A"
-        sortvalue: "Sort follow value..."
-        checkall: "Check All"
-        delete: "Delete"
-        ok: "OK"
-        cancel: "Cancel"
       index:
         all_jobs: "All jobs"
         title: "Candidates"
@@ -159,6 +142,7 @@ en:
         view_job: "View job"
       job:
         close: "Close"
+        public: "Public"
         show_posting: "Show posting"
         edit_posting: "Edit posting"
         bookmark: "Bookmark (%{count})"
@@ -278,4 +262,4 @@ en:
           draft: "Draft"
           open: "Open"
           close: "Close"
-          active: "Open"
+          active: "Active"

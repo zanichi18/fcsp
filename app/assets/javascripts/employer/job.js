@@ -1,7 +1,6 @@
 $(document).ready(function() {
   draftjob.initialize();
   showCandidateByjob();
-  activeButton();
 });
 
 function showCandidateByjob() {
@@ -23,16 +22,6 @@ function showCandidateByjob() {
   });
 }
 
-function activeButton() {
-  select = $('.select-job').data('select');
-  $('.button-job').each(function(){
-    link_arr = this.href.replace(/\/$/,'').split('?select=');
-    if(link_arr[1] === select){
-      $(this).addClass('active-selection');
-    }
-  });
-}
-
 var draftjob = {
   initialize: function() {
     $('body').on('click', '.close-job', function() {
@@ -47,38 +36,54 @@ var draftjob = {
   },
 
   close_job: function(id) {
-    company_id = $('body').data('company');
-    var public_button = '<button name="button" type="submit" id="';
-      public_button += id;
-      public_button += '" class="public-job btn btn-default">Public</button>';
+    var public_button = '<button name="button" type="submit" id="' +
+      id + '" class="public-job btn btn-success btn-xs test">Public</button>',
+      company_id = $('#company-id').val();
+
     $.ajax({
       url: '/employer/companies/' + company_id +'/jobs/'+ id,
       method: 'PUT',
       data: {job: {status: 'close'}},
       success: function(data){
-        status = data.status.substr(0, 1).toUpperCase()+data.status.substr(1);
-        $('#job_'+ id).children('.status').text(status);
-        $('#job_'+ id).children('.action').empty();
+        $('#job_'+ id).children('.status').find('b').text(data.status);
         $('#job_'+ id).children('.action').html(public_button);
       }
     });
   },
 
   reopen_job: function(id) {
-    company_id = $('body').data('company');
-    var close_button = '<button name="button" type="submit" id="';
-      close_button += id
-      close_button += '" class="close-job btn btn-warning">Close</button>'
+    var close_button = '<button name="button" type="submit" id="' +
+      id + '" class="close-job btn btn-warning btn-xs">Close</button>',
+      company_id = $('#company-id').val();
+
     $.ajax({
       url: '/employer/companies/' + company_id +'/jobs/'+ id,
       method: 'PUT',
       data: {job: {status: 'active'}},
       success: function(data){
-        status = data.status.substr(0, 1).toUpperCase()+data.status.substr(1);
-        $('#job_'+ id).children('.status').text(status);
-        $('#job_'+ id).children('.action').empty();
+        $('#job_'+ id).children('.status').find('b').text(data.status);
         $('#job_'+ id).children('.action').html(close_button);
       }
     });
   }
-}
+};
+
+$('.pagination-job').on('click','.pagination .page-item a',function(e){
+  e.preventDefault();
+  var url_request = $(this).attr('href'),
+    tbody = $('.jobs-list');
+  $.ajax({
+    url: url_request,
+    method: 'GET',
+    dataType: 'json'
+  })
+  .done(function(data) {
+    tbody.html(data.html_job);
+    $('.pagination-job').html(data.pagination_job);
+    if ($('.btn-filter').hasClass('open')) {
+      $('.btn-filter').removeClass('open');
+    }
+  });
+
+  return false;
+});

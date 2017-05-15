@@ -39,7 +39,7 @@
     </td>
     <td class="col-process">
       <span class="media-meta pull-left process">
-        <b class="btn btn-<%= candidate.process %> btn-xs">
+        <b class="btn btn-<%= candidate.process.first %> btn-xs">
           <%= Candidate.human_enum_name :process,
             candidate.process %>
         </b>
