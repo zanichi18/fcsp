@@ -67,15 +67,16 @@ $(document).ready(function() {
 
     var params = {type: typefilter, sort: sortBy, array_id: arrchecked},
       url = '',
-      tbody = '';
+      tbody = '',
+      url_request = '';
 
     switch (filter_mode) {
-      case 'candidate':
+    case 'candidate':
       url_request = '/employer/companies/' + company_id + '/candidates';
       tbody = $('#list-candidates');
       break;
 
-      case 'job':
+    case 'job':
       url_request = '/employer/companies/' + company_id + '/jobs';
       tbody = $('.jobs-list');
       break;
@@ -116,6 +117,59 @@ $(document).ready(function() {
         }
       });
     }
+  });
+  $('.table-candidates').on('mouseover', '.col-process .process', function(){
+    $(this).find('.popup-change-status').show();
+  });
+  $('.table-candidates').on('mouseout', '.col-process .process', function(){
+    $(this).find('.popup-change-status').hide();
+  });
+
+  $('.table-candidates').on('click', '.btn-change-process', function(){
+    var type_change = $(this).attr('data-change'),
+      candidate_id = $(this).parent().attr('data-candidate-id'),
+      company_id = $('#company-id').val(),
+      url_request = '/employer/companies/' + company_id + '/candidates/'
+        + candidate_id,
+      button_process = $(this).closest('.process').find('b'),
+      box_process = $(this).closest('.popup-change-status'),
+      candidate_name = $(this).closest('tr')
+        .find('.col-username .title b').text(),
+      type_to = $(this).text(),
+      type_from = button_process.text(),
+      message = '<p> ' + I18n.t('employer.candidates.from') + ' <b>'
+        + type_from + ' </b> ' + I18n.t('employer.candidates.to') + ' <b>'
+        + type_to + ' </b></p><b>'
+        + candidate_name + '</b>';
+
+    swal({
+      title: I18n.t('employer.candidates.are_you_sure'),
+      html: message,
+      showCloseButton: true,
+      showCancelButton: true
+    }).then(
+      function () {
+        $.ajax({
+          url: url_request,
+          method: 'PUT',
+          dataType: 'json',
+          data: {type: type_change},
+        })
+        .done(function(data) {
+          swal({
+            type: 'success',
+            title: I18n.t('employer.candidates.changed'),
+            html: I18n.t('employer.candidates.process_has_been'),
+            timer: 2000
+          }).catch(swal.noop);
+
+          button_process.html(data.type);
+          button_process.attr('class', data.class_button);
+          box_process.html(data.box_process);
+        });
+      },
+      function (dismiss) {
+      });
   });
 });
 

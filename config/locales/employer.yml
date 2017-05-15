@@ -66,6 +66,11 @@ en:
         interested_in: "Interested in"
       candidate:
         total_rows: "Total: %{row} rows"
+      are_you_sure: "Are You Sure to change process?"
+      from: "From"
+      to: "to"
+      changed: "Changed!"
+      process_has_been: "Process has been changed successfully."
     jobs:
       candidate_by_job:
         user: "User"

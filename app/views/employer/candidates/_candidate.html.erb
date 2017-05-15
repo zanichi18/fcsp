@@ -10,8 +10,8 @@
   <tr data-status="pagado">
     <td class="col-check">
       <div class="ckbox">
-        <input type="checkbox" id="checkbox<%= candidate.user.id %>">
-        <label for="checkbox<%= candidate.user.id %>"></label>
+        <input type="checkbox" id="checkbox<%= candidate.id %>">
+        <label for="checkbox<%= candidate.id %>"></label>
       </div>
     </td>
 
@@ -42,6 +42,11 @@
           <%= Candidate.human_enum_name :process,
             candidate.process %>
         </b>
+        <div class="popup-change-status"
+          data-candidate-id="<%= candidate.id %>">
+          <%= render partial: "change_process",
+            locals: {process: candidate.process} %>
+        </div>
       </span>
     </td>
   </tr>
