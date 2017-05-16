@@ -2,14 +2,13 @@ $(document).ready(function() {
   $('.select-job').on('change', function() {
     var job_id = $(this).val(),
       company_id = $('#company-id').val();
-
     $.ajax({
-      dataType: 'html',
+      dataType: 'json',
       url: '/employer/companies/' + company_id + '/candidates',
       method: 'get',
       data: {select: job_id},
       success: function(data) {
-        $('#list-candidates').html(data);
+        $('#list-candidates').html(data.html_job);
       },
       error: function() {
         alert(I18n.t('employer.candidates.not_found'));

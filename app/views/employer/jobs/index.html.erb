@@ -4,19 +4,8 @@
   <div class="button-create-job">
     <%= link_to t(".create_job"), new_employer_company_job_path(@company),
       class: "btn btn-primary" %>
-    <div class="select-job" data-select="<%= params[:select] %>">
-      <%= link_to t(".all"), employer_company_jobs_path(select: "all_job"),
-        class: "button-job all_job" %>
-      <%= link_to t(".open"), employer_company_jobs_path(select: "active"),
-        class: "button-job" %>
-      <%= link_to t(".close"), employer_company_jobs_path(select: "close"),
-        class: "button-job" %>
-      <%= link_to t(".draft"), employer_company_jobs_path(select: "draft"),
-        class: "button-job draft_job" %>
-    </div>
   </div>
   </br>
-
   <div class="container">
     <div class="row">
       <section class="content">

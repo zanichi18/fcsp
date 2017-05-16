@@ -44,6 +44,7 @@ en:
         recommendations: "Recommendations"
         view_more: "View more"
         new_posting: "New Postings"
+        postings_list: "Postings list"
     candidates:
       index:
         all_jobs: "All jobs"
