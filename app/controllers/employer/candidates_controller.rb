@@ -1,14 +1,8 @@
 class Employer::CandidatesController < Employer::BaseController
   load_resource :company
+  before_action :filter_params, only: [:index, :update]
 
   def index
-    if params[:select].blank?
-      params[:job_id] = @company.jobs.pluck(:id)
-    else
-      params[:job_id] = params[:select]
-    end
-
-    @object = Supports::Candidate.new @company, params[:job_id]
     if params[:type]
       sort_by = params[:sort].nil? ? "ASC" : params[:sort]
       @candidates = @object.filter_candidates params[:array_id],
@@ -31,12 +25,6 @@ class Employer::CandidatesController < Employer::BaseController
 
   def update
     if params[:type]
-      if params[:select].blank?
-        params[:job_id] = @company.jobs.pluck(:id)
-      else
-        params[:job_id] = params[:select]
-      end
-      @object = Supports::Candidate.new @company, params[:job_id]
       @object.change_process_status params[:id], params[:type]
 
       if request.xhr?
@@ -48,5 +36,12 @@ class Employer::CandidatesController < Employer::BaseController
         }
       end
     end
+  end
+
+  private
+
+  def filter_params
+    filter = params[:select].blank? ? @company.jobs.pluck(:id) : params[:select]
+    @object = Supports::Candidate.new @company, filter
   end
 end

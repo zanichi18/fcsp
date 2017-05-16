@@ -10,7 +10,7 @@ var getLocation = {
   fetch_data: function() {
     var url_path = window.location.pathname;
     $.get(url_path, function(data) {
-      const addresses = data['addresses'];
+      var addresses = data['addresses'];
       const latitude = addresses[0].latitude;
       const longitude = addresses[0].longitude;
 

@@ -3,7 +3,7 @@ class CreateCandidates < ActiveRecord::Migration[5.0]
     create_table :candidates do |t|
       t.references :user
       t.references :job
-      t.integer :interested_in
+      t.integer :interested_in, default: 0
 
       t.timestamps
     end
