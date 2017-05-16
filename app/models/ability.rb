@@ -10,6 +10,7 @@ class Ability
       can :manage, Company
       can :manage, User
       can :manage, Job
+      can :manage, Team
       can :manage, TeamIntroduction
       can :manage, Candidate
       can :manage, Article

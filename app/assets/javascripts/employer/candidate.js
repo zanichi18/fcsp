@@ -79,6 +79,11 @@ $(document).ready(function() {
       url_request = '/employer/companies/' + company_id + '/jobs';
       tbody = $('.jobs-list');
       break;
+
+    case 'team':
+      url_request = '/employer/companies/' + company_id + '/teams';
+      tbody = $('.jobs-list');
+      break;
     }
 
     $.ajax({
@@ -95,6 +100,13 @@ $(document).ready(function() {
           $('.btn-filter').removeClass('open');
         }
       },
+      error: function(data) {
+        swal({
+          type: 'danger',
+          title: I18n.t('employer.team_introductions.danger'),
+          text: I18n.t('employer.team_introductions.danger')
+        });
+      }
     });
 
   });
