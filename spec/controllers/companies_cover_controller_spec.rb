@@ -15,7 +15,7 @@ RSpec.describe CompaniesCoverController, type: :controller do
     end
 
     it "change cover fail" do
-      post :create, params: {id: company.id,picture: "file.jpg"}
+      post :create, params: {id: company.id, picture: "file.jpg"}
       expect(controller).to set_flash[:danger]
         .to(I18n.t "companies.cover.danger")
     end

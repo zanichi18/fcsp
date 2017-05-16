@@ -44,7 +44,7 @@ class Job < ApplicationRecord
     where id: ids if ids.present?
   end
 
-  scope :filter, ->(list_filter, sort_by, type) {
+  scope :filter, ->(list_filter, sort_by, type) do
     where("#{type} IN (?)", list_filter).order "#{type} #{sort_by}"
-  }
+  end
 end

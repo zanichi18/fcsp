@@ -13,11 +13,11 @@ class Candidate < ApplicationRecord
   validates :process, presence: true
 
   delegate :title, to: :job, prefix: true
-  delegate :email, to: :user, prefix: true
+  delegate :email, :name, to: :user, prefix: true
 
   scope :in_jobs, ->job_ids{where job_id: job_ids}
 
-  scope :filter, ->(list_filter, sort_by, type) {
+  scope :filter, ->(list_filter, sort_by, type) do
     where("#{type} IN (?)", list_filter).order "#{type} #{sort_by}"
-  }
+  end
 end

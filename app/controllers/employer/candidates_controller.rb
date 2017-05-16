@@ -10,9 +10,9 @@ class Employer::CandidatesController < Employer::BaseController
 
     @object = Supports::Candidate.new @company, params[:job_id]
     if params[:type]
-      list = params[:array_id]
       sort_by = params[:sort].nil? ? "ASC" : params[:sort]
-      @candidates = @object.filter_candidates list, sort_by, params[:type]
+      @candidates = @object.filter_candidates params[:array_id],
+        sort_by, params[:type]
     else
       @candidates = @object.candidates
     end
@@ -20,7 +20,7 @@ class Employer::CandidatesController < Employer::BaseController
     if request.xhr?
       render json: {
         html_job: render_to_string(partial: "candidate",
-          locals: {candidates: @candidates},layout: false)
+          locals: {candidates: @candidates}, layout: false)
       }
     else
       respond_to do |format|

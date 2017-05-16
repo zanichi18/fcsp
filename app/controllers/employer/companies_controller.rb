@@ -17,7 +17,7 @@ class Employer::CompaniesController < Employer::BaseController
 
     render json: {
       flash: {
-       type: type
+        type: type
       }
     }
   end

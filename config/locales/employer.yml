@@ -65,8 +65,7 @@ en:
         email: "Email"
         interested_in: "Interested in"
       candidate:
-        total: "Total"
-        rows: "rows"
+        total_rows: "Total: %{row} rows"
     jobs:
       candidate_by_job:
         user: "User"
