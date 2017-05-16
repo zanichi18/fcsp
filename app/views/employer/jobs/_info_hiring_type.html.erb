@@ -86,10 +86,12 @@
 
   <div class="form-group">
     <div class="col-md-3">
-      <a href="#" class="btn btn-primary text-right"><%= t ".previous" %></a>
+      <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right">
+        <%= t ".previous" %>
+      </a>
     </div>
     <div class="col-md-3 col-md-offset-6">
-      <%= submit_tag t(".save_continue"), class: "btn btn-success text-right" %>
+      <%= submit_tag t(".save_continue"), class: "buttonNext btn btn-success text-right" %>
     </div>
   </div>
 <% end %>

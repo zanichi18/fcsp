@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :rack_mini_profiler_authorize_request, :set_locale,
     :friend_request, :shared_jobs
-  after_action :store_location, :flash_to_headers
+  after_action :store_location
 
   include ApplicationHelper
   include PublicActivity::StoreController
@@ -51,24 +51,5 @@ class ApplicationController < ActionController::Base
 
   def shared_jobs
     @shared_job_ids = current_user.shares.pluck :job_id if user_signed_in?
-  end
-
-  def flash_to_headers
-    return unless request.xhr?
-    response.headers["X-Message"] = flash_message
-    response.headers["X-Message-Type"] = flash_type.to_s
-    flash.discard
-  end
-
-  def flash_message
-    [:danger, :success].each do |type|
-      return flash[type] unless flash[type].blank?
-    end
-  end
-
-  def flash_type
-    [:danger, :success].each do |type|
-      return type unless flash[type].blank?
-    end
   end
 end

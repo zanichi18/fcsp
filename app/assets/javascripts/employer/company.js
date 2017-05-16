@@ -26,9 +26,19 @@ $(document).ready(function() {
       processData: false,
       data: formdata,
       success: function(data){
-        var type = data.flash.type;
-        if (type === 'danger') {
+        if (data.status === 'created') {
+          swal({
+            type: 'success',
+            title: I18n.t('employer.companies.update.updated'),
+            text: I18n.t('employer.companies.update.company_updated')
+          });
+        } else {
           $('#wizard').smartWizard('goBackward');
+          swal({
+            type: 'error',
+            title: I18n.t('employer.companies.update.failed'),
+            text: I18n.t('employer.companies.update.company_update_fail')
+          });
         }
       },
       error: function() {
