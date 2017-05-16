@@ -74,6 +74,24 @@
   .col-process {
     width: 15%;
 
+    .process {
+      position: relative;
+    }
+
+    .popup-change-status {
+      background: $white;
+      border-radius: 20px;
+      box-shadow: 2px 2px 2px $gray-9;
+      display: none;
+      height: 40px;
+      left: -203px;
+      padding: 8px 15px;
+      position: absolute;
+      text-align: center;
+      top: 28px;
+      width: 355px;
+    }
+
     .btn {
       color: $white;
     }

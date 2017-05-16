@@ -28,4 +28,25 @@ class Employer::CandidatesController < Employer::BaseController
       end
     end
   end
+
+  def update
+    if params[:type]
+      if params[:select].blank?
+        params[:job_id] = @company.jobs.pluck(:id)
+      else
+        params[:job_id] = params[:select]
+      end
+      @object = Supports::Candidate.new @company, params[:job_id]
+      @object.change_process_status params[:id], params[:type]
+
+      if request.xhr?
+        render json: {
+          type: Candidate.human_enum_name(:process, params[:type]),
+          class_button: "btn btn-xs btn-" + params[:type].first,
+          box_process: render_to_string(partial: "change_process",
+            locals: {process: params[:type]}, layout: false)
+        }
+      end
+    end
+  end
 end
