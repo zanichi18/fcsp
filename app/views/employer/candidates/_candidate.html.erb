@@ -1,7 +1,7 @@
 <% if candidates.empty? %>
   <tr class="show-filter-result">
     <td colspan="5">
-      <b><%= t ".total" %>: 0 <%= t ".rows" %></b>
+      <b><%= t ".total_rows", row: 0 %></b>
     </td>
   </tr>
 <% end %>
@@ -16,15 +16,14 @@
     </td>
 
     <td class="col-avatar">
-      <% if candidate.avatar.nil? %>
-        <%= image_tag "avatar.jpg", size: 48,class:"media-photo" %>
+      <% if candidate.avatar.blank? %>
+        <%= image_tag "avatar.jpg", size: 48, class: "media-photo" %>
       <% else %>
-        <%= image_tag candidate.avatar.picture, size: 48,class:"media-photo" %>
+        <%= image_tag candidate.avatar.picture, size: 48, class: "media-photo" %>
       <% end %>
-
     </td>
     <td class="col-username">
-      <span class="title"><b><%= candidate.user.name %></b>
+      <span class="title"><b><%= candidate.user_name %></b>
         <span class="pull-right job">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
       </span>
       <p class="summary"><%= candidate.user_email %></p>
@@ -46,12 +45,11 @@
       </span>
     </td>
   </tr>
-  <% if index == candidates.count - 1%>
+  <% if index == candidates.size - 1 %>
     <tr class="show-filter-result">
       <td colspan="5">
-        <b><%= t ".total" %>: <%= candidates.count %> <%= t ".rows" %></b>
+        <b><%= t ".total_rows" , row: candidates.size %></b>
       </td>
     </tr>
   <% end %>
 <% end %>
-

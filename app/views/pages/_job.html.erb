@@ -21,7 +21,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-6 col-xm-12">
-              <%= image_tag job.company.images.present? ? job.company.images.first : "default.jpg", class: "img-circle ava-company" %>
+              <%= image_tag job.company.images.present? ? job.company.images.first : "default.jpg", class: "img-circle" %>
               <%= link_to job.company_name, company_path(job.company) %>
             </div>
             <div class="actions-and-metas col-sm-6 col-xm-12">

@@ -74,9 +74,6 @@
   width: auto;
 }
 
-.ava-company {
-}
-
 .sales {
   border: 1px solid $blue;
   border-radius: 2px;
@@ -468,8 +465,8 @@
 @media screen and (max-width: 727px) {
   .logo-custom {
     img {
-      width: 100px;
       height: 60px;
+      width: 100px;
     }
   }
 }

@@ -4,12 +4,11 @@ class Employer::JobsController < Employer::BaseController
   before_action :update_status, only: :create
 
   def index
-
     if params[:type]
       listarr = params[:array_id]
-      if listarr.class == String
-        listarr = listarr.split(",").map(&:to_i)
-      end
+
+      listarr = listarr.split(",").map(&:to_i) if listarr.class == String
+
       sort_by = params[:sort].nil? ? "ASC" : params[:sort]
       @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
         .filter(listarr, sort_by, params[:type]).page(params[:page])
