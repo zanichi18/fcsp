@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_friendship
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
-  has_many :articles
+  has_many :articles, dependent: :destroy
   has_many :education_posts, class_name: Education::Post.name
   has_many :education_socials, class_name: Education::Social.name
   has_many :education_comments, class_name: Education::Comment.name

@@ -218,3 +218,6 @@ user_works:
   org_avatar: "/assets/org_avatar.png"
 school:
   per_search: 10
+article:
+  page: 5
+  description_limit: 850
