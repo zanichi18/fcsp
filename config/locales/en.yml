@@ -437,6 +437,13 @@ en:
       location: "Location"
       working_at: "Working at"
       change_cover: "Change your cover image"
+      new_feed: "New feed"
+      information: "Information"
+      posts: "Posts"
+      add_profile_session: "Add new profile sections"
+      background: "Background"
+      skills: "Skills"
+      accomplishments: "Accomplishments"      
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"

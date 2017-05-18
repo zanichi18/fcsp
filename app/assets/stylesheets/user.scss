@@ -52,13 +52,13 @@
 }
 
 .img-avatar {
-  height: 100px;
-  width: 100px;
+  height: 160px;
+  width: 160px;
 }
 
 .img-cover {
   height: 300px;
-  width: 800px;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -173,4 +173,108 @@
 
 .job {
   margin-top: 20px;
+}
+.avatar-user {
+  background: $dark-gray;
+  border: 3px solid $white-eee;
+  color: $white !important;
+  float: left;
+  font-size: 2em;
+  height: 160px;
+  line-height: 160px;
+  margin-left: 15px;
+  margin-top: -130px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  width: 160px;
+}
+
+.site-name {
+  color: $white;
+  float: left;
+  font-size: 2.4em;
+  margin-left: 15px;
+  margin-top: -65px !important;
+}
+
+.site-description {
+  color: $white;
+  float: left;
+  font-size: 1.3em;
+  margin-left: 15px;
+  margin-top: -30px !important;
+}
+
+.main-menu {
+  left: 190px;
+  position: absolute;
+}
+
+.avatar-user:hover .icon-upload-avatar {
+  display: block;
+}
+
+.icon-upload-avatar {
+  background: $background-avatar;
+  display: none;
+  height: 160px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 0%;
+  width: 160px;
+  z-index: 100;
+}
+
+.cover-image {
+  text-align: center;
+}
+
+.margintop {
+  margin-top: 100px;
+}
+
+.margin-seven {
+  margin: 7px;
+}
+
+.add-infomation {
+  max-height: 450px;
+  overflow-y: auto;
+  width: 150%;
+}
+
+@media (max-width: 768px) {
+  .avatar-user {
+    float: left;
+    margin-left: 15px;
+    margin-top: -65px;
+    max-height: 100px;
+    max-width: 100px;
+    transition: all .3s ease-in-out;
+  }
+}
+
+@media (max-width: 490px) {
+  .site-name {
+    color: $white;
+    float: left;
+    font-size: 1.5em;
+    line-height: 20px;
+    margin-left: 125px;
+    margin-top: -100px !important;
+  }
+
+  .site-description {
+    color: $white;
+    float: left;
+    font-size: 1.3em;
+    margin-left: 125px;
+    margin-top: -80px !important;
+  }
+>>>>>>> fix cover and avatar view
 }

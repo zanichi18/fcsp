@@ -1,59 +1,112 @@
-<div class="container">
-  <div class="col-md-12">
-    <div class="user-profile clearfix">
-      <div class="cover-image">
-        <% if user.is_user? current_user %>
-          <%= load_user_cover user, class: "img-cover my-img-cover" %>
-          <div class="ico-upload-cover" data-toggle="modal"
-            data-target="#changeCoverModal">
-            <h3 class="glyphicon glyphicon-camera"></h3>
-            <p><%= t ".change_cover" %></p>
-          </div>
-        <% else %>
-          <%= load_user_cover user, class: "img-cover" %>
-        <% end %>
-      </div>
-      <div class="user clearfix">
-        <div class="user-avatar">
-          <% if user.is_user? current_user %>
-            <%= load_user_avatar user, class: "img-thumbnail img-avatar my-img-avatar" %>
-            <div class="ico-upload-avatar">
-              <h3 class="glyphicon glyphicon-camera" data-toggle="modal"
-                data-target="#changeAvatarModal"></h3>
-            </div>
-          <% else %>
-            <%= load_user_avatar user, class: "img-thumbnail img-avatar" %>
-          <% end %>
-        </div>
-        <h2><%= user.name %></h2>
-        <div class="user-actions">
-          <div class="btn-group">
-            <% if user_signed_in? && !user.is_user?(current_user) %>
-              <%= render "friend_ship_form" %>
+<%= render "change_avatar", user: user if user.is_user? current_user %>
+<%= render "change_cover", user: user if user.is_user? current_user %>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header id="header">
+          <div class="cover-image">
+            <% if user.is_user? current_user %>
+              <%= load_user_cover user, class: "img-cover my-img-cover" %>
+              <div class="ico-upload-cover margintop" data-toggle="modal"
+                data-target="#changeCoverModal">
+                <h3 class="glyphicon glyphicon-camera" align="center"></h3>
+                <p><%= t ".change_cover" %></p>
+              </div>
+            <% else %>
+              <%= load_user_cover user, class: "img-cover" %>
             <% end %>
-            <button class="btn btn-default btn-sm tip btn-responsive">
-              <span class="glyphicon glyphicon-envelope glyphicon glyphicon-white"></span>
-              <%= t ".message" %>
-            </button>
-            <button class="btn btn-default btn-sm tip btn-responsive">
-              <span class="glyphicon glyphicon-pencil glyphicon glyphicon-white"></span>
-              <%= t ".edit_profile" %>
-            </button>
           </div>
-        </div>
-      </div>
-      <div class="additional-info">
-        <p>
-          <span class="glyphicon glyphicon-briefcase"></span>
-          <span class="title"><%= t ".working_at" %>:</span>
-        </p>
-        <p>
-          <span class="glyphicon glyphicon-map-marker"></span>
-          <span class="title"><%= t ".location" %>:</span>
-        </p>
+          <nav class="navbar navbar-default">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNav">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand avatar-user" href="#" data-toggle="modal"
+                data-target="#changeAvatarModal">
+                <% if user.is_user? current_user %>
+                  <%= load_user_avatar user, class: "img-avatar" %>
+                  <div class="icon-upload-avatar">
+                    <h3 class="glyphicon glyphicon-camera"></h3>
+                  </div>
+                <% else %>
+                  <%= load_user_avatar user, class: "img-avatar" %>
+                <% end %>
+              </a>
+              <span class="site-name"><b><%= user.name %></b></span>
+              <span class="site-description"><%= user.email %></span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="mainNav" >
+              <ul class="nav main-menu navbar-nav">
+                <li><a href="#"><i class="fa fa-home"></i><%= t ".new_feed" %></a></li>
+                <li><a href="#"><%= t ".infomation" %></a></li>
+                <li><a href="#"><%= t ".posts" %></a></li>
+              </ul>
+
+              <div class="nav navbar-nav navbar-right">
+                <% if user_signed_in? && !user.is_user?(current_user) %>
+                  <div class="margin-seven">
+                    <%= render "friend_ship_form" %>
+                  </div>
+                <% else %>
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle margin-seven"
+                      type="button" data-toggle="dropdown">
+                      <span class="glyphicon glyphicon-plus"></span>
+                        <%= t ".add_profile_section" %>
+                    <span class="caret"></span></button>
+                    <div class="dropdown-menu add-infomation">
+                      <div class="clearfix">
+                        <div class="accordion margin-seven">
+                          <div class="acctitle">
+                            <i class="acc-closed icon-ok-circle"></i>
+                            <i class="acc-open icon-remove-circle"></i>
+                            <%= t ".background" %>
+                          </div>
+
+                          <div class="acc_content clearfix">
+                            <% 3.times do %>
+                              <div class="top-cart-item clearfix">
+                                <a href="#"><i class="i-circled i-light i-small icon-plus"></i></a>
+                                <div class="top-cart-item-desc">
+                                  <b>Title Example</b>
+                                  <span class="top-cart-item-price">Decription Example</span>
+                                </div>
+                              </div>
+                            <% end %>
+                          </div>
+
+                          <div class="acctitle">
+                            <i class="acc-closed icon-ok-circle"></i>
+                            <i class="acc-open icon-remove-circle"></i>
+                            <%= t ".skills" %>
+                          </div>
+                          <div class="acc_content clearfix">
+                          </div>
+
+                          <div class="acctitle">
+                            <i class="acc-closed icon-ok-circle"></i>
+                            <i class="acc-open icon-remove-circle"></i>
+                            <%= t ".accomplishments" %>
+                          </div>
+
+                          <div class="acc_content clearfix">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </nav>
+        </header>
       </div>
     </div>
   </div>
 </div>
-<%= render "change_avatar", user: user if user.is_user? current_user %>
-<%= render "change_cover", user: user if user.is_user? current_user %>

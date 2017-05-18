@@ -471,6 +471,13 @@ vi:
       location: "Vị trí"
       working_at: "Đang làm việc tại"
       change_cover: "Thay đổi ảnh bìa"
+      new_feed: "Bảng tin"
+      information: "Cá nhân"
+      posts: "Bài đăng"
+      add_profile_session: "Add new profile sections"
+      background: "Background"
+      skills: "Skills"
+      accomplishments: "Accomplishments"
     social_network:
       about_me: "Về tôi"
       social_profiles: "Kết nối với tôi"

@@ -1,34 +1,34 @@
-$(document).ready(function(){
-  getLocation.initialize();
-});
+// $(document).ready(function(){
+//   getLocation.initialize();
+// });
 
-var getLocation = {
-  initialize: function() {
-    getLocation.fetch_data();
-  },
+// var getLocation = {
+//   initialize: function() {
+//     getLocation.fetch_data();
+//   },
 
-  fetch_data: function() {
-    var url_path = window.location.pathname;
-    $.get(url_path, function(data) {
-      var addresses = data['addresses'];
-      const latitude = addresses[0].latitude;
-      const longitude = addresses[0].longitude;
+//   fetch_data: function() {
+//     var url_path = window.location.pathname;
+//     $.get(url_path, function(data) {
+//       var addresses = data['addresses'];
+//       const latitude = addresses[0].latitude;
+//       const longitude = addresses[0].longitude;
 
-      getLocation.draw_map(latitude, longitude);
-    }, 'json');
-  },
+//       getLocation.draw_map(latitude, longitude);
+//     }, 'json');
+//   },
 
-  draw_map: function(lat, lng) {
-    var companyLatlng = new google.maps.LatLng(lat, lng);
-    var mapOptions = {
-      zoom: 15,
-      center: companyLatlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    var marker = new google.maps.Marker({
-      position: companyLatlng,
-      map: map
-    });
-  }
-}
+//   draw_map: function(lat, lng) {
+//     var companyLatlng = new google.maps.LatLng(lat, lng);
+//     var mapOptions = {
+//       zoom: 15,
+//       center: companyLatlng,
+//       mapTypeId: google.maps.MapTypeId.ROADMAP
+//     }
+//     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+//     var marker = new google.maps.Marker({
+//       position: companyLatlng,
+//       map: map
+//     });
+//   }
+// }
