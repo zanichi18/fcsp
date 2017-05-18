@@ -1,0 +1,15 @@
+#wizard {
+  .stepContainer {
+    overflow: hidden;
+  }
+
+  .actionBar {
+    text-align: left;
+  }
+}
+
+.dashboard_graph {
+  .actionBar {
+    display: none;
+  }
+}

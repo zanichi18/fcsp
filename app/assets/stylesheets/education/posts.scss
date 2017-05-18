@@ -13,7 +13,7 @@
   border: 0;
 
   .widget {
-    color: $dark-gray;
+    color: $gray-black;
     margin-top: 50px;
 
     &:nth-child(1) {
@@ -122,7 +122,7 @@ blockquote {
 
   th,
   td {
-    border: 1px solid $gray87;
+    border: 1px solid $gray-ddd;
     padding: 5px 7px;
   }
 }

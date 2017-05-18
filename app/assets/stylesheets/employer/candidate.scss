@@ -11,7 +11,7 @@
     }
 
     &:hover {
-      background-color: $bg-th;
+      background-color: $white-eee;
       cursor: pointer;
     }
   }
@@ -111,7 +111,7 @@
   }
 
   .ckbox label::before {
-    background-color: $bg-select;
+    background-color: $white;
     border: 1px solid $border-color-label;
     border-radius: 2px;
     content: '';
@@ -130,7 +130,7 @@
     }
 
     + label::after {
-      color: $bg-select;
+      color: $white;
       content: '\e013';
       font-family: 'Glyphicons Halflings';
       font-size: 11px;
@@ -145,7 +145,7 @@
   }
 
   .star:hover {
-    color: $color-form-control;
+    color: $gray-80;
   }
 
   .star.star-checked:hover {
@@ -168,7 +168,7 @@
       background: $background-filter;
       border: medium none;
       border-radius: 2px;
-      color: $bg-select;
+      color: $white;
       height: 18px;
       padding: 0;
       width: 17px;
@@ -200,7 +200,7 @@
 }
 
 .filter {
-  background: $bg-select;
+  background: $white;
   position: absolute;
   right: 0;
   top: 19px;
@@ -212,9 +212,9 @@
   }
 
   .button-sort {
-    background: $bg-select;
+    background: $white;
     border: 0;
-    color: $bg-filter-popup;
+    color: $gray-black;
     height: 30px;
     line-height: 30px;
     padding-left: 20px;
@@ -222,13 +222,13 @@
     width: 100%;
 
     &:hover {
-      background-color: $bg-hover-filter-button;
+      background-color: $gray97;
     }
   }
 
   .button-show-value {
     &::after {
-      color: $bg-filter-popup;
+      color: $gray-black;
       content: '\e072';
       float: right;
       font-family: 'Glyphicons Halflings';
@@ -274,7 +274,7 @@
   }
 
   label::after {
-    color: $bg-filter-popup;
+    color: $gray-black;
     display: inline-block;
     font-size: 11px;
     left: 0;
@@ -306,7 +306,7 @@
     }
 
     + label::before {
-      background-color: $bg-th;
+      background-color: $white-eee;
       cursor: not-allowed;
     }
   }
@@ -315,7 +315,7 @@
 
 .stylish-input-group {
   .input-group-addon {
-    background: $bg-select !important;
+    background: $white !important;
     height: 30px;
 
     button {
@@ -330,7 +330,7 @@
 
   .form-control {
     border-bottom-left-radius: 4px;
-    border-color: $color-form-control;
+    border-color: $gray-80;
     border-right: 0;
     border-top-left-radius: 4px;
     box-shadow: 0 0 0;

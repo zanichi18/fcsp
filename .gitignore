@@ -64,7 +64,7 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 /public/javascripts/translations.js
-
+/node_modules
 .rake_tasks~
 
 
