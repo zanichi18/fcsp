@@ -6,7 +6,7 @@
         <div class="row clearfix">
           <div class="col-md-12">
             <div class="tabs tabs-alt clearfix" id="tabs-profile">
-              <ul class="tab-nav clearfix">
+              <ul class="tabs tabs-alt clearfix">
                 <% if @user.is_user? current_user %>
                   <li>
                     <a href="#tab-new-feed">
@@ -30,11 +30,14 @@
                   </a>
                 </li>
               </ul>
-              <div class="tab-container">
-              </div>
-              <div class="tab-content clearfix" id="tab-suggest-job">
-                <%= render "user_job" %>
-              </div>
+              <% if @user.is_user? current_user %>
+                <div class="tab-container" id="tab-new-feed">
+                  <%= render "new_feed" %>
+                </div>
+                <div class="tab-content clearfix" id="tab-suggest-job">
+                  <%= render "user_job" %>
+                </div>
+              <% end %>
               <div class="tab-content clearfix" id="tab-information">
                 <%= render "info_users/introduction" %>
                 <%= render "info_users/ambition" %>

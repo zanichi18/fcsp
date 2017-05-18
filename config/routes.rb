@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   end
 
   resources :jobs, only: [:index, :show]
+  resources :share_jobs, only: [:create, :destroy]
   resources :candidates, only: [:create, :destroy]
   resources :bookmarks, only: [:create, :destroy]
   resources :follow_companies, only: [:create, :destroy]

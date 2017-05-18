@@ -23,7 +23,7 @@
         <li>
           <a href="#"><i class="icon-comments"></i> 13</a>
         </li>
-        <% if user_signed_in? %>
+        <% if user.is_user? current_user %>
           <li>
             <% if shared_job? job %>
               <%= link_to t(".unshare"), "#", class: "icon-remove unshare-job", data: {id: job.id} %>

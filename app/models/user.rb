@@ -38,6 +38,8 @@ class User < ApplicationRecord
   has_many :user_works, dependent: :destroy
   has_many :organizations, through: :user_works
   has_many :schools, through: :user_educations, source: :school
+  has_many :shares, class_name: ShareJob.name, dependent: :destroy
+  has_many :shared_jobs, through: :shares, source: :job
   has_one :avatar, class_name: Image.name, foreign_key: :id,
     primary_key: :avatar_id
   has_one :cover_image, class_name: Image.name, foreign_key: :id,
@@ -135,6 +137,15 @@ class User < ApplicationRecord
 
   def unapply_job job
     candidates.find_by(job_id: job.id).destroy if job.present?
+  end
+
+  def share job
+    shares.build job_id: job.id
+  end
+
+  def unshare job
+    unshare = shares.find_by(job_id: job.id)
+    unshare.destroy if unshare
   end
 
   def is_user? user

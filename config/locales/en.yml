@@ -84,6 +84,8 @@ en:
     job:
       read_more: "Read more"
       type_of_candidates: "Type of candidates: "
+      share: " Share"
+      unshare: " Unshare"
     recommend_user:
       show_more: "View more"
   follow_companies:
@@ -93,6 +95,22 @@ en:
     destroy:
       unfollow: "Unfollow company successfully!"
       not_found: "Company not found!"
+  share_jobs:
+    share: "Do you want to share this job?"
+    unshare: "Do you want to unshare this job?"
+    create:
+      not_found: "Job not found"
+      share_success: "Share job successfully!"
+      share_fail: "Fail to share job!"
+    destroy:
+      not_found: "Job not found"
+      unshare_success: "Unshare job successfully!"
+      unshare_fail: "Fail to unshare job!"
+    job:
+      share: " Share"
+      unshare: " Unshare"
+    share_job:
+      shared_at: "shared at "
   pages:
     index:
       title: "Home"
