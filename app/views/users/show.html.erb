@@ -4,50 +4,22 @@
     <div class="col-md-12">
       <div class="col-sm-9">
         <div class="row clearfix">
-          <div class="col-md-12">
-            <div class="tabs tabs-alt clearfix" id="tabs-profile">
-              <ul class="tabs tabs-alt clearfix">
-                <% if @user.is_user? current_user %>
-                  <li>
-                    <a href="#tab-new-feed">
-                      <i class="icon-rss2"></i><%= t ".new_feed" %>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#tab-suggest-job">
-                      <i class="icon-lightbulb"></i><%= t ".job_suggest" %>
-                    </a>
-                  </li>
-                <% end %>
-                <li>
-                  <a href="#tab-information">
-                    <i class="icon-info-sign"></i><%= t ".information" %>
-                  </a>
-                </li>
-                <li>
-                  <a href="#tab-posts">
-                    <i class="icon-pencil2"></i><%= t ".posts" %>
-                  </a>
-                </li>
-              </ul>
-              <% if @user.is_user? current_user %>
-                <div class="tab-container" id="tab-new-feed">
-                  <%= render "new_feed" %>
-                </div>
-                <div class="tab-content clearfix" id="tab-suggest-job">
-                  <%= render "user_job" %>
-                </div>
-              <% end %>
-              <div class="tab-content clearfix" id="tab-information">
-                <%= render "info_users/introduction" %>
-                <%= render "info_users/ambition" %>
-                <%= render "info_users/quote" %>
-                <%= render "user_portfolios/user_portfolio" %>
-                <%= render "awards/user_award" %>
-                <%= render "work" %>
-                <%= render "user_education", user: @user %>
-              </div>
+          <% if @user.is_user? current_user %>
+            <div id="tab-new-feed" class="hide-tab active">
+              <%= render "new_feed" %>
             </div>
+            <div class="clearfix hide-tab" id="tab-suggest-job">
+              <%= render "user_job" %>
+            </div>
+          <% end %>
+          <div class="hide-tab clearfix" id="tab-information">
+            <%= render "info_users/introduction" %>
+            <%= render "info_users/ambition" %>
+            <%= render "info_users/quote" %>
+            <%= render "user_portfolios/user_portfolio" %>
+            <%= render "awards/user_award" %>
+            <%= render "work" %>
+            <%= render "user_education", user: @user %>
           </div>
         </div>
       </div>

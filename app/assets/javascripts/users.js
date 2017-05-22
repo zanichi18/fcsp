@@ -41,6 +41,16 @@ $(document).ready(function(){
   $('#changeCoverModal').on('click', '.btn-update-cover', function(){
     $('#form-update-cover').submit();
   });
+
+  $('.hide-tab').hide();
+  $('.hide-tab.active').show();
+  $('.user-show a').click(function(){
+    $('.user-show li.active').removeClass('active');
+    $(this).parent().addClass('active');
+    var target = '#' + $(this).data('target');
+    $('.hide-tab').not(target).hide();
+    $(target).show();
+  });
 });
 
 function read_url(input) {
