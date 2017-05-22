@@ -1,6 +1,29 @@
-$('.introduction-content').html('<%= j render "info_users/introduction_content" %>');
-$('#edit-introduction-modal').modal('hide');
-$('.ambition-content').html('<%= j render "info_users/ambition_content" %>');
-$('#edit-ambition-modal').modal('hide');
-$('.quote-content').html('<%= j render "info_users/quote_content" %>');
-$('#edit-quote-modal').modal('hide');
+<% if @info_user.errors[:ambition].any? %>
+  $('#edit-ambition-modal').modal('hide')
+  $('.modal-backdrop').remove()
+  $('#edit-ambition-modal').replaceWith('<%= j render "info_users/edit_ambition_modal" %>')
+  $('#edit-ambition-modal').modal('show')
+<% else %>
+  $('.ambition-content').html('<%= j render "info_users/ambition_content" %>')
+  $('#edit-ambition-modal').modal('hide');
+<% end %>
+
+<% if @info_user.errors[:qoute].any? %>
+  $('#edit-quote-modal').modal('hide')
+  $('.modal-backdrop').remove()
+  $('#edit-quote-modal').replaceWith('<%= j render "info_users/edit_quote_modal" %>')
+  $('#edit-quote-modal').modal('show')
+<% else %>
+  $('#edit-quote-modal').modal('hide')
+  $('.quote-content').html('<%= j render "info_users/quote_content" %>')
+<% end %>
+
+<% if @info_user.errors[:introduce].any? %>
+  $('#edit-introduction-modal').modal('hide')
+  $('.modal-backdrop').remove()
+  $('#edit-introduction-modal').replaceWith('<%= j render "info_users/edit_introduction_modal" %>')
+  $('#edit-introduction-modal').modal('show')
+<% else %>
+  $('#edit-introduction-modal').modal('hide')
+  $('.introduction-content').html('<%= j render "info_users/introduction_content" %>')
+<% end %>

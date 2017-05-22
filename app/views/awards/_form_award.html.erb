@@ -6,21 +6,21 @@
         <h4 class="modal-title"><%= t ".award_header" %></h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @award, remote: true do |f| %>
+        <%= simple_form_for @award, remote: true, html: {class: "award-form"} do |f| %>
           <%= f.input :name, label: t(".title"), class: "form-control" %>
-          <%= f.input :time, label: t(".made"), class: "form-control datepicker" %>
+          <%= f.input :time, as: :date, html5: true, label: t(".made"),
+            class: "form-control datepicker" %>
           <div class="button-modal-award">
-            <%= button_tag type: :submit, class: "button button-circle" do %>
+            <%= button_tag type: :submit,
+              class: "button button-3d button-rounded button-green" do %>
               <%= button_text %>
             <% end %>
             <button type="button"
-              class="button button-circle button-3d button-light button-white" data-dismiss="modal">
+              class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
               <%= t ".close" %>
             </button>
           </div>
         <% end %>
-      </div>
-      <div class="modal-footer">
       </div>
     </div>
   </div>

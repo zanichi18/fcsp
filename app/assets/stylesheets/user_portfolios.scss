@@ -45,3 +45,20 @@
 .input-file {
   display: none !important;
 }
+
+.button-portfolio-modal {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.portfolio-form {
+  margin-bottom: 0 !important;
+}
+
+.button-white-text {
+  color: $white !important;
+}
+
+.user-portfolio-header {
+  font-size: 20px;
+}

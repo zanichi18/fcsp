@@ -1,16 +1,18 @@
-<div class="award-header">
-  <span class="title-award">
-    <%= t ".user_award" %>
-  </span>
-   <% if @user.is_user? current_user %>
-    <%= link_to new_award_path, remote: true,
-      class: "button button-3d button-mini button-rounded button-white button-light award"  do %>
-      <i class="icon-plus-sign"></i>
-      <%= t ".add" %>
-    <% end %>
-  <% end %>
+<div class="row">
+  <div class="panel panel-default user-info-panel">
+    <div class="award-header">
+      <strong><%= t ".user_award" %></strong>
+      <% if @user.is_user? current_user %>
+        <%= link_to new_award_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green button-light button-white-text award" do %>
+          <i class="icon-plus-sign"></i>
+          <%= t ".add" %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="show-award">
+      <%= render "awards/show_award", awards: @user_object.awards %>
+    </div>
+    <div class="award-modal"></div>
+  </div>
 </div>
-<div class="show-award">
-   <%= render "awards/show_award",awards: @user_object.awards %>
- </div>
-<div class="award-modal"></div>

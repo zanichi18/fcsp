@@ -7,9 +7,8 @@
         <h4 class="modal-title text-center"><%= t ".header" %></h4>
       </div>
       <div class="modal-body">
-        <%= f.label :organization, t(".company") %>
         <div class="form-group dropdown">
-          <%= f.text_field :organization,
+          <%= f.input :organization,
             value: @user_work.organization_name,
             class: "form-control dropdown-toggle",
             placeholder: t(".company"),
@@ -18,25 +17,22 @@
           <ul class="dropdown-menu form-control org-search-result">
             <div id="livesearch_dom"></div>
           </ul>
-        </div> 
-        <%= f.label :position, t(".position") %>
-        <%= f.text_field :position,
+        </div>
+        <%= f.input :position,
           placeholder: t(".position"), class: "form-control" %>
-        <%= f.label :start_time, t(".start_time") %>
-        <%= f.date_field :start_time,
-          class: "form-control",
-          placeholder: t(".start_date") %>
-        <%= f.label :end_time, t(".end_time") %>
-        <%= f.date_field :end_time,
-          class: "form-control",
-          placeholder: t(".start_date") %>
-        <%= f.label :stauts, t(".status") %>
-        <%= f.select :status, 
-          options_for_select(work_status_select),{},
-          class: "form-control inline" %>
-        <%= f.label :description, t(".description") %>
-        <%= f.text_field :description,
-          placeholder: t(".description"), class: "form-control" %>
+        <div class="col_half">
+          <%= f.input :start_time, as: :date, html5: true, class: "form-control",
+            placeholder: t(".start_date") %>
+        </div>
+        <div class="col_half col_last">
+          <%= f.input :end_time, as: :date, html5: true, class: "form-control",
+            placeholder: t(".start_date") %>
+        </div>
+        <%= f.input :status, collection: work_status_select,
+          include_blank: false, class: "form-control inline" %>
+        <%= f.input :description,
+          placeholder: t(".description"), class: "form-control",
+          input_html: {rows: 5} %>
       </div>
       <div class="modal-footer text-center">
         <%= f.submit t(".update"), class: "btn btn-primary add-user-work-btn" %>

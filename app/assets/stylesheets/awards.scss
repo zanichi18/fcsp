@@ -29,5 +29,25 @@
 }
 
 .button-modal-award {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.award-form {
+  margin-bottom: 0 !important;
+}
+
+.award-header {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+}
+
+.award-hover {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hover-content {
+  padding-right: 5px;
 }
