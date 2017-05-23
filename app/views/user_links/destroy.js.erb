@@ -1,0 +1,6 @@
+<% if @flash.status == 200 %>
+  $.growl.notice({message: '<%= @flash.message %>'});
+  $('#user-link-<%= @user_link.id %>').remove();
+<% else %>
+  $.growl.error({message: '<%= @flash.message %>'});
+<% end %>

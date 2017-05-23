@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="panel panel-default user-info-panel">
+    <div class="user-link">
+      <strong class="user-link-title">
+        <%= t ".links" %>
+      </strong>
+      <% if user.is_user? current_user %>
+        <%= link_to new_user_link_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-link" do %>
+          <i class="icon-plus-sign"></i>
+          <%= t ".add" %>
+        <% end %>
+      <% end %>
+      <hr>
+      <div class="list-user-link">
+        <%= render partial: "user_links/user_link", collection: user.user_links.newest %>
+      </div>
+    </div>
+    <div class="render-form-user-link-modal"></div>
+  </div>
+</div>

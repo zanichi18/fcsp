@@ -49,6 +49,7 @@ class User < ApplicationRecord
   has_one :group, class_name: Group.name, through: :user_group, source: :group
   has_one :company, through: :user_group, source: :company,
     class_name: Company.name
+  has_many :user_links, dependent: :destroy
 
   accepts_nested_attributes_for :info_user
 

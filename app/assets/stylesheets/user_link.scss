@@ -1,0 +1,35 @@
+@import 'variables/color';
+
+.btn-add-user-link {
+  float: right;
+  text-transform: capitalize !important;
+}
+
+.user-link-title {
+  font-weight: bold;
+}
+
+.link-info {
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.link-string {
+  font-size: 16px;
+  opacity: .8;
+}
+
+.edit-link {
+  font-size: 13px;
+  font-style: italic;
+  margin-left: 20px;
+
+  a {
+    color: $blue;
+  }
+}
+
+.user-link {
+  font-size: 20px;
+  padding-bottom: 20px;
+}

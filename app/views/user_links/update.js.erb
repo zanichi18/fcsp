@@ -1,0 +1,8 @@
+<% if @flash.status == 200 %>
+  $.growl.notice({message: '<%= @flash.message %>'});
+  $('#user-link-<%= @user_link.id %>').replaceWith(`<%= j render partial: "user_links/user_link",
+    locals: {user_link: @user_link} %>`);
+<% else %>
+  $.growl.error({message: '<%= @flash.message %>'});
+<% end %>
+$('#formUserLinkModal').modal('hide');
