@@ -1,8 +1,46 @@
-<div class="fancy-title topmargin title-border">
+<div class="fancy-title topmargin title-border-custom">
   <h4><%= t ".about_me" %></h4>
+  <a href="#" id="edit-quote" data-toggle="modal" 
+    data-target="#edit-about-me-modal" class="pull-right nomargin">
+    <span class="icon-pencil"></span> <%= t ".edit" %>
+  </a>
+  <%= render "info_users/edit_about_me_modal" %>
 </div>
 <% if @user.info_user.present? %>
-  <p><%= @user.info_user_introduce %></p>
+  <div class="block-quote education-info">
+    <p>
+      <%= quote_content @user.info_user.quote %>
+      <% if @user.is_user? current_user %>
+        <span class="edit-education">
+          <span class="pull-right nomargin">
+            <a href="#" id="edit-quote"
+              data-toggle="modal" data-target="#edit-quote-modal">
+              <span class="icon-pencil"></span> <%= t ".edit" %>
+            </a>
+          </span>
+        </span>
+      <% end %>
+    </p>
+  </div>
+  <%= render "info_users/edit_quote_modal" %>
+  <div class="top-cart-item clearfix">
+    <i class="i-rounded i-small i-bordered icon-home"></i>
+    <div class="top-cart-item-desc">
+      <b><%= t ".address" %></b>
+      <span class="top-cart-item-price" id="address-information">
+        <%= @user.info_user.address %>
+      </span>
+    </div>
+  </div>
+  <div class="top-cart-item clearfix">
+    <i class="i-rounded i-small i-bordered icon-phone"></i>
+    <div class="top-cart-item-desc">
+      <b><%= t ".phone" %></b>
+      <span class="top-cart-item-price" id="phone-information">
+        <%= @user.info_user.phone %>
+      </span>
+    </div>
+  </div>
 <% end %>
 <div class="fancy-title topmargin title-border">
   <h4><%= t ".social_profiles" %></h4>

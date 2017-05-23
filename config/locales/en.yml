@@ -447,6 +447,9 @@ en:
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"
+      address: "Address"
+      phone: "Phone"
+      add_quote: "Add your favorite quote"
     change_avatar:
       title: "Update avatar"
       save: "Save"
@@ -544,6 +547,9 @@ en:
       cancel_button: "Cancel"
       edit_introduction: "Edit introduction"
       introduce_placeholder: "Introduce yourself..."
+    edit_about_me_modal:
+      update_button: "Update"
+      cancel_button: "Cancel"      
     find_info_user:
       infor_user_not_found: "Infomation of user not found"
     ambition:

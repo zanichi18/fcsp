@@ -51,6 +51,36 @@ $(document).ready(function(){
     $('.hide-tab').not(target).hide();
     $(target).show();
   });
+
+  $('.edit-education').hide();
+  $('.education-info').mouseenter(function(){
+    $(this).find('.edit-education').show();
+  }).mouseleave(function() {
+    $(this).find('.edit-education').hide();
+  });
+
+
+  $('form#edit-about-me-form,' + 'form#edit-ambition-form,' + 
+    'form#edit-introduction-form,' + 'form#edit-quote-form'
+  ).bind('ajax:success', function(event, xhr, settings) {
+    if(xhr['errors']) {
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+      var $form = $(this);
+      if(xhr['errors']) {
+        $.map(xhr['errors'], function(v, k) {
+          var element_id = '#info_user_' + k;
+          var $divFormGroup = $form.find(element_id).parent();
+          $divFormGroup.addClass('has-error');
+          $divFormGroup.append('<span class="help-block">' + v + '</span>');
+        });
+      }
+    }else {
+      $(this).closest('.modal').modal('hide');
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+    }
+  })
 });
 
 function read_url(input) {

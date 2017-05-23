@@ -2,8 +2,8 @@
 <section id="content">
   <div class="container">
     <div class="col-md-12">
-      <div class="col-sm-9">
-        <div class="row clearfix">
+      <div class="col-sm-8">
+        <div class="clearfix topmargin">
           <% if @user.is_user? current_user %>
             <div id="tab-new-feed" class="hide-tab active">
               <%= render "new_feed" %>
@@ -15,7 +15,6 @@
           <div class="hide-tab clearfix" id="tab-information">
             <%= render "info_users/introduction" %>
             <%= render "info_users/ambition" %>
-            <%= render "info_users/quote" %>
             <%= render "user_portfolios/user_portfolio" %>
             <%= render "awards/user_award" %>
             <%= render "work" %>
@@ -24,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <%= render "social_network" %>
       </div>
     </div>

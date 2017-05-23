@@ -5,7 +5,8 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".edit_introduction" %></h4>
       </div>
-      <%= simple_form_for @info_user, remote: :true do |f| %>
+      <%= simple_form_for @info_user, remote: :true,
+        html: {id: "edit-introduction-form"} do |f| %>
         <div class="modal-body">
           <%= f.input :introduce, as: :text, placeholder: t(".introduce_placeholder"), 
             class: "sm-form-control modal-txta",
