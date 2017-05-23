@@ -1,0 +1,33 @@
+ <div class="modal fade" id="user-project-form" role="dialog">
+  <div class="modal-dialog">
+  <%= simple_form_for @user_project, remote: true do |f| %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><%= t ".header" %></h4>
+      </div>
+      <div class="modal-body">
+        <%= f.input :title, label: t(".title"), class: "form-control" %>
+        <%= f.input :url, label: t("users.form_portfolio.url"), class: "form-control" %>
+        <div class="col_half">
+          <%= f.input :start_date, as: :date, html5: true, class: "form-control",
+            placeholder: t(".start_date") %>
+        </div>
+        <div class="col_half col_last">
+          <%= f.input :end_date, as: :date, html5: true, class: "form-control",
+            placeholder: t(".start_date") %>
+        </div>
+        <%= f.input :description, as: :text, label: t(".description"),
+          input_html: {rows: Settings.user_portfolio.textarea_rows,
+          class: "form-control"} %>
+      </div>
+      <div class="modal-footer text-center">
+        <%= f.submit t(".update"), class: "btn btn-primary add-user-work-btn" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

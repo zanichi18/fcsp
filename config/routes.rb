@@ -76,4 +76,5 @@ Rails.application.routes.draw do
   resources :user_educations
   resources :user_links
   resources :user_posts
+  resources :user_projects
 end

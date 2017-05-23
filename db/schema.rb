@@ -677,6 +677,18 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["user_id"], name: "index_user_portfolios_on_user_id", using: :btree
   end
 
+  create_table "user_projects", force: :cascade do |t|
+    t.string   "title"
+    t.string   "url"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_user_projects_on_user_id", using: :btree
+  end
+
   create_table "user_works", force: :cascade do |t|
     t.string   "position"
     t.text     "description"
@@ -752,6 +764,7 @@ ActiveRecord::Schema.define(version: 20170523081237) do
   add_foreign_key "user_groups", "users"
   add_foreign_key "user_links", "users"
   add_foreign_key "user_portfolios", "users"
+  add_foreign_key "user_projects", "users"
   add_foreign_key "user_works", "organizations"
   add_foreign_key "user_works", "users"
 end

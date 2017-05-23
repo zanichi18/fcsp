@@ -496,6 +496,13 @@ vi:
       from_album: "Chọn từ bộ sưu tập"
     album_image:
       no_image: "Không có hình ảnh nào"
+    user_education:
+      education: "Học vấn"
+      add: "Thêm"
+    user_link:
+      links: "Liên kết"
+      add: "Thêm"
+  user_works:
     user_work_form:
       all_status:
         full_time: "Toàn thời gian"
@@ -516,20 +523,12 @@ vi:
         part_time: "Bán thời gian"
         internship: "Thực tập sinh"
       split: " - "
+      sure: "Bạn chắc chứ?"
     work:
-      add: " Thêm"
+      add: "Cập nhật"
       user_work: "Công việc"
     org_search:
       people: "%{num} người khác"
-    user_education:
-      education: "Học vấn"
-      add: "Thêm"
-    user_link:
-      links: "Liên kết"
-      add: "Thêm"
-    posts:
-      add: "Tạo bài viết mới"
-  user_works:
     create:
       create_success: "Thêm công việc thành công!"
       create_faild: "Thêm công việc không thành công!"
@@ -539,6 +538,34 @@ vi:
     destroy:
       destroy_success: "Xóa công việc thành công!"
       destroy_faild: "Xóa công việc không thành công!"
+  user_projects:
+    create:
+      create_success: "Thêm dự án thành công!"
+      create_faild: "Thêm dự án không thành công!"
+      not_found: "Không tìm thấy dự án!"
+    update:
+      update_success: "Cập nhật dự án thành công!"
+      update_faild: "Cập nhật dự án không thành công!"
+      not_found: "Không tìm thấy dự án!"
+    destroy:
+      destroy_success: "Xóa dự án thành công!"
+      destroy_faild: "Xóa dự án không thành công!"
+      not_found: "Không tìm thấy dự án!"
+    user_project_form:
+      header: "Cập nhật dự án"
+      title: "Tên dự án"
+      url: "Trang web"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      description: "Mô tả"
+      update: "Cập nhật"
+      close: "Đóng"
+    projects:
+      user_project: "Dự án"
+      add: "Cập nhật"
+    user_project:
+      split: " - "
+      sure: "Bạn chắc chứ?"
   user_portfolios:
     edit:
       update: "cập nhật"
@@ -764,3 +791,7 @@ vi:
       success: "Xóa bài viết thành công!"
       fail: "Xóa bài viết thất bại!"
       not_found: "Không tìm thấy bài viết"
+  growl_title:
+    notice: "Thông báo!"
+    error: "Lỗi!"
+    warning: "Cảnh báo!"
