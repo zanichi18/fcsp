@@ -9,6 +9,7 @@
           <div class="cover-image">
             <% if user.is_user? current_user %>
               <%= load_user_cover user, class: "img-cover my-img-cover" %>
+              <div class="shadow"></div>
               <div class="ico-upload-cover margintop" data-toggle="modal"
                 data-target="#changeCoverModal">
                 <h3 class="glyphicon glyphicon-camera" align="center"></h3>
@@ -16,6 +17,7 @@
               </div>
             <% else %>
               <%= load_user_cover user, class: "img-cover" %>
+              <div class="shadow"></div>
             <% end %>
           </div>
           <nav class="navbar navbar-default">
@@ -42,10 +44,29 @@
             </div>
 
             <div class="collapse navbar-collapse" id="mainNav" >
-              <ul class="nav main-menu navbar-nav">
-                <li><a href="#"><i class="fa fa-home"></i><%= t ".new_feed" %></a></li>
-                <li><a href="#"><%= t ".infomation" %></a></li>
-                <li><a href="#"><%= t ".posts" %></a></li>
+              <ul class="nav main-menu navbar-nav user-show">
+                <li class="active">
+                  <a href="#" data-target="tab-new-feed">
+                    <i class="icon-rss2"></i> <b><%= t ".new_feed" %></b>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-target="tab-information">
+                    <i class="icon-info-sign"> <b></i> <%= t ".infomation" %></b>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-target="tab-posts">
+                    <i class="icon-pencil2"></i> <b><%= t ".posts" %></b>
+                  </a>
+                </li>
+                <% if @user.is_user? current_user %>
+                  <li>
+                    <a href="#" data-target="tab-suggest-job">
+                      <i class="icon-lightbulb"></i> <b><%= t ".job_suggest" %></b>
+                    </a>
+                  </li>                    
+                <% end %>
               </ul>
 
               <div class="nav navbar-nav navbar-right">
