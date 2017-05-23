@@ -12,6 +12,7 @@ en:
         title: "Company"
     layouts:
       employer_header:
+        manage_teams: "Manage Teams"
         welcome: "Welcome"
         home: "Home"
         manage_posting: "Manage Postings"
@@ -203,6 +204,7 @@ en:
         team_introduction_3: "Team Introduction 3"
         team_introduction_recruitment: "Team Introduction Recruiment"
         submit: "Submit"
+      danger: "Danger"  
       not_found: "Team Introduction not found"
       success: "Successfully added team introduction"
       create_confirm: "Are you sure to set up this company introduction?"

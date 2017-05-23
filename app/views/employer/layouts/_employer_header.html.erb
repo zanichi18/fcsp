@@ -32,6 +32,11 @@
             <% end %>
           </li>
           <li>
+            <%= link_to employer_company_teams_path(@company) do %>
+              <i class="fa fa-users"></i> <%= t ".manage_teams" %>
+            <% end %>
+          </li>
+          <li>
             <%= link_to "#" do %>
               <i class="fa fa-list-ul"></i> <%= t ".manage_posting" %>
               <span class="fa fa-chevron-down"></span>

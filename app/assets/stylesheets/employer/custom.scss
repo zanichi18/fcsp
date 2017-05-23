@@ -145,3 +145,18 @@
     text-align: left;
   }
 }
+
+.job-thumb-image img {
+  height: 50px;
+  width: 100px;
+}
+
+.img-upload {
+  height: 100px;
+  width: 100px;
+}
+
+.fix-h3 {  
+  border-bottom: 1px solid $gray-boder;
+  padding-bottom: 10px;
+}

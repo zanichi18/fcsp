@@ -1,0 +1,43 @@
+<div class="clearfix" id="jobs-management">
+  <h3><span> 
+    <%= t "companies.teams.title" %></span></h3><br>
+  <div class="button-create-job">
+    <%= link_to t("companies.teams.create_team"), 
+      new_employer_company_team_path, class: "btn btn-primary"  %>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <section class="content">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="table-container">
+                <table class="table table-striped custab">
+                  <thead>
+                    <tr class="headings">
+                      <th class="job-title">
+                        <%= render "filter_name" %>
+                        <%= t "companies.teams.team_title" %>
+                      </th>
+                      <th class="job-action">
+                        <%= t "companies.teams.team_action" %>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="jobs-list">
+                    <%= render "team" %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="pagination-job">
+    <%= render "paginate" %>
+  </div>
+  <input type="hidden" id="company-id" value="2">
+</div>

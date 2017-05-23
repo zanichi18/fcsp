@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     resources :companies do
       resources :jobs, except: [:show]
       resources :dashboards, only: :index
+      resources :teams
       resources :team_introductions, only: [:create, :new]
       resources :candidates, only: [:index, :update]
     end
