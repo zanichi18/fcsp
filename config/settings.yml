@@ -202,7 +202,7 @@ mailer:
   sent_mail: "fcsp.info@gmail.com"
 info_users:
   introduction_form_rows: 7
-  max_length_introduce: 2000
+  max_length_introduce: 500
   ambition_form_rows: 2
   quote_form_rows: 2
   max_length_ambition: 255

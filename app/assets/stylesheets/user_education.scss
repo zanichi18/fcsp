@@ -2,6 +2,7 @@
 
 .btn-add-user-education {
   float: right;
+  text-transform: capitalize !important;
 }
 
 .user-education-title {
@@ -10,6 +11,7 @@
 
 .education-info {
   margin-bottom: 20px;
+  padding-left: 15px;
 
   p {
     margin-bottom: 0;
@@ -24,12 +26,14 @@
 }
 
 .education-school-name {
-  font-size: 19px;
+  font-size: 17px;
+  font-weight: 800;
   opacity: .8;
 }
 
 .education-major {
-  font-style: italic;
+  font-size: 17px;
+  font-weight: 500;
   opacity: .8;
 }
 
@@ -67,4 +71,9 @@
 .school-name {
   margin-bottom: 0;
   margin-top: 0;
+}
+
+.user-education {
+  font-size: 20px;
+  padding-bottom: 20px;
 }

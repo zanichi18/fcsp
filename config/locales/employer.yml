@@ -11,30 +11,6 @@ en:
       index:
         title: "Company"
     layouts:
-      sidebar:
-        menu: "Menu"
-        manage_postings: "Manage Postings"
-        candidates: "Candidates"
-        messages: "Messages"
-        recommendations: "Recommendations"
-        view_mores: "View mores"
-        current_plans: "Current Plans"
-        contact: "Contact Us"
-        trial: "Trial"
-        view_candidates: "Current viewable candidates"
-        mail: "Mail"
-        help: "Help"
-        company_info: "Company Info"
-      header:
-        dashboard: "Dashboard"
-        jobs: "Jobs"
-        feed: "Feed"
-        tools: "Tools"
-        edit_profile: "Edit Profile"
-        account_info: "Account Info"
-        company_info: "Company Info"
-        setting: "Setting"
-        logout: "Logout"
       employer_header:
         welcome: "Welcome"
         home: "Home"
@@ -45,6 +21,10 @@ en:
         view_more: "View more"
         new_posting: "New Postings"
         postings_list: "Postings list"
+        log_out: "Logout"
+        company_info: "Company info"
+      employer_footer:
+        footer_content: "Copyright by"
     candidates:
       index:
         all_jobs: "All jobs"

@@ -3,8 +3,8 @@
 <% else %>
   <div>
     <% awards.each do |award| %>
-      <div class="col-md-12 award-padding award-hover" id="award-<%= award.id %>">
-        <div class="col-md-6">
+      <div class="award-padding award-hover" id="award-<%= award.id %>">
+        <div>
           <%= award.name %>
             <span class="hover-button-award">
               <% if current_user %>
@@ -17,12 +17,13 @@
               <% end %>
             </span>
           </div>
-        <div class="col-md-6 hover-content">
+        <div class="hover-content">
           <div class="details-award">
             <%= award.time %>
           </div>
         </div>
      </div>
+     <hr>
     <% end %>
   </div>
 <% end %>

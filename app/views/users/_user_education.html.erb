@@ -1,14 +1,18 @@
-<span class="user-education-title">
-  <%= t ".education" %>
-</span>
-<%= link_to new_user_education_path, remote: true,
-  class: "button button-3d button-mini button-rounded button-white button-light btn-add-user-education" do %>
-  <span class="icon-plus-sign"></span> <%= t ".add" %>
-<% end %>
-<hr>
-<div class="list-user-education">
-  <%= render partial: "user_educations/user_education",
-    collection: user.user_educations.includes(:school).sort_by_graduation %>
+<div class="row">
+  <div class="panel panel-default user-info-panel">
+    <div class="user-education">
+      <span class="user-education-title">
+        <%= t ".education" %>
+      </span>
+      <%= link_to new_user_education_path, remote: true,
+        class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-education" do %>
+        <span class="icon-plus-sign"></span> <%= t ".add" %>
+      <% end %>
+      <div class="list-user-education">
+        <%= render partial: "user_educations/user_education",
+          collection: user.user_educations.includes(:school).sort_by_graduation %>
+      </div>
+    </div>
+    <div class="render-form-user-education-modal"></div>
+  </div>
 </div>
-
-<div class="render-form-user-education-modal"></div>

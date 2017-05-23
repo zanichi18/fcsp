@@ -7,6 +7,10 @@ class InfoUsersController < ApplicationController
       respond_to do |format|
         format.js
       end
+    else
+      respond_to do |format|
+        format.js {@info_user}
+      end
     end
   end
 

@@ -24,6 +24,7 @@
 
 .add-work {
   float: right;
+  text-transform: capitalize !important;
 }
 
 .show-user-work {
@@ -36,5 +37,11 @@
 }
 
 .work-info {
+  padding-right: 5px;
   padding-top: 10px;
+}
+
+.list-user-education {
+  padding-right: 20px;
+  padding-top: 20px;
 }
