@@ -1,0 +1,132 @@
+@import 'variables/color';
+
+article {
+  p {
+    text-align: justify;
+  }
+}
+
+.list-article {
+  padding-bottom: 50px;
+}
+
+.new-article {
+  bottom: 0;
+  padding-bottom: 68px;
+  padding-left: 50px;
+  position: fixed;
+  right: 0;
+
+  .btn-circle.btn-xl {
+    border-radius: 35px;
+    font-size: 24px;
+    height: 70px;
+    line-height: 1.33;
+    padding: 20px;
+    width: 70px;
+  }
+
+  .plus {
+    padding-top: 10px;
+  }
+}
+
+.form-article {
+  .article-description {
+    height: 170px;
+  }
+
+  .title {
+    height: 20px;
+  }
+}
+
+.article-list {
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.article-item {
+  background: $white;
+  box-shadow: 0 3px 6px $box-shadow-1, 0 3px 6px $box-shadow-2;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+
+  .article-title {
+    font-size: 25px;
+    margin-top: 0;
+  }
+
+  .article-body {
+    font-size: 16px;
+    text-align: justify;
+  }
+}
+
+.box-danger {
+  color: $white;
+  font-size: 10px;
+  padding: 5px;
+}
+
+.message {
+  margin-top: 50px;
+  padding: 10px;
+  position: fixed;
+  right: 20px;
+  width: 30%;
+  z-index: 100;
+}
+
+.fix-size {
+  width: 200px;
+}
+
+.full-size {
+  width: 800px;
+}
+
+.add {
+  background: $dark-gray;
+  height: 300px;
+  padding: 10%;
+}
+
+.btn-blog {
+  background-color: $btn-blog;
+  border-color: $btn-blog;
+  border-radius: 0;
+  color: $white;
+  margin-bottom: 10px;
+}
+
+.btn-blog:hover,
+.btn-blog:focus,
+.btn-blog:active,
+.btn-blog.active,
+.open .dropdown-toggle.btn-blog {
+  background-color: $article-title;
+  border-color: $article-title;
+  color: $white;
+}
+
+.margin10 {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.fix-boder {
+  border-bottom: 1px solid $border-fix;
+}
+
+.article-content {
+  p {
+    line-height: 1.5;
+    margin: 30px 0;
+  }
+
+  h1 {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+  }
+}

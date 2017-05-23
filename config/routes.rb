@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => "/ckeditor"
   devise_for :users, only: :session
   root "education/home#index"
   resources :companies, only: :show
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resources :companies, only: [:new, :create, :show]
     resources :users, only: [:new, :create]
+    resources :articles
   end
 
   resources :jobs, only: [:index, :show]

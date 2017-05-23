@@ -52,6 +52,7 @@ gem "acts_as_follower", github: "tcocca/acts_as_follower"
 gem "has_friendship"
 gem "figaro"
 gem "validates_timeliness"
+gem "ckeditor"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 3.0"
 # Use ActiveModel has_secure_password

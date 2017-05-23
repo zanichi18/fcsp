@@ -16,3 +16,4 @@
 //= require_tree ./../gentelella
 //= require flash_message
 //= require common
+//= require ckeditor/init
