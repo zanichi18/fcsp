@@ -15,6 +15,10 @@ module Supports
     end
 
     def members
+      company.users
+    end
+
+    def member_avatars
       company.users.includes :avatar
     end
 

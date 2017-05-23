@@ -73,18 +73,20 @@ namespace :db do
       end
 
       puts "Create Candidate"
-      10.times.each do |candidate|
-        job_id = rand(1..20)
-        user_id = rand(2..10)
+      users = User.limit(20).pluck(:id)
+      users.each do |candidate|
+        jobs = Job.order("Random()").limit(20).pluck :id
         interested_in = [:have_a_chat, :work_together, :opportunity].shuffle.first
         process = [:apply, :fail_test, :joined , :pass_test, :wait_test].shuffle.first
-        Candidate.create! user_id: user_id, job_id: job_id,
-          interested_in: interested_in, process: process
+        jobs.each do |job|
+          Candidate.create! user_id: candidate, job_id: job,
+            interested_in: interested_in, process: process
+        end
       end
 
       puts "Create team introduction"
       Job.all.each do |job|
-        3.times.each do |n|
+        3.times do |n|
           TeamIntroduction.create! team_target_id: job.id,
             team_target_type: "Job",
             title: "Team introduction #{n+1}",
