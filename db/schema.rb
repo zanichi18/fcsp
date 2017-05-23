@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523081237) do
+ActiveRecord::Schema.define(version: 20170523031644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -531,6 +531,12 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "org_type",   default: 1
     t.string   "name"
@@ -668,6 +674,16 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["user_id"], name: "index_user_groups_on_user_id", using: :btree
   end
 
+  create_table "user_languages", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "language_id"
+    t.integer  "level"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id", using: :btree
+    t.index ["user_id"], name: "index_user_languages_on_user_id", using: :btree
+  end
+
   create_table "user_links", force: :cascade do |t|
     t.string   "link"
     t.integer  "user_id"
@@ -773,6 +789,8 @@ ActiveRecord::Schema.define(version: 20170523081237) do
   add_foreign_key "user_groups", "groups"
   add_foreign_key "user_groups", "positions"
   add_foreign_key "user_groups", "users"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
   add_foreign_key "user_links", "users"
   add_foreign_key "user_portfolios", "users"
   add_foreign_key "user_projects", "users"

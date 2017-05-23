@@ -78,4 +78,5 @@ Rails.application.routes.draw do
   resources :user_posts
   resources :user_projects
   resources :certificates, except: [:index, :show]
+  resources :user_languages
 end

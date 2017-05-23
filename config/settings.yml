@@ -231,3 +231,5 @@ user_project:
 certificate:
   max_length_name: 50
   max_length_qualified_organization: 100
+language:
+  name_max_length: 20

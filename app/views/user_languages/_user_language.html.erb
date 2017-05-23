@@ -1,0 +1,20 @@
+<% user.user_languages.includes(:language).each do |user_language| %>
+  <div>
+    <strong><%= user_language.language_name %></strong>
+    <span class="work-action">
+      <% if user.is_user? current_user %>
+        <%= link_to edit_user_language_path(user_language),
+          remote: true, class: "left-icon" do %>
+          <i class="icon-edit"></i>
+        <% end %>
+        <%= link_to user_language_path(user_language), method: :delete,
+          remote: true, data: {confirm: t(".sure")}, class: "left-icon" do %>
+          <i class="icon-trash"></i>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
+  <div class="work-info">
+    <%= t(".levels.#{user_language.level}") %>
+  </div>
+<% end %>

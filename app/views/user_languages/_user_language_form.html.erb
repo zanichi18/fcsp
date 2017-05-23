@@ -1,0 +1,38 @@
+<div class="modal fade" id="user-language-form" role="dialog">
+  <div class="modal-dialog">
+    <%= simple_form_for @user_language, remote: true do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title text-center"><%= t ".header" %></h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group dropdown">
+            <%= f.text_field :language,
+              value: @user_language.language_name,
+              class: "form-control dropdown-toggle",
+              placeholder: t(".language"),
+              "data-toggle": "dropdown", "aria-hidden": :true,
+              autocomplete: :off, required: true, id: "language-search-box" %>
+            <ul class="dropdown-menu form-control org-search-result">
+              <div id="livesearch_dom"></div>
+            </ul>
+          </div>
+         <%= f.input :level, collection: language_level_select,
+           class: "form-control", include_blank: false %>
+        </div>
+        <div class="button-portfolio-modal">
+          <%= button_tag type: :submit, class: "button button-3d button-rounded button-green" do %>
+            <%= button_text %>
+          <% end %>
+          <button type="button"
+            class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag "language_search" %>
