@@ -527,6 +527,8 @@ vi:
     user_link:
       links: "Liên kết"
       add: "Thêm"
+    posts:
+      add: "Tạo bài viết mới"
   user_works:
     create:
       create_success: "Thêm công việc thành công!"
@@ -730,3 +732,35 @@ vi:
       not_found: "Không tìm thấy liên kết này"
       success: "Xóa thành công!"
       fail: "Xóa thất bại!"
+  user_posts:
+    new:
+      header: "Tạo một bài viết mới"
+    form_post:
+      title: "Tiêu đề"
+      content: "Nội dung"
+      create: "Lưu bài viết của bạn"
+      cancel: "Hủy bỏ"
+    create:
+      success: "Tạo bài viết thành công!"
+      fail: "Created post Tạo bài viết thất bại!"
+    show:
+      heading: "Bài viết"
+      home: "Trang chủ"
+      posts: "Bài viết"
+      comments: "bình luận"
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
+      sure: "Bạn chắc chắn chứ?"
+      related_posts: "Những bài viết liên quan"
+      not_found: "Không tìm thấy bài viết"
+    edit:
+      header: "Chỉnh sửa bài viết của bạn"
+      not_found: "Không tìm thấy bài viết"
+    update:
+      success: "Cập nhật bài viết thành công!"
+      fail: "Cập nhật bài viết thất bại!"
+      not_found: "Không tìm thấy bài viết"
+    destroy:
+      success: "Xóa bài viết thành công!"
+      fail: "Xóa bài viết thất bại!"
+      not_found: "Không tìm thấy bài viết"

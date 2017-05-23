@@ -18,6 +18,7 @@ class Company < ApplicationRecord
     primary_key: :avatar_id
   has_one :cover_image, class_name: Image.name, foreign_key: :id,
     primary_key: :cover_image_id
+  has_many :posts, as: :postable
 
   after_create :create_organization
 

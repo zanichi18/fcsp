@@ -1,0 +1,15 @@
+<%= form_for [:user, post] do |f| %>
+  <div class="form-group">
+    <%= f.label :title, t(".title") %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :content, t(".content") %>
+    <%= f.text_area :content, class: "form-control ckeditor" %>
+  </div>
+
+  <%= f.submit t(".save"), class: "button button-3d button-rounded button-amber" %>
+  <%= link_to t(".cancel"), user_path(current_user),
+    class: "button button-3d button-border button-rounded button-amber" %>
+<% end %>

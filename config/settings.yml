@@ -223,3 +223,5 @@ school:
 article:
   page: 5
   description_limit: 850
+post:
+  title_max: 200
