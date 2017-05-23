@@ -1,4 +1,4 @@
-<div class="dashboard_graph">
+<div class="edit dashboard_graph">
   <div id="wizard" class="form_wizard wizard_horizontal">
     <ul class="wizard_steps">
       <li>
@@ -28,7 +28,7 @@
     </ul>
     <div id="step-1">
       <h2 class="StepTitle"><%= t ".job" %></h2>
-      <div class="form_ajax">
+      <div class="edit form_ajax">
         <%= render "info_hiring_type", url: employer_company_job_path %>
       </div>
     </div>
@@ -37,7 +37,9 @@
       <div class="step-2-content"></div>
       <div class="container">
         <div class="col-md-3">
-          <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right"><%= t ".previous" %></a>
+          <a href="#" class="buttonPrevious buttonDisabled btn btn-primary text-right">
+            <%= t ".previous" %>
+          </a>
         </div>
         <div class="col-md-3 col-md-offset-6">
           <%= submit_tag t(".save_continue"), class: "buttonNext btn btn-success text-right" %>

@@ -26,7 +26,8 @@
           <li>
             <a data-ref="staffing">
               <div class="member-photo">
-                <%= link_to load_user_avatar(member), size: Settings.jobs.image_member_size %>
+                <%= link_to load_user_avatar(member,
+                  size: Settings.jobs.image_member_size), member %>
               </div>
               <h5><%= member.name %></h5>
             </a>

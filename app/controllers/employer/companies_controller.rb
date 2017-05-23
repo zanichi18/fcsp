@@ -7,18 +7,9 @@ class Employer::CompaniesController < Employer::BaseController
   end
 
   def update
-    if @company.update_attributes company_params
-      flash[:success] = t ".company_updated"
-      type = :success
-    else
-      flash[:danger] = t ".company_update_fail"
-      type = :danger
-    end
-
+    status = @company.update_attributes(company_params) ? :created : :failed
     render json: {
-      flash: {
-        type: type
-      }
+      status: status
     }
   end
 

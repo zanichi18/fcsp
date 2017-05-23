@@ -10,7 +10,7 @@ $(document).ready(function() {
       $.get(url, function(data) {
         $('#tab-suggest-job .load-more').replaceWith(data.content);
         $('#tab-suggest-job .pagination').hide();
-        next_url = $('#tab-suggest-job .pagination a[rel=next]').attr('href');
+        var next_url = $('#tab-suggest-job .pagination a[rel=next]').attr('href');
         if (!next_url) {
           $('.btn-info').remove();
         }

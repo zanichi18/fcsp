@@ -91,6 +91,8 @@ en:
         save_continue: "Save and Continue"
         previous: "Previous"
       create:
+        created: Created!
+        failed: Failed!
         created_job: "Posted job recruitment"
         create_job_fail: "Fail to post job recruitment"
       index:
@@ -110,6 +112,8 @@ en:
         public: "Public"
         messages: "Messages"
       update:
+        updated: "Updated!"
+        failed: "Failed!"
         job_post_updated: "Updated post job recruitment"
         job_post_update_fail: "Failed to update post job"
       edit:
@@ -170,7 +174,9 @@ en:
         next: "Save and Continue"
         previous: "Previous"
       update:
-        company_updated: "Company info updated !"
+        updated: "Updated!"
+        failed: "Failed!"
+        company_updated: "Company info updated!"
         company_update_fail: "Fail to update company info"
       edit_company_info:
         update_company_info: "Update Company"

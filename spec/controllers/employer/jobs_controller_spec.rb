@@ -36,7 +36,6 @@ RSpec.describe Employer::JobsController, type: :controller do
       expect do
         post :create, params: {company_id: company, job: job_params}
       end.to change(Job, :count).by 1
-      expect(flash[:success]).to be_present
     end
 
     it "create job only preview" do
@@ -45,7 +44,6 @@ RSpec.describe Employer::JobsController, type: :controller do
         post :create, params: {company_id: company, preview: "Preview",
           job: job_params}
       end.to change(Job, :count).by 1
-      expect(flash[:success]).to be_present
     end
 
     it "create fail with title nil" do
@@ -53,7 +51,6 @@ RSpec.describe Employer::JobsController, type: :controller do
       expect do
         post :create, params: {company_id: company, job: job_params}
       end.to change(Job, :count).by 0
-      expect(flash[:danger]).to be_present
     end
 
     it "create fail by reaching length limitation" do
@@ -62,7 +59,6 @@ RSpec.describe Employer::JobsController, type: :controller do
       expect do
         post :create, params: {company_id: company, job: job_params}
       end.to change(Job, :count).by 0
-      expect(flash[:danger]).to be_present
     end
 
     it "create fail with describe nil" do
@@ -70,7 +66,6 @@ RSpec.describe Employer::JobsController, type: :controller do
       expect do
         post :create, params: {company_id: company, job: job_params}
       end.to change(Job, :count).by 0
-      expect(flash[:danger]).to be_present
     end
   end
 
