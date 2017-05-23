@@ -443,7 +443,7 @@ en:
       add_profile_session: "Add new profile sections"
       background: "Background"
       skills: "Skills"
-      accomplishments: "Accomplishments"      
+      accomplishments: "Accomplishments"
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"
@@ -487,6 +487,9 @@ en:
       people: "%{num} others"
     user_education:
       education: "Education"
+      add: "Add"
+    user_link:
+      links: "Links"
       add: "Add"
   user_works:
     create:
@@ -662,5 +665,28 @@ en:
       school_not_found: "School not found"
     destroy:
       not_found: "Education not found"
+      success: "Deleted successfully!"
+      fail: "Deleted failed!"
+  user_links:
+    user_link:
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
+    form_user_link:
+      title: "Update your link"
+      close: "Close"
+      save: "Save your changes"
+      link: "Link"
+    create:
+      success: "Updated successfully!"
+      fail: "Updated failed!"
+    edit:
+      not_found: "Link not found"
+    update:
+      not_found: "Link not found"
+      success: "Updated successfully!"
+      fail: "Updated failed!"
+    destroy:
+      not_found: "Link not found"
       success: "Deleted successfully!"
       fail: "Deleted failed!"

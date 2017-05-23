@@ -521,6 +521,9 @@ vi:
     user_education:
       education: "Học vấn"
       add: "Thêm"
+    user_link:
+      links: "Liên kết"
+      add: "Thêm"
   user_works:
     create:
       create_success: "Thêm công việc thành công!"
@@ -696,5 +699,28 @@ vi:
       school_not_found: "Không tìm thấy trường học"
     destroy:
       not_found: "Không tìm thấy học vấn này"
+      success: "Xóa thành công!"
+      fail: "Xóa thất bại!"
+  user_links:
+    user_link:
+      edit: "Chỉnh sửa"
+      delete: "Xóa"
+      sure: "Bạn chắc chắn muốn xóa?"
+    form_user_link:
+      title: "Cập nhật liên kết của bạn"
+      close: "Đóng"
+      save: "Lưu những thay đổi của bạn"
+      link: "Liên kết"
+    create:
+      success: "Cập nhật thành công!"
+      fail: "Cập nhật thất bại!"
+    edit:
+      not_found: "Không tìm thấy liên kết này"
+    update:
+      not_found: "Không tìm thấy liên kết này"
+      success: "Cập nhật thành công!"
+      fail: "Cập nhật thất bại!"
+    destroy:
+      not_found: "Không tìm thấy liên kết này"
       success: "Xóa thành công!"
       fail: "Xóa thất bại!"

@@ -1,12 +1,15 @@
 <div class="row">
   <div class="panel panel-default user-info-panel">
     <div class="user-education">
-      <span class="user-education-title">
+      <strong class="user-education-title">
         <%= t ".education" %>
-      </span>
-      <%= link_to new_user_education_path, remote: true,
-        class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-education" do %>
-        <span class="icon-plus-sign"></span> <%= t ".add" %>
+      </strong>
+      <% if user.is_user? current_user %>
+        <%= link_to new_user_education_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-education" do %>
+          <i class="icon-plus-sign"></i>
+          <%= t ".add" %>
+        <% end %>
       <% end %>
       <div class="list-user-education">
         <%= render partial: "user_educations/user_education",

@@ -1,0 +1,25 @@
+<div class="row" id="user-link-<%= user_link.id %>">
+  <div class="link-info">
+    <span class="link-string">
+      <%= link_to user_link.link, user_link.link, target: :_blank %>
+    </span>
+    <% if user_link.user.is_user? current_user %>
+      <span class="edit-link">
+        <span>
+          <%= link_to edit_user_link_path(user_link), remote: true do %>
+            <span class="icon-pencil"></span> <%= t ".edit" %>
+          <% end %>
+        </span>
+        <span>&nbsp</span>
+        <span>
+          <%= link_to user_link_path(user_link), remote: true,
+            method: :delete, data: {confirm: t(".sure")} do %>
+            <span class="icon-trash"></span> <%= t ".delete" %>
+          <% end %>
+        </span>
+      </span>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_include_tag "user_link" %>

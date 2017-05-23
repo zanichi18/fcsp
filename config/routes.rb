@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   devise_for :users, only: :session
-  root "education/home#index"
+  root "pages#index"
   resources :companies, only: :show
   namespace :education do
     namespace :management do
@@ -74,4 +74,5 @@ Rails.application.routes.draw do
   resources :awards, except: [:index, :show]
   resources :user_works
   resources :user_educations
+  resources :user_links
 end
