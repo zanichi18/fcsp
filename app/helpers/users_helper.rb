@@ -78,4 +78,8 @@ module UsersHelper
         class: "btn btn-default"
     end
   end
+
+  def load_level skill_user
+    skill_user.level ||= Settings.level_range
+  end
 end

@@ -154,6 +154,7 @@ user:
   max_length_name: 50
   per_page: 5
 max_length_title: 150
+max_length_description: 1000
 hiring_type:
   max_length_name: 50
 jobs:
@@ -261,3 +262,4 @@ friend_suggest:
 api:
   tms_login_link: "http://education.framgia.vn/api/sign_in"
   tms_data_link: "http://education.framgia.vn/api/export_profiles"
+level_range: 50

@@ -56,15 +56,22 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="acctitle">
                       <i class="acc-closed icon-ok-circle"></i>
                       <i class="acc-open icon-remove-circle"></i>
                       <%= t ".skills" %>
                     </div>
                     <div class="acc_content clearfix">
+                      <div class="top-cart-item clearfix">
+                        <%= link_to new_skill_user_path, remote: true do %><i class="i-circled i-light i-small icon-plus"></i><% end %>
+                        <div class="top-cart-item-desc">
+                          <b><%= t ".skills" %></b>
+                          <span class="top-cart-item-price"><%= t ".add_new_skill" %></span>
+                        </div>
+                      </div>
                     </div>
-
+                    <div class="acc_content clearfix">
+                    </div>
                     <div class="acctitle">
                       <i class="acc-closed icon-ok-circle"></i>
                       <i class="acc-open icon-remove-circle"></i>
@@ -130,3 +137,4 @@
 </div>
 <%= render "change_avatar", user: user if user.is_user? current_user %>
 <%= render "change_cover", user: user if user.is_user? current_user %>
+<div class="render-form-user-skill-modal"></div>

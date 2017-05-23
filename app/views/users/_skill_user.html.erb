@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="panel panel-default user-info-panel">
+    <div class="user-education">
+      <span class="user-education-title">
+        <%= t ".skills" %>
+      </span>
+      <% if user.is_user? current_user %>
+        <%= link_to new_skill_user_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-education" do %>
+          <span class="icon-plus-sign"></span> <%= t ".add" %>
+        <% end %>
+      <% end %>
+      <div class="list-user-skill">
+        <%= render partial: "skill_users/skill_user",
+          collection: user.skill_users.includes(:skill) %>
+      </div>
+    </div>
+    <div class="render-form-user-skill-modal"></div>
+  </div>
+</div>

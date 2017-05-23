@@ -553,6 +553,9 @@ vi:
       add: "Thêm"
       public: "Công khai"
       only_me: "Chỉ mình tôi"
+    skill_user:
+      skills: "Kỹ năng"
+      add: "Thêm"
   user_works:
     create:
       create_success: "Add work successfully!"
@@ -595,6 +598,22 @@ vi:
       only_me: "Chỉ mình tôi"
     org_search:
       people: "%{num} người khác"
+    user_education:
+      education: "Học vấn"
+      add: "Thêm"
+    user_link:
+      links: "Liên kết"
+      add: "Thêm"
+    posts:
+      add: "Tạo bài viết mới"
+    skill_user:
+      skills: "Kỹ năng"
+      add: "Thêm"
+    skill_users:
+      skill_user:
+        edit: "Cập nhật"
+        delete: "Xóa"
+  user_works:
     create:
       create_success: "Thêm công việc thành công!"
       create_faild: "Thêm công việc không thành công!"
@@ -636,6 +655,26 @@ vi:
       sure: "Bạn chắc chứ?"
       edit: "Sửa"
       delete: "Xóa"
+  skill_users:
+    form_skill_user:
+      update: "Cập nhật"
+      skill: "Kỹ năng"
+      close: "Đóng"
+      title: "Kỹ năng"
+    result:
+      no_result: "Không có kết quả nào"
+    create:
+      success: "Tạo kỹ năng thành công"
+      fail: "Tạo kỹ năng thất bại"
+    destroy:
+      destroy_success: "Xóa kỹ năng thành công"
+      destroy_faild: "Xóa kỹ năng thất bại"
+    update:
+      success: "cập nhật kỹ năng thành công"
+      faild: "cập nhật kỹ năng thất bại"
+    new:
+      add: "Thêm"
+      edit: "cập nhật"
   user_portfolios:
     edit:
       update: "cập nhật"

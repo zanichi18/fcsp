@@ -91,4 +91,5 @@ Rails.application.routes.draw do
   resources :organizations, only: :show
   resources :articles, only: :show
   resources :friend_requests, only: :index
+  resources :skill_users
 end

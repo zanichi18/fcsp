@@ -59,6 +59,7 @@ $(document).ready(function(){
   js_hover('.link-info', '.edit-link');
   js_hover('.award-hover', '.hover-button-award');
   js_hover('.link-info', '.edit-link');
+  js_hover('.skill-info', '.edit-skill');
 
   $(document).ajaxComplete(function(){
     js_hover('.education-info', '.edit-education');
@@ -67,6 +68,7 @@ $(document).ready(function(){
     js_hover('.award-hover', '.hover-button-award');
     js_hover('.link-info', '.edit-link');
   });
+
 
   $('form#edit-about-me-form,' + 'form#edit-ambition-form,' +
     'form#edit-introduction-form,' + 'form#edit-quote-form'

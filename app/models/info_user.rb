@@ -2,7 +2,7 @@ class InfoUser < ApplicationRecord
   belongs_to :user
 
   INFO_ATTRIBUTES = [:introduction, :ambition, :portfolio, :award, :work,
-    :education, :link, :project, :certificate, :language]
+    :education, :link, :project, :certificate, :language, :skill]
   INFO_STATUS = {only_me: 0, public: 1}
 
   serialize :info_statuses, Hash

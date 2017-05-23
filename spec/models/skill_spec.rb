@@ -13,4 +13,17 @@ RSpec.describe Skill, type: :model do
       it{expect have_db_column(:level).of_type(:integer)}
     end
   end
+
+  describe "validate attributes" do
+    it{expect validate_presence_of(:name)}
+    it do
+      expect validate_length_of(:name)
+        .is_at_most Settings.max_length_title
+    end
+
+    it do
+      expect validate_length_of(:description)
+        .is_at_most Settings.max_length_description
+    end
+  end
 end
