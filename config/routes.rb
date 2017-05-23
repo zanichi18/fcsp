@@ -77,4 +77,5 @@ Rails.application.routes.draw do
   resources :user_links
   resources :user_posts
   resources :user_projects
+  resources :certificates, except: [:index, :show]
 end

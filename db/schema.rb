@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["user_id"], name: "index_candidates_on_user_id", using: :btree
   end
 
+  create_table "certificates", force: :cascade do |t|
+    t.string   "name"
+    t.date     "qualified_time"
+    t.string   "qualified_organization"
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_certificates_on_user_id", using: :btree
+  end
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -727,6 +737,7 @@ ActiveRecord::Schema.define(version: 20170523081237) do
   end
 
   add_foreign_key "awards", "users"
+  add_foreign_key "certificates", "users"
   add_foreign_key "company_industries", "companies"
   add_foreign_key "company_industries", "industries"
   add_foreign_key "education_comments", "users"

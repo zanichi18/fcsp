@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="certificate-info">
+    <p class="certificate">
+      <span class="certificate-name"><%= certificate.name %></span>
+      <span class="qualified-time">
+        <%= l certificate.qualified_time, format: :month_year_format if certificate.qualified_time %>
+      </span>
+      <% if certificate.user.is_user? current_user %>
+        <span class="edit-certificate">
+          <span>
+            <%= link_to edit_certificate_path(certificate), remote: true do %>
+              <span class="icon-pencil"></span> <%= t ".edit" %>
+            <% end %>
+          </span>
+          <span>&nbsp</span>
+          <span>
+            <%= link_to certificate_path(certificate), remote: true,
+              method: :delete, data: {confirm: t(".sure")} do %>
+              <span class="icon-trash"></span> <%= t ".delete" %>
+            <% end %>
+          </span>
+        </span>
+      <% end %>
+    </p>
+    <p class="qualified-organization"><%= certificate.qualified_organization %></p>
+  </div>
+</div>
+<hr>
