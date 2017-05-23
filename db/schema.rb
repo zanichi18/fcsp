@@ -477,6 +477,8 @@ ActiveRecord::Schema.define(version: 20170523014504) do
     t.text     "introduce"
     t.string   "quote"
     t.string   "ambition"
+    t.string   "phone"
+    t.string   "address"
     t.integer  "user_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false

@@ -1,17 +1,20 @@
-<div id="edit-ambition-modal" class="modal fade course-member" role="dialog">
+<div id="edit-about-me-modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content modal-content-info-user">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
       </div>
-      <%= simple_form_for @info_user, remote: :true,
-        html: {id: "edit-ambition-form"} do |f| %>
+      <%= simple_form_for @info_user, html: {id: "edit-about-me-form"},
+        remote: :true do |f| %>
         <div class="modal-body">
-          <%= f.input :ambition, as: :text, placeholder: t(".ambition_placeholder"), 
-            class: "sm-form-control modal-txta",
-            rows: Settings.info_users.ambition_form_rows %>
+          <%= f.input :address, class: "sm-form-control" %>
         </div>
+
+        <div class="modal-body">
+          <%= f.input :phone, as: :integer, class: "sm-form-control" %>
+        </div>
+
         <div class="modal-footer modal-footer-info-user">
           <%= f.submit t(".update_button"), class:"btn btn-primary",
             id: "btn-edit-ambition" %>

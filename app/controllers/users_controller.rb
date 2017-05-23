@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   private
 
   def find_user
-    @user = User.find_by id: params[:id]
+    @user = User.includes(:info_user).find_by id: params[:id]
     if @user
       if @user.education_status_blocked?
         flash[:danger] = t ".blocked"

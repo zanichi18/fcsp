@@ -9,8 +9,7 @@ RSpec.describe InfoUsersController, type: :controller do
 
   describe "PATCH #update" do
     it "updated introduce successfully" do
-      info_user = user.build_info_user(introduce: "introduce default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {introduce: "introduce changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).introduce)
@@ -19,8 +18,7 @@ RSpec.describe InfoUsersController, type: :controller do
 
     it "updated introduce fail when not login" do
       sign_out user
-      info_user = user.build_info_user(introduce: "introduce default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {introduce: "introduce changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).introduce)
@@ -28,8 +26,7 @@ RSpec.describe InfoUsersController, type: :controller do
     end
 
     it "updated ambition successfully" do
-      info_user = user.build_info_user(ambition: "ambition default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {ambition: "ambition changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).ambition)
@@ -38,8 +35,7 @@ RSpec.describe InfoUsersController, type: :controller do
 
     it "updated ambition fail when not login" do
       sign_out user
-      info_user = user.build_info_user(ambition: "ambition default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {ambition: "ambition changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).ambition)
@@ -47,8 +43,7 @@ RSpec.describe InfoUsersController, type: :controller do
     end
 
     it "updated quote successfully" do
-      info_user = user.build_info_user(quote: "quote default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {quote: "quote changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).quote)
@@ -57,8 +52,7 @@ RSpec.describe InfoUsersController, type: :controller do
 
     it "updated quote fail when not login" do
       sign_out user
-      info_user = user.build_info_user(quote: "quote default")
-      info_user.save
+      info_user = FactoryGirl.create :info_user, user: user
       patch :update, params: {id: info_user.id,
         info_user: {quote: "quote changed"}}, xhr: true
       expect((InfoUser.find_by id: info_user.id).quote)

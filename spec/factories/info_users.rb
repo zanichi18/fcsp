@@ -4,6 +4,7 @@ FactoryGirl.define do
     introduce Faker::Lorem.paragraph
     quote Faker::Lorem.sentence
     ambition Faker::Lorem.sentence
-    user 1
+    address Faker::Address.city
+    user
   end
 end

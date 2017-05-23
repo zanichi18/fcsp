@@ -5,6 +5,8 @@ class CreateInfoUsers < ActiveRecord::Migration[5.0]
       t.text :introduce
       t.string :quote
       t.string :ambition
+      t.string :phone
+      t.string :address
       t.references :user, index: true, unique: true, foreign_key: true
 
       t.timestamps

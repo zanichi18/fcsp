@@ -7,4 +7,5 @@ class InfoUser < ApplicationRecord
     length: {maximum: Settings.info_users.max_length_ambition}
   validates :quote,
     length: {maximum: Settings.info_users.max_length_quote}
+  validates :address, presence: true
 end

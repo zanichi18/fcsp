@@ -481,6 +481,9 @@ vi:
     social_network:
       about_me: "Về tôi"
       social_profiles: "Kết nối với tôi"
+      address: "Địa chỉ"
+      phone: "Điện thoại"
+      add_quote: "Thêm trích dẫn yêu thích"
     change_avatar:
       title: "Thay đổi ảnh đại diện"
       save: "Lưu lại"
@@ -590,6 +593,9 @@ vi:
       cannot_button: "Hủy bỏ"
       edit_ambition: "Chỉnh sửa tham vọng"
       ambition_placeholder: "Tham vọng của tôi..."
+    edit_about_me_modal:
+      update_button: "Cập nhật"
+      cancel_button: "Hủy bỏ"
     quote:
       quote: "Trích dẫn"
       edit: "Sửa"
