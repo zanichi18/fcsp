@@ -1,6 +1,7 @@
 module Supports
   class ShowUser
-    attr_reader :job_active, :job_skill, :portfolios, :awards, :shared_job_ids
+    attr_reader :job_active, :job_skill, :portfolios, :awards,
+      :shared_job_ids, :list_friends
 
     def initialize user, current_user
       @user = user
@@ -29,6 +30,10 @@ module Supports
 
     def shared_jobs
       ShareJob.shared_jobs(shared_job_ids).includes(:job, user: :avatar)
+    end
+
+    def list_friends
+      @user.friends.includes :avatar
     end
   end
 end

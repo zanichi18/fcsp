@@ -417,6 +417,8 @@ en:
   users:
     find_user:
       not_found: "User not found"
+    list_friend:
+      no_friend: "No friend"
     friend_ship_form:
       remove_request: " Cancel Request"
       request_friend: " Add Friend"
@@ -431,6 +433,7 @@ en:
       blocked: "This user is blocked!"
       job_suggest: "Suggest job"
     header:
+      friends: "Friends"
       add_friend: "Add friend"
       message: "Message"
       edit_profile: "Edit profile"

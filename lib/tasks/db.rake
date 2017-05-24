@@ -43,7 +43,7 @@ namespace :db do
 
       users.each do |email, name|
         user = User.create! name: name, email: email, password:
-          123456, education_status: rand(0..1)
+          123456, education_status: 1
         InfoUser.create! user_id: user.id, introduce: Faker::Lorem.paragraph,
           address: "Da Nang, Viet Nam"
       end
