@@ -1,0 +1,7 @@
+$('.user-project').html('<%= j render "user_project", user: current_user %>');
+$('#user-project-form').modal('hide');
+<% if @status == 200 %>
+  $.growl.notice({title: I18n.t("growl_title.notice"), message: '<%= @message %>'});
+<% else %>
+  $.growl.error({title: I18n.t("growl_title.error"), message: '<%= @message %>'});
+<% end %>

@@ -9,7 +9,8 @@
             <i class="icon-edit"></i>
           <% end %>
           <%= link_to user_work_path(work.id), method: :delete,
-            remote: true, class: "left-icon" do %>
+            remote: true, data: {confirm: t(".sure")},
+            class: "left-icon" do %>
             <i class="icon-trash"></i>
           <% end %>
         <% end %>

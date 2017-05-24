@@ -1,4 +1,4 @@
- <div class="modal fade" id="user-work-form" role="dialog">
+<div class="modal fade" id="user-work-form" role="dialog">
   <div class="modal-dialog">
   <%= simple_form_for @user_work, remote: true do |f| %>
     <div class="modal-content">
@@ -7,8 +7,9 @@
         <h4 class="modal-title text-center"><%= t ".header" %></h4>
       </div>
       <div class="modal-body">
+        <%= f.label :organization, t(".company") %>
         <div class="form-group dropdown">
-          <%= f.input :organization,
+          <%= f.text_field :organization,
             value: @user_work.organization_name,
             class: "form-control dropdown-toggle",
             placeholder: t(".company"),
@@ -18,19 +19,22 @@
             <div id="livesearch_dom"></div>
           </ul>
         </div>
-        <%= f.input :position,
+        <%= f.input :position, label: t(".position"),
           placeholder: t(".position"), class: "form-control" %>
         <div class="col_half">
-          <%= f.input :start_time, as: :date, html5: true, class: "form-control",
+          <%= f.input :start_time, label:t(".start_time"),
+            as: :date, html5: true, class: "form-control",
             placeholder: t(".start_date") %>
         </div>
         <div class="col_half col_last">
-          <%= f.input :end_time, as: :date, html5: true, class: "form-control",
+          <%= f.input :end_time, label:t(".start_time"),
+            as: :date, html5: true, class: "form-control",
             placeholder: t(".start_date") %>
         </div>
-        <%= f.input :status, collection: work_status_select,
+        <%= f.input :status, label:t(".status"),
+          collection: work_status_select,
           include_blank: false, class: "form-control inline" %>
-        <%= f.input :description,
+        <%= f.input :description, label: t(".description"),
           placeholder: t(".description"), class: "form-control",
           input_html: {rows: 5} %>
       </div>

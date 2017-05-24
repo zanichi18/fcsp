@@ -462,6 +462,15 @@ en:
       from_album: "Choose from your album"
     album_image:
       no_image: "No images"
+    user_education:
+      education: "Education"
+      add: "Add"
+    user_link:
+      links: "Links"
+      add: "Add"
+  user_works:
+    org_search:
+      people: "%{num} others"
     user_work_form:
       all_status:
         full_time: "Full time"
@@ -483,20 +492,10 @@ en:
         internship: "Internship"
       split: " - "
       to: "to"
+      sure: "Are you sure?"
     work:
       add: " Add"
       user_work: "Work"
-    org_search:
-      people: "%{num} others"
-    user_education:
-      education: "Education"
-      add: "Add"
-    user_link:
-      links: "Links"
-      add: "Add"
-    posts:
-      add: "Create new post"
-  user_works:
     create:
       create_success: "Add work successfully!"
       create_faild: "Add work faild!"
@@ -506,6 +505,34 @@ en:
     destroy:
       destroy_success: "Delete work successfully!"
       destroy_faild: "Delete work faild!"
+  user_projects:
+    create:
+      create_success: "Add project successfully!"
+      create_faild: "Add project faild!"
+      not_found: "Project not found!"
+    update:
+      update_success: "Update project successfully!"
+      update_faild: "Update project faild!"
+      not_found: "Project not found!"
+    destroy:
+      destroy_success: "Delete project successfully!"
+      destroy_faild: "Delete project faild!"
+      not_found: "Project not found!"
+    user_project_form:
+      header: "Update Project"
+      title: "Title"
+      Url: "Url"
+      start_dare: "Start date"
+      end_date: "End date"
+      description: "Description"
+      update: "Update"
+      close: "Close"
+    projects:
+      user_project: "Projects"
+      add: "Add"
+    user_project:
+      split: " - "
+      sure: "Are you sure?"
   user_portfolios:
     edit:
       update: "Update"
@@ -730,3 +757,7 @@ en:
       success: "Deleted post successfully!"
       fail: "Deleted post failed!"
       not_found: "Post not found"
+  growl_title:
+    notice: "Notice!"
+    error: "Error!"
+    warning: "Warning!"

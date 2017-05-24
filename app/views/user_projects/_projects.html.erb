@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="panel panel-default user-info-panel">
+    <div class="show-user-work">
+      <strong class="user-work-title"><%= t ".user_project" %></strong>
+      <% if @user.is_user? current_user %>
+        <%= link_to new_user_project_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green button-light button-white-text add-work" do %>
+            <i class="icon-plus-sign"></i>
+            <%= t ".add" %>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="user-project"><%= render "user_projects/user_project",
+      user: @user %></div>
+  </div>
+</div>
+<div class="user-project-modal"></div>

@@ -17,9 +17,10 @@
             <%= render "info_users/ambition" %>
             <%= render "user_portfolios/user_portfolio" %>
             <%= render "awards/user_award" %>
-            <%= render "work" %>
+            <%= render "user_works/work" %>
             <%= render "user_education", user: @user %>
             <%= render "user_link", user: @user %>
+            <%= render "user_projects/projects" %>
           </div>
           <div class="hide-tab clearfix" id="tab-posts">
             <%= render "posts", user: @user %>

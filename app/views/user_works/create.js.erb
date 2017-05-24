@@ -1,4 +1,4 @@
-$('.user-work').html('<%= j render "users/user_work", user: current_user %>');
+$('.user-work').html('<%= j render "user_works/user_work", user: current_user %>');
 $('#user-work-form').modal('hide');
 <% if @render.status == 200 %>
   $.growl.notice({message: '<%= @render.message %>'});

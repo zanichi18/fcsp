@@ -225,3 +225,6 @@ article:
   description_limit: 850
 post:
   title_max: 200
+user_project:
+  max_title_length: 50
+  max_description_length: 200
