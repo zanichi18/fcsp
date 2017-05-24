@@ -50,6 +50,7 @@ class User < ApplicationRecord
   has_one :company, through: :user_group, source: :company,
     class_name: Company.name
   has_many :user_links, dependent: :destroy
+  has_many :posts, as: :postable
 
   accepts_nested_attributes_for :info_user
 

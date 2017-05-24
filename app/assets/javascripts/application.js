@@ -39,3 +39,4 @@
 //= require employer/create_job
 //= require employer/edit_job
 //= require change_avatar_company
+//= require ckeditor/init

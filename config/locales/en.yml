@@ -494,6 +494,8 @@ en:
     user_link:
       links: "Links"
       add: "Add"
+    posts:
+      add: "Create new post"
   user_works:
     create:
       create_success: "Add work successfully!"
@@ -549,7 +551,7 @@ en:
       introduce_placeholder: "Introduce yourself..."
     edit_about_me_modal:
       update_button: "Update"
-      cancel_button: "Cancel"      
+      cancel_button: "Cancel"
     find_info_user:
       infor_user_not_found: "Infomation of user not found"
     ambition:
@@ -696,3 +698,35 @@ en:
       not_found: "Link not found"
       success: "Deleted successfully!"
       fail: "Deleted failed!"
+  user_posts:
+    new:
+      header: "Create new post"
+    form_post:
+      title: "Title"
+      content: "Content"
+      save: "Save your post"
+      cancel: "Cancel"
+    create:
+      success: "Created post successfully!"
+      fail: "Created post failed!"
+    show:
+      heading: "Post"
+      home: "Home"
+      posts: "Posts"
+      comments: "comments"
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are you sure?"
+      related_posts: "Related posts"
+      not_found: "Post not found"
+    edit:
+      header: "Edit your post"
+      not_found: "Post not found"
+    update:
+      success: "Updated post successfully!"
+      fail: "Updated post failed!"
+      not_found: "Post not found"
+    destroy:
+      success: "Deleted post successfully!"
+      fail: "Deleted post failed!"
+      not_found: "Post not found"
