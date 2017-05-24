@@ -41,6 +41,7 @@ class User < ApplicationRecord
   has_many :shares, class_name: ShareJob.name, dependent: :destroy
   has_many :shared_jobs, through: :shares, source: :job
   has_many :user_projects, dependent: :destroy
+  has_many :certificates, dependent: :destroy
   has_one :avatar, class_name: Image.name, foreign_key: :id,
     primary_key: :avatar_id
   has_one :cover_image, class_name: Image.name, foreign_key: :id,

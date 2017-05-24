@@ -28,7 +28,7 @@
             <%= f.label :graduation, t(".graduation") %>
             <%  if user_education.graduation %>
               <%= f.text_field :graduation,
-                value: l(user_education.graduation, format: :education_user),
+                value: l(user_education.graduation, format: :month_year_format),
                 class: "form-control graduation-datepicker" %>
             <% else %>
               <%= f.text_field :graduation, class: "form-control graduation-datepicker" %>
