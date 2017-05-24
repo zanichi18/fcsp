@@ -1,4 +1,3 @@
-<%= javascript_include_tag "friend_ship" %>
 <div id="top-cart">
   <a href="#" id="top-cart-trigger"><i class="icon-user"></i>
     <% if @user_request.present? %>
@@ -14,13 +13,12 @@
         <% @user_request.each do |user_request| %>
           <div class="top-cart-item clearfix" id="friend-ship-<%= user_request.id %>">
             <div class="top-cart-item-image">
-              <% if user_request.avatar.present? %>
-                <%= link_to load_user_avatar user_request, user_path(user_request) %>
-              <% end %>
+              <%= link_to load_user_avatar(user_request, class: "img-avatar-request"), user_path(user_request) %>
             </div>
             <div class="top-cart-item-desc">
-              <a href="#"><%= user_request.name %></a>
-              <span class="top-cart-item-price"><%= t ".mutual-friends" %></span>
+              <a href="#"><%= link_to user_request.name, user_path(user_request) %></a>
+              <span class="top-cart-item-price">
+                <%= current_user.mutual_friends(user_request).size %> <%= t ".mutual-friends" %></span>
               <span class="top-cart-item-quantity">
                 <%= link_to "#", class: "right-icon friend-ship", data: {id: user_request.id} do %>
                   <i class="button button-3d button-mini button-rounded button-dirtygreen"><%= t ".confirm" %></i>

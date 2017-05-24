@@ -1,0 +1,12 @@
+<% if list_friends.present? %>
+  <div class="row">
+    <% list_friends.each do |friend| %>
+      <div class="col-md-6 list-friend">
+        <%= link_to load_user_avatar(friend, class: "img-avatar-friend"), user_path(friend) %>
+        <%= link_to friend.name, user_path(friend) %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p><%= t ".no_friend" %></p>
+<% end %>

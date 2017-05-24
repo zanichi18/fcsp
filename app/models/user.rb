@@ -161,6 +161,10 @@ class User < ApplicationRecord
     FriendRequestMailer.friend_request(self, user).deliver_later
   end
 
+  def mutual_friends user
+    self.friends & user.friends
+  end
+
   private
 
   def create_user_group

@@ -451,6 +451,8 @@ vi:
   users:
     find_user:
       not_found: "Không tìm thấy người dùng"
+    list_friend:
+      no_friend: "Không có bạn bè nào!"
     friend_ship_form:
       remove_request: " Hủy yêu cầu"
       request_friend: " Kết bạn"
@@ -465,6 +467,7 @@ vi:
       not_found: "Không tìm thấy người dùng"
       job_suggest: "Gợi ý công việc"
     header:
+      friends: "Bạn bè"
       add_friend: "Thêm bạn"
       message: "Tin nhắn"
       edit_profile: "Chỉnh sửa hồ sơ"

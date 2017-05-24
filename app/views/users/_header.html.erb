@@ -67,6 +67,15 @@
                     </a>
                   </li>
                 <% end %>
+                <li>
+                  <a href="#" data-target="tab-list-friend">
+                    <i class="icon-users"></i>
+                    <b><%= t ".friends" %>
+                      <% if @user_object.list_friends.present? %>
+                        (<%= @user_object.list_friends.size %>)
+                      <% end %></b>
+                  </a>
+                </li>
               </ul>
 
               <div class="nav navbar-nav navbar-right">
