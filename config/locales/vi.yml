@@ -487,6 +487,25 @@ vi:
       address: "Địa chỉ"
       phone: "Điện thoại"
       add_quote: "Thêm trích dẫn yêu thích"
+      edit: "Chỉnh sửa"
+      facebook: "Facebook"
+      google: "Google +"
+      twitter: "Twitter"
+      linkedin: "LinkedIn"
+      skype: "Skype"
+      youtube: "Youtube"
+      instagram: "Instagram"
+    edit_social_network_modal:
+      header: "Cập nhật liên kết mạng xã hội"
+      facebook: "Facebook"
+      google: "Google +"
+      twitter: "Twitter"
+      linkedin: "LinkedIn"
+      skype: "Skype"
+      youtube: "Youtube"
+      instagram: "Instagram"
+      save: "Lưu lại"
+      close: "Đóng"
     change_avatar:
       title: "Thay đổi ảnh đại diện"
       save: "Lưu lại"
@@ -832,3 +851,10 @@ vi:
       qualified_time: "Thời gian cấp"
       qualified_organization: "Cấp bởi"
       close: "Đóng"
+  user_social_networks:
+    create:
+      success: "Cập nhật thành công!"
+      fail: "URL không đúng! Vui lòng kiểm tra lại!"
+    update:
+      success: "Cập nhật thành công!"
+      fail: "URL không đúng! Vui lòng kiểm tra lại!"

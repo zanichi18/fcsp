@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523081237) do
+ActiveRecord::Schema.define(version: 20170524082023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -604,6 +604,16 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "social_networks", force: :cascade do |t|
+    t.integer  "social_network_type"
+    t.string   "url"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["owner_type", "owner_id"], name: "index_social_networks_on_owner_type_and_owner_id", using: :btree
   end
 
   create_table "taggings", force: :cascade do |t|

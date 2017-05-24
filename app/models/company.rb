@@ -19,6 +19,7 @@ class Company < ApplicationRecord
   has_one :cover_image, class_name: Image.name, foreign_key: :id,
     primary_key: :cover_image_id
   has_many :posts, as: :postable
+  has_many :social_networks, as: :owner, dependent: :destroy
 
   after_create :create_organization
 

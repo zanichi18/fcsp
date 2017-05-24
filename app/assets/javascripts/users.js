@@ -55,11 +55,13 @@ $(document).ready(function(){
   js_hover('.education-info', '.edit-education')
   js_hover('.certificate-info', '.edit-certificate')
   js_hover('.award-hover', '.hover-button-award')
+  js_hover('.link-info', '.edit-link');
 
   $(document).ajaxComplete(function(){
     js_hover('.education-info', '.edit-education')
     js_hover('.certificate-info', '.edit-certificate')
     js_hover('.award-hover', '.hover-button-award')
+    js_hover('.link-info', '.edit-link');
   })
 
   $('form#edit-about-me-form,' + 'form#edit-ambition-form,' +
