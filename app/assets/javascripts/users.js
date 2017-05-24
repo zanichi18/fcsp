@@ -52,13 +52,8 @@ $(document).ready(function(){
     $(target).show();
   });
 
-  $('.edit-education').hide();
-  $('.education-info').mouseenter(function(){
-    $(this).find('.edit-education').show();
-  }).mouseleave(function() {
-    $(this).find('.edit-education').hide();
-  });
-
+  js_hover('.education-info', '.edit-education')
+  js_hover('.certificate-info', '.edit-certificate')
 
   $('form#edit-about-me-form,' + 'form#edit-ambition-form,' + 
     'form#edit-introduction-form,' + 'form#edit-quote-form'
@@ -91,4 +86,13 @@ function read_url(input) {
     }
     reader.readAsDataURL(input.files[0]);
   }
+}
+
+function js_hover(object_hover, object_hiden_show) {
+  $(object_hiden_show).hide();
+  $(object_hover).mouseenter(function(){
+    $(this).find(object_hiden_show).show();
+  }).mouseleave(function() {
+    $(this).find(object_hiden_show).hide();
+  });
 }

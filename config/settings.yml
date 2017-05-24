@@ -228,3 +228,11 @@ post:
 user_project:
   max_title_length: 50
   max_description_length: 200
+certificate:
+  max_length_name: 50
+  max_length_qualified_organization: 100
+comment:
+  max_content_length: 255
+  comment_item_avatar_size: "60x60"
+like:
+  one: 1

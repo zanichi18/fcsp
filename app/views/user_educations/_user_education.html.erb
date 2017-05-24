@@ -3,7 +3,7 @@
     <p class="education-school">
       <span class="education-school-name"><%= user_education.school_name %></span>
       <span class="education-graducation">
-        <%= l user_education.graduation, format: :education_user if user_education.graduation  %>
+        <%= l user_education.graduation, format: :month_year_format if user_education.graduation  %>
       </span>
       <% if user_education.user.is_user? current_user %>
         <span class="edit-education">

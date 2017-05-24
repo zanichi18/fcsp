@@ -1,0 +1,6 @@
+$('.list-user-certificate').html('<%= j render partial: "certificates/certificate", collection: current_user.certificates.newest %>');
+<% if @status == 200 %>
+  $.growl.notice({message: '<%= @message %>'});
+<% else %>
+  $.growl.error({message: '<%= @message %>'});
+<% end %>

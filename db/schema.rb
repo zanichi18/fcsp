@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523081237) do
+ActiveRecord::Schema.define(version: 20170525011436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["user_id"], name: "index_candidates_on_user_id", using: :btree
   end
 
+  create_table "certificates", force: :cascade do |t|
+    t.string   "name"
+    t.date     "qualified_time"
+    t.string   "qualified_organization"
+    t.integer  "user_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["user_id"], name: "index_certificates_on_user_id", using: :btree
+  end
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -104,6 +114,16 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "companies", force: :cascade do |t|
@@ -521,6 +541,15 @@ ActiveRecord::Schema.define(version: 20170523081237) do
     t.index ["title"], name: "index_jobs_on_title", using: :btree
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "org_type",   default: 1
     t.string   "name"
@@ -727,6 +756,9 @@ ActiveRecord::Schema.define(version: 20170523081237) do
   end
 
   add_foreign_key "awards", "users"
+  add_foreign_key "certificates", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "company_industries", "companies"
   add_foreign_key "company_industries", "industries"
   add_foreign_key "education_comments", "users"
@@ -753,6 +785,8 @@ ActiveRecord::Schema.define(version: 20170523081237) do
   add_foreign_key "job_hiring_types", "hiring_types"
   add_foreign_key "job_hiring_types", "jobs"
   add_foreign_key "jobs", "teams"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
   add_foreign_key "share_jobs", "jobs"

@@ -438,7 +438,7 @@ vi:
       time_date_month_year: '%-d %B %Y, %H:%M %p '
   date:
     formats:
-      education_user: "%B %Y"
+      month_year_format: "%B %Y"
   copy: "Copyright by Framgia"
   error: "lỗi"
   comment:
@@ -795,3 +795,48 @@ vi:
     notice: "Thông báo!"
     error: "Lỗi!"
     warning: "Cảnh báo!"
+  certificates:
+    new:
+      create: "Tạo"
+    edit:  
+      update: "Cập nhật"
+    create:
+      success: "Tạo chứng chỉ thành công"
+      failed: "Tạo chứng chỉ thất bại"
+    update:
+      success: "Cập nhật chứng chỉ thành công"
+      failed: "Cập nhật chứng chỉ thất bại"
+    destroy:
+      success: "Xóa chứng chỉ thành công"
+      failed: "Xóa chứng chỉ thất bại"
+    load_certificate:
+      not_found: "Không tìm thấy chứng chỉ"
+    certificate:
+      edit: "Chỉnh sửa"
+      sure: "Bạn chắc chắn không?"
+      delete: "Xóa"
+    certificate_form:
+      certificate_header: "Chứng chỉ"
+      certificate: "Chứng chỉ"
+      qualified_time: "Thời gian cấp"
+      qualified_organization: "Cấp bởi"
+      close: "Đóng"
+  comments:
+    comment_form:
+      content: "Viết bình luận..."
+      submit_button: "Bình luận"
+    comment_item:
+      delete_confirm: "Bạn chắc chắn chứ?"
+    comments:
+      login_to_comment: "Đăng nhập để bình luận"
+      comments: "Bình luận"
+    edit_comment_form:
+      edit_button: "Chỉnh sửa"
+  likes:
+    load_user_post:
+      not_found: "Không tìm thấy bài viết"
+    load_like:
+      not_found: "Lượt thích của bài viết này không tìm thấy"
+    like_user_post:
+      you_and_orthers_like: "Bạn và %{count - 1} người khác"
+      orthers_like: "%{count} người khác"
