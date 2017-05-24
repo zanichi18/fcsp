@@ -249,3 +249,7 @@ like:
   one: 1
 warning: "warning"
 hr_system: "HrSystem"
+organization:
+  new_job: 5
+  title: 40
+job_image: "default.jpg"

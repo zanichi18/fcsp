@@ -85,4 +85,6 @@ Rails.application.routes.draw do
   resources :user_languages, except: :show
   resources :user_social_networks, only: :create
   resource :user_social_networks, only: :update
+  resources :user_languages
+  resources :organizations, only: :show
 end

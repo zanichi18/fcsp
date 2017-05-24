@@ -505,14 +505,20 @@ en:
       add: "Add"
     job_accordance:
       see_more: "See more"
-    user_languages:
-      languages: "Languages"
-      add: "Add"
     user_certificate:
       certificate: "Certificate"
       add: "Add"
     posts:
       add: "Add"
+    user_languages:
+      add: "Add"
+      languages: "Languages"
+      new:
+        add: "Add"
+        close: "Close"
+      edit:
+        edit: "Edit"
+        close: "Close"
   user_works:
     org_search:
       people: "%{num} others"
@@ -546,21 +552,6 @@ en:
       user_work: "Work"
     org_search:
       people: "%{num} others"
-    user_education:
-      education: "Education"
-      add: "Add"
-    user_link:
-      links: "Links"
-      add: "Add"
-    user_languages:
-      add: "Add"
-      languages: "Languages"
-      new:
-        add: "Add"
-        close: "Close"
-      edit:
-        edit: "Edit"
-        close: "Close"
     create:
       create_success: "Add work successfully!"
       create_faild: "Add work faild!"
@@ -944,3 +935,10 @@ en:
       title: " Title"
       time: " Time show"
       search: "Search"
+  organizations:
+    show:
+      org_infor: "This page content is totaled data based on FCSP users"
+      people_worked_here: "People who worked here"
+      people_worked: "People who worked here also worked"
+      new_job: "Newest jobs"
+      org_not_found: "Organization not found"

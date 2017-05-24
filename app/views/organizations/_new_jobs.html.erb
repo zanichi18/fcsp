@@ -1,0 +1,16 @@
+<% @new_jobs.each do |job| %>
+  <div class="show-org-job-img text-center">
+    <hr/>
+    <%= link_to job do %>
+      <%= load_image_job job %>
+    <% end %>
+    <div>
+      <strong><%= link_to truncate(job.title,
+        length: Settings.organization.title), job %></strong>
+    </div>
+    <div>
+      <%= link_to truncate(job.company.name, 
+        length: Settings.organization.title), job.company %>
+    </div>
+  </div>
+<% end %>

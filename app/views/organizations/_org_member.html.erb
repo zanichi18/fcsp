@@ -1,0 +1,6 @@
+<% members.each do |member| %>
+  <div class="col-md-3 col-sm-3 text-center org-member-detail">
+    <%= load_user_avatar member, class: "img-avatar org-member-ava" %>
+    <div><strong><%= link_to member.name, member %></strong></div>
+  </div>
+<% end %>

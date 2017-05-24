@@ -45,3 +45,32 @@
   padding-right: 20px;
   padding-top: 20px;
 }
+
+.show-org-img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.org-member-ava {
+  max-height: 120px;
+  max-width: 120px;
+  padding-bottom: 15px;
+}
+
+.org-worked-member {
+  font-size: 20px;
+  margin: 40px;
+}
+
+.org-member-detail {
+  padding-bottom: 20px;
+}
+
+.show-org-job-img {
+
+  img {
+    max-height: 120px;
+    max-width: 120px;
+    padding-bottom: 10px;
+  }
+}
