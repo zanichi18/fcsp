@@ -496,6 +496,24 @@ en:
     work:
       add: " Add"
       user_work: "Work"
+    org_search:
+      people: "%{num} others"
+    user_education:
+      education: "Education"
+      add: "Add"
+    user_link:
+      links: "Links"
+      add: "Add"
+    user_languages:
+      add: "Add"
+      languages: "Languages"
+      new:
+        add: "Add"
+        close: "Close"
+      edit:
+        edit: "Edit"
+        close: "Close"
+  user_works:
     create:
       create_success: "Add work successfully!"
       create_faild: "Add work faild!"
@@ -764,7 +782,7 @@ en:
   certificates:
     new:
       create: "Create"
-    edit:     
+    edit:
       update: "Update"
     create:
       success: "Create certificate successfully"
@@ -787,3 +805,34 @@ en:
       qualified_time: "Qualified time"
       qualified_organization: "Qualified by"
       close: "Close"
+  user_languages:
+    user_language_form:
+      update: "Update"
+      header: "Update language"
+      language: "Language"
+      close: "Close"
+      add: "Add"
+      edit: "Edit"
+      levels:
+        elementary: "Elementary proficiency"
+        limited: "Limited working proficiency"
+        professional: "Professional working proficiency"
+        full_professional: "Full professional proficiency"
+        native: "Native or bilingual proficiency"
+    destroy:
+      destroy_success: "Successfully destroyed"
+      destroy_failed: "Destroy failed"
+    create:
+      create_success: "Successfully created"
+      create_failed: "Create failed"
+    update:
+      update_success: "Successfully updated"
+      update_failed: "Update failed"
+    user_language:
+      sure: "Are you sure?"
+      levels:
+        elementary: "Elementary proficiency"
+        limited: "Limited working proficiency"
+        professional: "Professional working proficiency"
+        full_professional: "Full professional proficiency"
+        native: "Native or bilingual proficiency"

@@ -52,4 +52,11 @@ class ApplicationController < ActionController::Base
   def shared_jobs
     @shared_job_ids = current_user.shares.pluck :job_id if user_signed_in?
   end
+
+  def render_js message, status
+    @render = Supports::UserWorkRender.new message, status
+    respond_to do |format|
+      format.js
+    end
+  end
 end

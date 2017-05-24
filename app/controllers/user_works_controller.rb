@@ -46,13 +46,6 @@ class UserWorksController < ApplicationController
 
   private
 
-  def render_js message, status
-    @render = Supports::UserWorkRender.new message, status
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def load_user_work
     return if @user_work = UserWork.find_by(id: params[:id])
     flash[:danger] = t ".not_found"

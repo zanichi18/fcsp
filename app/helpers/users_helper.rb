@@ -32,4 +32,9 @@ module UsersHelper
   def work_status_select
     UserWork.statuses.keys.map{|status| [t(".all_status.#{status}"), status]}
   end
+
+  def language_level_select
+    UserLanguage.levels
+      .map{|status, _| [t(".levels.#{status}"), status]}
+  end
 end
