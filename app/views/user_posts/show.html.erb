@@ -45,7 +45,9 @@
                 </div>
               <% end %>
               <div class="clear"></div>
-              <%#= render "rate_score" %>
+              <div class="like-user-post">
+                <%= render partial: "likes/like_user_post", locals: {post: @post} %>
+              </div>
               <div class="clear"></div>
               <%#= render "rate_post" %>
               <div class="clear"></div>
@@ -55,7 +57,7 @@
           <div class="line"></div>
           <h4><%= t ".related_posts" %></h4>
           <%#= render partial: "related_post" %>
-          <%#= render partial: "comments" %>
+          <%= render partial: "comments/comments", locals: {post: @post} %>
         </div>
       </div>
     </div>

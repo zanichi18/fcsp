@@ -873,3 +873,28 @@ en:
     update:
       success: "Updated successfully!"
       fail: "There is an invalid URL! Please try again!"
+  comments:
+    create:
+      create_failed: "Comment failed"
+    update:
+      update_failed: "Update comment failed"
+    destroy:
+      destroy_failed: "Delete comment failed"
+    comment_form:
+      content: "Comment something..."
+      submit_button: "Comment"
+    comment_item:
+      delete_confirm: "Are you sure?"
+    comments:
+      login_to_comment: "Login to comment"
+      comments: "Comments"
+    edit_comment_form:
+      edit_button: "Edit"
+  likes:
+    load_user_post:
+      not_found: "User's post not to be found"
+    load_like:
+      not_found: "Like not to be found"
+    like_user_post:
+      you_and_orthers_like: "You and %{count} orthers"
+      orthers_like: "%{count} orthers"

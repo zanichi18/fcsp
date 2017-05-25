@@ -116,6 +116,16 @@ ActiveRecord::Schema.define(version: 20170524082023) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+  end
+
   create_table "companies", force: :cascade do |t|
     t.string   "name"
     t.string   "website"
@@ -537,6 +547,15 @@ ActiveRecord::Schema.define(version: 20170524082023) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.integer  "org_type",   default: 1
     t.string   "name"
@@ -566,10 +585,12 @@ ActiveRecord::Schema.define(version: 20170524082023) do
     t.string   "title"
     t.text     "content"
     t.integer  "author_id"
+    t.integer  "likes_count",    default: 0
+    t.integer  "comments_count", default: 0
     t.string   "postable_type"
     t.integer  "postable_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id", using: :btree
   end
 
@@ -764,6 +785,8 @@ ActiveRecord::Schema.define(version: 20170524082023) do
 
   add_foreign_key "awards", "users"
   add_foreign_key "certificates", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "company_industries", "companies"
   add_foreign_key "company_industries", "industries"
   add_foreign_key "education_comments", "users"
@@ -790,6 +813,8 @@ ActiveRecord::Schema.define(version: 20170524082023) do
   add_foreign_key "job_hiring_types", "hiring_types"
   add_foreign_key "job_hiring_types", "jobs"
   add_foreign_key "jobs", "teams"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
   add_foreign_key "share_jobs", "jobs"

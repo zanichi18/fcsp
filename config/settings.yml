@@ -233,3 +233,8 @@ certificate:
   max_length_qualified_organization: 100
 language:
   name_max_length: 20
+comment:
+  max_content_length: 255
+  comment_item_avatar_size: "60x60"
+like:
+  one: 1

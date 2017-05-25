@@ -1,0 +1,38 @@
+<% comments.includes(:user).each do |comment| %>
+  <li class="comment even thread-even depth-1" id="comment-<%= comment.id %>">
+    <div id="comment-1" class="comment-wrap clearfix">
+      <div class="comment-meta">
+        <div class="comment-author vcard">
+          <span class="comment-avatar clearfix">
+            <%= load_user_avatar comment.user,
+              class: "avatar avatar-60 photo avatar-default",
+              size: Settings.comment.comment_item_avatar_size %>
+          </span>
+        </div>
+      </div>
+      <div class="comment-content clearfix">
+        <div class="comment-author"><%= comment.user_name %>
+          <span>
+            <%= link_to "#" do %>
+              <%= l comment.created_at, format: :time_date_month_year %>
+            <% end %>
+          </span>
+        </div>
+        <p><%= comment.content %></p>
+        <a class="comment-reply-link" href="#">
+          <% if comment.user.is_user? current_user %>
+            <%= link_to image_tag("/assets/delete.png", class: "delete-button"),
+              user_post_comment_path(@post, comment),
+              data: {confirm: t(".delete_confirm")},
+              method: :delete, remote: true %>
+            <%= link_to image_tag("/assets/edit.png", class: "delete-button"),
+              edit_user_post_comment_path(@post, comment),
+              remote: true %>
+          <% end %>
+        </a>
+        <div id="comment-edit-<%= comment.id %>"></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </li>
+<% end %>

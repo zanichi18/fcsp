@@ -75,7 +75,10 @@ Rails.application.routes.draw do
   resources :user_works
   resources :user_educations
   resources :user_links
-  resources :user_posts
+  resources :user_posts do
+    resources :comments
+    resources :likes
+  end
   resources :user_projects
   resources :certificates, except: [:index, :show]
   resources :user_languages
