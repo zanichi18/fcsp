@@ -562,8 +562,8 @@ en:
     new:
       update: "Update"
     destroy:
-      deleted_success: "Delete portfolio successfully"
-      portfolio_delete_fail: "Delete portfolio failed"
+      success: "Delete portfolio successfully"
+      failed: "Delete portfolio failed"
     create:
       portfolio_created: "Created portfolio successfully"
       portfolio_create_failed: "Create portfolio failed"
@@ -584,6 +584,9 @@ en:
       portfolio_header: "Portfolios"
     show_portfolio:
       portfolio_not_found: "no portfolio"
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure?"
     user_portfolio:
       user_portfolio: "Portfolio"
       add: "Add"
@@ -675,6 +678,9 @@ en:
   awards:
     show_award:
       award_not_found: "Award not found"
+      delete: "Delete"
+      edit: "Edit"
+      sure: "Are you sure?"
     user_award:
       user_award: "Award(s)"
       add: "Add"
@@ -686,8 +692,8 @@ en:
     new:
       update: "Update"
     destroy:
-      deleted_success: "Deleted award successfully"
-      award_delete_fail: "Deleted award fail"
+      success: "Deleted award successfully"
+      failed: "Deleted award fail"
     create:
       success: "Create award successfully"
       failed: "create award Failed"

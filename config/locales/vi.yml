@@ -575,8 +575,8 @@ vi:
     new:
       update: "cập nhật"
     destroy:
-      deleted_success: "Xóa thành công"
-      portfolio_delete_fail: "Xóa thất bại"
+      success: "Xóa thành công"
+      failed: "Xóa thất bại"
     create:
       portfolio_created: "Tạo thành công"
       portfolio_create_failed: "Tạo thất bại"
@@ -585,6 +585,8 @@ vi:
       portfolio_update_failed: "cập nhật thất bại"
     load_portfolio:
       not_found: "Không tồn tại!"
+      delete: "Xóa"
+      edit: "Sửa"
     form_portfolio:
       add_image: "Thêm ảnh"
       title: "Tiêu đề"
@@ -597,6 +599,9 @@ vi:
       portfolio_header: "Danh mục"
     show_portfolio:
       portfolio_not_found: "Không có danh mục nào"
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Bạn chắc chứ?"
     user_portfolio:
       user_portfolio: "Danh mục"
       add: "Cập nhật"
@@ -689,6 +694,9 @@ vi:
   awards:
     show_award:
       award_not_found: "Không có giải thưởng nào"
+      delete: "Xóa"
+      edit: "Sửa"
+      sure: "Bạn chắc chắn muốn xóa?"
     user_award:
       user_award: "Giải thưởng(s)"
       add: "Cập Nhật"
@@ -700,8 +708,8 @@ vi:
     new:
       update: "Cập Nhật"
     destroy:
-      deleted_success: "Xóa giải thưởng thành công"
-      award_delete_fail: "Xóa giải thưởng thất bại"
+      success: "Xóa giải thưởng thành công"
+      failed: "Xóa giải thưởng thất bại"
     create:
       success: "Tạo giải thưởng thành công"
       failed: "Tạo giải thưởng thất bại"
@@ -801,7 +809,7 @@ vi:
   certificates:
     new:
       create: "Tạo"
-    edit:  
+    edit:
       update: "Cập nhật"
     create:
       success: "Tạo chứng chỉ thành công"

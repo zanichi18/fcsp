@@ -54,6 +54,13 @@ $(document).ready(function(){
 
   js_hover('.education-info', '.edit-education')
   js_hover('.certificate-info', '.edit-certificate')
+  js_hover('.award-hover', '.hover-button-award')
+
+  $(document).ajaxComplete(function(){
+    js_hover('.education-info', '.edit-education')
+    js_hover('.certificate-info', '.edit-certificate')
+    js_hover('.award-hover', '.hover-button-award')
+  })
 
   $('form#edit-about-me-form,' + 'form#edit-ambition-form,' +
     'form#edit-introduction-form,' + 'form#edit-quote-form'
