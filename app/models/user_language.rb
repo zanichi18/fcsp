@@ -3,6 +3,7 @@ class UserLanguage < ApplicationRecord
   belongs_to :language
 
   validates :level, presence: true
+  validates :language_id, presence: true
 
   delegate :name, to: :language, prefix: true, allow_nil: true
 

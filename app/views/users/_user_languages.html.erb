@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row user-language-hidden-toggle <%= "hidden" unless @user.user_languages.any? %>">
   <div class="panel panel-default user-info-panel">
     <div class="show-user-work">
       <strong class="user-work-title"><%= t ".languages" %></strong>
@@ -15,4 +15,3 @@
     </div>
   </div>
 </div>
-<div class="user-language-modal"></div>

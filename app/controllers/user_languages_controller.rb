@@ -14,11 +14,11 @@ class UserLanguagesController < ApplicationController
   end
 
   def create
-    user_language = @language.user_languages.new user_language_params
-    if user_language.save
+    @user_language = @language.user_languages.new user_language_params
+    if @user_language.save
       render_js t(".create_success"), 200
     else
-      render_js t(".create_failed"), 400
+      render json: {errors: @user_language.errors}
     end
   end
 
@@ -32,7 +32,7 @@ class UserLanguagesController < ApplicationController
     if @user_language.update_attributes user_language_update_params
       render_js t(".update_success"), 200
     else
-      render_js t(".update_failed"), 400
+      render json: {errors: @user_language.errors}
     end
   end
 

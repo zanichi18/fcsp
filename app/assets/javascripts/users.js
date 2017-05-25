@@ -55,7 +55,7 @@ $(document).ready(function(){
   js_hover('.education-info', '.edit-education')
   js_hover('.certificate-info', '.edit-certificate')
 
-  $('form#edit-about-me-form,' + 'form#edit-ambition-form,' + 
+  $('form#edit-about-me-form,' + 'form#edit-ambition-form,' +
     'form#edit-introduction-form,' + 'form#edit-quote-form'
   ).bind('ajax:success', function(event, xhr, settings) {
     if(xhr['errors']) {
@@ -95,4 +95,13 @@ function js_hover(object_hover, object_hiden_show) {
   }).mouseleave(function() {
     $(this).find(object_hiden_show).hide();
   });
+}
+
+function userLanguageHiddenToggle(is_hidden) {
+  if(is_hidden) {
+    $('.user-language-hidden-toggle').addClass('hidden')
+  }else {
+    $('.user-language-hidden-toggle').removeClass('hidden')
+  }
+  return false
 }
