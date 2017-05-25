@@ -433,6 +433,8 @@ en:
       blocked: "This user is blocked!"
       job_suggest: "Suggest job"
     header:
+      add_language: "Add Language"
+      add_language_description: "Showcase your languages ability"
       friends: "Friends"
       add_friend: "Add friend"
       message: "Message"
