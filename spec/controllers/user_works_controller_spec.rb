@@ -26,7 +26,8 @@ RSpec.describe UserWorksController, type: :controller do
   context "POST #create" do
     it "send a request" do
       expect do
-        post :create, xhr: true, params: {user_work: {oranization: "org"}}
+        post :create, xhr: true, params: {user_work: {oranization: "org",
+          position: "dev", description: "dev"}}
       end.to change(UserWork, :count).by 1
     end
   end
@@ -37,7 +38,8 @@ RSpec.describe UserWorksController, type: :controller do
     it "send a request" do
       patch :update, xhr: true,
         params: {id: user_work.id,
-          user_work: {organization: organization.name, position: "dev"}}
+          user_work: {organization: organization.name,
+          position: "dev", description: "dev"}}
       user_work.reload
       expect(user_work.position).to eq "dev"
     end

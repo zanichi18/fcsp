@@ -442,6 +442,7 @@ vi:
   date:
     formats:
       month_year_format: "%B %Y"
+      short_month_year: "%d-%m-%Y"
   copy: "Copyright by Framgia"
   error: "lỗi"
   comment:
@@ -543,6 +544,8 @@ vi:
       update: "Cập nhật"
       close: "Đóng"
     user_work:
+      edit: "Sửa"
+      delete: "Xóa"
       all_status:
         full_time: "Toàn thời gian"
         part_time: "Bán thời gian"
@@ -580,8 +583,8 @@ vi:
       header: "Cập nhật dự án"
       title: "Tên dự án"
       url: "Trang web"
-      start_date: "Ngày bắt đầu"
-      end_date: "Ngày kết thúc"
+      start_date: "Thời gian bắt đầu"
+      end_date: "Thời gian kết thúc"
       description: "Mô tả"
       update: "Cập nhật"
       close: "Đóng"
@@ -591,6 +594,8 @@ vi:
     user_project:
       split: " - "
       sure: "Bạn chắc chứ?"
+      edit: "Sửa"
+      delete: "Xóa"
   user_portfolios:
     edit:
       update: "cập nhật"
@@ -910,3 +915,15 @@ vi:
       people_worked: "Họ cũng từng làm ở:"
       new_job: "Những công việc mới nhất"
       org_not_found: "Không tìm thấy tổ chức"
+  activerecord:
+    errors:
+      models:
+        user_project:
+          attributes:
+            end_date:
+              invalid_date: "Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc"
+              after: "Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc"
+        user_work:
+          attributes:
+            end_time:
+              after: "Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc"
