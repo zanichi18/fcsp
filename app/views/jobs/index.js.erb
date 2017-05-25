@@ -1,1 +1,2 @@
 $('#post').html("<%= j render @jobs %>");
+$('#paginator').html('<%= j paginate(@jobs, remote: true).to_s %>');

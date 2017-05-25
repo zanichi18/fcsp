@@ -21,7 +21,7 @@
   <div class="job-show-member-wrapper">
     <% if @job_object.members.present? %>
       <ul class="members cf">
-        <% @job_object.members
+        <% @job_object.member_avatars
           .limit(Settings.jobs.limit_user_show).each do |member| %>
           <li>
             <a data-ref="staffing">

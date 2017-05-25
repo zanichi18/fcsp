@@ -6,6 +6,9 @@
         <div id="post" class="small-thumbs alt">
           <%= render @jobs if @jobs.any? %>
         </div>
+        <div id="paginator">
+          <%= paginate @jobs, remote: true %>
+        </div>
       </div>
       <div class="sidebar nobottommargin col_last clearfix">
         <div class="sidebar-widgets-wrap">
