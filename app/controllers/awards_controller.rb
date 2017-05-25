@@ -20,18 +20,15 @@ class AwardsController < ApplicationController
     if @award.save
       award_js t(".success"), 200
     else
-      award_js t(".failed"), 400
+      render json: {errors: @award.errors}
     end
   end
 
   def destroy
     if @award.destroy
-      respond_to do |format|
-        format.json{render json: {flash: t(".deleted_success"), status: 200}}
-      end
+      award_js t(".success"), 200
     else
-      flash[:danger] = t ".award_delete_fail"
-      redirect_to user_path current_user
+      award_js t(".failed"), 400
     end
   end
 
@@ -39,7 +36,7 @@ class AwardsController < ApplicationController
     if @award.update_attributes award_params
       award_js t(".success"), 200
     else
-      award_js t(".failed"), 400
+      render json: {errors: @award.errors}
     end
   end
   private

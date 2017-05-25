@@ -1,0 +1,6 @@
+<% if @status == 200 %>
+  $.growl.notice({message: '<%= @message %>'});
+  $('.show-portfolio').html('<%= j render "show_portfolio", portfolios: current_user.user_portfolios %>');
+<% else %>
+  $.growl.error({message: '<%= @message %>'});
+<% end %>

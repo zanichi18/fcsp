@@ -21,13 +21,6 @@ $(document).ready(function() {
     format: 'dd-mm-yyyy'
   });
 
-  $('.hover-button-award').hide();
-  $('.award-hover').mouseenter(function(){
-    $(this).find('.hover-button-award').show();
-  }).mouseleave(function() {
-    $(this).find('.hover-button-award').hide();
-  });
-
   $('.delete-award').on('click', function() {
     var id = this.dataset.id;
     var status_alert = I18n.t('javascripts.user_award_alert');
@@ -35,4 +28,24 @@ $(document).ready(function() {
       delete_award(id);
     }
   });
+
+  $('form.award-form').bind('ajax:success', function(event, xhr, settings) {
+    if(xhr['errors']) {
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+      var $form = $(this);
+      if(xhr['errors']) {
+        $.map(xhr['errors'], function(v, k) {
+          var element_id = '#award_' + k;
+          var $divFormGroup = $form.find(element_id).parent();
+          $divFormGroup.addClass('has-error');
+          $divFormGroup.append('<span class="help-block">' + v + '</span>');
+        });
+      }
+    }else {
+      $(this).closest('.modal').modal('hide');
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+    }
+  })
 });

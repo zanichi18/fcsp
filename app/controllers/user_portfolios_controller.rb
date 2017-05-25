@@ -28,12 +28,9 @@ class UserPortfoliosController < ApplicationController
 
   def destroy
     if @portfolio.destroy
-      respond_to do |format|
-        format.json{render json: {flash: t(".deleted_success"), status: 200}}
-      end
+      portfolio_js t(".success"), 200
     else
-      flash[:danger] = t ".portfolio_delete_fail"
-      redirect_to user_path current_user
+      portfolio_js t(".failed"), 400
     end
   end
 
@@ -47,6 +44,14 @@ class UserPortfoliosController < ApplicationController
   end
 
   private
+
+  def portfolio_js message, status
+    @status = status
+    @message = message
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def portfolio_params
     params.require(:user_portfolio).permit(:title, :description, :time, :url,
