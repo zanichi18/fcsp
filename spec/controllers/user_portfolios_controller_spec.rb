@@ -2,11 +2,11 @@ require "rails_helper"
 
 RSpec.describe UserPortfoliosController, type: :controller do
   let!(:user){FactoryGirl.create :user}
-  let(:params_true) do
+  let!(:params_true) do
     FactoryGirl.attributes_for :user_portfolio,
       title: "portfolio1", description: "description"
   end
-  let(:params_fail){FactoryGirl.attributes_for :user_portfolio, title: nil}
+  let!(:params_fail){FactoryGirl.attributes_for :user_portfolio, title: nil}
   before do
     sign_in user
   end
@@ -23,15 +23,19 @@ RSpec.describe UserPortfoliosController, type: :controller do
     let!(:user_portfolio){FactoryGirl.create :user_portfolio}
     context "with valid attributes" do
       it "update portfolio success" do
-        patch :update, params: {id: user_portfolio, user_portfolio: params_true}
-        expect(controller).to set_flash[:success]
+        patch :update, params: {id: user_portfolio,
+          user_portfolio: {title: "title"}}, format: :js, xhr: true
+        expect(assigns(:message))
+          .to eq I18n.t("user_portfolios.update.success")
+        expect(assigns(:status)).to eq 200
       end
     end
 
     context "with invalid attributes" do
       it "update fail" do
-        patch :update, params: {id: user_portfolio, user_portfolio: params_fail}
-        expect(controller).to set_flash[:danger]
+        patch :update, params: {id: user_portfolio,
+          user_portfolio: {title: nil}}, format: :js, xhr: true
+        expect(response).to have_http_status 200
       end
     end
 
@@ -54,14 +58,11 @@ RSpec.describe UserPortfoliosController, type: :controller do
   describe "POST #create" do
     it "create portfolio successfully" do
       post :create, params:
-        {user_portfolio: FactoryGirl.attributes_for(:user_portfolio)}
-      expect(flash[:success]).to be_present
-    end
-
-    it "create portfolio fail" do
-      post :create, params:
-        {user_portfolio: FactoryGirl.attributes_for(:user_portfolio, url: nil)}
-      expect(flash[:danger]).to be_present
+        {user_portfolio: FactoryGirl.attributes_for(:user_portfolio)},
+          format: :js, xhr: true
+      expect(assigns(:message))
+        .to eq I18n.t("user_portfolios.create.success")
+      expect(assigns(:status)).to eq 200
     end
   end
 end

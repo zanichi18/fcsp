@@ -3,6 +3,9 @@
     <% if is_notice_flash? message_type %>
       growl.notice({title: '<%= t ".success_title" %>',
         message: '<%= message %>'});
+    <% elsif is_warning_flash? message_type %>
+      growl.warning({title: '<%= t ".warning_title" %>',
+        message: '<%= message %>'});
     <% else %>
       growl.error({title: '<%= t ".failed_title" %>',
         message: '<%= message %>'});

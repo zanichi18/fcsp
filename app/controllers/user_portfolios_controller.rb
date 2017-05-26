@@ -17,13 +17,12 @@ class UserPortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = UserPortfolio.new portfolio_params
-    if @portfolio.save
-      flash[:success] = t ".portfolio_created"
+    @portfolio_detail = UserPortfolio.new portfolio_params
+    if @portfolio_detail.save
+      portfolio_js t(".success"), 200
     else
-      flash[:danger] = t ".portfolio_create_failed"
+      render json: {errors: @portfolio_detail.errors}
     end
-    redirect_to user_path current_user
   end
 
   def destroy
@@ -35,12 +34,15 @@ class UserPortfoliosController < ApplicationController
   end
 
   def update
-    if @portfolio.update_attributes portfolio_params
-      flash[:success] = t ".portfolio_updated"
+    if params[:user_portfolio].present?
+      if portfolio_params[:title].nil?
+        update_image
+      else
+        update_portfolio
+      end
     else
-      flash[:danger] = t ".portfolio_update_failed"
+      redirect_to user_path current_user
     end
-    redirect_to user_path current_user
   end
 
   private
@@ -53,10 +55,31 @@ class UserPortfoliosController < ApplicationController
     end
   end
 
+  def update_image
+    if @portfolio.update_attributes portfolio_params_image
+      flash[:success] = t ".success"
+    else
+      flash[:warning] = t ".fail_image"
+    end
+    redirect_to user_path current_user
+  end
+
+  def update_portfolio
+    if @portfolio.update_attributes portfolio_params
+      portfolio_js t(".success"), 200
+    else
+      render json: {errors: @portfolio.errors}
+    end
+  end
+
   def portfolio_params
-    params.require(:user_portfolio).permit(:title, :description, :time, :url,
-      images_attributes: [:id, :picture, :picture_cache, :_destroy])
+    params.require(:user_portfolio).permit(:title, :description, :time, :url)
       .merge user: current_user
+  end
+
+  def portfolio_params_image
+    params.require(:user_portfolio).permit(images_attributes: [:id, :picture,
+      :picture_cache, :_destroy]).merge user: current_user
   end
 
   def load_portfolio
