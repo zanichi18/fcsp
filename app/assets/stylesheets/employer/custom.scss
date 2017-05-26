@@ -160,3 +160,13 @@
   border-bottom: 1px solid $gray-boder;
   padding-bottom: 10px;
 }
+
+.message {
+  margin-top: 50px;
+  opacity: .7;
+  padding: 10px;
+  position: fixed;
+  right: 20px;
+  width: 30%;
+  z-index: 100;
+}
