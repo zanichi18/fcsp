@@ -55,6 +55,8 @@ class User < ApplicationRecord
   has_many :user_links, dependent: :destroy
   has_many :posts, as: :postable
   has_many :social_networks, as: :owner, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   accepts_nested_attributes_for :info_user
 
