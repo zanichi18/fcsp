@@ -15,7 +15,7 @@ module Supports
     end
 
     def members
-      company.users
+      company.users.includes :avatar
     end
 
     def member_avatars
