@@ -1,14 +1,18 @@
-<div class="form-user-certificate-modal"></div>
 <div class="row">
   <div class="panel panel-default user-info-panel">
-    <div class="user-education">
-      <span class="user-certificate-title">
+    <div class="user-link">
+      <strong class="user-certificate-title">
         <%= t ".certificate" %>
-      </span>
-      <%= link_to new_certificate_path, remote: true,
-        class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-certificate" do %>
-        <span class="icon-plus-sign"></span> <%= t ".add" %>
+      </strong>
+      <% if user.is_user? current_user %>
+        <%= link_to new_certificate_path, remote: true,
+          class: "button button-3d button-small button-rounded button-green
+            button-light button-white-text btn-add-certificate" do %>
+          <i class="icon-plus-sign"></i>
+          <%= t ".add" %>
+        <% end %>
       <% end %>
+      <hr>
       <div class="list-user-certificate">
         <%= render partial: "certificates/certificate",
           collection: user.certificates.newest %>

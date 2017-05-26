@@ -15,7 +15,7 @@ class CertificatesController < ApplicationController
     if @certificate.save
       certificate_js t(".success"), 200
     else
-      certificate_js t(".failed"), 400
+      render json: {errors: @certificate.errors}
     end
   end
 
@@ -29,7 +29,7 @@ class CertificatesController < ApplicationController
     if @certificate.update_attributes certificate_params
       certificate_js t(".success"), 200
     else
-      certificate_js t(".failed"), 400
+      render json: {errors: @certificate.errors}
     end
   end
 
