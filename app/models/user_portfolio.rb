@@ -14,5 +14,7 @@ class UserPortfolio < ApplicationRecord
   }
   validates :user_id, presence: true
 
+  scope :newest, ->{order created_at: :desc}
+
   accepts_nested_attributes_for :images, allow_destroy: true
 end

@@ -35,4 +35,44 @@ $(document).ready(function() {
       delete_portfolio(id);
     }
   });
+
+  var onAddFile;
+  onAddFile = function(event) {
+    var file, thumbContainer, url;
+    file = event.target.files[0];
+    url = URL.createObjectURL(file);
+    thumbContainer = $(this).parent().parent();
+    if (thumbContainer.find('img').length === 0) {
+      return thumbContainer.append('<img src="' + url + '" />');
+    } else {
+      return thumbContainer.find('img').attr('src', url);
+    }
+  };
+  $('input[type=file]').each(function() {
+    return $(this).change(onAddFile);
+  });
+  $('body').on('cocoon:after-insert', function(e, addedPartial) {
+    return $('input[type=file]', addedPartial).change(onAddFile);
+  });
+  $('a.add_fields').data('association-insertion-method', 'append');
+
+  $('form.portfolio-form').bind('ajax:success', function(event, xhr, settings) {
+    if(xhr['errors']) {
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+      var $form = $(this);
+      if(xhr['errors']) {
+        $.map(xhr['errors'], function(v, k) {
+          var element_id = '#user_portfolio_' + k;
+          var $divFormGroup = $form.find(element_id).parent();
+          $divFormGroup.addClass('has-error');
+          $divFormGroup.append('<span class="help-block">' + v + '</span>');
+        });
+      }
+    }else {
+      $(this).closest('.modal').modal('hide');
+      $('.form-group').removeClass('has-error');
+      $('span').remove('.help-block');
+    }
+  })
 });

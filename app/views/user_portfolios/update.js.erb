@@ -1,0 +1,9 @@
+<% if @status == 200 %>
+  $.growl.notice({message: '<%= @message %>'});
+  $('.show-portfolio').html('<%= j render "show_portfolio", portfolios: current_user.user_portfolios.newest %>');
+  $('#portfolio').modal('hide');
+  $('.portfolio-modal-image').html('<%= j render "form_image", button_text: t(".update"), portfolio: @portfolio %>');
+  $('#portfolio-image').modal('show');
+<% else %>
+  $.growl.error({message: '<%= @message %>'});
+<% end %>

@@ -33,4 +33,8 @@ module ApplicationHelper
   def resource_class
     devise_mapping.to
   end
+
+  def is_warning_flash? message_type
+    message_type == Settings.warning
+  end
 end

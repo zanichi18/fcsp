@@ -125,6 +125,7 @@ en:
     message:
       success_title: "Success"
       failed_title: "Fail"
+      warning_title: "Warning"
     base_title: "FCSP"
     header:
       home: "Home"
@@ -586,9 +587,21 @@ en:
     create:
       portfolio_created: "Created portfolio successfully"
       portfolio_create_failed: "Create portfolio failed"
+      success: "Created portfolio successfully"
+      failed: "Created portfolio failed"
+      update: "Update"
     update:
       portfolio_updated: "Updated portfolio successfully"
       portfolio_update_failed: "Update portfolio failed"
+      success: "update portfolio successfully"
+      failed: "update portfolio failed"
+      update: "Update"
+      fail_image: "You must update image"
+    form_image:
+      portfolio_header_image: "Image"
+      add_image: "add image"
+      close: "Close"
+      portfolio_notification_image: "You can skip!"
     load_portfolio:
       not_found: "Not found!"
     form_portfolio:
