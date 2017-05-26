@@ -34,9 +34,9 @@ RSpec.describe UserEducationsController, type: :controller do
     it "created user education failed" do
       post :create, params: {user_education: {school: ""}},
         format: :js, xhr: true
-      expect(assigns(:flash).message)
-        .to eq I18n.t("user_educations.create.fail")
-      expect(assigns(:flash).status).to eq 400
+      user_education = user.user_educations.create school_id: ""
+      expected = {errors: user_education.errors.messages}.to_json
+      expect(response.body).to eq expected
     end
   end
 
@@ -59,9 +59,9 @@ RSpec.describe UserEducationsController, type: :controller do
     it "updated user education failed" do
       patch :update, params: {id: user_education,
         user_education: {school: ""}}, format: :js, xhr: true
-      expect(assigns(:flash).message)
-        .to eq I18n.t("user_educations.update.fail")
-      expect(assigns(:flash).status).to eq 400
+      user_education.update_attributes school_id: ""
+      expected = {errors: user_education.errors.messages}.to_json
+      expect(response.body).to eq expected
     end
   end
 

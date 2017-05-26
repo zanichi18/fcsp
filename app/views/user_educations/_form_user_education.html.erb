@@ -1,6 +1,6 @@
 <div class="modal fade" id="formUserEducationModal" role="dialog">
   <div class="modal-dialog">
-    <%= form_for user_education, remote: true do |f| %>
+    <%= form_for user_education, html: {class: "user-education-form"}, remote: true do |f| %>
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -14,7 +14,7 @@
               <%= f.text_field :school, value: user_education.school_name,
                 class: "form-control dropdown-toggle",
                 "data-toggle": "dropdown", "aria-hidden": :true,
-                autocomplete: :off, required: true, id: "school-search" %>
+                autocomplete: :off, id: "school-search" %>
               <ul class="dropdown-menu form-control dropdown-result-school">
                 <div id="result-school-search"></div>
               </ul>
@@ -41,8 +41,8 @@
         </div>
 
         <div class="modal-footer">
-          <%= f.submit t(".update"), class: "btn btn-primary create-user-education" %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">
+          <%= f.submit t(".update"), class: "button button-3d button-rounded button-green" %>
+          <button type="button" class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
             <%= t ".close" %>
           </button>
         </div>

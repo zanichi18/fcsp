@@ -26,9 +26,9 @@ RSpec.describe UserLinksController, type: :controller do
     it "created user link failed" do
       post :create, params: {user_link: {link: "abc"}},
         format: :js, xhr: true
-      expect(assigns(:flash).message)
-        .to eq I18n.t("user_links.create.fail")
-      expect(assigns(:flash).status).to eq 400
+      user_link = user.user_links.create link: "abc"
+      expected = {errors: user_link.errors.messages}.to_json
+      expect(response.body).to eq expected
     end
   end
 
@@ -51,9 +51,9 @@ RSpec.describe UserLinksController, type: :controller do
     it "updated user link failed" do
       patch :update, params: {id: user_link, user_link: {link: "abc"}},
         format: :js, xhr: true
-      expect(assigns(:flash).message)
-        .to eq I18n.t("user_links.update.fail")
-      expect(assigns(:flash).status).to eq 400
+      user_link.update_attributes link: "abc"
+      expected = {errors: user_link.errors.messages}.to_json
+      expect(response.body).to eq expected
     end
   end
 
