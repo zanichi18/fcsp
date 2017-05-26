@@ -455,6 +455,25 @@ en:
       address: "Address"
       phone: "Phone"
       add_quote: "Add your favorite quote"
+      edit: "Edit"
+      facebook: "Facebook"
+      google: "Google +"
+      twitter: "Twitter"
+      linkedin: "LinkedIn"
+      skype: "Skype"
+      youtube: "Youtube"
+      instagram: "Instagram"
+    edit_social_network_modal:
+      header: "Update your social network"
+      facebook: "Facebook"
+      google: "Google +"
+      twitter: "Twitter"
+      linkedin: "LinkedIn"
+      skype: "Skype"
+      youtube: "Youtube"
+      instagram: "Instagram"
+      save: "Save"
+      close: "Close"
     change_avatar:
       title: "Update avatar"
       save: "Save"
@@ -847,3 +866,10 @@ en:
         professional: "Professional working proficiency"
         full_professional: "Full professional proficiency"
         native: "Native or bilingual proficiency"
+  user_social_networks:
+    create:
+      success: "Updated successfully!"
+      fail: "There is an invalid URL! Please try again!"
+    update:
+      success: "Updated successfully!"
+      fail: "There is an invalid URL! Please try again!"

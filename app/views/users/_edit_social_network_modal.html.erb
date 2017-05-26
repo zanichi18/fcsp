@@ -1,0 +1,68 @@
+<div class="modal fade" id="edit-social-network-modal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><%= t ".header" %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-facebook"></i></span>
+          <input id="facebook" type="url" class="form-control"
+          placeholder="<%= t ".facebook" %>"
+          value="<%= user.link_social_network "facebook" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-gplus"></i></span>
+          <input id="google" type="url" class="form-control"
+          placeholder="<%= t ".google" %>"
+          value="<%= user.link_social_network "google" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-twitter"></i></span>
+          <input id="twitter" type="url" class="form-control"
+          placeholder="<%= t ".twitter" %>"
+          value="<%= user.link_social_network "twitter" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-linkedin"></i></span>
+          <input id="linkedin" type="url" class="form-control"
+          placeholder="<%= t ".linkedin" %>"
+          value="<%= user.link_social_network "linkedin" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-skype"></i></span>
+          <input id="skype" type="url" class="form-control"
+          placeholder="<%= t ".skype" %>"
+          value="<%= user.link_social_network "skype" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-youtube"></i></span>
+          <input id="youtube" type="url" class="form-control"
+          placeholder="<%= t ".youtube" %>"
+          value="<%= user.link_social_network "youtube" %>">
+        </div>
+        <div class="input-group form-group">
+          <span class="input-group-addon"><i class="icon-instagram"></i></span>
+          <input id="instagram" type="url" class="form-control"
+          placeholder="<%= t ".instagram" %>"
+          value="<%= user.link_social_network "instagram" %>">
+        </div>
+      </div>
+      <div class="modal-footer text-center">
+        <% if user.social_networks.present? %>
+          <button class="button button-3d button-rounded button-green update-social-network-btn">
+            <%= t ".save" %></button>
+        <% else %>
+          <button class="button button-3d button-rounded button-green create-social-network-btn">
+            <%= t ".save" %></button>
+        <% end %>
+        <button type="button" class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "user_social_network" %>

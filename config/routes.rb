@@ -79,4 +79,6 @@ Rails.application.routes.draw do
   resources :user_projects
   resources :certificates, except: [:index, :show]
   resources :user_languages
+  resources :user_social_networks, only: :create
+  resource :user_social_networks, only: :update
 end

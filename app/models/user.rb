@@ -54,6 +54,7 @@ class User < ApplicationRecord
     class_name: Company.name
   has_many :user_links, dependent: :destroy
   has_many :posts, as: :postable
+  has_many :social_networks, as: :owner, dependent: :destroy
 
   accepts_nested_attributes_for :info_user
 
@@ -163,6 +164,10 @@ class User < ApplicationRecord
 
   def mutual_friends user
     self.friends & user.friends
+  end
+
+  def link_social_network type
+    self.social_networks.send(type).first.url if self.social_networks.any?
   end
 
   private
