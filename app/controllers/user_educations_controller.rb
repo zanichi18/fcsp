@@ -22,7 +22,7 @@ class UserEducationsController < ApplicationController
     if user_education.save
       render_to_js t(".success"), 200
     else
-      render_to_js t(".fail"), 400
+      render json: {errors: user_education.errors}
     end
   end
 
@@ -35,7 +35,7 @@ class UserEducationsController < ApplicationController
         .merge!(school: @school)
       render_to_js t(".success"), 200
     else
-      render_to_js t(".fail"), 400
+      render json: {errors: @user_education.errors}
     end
   end
 

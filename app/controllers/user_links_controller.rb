@@ -11,7 +11,7 @@ class UserLinksController < ApplicationController
     if @user_link.save
       render_to_js t(".success"), 200
     else
-      render_to_js t(".fail"), 400
+      render json: {errors: @user_link.errors}
     end
   end
 
@@ -23,7 +23,7 @@ class UserLinksController < ApplicationController
     if @user_link.update_attributes user_link_params
       render_to_js t(".success"), 200
     else
-      render_to_js t(".fail"), 400
+      render json: {errors: @user_link.errors}
     end
   end
 
