@@ -17,7 +17,6 @@
  *= require custom
  *= require company_info
  *= require tooltip
- *= require user
  *= require friend_ships
  *= require info_users
  *= require user_portfolios
@@ -27,9 +26,10 @@
  *= require user_link
  *= require certificates
  *= require likes
- *= require job
  *= require responsive
  *= require pagination
+ *= require job
+ *= require user
  */
 
 @import 'social-share-button';

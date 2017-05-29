@@ -8,6 +8,7 @@ module JobsHelper
   end
 
   def load_image_job job
-    image_tag job.images.present? ? job.images.first : "default_post.png"
+    image_tag job.images.present? ? job.images.first.picture :
+      "default_post.png"
   end
 end

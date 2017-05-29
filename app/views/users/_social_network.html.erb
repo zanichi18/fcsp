@@ -1,4 +1,4 @@
-<div class="fancy-title topmargin title-border-custom">
+<div class="fancy-title title-border-custom">
   <h4><%= t ".about_me" %></h4>
   <% if @user.is_user? current_user %>
     <a href="#" id="edit-quote" data-toggle="modal"
@@ -44,7 +44,7 @@
     </div>
   </div>
 <% end %>
-<div class="fancy-title topmargin title-border-custom">
+<div class="title-border-custom clearfix">
   <h4><%= t ".social_profiles" %></h4>
   <% if @user.is_user? current_user %>
     <a href="#" data-toggle="modal"
@@ -54,7 +54,7 @@
     <%= render "edit_social_network_modal", user: @user %>
   <% end %>
 </div>
-<div class="list-social-network">
+<div class="list-social-network clearfix">
   <a href="<%= @user.link_social_network "facebook" %>" target="_blank"
     class="social-icon si-facebook si-small si-rounded si-light"
     title="<%= t ".facebook" %>">
