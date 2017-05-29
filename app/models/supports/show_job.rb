@@ -18,12 +18,8 @@ module Supports
       company.users.includes :avatar
     end
 
-    def member_avatars
-      company.users.includes :avatar
-    end
-
     def jobs_company
-      company.jobs.limit(4)
+      company.jobs.limit Settings.jobs.company_limit
     end
 
     def company_address
@@ -51,7 +47,7 @@ module Supports
     end
 
     def recommend
-      User.recommend(@job).includes(:avatar)
+      User.recommend(@job).includes :avatar
     end
 
     def qualified_profile?

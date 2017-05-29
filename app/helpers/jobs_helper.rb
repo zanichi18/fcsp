@@ -6,4 +6,8 @@ module JobsHelper
   def shared_job? job
     @shared_job_ids.include? job.id if @shared_job_ids.present?
   end
+
+  def load_image_job job
+    image_tag job.images.present? ? job.images.first : "default_post.png"
+  end
 end
