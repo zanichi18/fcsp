@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525040957) do
+ActiveRecord::Schema.define(version: 20170529032237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.integer  "cover_image_id"
     t.index ["name"], name: "index_companies_on_name", using: :btree
     t.index ["website"], name: "index_companies_on_website", using: :btree
+    t.index ["avatar_id"], name: "index_companies_on_avatar", using: :btree
+    t.index ["cover_image_id"], name: "index_companies_on_cover_image_id", using: :btree
   end
 
   create_table "company_industries", force: :cascade do |t|
@@ -173,6 +175,7 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_education_categories_on_deleted_at", using: :btree
+    i.index ["commentable_id", "commentable_type"], name: "index_education_categories_on_commentable", using: :btree
   end
 
   create_table "education_comments", force: :cascade do |t|
@@ -183,6 +186,7 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
+    t.index ["commentable_id", "commentable_type"], name: "index_education_comments_on_commentable", using: :btree
   end
 
   create_table "education_course_members", force: :cascade do |t|
@@ -358,6 +362,7 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
+    t.index ["rateable_id", "rateable_type"], name: "index_education_rates_rateable", using: :btree
   end
 
   create_table "education_socials", force: :cascade do |t|
@@ -456,6 +461,7 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "blocker_id"
+    t.index ["friendable_id", "friendable_type"], name: "fk_friendable", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -585,12 +591,10 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.string   "title"
     t.text     "content"
     t.integer  "author_id"
-    t.integer  "likes_count",    default: 0
-    t.integer  "comments_count", default: 0
     t.string   "postable_type"
     t.integer  "postable_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id", using: :btree
   end
 
@@ -779,8 +783,11 @@ ActiveRecord::Schema.define(version: 20170525040957) do
     t.integer  "education_status",       default: 1
     t.integer  "cover_image_id"
     t.integer  "avatar_id"
+    t.string   "provider"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["cover_image_id"], name: "index_users_on_cover_image_id", using: :btree
+    t.index ["avatar_id"], name: "index_users_on_avatar_id", using: :btree
   end
 
   add_foreign_key "awards", "users"
