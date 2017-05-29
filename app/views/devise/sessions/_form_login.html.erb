@@ -27,17 +27,18 @@
           class: "button button-3d button-green nomargin" %>
       </div>
     <% end %>
-
-    <div class="line line-sm"></div>
-
     <div class="center">
-      <h4 class="margin-section" ><%= t ".or_login_with" %></h4>
-      <a href="#" class="button button-rounded si-facebook si-colored">
-        <%= t ".facebook" %></a>
-      <span class="hidden-xs"></span>
-      <a href="#" class="button button-rounded si-twitter si-colored">
-        <%= t ".twitter" %>
-      </a>
+      <div class="line line-sm"></div>
+      <% if devise_mapping.omniauthable? %>
+        <h4 class="margin-section" ><%= t ".or_login_with" %></h4>
+        <% resource_class.omniauth_providers.each do |provider| %>
+          <% if OmniAuth::Utils.camelize(provider) == Settings.hr_system %>
+            <%= link_to t(".hr_system"), user_hr_system_omniauth_authorize_path,
+              class: "button button-rounded si-soundcloud si-colored" %>
+            <span class="hidden-xs"></span>
+          <% end %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

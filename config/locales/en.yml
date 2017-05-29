@@ -88,7 +88,6 @@ en:
       type_of_candidates: "Type of candidates: "
       share: " Share"
       unshare: " Unshare"
-      comments: "comments"
     recommend_user:
       show_more: "View more"
       recommend: "Recommend"
@@ -918,3 +917,8 @@ en:
     like_user_post:
       you_and_orthers_like: "You and %{count} orthers"
       orthers_like: "%{count} orthers"
+  omniauth_callbacks:
+    hr_system:
+      auth_failure: "Auth failure"
+    failure:
+      auth_failure: "Auth failure"

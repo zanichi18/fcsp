@@ -591,10 +591,12 @@ ActiveRecord::Schema.define(version: 20170529032237) do
     t.string   "title"
     t.text     "content"
     t.integer  "author_id"
+    t.integer  "likes_count",    default: 0
+    t.integer  "comments_count", default: 0
     t.string   "postable_type"
     t.integer  "postable_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id", using: :btree
   end
 

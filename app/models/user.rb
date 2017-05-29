@@ -4,7 +4,7 @@ class User < ApplicationRecord
   acts_as_follower
   has_friendship
   devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :articles, dependent: :destroy
   has_many :education_posts, class_name: Education::Post.name
   has_many :education_socials, class_name: Education::Social.name
@@ -29,7 +29,7 @@ class User < ApplicationRecord
   has_many :candidates, dependent: :destroy
   has_many :jobs, through: :candidates
   has_many :bookmarks, dependent: :destroy
-  has_one :info_user
+  has_one :info_user, dependent: :destroy
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users
   has_many :user_portfolios, dependent: :destroy
@@ -125,6 +125,15 @@ class User < ApplicationRecord
 
     def header_of_file file
       spreadsheet(file).row 1
+    end
+
+    def from_omniauth auth
+      User.find_or_initialize_by(email: auth.info.email).tap do |user|
+        user.name = auth.info.name
+        user.provider = auth.provider
+        user.password = User.generate_unique_secure_token if user.new_record?
+        user.save
+      end
     end
   end
 
