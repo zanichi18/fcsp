@@ -169,7 +169,9 @@ jobs:
   posting_job_default: "/assets/posting_job_default.jpg"
   team_intro_default: "/assets/team_intro.png"
   max_length_title: 20
-  words_count: 10
+  words_count: 30
+  popular: 5
+  company_limit: 4
 industries:
   max_length_name: 50
 activity:

@@ -855,3 +855,64 @@ article {
     width: 90px;
   }
 }
+
+// job index
+.job-index-page {
+  .post {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .more-link {
+    background: $base-tone;
+    color: $white;
+    font-family: roboto;
+    margin: 0;
+
+    &:hover {
+      background: $white;
+      border: 1px solid $base-tone;
+      color: $base-tone;
+    }
+  }
+
+  hr {
+    margin-top: 10px;
+  }
+
+  .search-form,
+  .hiring-type .btn {
+    border: 1px solid $base-tone;
+    border-radius: 0;
+    color: $base-tone;
+    margin-bottom: 10px;
+  }
+
+  .hiring-type .btn {
+    &:hover {
+      background: $base-tone;
+      color: $white;
+    }
+  }
+
+  .dropdown-menu {
+    border: 1px solid $base-tone;
+    border-radius: 0;
+  }
+
+  .right-addon {
+    margin-top: 10px;
+    position: relative;
+  }
+
+  .glyphicon-search {
+    color: $base-tone;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
