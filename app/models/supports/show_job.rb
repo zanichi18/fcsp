@@ -53,7 +53,7 @@ module Supports
     def qualified_profile?
       requests = JSON.parse(@job.profile_requests).to_a
       (education? requests) && (portfolio? requests) && (introduce? requests) &&
-        (requests.exclude?("ambition") || @user.info_user.ambition.present?)
+        (requests.exclude?("ambition") || @user.info_user_ambition.present?)
     end
 
     private
@@ -67,7 +67,7 @@ module Supports
     end
 
     def introduce? requests
-      requests.exclude?("introduce") || @user.info_user.introduce.present?
+      requests.exclude?("introduce") || @user.info_user_introduce.present?
     end
   end
 end

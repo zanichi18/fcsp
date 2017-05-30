@@ -11,7 +11,7 @@
 <% if @user.info_user.present? %>
   <div class="block-quote education-info">
     <p>
-      <%= quote_content @user.info_user.quote %>
+      <%= quote_content @user.info_user_quote %>
       <% if @user.is_user? current_user %>
         <span class="edit-education">
           <span class="pull-right nomargin">
@@ -30,7 +30,7 @@
     <div class="top-cart-item-desc">
       <b><%= t ".address" %></b>
       <span class="top-cart-item-price" id="address-information">
-        <%= @user.info_user.address %>
+        <%= @user.info_user_address %>
       </span>
     </div>
   </div>
@@ -39,7 +39,7 @@
     <div class="top-cart-item-desc">
       <b><%= t ".phone" %></b>
       <span class="top-cart-item-price" id="phone-information">
-        <%= @user.info_user.phone %>
+        <%= @user.info_user_phone %>
       </span>
     </div>
   </div>
