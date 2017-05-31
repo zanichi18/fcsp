@@ -12,7 +12,6 @@ class Ability
       can :manage, Job
       can :manage, TeamIntroduction
       can :manage, Candidate
-      can :manage, Article
     else
       can :read, Company
       can :read, Job

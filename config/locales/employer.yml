@@ -1,5 +1,29 @@
 en:
   employer:
+    articles:
+      not_found: "Article not found"
+      index:
+        new: "New Article"
+        continue: "Read more"
+      new:
+        new: "New Article"
+      articles:
+        edit: "Edit"
+        delete: "Delete"
+        found_results: "Found %{total} results"
+        show_at: "Showed at %{time}"
+      form:
+        now: "Now"
+        time: "Choose time"
+      create:
+        created: "Article has been created successfully"
+        fail: "Article has been created fail"
+      update:
+        now: "Now"
+        update: "Article has been updated"
+      destroy:
+        delete: "Article has been deleted"
+        fail: "Cannot delete this article"
     sortaz: "Sort by A → Z"
     sortza: "Sort by Z → A"
     sortvalue: "Sort follow value..."

@@ -46,6 +46,7 @@ Rails.application.routes.draw do
       resources :teams
       resources :team_introductions, only: [:create, :new]
       resources :candidates, only: [:index, :update]
+      resources :articles, except: :show
     end
   end
 
@@ -54,7 +55,6 @@ Rails.application.routes.draw do
     root "dashboards#index"
     resources :companies, only: [:new, :create, :show]
     resources :users, only: [:new, :create]
-    resources :articles
   end
 
   resources :jobs, only: [:index, :show]
