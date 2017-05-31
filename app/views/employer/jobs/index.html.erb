@@ -1,11 +1,17 @@
 <% provide :title, t(".job") %>
 <div class="clearfix" id="jobs-management">
-  <h3><%= t ".job_recruitment" %></h3></br>
-  <div class="button-create-job">
-    <%= link_to t(".create_job"), new_employer_company_job_path(@company),
-      class: "btn btn-primary" %>
+  <h3><%= t ".job_recruitment" %></h3>
+  <div class="row group-btn">
+    <div class="btn-action-job button-create-job">
+      <%= link_to t(".create_job"), new_employer_company_job_path(@company),
+        class: "btn btn-primary" %>
+    </div>
+    <div class="btn-action-job button-delete-job">
+      <button type="button" class="btn btn-danger">
+        <%= t ".delete_job" %>
+      </button>
+    </div>
   </div>
-  </br>
   <div class="container">
     <div class="row">
       <section class="content">
@@ -54,6 +60,5 @@
   <div class="pagination-job">
     <%= render "paginate" %>
   </div>
-
   <input type="hidden" id="company-id" value="<%= @company.id %>">
 </div>

@@ -41,7 +41,7 @@ class Employer::TeamsController < Employer::BaseController
       redirect_to employer_company_teams_url
     else
       flash[:danger] = ".create_fail"
-      render @team
+      render :new
     end
   end
 

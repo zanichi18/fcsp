@@ -2,7 +2,7 @@ class Candidate < ApplicationRecord
   belongs_to :user
   belongs_to :job, counter_cache: true
 
-  has_one :avatar, through: :user, class_name: Image.name
+  has_one :avatar, through: :user, class_name: Image.name, dependent: :destroy
 
   enum interested_in: [:have_a_chat, :work_together, :opportunity]
   enum process: [:apply, :fail_test, :joined, :pass_test, :wait_test]

@@ -9,7 +9,7 @@ class Job < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :job_skills, dependent: :destroy
   has_many :skills, through: :job_skills
-  has_many :team_introductions, as: :team_target
+  has_many :team_introductions, as: :team_target, dependent: :destroy
   has_many :shares, class_name: ShareJob.name, dependent: :destroy
   has_many :sharers, through: :shares, source: :user
 
@@ -27,7 +27,8 @@ class Job < ApplicationRecord
   delegate :name, to: :hiring_types, prefix: true
 
   ATTRIBUTES = [:title, :describe, :type_of_candidates, :who_can_apply, :status,
-    :company_id, hiring_type_ids: [], images_attributes: [:id,
+    :company_id, :candidates_count, hiring_type_ids: [],
+    images_attributes: [:id,
     :imageable_id, :imageable_type, :picture, :caption]]
 
   TYPEOFCANDIDATES = Job.type_of_candidates
@@ -59,5 +60,9 @@ class Job < ApplicationRecord
         Skill.require_by_job(job_id).pluck(:id),
         HiringType.job_hiring_type(job_id).pluck(:id))
       .distinct.limit Settings.posting_job.job_limit
+  end
+
+  scope :delete_job, ->list_job do
+    where("id IN (?)", list_job).destroy_all
   end
 end

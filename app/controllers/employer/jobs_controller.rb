@@ -6,9 +6,7 @@ class Employer::JobsController < Employer::BaseController
   def index
     if params[:type]
       listarr = params[:array_id]
-
       listarr = listarr.split(",").map(&:to_i) if listarr.class == String
-
       sort_by = params[:sort].nil? ? "ASC" : params[:sort]
       @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
         .filter(listarr, sort_by, params[:type]).page(params[:page])
@@ -68,17 +66,27 @@ class Employer::JobsController < Employer::BaseController
   end
 
   def destroy
-    @job.destroy if params[:type] == "delete"
+    Job.delete_job params[:array_id]
+    @jobs = @company.jobs.includes(:candidates, :images, :bookmarks)
+      .page(params[:page]).per Settings.employer.jobs.per_page
+
+    if request.xhr?
+      render json: {
+        html_job: render_to_string(partial: "job", locals: {jobs: @jobs},
+          layout: false),
+        pagination_job: render_to_string(partial: "paginate", layout: false)
+      }
+    else
+      respond_to do |format|
+        format.html
+      end
+    end
   end
 
   private
 
   def job_params
     params.require(:job).permit Job::ATTRIBUTES
-  end
-
-  def restore_job id
-    Job.restore(id, recursive: true) if params[:type] == "reopen"
   end
 
   def load_hiring_types
