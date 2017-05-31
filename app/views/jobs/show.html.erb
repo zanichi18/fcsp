@@ -44,16 +44,18 @@
         </div>
         <div class="post-content">
           <header class="entry-header text-center text-uppercase">
-            <h6><a href="#"> <%= Job.human_enum_name :type_of_candidates, @job.type_of_candidates %></a></h6>
-            <h1 class="entry-title"><a><%= @job.title %></a></h1>
+            <h6>
+              <a href="#">
+                <%= Job.human_enum_name :type_of_candidates,
+                  @job.type_of_candidates %>
+              </a>
+            </h6>
+            <h1 class="entry-title">
+              <a><%= @job.title %></a>
+            </h1>
             <h5 class="company-name text-right">
               <span class="company-logo">
-                <% if @job_object.company.images.present? %>
-                  <%= link_to image_tag(@job.company.images.first.picture,
-                    size: Settings.jobs.image_company_size), company_path %>
-                <% else %>
-                  <%= link_to @job.company_name, company_path(@job.company) %>
-                <% end %>
+                <%= link_to @job.company_name, company_path(@job.company) %>
               </span>
             </h5>
           </header>
@@ -67,7 +69,7 @@
           </div>
         </div>
       </article>
-    <%= render "posting_jobs" %>
+      <%= render "posting_jobs" %>
     </div>
     <div class="col-md-4 col-xs-12">
       <div class="primary-sidebar">
@@ -134,7 +136,6 @@
     </div>
   </div>
 </div>
-
 <div class="apply-success-modal">
   <div class="modal fade" id="apply_job_success_modal" tabindex="-1"
     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -152,7 +153,6 @@
               alt: t(".apply_success_alt") %>
           </div>
           <div class="text-container">
-
             <h3><%= t ".success_heading" %></h3>
             <p><%= t ".success_description" %></p>
           </div>
@@ -161,7 +161,6 @@
     </div>
   </div>
 </div>
-
 <div class="apply-failed-modal">
   <div class="modal fade" id="apply_job_failed_modal" tabindex="-1"
     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -180,7 +179,6 @@
                 alt: t(".need_update_profile_alt") %>
             </div>
             <div class="text-container">
-
               <h3><%= t ".should_update_heading" %></h3>
               <p><%= t ".should_update_heading_description" %></p>
             </div>
