@@ -8,7 +8,10 @@ module JobsHelper
   end
 
   def load_image_job job
-    image_tag job.images.present? ? job.images.first.picture :
-      "default_post.png"
+    if job.images.present?
+      image_tag job.images.first.picture
+    else
+      image_tag PictureUploader.new.picture_url
+    end
   end
 end

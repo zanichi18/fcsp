@@ -194,6 +194,30 @@ en:
         why_we_do: "Why We Do"
         how_we_do: "How We Do"
         optional: "(Optional)"
+    teams:
+      filter_name:
+        search: "Search..."
+      create:
+        create_success: "Create team success"
+        create_fail: "Fail to create team"
+      update:
+        update_success: "Update successfully"
+        update_fail: "Fail to update team"
+      not_found: "Not found"
+      team:
+        show_team: "Show Team"
+        edit_team: "Edit Team"
+        confirm: "Are you sure ?"
+      index:
+        title: "Team"
+        create_team: "Create new team"
+        team_title: "Title"
+        team_action: "Action"
+      new:
+        new_team: "New Team"
+      show:
+        info_team: "Info Team"
+        introduction_team: "Introduction"
     team_introductions:
       form:
         title: "Title"
@@ -210,7 +234,7 @@ en:
         team_introduction_3: "Team Introduction 3"
         team_introduction_recruitment: "Team Introduction Recruiment"
         submit: "Submit"
-      danger: "Danger"  
+      danger: "Danger"
       not_found: "Team Introduction not found"
       success: "Successfully added team introduction"
       create_confirm: "Are you sure to set up this company introduction?"

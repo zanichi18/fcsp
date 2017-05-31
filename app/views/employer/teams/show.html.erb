@@ -6,7 +6,7 @@
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="container">
-                <h3 class="fix-h3"><%= t "companies.teams.info_team" %></h3>
+                <h3 class="fix-h3"><%= t ".info_team" %></h3>
                 <div class="col-sm-6">
                   <%= load_team_image @team, class: "img-upload" %><br>
                 </div>
@@ -16,7 +16,7 @@
                 </div>
               </div>
               <div class="container">
-                <h3 class="fix-h3"><%= t "companies.teams.introduction_team" %></h3>
+                <h3 class="fix-h3"><%= t ".introduction_team" %></h3>
                 <div>
                   <ul class="nav nav-tabs" role="tablist">
                     <% @team.team_introductions.each_with_index do |value, key| %>

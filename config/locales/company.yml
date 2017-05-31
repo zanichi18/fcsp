@@ -1,20 +1,5 @@
 en:
   companies:
-    teams:
-      confirm: "Are you sure ?"
-      search: "Search"
-      create_success: "Create Success"
-      fails: "Danger"
-      not_found: "Not found"
-      show_team: "Show Team"
-      edit_team: "Edit Team"
-      title: "Team"
-      create_team: "Create new team"
-      team_title: "Title"
-      team_action: "Action"
-      new_team: "New Team"
-      info_team: "Info Team"
-      introduction_team: "Introduction"
     avatar:
       success: "Success"
       danger: "Danger"

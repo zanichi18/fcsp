@@ -6,18 +6,3 @@
 @import 'gentelella';
 @import 'gentelella/gentelella-custom';
 @import 'variables/color';
-
-.box-danger {
-  color: $white;
-  font-size: 10px;
-  padding: 5px;
-}
-
-.message {
-  margin-top: 50px;
-  padding: 10px;
-  position: fixed;
-  right: 20px;
-  width: 30%;
-  z-index: 100;
-}

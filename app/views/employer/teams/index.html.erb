@@ -1,8 +1,7 @@
 <div class="clearfix" id="jobs-management">
-  <h3><span>
-    <%= t "companies.teams.title" %></span></h3><br>
+  <h3><span><%= t ".title" %></span></h3><br>
   <div class="button-create-job">
-    <%= link_to t("companies.teams.create_team"),
+    <%= link_to t(".create_team"),
       new_employer_company_team_path, class: "btn btn-primary"  %>
   </div>
   <br>
@@ -18,10 +17,10 @@
                     <tr class="headings">
                       <th class="job-title">
                         <%= render "filter_name" %>
-                        <%= t "companies.teams.team_title" %>
+                        <%= t ".team_title" %>
                       </th>
                       <th class="job-action">
-                        <%= t "companies.teams.team_action" %>
+                        <%= t ".team_action" %>
                       </th>
                     </tr>
                   </thead>
@@ -39,5 +38,5 @@
   <div class="pagination-job">
     <%= render "paginate" %>
   </div>
-  <input type="hidden" id="company-id" value="2">
+  <input type="hidden" id="company-id" value="<%= @company.id %>">
 </div>
