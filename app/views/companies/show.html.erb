@@ -1,4 +1,3 @@
-<%= render "show_header" %>
-<div class="content-wrap-custom-sys">
-  <%= render "show_main_content" %>
-</div>
+<%= render "show_header", company: @company %>
+<%= render "show_main_content" %>
+<%= javascript_include_tag "users" %>

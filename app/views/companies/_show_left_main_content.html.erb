@@ -1,153 +1,147 @@
-<div class="row clearfix">
-  <div class="col-md-12">
-    <div class="tabs tabs-alt clearfix" id="tabs-profile">
-      <ul class="clearfix company-tab">
-        <li><a href="#tab-info"><i class="icon-rss2"></i> <%= t ".info" %></a></li>
-        <li><a href="#tab-news"><i class="icon-pencil2"></i> <%= t ".news" %></a></li>
-        <li><a href="#tab-jobs"><i class="icon-reply"></i> <%= t ".jobs" %></a></li>
-        <li><a href="#tab-members"><i class="icon-users"></i> <%= t ".members" %></a></li>
-        <li><a href="#tab-stats"><i class="icon-users"></i> <%= t ".stats" %></a></li>
-        <div class="share-company">
-          <%= social_share_button_tag @company.name %>
-        </div>
-      </ul>
-      <div class="tab-container">
-        <div class="tab-content clearfix" id="tab-info">
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped">
-              <colgroup>
-                <col class="col-xs-3">
-                <col class="col-xs-5">
-                <col class="col-xs-4">
-              </colgroup>
-              <thead>
+<div class="col-md-8">
+  <article class="post show-tab-user">
+    <div class="clearfix">
+      <div class="hide-tab active" id="tab-info">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <colgroup>
+              <col class="col-xs-3">
+              <col class="col-xs-5">
+              <col class="col-xs-4">
+            </colgroup>
+            <thead>
               <tr>
                 <th><%= t ".founder" %></th>
                 <th><%= t ".founded" %></th>
                 <th><%= t ".no_of_members" %></th>
               </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
               <tr>
                 <td>
-                  <%= @company.founder %>
+                  <%= company.founder %>
                 </td>
-                <td><code><%= @company.founder_on %></code></td>
-                <td><code><%= @company.company_size %></code></td>
+                <td><code><%= company.founder_on %></code></td>
+                <td><code><%= company.company_size %></code></td>
               </tr>
-              </tbody>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
-        <div class="tab-content clearfix" id="tab-news">
-          <div class="row topmargin-sm clearfix">
-            <div class="col-xs-12 bottommargin-sm">
-              <div class="ipost clearfix">
-                <div class="row clearfix">
-                  <div class="col-sm-4">
-                    <div class="entry-image">
-                      <a href="#" data-lightbox="image">
-                        <%= image_tag "welcome2.jpg", alt: "Standard Post with Image" %>
+      </div>
+      <div class="hide-tab clearfix" id="tab-news">
+        <div class="row topmargin-sm clearfix">
+          <div class="col-xs-12 bottommargin-sm">
+            <div class="ipost clearfix">
+              <div class="row clearfix">
+                <div class="col-sm-4">
+                  <div class="entry-image">
+                    <a href="#" data-lightbox="image">
+                      <%= load_companies_cover company %>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-8">
+                  <div class="entry-title">
+                    <h3>
+                      <a href="blog-single.html">
+                        <%= FFaker::Lorem.sentence %>
                       </a>
-                    </div>
+                    </h3>
                   </div>
-                  <div class="col-sm-8">
-                    <div class="entry-title">
-                      <h3><a href="blog-single.html"><%= FFaker::Lorem.sentence %></a></h3>
-                    </div>
-                    <ul class="entry-meta clearfix">
-                      <li><i class="icon-calendar3"></i> 10th Feb 2014</li>
-                      <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-                      <li><a href="#"><i class="icon-camera-retro"></i></a></li>
-                    </ul>
-                    <div class="entry-content">
-                      <p><%= FFaker::Lorem.sentence %></p>
-                    </div>
+                  <ul class="entry-meta clearfix">
+                    <li><i class="icon-calendar3"></i> 10th Feb 2014</li>
+                    <li>
+                      <a href="blog-single.html#comments">
+                      <i class="icon-comments"></i> 13</a>
+                    </li>
+                    <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+                  </ul>
+                  <div class="entry-content">
+                    <p><%= FFaker::Lorem.sentence %></p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="tab-content clearfix" id="tab-jobs">
-          <%= render "company_jobs" %>
-        </div>
-        <div class="tab-content clearfix" id="tab-members">
-          <div class="row topmargin-sm">
-            <div class="col-md-3 col-sm-6 bottommargin">
-              <div class="team">
-                <div class="team-image">
-                  <%= image_tag "avatar.jpg", alt: "John Doe" %>
-                </div>
-                <div class="team-desc">
-                  <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                    <i class="icon-gplus"></i>
-                    <i class="icon-gplus"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 bottommargin">
-              <div class="team">
-                <div class="team-image">
-                  <%= image_tag "avatar.jpg", alt: "Josh Clark" %>
-                </div>
-                <div class="team-desc">
-                  <div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                    <i class="icon-gplus"></i>
-                    <i class="icon-gplus"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 col-sm-6 bottommargin">
-              <div class="team">
-                <div class="team-image">
-                  <%= image_tag ImageUploader.new.default_url, alt: "Mary Jane" %>
-                </div>
-                <div class="team-desc">
-                  <div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
-                    <i class="icon-facebook"></i>
-                    <i class="icon-facebook"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
-                    <i class="icon-twitter"></i>
-                    <i class="icon-twitter"></i>
-                  </a>
-                  <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
-                    <i class="icon-gplus"></i>
-                    <i class="icon-gplus"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tab-content clearfix" id="tab-stats">
-          <div class="row topmargin-sm">
-
           </div>
         </div>
       </div>
+      <div class="hide-tab clearfix" id="tab-jobs">
+        <%= render "company_jobs" %>
+      </div>
+      <div class="hide-tab clearfix" id="tab-members">
+        <div class="row topmargin-sm">
+          <div class="col-md-3 col-sm-6 bottommargin">
+            <div class="team">
+              <div class="team-image">
+                <%= image_tag "avatar.jpg", alt: "John Doe" %>
+              </div>
+              <div class="team-desc">
+                <div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 bottommargin">
+            <div class="team">
+              <div class="team-image">
+                <%= image_tag "avatar.jpg", alt: "Josh Clark" %>
+              </div>
+              <div class="team-desc">
+                <div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 bottommargin">
+            <div class="team">
+              <div class="team-image">
+                <%= image_tag ImageUploader.new.default_url, alt: "Mary Jane" %>
+              </div>
+              <div class="team-desc">
+                <div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+                <a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hide-tab clearfix" id="tab-stats">
+        <div class="row topmargin-sm">
+        </div>
+      </div>
     </div>
-  </div>
+  </article>
 </div>

@@ -39,6 +39,11 @@ en:
     show_header:
       follow: "Follow"
       change_cover: "Change your cover image"
+      info: "Info"
+      news: "News"
+      jobs: "Jobs"
+      members: "Members"
+      stats: "Stats"
     modal_change_avatar_company:
       update_avatar: "Update avatar image"
       save: "Save"
