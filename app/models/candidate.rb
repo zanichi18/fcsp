@@ -1,6 +1,6 @@
 class Candidate < ApplicationRecord
   belongs_to :user
-  belongs_to :job
+  belongs_to :job, counter_cache: true
 
   has_one :avatar, through: :user, class_name: Image.name
 

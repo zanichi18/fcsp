@@ -73,6 +73,7 @@ en:
       title: "Other jobs posting you may like"
     popular_job:
       comments: "35 comments"
+      person_applied: " person has applied"
     bookmark:
       bookmark: "Bookmark"
       bookmark_job: "Bookmark job"

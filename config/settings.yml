@@ -197,6 +197,8 @@ user_educations:
   description_max: 1000
 recommend:
   user_limit: 5
+posting_job:
+  job_limit: 4
 home:
   limit: 8
   max_job: 24

@@ -84,6 +84,11 @@ namespace :db do
         end
       end
 
+      puts "Update counter cache candidate"
+      Job.all.each do |job|
+        Job.update_counters job.id, candidates_count: job.candidates.length
+      end
+
       puts "Create team introduction"
       Job.all.each do |job|
         3.times do |n|

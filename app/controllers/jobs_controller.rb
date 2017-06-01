@@ -7,6 +7,9 @@ class JobsController < ApplicationController
       .search(title_cont: params[:job_search]).result.newest.page(params[:page])
       .per Settings.jobs.per_page
 
+    @popular_job = Job.active.includes(:images).popular_job
+      .limit Settings.jobs.popular
+
     respond_to do |format|
       format.html
       format.js
