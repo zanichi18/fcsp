@@ -37,27 +37,21 @@
       <span class="omb-spanor"><%= t ".or" %></span>
     </div>
   </div>
-  <h4 class="omb-authtitle"><%= t ".login_or" %> <a href="#"><%= t ".sign_up" %></a></h4>
-  <div class="row omb-socialbuttons">
-    <div class="col-xs-10 col-sm-12">
-      <div class="btn-share">
-        <a href="#" class="btn omb-btn-facebook">
-          <i class="fa fa-facebook visible-xs"></i>
-          <span class="hidden-xs"><%= t ".facebook" %></span>
-        </a>
-      </div>
-      <div class="btn-share">
-        <a href="#" class="btn omb-btn-twitter">
-          <i class="fa fa-twitter visible-xs"></i>
-          <span class="hidden-xs"><%= t ".twitter" %></span>
-        </a>
-      </div>
-      <div class="btn-share">
-        <a href="#" class="btn omb-btn-google">
-          <i class="fa fa-google-plus visible-xs"></i>
-          <span class="hidden-xs"><%= t ".google" %></span>
-        </a>
+  <% if devise_mapping.omniauthable? %>
+    <h4 class="omb-authtitle"><%= t ".login_or" %> <a href="#"><%= t ".sign_up" %></a></h4>
+    <div class="row omb-socialbuttons">
+      <div class="col-xs-10 col-sm-12">
+        <% resource_class.omniauth_providers.each do |provider| %>
+          <% if OmniAuth::Utils.camelize(provider) == Settings.hr_system %>
+            <div class="btn-share">
+              <%= link_to user_hr_system_omniauth_authorize_path, class: "btn omb-btn-hr-system" do %>
+                <i class="fa fa-unlock visible-xs"></i>
+                <span class="hidden-xs"><%= t ".hr_system" %></span>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>

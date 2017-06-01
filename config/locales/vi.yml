@@ -894,5 +894,10 @@ vi:
     load_like:
       not_found: "Lượt thích của bài viết này không tìm thấy"
     like_user_post:
-      you_and_orthers_like: "Bạn và %{count - 1} người khác"
+      you_and_orthers_like: "Bạn và %{count - 1} người khác "
       orthers_like: "%{count} người khác"
+  omniauth_callbacks:
+    hr_system:
+      auth_failure: "Auth failure"
+    failure:
+      auth_failure: "Auth failure"
