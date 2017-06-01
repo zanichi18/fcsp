@@ -28,7 +28,14 @@ RSpec.describe UsersController, type: :controller do
 
       it "responds successfully with an HTTP 200 status code" do
         get :show, params: {id: user}, xhr: true
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status 200
+      end
+
+      it "responds successfully with show bookmarked jobs" do
+        job = FactoryGirl.create :job
+        FactoryGirl.create :bookmark, user: user, job: job
+        get :show, params: {id: user, bookmarked_jobs_page: 2}, xhr: true
+        expect(response).to render_template partial: "_job_accordance"
       end
     end
   end
