@@ -1,5 +1,5 @@
 class HiringType < ApplicationRecord
-  has_many :job_hiring_types
+  has_many :job_hiring_types, dependent: :destroy
   has_many :jobs, through: :job_hiring_types
 
   validates :name, presence: true,

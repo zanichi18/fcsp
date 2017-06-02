@@ -13,6 +13,7 @@ RSpec.describe Job, type: :model do
       it{expect have_db_column(:title).of_type(:string)}
       it{expect have_db_column(:describe).of_type(:string)}
       it{expect have_db_column(:type_of_candidates).of_type(:integer)}
+      it{expect have_db_column(:candidates_count).of_type(:integer)}
       it{expect have_db_column(:who_can_apply).of_type(:integer)}
       it{expect have_db_column(:company_id).of_type(:integer)}
       it{expect have_db_column(:status).of_type(:integer)}

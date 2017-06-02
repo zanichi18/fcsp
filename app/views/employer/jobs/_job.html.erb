@@ -1,9 +1,10 @@
 <% jobs.each do |job| %>
-  <tr id="<%= dom_id(job) %>">
+  <tr id="<%= dom_id job %>">
     <td class="col-check">
       <div class="ckbox">
-        <input type="checkbox" id="checkbox-job-<%= dom_id(job) %>">
-        <label for="checkbox-job-<%= dom_id(job) %>"></label>
+        <input type="checkbox" id="checkbox-job-<%= dom_id job %>"
+          class="checkboxjob" data-list-job-id="<%= job.id %>">
+        <label for="checkbox-job-<%= dom_id job %>"></label>
       </div>
     </td>
     <td>
@@ -43,12 +44,18 @@
       <% end %>
     </td>
     <td class="action">
-      <% if job.active? %>
-        <%= button_tag t(".close"), id: "#{job.id}", class: "close-job btn btn-warning btn-xs test" %>
-      <% else %>
-        <%= button_tag t(".public"), id: "#{job.id}", class: "public-job btn btn-success btn-xs test" %>
-      <% end %>
+      <div class="btn-group">
+        <% if job.active? %>
+          <%= button_tag t(".close"), id: job.id, class: "close-job btn btn-warning btn-xs" %>
+        <% else %>
+          <%= button_tag t(".public"), id: job.id, class: "public-job btn btn-success btn-xs" %>
+        <% end %>
+        <%= button_tag t(".delete"), id: job.id, class: "delete-job btn btn-danger
+          btn-xs" %>
+      </div>
     </td>
     <input type="hidden" id="company-id" value="<%= @company.id %>">
+    <input type="hidden" id="status-job_<%= job.id %>"
+      value="<%= Job.statuses[job.status] %>">
   </tr>
 <% end %>

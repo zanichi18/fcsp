@@ -46,10 +46,9 @@
   margin-left: 0;
 }
 
-.button-create-job {
+.btn-action-job {
   float: right;
-  margin-bottom: 10px;
-  z-index: 999;
+  margin: 0 10px 5px 0;
 }
 
 .panel .title-image {
@@ -204,4 +203,23 @@
 .job-messages,
 .job-action {
   width: 10%;
+}
+
+.btn-group {
+  .close-job:first-child {
+    border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+    margin-right: 3px;
+  }
+
+  .public-job:first-child {
+    border-bottom-right-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+    margin-right: 3px;
+  }
+
+  .delete-job:last-child {
+    border-bottom-left-radius: 2px !important;
+    border-top-left-radius: 2px !important;
+  }
 }

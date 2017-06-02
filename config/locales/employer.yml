@@ -99,6 +99,7 @@ en:
         job: "Jobs Post"
         manage_post: "Manage Job Postings"
         create_job: "+ Create new job"
+        delete_job: "X Delete job"
         all: "All"
         draft: "Draft"
         open: "Open"
@@ -116,6 +117,14 @@ en:
         failed: "Failed!"
         job_post_updated: "Updated post job recruitment"
         job_post_update_fail: "Failed to update post job"
+      destroy:
+        success: "Deleted success!"
+        fail: "Deleted fail!"
+        message_delete_job: "This job is active, can't delete"
+        message_delete_jobs: "This job is active or no job is checked, can't delete"
+        confirm_delete: "Are you sure?"
+        mess_text: "You won't be able to revert this!"
+        confirm_text: "Yes, delete it!"
       edit:
         job: "Edit job"
         members: "Edit members"
@@ -133,6 +142,7 @@ en:
       job:
         close: "Close"
         public: "Public"
+        delete: "Delete"
         show_posting: "Show posting"
         edit_posting: "Edit posting"
         bookmark: "Bookmark (%{count})"
