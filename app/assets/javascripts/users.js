@@ -139,3 +139,27 @@ function js_hover(object_hover, object_hiden_show) {
     $(this).find(object_hiden_show).hide();
   });
 }
+
+function userLanguageHiddenToggle(is_hidden) {
+  if(is_hidden) {
+    $('.user-language-hidden-toggle').addClass('hidden');
+  }else {
+    $('.user-language-hidden-toggle').removeClass('hidden');
+  }
+  return false;
+}
+
+function setupLinkedDatePicker(start, end) {
+  $(start).datepicker();
+  $(end).datepicker({
+    useCurrent: false
+  });
+
+  $(document).on('changeDate', start, {}, function (e) {
+    $(end).datepicker('setStartDate', e.date);
+  });
+
+  $(document).on('changeDate', end, {}, function (e) {
+    $(start).datepicker('setEndDate', e.date);
+  });
+}

@@ -214,7 +214,7 @@ mailer:
 info_users:
   introduction_form_rows: 7
   max_length_introduce: 500
-  ambition_form_rows: 2
+  ambition_form_rows: 7
   quote_form_rows: 2
   max_length_ambition: 255
   max_length_quote: 255

@@ -5,8 +5,8 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
       </div>
-      <%= simple_form_for info_user, html: {id: "edit-about-me-form"},
-        remote: :true do |f| %>
+      <%= simple_form_for info_user, html: {id: "edit-about-me-form",
+        class: "mb-0-form"}, remote: :true do |f| %>
         <div class="modal-body">
           <%= f.input :address, class: "sm-form-control" %>
         </div>
@@ -15,11 +15,12 @@
           <%= f.input :phone, as: :integer, class: "sm-form-control" %>
         </div>
 
-        <div class="modal-footer modal-footer-info-user">
-          <%= f.submit t(".update_button"), class:"btn btn-primary",
-            id: "btn-edit-ambition" %>
-          <%= button_tag t(".cancel_button"), class:"btn btn-default",
-             data: {dismiss:"modal"} %>
+        <div class="button-portfolio-modal">
+          <%= f.submit t(".update_button"), class: "button button-3d button-rounded button-green" %>
+          <button type="button"
+            class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+            <%= t ".cancel_button" %>
+          </button>
         </div>
       <% end %>
     </div>

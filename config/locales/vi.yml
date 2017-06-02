@@ -26,6 +26,8 @@ vi:
       should_update_heading_description: "Update your profile and comeback to us"
       cancel: "Cancel"
       edit_profile: "Edit my profile"
+      no_result: "No one matches these skills"
+      total_views: "Total views"
     index:
       table:
         thead:
@@ -72,10 +74,12 @@ vi:
       title: "Other jobs posting you may like"
     popular_job:
       comments: "35 comments"
+      person_applied: " person has applied"
     bookmark:
       bookmark: "Bookmark"
       bookmark_job: "Bookmark job"
       bookmarked: "Bookmarked"
+      unbookmark: "Unbookmark"
     candidate:
       apply_job: "Apply Job"
       unapply_job: "Unapply Job"
@@ -550,6 +554,17 @@ vi:
       public: "Công khai"
       only_me: "Chỉ mình tôi"
   user_works:
+    create:
+      create_success: "Add work successfully!"
+      create_faild: "Add work failed!"
+    update:
+      update_success: "Update work successfully!"
+      update_faild: "Update work failed!"
+    destroy:
+      destroy_success: "Delete work successfully!"
+      destroy_faild: "Delete work failed!"
+    org_search:
+      people: "%{num} others"
     user_work_form:
       all_status:
         full_time: "Toàn thời gian"
