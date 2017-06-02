@@ -5,7 +5,7 @@ class Job < ApplicationRecord
   has_many :images, as: :imageable, dependent: :destroy
   has_many :job_hiring_types, dependent: :destroy
   has_many :hiring_types, through: :job_hiring_types
-  has_many :candidates, dependent: :destroy, counter_cache: true
+  has_many :candidates, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :job_skills, dependent: :destroy
   has_many :skills, through: :job_skills
@@ -48,5 +48,16 @@ class Job < ApplicationRecord
 
   scope :filter, ->(list_filter, sort_by, type) do
     where("#{type} IN (?)", list_filter).order "#{type} #{sort_by}"
+  end
+
+  scope :popular_job, ->{order candidates_count: :desc}
+
+  scope :posting_job, ->job_id do
+    joins(:skills, :hiring_types)
+      .where("job_skills.skill_id IN (?)
+      and job_hiring_types.hiring_type_id IN (?)",
+        Skill.require_by_job(job_id).pluck(:id),
+        HiringType.job_hiring_type(job_id).pluck(:id))
+      .distinct.limit Settings.posting_job.job_limit
   end
 end

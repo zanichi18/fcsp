@@ -18,10 +18,6 @@ module Supports
       company.users.includes :avatar
     end
 
-    def jobs_company
-      company.jobs.limit Settings.jobs.company_limit
-    end
-
     def company_address
       company.addresses
     end
@@ -54,6 +50,10 @@ module Supports
       requests = JSON.parse(@job.profile_requests).to_a
       (education? requests) && (portfolio? requests) && (introduce? requests) &&
         (requests.exclude?("ambition") || @user.info_user_ambition.present?)
+    end
+
+    def posting_job
+      Job.posting_job @job
     end
 
     private

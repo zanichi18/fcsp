@@ -19,7 +19,7 @@
           <h3 class="text-center"><%= t ".popular_job" %></h3>
           <hr>
           <div id="popular-post-list-sidebar">
-            <% @jobs.last(Settings.jobs.popular).each do |popular| %>
+            <% @popular_job.each do |popular| %>
               <%= render "popular_job", job: popular %>
             <% end %>
           </div>
