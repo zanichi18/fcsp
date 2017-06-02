@@ -29,6 +29,8 @@ class User < ApplicationRecord
   has_many :candidates, dependent: :destroy
   has_many :jobs, through: :candidates
   has_many :bookmarks, dependent: :destroy
+  has_many :bookmarked_jobs, class_name: Job.name, through: :bookmarks,
+    source: :job
   has_one :info_user, dependent: :destroy
   has_many :skill_users, dependent: :destroy
   has_many :skills, through: :skill_users

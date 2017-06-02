@@ -38,6 +38,7 @@ var candidate = {
           $('#apply_job_success_modal').modal('show');
           self.removeClass('apply_job add-apply')
             .addClass('cancel_apply_job rm_apply applied');
+          self.find('span').text(I18n.t('jobs.candidate.unapply_job'));
         }
       });
     });
@@ -53,6 +54,7 @@ var candidate = {
         success: function() {
           self.removeClass('cancel_apply_job rm_apply applied')
             .addClass('apply_job add-apply');
+          self.find('span').text(I18n.t('jobs.candidate.apply_job'));
         }
       });
       return false;

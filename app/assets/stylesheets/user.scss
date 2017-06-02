@@ -431,7 +431,15 @@
 
     li {
       display: inline-block !important;
-      padding: 0 11px !important;
+      padding: 0 20px !important;
+
+      b {
+        display: none;
+      }
+
+      i {
+        font-size: 20px;
+      }
     }
   }
 }

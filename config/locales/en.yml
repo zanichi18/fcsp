@@ -6,9 +6,6 @@ en:
   jobs:
     job_form:
       next: "Next"
-    candidate:
-      apply_job: "Apply Job"
-      unapply: "Unapply job"
     show:
       apply_job: "Apply Job"
       person_applied: "Currently %{candidate} person has applied."
@@ -46,6 +43,7 @@ en:
       members: "%{company} members"
       views_all: "All members"
       edit_posting: "Edit posting"
+      no_one: "No One"
     introduction_company:
       what_we_do: "What we do"
       message_team_introduc_null: "Team introduction null"
@@ -457,6 +455,7 @@ en:
       background: "Background"
       skills: "Skills"
       accomplishments: "Accomplishments"
+      bookmarked_jobs: "Bookmarked Jobs"
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"
