@@ -1,2 +1,2 @@
-$('.user-work-modal').html('<%= j render "user_works/user_work_form" %>')
+$('.user-work-modal').html('<%= j render "user_works/user_work_form", user_work: @user_work %>')
 $('#user-work-form').modal('show');

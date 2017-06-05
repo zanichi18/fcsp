@@ -3,7 +3,7 @@
   <div class="job-posting-may-like">
     <div class="container">
       <div class="row">
-        <% @job_object.posting_job.each do |job| %>
+        <% job_object.posting_job.each do |job| %>
           <div class="job-row col-md-3 col-sm-6 col-xm-12 text-left">
             <% if job.images.first.present? %>
               <%= link_to image_tag(job.images.first.picture,

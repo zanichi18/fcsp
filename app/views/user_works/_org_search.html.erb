@@ -1,5 +1,5 @@
-<% if @orgs.present? %>
-  <% @orgs.each do |org| %>
+<% if orgs.present? %>
+  <% orgs.each do |org| %>
     <div class="org-search col-md-12" data-name="<%= org.name %>">
       <div class="col-md-2 col-sm-2">
         <%= image_tag org_logo(org), class: "img-org"%>

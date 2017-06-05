@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".edit_quote" %></h4>
       </div>
-      <%= simple_form_for @info_user, remote: :true,
+      <%= simple_form_for info_user, remote: :true,
         html: {id: "edit-quote-form"} do |f| %>
         <div class="modal-body">
           <%= f.input :quote, as: :text, placeholder: t(".quote_placeholder"),

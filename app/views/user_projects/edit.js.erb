@@ -1,2 +1,2 @@
-$('.user-project-modal').html('<%= j render "user_project_form" %>')
+$('.user-project-modal').html('<%= j render "user_project_form", user_project: @user_project %>');
 $('#user-project-form').modal('show');

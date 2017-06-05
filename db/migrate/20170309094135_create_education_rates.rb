@@ -8,5 +8,7 @@ class CreateEducationRates < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+
+    add_index :education_rates, [:rateable_id, :rateable_type], unique: true
   end
 end

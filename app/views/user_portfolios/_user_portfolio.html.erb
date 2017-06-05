@@ -1,7 +1,7 @@
 <div class="row">
   <div class="panel panel-default user-info-panel">
     <strong class="user-portfolio-header"><%= t ".user_portfolio" %></strong>
-    <% if @user.is_user? current_user %>
+    <% if user.is_user? current_user %>
       <%= link_to new_user_portfolio_path, remote: true,
         class: "button button-3d button-small button-rounded button-green button-light button-white-text portfolio"  do %>
         <i class="icon-plus-sign"></i>
@@ -9,7 +9,7 @@
       <% end %>
     <% end %>
     <div class="show-portfolio">
-      <%= render "user_portfolios/show_portfolio", portfolios: @user_object.portfolios %>
+      <%= render "user_portfolios/show_portfolio", portfolios: portfolios %>
     </div>
   </div>
 </div>

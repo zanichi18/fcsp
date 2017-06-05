@@ -22,11 +22,11 @@
         <a class="comment-reply-link" href="#">
           <% if comment.user.is_user? current_user %>
             <%= link_to image_tag("/assets/delete.png", class: "delete-button"),
-              user_post_comment_path(@post, comment),
+              user_post_comment_path(post, comment),
               data: {confirm: t(".delete_confirm")},
               method: :delete, remote: true %>
             <%= link_to image_tag("/assets/edit.png", class: "delete-button"),
-              edit_user_post_comment_path(@post, comment),
+              edit_user_post_comment_path(post, comment),
               remote: true %>
           <% end %>
         </a>

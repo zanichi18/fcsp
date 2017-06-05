@@ -26,9 +26,9 @@ module Supports
       @job.team_introductions.includes :images
     end
 
-    def count_candidates
-      @job.candidates.count
-    end
+    # def count_candidates
+    #   @job.candidates.count
+    # end
 
     def hiring_types
       @job.hiring_types

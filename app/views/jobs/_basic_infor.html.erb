@@ -8,14 +8,14 @@
         <td class="head"><%= t ".look_for" %></td>
         <td>
           <%= Job.human_enum_name :type_of_candidates,
-            @job.type_of_candidates %>
+            job.type_of_candidates %>
         </td>
       </tr>
       <tr>
         <td class="head"><%= t ".job_type" %></td>
         <td>
           <p>
-            <% @job_object.hiring_types.each do |hiring_type| %>
+            <% job_object.hiring_types.each do |hiring_type| %>
               <%= hiring_type.name %><%= t ".comma" %>
             <% end %>
           </p>
@@ -25,7 +25,7 @@
         <td class="head"><%= t ".skill_require" %></td>
         <td>
           <p>
-            <% @job_object.job_skills.each do |job_skill| %>
+            <% job_object.job_skills.each do |job_skill| %>
               <%= job_skill.name %><%= t ".comma" %>
             <% end %>
           </p>
@@ -35,8 +35,8 @@
         <td class="head"><%= t ".posting_feature" %></td>
         <td>
           <p>
-            <% if @job_object.company_benefits.present? %>
-              <% @job_object.company_benefits.each do |benefit| %>
+            <% if job_object.company_benefits.present? %>
+              <% job_object.company_benefits.each do |benefit| %>
                 <%= benefit.name %><%= t ".comma" %>
               <% end %>
             <% else %>
@@ -50,7 +50,7 @@
       </tr>
       <tr>
         <td class="head"><%= t ".founded" %></td>
-        <td><%= @job_object.company_founder_on %></td>
+        <td><%= job_object.company_founder_on %></td>
       </tr>
       <tr>
         <td class="head"><%= t ".industries" %></td>

@@ -2,7 +2,7 @@
   <div class="panel panel-default user-info-panel">
     <div class="award-header">
       <strong><%= t ".user_award" %></strong>
-      <% if @user.is_user? current_user %>
+      <% if user.is_user? current_user %>
         <%= link_to new_award_path, remote: true,
           class: "button button-3d button-small button-rounded button-green button-light button-white-text award" do %>
           <i class="icon-plus-sign"></i>
@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <div class="show-award">
-      <%= render "awards/show_award", awards: @user_object.awards %>
+      <%= render "awards/show_award", awards: awards %>
     </div>
     <div class="award-modal"></div>
   </div>

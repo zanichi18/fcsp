@@ -1,5 +1,5 @@
-$('.ambition-content').html('<%= j render "info_users/ambition_content" %>')
-$('.block-quote').html('<%= j render "info_users/quote_content" %>')
-$('.introduction-content').html('<%= j render "info_users/introduction_content" %>')
+$('.ambition-content').html('<%= j render "info_users/ambition_content", info_user: @info_user %>')
+$('.block-quote').html('<%= j render "info_users/quote_content", info_user: @info_user %>')
+$('.introduction-content').html('<%= j render "info_users/introduction_content", info_user: @info_user %>')
 $('#phone-information').text('<%= @info_user.phone %>')
 $('#address-information').text('<%= @info_user.address %>')

@@ -1,6 +1,6 @@
 <p>
-  <%= quote_content @info_user.quote %>
-  <% if @info_user.user.is_user? current_user %>
+  <%= quote_content info_user.quote %>
+  <% if info_user.user.is_user? current_user %>
     <span class="edit-education">
       <span class="pull-right nomargin">
         <a href="#" id="edit-quote"

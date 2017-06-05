@@ -23,7 +23,7 @@
           <h2><%= t ".job_opportunity" %></h2>
         </div>
         <div id="jobs" class="display-jobs">
-          <%= render "job" %>
+          <%= render "job", jobs: @jobs %>
         </div>
         <div id="paginator">
           <%= paginate @jobs, remote: true %>

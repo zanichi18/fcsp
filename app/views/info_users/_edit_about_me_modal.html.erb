@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
       </div>
-      <%= simple_form_for @info_user, html: {id: "edit-about-me-form"},
+      <%= simple_form_for info_user, html: {id: "edit-about-me-form"},
         remote: :true do |f| %>
         <div class="modal-body">
           <%= f.input :address, class: "sm-form-control" %>
