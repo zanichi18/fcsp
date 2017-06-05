@@ -1,18 +1,18 @@
 <div class="fancy-title title-border-custom">
   <h4><%= t ".about_me" %></h4>
-  <% if @user.is_user? current_user %>
+  <% if user.is_user? current_user %>
     <a href="#" id="edit-quote" data-toggle="modal"
       data-target="#edit-about-me-modal" class="pull-right nomargin">
       <span class="icon-pencil"></span> <%= t ".edit" %>
     </a>
-    <%= render "info_users/edit_about_me_modal" %>
+    <%= render "info_users/edit_about_me_modal", info_user: info_user %>
   <% end %>
 </div>
-<% if @user.info_user.present? %>
+<% if user.info_user.present? %>
   <div class="block-quote education-info">
     <p>
-      <%= quote_content @user.info_user_quote %>
-      <% if @user.is_user? current_user %>
+      <%= quote_content user.info_user_quote %>
+      <% if user.is_user? current_user %>
         <span class="edit-education">
           <span class="pull-right nomargin">
             <a href="#" id="edit-quote"
@@ -24,13 +24,13 @@
       <% end %>
     </p>
   </div>
-  <%= render "info_users/edit_quote_modal" %>
+  <%= render "info_users/edit_quote_modal", info_user: info_user %>
   <div class="top-cart-item clearfix">
     <i class="i-rounded i-small i-bordered icon-home"></i>
     <div class="top-cart-item-desc">
       <b><%= t ".address" %></b>
       <span class="top-cart-item-price" id="address-information">
-        <%= @user.info_user_address %>
+        <%= user.info_user_address %>
       </span>
     </div>
   </div>
@@ -39,59 +39,59 @@
     <div class="top-cart-item-desc">
       <b><%= t ".phone" %></b>
       <span class="top-cart-item-price" id="phone-information">
-        <%= @user.info_user_phone %>
+        <%= user.info_user_phone %>
       </span>
     </div>
   </div>
 <% end %>
 <div class="title-border-custom clearfix">
   <h4><%= t ".social_profiles" %></h4>
-  <% if @user.is_user? current_user %>
+  <% if user.is_user? current_user %>
     <a href="#" data-toggle="modal"
       data-target="#edit-social-network-modal" class="pull-right nomargin">
       <span class="icon-pencil"></span> <%= t ".edit" %>
     </a>
-    <%= render "edit_social_network_modal", user: @user %>
+    <%= render "edit_social_network_modal", user: user %>
   <% end %>
 </div>
 <div class="list-social-network clearfix">
-  <a href="<%= @user.link_social_network "facebook" %>" target="_blank"
+  <a href="<%= user.link_social_network "facebook" %>" target="_blank"
     class="social-icon si-facebook si-small si-rounded si-light"
     title="<%= t ".facebook" %>">
     <i class="icon-facebook"></i>
     <i class="icon-facebook"></i>
   </a>
-  <a href="<%= @user.link_social_network "google" %>" target="_blank"
+  <a href="<%= user.link_social_network "google" %>" target="_blank"
     class="social-icon si-gplus si-small si-rounded si-light"
     title="<%= t ".google" %>">
     <i class="icon-gplus"></i>
     <i class="icon-gplus"></i>
   </a>
-  <a href="<%= @user.link_social_network "twitter" %>" target="_blank"
+  <a href="<%= user.link_social_network "twitter" %>" target="_blank"
     class="social-icon si-twitter si-small si-rounded si-light"
     title="<%= t ".twitter" %>">
     <i class="icon-twitter"></i>
     <i class="icon-twitter"></i>
   </a>
-  <a href="<%= @user.link_social_network "linkedin" %>" target="_blank"
+  <a href="<%= user.link_social_network "linkedin" %>" target="_blank"
     class="social-icon si-linkedin si-small si-rounded si-light"
     title="<%= t ".linkedin" %>">
     <i class="icon-linkedin"></i>
     <i class="icon-linkedin"></i>
   </a>
-  <a href="<%= @user.link_social_network "skype" %>" target="_blank"
+  <a href="<%= user.link_social_network "skype" %>" target="_blank"
     class="social-icon si-skype si-small si-rounded si-light"
     title="<%= t ".skype" %>">
     <i class="icon-skype"></i>
     <i class="icon-skype"></i>
   </a>
-  <a href="<%= @user.link_social_network "youtube" %>" target="_blank"
+  <a href="<%= user.link_social_network "youtube" %>" target="_blank"
     class="social-icon si-youtube si-small si-rounded si-light"
     title="<%= t ".youtube" %>">
     <i class="icon-youtube"></i>
     <i class="icon-youtube"></i>
   </a>
-  <a href="<%= @user.link_social_network "instagram" %>" target="_blank"
+  <a href="<%= user.link_social_network "instagram" %>" target="_blank"
     class="social-icon si-instagram si-small si-rounded si-light"
     title="<%= t ".instagram" %>">
     <i class="icon-instagram"></i>

@@ -5,7 +5,7 @@
   <% end %>
 <% else %>
   <%= button_tag id: job.id, class: "btn apply_job add-apply", data: {toggle: "modal",
-    target: "myModal", qualified_profile: @job_object.qualified_profile?} do %>
+    target: "myModal", qualified_profile: job_object.qualified_profile?} do %>
       <%= icon("hand-o-up") %>
       <span class="tooltiptext tooltip-left"><%= t ".apply_job" %></span>
   <% end %>

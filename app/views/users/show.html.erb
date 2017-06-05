@@ -1,4 +1,4 @@
-<%= render "header", user: @user %>
+<%= render "header", user: @user, user_object: @user_object %>
 <section>
   <div class="container">
     <div class="row">
@@ -7,26 +7,26 @@
           <div class="clearfix">
             <% if @user.is_user? current_user %>
               <div class="hide-tab active" id="tab-new-feed">
-                <%= render "new_feed" %>
+                <%= render "new_feed", user_object: @user_object %>
               </div>
               <div class="clearfix hide-tab" id="tab-suggest-job">
-                <%= render "user_job" %>
+                <%= render "user_job", user: @user, user_object: @user_object %>
               </div>
               <div class="clearfix hide-tab" id="tab-bookmarked-job">
-                <%= render "bookmarked_jobs" %>
+                <%= render "bookmarked_jobs", user: @user, user_object: @user_object %>
               </div>
             <% end %>
             <div class="hide-tab clearfix" id="tab-information">
-              <%= render "info_users/introduction" %>
-              <%= render "info_users/ambition" %>
-              <%= render "user_portfolios/user_portfolio" %>
-              <%= render "awards/user_award" %>
-              <%= render "user_works/work" %>
+              <%= render "info_users/introduction", user: @user, info_user: @info_user %>
+              <%= render "info_users/ambition", user: @user, info_user: @info_user  %>
+              <%= render "user_portfolios/user_portfolio", user: @user, portfolios: @user_object.portfolios %>
+              <%= render "awards/user_award", user: @user, awards: @user_object.awards %>
+              <%= render "user_works/work", user: @user %>
               <%= render "user_education", user: @user %>
               <%= render "user_link", user: @user %>
-              <%= render "user_projects/projects" %>
+              <%= render "user_projects/projects", user: @user %>
               <%= render "user_certificate", user: @user %>
-              <%= render "user_languages" %>
+              <%= render "user_languages", user: @user %>
             </div>
             <div class="hide-tab clearfix" id="tab-posts">
               <%= render "posts", user: @user %>
@@ -39,7 +39,7 @@
       </div>
       <div class="col-md-4">
         <article class="post show-tab-user">
-          <%= render "social_network" %>
+          <%= render "social_network", user: @user, info_user: @info_user %>
         </article>
       </div>
     </div>

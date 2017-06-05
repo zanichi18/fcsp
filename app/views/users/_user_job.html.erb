@@ -1,10 +1,10 @@
-<% if @user.is_user? current_user %>
+<% if user.is_user? current_user %>
   <div id="job-show-wrapper">
     <div id="job-show-body">
       <div class="row two-column">
         <aside class="col-md-12 column-main">
           <div class="column-main-inner">
-            <%= render "job_accordance", jobs: @user_object.user_jobs,
+            <%= render "job_accordance", jobs: user_object.user_jobs,
               job_page: :suggest_jobs_page %>
           </div>
         </aside>

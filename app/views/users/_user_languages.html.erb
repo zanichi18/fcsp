@@ -1,8 +1,8 @@
-<div class="row user-language-hidden-toggle <%= "hidden" unless @user.user_languages.any? %>">
+<div class="row user-language-hidden-toggle <%= "hidden" unless user.user_languages.any? %>">
   <div class="panel panel-default user-info-panel">
     <div class="show-user-work">
       <strong class="user-work-title"><%= t ".languages" %></strong>
-      <% if @user.is_user? current_user %>
+      <% if user.is_user? current_user %>
         <%= link_to new_user_language_path, remote: true,
           class: "button button-3d button-small button-rounded button-green button-light button-white-text add-work" do %>
             <i class="icon-plus-sign"></i>
@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <div class="user-language"><%= render "user_languages/user_language",
-      user: @user %>
+      user: user %>
     </div>
   </div>
 </div>

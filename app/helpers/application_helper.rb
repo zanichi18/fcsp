@@ -26,9 +26,9 @@ module ApplicationHelper
     Devise.mappings[:user]
   end
 
-  def resource_name
-    devise_mapping.name
-  end
+  # def resource_name
+  #   devise_mapping.name
+  # end
 
   def resource_class
     devise_mapping.to
@@ -36,5 +36,11 @@ module ApplicationHelper
 
   def is_warning_flash? message_type
     message_type == Settings.warning
+  end
+
+  def request_friends
+    if !current_user.nil? && user_signed_in?
+      current_user.requested_friends.includes :avatar
+    end
   end
 end

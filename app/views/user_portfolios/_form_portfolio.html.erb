@@ -6,7 +6,7 @@
         <h4 class="modal-title"><%= t ".portfolio_header" %></h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @portfolio, remote: true, html: {class: "portfolio-form"} do |f| %>
+        <%= simple_form_for portfolio, remote: true, html: {class: "portfolio-form"} do |f| %>
           <%= f.input :title, label: t(".title"), class: "form-control" %>
           <%= f.input :url, label: t("users.form_portfolio.url"), class: "form-control" %>
           <%= f.input :description, as: :text, label: t(".description"),

@@ -1,6 +1,6 @@
 <div class="modal fade" id="user-language-form" role="dialog">
   <div class="modal-dialog">
-    <%= simple_form_for @user_language, remote: true do |f| %>
+    <%= simple_form_for user_language, remote: true do |f| %>
       <div class="modal-content">
         <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -9,7 +9,7 @@
         <div class="modal-body">
           <div class="form-group dropdown">
             <%= f.text_field :language,
-              value: @user_language.language_name,
+              value: user_language.language_name,
               class: "form-control dropdown-toggle",
               placeholder: t(".language"),
               "data-toggle": "dropdown", "aria-hidden": :true,

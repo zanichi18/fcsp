@@ -1,9 +1,9 @@
 <span class="dropdown friend-ship-show">
   <button class="dropdown-toggle" type="button" data-toggle="dropdown">
     <i class="fa fa-user"></i>
-    <% if @user_request.present? %>
+    <% if request_friends.present? %>
       <span class="badge badge-pill badge-default">
-        <%= @user_request.size > 0 ? @user_request.size : 0 %>
+        <%= request_friends.size > 0 ? request_friends.size : 0 %>
       </span>
     <% end %>
   </button>
@@ -11,8 +11,8 @@
     <h4><%= t ".friend-ship" %></h4>
     <hr>
     <div class="show-request">
-      <% if @user_request.present? %>
-        <% @user_request.each do |user_request| %>
+      <% if request_friends.present? %>
+        <% request_friends.each do |user_request| %>
           <div class="top-cart-item clearfix" id="friend-ship-<%= user_request.id %>">
             <div class="row">
               <div class="col-md-3 col-sm-3 col-xs-3">
@@ -21,7 +21,7 @@
               <div class="col-md-6 col-sm-6 col-xs-6">
                 <a href="#"><%= user_request.name %></a>
                 <br>
-                <i><%= t ".mutual-friends" %></i>
+                <i><%= current_user.mutual_friends(user_request).size %> <%= t ".mutual-friends" %></i>
               </div>
               <div class="col-md-3 col-sm-3 col-xs-3">
                 <%= link_to "#", class: "right-icon friend-ship",

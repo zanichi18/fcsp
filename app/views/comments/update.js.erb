@@ -2,7 +2,7 @@
   $('.comment-errors').html('<%= j render "shared/error_messages", object: @comment %>')
   $('.sm-form-control').val('');
 <% else %>
-  $('.commentlist').html('<%= j render partial: "comments/comment_item", locals: {comments: @comments} %>');
+  $('.commentlist').html('<%= j render partial: "comments/comment_item", locals: {comments: @comments, post: @post} %>');
   $('.sm-form-control').val('');
   $('.comments-count').html('<%= @post.comments.count %>')
   $('.comment-errors').html('')

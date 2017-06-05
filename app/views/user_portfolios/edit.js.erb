@@ -1,2 +1,2 @@
-$('.portfolio-modal').html('<%= j render "form_portfolio", button_text: t(".update") %>');
+$('.portfolio-modal').html('<%= j render "form_portfolio", button_text: t(".update"), portfolio: @portfolio %>');
 $('#portfolio').modal('show');

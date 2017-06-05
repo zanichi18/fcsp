@@ -1,6 +1,6 @@
 <div class="modal fade" id="user-work-form" role="dialog">
   <div class="modal-dialog">
-  <%= simple_form_for @user_work, remote: true do |f| %>
+  <%= simple_form_for user_work, remote: true do |f| %>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -10,7 +10,7 @@
         <%= f.label :organization, t(".company") %>
         <div class="form-group dropdown">
           <%= f.text_field :organization,
-            value: @user_work.organization_name,
+            value: user_work.organization_name,
             class: "form-control dropdown-toggle",
             placeholder: t(".company"),
             "data-toggle": "dropdown", "aria-hidden": :true,

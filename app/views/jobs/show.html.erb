@@ -7,7 +7,7 @@
     </div>
     <div>
       <div class="tooltip-x">
-        <%= render "candidate", job: @job %>
+        <%= render "candidate", job: @job, job_object: @job_object %>
       </div>
     </div>
   </div>
@@ -62,14 +62,14 @@
           <div class="entry-content">
             <p class="job-description"><%= @job.describe %></p>
           </div>
-          <%= render "introduction_company" %>
+          <%= render "introduction_company", job_object: @job_object %>
           <div class="description">
             <h3 class="entry-title"><%= t ".description" %></h3>
-            <%= render "basic_infor" %>
+            <%= render "basic_infor", job: @job, job_object: @job_object %>
           </div>
         </div>
       </article>
-      <%= render "posting_jobs" %>
+      <%= render "posting_jobs", job_object: @job_object %>
     </div>
     <div class="col-md-4 col-xs-12">
       <div class="primary-sidebar">
@@ -83,10 +83,10 @@
           </div>
         </aside>
         <aside class="widget">
-          <%= render "members_of_company" %>
+          <%= render "members_of_company", job: @job, job_object: @job_object %>
         </aside>
         <aside class="widget">
-          <%= render "recommend_user" %>
+          <%= render "recommend_user", job_object: @job_object %>
         </aside>
       </div>
     </div>

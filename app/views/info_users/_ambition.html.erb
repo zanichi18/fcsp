@@ -3,7 +3,7 @@
     <div class="edit-profile-title">
       <strong><%= t ".ambition" %></strong>
     </div>
-    <% if @user.is_user? current_user %>
+    <% if user.is_user? current_user %>
       <div class="edit-profile-button">
         <div class="btn-group">
           <button id="edit-ambition"
@@ -12,7 +12,7 @@
             <span class="icon-pencil2"></span>
             <%= t ".edit" %>
           </button>
-          <%= render "info_users/edit_ambition_modal" %>
+          <%= render "info_users/edit_ambition_modal", info_user: info_user %>
           <button type="button"
             class="btn btn-default btn-sm tip btn-responsive dropdown-toggle"
             data-toggle="dropdown" aria-expanded="true">
@@ -40,7 +40,7 @@
     <% end %>
     <br>
     <div class="info-user-height">
-      <%= render "info_users/ambition_content" %>
+      <%= render "info_users/ambition_content", info_user: info_user %>
     </div>
   </div>
 </div>

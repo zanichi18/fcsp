@@ -1,2 +1,2 @@
-$('.user-language-modal').html('<%= j render "user_language_form", button_text: t(".edit") %>')
+$('.user-language-modal').html('<%= j render "user_language_form", button_text: t(".edit"), user_language: @user_language %>')
 $('#user-language-form').modal('show')

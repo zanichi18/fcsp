@@ -1,7 +1,7 @@
-<% if @job_object.team_introduction.any? %>
+<% if job_object.team_introduction.any? %>
   <div class="what-we-do">
     <h3 class="entry-title"><%= t ".what_we_do" %></h3>
-    <% @job_object.team_introduction.each do |team_introduction| %>
+    <% job_object.team_introduction.each do |team_introduction| %>
       <div class="row margin-section team-introduction">
         <div class="col-md-3 text-center col-xs-3">
           <% if team_introduction.images.present? %>

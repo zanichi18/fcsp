@@ -12,9 +12,9 @@ module Education::GeneralHelper
     "current" if params[:technique_name] == technique.name
   end
 
-  def current_path? path
-    "current" if current_page? path
-  end
+  # def current_path? path
+  #   "current" if current_page? path
+  # end
 
   def default_current_path
     "current" unless params[:technique_name] || params[:term]

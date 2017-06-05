@@ -30,7 +30,7 @@
         <div class="request-user">
           <% if user.is_user? current_user %>
             <div class="margin-seven">
-              <%= render "friend_ship_form" %>
+              <%= render "friend_ship_form", user: user %>
             </div>
           <% else %>
             <div class="dropdown">
@@ -100,7 +100,7 @@
                 <i class="icon-pencil2"></i> <b><%= t ".posts" %></b>
               </a>
             </li>
-            <% if @user.is_user? current_user %>
+            <% if user.is_user? current_user %>
               <li>
                 <a data-target="tab-suggest-job">
                   <i class="icon-lightbulb"></i> <b><%= t ".job_suggest" %></b>
@@ -117,8 +117,8 @@
               <a data-target="tab-list-friend">
                 <i class="icon-users"></i>
                 <b><%= t ".friends" %>
-                  <% if @user_object.list_friends.present? %>
-                    (<%= @user_object.list_friends.size %>)
+                  <% if user_object.list_friends.present? %>
+                    (<%= user_object.list_friends.size %>)
                   <% end %>
                 </b>
               </a>

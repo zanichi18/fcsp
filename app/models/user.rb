@@ -139,9 +139,9 @@ class User < ApplicationRecord
     end
   end
 
-  def default_user_group
-    user_groups.default
-  end
+  # def default_user_group
+  #   user_groups.default
+  # end
 
   def bookmark job
     bookmarks.create job_id: job.id
