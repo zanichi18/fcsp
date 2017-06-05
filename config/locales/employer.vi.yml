@@ -1,0 +1,13 @@
+vi:
+  employer:
+    candidates:
+      index:
+        action: "Hành động"
+        delete_candidate: "X Xóa ứng cử viên"
+      destroy:
+        success: "Đã xóa thành công!"
+        fail: "Đã xóa thất bại!"
+        warning: "Không có ứng cử viên nào được chọn, không thể xóa!"
+        confirm_delete: "Bạn chắc chắn?"
+        mess_text: "Bạn sẽ không thể lấy lại được nó!"
+        confirm_text: "Có, xóa nó!"

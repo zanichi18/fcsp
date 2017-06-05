@@ -62,7 +62,7 @@ class User < ApplicationRecord
   has_many :social_networks, as: :owner, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :share_posts, class_name:  ShareJob.name, dependent: :destroy
+  has_many :share_posts, class_name: ShareJob.name, dependent: :destroy
   has_many :shared_posts, through: :share_jobs, source: :post
 
   accepts_nested_attributes_for :info_user

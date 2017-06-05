@@ -16,7 +16,9 @@ RSpec.describe ShareJob, type: :model do
     context "validations" do
       let!(:user){FactoryGirl.create :user}
       let!(:job){FactoryGirl.create :job}
-      let!(:share_job){FactoryGirl.create :share_job, user: user, shareable: job}
+      let!(:share_job) do
+        FactoryGirl.create :share_job, user: user, shareable: job
+      end
       it{is_expected.to validate_presence_of :shareable_id}
       it{expect validate_uniqueness_of(:share_id).scoped_to :user_id}
       it{is_expected.to validate_presence_of :user_id}

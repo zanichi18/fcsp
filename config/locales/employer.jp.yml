@@ -1,0 +1,13 @@
+jp:
+  employer:
+    candidates:
+      index:
+        action: "アクション"
+        delete_candidate: "X 候補を削除する"
+      destroy:
+        success: "削除された成功！"
+        fail: "削除が失敗しました！"
+        warning: "候補はチェックされず、削除できません!"
+        confirm_delete: "本気ですか？"
+        mess_text: "これを元に戻すことはできません！"
+        confirm_text: "はい、削除してください！"
