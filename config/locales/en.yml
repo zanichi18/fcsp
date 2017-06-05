@@ -87,6 +87,7 @@ en:
       type_of_candidates: "Type of candidates: "
       share: " Share"
       unshare: " Unshare"
+      comments: "Comments"
     recommend_user:
       show_more: "View more"
       recommend: "Recommend"
@@ -456,6 +457,7 @@ en:
       skills: "Skills"
       accomplishments: "Accomplishments"
       bookmarked_jobs: "Bookmarked Jobs"
+      job_suggest: "Job Suggest"
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"
@@ -499,9 +501,22 @@ en:
     user_link:
       links: "Links"
       add: "Add"
+    job_accordance:
+      see_more: "See more"
+    user_languages:
+      languages: "Languages"
+      add: "Add"
+    user_certificate:
+      certificate: "Certificate"
+      add: "Add"
+    posts:
+      add: "Add"
   user_works:
     org_search:
       people: "%{num} others"
+    work:
+      user_work: "User Work"
+      add: "Add"
     user_work_form:
       all_status:
         full_time: "Full time"
@@ -544,7 +559,6 @@ en:
       edit:
         edit: "Edit"
         close: "Close"
-  user_works:
     create:
       create_success: "Add work successfully!"
       create_faild: "Add work faild!"
@@ -643,6 +657,7 @@ en:
     edit_about_me_modal:
       update_button: "Update"
       cancel_button: "Cancel"
+      edit_ambition: "Edit Ambition"
     find_info_user:
       infor_user_not_found: "Infomation of user not found"
     ambition:

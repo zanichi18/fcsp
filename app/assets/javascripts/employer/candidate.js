@@ -51,12 +51,12 @@ $(document).ready(function() {
   $('.dropdown-toggle').dropdown();
 
   $('.sortAlpha, .btn-ok').click(function(){
-    var typefilter = $(this).parents().eq(2).attr('data-filter'),
-      sortBy = $(this).attr('data-sort-by'),
-      listcheckbox = $(this).parents('ul').children().find('.checkboxitem'),
-      arrchecked = [],
-      company_id = $('#company-id').val(),
-      filter_mode = $(this).parents().eq(2).attr('data-model');
+    var typefilter = $(this).parents().eq(2).attr('data-filter');
+    var sort_by = $(this).attr('data-sort-by');
+    var listcheckbox = $(this).parents('ul').children().find('.checkboxitem');
+    var arrchecked = [];
+    var company_id = $('#company-id').val();
+    var filter_mode = $(this).parents().eq(2).attr('data-model');
 
     listcheckbox.each(function(){
       if ($(this).is(':checked')) {
@@ -64,10 +64,9 @@ $(document).ready(function() {
       }
     });
 
-    var params = {type: typefilter, sort: sortBy, array_id: arrchecked},
-      url = '',
-      tbody = '',
-      url_request = '';
+    var params = {type: typefilter, sort: sort_by, array_id: arrchecked};
+    var tbody = '';
+    var url_request = '';
 
     switch (filter_mode) {
     case 'candidate':
@@ -93,14 +92,21 @@ $(document).ready(function() {
       data: params,
       success: function(data) {
         tbody.html(data.html_job);
-        if (filter_mode === 'job') {
+        switch (filter_mode) {
+        case 'candidate':
+          $('.pagination-bar').html(data.pagination_candidate);
+          break;
+
+        case 'job':
           $('.pagination-job').html(data.pagination_job);
+          break;
         }
+
         if ($('.btn-filter').hasClass('open')) {
           $('.btn-filter').removeClass('open');
         }
       },
-      error: function(data) {
+      error: function() {
         swal({
           type: 'danger',
           title: I18n.t('employer.team_introductions.danger'),
@@ -159,7 +165,7 @@ $(document).ready(function() {
       showCloseButton: true,
       showCancelButton: true
     }).then(
-      function () {
+      function() {
         $.ajax({
           url: url_request,
           method: 'PUT',
@@ -178,9 +184,23 @@ $(document).ready(function() {
           button_process.attr('class', data.class_button);
           box_process.html(data.box_process);
         });
-      },
-      function (dismiss) {
       });
+  });
+
+  $('.table-candidates').on('click', '.pagination-bar .page-link', function(e){
+    e.preventDefault();
+    var url_request = $(this).attr('href');
+    var tbody = $('#list-candidates');
+
+    $.ajax({
+      dataType: 'json',
+      url: url_request,
+      method: 'GET',
+      success: function(data) {
+        tbody.html(data.html_job);
+        $('.pagination-bar').html(data.pagination_candidate);
+      }
+    });
   });
 });
 

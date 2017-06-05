@@ -45,9 +45,12 @@
                     </tr>
                   </thead>
                   <tbody id="list-candidates" class="show-list-candidates">
-                    <%= render "candidate", candidates: @object.candidates %>
+                    <%= render "candidate", candidates: @candidates %>
                   </tbody>
                 </table>
+                <div class="pagination-bar">
+                  <%= render "paginate" %>
+                </div>
               </div>
             </div>
           </div>

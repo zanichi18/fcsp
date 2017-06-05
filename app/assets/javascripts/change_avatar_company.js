@@ -8,16 +8,14 @@ $(document).ready(function() {
     img_id = this.dataset.id;
     img_src = $('#user-image-' + img_id).attr('src');
     $('.img-upload').attr('src', img_src);
-    $('.change-image').val('')
+    $('.change-image').val('');
     $('.user-old-image').val(img_id);
-    $('.btn').removeClass('create-image');
-    $('.btn').addClass('update-image');
+    $('.btn-save-data').removeClass('create-image').addClass('update-image');
   });
 
   $('.change-image').on('change', function() {
     read_url(this);
-    $('.btn').removeClass('update-image');
-    $('.btn').addClass('create-image');
+    $('.btn-save-data').removeClass('update-image').addClass('create-image');
   });
 
   $('#changeAvatarModal').on('click', '.create-image', function() {
@@ -35,7 +33,7 @@ $(document).ready(function() {
   $('#changeCoverModal').on('click', '.update-image', function() {
     $('#form-update-cover').submit();
   });
-  
+
 });
 
 function read_url(input) {
