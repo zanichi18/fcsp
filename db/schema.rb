@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170531225710) do
+ActiveRecord::Schema.define(version: 20170606014645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,6 +139,7 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.datetime "updated_at",     null: false
     t.integer  "avatar_id"
     t.integer  "cover_image_id"
+    t.index ["avatar_id", "cover_image_id"], name: "index_companies_on_avatar_id_and_cover_image_id", unique: true, using: :btree
     t.index ["name"], name: "index_companies_on_name", using: :btree
     t.index ["website"], name: "index_companies_on_website", using: :btree
   end
@@ -183,6 +184,7 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["commentable_id", "commentable_type"], name: "index_education_comments_on_commentable_id_and_commentable_type", using: :btree
     t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
   end
 
@@ -358,6 +360,7 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.string   "rateable_type"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.index ["rateable_id", "rateable_type"], name: "index_education_rates_on_rateable_id_and_rateable_type", using: :btree
     t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
   end
 
@@ -438,9 +441,9 @@ ActiveRecord::Schema.define(version: 20170531225710) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.string   "followable_type",                 null: false
+    t.string   "followable_type"
     t.integer  "followable_id",                   null: false
-    t.string   "follower_type",                   null: false
+    t.string   "follower_type"
     t.integer  "follower_id",                     null: false
     t.boolean  "blocked",         default: false, null: false
     t.datetime "created_at"
@@ -457,6 +460,8 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "blocker_id"
+    t.index ["friendable_id"], name: "index_friendships_on_friendable_id", using: :btree
+    t.index ["friendable_type"], name: "index_friendships_on_friendable_type", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -782,6 +787,8 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.integer  "cover_image_id"
     t.integer  "avatar_id"
     t.string   "provider"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id", using: :btree
+    t.index ["cover_image_id"], name: "index_users_on_cover_image_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
