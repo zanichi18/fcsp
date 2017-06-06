@@ -922,3 +922,8 @@ en:
       auth_failure: "Auth failure"
     failure:
       auth_failure: "Auth failure"
+  articles:
+    sort:
+      title: " Title"
+      time: " Time show"
+      search: "Search"

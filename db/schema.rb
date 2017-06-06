@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "description"
+    t.datetime "time_show"
     t.index ["company_id"], name: "index_articles_on_company_id", using: :btree
     t.index ["title"], name: "index_articles_on_title", using: :btree
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
@@ -138,7 +139,6 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.datetime "updated_at",     null: false
     t.integer  "avatar_id"
     t.integer  "cover_image_id"
-    t.index ["avatar_id", "cover_image_id"], name: "index_companies_on_avatar_id_and_cover_image_id", unique: true, using: :btree
     t.index ["name"], name: "index_companies_on_name", using: :btree
     t.index ["website"], name: "index_companies_on_website", using: :btree
   end
@@ -183,7 +183,6 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["commentable_id", "commentable_type"], name: "index_education_comments_on_commentable_id_and_commentable_type", unique: true, using: :btree
     t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
   end
 
@@ -359,7 +358,6 @@ ActiveRecord::Schema.define(version: 20170531225710) do
     t.string   "rateable_type"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.index ["rateable_id", "rateable_type"], name: "index_education_rates_on_rateable_id_and_rateable_type", unique: true, using: :btree
     t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
   end
 
