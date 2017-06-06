@@ -5,16 +5,20 @@ class Employer::CandidatesController < Employer::BaseController
   def index
     if params[:type]
       sort_by = params[:sort].nil? ? "ASC" : params[:sort]
-      @candidates = @object.filter_candidates params[:array_id],
-        sort_by, params[:type]
+      @candidates = @object.filter_candidates(params[:array_id],
+        sort_by, params[:type]).page(params[:page])
+        .per Settings.employer.candidates.per_page
     else
-      @candidates = @object.candidates
+      @candidates = @object.candidates.page(params[:page])
+        .per Settings.employer.candidates.per_page
     end
 
     if request.xhr?
       render json: {
         html_job: render_to_string(partial: "candidate",
-          locals: {candidates: @candidates}, layout: false)
+          locals: {candidates: @candidates}, layout: false),
+        pagination_candidate: render_to_string(partial: "paginate",
+          layout: false)
       }
     else
       respond_to do |format|

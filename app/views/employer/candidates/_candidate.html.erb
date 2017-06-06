@@ -16,11 +16,7 @@
     </td>
 
     <td class="col-avatar">
-      <% if candidate.avatar.blank? %>
-        <%= image_tag "avatar.jpg", size: 48, class: "media-photo" %>
-      <% else %>
-        <%= image_tag candidate.avatar.picture, size: 48, class: "media-photo" %>
-      <% end %>
+      <%= load_avatar_candidate candidate %>
     </td>
     <td class="col-username">
       <span class="title"><b><%= candidate.user_name %></b>
@@ -44,16 +40,9 @@
         </b>
         <div class="popup-change-status"
           data-candidate-id="<%= candidate.id %>">
-          <%= render partial: "change_process", process: candidate.process} %>
+          <%= render "change_process", process: candidate.process %>
         </div>
       </span>
     </td>
   </tr>
-  <% if index == candidates.size - 1 %>
-    <tr class="show-filter-result">
-      <td colspan="5">
-        <b><%= t ".total_rows" , row: candidates.size %></b>
-      </td>
-    </tr>
-  <% end %>
 <% end %>
