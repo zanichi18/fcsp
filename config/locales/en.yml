@@ -506,27 +506,35 @@ en:
     user_education:
       education: "Education"
       add: "Add"
+      public: "Public"
+      only_me: "Only me"
     user_link:
       links: "Links"
       add: "Add"
     job_accordance:
       see_more: "See more"
-    user_certificate:
-      certificate: "Certificate"
-      add: "Add"
     posts:
       add: "Add"
+      public: "Public"
+      only_me: "Only me"
+    user_certificate:
+      certificate: "Certificates"
+      add: "Add"
+      public: "Public"
+      only_me: "Only me"
+    search_friend:
+      search: "Enter your search"
     user_languages:
       add: "Add"
       languages: "Languages"
+      public: "Public"
+      only_me: "Only me"
       new:
         add: "Add"
         close: "Close"
       edit:
         edit: "Edit"
         close: "Close"
-    search_friend:
-      search: "Enter your search"
   user_works:
     org_search:
       people: "%{num} others"
@@ -560,6 +568,8 @@ en:
     work:
       add: " Add"
       user_work: "Work"
+      public: "Public"
+      only_me: "Only me"
     org_search:
       people: "%{num} others"
     create:
@@ -596,6 +606,8 @@ en:
     projects:
       user_project: "Projects"
       add: "Add"
+      public: "Public"
+      only_me: "Only me"
     user_project:
       split: " - "
       sure: "Are you sure?"
@@ -647,13 +659,20 @@ en:
     user_portfolio:
       user_portfolio: "Portfolio"
       add: "Add"
+      public: "Public"
+      only_me: "Only me"
   info_users:
+    update:
+      success: "Updated Successfully!"
+      fail: "Updated failed!"
+      infor_user_not_found: "Information not found!"
     introduction:
       introduction: "Introduction"
       edit: "Edit"
       friends: "Friends"
       friends_of_friends: "Friends of Friends"
       public: "Public"
+      only_me: "Only me"
     edit_introduction_modal:
       update_button: "Update"
       cancel_button: "Cancel"
@@ -671,6 +690,7 @@ en:
       friends: "Friends"
       friends_of_friends: "Friends of Friends"
       public: "Public"
+      only_me: "Only me"
     edit_ambition_modal:
       update_button: "Update"
       cancel_button: "Cancel"
@@ -742,6 +762,8 @@ en:
     user_award:
       user_award: "Award(s)"
       add: "Add"
+      public: "Public"
+      only_me: "Only me"
     form_award:
       title: "Title"
       made: "Award year"

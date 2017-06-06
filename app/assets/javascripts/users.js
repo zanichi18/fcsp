@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('.btn-submit-avatar').removeClass('btn-update-avatar');
     $('.btn-submit-cover').addClass('btn-create-cover');
     $('.btn-submit-cover').removeClass('btn-update-cover');
+    $('#form-create-cover img').remove();
+    $('#form-create-avatar img').remove();
   });
 
   $('.album-image').hide();
@@ -81,11 +83,41 @@ $(document).ready(function(){
           $divFormGroup.append('<span class="help-block">' + v + '</span>');
         });
       }
-    }else {
+    } else {
       $(this).closest('.modal').modal('hide');
       $('.form-group').removeClass('has-error');
       $('span').remove('.help-block');
     }
+  });
+
+  $('.edit-info-status').on('click', function(){
+    var id = this.dataset.id;
+    var info = this.dataset.info;
+    var status = this.dataset.status;
+    var data = {};
+    data[info] = status;
+    $.ajax({
+      type: 'patch',
+      url: '/info_users/' + id,
+      dataType: 'json',
+      data: {info_statuses: data},
+      success: function(data){
+        if(data.status === 200) {
+          $.growl.notice({message: data.flash});
+          if(status === '0') {
+            $('.' + info + '-status').addClass('icon-lock').removeClass('icon-globe');
+          } else {
+            $('.' + info + '-status').addClass('icon-globe').removeClass('icon-lock');
+          }
+        } else {
+          $.growl.error({message: data.flash});
+        }
+      },
+      error: function(error){
+        $.growl.error({message: error});
+        location.reload();
+      }
+    });
   });
 });
 
