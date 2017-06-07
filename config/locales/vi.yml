@@ -980,3 +980,7 @@ vi:
       unfriend: " Hủy kết bạn"
       mutual_friends: "Bạn chung"
       friends: "Bạn bè"
+  tms_synchronize:
+    index:
+      synchronize_success: "Đồng bộ thành công"
+      synchronize_fail: "Đồng bộ không thành công, vui lòng thử lại sau"

@@ -447,6 +447,7 @@ en:
       not_found: "User not found"
       blocked: "This user is blocked!"
       job_suggest: "Suggest job"
+      synchronize_tms: "Synchronize TMS"
     header:
       add_language: "Add Language"
       add_language_description: "Showcase your languages ability"
@@ -1010,3 +1011,7 @@ en:
       unfriend: " Unfriend"
       mutual_friends: "mutual friends"
       friends: "friends"
+  tms_synchronize:
+    index:
+      synchronize_success: "Synchronize Success"
+      synchronize_fail: "Something wrong, please try again later"

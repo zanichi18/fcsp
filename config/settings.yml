@@ -258,3 +258,6 @@ organization:
 job_image: "default.jpg"
 friend_suggest:
   size: "100x100"
+api:
+  tms_login_link: "http://education.framgia.vn/api/sign_in"
+  tms_data_link: "http://education.framgia.vn/api/export_profiles"

@@ -5,6 +5,7 @@ RSpec.describe OmniauthCallbacksController, type: :controller do
   before do
     request.env["devise.mapping"] = Devise.mappings[:user]
     request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:hr_system]
+    WebMock.allow_net_connect!
   end
 
   describe "POST #create" do
