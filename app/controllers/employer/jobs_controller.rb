@@ -56,8 +56,6 @@ class Employer::JobsController < Employer::BaseController
         @teams = @company.teams.includes(:images).page(Settings.employer.page)
           .per Settings.employer.team.per_page
         render json: {
-          html_job: render_to_string(partial: "new_job",
-            layout: false),
           status: Job.human_enum_name(:status, @job.status)
         }, status: 200
       else

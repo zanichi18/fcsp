@@ -85,13 +85,13 @@ var draftjob = {
             }
           }
         });
-        
+
         if (!check_job_active && arrchecked.length > 0) {
           draftjob.delete_jobs(params);
         }
         else {
           swal('', I18n.t('employer.jobs.destroy.message_delete_jobs'), 'error');
-        } 
+        }
       });
     });
   },
