@@ -139,7 +139,6 @@ ActiveRecord::Schema.define(version: 20170606014645) do
     t.datetime "updated_at",     null: false
     t.integer  "avatar_id"
     t.integer  "cover_image_id"
-    t.index ["avatar_id", "cover_image_id"], name: "index_companies_on_avatar_id_and_cover_image_id", unique: true, using: :btree
     t.index ["name"], name: "index_companies_on_name", using: :btree
     t.index ["website"], name: "index_companies_on_website", using: :btree
   end
@@ -184,7 +183,6 @@ ActiveRecord::Schema.define(version: 20170606014645) do
     t.text     "content"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.index ["commentable_id", "commentable_type"], name: "index_education_comments_on_commentable_id_and_commentable_type", using: :btree
     t.index ["user_id"], name: "index_education_comments_on_user_id", using: :btree
   end
 
@@ -360,7 +358,6 @@ ActiveRecord::Schema.define(version: 20170606014645) do
     t.string   "rateable_type"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.index ["rateable_id", "rateable_type"], name: "index_education_rates_on_rateable_id_and_rateable_type", using: :btree
     t.index ["user_id"], name: "index_education_rates_on_user_id", using: :btree
   end
 
@@ -527,6 +524,15 @@ ActiveRecord::Schema.define(version: 20170606014645) do
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_job_skills_on_job_id", using: :btree
     t.index ["skill_id"], name: "index_job_skills_on_skill_id", using: :btree
+  end
+
+  create_table "job_teams", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_teams_on_job_id", using: :btree
+    t.index ["team_id"], name: "index_job_teams_on_team_id", using: :btree
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -822,6 +828,8 @@ ActiveRecord::Schema.define(version: 20170606014645) do
   add_foreign_key "info_users", "users"
   add_foreign_key "job_hiring_types", "hiring_types"
   add_foreign_key "job_hiring_types", "jobs"
+  add_foreign_key "job_teams", "jobs"
+  add_foreign_key "job_teams", "teams"
   add_foreign_key "jobs", "teams"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
