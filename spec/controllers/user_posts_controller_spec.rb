@@ -86,7 +86,7 @@ RSpec.describe UserPostsController, type: :controller do
 
   describe "DELETE #destroy" do
     it "deleted post successfully" do
-      delete :destroy, params: {id: user_post}
+      delete :destroy, params: {id: user_post}, xhr: true
       expect(controller).to set_flash[:success]
         .to(I18n.t "user_posts.destroy.success")
     end

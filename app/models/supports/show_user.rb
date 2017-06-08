@@ -51,5 +51,10 @@ module Supports
           .per Settings.user.per_page
       end
     end
+
+    def list_post
+      @user.posts.newest.page(@params[:user_post_page])
+        .per Settings.post.per_page
+    end
   end
 end

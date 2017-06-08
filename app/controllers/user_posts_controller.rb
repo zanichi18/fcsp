@@ -40,7 +40,10 @@ class UserPostsController < ApplicationController
   def destroy
     if @post.destroy
       flash[:success] = t ".success"
-      redirect_to user_path current_user
+      list_post
+      respond_to do |format|
+        format.js
+      end
     else
       flash[:danger] = t ".fail"
       redirect_to user_post_path @post
@@ -50,7 +53,7 @@ class UserPostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :title, :content
+    params.require(:post).permit :title, :content, :image
   end
 
   def correct_user
@@ -59,5 +62,10 @@ class UserPostsController < ApplicationController
       flash[:danger] = t ".not_found"
       redirect_to user_path current_user
     end
+  end
+
+  def list_post
+    @posts = current_user.posts.newest.page(params[:page])
+      .per Settings.post.per_page
   end
 end

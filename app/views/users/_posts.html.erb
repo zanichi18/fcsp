@@ -1,4 +1,13 @@
-<%= link_to new_user_post_path,
-  class: "button button-3d button-small button-rounded button-green button-light button-white-text btn-add-user-education" do %>
-  <span class="icon-plus-sign"></span> <%= t ".add" %>
-<% end %>
+<div class="row">
+  <% if user.is_user? current_user %>
+    <%= link_to new_user_post_path,
+      class: "button button-3d button-small button-rounded button-green
+        button-light button-white-text btn-add-user-education" do %>
+      <span class="icon-plus-sign"></span> <%= t ".add" %>
+    <% end %>
+  <% end %>
+</div>
+<br>
+<div class="row">
+  <%= render "user_posts/list_post", user: user, posts: posts %>
+</div>

@@ -41,3 +41,4 @@
 //= require ckeditor/init
 //= require certificates
 //= require search_friends
+//= require posts
