@@ -1,10 +1,10 @@
 class ShareJob < ApplicationRecord
   belongs_to :user
-  belongs_to :job
+  belongs_to :shareable, polymorphic: true
 
   delegate :name, to: :user, prefix: true
 
-  validates :job_id, presence: true, uniqueness: {scope: :user_id}
+  validates :shareable_id, presence: true, uniqueness: {scope: :user_id}
   validates :user_id, presence: true
 
   scope :shared_jobs, ->ids do

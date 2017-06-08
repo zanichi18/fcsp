@@ -1,3 +1,9 @@
 <ul class="media-list">
-  <%= render user_object.shared_jobs %>
+  <% user_shared.each do |share| %>
+    <% if  check_type_share? share %>
+      <%= render "post_shared", post: share.shareable %>
+    <% else %>
+      <%= render "job_shared", job: share.shareable %>
+    <% end %>
+  <% end %>
 </ul>

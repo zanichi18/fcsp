@@ -1,7 +1,7 @@
 module Supports
   class ShowUser
     attr_reader :job_active, :job_skill, :portfolios, :awards,
-      :shared_job_ids, :list_friends
+      :shared_job_ids, :list_friends, :shared_post_ids
 
     def initialize user, current_user, params
       @user = user
@@ -55,6 +55,10 @@ module Supports
     def list_post
       @user.posts.newest.page(@params[:user_post_page])
         .per Settings.post.per_page
+    end
+
+    def user_shared
+      @user.shares
     end
   end
 end

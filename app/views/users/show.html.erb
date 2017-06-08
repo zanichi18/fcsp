@@ -5,10 +5,12 @@
       <div class="col-md-8">
         <article class="post show-tab-user">
           <div class="clearfix">
-            <% if @user.is_user? current_user %>
+            <% if check_show_newfeed? @user %>
               <div class="hide-tab active" id="tab-new-feed">
-                <%= render "new_feed", user_object: @user_object %>
+                <%= render "new_feed", user_shared: @user_object.user_shared %>
               </div>
+            <% end %>
+            <% if @user.is_user? current_user %>
               <div class="clearfix hide-tab" id="tab-suggest-job">
                 <%= render "user_job", user: @user, user_object: @user_object %>
               </div>

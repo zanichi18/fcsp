@@ -88,6 +88,17 @@ vi:
     job:
       read_more: "Read more"
       type_of_candidates: "Type of candidates: "
+  share_posts:
+    share: "Bạn có chắc muốn chia sẻ bài viết này?"
+    unshare: "Bạn có chắc không muốn chia sẻ bài viết này?"
+    create:
+      not_found: "Không tìm thấy bài viết."
+      share_success: "Chia sẻ bài viết thành công!"
+      share_fail: "Chia sẻ bài viết thất bại!"
+    destroy:
+      not_found: "Bài viết không tìm thấy"
+      unshare_success: "Hủy chia sẻ bài viết thành công!"
+      unshare_fail: "Hủy chia sẻ bài viết thất bại!"
   employer:
     companies:
       edit:

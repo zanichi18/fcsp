@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607070023) do
+ActiveRecord::Schema.define(version: 20170608052416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -441,9 +441,9 @@ ActiveRecord::Schema.define(version: 20170607070023) do
   end
 
   create_table "follows", force: :cascade do |t|
-    t.string   "followable_type",                 null: false
+    t.string   "followable_type"
     t.integer  "followable_id",                   null: false
-    t.string   "follower_type",                   null: false
+    t.string   "follower_type"
     t.integer  "follower_id",                     null: false
     t.boolean  "blocked",         default: false, null: false
     t.datetime "created_at"
@@ -620,11 +620,11 @@ ActiveRecord::Schema.define(version: 20170607070023) do
 
   create_table "share_jobs", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "job_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_id"], name: "index_share_jobs_on_job_id", using: :btree
-    t.index ["user_id", "job_id"], name: "index_share_jobs_on_user_id_and_job_id", unique: true, using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "shareable_id"
+    t.string   "shareable_type"
+    t.index ["shareable_id"], name: "index_share_jobs_on_shareable_id", using: :btree
     t.index ["user_id"], name: "index_share_jobs_on_user_id", using: :btree
   end
 
@@ -840,7 +840,6 @@ ActiveRecord::Schema.define(version: 20170607070023) do
   add_foreign_key "likes", "users"
   add_foreign_key "permissions", "groups"
   add_foreign_key "positions", "companies"
-  add_foreign_key "share_jobs", "jobs"
   add_foreign_key "share_jobs", "users"
   add_foreign_key "user_educations", "schools"
   add_foreign_key "user_educations", "users"
