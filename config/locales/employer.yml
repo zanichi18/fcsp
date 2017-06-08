@@ -48,6 +48,10 @@ en:
         postings_list: "Postings list"
         log_out: "Logout"
         company_info: "Company info"
+        profile: "Profile"
+        setting: "Setting"
+        help: "Help"
+        all_alert: "See All Alerts"
       employer_footer:
         footer_content: "Copyright by"
     candidates:
