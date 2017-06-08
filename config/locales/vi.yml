@@ -848,6 +848,10 @@ vi:
       success: "Xóa bài viết thành công!"
       fail: "Xóa bài viết thất bại!"
       not_found: "Không tìm thấy bài viết"
+    user_post:
+      read_more: "Xem thêm"
+      delete: "Xóa"
+      confirm_delete: "Bạn chắc chắn không?"
   growl_title:
     notice: "Thông báo!"
     error: "Lỗi!"

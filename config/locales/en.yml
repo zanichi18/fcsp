@@ -844,6 +844,10 @@ en:
       success: "Deleted post successfully!"
       fail: "Deleted post failed!"
       not_found: "Post not found"
+    user_post:
+      read_more: "Read more"
+      delete: "Delete"
+      confirm_delete: "Are you sure?"
   growl_title:
     notice: "Notice!"
     error: "Error!"

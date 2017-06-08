@@ -29,7 +29,7 @@
               <%= render "user_languages", user: @user %>
             </div>
             <div class="hide-tab clearfix" id="tab-posts">
-              <%= render "posts", user: @user %>
+              <%= render "posts", user: @user, posts: @user_object.list_post %>
             </div>
             <div class="clearfix hide-tab" id="tab-list-friend">
               <div class="row widget">

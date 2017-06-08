@@ -15,7 +15,7 @@
           <% if @user_project.start_date %>
             <%= f.text_field :start_date,
               value: l(@user_project.start_date, format: :short_month_year),
-              class: "form-control work-date" %>
+              class: "form-control project-date" %>
           <% else %>
             <%= f.text_field :start_date, class: "form-control project-date" %>
           <% end %>
