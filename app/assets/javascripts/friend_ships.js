@@ -12,7 +12,7 @@ var friend_ship = {
   add_friend_ship: function() {
     $('body').on('click', '.request-friend', function() {
       var self = $(this);
-      var user_id = $('#user_id').val();
+      var user_id = this.dataset.id;
       $.ajax({
         url: '/friend_ships/',
         data: {id: user_id},
@@ -42,7 +42,7 @@ var friend_ship = {
   remove_friend_ship: function() {
     $('body').on('click', '.remove-request', function() {
       var self = $(this);
-      var user_id = $('#user_id').val();
+      var user_id = this.dataset.id;
       $.ajax({
         url: '/friend_ships/' + user_id,
         type: 'DELETE',
@@ -71,7 +71,7 @@ var friend_ship = {
   unfriend: function() {
     $('body').on('click', '.unfriend', function() {
       var self = $(this);
-      var user_id = $('#user_id').val();
+      var user_id = this.dataset.id;
       $.ajax({
         url: '/friend_ships/' + user_id,
         data: {is_unfriend: true},

@@ -6,8 +6,7 @@ module Supports
     def initialize user, current_user, params
       @user = user
       @current_user = current_user
-      @suggest_jobs_page = params[:suggest_jobs_page]
-      @bookmarked_jobs_page = params[:bookmarked_jobs_page]
+      @params = params
     end
 
     def job_active
@@ -35,19 +34,20 @@ module Supports
     end
 
     def list_friends
-      @user.friends.includes :avatar
+      @user.friends.search(name_cont: @params[:friend_search]).result
+        .includes :avatar
     end
 
     def user_jobs
       if @user.is_user? @current_user
-        Kaminari.paginate_array(job_skill).page(@suggest_jobs_page)
+        Kaminari.paginate_array(job_skill).page(@params[:suggest_jobs_page])
           .per Settings.user.per_page
       end
     end
 
     def bookmarked_jobs
       if @user.is_user? @current_user
-        @current_user.bookmarked_jobs.page(@bookmarked_jobs_page)
+        @current_user.bookmarked_jobs.page(@params[:bookmarked_jobs_page])
           .per Settings.user.per_page
       end
     end

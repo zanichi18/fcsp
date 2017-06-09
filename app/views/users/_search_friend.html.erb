@@ -1,0 +1,6 @@
+<div class="inner-addon right-addon get-id" data-id="<%= user.id %>">
+  <i class="glyphicon glyphicon-search"></i>
+  <%= text_field_tag :friend_search, params[:friend_search],
+    placeholder: t(".search"), remote: true,
+    class: "form-control search-form" %>
+</div>

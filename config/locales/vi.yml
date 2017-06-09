@@ -456,6 +456,11 @@ vi:
     find_user:
       not_found: "Không tìm thấy người dùng"
     list_friend:
+      remove_request: " Hủy yêu cầu"
+      request_friend: " Kết bạn"
+      unfriend: " Hủy kết bạn"
+      mutual_friends: "Bạn chung"
+      friends: "Bạn bè"
       no_friend: "Không có bạn bè nào!"
     friend_ship_form:
       remove_request: " Hủy yêu cầu"
@@ -528,6 +533,8 @@ vi:
     user_link:
       links: "Liên kết"
       add: "Thêm"
+    search_friend:
+      search: "Nhập tìm kiếm"
   user_works:
     user_work_form:
       all_status:
@@ -927,3 +934,17 @@ vi:
           attributes:
             end_time:
               after: "Thời gian bắt đầu phải nhỏ hơn thời gian kết thúc"
+  friend_requests:
+    index:
+      friend_requests: "Yêu cầu kết bạn"
+      request_not_found: "không có yêu cầu kết bạn nào"
+      mutual-friends: "Bạn chung"
+      confirm: "Xác nhận"
+      reject: "Xóa yêu cầu"
+    suggest_friends:
+      people_know: "Những người bạn có thể biết"
+      remove_request: " Hủy yêu cầu"
+      request_friend: " Kết bạn"
+      unfriend: " Hủy kết bạn"
+      mutual_friends: "Bạn chung"
+      friends: "Bạn bè"

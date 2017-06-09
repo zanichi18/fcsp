@@ -21,7 +21,7 @@ function update_friend(status, id) {
     url: '/friend_ships/' + id,
     data: {status: status},
     success: function(data) {
-      $('#friend-ship-' + id).remove();
+      $('.friendships-' + id).remove();
       $.growl.notice({title: '', message: data['message']});
     },
     error: function(error_message) {

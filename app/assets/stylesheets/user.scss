@@ -443,3 +443,25 @@
     }
   }
 }
+
+.name-friend {
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.friend {
+  color: $gray-9;
+  font-size: 12px;
+}
+
+.panding-friend {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.modal-content-friend {
+  height: 350px;
+  margin: 20px;
+  overflow: auto;
+  overflow-x: hidden;
+}

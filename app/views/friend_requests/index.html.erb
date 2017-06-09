@@ -1,0 +1,34 @@
+<div class="container-request panel-default user-info-panel">
+  <div class="clearfix panel panel-default user-info-panel">
+    <h3><%= t ".friend_requests" %></h3>
+    <div class="request-friend-index row">
+      <% if @friend_requests.present? %>
+        <% @friend_requests.each do |user_request| %>
+          <div class="col-md-6 clearfix-padding friendships-<%= user_request.id %>">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+              <%= link_to load_user_avatar(user_request), user_path(user_request) %>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 center-custom">
+              <span class="name-friend-suggest"><%= link_to user_request.name, user_path(user_request) %></span>
+              <br>
+              <i class="friend-suggest"><%= current_user.mutual_friends(user_request).size %> <%= t ".mutual-friends" %></i>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 center-custom">
+              <%= link_to "#", class: "right-icon friend-ship",
+                data: {id: user_request.id}, title: t(".confirm") do %>
+                <%= icon "check-circle" %>
+              <% end %>
+              <%= link_to "#", class: "right-icon friend-ship-decline",
+                data: {id: user_request.id}, title: t(".reject") do %>
+                <%= icon "times-circle" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="center"><%= t ".request_not_found" %></div>
+      <% end %>
+    </div>
+  </div>
+  <%= render "suggest_friends", users: @users %>
+</div>

@@ -1,0 +1,22 @@
+<div class="panel panel-default user-info-panel suggest-padding">
+  <h3><%= t ".people_know" %></h3>
+  <div class="row">
+    <% suggest_by_mutual_friend(users).each do |user| %>
+      <div class="col-md-6 suggest">
+        <div class="col-md-4 col-sm-4 col-xs-4 center">
+          <%= link_to load_user_avatar(user, size: Settings.friend_suggest.size), user_path(user) %>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 center-custom">
+          <div class="name-friend-suggest">
+            <%= link_to user.name, user_path(user) %></div>
+          <div class="friend-suggest">
+            <%= current_user.mutual_friends(user).size %>&nbsp;<%= t ".mutual_friends" %>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 center-custom">
+          <%= btn_request user %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

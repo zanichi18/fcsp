@@ -13,15 +13,15 @@
     <div class="show-request">
       <% if request_friends.present? %>
         <% request_friends.each do |user_request| %>
-          <div class="top-cart-item clearfix" id="friend-ship-<%= user_request.id %>">
+          <div class="top-cart-item clearfix friendships-<%= user_request.id %>">
             <div class="row">
               <div class="col-md-3 col-sm-3 col-xs-3">
-                <%= load_user_avatar user_request %>
+                <%= link_to load_user_avatar(user_request), user_path(user_request) %>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-6">
-                <a href="#"><%= user_request.name %></a>
+                <%= link_to user_request.name, user_path(user_request) %>
                 <br>
-                <i><%= current_user.mutual_friends(user_request).size %> <%= t ".mutual-friends" %></i>
+                <i class="friend-suggest"><%= current_user.mutual_friends(user_request).size %> <%= t ".mutual-friends" %></i>
               </div>
               <div class="col-md-3 col-sm-3 col-xs-3">
                 <%= link_to "#", class: "right-icon friend-ship",
@@ -42,9 +42,9 @@
     </div>
     <div class="clearfix text-center">
       <span class="fleft top-checkout-price"></span>
-      <button class="btn btn-primary nomargin fright">
+      <%= link_to friend_requests_path do %>
         <%= t ".view_all" %>
-      </button>
+      <% end %>
     </div>
   </div>
 </span>
