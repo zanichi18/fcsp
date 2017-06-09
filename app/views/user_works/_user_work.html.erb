@@ -1,7 +1,7 @@
 <% user.user_works.includes(:organization).each do |work| %>
   <% if work.organization.present? %>
     <div>
-      <strong><%= work.organization.name %></strong>
+      <strong><%= link_to work.organization.name, work.organization %></strong>
       <span class="work-action">
         <% if user.is_user? current_user %>
           <%= link_to edit_user_work_path(work),

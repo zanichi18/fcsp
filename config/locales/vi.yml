@@ -903,3 +903,10 @@ vi:
       auth_failure: "Auth failure"
     failure:
       auth_failure: "Auth failure"
+  organizations:
+    show:
+      org_infor: "Nội dung trang này dựa trên dữ liệu từ người dùng của FCSP"
+      people_worked_here: "Những người đã làm việc ở đây"
+      people_worked: "Họ cũng từng làm ở:"
+      new_job: "Những công việc mới nhất"
+      org_not_found: "Không tìm thấy tổ chức"
