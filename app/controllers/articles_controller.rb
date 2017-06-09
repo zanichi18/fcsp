@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
+  load_resource
+
   def show
-    @article = Article.find_by id: params[:id]
   end
 end

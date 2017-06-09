@@ -7,10 +7,11 @@
         </div>
       </div>
       <div class="col-sm-11 list-article">
-        <%= render "articles", articles: @articles, total: @total, company: @company %>
+        <%= render "articles", articles: @article_presenter.articles,
+          total: @article_presenter.total, company: @company %>
       </div>
       <div class="col-sm-11 pagination-article">
-        <%= render "articles/paginate", articles: @articles %>
+        <%= render "articles/paginate", articles: @article_presenter.articles %>
       </div>
       <div class="new-article">
         <%= link_to new_employer_company_article_path(@company),

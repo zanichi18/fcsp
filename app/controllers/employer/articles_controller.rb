@@ -2,20 +2,16 @@ class Employer::ArticlesController < Employer::BaseController
   before_action :load_article, except: [:index, :new, :create]
 
   def index
-    params[:type] ||= "time_show"
-    params[:sort] ||= "DESC"
-    articles_all = @company.articles.select(:id, :title, :description,
-      :time_show).search_form params[:search], params[:type], params[:sort]
-    @total = articles_all.size if params[:search].present?
-    @articles = articles_all.page(params[:page]).per Settings.article.page
+    @article_presenter = ArticlePresenter.new @company, params
 
     if request.xhr?
       render json: {
         html_article: render_to_string(partial: "articles",
-          locals: {articles: @articles, total: @total, company: @company},
+          locals: {articles: @article_presenter.articles,
+          total: @article_presenter.total, company: @company},
           layout: false),
         pagination_article: render_to_string(partial: "articles/paginate",
-          locals: {articles: @articles}, layout: false)
+          locals: {articles: @article_presenter.articles}, layout: false)
       }
     else
       respond_to do |format|
