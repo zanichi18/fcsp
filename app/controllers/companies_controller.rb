@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
       .page(params[:page]).per Settings.company.per_page
     @company_articles = @company.articles.select(:id, :title, :description,
       :time_show).show(:time_show).page(params[:page]).per Settings.article.page
+
     if request.xhr?
       render json: {
         content: render_to_string(partial: "company_jobs",

@@ -3,11 +3,9 @@ module CandidatesHelper
     Candidate.find_by user_id: user_id, job_id: job_id
   end
 
-  # rubocop:disable MultilineTernaryOperator
   def load_avatar_candidate candidate
-    image_tag candidate.avatar.present? ? candidate.avatar.picture :
-      PictureUploader.new.picture_url,
+    avatar = candidate.avatar.present? ? candidate.avatar : PictureUploader.new
+    image_tag avatar.picture_url,
       size: Settings.employer.candidates.avatar_size, class: "media-photo"
   end
-  # rubocop:enable MultilineTernaryOperator
 end

@@ -8,9 +8,8 @@ $(document).ready(function() {
     var url = $(this).attr('href');
     var match = url.match(/page=(\d+)/);
     var page_number;
-    if (match){
+    if (match)
       page_number = match[1];
-    }
     else
       page_number = 1;
     var tbody = $('.show-article');
