@@ -18,7 +18,7 @@ class UserWorksController < ApplicationController
     if user_work.save
       render_js t(".create_success"), 200
     else
-      render_js t(".create_faild"), 400
+      render json: {errors: user_work.errors}
     end
   end
 
@@ -32,7 +32,7 @@ class UserWorksController < ApplicationController
     if @user_work.update_attributes update_user_work_params
       render_js t(".update_success"), 200
     else
-      render_js t(".update_faild"), 400
+      render json: {errors: @user_work.errors}
     end
   end
 
@@ -53,11 +53,13 @@ class UserWorksController < ApplicationController
   end
 
   def user_work_params
+    modified_params
     params.require(:user_work).permit(:position, :start_time,
       :end_time, :status, :description).merge!(user: current_user)
   end
 
   def update_user_work_params
+    modified_params
     params.require(:user_work).permit(:position, :start_time,
       :end_time, :status, :description).merge!(organization: @org)
   end
@@ -69,5 +71,12 @@ class UserWorksController < ApplicationController
       flash[:danger] = t ".org_not_found"
       redirect_to root_path
     end
+  end
+
+  def modified_params
+    start_time = params[:user_work][:start_time]
+    params[:user_work][:start_time] = convert_string_to_date start_time
+    end_time = params[:user_work][:end_time]
+    params[:user_work][:end_time] = convert_string_to_date end_time
   end
 end

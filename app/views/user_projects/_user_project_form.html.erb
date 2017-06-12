@@ -1,29 +1,48 @@
  <div class="modal fade" id="user-project-form" role="dialog">
   <div class="modal-dialog">
-  <%= simple_form_for user_project, remote: true do |f| %>
+  <%= simple_form_for @user_project, remote: true,
+    html: {id: "edit-user-project-form"} do |f| %>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title text-center"><%= t ".header" %></h4>
+        <h4 class="modal-title"><%= t ".header" %></h4>
       </div>
       <div class="modal-body">
         <%= f.input :title, label: t(".title"), class: "form-control" %>
-        <%= f.input :url, label: t("users.form_portfolio.url"), class: "form-control" %>
+        <%= f.input :url, label: t(".url"), class: "form-control" %>
         <div class="col_half">
-          <%= f.input :start_date, as: :date, html5: true, class: "form-control",
-            placeholder: t(".start_date") %>
+          <%= f.label :start_date, t(".start_date") %>
+          <% if @user_project.start_date %>
+            <%= f.text_field :start_date,
+              value: l(@user_project.start_date, format: :short_month_year),
+              class: "form-control work-date" %>
+          <% else %>
+            <%= f.text_field :start_date, class: "form-control project-date" %>
+          <% end %>
         </div>
         <div class="col_half col_last">
-          <%= f.input :end_date, as: :date, html5: true, class: "form-control",
-            placeholder: t(".start_date") %>
+          <%= f.label :end_date, t(".end_date") %>
+          <% if @user_project.end_date %>
+            <%= f.text_field :end_date,
+              value: l(@user_project.end_date, format: :short_month_year),
+              class: "form-control project-date" %>
+          <% else %>
+            <%= f.text_field :end_date, class: "form-control project-date" %>
+          <% end %>   
         </div>
-        <%= f.input :description, as: :text, label: t(".description"),
-          input_html: {rows: Settings.user_portfolio.textarea_rows,
-          class: "form-control"} %>
+        <div>
+          <%= f.input :description, as: :text, label: t(".description"),
+            input_html: {rows: Settings.user_portfolio.textarea_rows,
+            class: "form-control"} %>
+        </div>
       </div>
       <div class="modal-footer text-center">
-        <%= f.submit t(".update"), class: "btn btn-primary add-user-work-btn" %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">
+        <%= button_tag type: :submit,
+          class: "button button-3d button-rounded button-green" do %>
+            <%= t ".update" %>
+        <% end %>
+        <button type="button" class="button button-3d button-rounded 
+          button-white button-light" data-dismiss="modal">
           <%= t ".close" %>
         </button>
       </div>
@@ -31,3 +50,5 @@
   <% end %>
   </div>
 </div>
+
+<%= javascript_include_tag "user_project" %>

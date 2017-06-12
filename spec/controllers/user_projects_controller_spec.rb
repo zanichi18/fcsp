@@ -27,8 +27,8 @@ RSpec.describe UserProjectsController, type: :controller do
     let!(:user_project){FactoryGirl.create(:user_project)}
     it "send a request" do
       patch :update, xhr: true,
-        params: {id: user_project.id,
-          user_project: {title: "Update Project"}}
+        params: {id: user_project.id, user_project:
+          FactoryGirl.attributes_for(:user_project, title: "Update Project")}
       user_project.reload
       expect(user_project.title).to eq "Update Project"
     end

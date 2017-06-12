@@ -53,4 +53,10 @@ class ApplicationController < ActionController::Base
       format.js
     end
   end
+
+  def convert_string_to_date param
+    param.to_date
+  rescue
+    nil
+  end
 end

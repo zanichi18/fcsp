@@ -405,6 +405,7 @@ en:
   date:
     formats:
       month_year_format: "%B %Y"
+      short_month_year: "%d-%m-%Y"
   copy: "Copyright by Framgia"
   error: "error"
   comment:
@@ -540,6 +541,8 @@ en:
       update: "Update"
       close: "Close"
     user_work:
+      edit: "Edit"
+      delete: "Delete"
       all_status:
         full_time: "Full time"
         part_time: "Part time"
@@ -589,6 +592,8 @@ en:
     user_project:
       split: " - "
       sure: "Are you sure?"
+      edit: "Edit"
+      delete: "Delete"
   user_portfolios:
     edit:
       update: "Update"
@@ -946,3 +951,15 @@ en:
       people_worked: "People who worked here also worked"
       new_job: "Newest jobs"
       org_not_found: "Organization not found"
+  activerecord:
+    errors:
+      models:
+        user_project:
+          attributes:
+            end_date:
+              after: "Start time must be less than end time"
+              invalid_date: "Start time must be less than end time"
+        user_work:
+          attributes:
+            end_time:
+              after: "Start time must be less than end time"
