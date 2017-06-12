@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  searchkick
+
   belongs_to :postable, polymorphic: true
 
   has_many :comments, dependent: :destroy
