@@ -71,4 +71,11 @@ module UsersHelper
       content_tag :span, "", class: "icon-lock #{info}-status"
     end
   end
+
+  def tms_synchronize_button
+    if current_user.id == @user.id && cookies.signed[:tms_user]
+      link_to t(".synchronize_tms"), tms_synchronize_index_path,
+        class: "btn btn-default"
+    end
+  end
 end

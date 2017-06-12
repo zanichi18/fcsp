@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user, only: [:show, :edit]
+  before_action :authenticate_tms
 
   def show
     @user_object = Supports::ShowUser.new @user, current_user, params

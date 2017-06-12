@@ -271,4 +271,8 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+  Warden::Manager.before_logout do |user,auth,opts|
+    auth.cookies.delete :authen_service
+    auth.cookies.delete :tms_user
+  end
 end

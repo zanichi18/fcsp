@@ -4,6 +4,7 @@ RSpec.describe UsersController, type: :controller do
   let!(:user){FactoryGirl.create :user}
   before :each do
     sign_in user
+    WebMock.allow_net_connect!
   end
 
   describe "GET #show" do

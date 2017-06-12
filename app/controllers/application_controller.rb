@@ -39,9 +39,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def after_sign_in_path_for _resourse
-  #   session[:previous_url] || root_path
-  # end
+  def after_sign_in_path_for _resourse
+    if cookies.signed[:tms_user].nil?
+      authenticate_tms
+      cookies.signed[:tms_user] = Api::TmsDataService.new(current_user,
+        cookies.signed[:authen_service]).tms_user_exist?
+    end
+    session[:previous_url] || root_path
+  end
 
   def shared_jobs
     @shared_job_ids = current_user.shares.pluck :job_id if user_signed_in?
@@ -58,5 +63,18 @@ class ApplicationController < ActionController::Base
     param.to_date
   rescue
     nil
+  end
+
+  def authenticate_tms
+    if cookies.signed[:authen_service]
+      @user_token = cookies.signed[:authen_service]
+    else
+      authen_service = Api::AuthenticateService.new(ENV["TMS_ADMIN_EMAIL"],
+        ENV["TMS_ADMIN_PASSWORD"]).tms_authenticate
+      if authen_service
+        @user_token = authen_service["authen_token"]
+        cookies.signed[:authen_service] = @user_token
+      end
+    end
   end
 end
