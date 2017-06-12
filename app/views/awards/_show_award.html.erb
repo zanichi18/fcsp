@@ -1,29 +1,25 @@
-<% if awards.blank? %>
-  <p><%= t ".award_not_found" %></p>
-<% else %>
-  <div>
-    <% awards.each do |award| %>
-      <div class="award-padding award-hover" id="award-<%= award.id %>">
-        <div>
-          <%= award.name %>
-            <span class="hover-button-award">
-              <% if award.user.is_user? current_user %>
-                <%= link_to edit_award_path(award), remote: true, class: "left-icon" do %>
-                  <i class="icon-pencil"></i> <%= t ".edit" %>
-                <% end %>
-                <%= link_to award_path(award), remote: true, method: :delete, data: {confirm: t(".sure")} do %>
-                  <span class="icon-trash"></span> <%= t ".delete" %>
-                <% end %>
+<div>
+  <% awards.each do |award| %>
+    <div class="award-padding award-hover" id="award-<%= award.id %>">
+      <div>
+        <%= award.name %>
+          <span class="hover-button-award">
+            <% if award.user.is_user? current_user %>
+              <%= link_to edit_award_path(award), remote: true, class: "left-icon" do %>
+                <i class="icon-pencil"></i> <%= t ".edit" %>
               <% end %>
-            </span>
-          </div>
-        <div class="hover-content">
-          <div class="details-award">
-            <%= award.time %>
-          </div>
+              <%= link_to award_path(award), remote: true, method: :delete, data: {confirm: t(".sure")} do %>
+                <span class="icon-trash"></span> <%= t ".delete" %>
+              <% end %>
+            <% end %>
+          </span>
         </div>
-     </div>
-     <hr>
-    <% end %>
-  </div>
-<% end %>
+      <div class="hover-content">
+        <div class="details-award">
+          <%= award.time %>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

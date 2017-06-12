@@ -9,10 +9,8 @@ module Supports
 
     def paginate
       if params[:type]
-        listarr = params[:array_id]
-        listarr = listarr.split(",").map(&:to_i) if listarr.class == String
-        params[:sort] ? params[:sort] : "ASC"
-        sort_by = params[:sort]
+        listarr = params[:array_id].split(",").map(&:to_i)
+        sort_by = params[:sort].present? ? params[:sort] : "ASC"
         @teams = @company.teams.includes(:images)
           .filter(listarr, sort_by, params[:type])
           .page(params[:page]).per Settings.employer.team.per_page

@@ -44,15 +44,22 @@ module ApplicationHelper
     end
   end
 
-  def link_to_add_fields name, form, association, cssclass, title
-    new_object = form.object.class.reflect_on_association(association).klass.new
-    fields = form.fields_for(association, new_object,
+  def link_to_add_fields name, form, options = {}
+    new_object = form.object.class
+      .reflect_on_association(options[:association]).klass.new
+    fields = fields_factory form, options[:association], new_object
+    link_to name, "javascript:void(0)",
+      onclick: h("add_fields(this, \"#{options[:association]}\",
+      \"#{escape_javascript(fields)}\")"),
+      class: options[:class], title: options[:title]
+  end
+
+  private
+
+  def fields_factory form, association, object
+    form.fields_for(association, object,
       child_index: "new_#{association}") do |builder|
       render association.to_s.singularize + "_fields", form: builder
     end
-    link_to name, "javascript:void(0)",
-      onclick: h("add_fields(this, \"#{association}\",
-      \"#{escape_javascript(fields)}\")"),
-      class: cssclass, title: title
   end
 end

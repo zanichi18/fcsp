@@ -33,8 +33,8 @@
               <button class="btn btn-default btn-xs dropdown-toggle margin-seven"
                 type="button" data-toggle="dropdown">
                 <span class="glyphicon glyphicon-plus"></span>
-                <%= t ".add_profile_section" %>
-                <span class="caret"></span>
+                <span class="hidden-xs"><%= t ".add_profile_section" %></span>
+                <span class="caret hidden-xs"></span>
               </button>
               <div class="dropdown-menu add-infomation">
                 <div class="clearfix">
@@ -46,13 +46,13 @@
                     </div>
 
                     <div class="acc_content clearfix">
-                      <div class="top-cart-item clearfix">
+                      <div class="top-cart-item clearfix add-information-item">
                         <%= link_to new_user_language_path, remote: true do %>
                           <i class="i-circled i-light i-small icon-plus"></i>
                         <% end %>
                         <div class="top-cart-item-desc">
                           <b><%= t ".add_language" %></b>
-                          <span class="top-cart-item-price"><%= t ".add_language_description" %></span>
+                          <span class="top-cart-item-price hidden-xs"><%= t ".add_language_description" %></span>
                         </div>
                       </div>
                     </div>

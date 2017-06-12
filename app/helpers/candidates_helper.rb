@@ -4,8 +4,12 @@ module CandidatesHelper
   end
 
   def load_avatar_candidate candidate
-    avatar = candidate.avatar.present? ? candidate.avatar : PictureUploader.new
-    image_tag avatar.picture_url,
+    if candidate.avatar.present?
+      img = candidate.avatar.picture
+    else
+      img = PictureUploader.new.picture_url
+    end
+    image_tag img,
       size: Settings.employer.candidates.avatar_size, class: "media-photo"
   end
 end

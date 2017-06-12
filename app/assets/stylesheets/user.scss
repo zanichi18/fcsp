@@ -179,7 +179,7 @@
 
 .avatar-user {
   background: $dark-gray;
-  border: 3px solid $white-eee;
+  border: 1px solid $white-eee;
   color: $white !important;
   float: left;
   font-size: 2em;
@@ -464,4 +464,22 @@
   margin: 20px;
   overflow: auto;
   overflow-x: hidden;
+}
+
+.mb-0-form {
+  margin: 0 !important;
+}
+
+.add-information-item {
+  display: flex;
+}
+
+@media all and (max-width: 488px) {
+  .avatar-user {
+    margin-top: -100px !important;
+  }
+}
+
+.main-content-site {
+  min-height: 906px !important;
 }

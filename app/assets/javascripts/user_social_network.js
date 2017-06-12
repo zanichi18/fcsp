@@ -51,7 +51,8 @@ $(document).ready(function(){
 
   var list_social_network = function(facebook, google, twitter,
     linkedin, youtube, skype, instagram) {
-    return '<a href="' + facebook + '" target="_blank"' +
+    return '<div class="list-social-network clearfix">' +
+      '<a href="' + facebook + '" target="_blank"' +
       'class="social-icon si-facebook si-small si-rounded si-light"' +
       'title="Facebook">' +
       '<i class="icon-facebook"></i>' +
@@ -92,6 +93,6 @@ $(document).ready(function(){
         'title="Instagram">' +
         '<i class="icon-instagram"></i>' +
         '<i class="icon-instagram"></i>' +
-      '</a>';
-  };
+      '</a></div>';
+  }
 });

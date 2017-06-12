@@ -11,24 +11,11 @@
         <%= f.input :title, label: t(".title"), class: "form-control" %>
         <%= f.input :url, label: t(".url"), class: "form-control" %>
         <div class="col_half">
-          <%= f.label :start_date, t(".start_date") %>
-          <% if @user_project.start_date %>
-            <%= f.text_field :start_date,
-              value: l(@user_project.start_date, format: :short_month_year),
-              class: "form-control project-date" %>
-          <% else %>
-            <%= f.text_field :start_date, class: "form-control project-date" %>
-          <% end %>
+          <%= f.input :start_date, as: :string, input_html: {class: "form-control datepicker"} %>
         </div>
         <div class="col_half col_last">
-          <%= f.label :end_date, t(".end_date") %>
-          <% if @user_project.end_date %>
-            <%= f.text_field :end_date,
-              value: l(@user_project.end_date, format: :short_month_year),
-              class: "form-control project-date" %>
-          <% else %>
-            <%= f.text_field :end_date, class: "form-control project-date" %>
-          <% end %>   
+          <%= f.input :end_date, as: :string,
+            input_html: {class: "form-control datepicker"} %>
         </div>
         <div>
           <%= f.input :description, as: :text, label: t(".description"),
@@ -36,13 +23,10 @@
             class: "form-control"} %>
         </div>
       </div>
-      <div class="modal-footer text-center">
-        <%= button_tag type: :submit,
-          class: "button button-3d button-rounded button-green" do %>
-            <%= t ".update" %>
-        <% end %>
-        <button type="button" class="button button-3d button-rounded 
-          button-white button-light" data-dismiss="modal">
+      <div class="button-portfolio-modal">
+        <%= f.submit t(".update"), class: "button button-3d button-rounded button-green" %>
+        <button type="button"
+          class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
           <%= t ".close" %>
         </button>
       </div>

@@ -23,7 +23,8 @@
     <% end %>
     <div class="form-group">
       <%= link_to_add_fields t("employer.teams.add_introduct"), f,
-        :team_introductions, "btn btn-primary", t("employer.teams.add_introduct") %>
+        association: :team_introductions, class: "btn btn-primary",
+        title: t("employer.teams.add_introduct") %>
       <%= f.submit nil, class: "btn btn-primary" %>
     </div>
   <% end %>

@@ -449,6 +449,7 @@ en:
       job_suggest: "Suggest job"
       synchronize_tms: "Synchronize TMS"
     header:
+      add_profile_section: "Add profile section"
       add_language: "Add Language"
       add_language_description: "Showcase your languages ability"
       friends: "Friends"
@@ -537,6 +538,15 @@ en:
         edit: "Edit"
         close: "Close"
   user_works:
+    create:
+      create_success: "Add work successfully!"
+      create_faild: "Add work failed!"
+    update:
+      update_success: "Update work successfully!"
+      update_faild: "Update work failed!"
+    destroy:
+      destroy_success: "Delete work successfully!"
+      destroy_faild: "Delete work failed!"
     org_search:
       people: "%{num} others"
     work:
@@ -582,6 +592,21 @@ en:
     destroy:
       destroy_success: "Delete work successfully!"
       destroy_faild: "Delete work faild!"
+    user_education:
+      education: "Education"
+      add: "Add"
+    user_link:
+      links: "Links"
+      add: "Add"
+    user_languages:
+      add: "Add"
+      languages: "Languages"
+      new:
+        add: "Add"
+        close: "Close"
+      edit:
+        edit: "Edit"
+        close: "Close"
   user_projects:
     create:
       create_success: "Add project successfully!"

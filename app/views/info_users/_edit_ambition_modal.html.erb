@@ -1,22 +1,23 @@
 <div id="edit-ambition-modal" class="modal fade course-member" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content modal-content-info-user">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
-      </div>
       <%= simple_form_for info_user, remote: :true,
-        html: {id: "edit-ambition-form"} do |f| %>
+        html: {id: "edit-ambition-form", class: "mb-0-form"} do |f| %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><%= t ".edit_ambition" %></h4>
+        </div>
         <div class="modal-body">
           <%= f.input :ambition, as: :text, placeholder: t(".ambition_placeholder"),
             class: "sm-form-control modal-txta",
-            rows: Settings.info_users.ambition_form_rows %>
+            input_html: {rows: Settings.info_users.ambition_form_rows} %>
         </div>
-        <div class="modal-footer modal-footer-info-user">
-          <%= f.submit t(".update_button"), class:"btn btn-primary",
-            id: "btn-edit-ambition" %>
-          <%= button_tag t(".cancel_button"), class:"btn btn-default",
-             data: {dismiss:"modal"} %>
+        <div class="button-portfolio-modal">
+          <%= f.submit t(".update_button"), class: "button button-3d button-rounded button-green" %>
+          <button type="button"
+            class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+            <%= t ".cancel_button" %>
+          </button>
         </div>
       <% end %>
     </div>

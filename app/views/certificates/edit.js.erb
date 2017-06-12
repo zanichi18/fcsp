@@ -1,2 +1,3 @@
 $('.form-user-certificate-modal').html('<%= j render "certificates/certificate_form", button_text: t(".update"), certificate: @certificate %>');
 $('#form-user-certificate-modal').modal('show');
+$('#certificate_qualified_time').datepicker();

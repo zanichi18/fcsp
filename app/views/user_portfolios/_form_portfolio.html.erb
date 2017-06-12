@@ -11,9 +11,8 @@
           <%= f.input :url, label: t("users.form_portfolio.url"), class: "form-control" %>
           <%= f.input :description, as: :text, label: t(".description"),
             input_html: {rows: Settings.user_portfolio.textarea_rows, class: "form-control"} %>
-          <%= f.input :time,as: :date, html5: true, label: t(".made"),
-            class: "form-control datepicker" %>
-          <div>
+          <%= f.input :time, as: :string, label: t(".made"),
+            input_html: {class: "form-control datepicker"} %>
           <div class="button-portfolio-modal">
             <%= f.submit button_text, class: "button button-3d button-rounded button-green" %>
             <button type="button"

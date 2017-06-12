@@ -1,8 +1,5 @@
-<% if portfolios.blank? %>
-  <p><%= t ".portfolio_not_found" %></p>
-<% else %>
-  <div>
-    <% portfolios.each do |portfolio| %>
+<div>
+  <% portfolios.each do |portfolio| %>
     <div class="row">
       <div class="col-md-12 portfolio-padding hover-portfolio" id="portfolio-<%= portfolio.id %>">
         <div class="col-md-6">
@@ -37,7 +34,6 @@
           </span>
         </div>
       </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+    </div>
+  <% end %>
+</div>

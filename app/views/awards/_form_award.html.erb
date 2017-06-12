@@ -5,23 +5,20 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= t ".award_header" %></h4>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for award, remote: true, html: {class: "award-form"} do |f| %>
+      <%= simple_form_for award, remote: true, html: {class: "award-form"} do |f| %>
+        <div class="modal-body">
           <%= f.input :name, html5: true, label: t(".title"), class: "form-control" %>
-          <%= f.input :time, as: :date, html5: true, label: t(".made"),
-            class: "form-control datepicker" %>
-          <div class="button-modal-award">
-            <%= button_tag type: :submit,
-              class: "button button-3d button-rounded button-green" do %>
-              <%= button_text %>
-            <% end %>
-            <button type="button"
-              class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
-              <%= t ".close" %>
-            </button>
-          </div>
-        <% end %>
-      </div>
+          <%= f.input :time, as: :string, label: t(".made"),
+            input_html: {class: "form-control datepicker"} %>
+        </div>
+        <div class="button-modal-award">
+          <%= f.submit button_text, class: "button button-3d button-rounded button-green" %>
+          <button type="button"
+            class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

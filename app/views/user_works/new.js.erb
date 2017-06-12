@@ -1,2 +1,3 @@
 $('.user-work-modal').html('<%= j render "user_works/user_work_form", user_work: @user_work %>')
 $('#user-work-form').modal('show');
+setupLinkedDatePicker('#user_work_start_time', '#user_work_end_time');
