@@ -2,9 +2,18 @@
   <div class="row">
     <% list_friends.each do |friend| %>
       <div class="col-md-6 list-friend">
-        <%= link_to load_user_avatar(friend, class: "img-avatar-friend"), user_path(friend) %>
-        <%= link_to friend.name, user_path(friend) %>
+        <div class="col-md-4">
+          <%= link_to load_user_avatar(friend, class: "img-avatar-friend"), user_path(friend) %>
+        </div>
+        <div class="col-md-4">
+          <span class="name-friend"><%= link_to friend.name, user_path(friend) %></span><br>
+          <%= suggest_friend user, friend %>
+        </div>
+        <div class="col-md-4">
+          <%= check_add_friend user, friend %>
+        </div>
       </div>
+      <%= render "modal_friend", friend: friend, user: user %>
     <% end %>
   </div>
 <% else %>

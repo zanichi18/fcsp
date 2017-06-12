@@ -32,7 +32,14 @@
               <%= render "posts", user: @user %>
             </div>
             <div class="clearfix hide-tab" id="tab-list-friend">
-              <%= render "list_friend", list_friends: @user_object.list_friends %>
+              <div class="row widget">
+                <div class="job-index-page  col-md-6 col-xs-12">
+                  <%= render "search_friend", user: @user %>
+                </div>
+              </div>
+              <div id="list-friend">
+                <%= render "list_friend", list_friends: @user_object.list_friends, user: @user %>
+              </div>
             </div>
           </div>
         </article>

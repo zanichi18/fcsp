@@ -89,4 +89,5 @@ Rails.application.routes.draw do
   resources :user_languages
   resources :organizations, only: :show
   resources :articles, only: :show
+  resources :friend_requests, only: :index
 end

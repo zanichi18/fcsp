@@ -29,10 +29,6 @@
         <span class="site-description"><%= user.email %></span>
         <div class="request-user">
           <% if user.is_user? current_user %>
-            <div class="margin-seven">
-              <%= render "friend_ship_form", user: user %>
-            </div>
-          <% else %>
             <div class="dropdown">
               <button class="btn btn-default btn-xs dropdown-toggle margin-seven"
                 type="button" data-toggle="dropdown">
@@ -74,12 +70,15 @@
                       <i class="acc-open icon-remove-circle"></i>
                       <%= t ".accomplishments" %>
                     </div>
-
                     <div class="acc_content clearfix">
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+          <% else %>
+            <div class="margin-seven">
+              <%= render "friend_ship_form", user: user %>
             </div>
           <% end %>
         </div>

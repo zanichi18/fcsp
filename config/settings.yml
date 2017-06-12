@@ -253,3 +253,5 @@ organization:
   new_job: 5
   title: 40
 job_image: "default.jpg"
+friend_suggest:
+  size: "100x100"

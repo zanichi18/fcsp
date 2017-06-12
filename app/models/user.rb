@@ -79,6 +79,8 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :education_status, presence: true
 
+  scope :newest, ->{order created_at: :desc}
+
   scope :not_in_object, ->object do
     where("id NOT IN (?)", object.users.pluck(:user_id)) if object.users.any?
   end

@@ -37,4 +37,29 @@ module UsersHelper
     UserLanguage.levels
       .map{|status, _| [t(".levels.#{status}"), status]}
   end
+
+  def suggest_friend user, friend
+    if user.friends.include?(friend) &&
+      current_user.friends.include?(friend) || friend == current_user
+      content_tag :a, href: "#", "data-toggle": "modal", class: "friend",
+        "data-target": "#modal_friend-#{friend.id}", "data-whatever": "@mdo" do
+        friend.friends.size.to_s + t(".friends")
+      end
+    else
+      content_tag :a, href: "#", "data-toggle": "modal", class: "friend",
+        "data-target": "#modal_mutual_friend-#{friend.id}",
+        "data-whatever": "@mdo" do
+        current_user.mutual_friends(friend).size.to_s + t(".mutual_friends")
+      end
+    end
+  end
+
+  def check_add_friend user, friend
+    if user.friends.include?(friend) &&
+      current_user.friends.include?(friend) || friend == current_user
+      btn_request friend unless friend.is_user? current_user
+    else
+      btn_request friend
+    end
+  end
 end

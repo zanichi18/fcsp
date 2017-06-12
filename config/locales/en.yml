@@ -428,6 +428,11 @@ en:
     find_user:
       not_found: "User not found"
     list_friend:
+      remove_request: " Cancel Request"
+      request_friend: " Add Friend"
+      unfriend: " Unfriend"
+      mutual_friends: "mutual friends"
+      friends: "friends"
       no_friend: "No friend"
     friend_ship_form:
       remove_request: " Cancel Request"
@@ -520,6 +525,8 @@ en:
       edit:
         edit: "Edit"
         close: "Close"
+    search_friend:
+      search: "Enter your search"
   user_works:
     org_search:
       people: "%{num} others"
@@ -963,3 +970,17 @@ en:
           attributes:
             end_time:
               after: "Start time must be less than end time"
+  friend_requests:
+    index:
+      friend_requests: "Friend requests"
+      request_not_found: "No New Friend Requests"
+      mutual-friends: "mutual friends"
+      confirm: "confirm"
+      reject: "delete request"
+    suggest_friends:
+      people_know: "People you may know"
+      remove_request: " Cancel Request"
+      request_friend: " Add Friend"
+      unfriend: " Unfriend"
+      mutual_friends: "mutual friends"
+      friends: "friends"
