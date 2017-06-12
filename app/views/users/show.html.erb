@@ -17,16 +17,36 @@
               </div>
             <% end %>
             <div class="hide-tab clearfix" id="tab-information">
-              <%= render "info_users/introduction", user: @user, info_user: @info_user %>
-              <%= render "info_users/ambition", user: @user, info_user: @info_user  %>
-              <%= render "user_portfolios/user_portfolio", user: @user, portfolios: @user_object.portfolios %>
-              <%= render "awards/user_award", user: @user, awards: @user_object.awards %>
-              <%= render "user_works/work", user: @user %>
-              <%= render "user_education", user: @user %>
-              <%= render "user_link", user: @user %>
-              <%= render "user_projects/projects", user: @user %>
-              <%= render "user_certificate", user: @user %>
-              <%= render "user_languages", user: @user %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:introduction] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "info_users/introduction", user: @user, info_user: @info_user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:ambition] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "info_users/ambition", user: @user, info_user: @info_user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:portfolio] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_portfolios/user_portfolio", user: @user, portfolios: @user_object.portfolios %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:award] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "awards/user_award", user: @user, awards: @user_object.awards %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:work] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_works/work", user: @user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:education] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_education", user: @user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:link] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_link", user: @user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:project] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_projects/projects", user: @user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:certificate] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_certificate", user: @user %>
+              <% end %>
+              <% if @user.is_user?(current_user) || @user.info_user_info_statuses[:language] == InfoUser::INFO_STATUS[:public] %>
+                <%= render "user_languages", user: @user %>
+              <% end %>
             </div>
             <div class="hide-tab clearfix" id="tab-posts">
               <%= render "posts", user: @user, posts: @user_object.list_post %>

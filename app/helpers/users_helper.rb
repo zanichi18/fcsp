@@ -62,4 +62,13 @@ module UsersHelper
       btn_request friend
     end
   end
+
+  def information_status user, info
+    if user.info_user_info_statuses[info.to_sym] ==
+      InfoUser::INFO_STATUS[:public]
+      content_tag :span, "", class: "icon-globe #{info}-status"
+    else
+      content_tag :span, "", class: "icon-lock #{info}-status"
+    end
+  end
 end

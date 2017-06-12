@@ -530,11 +530,25 @@ vi:
     user_education:
       education: "Học vấn"
       add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
+    search_friend:
+      search: "Nhập tìm kiếm"
     user_link:
       links: "Liên kết"
       add: "Thêm"
-    search_friend:
-      search: "Nhập tìm kiếm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
+    user_certificate:
+      certificate: "Chứng chỉ"
+      add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
+    user_languages:
+      languages: "Ngôn ngữ"
+      add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
   user_works:
     user_work_form:
       all_status:
@@ -560,8 +574,10 @@ vi:
       split: " - "
       sure: "Bạn chắc chứ?"
     work:
-      add: "Cập nhật"
+      add: "Thêm"
       user_work: "Công việc"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
     org_search:
       people: "%{num} người khác"
     create:
@@ -597,7 +613,9 @@ vi:
       close: "Đóng"
     projects:
       user_project: "Dự án"
-      add: "Cập nhật"
+      add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
     user_project:
       split: " - "
       sure: "Bạn chắc chứ?"
@@ -650,14 +668,21 @@ vi:
       sure: "Bạn chắc chứ?"
     user_portfolio:
       user_portfolio: "Danh mục"
-      add: "Cập nhật"
+      add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
   info_users:
+    update:
+      success: "Cập nhật thành công!"
+      fail: "Cập nhật thất bại!"
+      infor_user_not_found: "Không tìm thấy thông tin!"
     introduction:
       introduction: "Giới thiệu"
       edit: "Sửa"
       friends: "Bạn bè"
       friends_of_friends: "Bạn của bạn bè"
       public: "Công khai"
+      only_me: "Chỉ mình tôi"
     edit_introduction_modal:
       update_button: "Cập nhật"
       cannot_button: "Hủy bỏ"
@@ -671,6 +696,7 @@ vi:
       friends: "Bạn bè"
       friends_of_friends: "Bạn của bạn bè"
       public: "Công khai"
+      only_me: "Chỉ mình tôi"
     edit_ambition_modal:
       update_button: "Cập nhật"
       cannot_button: "Hủy bỏ"
@@ -745,7 +771,9 @@ vi:
       sure: "Bạn chắc chắn muốn xóa?"
     user_award:
       user_award: "Giải thưởng(s)"
-      add: "Cập Nhật"
+      add: "Thêm"
+      public: "Công khai"
+      only_me: "Chỉ mình tôi"
     form_award:
       title: "Tên giải thưởng"
       made: "Năm nhận giải"

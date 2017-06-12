@@ -12,7 +12,6 @@ $(document).ready(function() {
       page_number = match[1];
     else
       page_number = 1;
-    var tbody = $('.show-article');
     e.preventDefault();
     $.ajax({
       url: url_request,
@@ -22,6 +21,6 @@ $(document).ready(function() {
     .done(function(data) {
       $('.show-article').html(data.company_articles);
       $('.pagination-article').html(data.pagination_company_articles);
-    })
+    });
   });
 });
