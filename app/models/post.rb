@@ -10,4 +10,6 @@ class Post < ApplicationRecord
   delegate :name, to: :postable, prefix: true
 
   scope :newest, ->{order created_at: :desc}
+
+  mount_uploader :image, PictureUploader
 end

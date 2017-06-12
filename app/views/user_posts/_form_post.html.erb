@@ -1,9 +1,12 @@
-<%= form_for [:user, post] do |f| %>
+<%= form_for [:user, post], html: {class: "form-user-post"} do |f| %>
   <div class="form-group">
     <%= f.label :title, t(".title") %>
     <%= f.text_field :title, class: "form-control" %>
   </div>
-
+  <div class="form-group">
+    <%= f.file_field :image, id: "image-user-post",
+      accept: Settings.post.image_accept_type %>
+  </div>
   <div class="form-group">
     <%= f.label :content, t(".content") %>
     <%= f.text_area :content, class: "form-control ckeditor" %>
