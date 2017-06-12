@@ -6,3 +6,6 @@ $('.modal-backdrop').remove()
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+if ($('.user-certificate-hidden-toggle').hasClass('hidden')) {
+  $('.user-certificate-hidden-toggle').removeClass('hidden');
+}

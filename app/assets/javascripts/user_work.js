@@ -10,10 +10,6 @@ $(document).ready(function() {
     $('#livesearch_input').val(this.dataset.name);
   });
 
-  $('.work-date').datepicker({
-    format: 'dd-mm-yyyy'
-  });
-
   $('form#edit-user-work-form').bind('ajax:success', function(event, xhr) {
     if(xhr['errors']) {
       $('.form-group').removeClass('has-error');

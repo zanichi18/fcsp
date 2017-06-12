@@ -480,6 +480,24 @@ vi:
       not_found: "Không tìm thấy người dùng"
       job_suggest: "Gợi ý công việc"
     header:
+      add_language: "Thêm ngôn ngữ"
+      add_language_description: "Thêm ngôn ngữ của bạn"
+      add_education: "Thêm học vấn"
+      add_education_description: "Thêm các trường học của bạn"
+      add_work: "Thêm công việc"
+      add_work_description: "Thêm công việc của bạn"
+      add_project: "Thêm dự án"
+      add_project_description: "Thêm các dự án bạn đã tham gia"
+      add_portfolio: "Thêm danh mục"
+      add_portfolio_description: "Thêm danh mục của bạn"
+      add_award: "Thêm giải thưởng"
+      add_award_description: "Thêm các giải thưởng của bạn"
+      add_link: "Thêm liên kết"
+      add_link_description: "Thêm các liên kết của bạn"
+      add_certificate: "Thêm chứng nhận"
+      add_certificate_description: "Thêm chứng nhận của bạn"
+      add_skill: "Thêm kỹ năng"
+      add_skill_description: "Thêm ký năng của bạn"
       friends: "Bạn bè"
       add_friend: "Thêm bạn"
       message: "Tin nhắn"
@@ -490,10 +508,12 @@ vi:
       new_feed: "Bảng tin"
       information: "Cá nhân"
       posts: "Bài đăng"
-      add_profile_session: "Add new profile sections"
-      background: "Background"
-      skills: "Skills"
-      accomplishments: "Accomplishments"
+      add_profile_section: "Thêm phần tiểu sử mới"
+      background: "Lý lịch"
+      skills: "Kỹ năng"
+      accomplishments: "Khả năng"
+      bookmarked_jobs: "Công việc được đánh dấu"
+      job_suggest: "Công việc đề xuất"
     social_network:
       about_me: "Về tôi"
       social_profiles: "Kết nối với tôi"
@@ -597,32 +617,7 @@ vi:
       public: "Công khai"
       only_me: "Chỉ mình tôi"
     org_search:
-      people: "%{num} người khác"
-    user_education:
-      education: "Học vấn"
-      add: "Thêm"
-    user_link:
-      links: "Liên kết"
-      add: "Thêm"
-    posts:
-      add: "Tạo bài viết mới"
-    skill_user:
-      skills: "Kỹ năng"
-      add: "Thêm"
-    skill_users:
-      skill_user:
-        edit: "Cập nhật"
-        delete: "Xóa"
-  user_works:
-    create:
-      create_success: "Thêm công việc thành công!"
-      create_faild: "Thêm công việc không thành công!"
-    update:
-      update_success: "Cập nhật công việc thành công!"
-      update_faild: "Cập nhật công việc không thành công!"
-    destroy:
-      destroy_success: "Xóa công việc thành công!"
-      destroy_faild: "Xóa công việc không thành công!"
+      people: "%{num} người khác"      
   user_projects:
     create:
       create_success: "Thêm dự án thành công!"
@@ -656,6 +651,10 @@ vi:
       edit: "Sửa"
       delete: "Xóa"
   skill_users:
+    skill_user:
+      edit: "Cập nhật"
+      delete: "Xóa"
+      sure: "Bạn chắc chứ?"
     form_skill_user:
       update: "Cập nhật"
       skill: "Kỹ năng"

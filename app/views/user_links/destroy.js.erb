@@ -4,3 +4,8 @@
 <% else %>
   $.growl.error({message: '<%= @flash.message %>'});
 <% end %>
+<% if current_user.user_links.blank? %>
+  $('.user-link-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-link-hidden-toggle').removeClass('hidden');
+<% end %>

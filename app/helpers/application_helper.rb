@@ -62,4 +62,8 @@ module ApplicationHelper
       render association.to_s.singularize + "_fields", form: builder
     end
   end
+
+  def class_hidden object
+    "hidden" unless object.present?
+  end
 end

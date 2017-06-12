@@ -1,4 +1,4 @@
-<% @related_orgs.each do |org| %>
+<% related_orgs.each do |org| %>
   <div class="col-md-3 col-sm-3 text-center org-member-detail">
     <%= image_tag org_logo(org), class: "img-avatar org-member-ava" %>
     <div><strong><%= link_to org.name, org %></strong></div>

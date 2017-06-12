@@ -5,3 +5,6 @@ $('#award').modal('hide');
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+if ($('.user-award-hidden-toggle').hasClass('hidden')) {
+  $('.user-award-hidden-toggle').removeClass('hidden');
+}

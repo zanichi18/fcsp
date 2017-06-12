@@ -7,3 +7,6 @@
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+if ($('.user-portfolio-hidden-toggle').hasClass('hidden')) {
+  $('.user-portfolio-hidden-toggle').removeClass('hidden');
+}

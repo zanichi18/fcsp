@@ -4,3 +4,8 @@
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+<% if current_user.awards.blank? %>
+  $('.user-award-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-award-hidden-toggle').removeClass('hidden');
+<% end %>

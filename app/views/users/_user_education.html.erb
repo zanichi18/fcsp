@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row user-education-hidden-toggle
+  <%= class_hidden user.user_educations %>">
   <div class="panel panel-default user-info-panel">
     <div class="user-education">
       <strong class="user-education-title">
@@ -42,6 +43,5 @@
           collection: user.user_educations.includes(:school).sort_by_graduation %>
       </div>
     </div>
-    <div class="render-form-user-education-modal"></div>
   </div>
 </div>

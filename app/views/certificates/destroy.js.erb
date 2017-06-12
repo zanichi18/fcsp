@@ -4,3 +4,8 @@ $('.list-user-certificate').html('<%= j render partial: "certificates/certificat
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+<% if current_user.certificates.blank? %>
+  $('.user-certificate-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-certificate-hidden-toggle').removeClass('hidden');
+<% end %>

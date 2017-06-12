@@ -1,4 +1,4 @@
-<% @new_jobs.each do |job| %>
+<% new_jobs.each do |job| %>
   <div class="show-org-job-img text-center">
     <hr/>
     <%= link_to job do %>
@@ -9,7 +9,7 @@
         length: Settings.organization.title), job %></strong>
     </div>
     <div>
-      <%= link_to truncate(job.company.name, 
+      <%= link_to truncate(job.company_name,
         length: Settings.organization.title), job.company %>
     </div>
   </div>
