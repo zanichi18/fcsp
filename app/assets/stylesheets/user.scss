@@ -483,3 +483,25 @@
 .main-content-site {
   min-height: 906px !important;
 }
+
+.skill-level-user {
+  float: right;
+}
+
+.range-points input {
+  -webkit-appearance: none;
+  background: linear-gradient(to right, $blue, $red);
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 20px;
+  margin: auto;
+  outline: none;
+  overflow: hidden;
+  width: 100%;
+  zoom: 130%;
+}
+
+.user-skill {
+  font-size: 12px;
+}

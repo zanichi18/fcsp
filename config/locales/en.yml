@@ -468,6 +468,8 @@ en:
       accomplishments: "Accomplishments"
       bookmarked_jobs: "Bookmarked Jobs"
       job_suggest: "Job Suggest"
+      skills: "Skills"
+      add_new_skill: "Add new skill"
     social_network:
       about_me: "About me"
       social_profiles: "Connect with me"
@@ -583,6 +585,31 @@ en:
       only_me: "Only me"
     org_search:
       people: "%{num} others"
+    user_education:
+      education: "Education"
+      add: "Add"
+    user_link:
+      links: "Links"
+      add: "Add"
+    user_languages:
+      add: "Add"
+      languages: "Languages"
+      new:
+        add: "Add"
+        close: "Close"
+      edit:
+        edit: "Edit"
+        close: "Close"
+    posts:
+      add: "Create new post"
+    skill_user:
+      skills: "Skills"
+      add: "Add"
+    skill_users:
+      skill_user:
+        edit: "Edit"
+        delete: "Delete"
+  user_works:
     create:
       create_success: "Add work successfully!"
       create_faild: "Add work faild!"
@@ -639,10 +666,28 @@ en:
       sure: "Are you sure?"
       edit: "Edit"
       delete: "Delete"
+  skill_users:
+    form_skill_user:
+      update: "Update"
+      skill: "Skill"
+      close: "Close"
+      title: "Skills"
+    result:
+      no_result: "No result"
+    create:
+      success: "create skill success"
+      fail: "create skill failed"
+    destroy:
+      destroy_success: "destroy skill user success"
+      destroy_faild: "destroy skill user faild"
+    update:
+      success: "update skill success"
+      faild: "update skill failed"
   user_portfolios:
     edit:
       update: "Update"
     new:
+      add: "Add"
       update: "Update"
     destroy:
       success: "Delete portfolio successfully"
