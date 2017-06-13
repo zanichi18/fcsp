@@ -18,7 +18,7 @@ class Employer::CandidatesController < Employer::BaseController
         html_job: render_to_string(partial: "candidate",
           locals: {candidates: @candidates}, layout: false),
         pagination_candidate: render_to_string(partial: "paginate",
-          layout: false)
+          layout: false, locals: {candidates: @candidates})
       }
     else
       respond_to do |format|

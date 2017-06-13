@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  userLanguageHiddenToggle(null);
+  setupLinkedDatePicker(null,null);
   $('.change-image').on('change', function(){
     read_url(this);
     $('.user-old-image').val('');

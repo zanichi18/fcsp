@@ -1,6 +1,6 @@
 <%= load_team_image team, class: "img-upload" %>
 <div class="container">
-  <%= form_for [:employer, company, @team], class: "form-horizontal" do |f| %>
+  <%= form_for [:employer, company, team], class: "form-horizontal" do |f| %>
     <div class="form-group">
       <%= f.label :name, class: "control-label col-sm-2" %>
       <%= f.text_field :name, class: "form-control" %>
@@ -22,9 +22,9 @@
       </div>
     <% end %>
     <div class="form-group">
-      <%= link_to_add_fields t("employer.teams.add_introduct"), f,
+      <%= link_to_add_fields t(".add_introduct"), f,
         association: :team_introductions, class: "btn btn-primary",
-        title: t("employer.teams.add_introduct") %>
+        title: t(".add_introduct") %>
       <%= f.submit nil, class: "btn btn-primary" %>
     </div>
   <% end %>

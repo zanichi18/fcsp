@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="list-item-value">
-            <% @teams.each_with_index do |key, team| %>
+            <% teams.each_with_index do |key, team| %>
               <div class="checkbox">
                 <input id="checkbox-status-<%= team %>" type="checkbox"
                   class="styled checkboxitem" data-list-id="<%= team %>" checked>

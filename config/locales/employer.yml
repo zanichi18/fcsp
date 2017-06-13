@@ -84,9 +84,6 @@ en:
     job_team:
       success: "Success"
       danger: "Fails"
-    teams:
-      add_introduct: "Add a Introduction"
-      search: "Search"  
     jobs:
       candidate_by_job:
         user: "User"
@@ -264,6 +261,9 @@ en:
         team_action: "Action"
       new:
         new_team: "New Team"
+      form:
+        add_introduct: "Add a Introduction"
+        search: "Search"
       show:
         info_team: "Info Team"
         introduction_team: "Introduction"

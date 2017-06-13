@@ -8,9 +8,10 @@ class Employer::TeamsController < Employer::BaseController
     if request.xhr?
       render json: {
         html_job: render_to_string(partial:
-          params[:paginate_team] ? "paginate_team_for_job" : @teams,
-          layout: false),
-        pagination_job: render_to_string(partial: "paginate", layout: false)
+          params[:paginate_team] ? "paginate_team_for_job" : @teams, locals:
+          {company: @company}, layout: false),
+        pagination_job: render_to_string(partial: "paginate", locals:
+          {teams: @teams}, layout: false)
       }
     else
       respond_to do |format|
@@ -31,7 +32,7 @@ class Employer::TeamsController < Employer::BaseController
       flash[:success] = t ".create_success"
       redirect_to employer_company_teams_url
     else
-      flash[:danger] = ".create_fail"
+      flash[:danger] = t ".create_fail"
       render :new
     end
   end
