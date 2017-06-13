@@ -26,6 +26,19 @@
                 <%= post.comments_count %>
               </a>
             </li>
+            <% if user_signed_in? %>
+              <li>
+                <span>
+                  <% if shared_post? post %>
+                    <%= link_to t(".unshare"), "#", class: "unshare-post",
+                      data: {id: post.id} %>
+                  <% else %>
+                    <%= link_to t(".share"), "#", class: "share-post",
+                      data: {id: post.id} %>
+                  <% end %>
+                </span>
+              </li>
+            <% end %>
           </ul>
           <div class="entry-content">
             <p>

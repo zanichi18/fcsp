@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :rack_mini_profiler_authorize_request, :set_locale,
-    :shared_jobs
+    :shared_jobs, :shared_posts
   after_action :store_location
 
   include ApplicationHelper
@@ -49,7 +49,7 @@ class ApplicationController < ActionController::Base
   end
 
   def shared_jobs
-    @shared_job_ids = current_user.shares.pluck :job_id if user_signed_in?
+    @shared_job_ids = current_user.shares.pluck :shareable_id if user_signed_in?
   end
 
   def render_js message, status
@@ -76,5 +76,9 @@ class ApplicationController < ActionController::Base
         cookies.signed[:authen_service] = @user_token
       end
     end
+  end
+
+  def shared_posts
+    @shared_post_ids = current_user.share_posts.pluck :shareable_id if user_signed_in?
   end
 end

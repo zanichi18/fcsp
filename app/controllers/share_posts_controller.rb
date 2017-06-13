@@ -1,10 +1,10 @@
-class ShareJobsController < ApplicationController
+class SharePostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_job, only: [:create, :destroy]
+  before_action :load_post, only: [:create, :destroy]
 
   def create
-    share_job = @job.share current_user
-    if share_job.save
+    share_post = @post.share_post current_user
+    if share_post.save
       message = t ".share_success"
       status = 200
     else
@@ -15,7 +15,7 @@ class ShareJobsController < ApplicationController
   end
 
   def destroy
-    if @job.unshare current_user
+    if @post.unshare_post current_user
       message = t ".unshare_success"
       status = 200
     else
@@ -27,9 +27,9 @@ class ShareJobsController < ApplicationController
 
   private
 
-  def load_job
-    @job = Job.find_by(id: params[:id]) if params[:id]
-    render_json t(".not_found"), 404 unless @job
+  def load_post
+    @post = Post.find_by(id: params[:id]) if params[:id]
+    render_json t(".not_found"), 404 unless @post
   end
 
   def render_json message, status

@@ -263,3 +263,6 @@ api:
   tms_login_link: "http://education.framgia.vn/api/sign_in"
   tms_data_link: "http://education.framgia.vn/api/export_profiles"
 level_range: 50
+share_type: "Post"
+shared_post:
+  content_max: 255

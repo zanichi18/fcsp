@@ -42,3 +42,4 @@
 //= require certificates
 //= require search_friends
 //= require posts
+//= require share_post

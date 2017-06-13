@@ -100,6 +100,22 @@ en:
     destroy:
       unfollow: "Unfollow company successfully!"
       not_found: "Company not found!"
+  share_posts:
+    share: "Do you want to share this post?"
+    unshare: "Do you want to unshare this post?"
+    create:
+      not_found: "Post not found"
+      share_success: "Share post successfully!"
+      share_fail: "Fail to share post!"
+    destroy:
+      not_found: "post not found"
+      unshare_success: "Unshare post successfully!"
+      unshare_fail: "Fail to unshare post!"
+    post:
+      share: " Share"
+      unshare: " Unshare"
+    share_job:
+      shared_at: "shared at "
   share_jobs:
     share: "Do you want to share this job?"
     unshare: "Do you want to unshare this job?"

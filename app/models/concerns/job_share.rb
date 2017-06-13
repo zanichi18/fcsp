@@ -1,10 +1,10 @@
 module JobShare
-  def share job
-    shares.build job_id: job.id
+  def share user
+    shares.build user_id: user.id
   end
 
-  def unshare job
-    unshare = shares.find_by(job_id: job.id)
+  def unshare user
+    unshare = shares.find_by user_id: user.id
     unshare.destroy if unshare
   end
 end

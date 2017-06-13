@@ -44,6 +44,10 @@ module ApplicationHelper
     end
   end
 
+  def check_show_newfeed? user
+    user.friends_with?(current_user) || user.is_user?(current_user)
+  end
+
   def link_to_add_fields name, form, options = {}
     new_object = form.object.class
       .reflect_on_association(options[:association]).klass.new
