@@ -16,8 +16,4 @@ $(document).ready(function() {
       $('span').remove('.help-block');
     }
   });
-
-  $('.project-date').datepicker({
-    format: 'dd-mm-yyyy'
-  });
 });

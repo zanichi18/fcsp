@@ -6,3 +6,6 @@
   $.growl.error({message: '<%= @render.message %>'});
 <% end %>
 $('#formUserSkillModal').modal('hide');
+if ($('.user-skill-hidden-toggle').hasClass('hidden')) {
+  $('.user-skill-hidden-toggle').removeClass('hidden');
+}

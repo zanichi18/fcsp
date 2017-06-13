@@ -1,4 +1,5 @@
-<div class="row user-language-hidden-toggle <%= "hidden" unless user.user_languages.any? %>">
+<div class="row user-language-hidden-toggle
+  <%= class_hidden user.user_languages %>">
   <div class="panel panel-default user-info-panel">
     <div class="show-user-work">
       <strong class="user-work-title"><%= t ".languages" %></strong>

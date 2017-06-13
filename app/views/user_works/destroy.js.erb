@@ -4,3 +4,8 @@ $('.user-work').html('<%= j render "user_works/user_work", user: current_user %>
 <% else %>
   $.growl.error({message: '<%= @render.message %>'});
 <% end %>
+<% if current_user.user_works.blank? %>
+  $('.user-work-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-work-hidden-toggle').removeClass('hidden');
+<% end %>

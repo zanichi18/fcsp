@@ -6,3 +6,6 @@
   $.growl.error({message: '<%= @flash.message %>'});
 <% end %>
 $('#formUserEducationModal').modal('hide');
+if ($('.user-education-hidden-toggle').hasClass('hidden')) {
+  $('.user-education-hidden-toggle').removeClass('hidden');
+}

@@ -6,3 +6,6 @@
   $.growl.error({message: '<%= @flash.message %>'});
 <% end %>
 $('#formUserLinkModal').modal('hide');
+if ($('.user-link-hidden-toggle').hasClass('hidden')) {
+  $('.user-link-hidden-toggle').removeClass('hidden');
+}

@@ -5,11 +5,11 @@
         <div class="col-md-3 col-sm-3 text-center">
           <%= image_tag Settings.user_works.org_avatar,
             class: "show-org-img" %></div>
-        <div class="col-md-9 col-sm-9">    
+        <div class="col-md-9 col-sm-9">
           <h3><strong><%= @org.name %></strong></h3>
           <%= t ".org_infor" %>
           <li class="divider"></li>
-        </div> 
+        </div>
       </div>
     </div>
     <div class="col-md-12 col-sm-12">
@@ -20,7 +20,7 @@
               <strong><%= t ".people_worked_here" %></strong>
             </div>
             <div>
-              <%= render "org_member", members: @org.users.includes(:avatar) %> 
+              <%= render "org_member", members: @org.users.includes(:avatar) %>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
               <strong><%= t ".people_worked" %></strong>
             </div>
             <div>
-              <%= render "related_orgs" %> 
+              <%= render "related_orgs", related_orgs: @related_orgs %>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
           <div class="org-worked-member">
             <strong><%= t ".new_job" %></strong>
           </div>
-          <%= render "new_jobs" %> 
+          <%= render "new_jobs", new_jobs: @new_jobs %>
         </div>
       </div>
     </div>

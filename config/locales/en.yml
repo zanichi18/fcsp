@@ -452,6 +452,22 @@ en:
       add_profile_section: "Add profile section"
       add_language: "Add Language"
       add_language_description: "Showcase your languages ability"
+      add_education: "Add Education"
+      add_education_description: "Adding your schools"
+      add_work: "Add Work"
+      add_work_description: "Adding your works"
+      add_project: "Add Project"
+      add_project_description: "Adding your projects"
+      add_portfolio: "Add Portfolio"
+      add_portfolio_description: "Adding your portfolios"
+      add_award: "Add Award"
+      add_award_description: "Adding your awards"
+      add_link: "Add Link"
+      add_link_description: "Adding your links"
+      add_certificate: "Add Certificate"
+      add_certificate_description: "Adding your certificates"
+      add_skill: "Add Skill"
+      add_skill_description: "Adding your skills"
       friends: "Friends"
       add_friend: "Add friend"
       message: "Message"
@@ -462,7 +478,7 @@ en:
       new_feed: "New feed"
       information: "Information"
       posts: "Posts"
-      add_profile_session: "Add new profile sections"
+      add_profile_section: "Add new profile sections"
       background: "Background"
       skills: "Skills"
       accomplishments: "Accomplishments"
@@ -539,6 +555,9 @@ en:
       edit:
         edit: "Edit"
         close: "Close"
+    skill_user:
+      skills: "Skills"
+      add: "Add"
   user_works:
     create:
       create_success: "Add work successfully!"
@@ -585,55 +604,6 @@ en:
       only_me: "Only me"
     org_search:
       people: "%{num} others"
-    user_education:
-      education: "Education"
-      add: "Add"
-    user_link:
-      links: "Links"
-      add: "Add"
-    user_languages:
-      add: "Add"
-      languages: "Languages"
-      new:
-        add: "Add"
-        close: "Close"
-      edit:
-        edit: "Edit"
-        close: "Close"
-    posts:
-      add: "Create new post"
-    skill_user:
-      skills: "Skills"
-      add: "Add"
-    skill_users:
-      skill_user:
-        edit: "Edit"
-        delete: "Delete"
-  user_works:
-    create:
-      create_success: "Add work successfully!"
-      create_faild: "Add work faild!"
-    update:
-      update_success: "Update work successfully!"
-      update_faild: "Update work faild!"
-    destroy:
-      destroy_success: "Delete work successfully!"
-      destroy_faild: "Delete work faild!"
-    user_education:
-      education: "Education"
-      add: "Add"
-    user_link:
-      links: "Links"
-      add: "Add"
-    user_languages:
-      add: "Add"
-      languages: "Languages"
-      new:
-        add: "Add"
-        close: "Close"
-      edit:
-        edit: "Edit"
-        close: "Close"
   user_projects:
     create:
       create_success: "Add project successfully!"
@@ -651,7 +621,7 @@ en:
       header: "Update Project"
       title: "Title"
       Url: "Url"
-      start_dare: "Start date"
+      start_date: "Start date"
       end_date: "End date"
       description: "Description"
       update: "Update"
@@ -683,6 +653,10 @@ en:
     update:
       success: "update skill success"
       faild: "update skill failed"
+    skill_user:
+      edit: "Edit"
+      delete: "Delete"
+      sure: "Are your sure?"
   user_portfolios:
     edit:
       update: "Update"

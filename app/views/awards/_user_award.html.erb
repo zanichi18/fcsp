@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row user-award-hidden-toggle
+  <%= class_hidden awards %>">
   <div class="panel panel-default user-info-panel">
     <div class="award-header">
       <strong><%= t ".user_award" %></strong>
@@ -38,6 +39,5 @@
     <div class="show-award">
       <%= render "awards/show_award", awards: awards %>
     </div>
-    <div class="award-modal"></div>
   </div>
 </div>

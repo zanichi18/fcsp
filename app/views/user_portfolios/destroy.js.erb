@@ -4,3 +4,8 @@
 <% else %>
   $.growl.error({message: '<%= @message %>'});
 <% end %>
+<% if current_user.user_portfolios.blank? %>
+  $('.user-portfolio-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-portfolio-hidden-toggle').removeClass('hidden');
+<% end %>

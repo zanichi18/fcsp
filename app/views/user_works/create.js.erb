@@ -5,3 +5,6 @@ $('#user-work-form').modal('hide');
 <% else %>
   $.growl.error({message: '<%= @render.message %>'});
 <% end %>
+if ($('.user-work-hidden-toggle').hasClass('hidden')) {
+  $('.user-work-hidden-toggle').removeClass('hidden');
+}

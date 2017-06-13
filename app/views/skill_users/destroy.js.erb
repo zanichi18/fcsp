@@ -5,3 +5,8 @@
 <% else %>
   $.growl.error({message: '<%= @render.message %>'});
 <% end %>
+<% if current_user.skill_users.blank? %>
+  $('.user-skill-hidden-toggle').addClass('hidden');
+<% else %>
+  $('.user-skill-hidden-toggle').removeClass('hidden');
+<% end %>

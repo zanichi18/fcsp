@@ -1,4 +1,5 @@
-<div class="row">
+<div class="row user-work-hidden-toggle
+  <%= class_hidden user.user_works %>">
   <div class="panel panel-default user-info-panel">
     <div class="show-user-work">
       <strong class="user-work-title"><%= t ".user_work" %></strong>
@@ -39,4 +40,3 @@
     <div class="user-work"><%= render "user_works/user_work", user: user %></div>
   </div>
 </div>
-<div class="user-work-modal"></div>

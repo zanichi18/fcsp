@@ -1,6 +1,6 @@
 <div class="modal fade" id="user-work-form" role="dialog">
   <div class="modal-dialog">
-  <%= simple_form_for @user_work, remote: true,
+  <%= form_for user_work, remote: true,
     html: {id: "edit-user-work-form"} do |f| %>
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
       <div class="modal-body">
         <%= f.label :organization, t(".company") %>
         <div class="form-group dropdown">
-          <%= f.text_field :organization, value: @user_work.organization_name,
+          <%= f.text_field :organization, value: user_work.organization_name,
             class: "form-control dropdown-toggle", placeholder: t(".company"),
             "data-toggle": "dropdown", "aria-hidden": :true,
             autocomplete: :off, required: true, id: "livesearch_input" %>
@@ -19,17 +19,18 @@
           </ul>
         </div>
         <div class="form-group">
-          <%= f.input :position, label: t(".position"),
+          <%= f.label :position, t(".position") %>
+          <%= f.text_field :position,
             placeholder: t(".position"), class: "form-control" %>
         </div>
         <div class="form-group">
           <div class="col_half">
-            <%= f.input :start_time, label:t(".start_time"),
-              as: :string, class: "form-control datepicker" %>
+            <%= f.label :start_time, t(".start_time") %>
+            <%= input_date f, user_work, :start_time %>
           </div>
           <div class="col_half col_last">
-            <%= f.input :end_time, label: t(".end_time"),
-              as: :string, class: "form-control datepicker" %>
+            <%= f.label :end_time, t(".end_time") %>
+            <%= input_date f, user_work, :end_time %>
           </div>
           <div class="form-group">
             <%= f.label :status, t(".status") %>
@@ -45,10 +46,13 @@
             input_html: {rows: Settings.user_portfolio.textarea_rows} %>
         </div>
       </div>
-      <div class="button-portfolio-modal">
-        <%= f.submit t(".update"), class: "button button-3d button-rounded button-green" %>
-        <button type="button"
-          class="button button-3d button-rounded button-white button-light" data-dismiss="modal">
+      <div class="modal-footer text-center">
+        <%= button_tag type: :submit,
+          class: "button button-3d button-rounded button-green" do %>
+            <%= t ".update" %>
+        <% end %>
+        <button type="button" class="button button-3d button-rounded
+          button-white button-light" data-dismiss="modal">
           <%= t ".close" %>
         </button>
       </div>
@@ -57,3 +61,4 @@
 </div>
 
 <%= javascript_include_tag "user_work" %>
+<%= javascript_include_tag "input_datepicker" %>
