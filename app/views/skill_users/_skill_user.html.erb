@@ -1,13 +1,14 @@
 <div class="row user-skill">
   <div class="skill-info col-md-12">
     <ul class="skill-user-show">
-      <div class="col-md-8">
-        <li data-percent="<%= skill_user.level %>">
-          <%= skill_user.skill_name %>
-          <div class="range-points">
-            <input disabled type="range" name="points" id="points"
-              value="<%= skill_user.level %>" min="0" max="100"
-              data-show-value="true" disable="true">
+      <div class="col-md-8 skills">
+        <%= skill_user.skill_name %>
+        <li data-percent="<%= skill_user.level %>" class = "user-skill-li">
+          <div class="progress skills-animated" style="width: <%= skill_user.level %>%;">
+            <div class="progress-percent">
+              <div class="counter counter-inherit counter-instant">
+                <span data-from="0" data-to="<%= skill_user.level %>" data-refresh-interval="30" data-speed="1100"><%= skill_user.level %></span>%</div>
+            </div>
           </div>
           <div class="skill-level-user">
             <%= skill_user.level %>%
@@ -33,4 +34,5 @@
     <% end %>
   </div>
 </div>
-<hr>
+
+<%= javascript_include_tag "load_more_skill" %>
