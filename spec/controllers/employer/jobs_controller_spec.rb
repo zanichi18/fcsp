@@ -19,6 +19,13 @@ RSpec.describe Employer::JobsController, type: :controller do
       expect(assigns(:jobs)).to include job
     end
 
+    it "filter jobs with request xhr, populates an array of jobs" do
+      get :index, params: {company_id: company, type: "status", sort: "ASC",
+        array_id: [1, 2, 3], page: 1}, xhr: true
+      expect(response).to render_template("employer/jobs/_job")
+      expect(response).to render_template("employer/jobs/_paginate")
+    end
+
     it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status 200

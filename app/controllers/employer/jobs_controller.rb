@@ -18,9 +18,10 @@ class Employer::JobsController < Employer::BaseController
 
     if request.xhr?
       render json: {
-        html_job: render_to_string(partial: "job", locals: {jobs: @jobs},
+        html_job: render_to_string(partial: "job", locals: {jobs: @jobs, company: @company},
           layout: false),
-        pagination_job: render_to_string(partial: "paginate", layout: false)
+        pagination_job: render_to_string(partial: "paginate",
+          locals: {jobs: @jobs}, layout: false)
       }
     else
       respond_to do |format|
@@ -73,9 +74,10 @@ class Employer::JobsController < Employer::BaseController
 
     if request.xhr?
       render json: {
-        html_job: render_to_string(partial: "job", locals: {jobs: @jobs},
+        html_job: render_to_string(partial: "job", locals: {jobs: @jobs, company: @company},
           layout: false),
-        pagination_job: render_to_string(partial: "paginate", layout: false)
+        pagination_job: render_to_string(partial: "paginate",
+          locals: {jobs: @jobs}, layout: false)
       }
     else
       respond_to do |format|

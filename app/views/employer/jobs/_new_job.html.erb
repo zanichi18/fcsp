@@ -12,7 +12,7 @@
                     <thead>
                       <tr class="headings">
                         <th class="job-title">
-                          <%= render "filter_team" %>
+                          <%= render "filter_team", teams: teams, company_id: company_id %>
                           <%= t "employer.jobs.team_name" %>
                         </th>
                         <th class="col-checkbox">
@@ -23,7 +23,8 @@
                         </th>
                       </tr>
                     </thead>
-                    <%= render "job_list", f: f %>
+                    <%= render "job_list", f: f, teams: teams,
+                      company_id: company_id %>
                   </table>
                 </div>
               </div>
@@ -34,10 +35,10 @@
     </div>
     <div class="pagination-job">
       <div>
-        <%= page_entries_info @teams %>
+        <%= page_entries_info teams %>
       </div>
       <div>
-        <%= paginate @teams, params: {controller: "employer/teams",
+        <%= paginate teams, params: {controller: "employer/teams",
           action: "index", paginate_team: 1} %>
       </div>
     </div>
