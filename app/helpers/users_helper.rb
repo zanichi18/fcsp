@@ -83,13 +83,13 @@ module UsersHelper
     skill_user.level ||= Settings.level_range
   end
 
-  def input_date f, object, attribute
+  def input_date form, object, attribute
     if object.send attribute
-      f.text_field attribute,
+      form.text_field attribute,
         value: l(object.send(attribute), format: :short_month_year),
         class: "form-control input-date"
     else
-      f.text_field attribute,
+      form.text_field attribute,
         class: "form-control input-date"
     end
   end

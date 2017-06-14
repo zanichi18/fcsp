@@ -10,26 +10,16 @@ class Api::TmsDataService
     http_request = Api::HttpActionService.new @url, params, @auth_token
     response = http_request.get_data
     if response && response.code.to_i == 200
-      response_json = JSON.parse response.body
-      begin
-        ActiveRecord::Base.transaction do
-          synchronize_user_education response_json
-          synchronize_user_skill response_json
-        end
-      rescue StandardError
-        return false
-      end
-      return true
-    else
-      return false
+      return synchronize_data JSON.parse response.body
     end
+    false
   end
 
   def tms_user_exist?
     params = {email: @current_user.email}
     http_request = Api::HttpActionService.new @url, params, @auth_token
     response = http_request.get_data
-    response.code.to_i == 404 ? false : true
+    response && response.code.to_i == 404 ? false : true
   end
 
   private
@@ -45,11 +35,27 @@ class Api::TmsDataService
   def synchronize_user_skill response_json
     response_json["data"]["user"]["courses"].each do |course|
       skills = course["subjects"]
-      skills.each do |skill_json|
-        skill = Skill.find_or_create_by name: skill_json["subject_name"]
-        SkillUser.find_or_create_by skill_id: skill.id,
-          user_id: @current_user.id
-      end
+      update_user_skill_data skills
     end
+  end
+
+  def update_user_skill_data skills
+    skills.each do |skill_json|
+      skill = Skill.find_or_create_by name: skill_json["subject_name"]
+      SkillUser.find_or_create_by skill_id: skill.id,
+        user_id: @current_user.id
+    end
+  end
+
+  def synchronize_data response_json
+    begin
+      ActiveRecord::Base.transaction do
+        synchronize_user_education response_json
+        synchronize_user_skill response_json
+      end
+    rescue StandardError
+      return false
+    end
+    true
   end
 end
