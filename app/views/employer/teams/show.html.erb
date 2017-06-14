@@ -30,7 +30,7 @@
                   </ul>
                   <div class="tab-content">
                     <% @team.team_introductions.each_with_index do |value, key| %>
-                      <div role="tabpanel" class="tab-pane <%= key == 0 ? "active" : "" %>" 
+                      <div role="tabpanel" class="tab-pane <%= key == 0 ? "active" : "" %>"
                         id="<%= key %>">
                         <%= value.content %>
                       </div>

@@ -94,5 +94,5 @@ $(document).ready(function(){
         '<i class="icon-instagram"></i>' +
         '<i class="icon-instagram"></i>' +
       '</a></div>';
-  }
+  };
 });
