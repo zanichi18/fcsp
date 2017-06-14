@@ -79,6 +79,8 @@ class ApplicationController < ActionController::Base
   end
 
   def shared_posts
-    @shared_post_ids = current_user.share_posts.pluck :shareable_id if user_signed_in?
+    if user_signed_in?
+      @shared_post_ids = current_user.share_posts.pluck :shareable_id
+    end
   end
 end

@@ -25,6 +25,21 @@ $(document).ready(function() {
       checkboxes.prop('checked', false);
     }
   });
+  $('body').on('change', function() {
+    var checkboxes = $('#checkbox-check-all').parents('table')
+      .find('tbody input[type = "checkbox"]');
+    var count_checked = 0;
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked == false) {
+        $('#checkbox-check-all').prop('checked', false);
+      } else {
+        count_checked ++;
+      }
+    }
+    if (count_checked == checkboxes.length) {
+      $('#checkbox-check-all').prop('checked', true);
+    }
+  });
 
   $('.button-direct .btn-cancel').click(function(){
     if ($('.btn-filter').hasClass('open')) {
@@ -216,7 +231,76 @@ $(document).ready(function() {
       }
     });
   });
+  action_candidate.initialize();
 });
+
+var action_candidate = {
+  initialize: function() {
+    $('body').on('click', '.delete-candidate', function() {
+      var id = $(this).attr('id');
+      var arrchecked = [];
+      var params = {array_id: arrchecked};
+      arrchecked.push(id);
+      var count_delete = arrchecked.length;
+      swal({
+        title: I18n.t('employer.candidates.destroy.confirm_delete'),
+        text: I18n.t('employer.candidates.destroy.mess_text'),
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: I18n.t('employer.candidates.destroy.confirm_text')
+      }).then(function() {
+        action_candidate.delete_candidate(params, count_delete);
+      });
+    });
+
+    $('.btn-delete-candidate').click(function() {
+      swal({
+        title: I18n.t('employer.candidates.destroy.confirm_delete'),
+        text: I18n.t('employer.candidates.destroy.mess_text'),
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: I18n.t('employer.candidates.destroy.confirm_text')
+      }).then(function() {
+        var list_checkbox_candidate = $('#list-candidates').find('.checkbox-candidate');
+        var arrchecked = [];
+        var params = {array_id: arrchecked};
+        list_checkbox_candidate.each(function() {
+          if ($(this).is(':checked')) {
+            var id = $(this).attr('data-list-candidate-id');
+            arrchecked.push(id);
+          }
+        });
+        var count_delete = arrchecked.length;  
+        action_candidate.delete_candidate(params, count_delete);
+      });
+    });
+  },
+
+  delete_candidate: function(params, count_delete) {
+    var company_id = $('#company-id').val();
+    $.ajax({
+      dataType: 'json',
+      url: '/employer/companies/' + company_id + '/candidates',
+      method: 'DELETE',
+      data: params,
+      success: function(data) {
+        if (data.status === 200) {
+          $('table tbody').html(data.html_candidate);
+          $('.pagination-bar').html(data.pagination_candidate);
+        }
+        swal(data.flash, count_delete + I18n.t('employer.candidates.destroy.mess_count_deleted'), 'success');
+        $('#checkbox-check-all').prop('checked', false);
+      },
+      error: function() {
+        swal(I18n.t('employer.candidates.destroy.fail'));
+      }
+    });
+  }
+};
 
 $(document).on('click.my', '.filter', function(e) {
   e.stopPropagation();

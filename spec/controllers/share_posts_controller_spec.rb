@@ -27,7 +27,9 @@ RSpec.describe SharePostsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    let!(:share_job){FactoryGirl.create :share_job, user: user, shareable: user_post}
+    let!(:share_job) do
+      FactoryGirl.create :share_job, user: user, shareable: user_post
+    end
     context "delete successfully" do
       before{delete :destroy, params: {id: user_post}, xhr: true}
       it{expect{response.not_to change(ShareJob, :count)}}

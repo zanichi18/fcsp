@@ -68,6 +68,16 @@ en:
         interested_in: "Interested in"
         show: "Show"
         process: "Process"
+        action: "Action"
+        delete_candidate: "Delete candidate"
+      destroy:
+        success: "Deleted success!"
+        fail: "Deleted fail!"
+        warning: "No candidate is checked, can't delete"
+        confirm_delete: "Are you sure?"
+        mess_text: "You won't be able to revert this!"
+        confirm_text: "Yes, delete it!"
+        mess_count_deleted: " records has been deleted"
       candidate_by_select_job:
         user: "User"
         id: "ID"
@@ -76,6 +86,7 @@ en:
         interested_in: "Interested in"
       candidate:
         total_rows: "Total: %{row} rows"
+        delete: "Delete"
       are_you_sure: "Are You Sure to change process?"
       from: "From"
       to: "to"
